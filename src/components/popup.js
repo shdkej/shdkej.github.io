@@ -23,7 +23,7 @@ class Popup extends React.Component {
 
     renderHeader = (pages) => {
         const input = this.props.text.split("#")
-        const title = input[0].replace('[[','').toLowerCase()
+        const title = input[0].replace('[[','')
         const tag = input[1] ? input[1].replace(']]','') : ''
         const content = pages.nodes.find(page => page.fields.slug === '/' + title + '/');
         const paragraph = content ? content.rawMarkdownBody
@@ -34,8 +34,6 @@ class Popup extends React.Component {
     }
 
     render() {
-        const text = this.props.text.toLowerCase();
-        const url = text.replace(/ /g, "-");
         return (
             <StaticQuery
                 query={graphql`
@@ -56,20 +54,22 @@ class Popup extends React.Component {
                     tabIndex="0"
                     onMouseEnter={() => this.onPopup()}
                     onMouseLeave={() => this.offPopup()}
+                    style={{
+                        display: `inline`,
+                    }}
                 >
-                    <Link to={'/' + url}>
-                        {text.split("#").length > 1 ? text.split("#")[1] : text }
+                    <Link to={'/'+this.props.text}>
+                        {this.props.text.split("#").length > 1 ? this.props.text.split("#")[1] : this.props.text }
                     </Link>
                     <div
                         role="link"
                         tabIndex="0"
                         onMouseDown={() => this.offPopup()}
                         style={{
-                            background: `#343a40`,
+                            background: `grey`,
                             position: `absolute`,
                             zIndex: `1`,
-                            marginLeft: `100px`,
-                            width: `50%`,
+                            marginRight: `20px`,
                         }}
                     >
                     {this.state.open ? <ReactMarkdown

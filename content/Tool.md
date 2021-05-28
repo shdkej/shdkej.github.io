@@ -2,7 +2,7 @@
 title   : Tool
 summary :
 date    : 2020-08-25 14:48:57 +0100
-updated : 2021-05-23 20:22:17 +0900
+updated : 2020-11-24 00:57:27 +0100
 tags    : deep_knowledge
 ---
 
@@ -10,22 +10,6 @@ tags    : deep_knowledge
 - node-exporter
     - collect system metrics
 - alert-manager
-
-#### ELK vs TICK
-- ELK -- log metrics
-- TICK -- system metrics
-- what is prometheus, loki,
-
-#### grafana alert
-monitoring 서버도 테스트 서버용과 프로덕션 서버용을 따로 두나?
-
-alert를 만드려면 graph여야하고, $variable 로 되있는 템플릿을 쓸 수 없다.
-alert를 만들고 싶은 graph를 복사해서 variable을 고치고 사용하면 된다.
-
-sensu는 어떤 기능들을 제공해주고 있지?
-
-grafana daily report
-- enterprise 기능이었다. 오픈소스로 구현된 것도 있을 것이다
 
 ## TICK
 - too heavy
@@ -40,140 +24,215 @@ grafana daily report
 #### nginx alternative
 - [openlitespeed](https://openlitespeed.org/)
 
+## Container
+
+#### docker strength
+- isolation process
+- no dependency
+- portable
+- light-weight
+
+#### container serverless
+- knative, lstio, open-faas
+- heroku getting started test
+
+#### Docker image vs compose
+- image vs volume
+    - test with volume, deploy with image
+
+#### docker logs
+- make stdout
+ - `echo "test" >> /proc/1/fd/1`
+
+#### Docker의 위기?
+- container is light-weight and portable more than virtual machine image
+- but it can same work that PC's work
+- Can exist more than light-weight task from docker?
+
+- OCI(Open Container Initiative)
+- Container Runtime
+- Image Download -> Extract Image -> Execute Container
+- Container has cgroups, namespace, networking
+- alternative to Buildah, skopeo, podman
+ - docker is one big process. It can make single point of failure.
+ - divide docker position by 3.
+
+#### docker compose execute bash
+- `entrypoint: /bin/bash` failed
+- `tty:true; stdin_open:true` success
+- `docker-compose run app bash` success
+
+## kubernetes
+person has very small component, and it compose to one architecture.
+the kuberetes seem to be this.
+and I want to make software like this architecture.
+strong small component to flexible architecture.
+kubernetes makes easy to a devops works
+about deploy, scaling, update, healthcheck, orchestration
+but devops works is not clear.
+
+- pods
+- replicaset
+- deployment
+- service
+
+- `kubectl run curl --image=radial/busyboxplus:curl -i --tty`
+- pods cluster inside curl pod
+
+- keep focusing only bisuness logic
+- 1. monitoring - feedback - update logic
+- 2. data management
+- production deploy behavior make easy
+ - update and rollback
+ - scale up and down
+
+- https://github.com/dennyzhang/cheatsheet-kubernetes-A4/blob/master/README.org
+- ClusterIP vs NodePort vs Ingress
+- service account?
+- cluster role?
+- cluster? - node
+- daemon set?
+ - it makes every node to make pods
+ - example: every node can have logstash
+
+#### kubernetes load balancer
+metallb
+
+#### kubernetes in different network
+kubernetes network need fully connected state.
+I want to connect gcp and aws instance.
+how to?
+how to work kubernetes network?
+etcd, dns, kubeadm, kubectl,
+containerd, cri-o
+
+#### kubernetes supports cluster
+- < 5000 nodes
+- < 150000 pods
+- < 300000 containers
+- < 100 pods per node
+
+#### kubernetes test
+- [X] terraform provisioner ip can't get
+- [X] join k3s node to master
+- [ ] join gcp, oracle cluster to master
+- [ ] ansible to remote exec
+
+#### kubernetes test troubleshooting
+- goroutine 10000 access can't accept
+- if without goroutine. socket open only 1
+- else. socket open a lot
+    - local ulimit check, not pod's ulimit
+
+- if deployment scale 4, service port forward to all?
+
+- deployments fail -> check describe pods
+
+#### test
+- how to test account system?
+    - check send complete
+    - check response code
+
+Spinnaker - build tool
+Envoy - proxy, c/b, networkk tool
+
+#### kubernetes
+- stress test per process
+    - `while true; do curl http://localhost; done`
+    - hpa
+        - when do switching, connection is waiting?
+    - how to destroy one pod
+    - recovery time in replicaset
+- image to rollup, rollback
+- ci/cd
+
+#### kubernetes test
+- image size is matter for performance?
+
+1. build image
+`docker build shdkej/imagename:tag .`
+`docker login`
+`docker push shdkej/imagename:tag`
+3. deployment, service
+`kubectl apply -f file.yml`
+4. test
+`kubectl run -it curl --image=radial/busyboxplus:curl `
+`curl http://deploy-name:port`
+1. port forward
+`kubectl port-forward svc/svc-name 8080:8080`
+2. client run
+3. check some signal
+4. report how many success is
+
+case 1. normal string output check - 100000 user
+    - for 10000 -> 24s
+    - for 100000 -> 1m30s
+    - goroutine 100000
+        - server can't accept
+case 2. stream output check
+
+#### helm k3s Kubernetes cluster unreachable error
+set `export KUBECONFIG=/etc/rancher/k3s/k3s.yaml`
+https://github.com/rancher/k3s/issues/1126
+
+#### eks vs ec2 autoscale and setting kubernetes vs kubernetes hpa
+
+#### kubernetes
+- local test, production build pipeline
+- local test with only dockerfile
+- local test with same with production
+- In msa. need kubernetes?
+- In msa. github repo is seperated?
+- developer can build docker image?
+- how to provide docker image to developer?
+- when developer push updated source. pipeline is
+    - kubernetes apply?
+- build with tags?
+    - git tag 1.0.0
+    - git push origin --tags
+- hpa
+- service
+- minikube
+
+#### kompose
+- `curl -L https://github.com/kubernetes/kompose/releases/download/v1.21.0/kompose-linux-amd64 -o kompose`
+- `chmod +x kompose`
+- `sudo mv ./kompose /usr/local/bin/kompose`
+
+#### k3s
+- token `/var/lib/rancher/k3s/server/node-token`
+- join
+ - `curl -sfL http://get.k3s.io | K3S_URL=https://192.168.0.50:6443 \ K3S_TOKEN=join_token_we_copied_earlier sh -`
+
+#### knative istio
+- before use knative, install istio first.
+- istio install
+ - istiocli `curl -L https://istio.io/downloadIstio | sh -`
+ - cli in `bin/istiocli`
+ - `istioctl install --set profile=demo`
+
 ## Redis
 - http://highscalability.com/blog/2019/9/3/top-redis-use-cases-by-core-data-structure-types.html
 - Chained Linked List에는 약점이 있습니다. 한 Bucket 안에 데이터가 많아지면 결국 탐색 속도가 느려집니다. 이를 위해서 Redis는 특정 사이즈가 넘을 때 마다 Bucket을 두 배로 확장하고, Key들을 rehash하게 됩니다.
-    - https://tech.kakao.com/2016/03/11/redis-scan/
-- hash를 쓰면 일정 크기 이하까지는 ziplist라는 형태로 저장된다
-- 메모리 사용이 많아져서 swap을 쓰게 되면 접근하는데 속도가 떨어진다
-- maxmemory 확인
-- keys, flushall 보다 scan 사용
-
-#### data structure [[redis]]
-- set vs hash vs strings in article
-- ? which type fit for index file -- hash?
-- true,false type -> bitmap 1.2M 10,000,000
-  - [source](t.ly/KqGO)
-
-#### redis hash crud
-json data
-- HMSET -> HSET
-- HMGET
-- HSCAN
+ - https://tech.kakao.com/2016/03/11/redis-scan/
 
 ## elasticsearch
 - Argument
-  - cluster, node, replica
-  - index
-  - documents with properties
+ - cluster, node, replica
+ - index
+ - documents with properties
 - Search
-  - get
-  - search(match)
-  - term
-  - should, must, must not
+ - get
+ - search(match)
+ - term
+ - should, must, must not
 - Type
-  - completion
-  - keyword
-  - custom
-  - text
-  - date
+ - completion
+ - keyword
+ - custom
+ - text
+ - date
 - 증분 색인
-
-#### elasticsearch
-기본
-- 인덱스 생성 후, 그 안에 도큐먼트를 넣는다
-- Type, Id는 뭐지
-    - Type은 원래 인덱스 안에서 카테고리 역할이었는데 없어질 예정이라고 한다.
-    - 고정값으로 생각해도 되겠다(_doc) 6.7 버전에서 _doc으로 고정되었다
-    - Id는 도큐먼트를 인식할 수 있는 값, db에서 primary key 같은 느낌
-- 맵핑 - 데이터 형태 지정
-- 쿼리를 안넣으면 전체검색이 된다는데? - ok
-- 토크나이저와 아날라이저를 구분, analyzer가 tokenizer를 포함할 수 있다 +
-  synonym도 포함 한다
-- index 끼리 shard 할 수 있고, routing 하는 기능이 있다
-
-정보
-- tokenizer 설치 후 리스타트 해줘야 한다.
-- 인덱스 수정은 힘들고, 새로 만들어서 리인덱싱 해줘야 한다.
-- elasticsearch로 데이터를 관리하는 것은 우선순위 큐를 이용하는 것과 비슷한
-  느낌이다. es에 넣으면 내부에서 기대하는 로직을 수행하고, 결과값을 기대했던대로
-  받는다.
-- 검색 기능은 Lucene이 담당하고 elasticsearch는 클러스터의 기능을 담당한다.
-
-궁금한 것
-- [X] 쿼리에 어떤 것들을 쓸 수 있는지, must, should,
-- [X] 분석기 설정한 인덱스에서 검색했는데 결과가 동일함
-- [ ] 초기화를 elasticsearch에서 할지, api server에서 할지??
-- [ ] update할 때 기존에 것에 추가하는 작업이 안됨
-- [X] 전체 검색이 전체를 검색 안한다. 카운트는 정상적으로 세는데 hit는 하다
-      마나? default size가 10이었다.
-
-#### synonym and user dictionary
-userdict.txt 와 synonyms.txt를 준비해두고 인덱스 생성
-```
-> curl -X PUT "localhost:9200/analyze?pretty" -H 'Content-Type: application/json' -d'
-{
-  "settings": {
-    "analysis": {
-      "tokenizer": {
-        "nori_user_dict": {
-          "type": "nori_tokenizer",
-          "decompound_mode": "mixed",
-          "user_dictionary": "userdict.txt"
-        }
-      },
-      "analyzer": {
-        "korean_analyzer": {
-          "filter": [
-            "pos_filter_speech", "nori_readingform",
-            "lowercase", "synonym", "remove_duplicates"
-          ],
-          "tokenizer": "nori_user_dict"
-        }
-      },
-      "filter": {
-        "synonym" : {
-          "type" : "synonym_graph",
-          "synonyms_path" : "synonyms.txt"
-        },
-        "pos_filter_speech": {
-          "type": "nori_part_of_speech",
-          "stoptags": [
-            "E", "J", "SC", "SE", "SF", "SP", "SSC", "SSO", "SY", "VCN", "VCP",
-            "VSV", "VX", "XPN", "XSA", "XSN", "XSV"
-          ]
-        }
-      }
-    }
-  }
-}'
-```
-
-#### elasticsearch
-user dictionary가 수정되면 다시 읽어야 하고, 인덱스를 close, open 해야 한다
-user dictionary는 인식하지 못하는 단어를 인식하게 하는 것이고
-- 신조어, 고유명사의 경우에 추가
-synonyms는 인식한 단어들 중에 다른 단어도 같이 검색되게 하는 것
-- 사릉해, 얼굴-와꾸 등 기존 단어가 있는데 추가 검색이 필요한 경우 추가
-
-#### elastic search
-security
-- don't bind to a public ip
-- proxy all client requests to elastic search
-- disable dynamic scripting(pre 5.x version)
-
-design
-index management patterns
-- monolith
-- rolling indexes(time based events)
-
-query
-term, bool
-- smallest number of terms as possible
-- use filter context for static, non-full-text term queries
-- scripts will show down your searches
-
-? how to manage score? (weight)
 
 ## ansible
 - https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-18-04
@@ -210,31 +269,24 @@ server_ip
 - note-reminder has terraform trigger option.
 - it's not good..
 
-#### 테라폼만 쓸지 서버리스를 같이 쓸지 고민중
-서버리스는 개별적인 앱을 빠르게 빌드하고 다시 만들 때 가볍게 사용하기 좋고
-테라폼은 좀 더 넓게 공유되는 자원을 관리할 때 쓰기 좋다
-
-서버리스는 앱을 빠르게 띄우기 좋고 테라폼은 인프라 셋팅하기에 좋다
-https://www.serverless.com/blog/definitive-guide-terraform-serverless/
-
 ## terraform
 - Need update when changing a provisioner
 - ! resource "null_resource" -> null
-  - Do `terraform init`
+ - Do `terraform init`
 
 - terraform taint aws_instance.example-server
-  - aws_instance recreate when terraform apply
-  - terraform null_resource is better then an instance make to a taint
-    - https://github.com/gruntwork-io/terratest/blob/master/examples/terraform-remote-exec-example/main.tf
-  - null resource need `terraform init`
+ - aws_instance recreate when terraform apply
+ - terraform null_resource is better then an instance make to a taint
+  - https://github.com/gruntwork-io/terratest/blob/master/examples/terraform-remote-exec-example/main.tf
+ - null resource need `terraform init`
 - recreate instance with same eip
 - !WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
-  - clear `~/.ssh/known_hosts` or recreate ssh key `ssh-keygen -R <host IP>`
-  - https://www.ssh.com/ssh/keygen/
+ - clear `~/.ssh/known_hosts` or recreate ssh key `ssh-keygen -R <host IP>`
+ - https://www.ssh.com/ssh/keygen/
 - ! aws_instance remote-exec ssh connection not working
-  - user = "root" -> user = "ubuntu"
-- `letsencrypt -d <domain> -m <email> -n(all agree) --agree-tos`
-  - https://github.com/ployst/docker-letsencrypt/issues/18
+ - user = "root" -> user = "ubuntu"
+- letsencrypt -d <domain> -m <email> -n(all agree) --agree-tos
+ - https://github.com/ployst/docker-letsencrypt/issues/18
 
 - gcp metadata need ${}
  - `ssh-keys = "username:${file("<PATH>")}"`
@@ -244,11 +296,11 @@ https://www.serverless.com/blog/definitive-guide-terraform-serverless/
 - save s3
 
 - ! s3 access-denied problem
-  - bucket name not allow var. I have just input text
-  - var allow. but name is global. it is really name exist problem.
+ - bucket name not allow var. I have just input text
+ - var allow. but name is global. it is really name exist problem.
 - ! s3_bucket_notification invalid argument
-  - 1. create SNS 2.create S3 bucket 3. Policy 4. notification
-  - sns - aws_iam_policy - condition - values - (bucket arn -> bucket name...)
+ - 1. create SNS 2.create S3 bucket 3. Policy 4. notification
+ - sns - aws_iam_policy - condition - values - (bucket arn -> bucket name...)
 - every apply update s3, using `etag`
 
 #### terraform ansible
@@ -258,24 +310,13 @@ https://www.serverless.com/blog/definitive-guide-terraform-serverless/
 
 #### use module. For different folders can use once.
 
-#### github action terraform
-- how to hide secret file
-  - gcp credential file
-
-#### ! change backend bucket
-need delete `.terraform` dir, and `terraform init`
-
-#### AWS Dynamodb terraform
-- attribute need index
-- any key can write, if exist with attribute
-
 ## serverless
 - install `curl -o- -L https://slss.io/install | bash`
 - !Error: spawn /home/sh/.serverless/bin/xdg-open ENOENT
-  - no install xdg-open. manual install and copy to serverless/bin directory
+ - no install xdg-open. manual install and copy to serverless/bin directory
 - !"service" property is missing in serverless.yml
-  - get started is sucks
-  - run `serverless` for first setting
+ - get started is sucks
+ - run `serverless` for first setting
 
 #### serverless
 - python requirements
@@ -284,13 +325,6 @@ need delete `.terraform` dir, and `terraform init`
 ## vault
 - install file
 - move bin directory
-
-#### vault in gcp
-1. run docker ``
-    - what is different with server-mode and another
-2. add ssh
-3. save file
-4. read file
 
 ## google calendar api
 1. credential.json 생성
@@ -320,46 +354,3 @@ window 는 nsclient 설치
 #### nagios 비밀번호 변경
 - `htpasswd -c /opt/nagios/etc/htpasswd.users nagiosadmin`
 - 콘솔로 비밀번호 입력
-
-## aws lambda cronjob
-- using cloudwatch event rule, event target, lambda permission
-- more option cloudwatch log group, cloudwatch log subscription filter
-- https://www.thedevcoach.co.uk/terraform-lambda-scheduled-event/
-
-#### serverless aws sqs lambda
-- sqs to lambda message parsing
-- event['Records'][0]['body']
-- lambda python requests
-- cannot version 3.8, can 3.6
-
-## devdash
-- google analytic settings
-- enable google report api
-- export project json
-
-#### cloud
-- L/B free cloud
-    - nothing
-- GCP app engine 28/d free
-    - it can be scaling
-
-#### Current Used infra
-- telegrambot(serverless)
-- monitoring
-- content based recommend(need s3 csv file)(terraform)
-- s3 hosting(terraform)
-- netlify(wiki homepage)
-- github pages
-- cloudflare
-- empty
- - ec2
- - gce
- - gcp app engine
- - heroku
-- oracle 2대
-
-## 카프카와 다른 메시지큐
-카프카는 분산, 고가용성, 고속에 특화
-근데 무겁다
-
-가벼운데 고가용성만 지원되면 좋겠다

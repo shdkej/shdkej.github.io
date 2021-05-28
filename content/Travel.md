@@ -2,7 +2,7 @@
 title   : Travel
 summary :
 date    : 2020-04-06 19:28:41 +0100
-updated : 2020-12-27 14:39:34 +0100
+updated : 2020-11-17 23:38:21 +0100
 tags    : idea
 ---
 
@@ -35,8 +35,6 @@ tags    : idea
 역사..
 익사이팅..
 [http://blog.tnote.kr/221020286684](http://blog.tnote.kr/221020286684)
-
-#### 아키타현 이나니아 우동
 
 #### Fukuoka
 시티패스 개강추 후쿠오카 돌때 개꿀

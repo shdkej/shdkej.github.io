@@ -2,7 +2,7 @@
 title   : Fail Experience
 summary : How to prevent failure again
 date    : 2020-05-06 14:18:40 +0100
-updated : 2021-04-14 21:27:32 +0100
+updated : 2020-11-07 16:17:36 +0100
 tags    : health
 ---
 
@@ -23,17 +23,6 @@ tags    : health
 - go wasm 테스트하다가 붙여놓은 코드 제대로 확인안하고 돌려서 컴터 뻗음
     - whenever import external library go to freeze
 - forgotten food's expire date
-
-#### nvme 를 사서 호환성이 떨어진다
-기존 노트북과 새로 살 노트북에 모두 사용하기 위해 m.2를 찾은 것인데
-nvme와 sata의 차이를 찾아보고 둘의 작동방식이 다름을 알았음에도 이렇게 호환이
-안될 것이라고는 생각하지 못했다. 무언가 어댑터가 있을거라는 막연한 생각만 있었다
-역시 또 끝까지 생각 안하고 막연하게 나둬서 문제가 되었다.
-
-#### 내가 생각한 것을 내 삶에 적용 못시키고 있었다
-알고리즘에 대한 지식을 쌓길 바랬으면
-알고리즘에 대해 자료를 모으고
-측정가능한 목표지점을 세웠어야 했는데 전혀 그러지 않았다
 
 ## 백업 전략을 세워야 한다
 오늘 미디어 폴더가 날아갔다

@@ -2,11 +2,9 @@
 title   : Foreign Language
 summary :
 date    : 2020-05-06 12:39:36 +0100
-updated : 2021-04-13 21:03:32 +0100
+updated : 2020-11-11 21:13:45 +0100
 tags    : communication
 ---
-
-**elaborate** -- revision
 
 - 구동사 익히기
 - 듣고 말하기 (쉐도잉) 자막없이가 마지막에 되야 되고 그게 처음부터는 어려우니까 자막으로 이해하고 연습한다
@@ -70,25 +68,25 @@ tags    : communication
 - 한다면
 - 한다고 해도
 - 합니까
-- 합니다
-- 하지 않다
-- 하고
-- 했다
-- 하자
-- 해라
-- 하지마
-- 할 수 있다
-- 한다면
-- 시키다
-- 당하다
-- 하게 되다
-- 하지 않을래요?
-- ~하고 싶어요
-- ~하고 싶었어요
-- ~합니까
-- ~합니다
-- ~하고싶다
-- ~해도 됩니까 / ~하면 안됩니다
+합니다
+하지 않다
+하고
+했다
+하자
+해라
+하지마
+할 수 있다
+한다면
+시키다
+당하다
+하게 되다
+하지 않을래요?
+~하고 싶어요
+~하고 싶었어요
+~합니까
+~합니다
+~하고싶다
+~해도 됩니까 / ~하면 안됩니다
 
 
 #### useful sentence
@@ -115,29 +113,15 @@ you were finish
 - A E
 - C K
 
-#### 헷갈리는 단어
-- serve 제공하다
-- reserve 예비하다
-- preserve 보존하다
+serve 제공하다
+reserve 예비하다
+preserve 보존하다
 
-- consist 일관성
-- concrete 구체적인
+consist 일관성
+concrete 구체적인
 
-- aggregate 집합, 모음
-
-- authority-권위
-- authorization-허가
-- authentication-인증
-
-- involve, evolve, devolve
-- particular, participate
-- certain, concern
-
-#### communication vs conversation
-커뮤니케이션은 단방향도 포함
-컨벌세이션은 양방향
-'커뮤니케이션은 생각이나 정보 등을 전달하는 것을,
-컨벌세이션은 그렇지 않은 것'이라는 의견도 있다
+## IT
+#### authority-권위, authorization-허가, authentication-인증
 
 #### verb
 Update vs modify vs change
@@ -148,5 +132,3 @@ Remove vs delete
 이거 먹을게요
 음료는 필요없어요
 계산할게요
-
-## mores: social convention

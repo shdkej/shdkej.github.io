@@ -2,16 +2,11 @@
 title   : Computer Architecture
 summary : 🖥️ CPU, Memory, OS, Kernel
 date    : 2020-03-16 22:40:45 +0100
-updated : 2021-05-23 20:46:03 +0900
+updated : 2020-11-11 10:25:05 +0100
 tags    : strong_base
 ---
 
-## Summary
-디스크에 있는 프로그램을 메모리로 부르고,
-메모리에 있는 데이터를 CPU가 읽어가면서 프로그램이 동작한다.
-
 ## CPU
-불 대수 -> 폰 노이만
 Transistor -> Flipflop -> IC -> CPU or RAM
 - AND OR XOR
 - ARU MBR MAR -- John von neumann
@@ -25,11 +20,6 @@ in 1970, computer has only 1 process, can run one program. process can make
   run multiple program. but people need multi-work. so multi-processing
   invented.
 
-#### process
-디스크에 저장된 프로그램이 코드와 데이터를 갖고 있으면 이를 실행시키면
-프로세스를 RAM에 적재하면서 코드와 데이터를 가져오고, 스택과 힙을 할당 받는다
-코드를 읽는 것은 CPU에서 메모리를 불러와 명령을 수행한다.
-
 [[Software#History]]
 
 -----------------------------------------------------------------------
@@ -39,8 +29,7 @@ in 1970, computer has only 1 process, can run one program. process can make
 - Data - Code text
 - Heap - Global variable
 - Stack - region variable
-
-[[Data_Structure]]
+- [[Data_Structure]]
 
 #### memory management
 - memory leak
@@ -49,12 +38,6 @@ in 1970, computer has only 1 process, can run one program. process can make
 - Paging: memory separate to static size(it called page) by logical memory in
  physical memory.
 - Segmentation: memory separate dynamic size. even though physical location.
-
-#### 메모리와 cpu 캐시는 구조가 다르다
-메모리는 dram, 캐시는 sram
-cpu와 메모리의 발전 속도가 차이나서 지금도 차이가 있다
-
-메모리는 cpu에 비해 데이터 보관이 필요하다
 
 ## Cache
 - SRAM(static) 으로 만들어진다
@@ -87,6 +70,15 @@ it is for asynchronization I/O.
 every computer use I/O for computing.
 nowadays computer has multiple processor. So windows has IOCP, linux has epoll.
 networking also used with socket generally.
+
+-----------------------------------------------------------------------
+
+## Binary
+이진수 활용법
+- 정해진 크기가 있는 배열의 유무 감별
+ - 0010000
+- 보수
+- xor
 
 ## OS
 - multics - unix - minix - linux

@@ -39,26 +39,25 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
     <Layout title={siteTitle}>
       <SEO title="Sam" />
       {posts.map(({ node }) => {
-        if (node.frontmatter.title === '') { return }
         const title = node.frontmatter.title || node.fields.slug
         const date = node.frontmatter.updated || node.frontmatter.date
         const readTime = <>{node.timeToRead} min</>
         return (
           <article key={node.fields.slug}>
             <header>
-                <Link style={{ boxShadow: `none` }}
-                to={node.fields.slug}>
+              <h3>
+                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
-              <small> - {readTime} {date}</small>
+              </h3>
+              <small>{date} {readTime}</small>
             </header>
             <section>
-              <div
+              <p
                 dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.summary
+                  __html: node.frontmatter.summary || node.excerpt,
                 }}
               />
-              <br/>
             </section>
           </article>
         )
@@ -77,8 +76,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-        sort: { fields: [frontmatter___updated], order: DESC },
-        filter: { frontmatter: {parent: {glob: "Blogging"}}},
+        sort: { fields: [frontmatter___updated], order: DESC }
     ) {
       edges {
         node {
@@ -87,8 +85,8 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "YYYY, MM, DD")
-            updated(formatString: "YYYY, MM, DD")
+            date(formatString: "MMM DD, YYYY")
+            updated(formatString: "MMM DD, YYYY")
             title
             summary
             tags

@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import "./layout.css"
 import ClientOnly from "./ClientOnly"
 import Search from "./search.js"
+//import Nav from "./nav"
 
 const Layout = ({ title, children, data }) => {
   let header
@@ -13,12 +14,20 @@ const Layout = ({ title, children, data }) => {
           {title}
         </Link>
         <> | </>
+        <Link to={`/list`}>
+          Index
+        </Link>
+        <> | </>
         <Link to={`/tags`}>
-          INDEX
+          Tags
+        </Link>
+        <> | </>
+        <Link to={`/random`}>
+          Random
         </Link>
         <> | </>
         <Link to={`/about`}>
-          ABOUT
+          About
         </Link>
       </nav>
   )
@@ -27,10 +36,10 @@ const Layout = ({ title, children, data }) => {
     <div>
       <header>{header}</header>
       <br/>---
-      <main>{children}</main>
       <ClientOnly>
           <Search />
       </ClientOnly>
+      <main>{children}</main>
       <footer>
           <small>
             © 2020, Built with

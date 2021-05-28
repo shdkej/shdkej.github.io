@@ -2,18 +2,17 @@
 title   : Journal
 summary : Let's make the results every day.
 date    : 2020-04-02 08:55:34 +0100
-updated : 2021-05-21 18:54:15 +0100
+updated : 2020-11-24 00:02:38 +0100
 tags    : idea
 ---
 
 ## 2020
- * [February](diary/2021-02-01)
- * [March](diary/2021-03-01)
+ * [January](diary/2020-01-01)
+ * [March](diary/2020-03-01)
+ * [April](diary/2020-04-01)
+ * [November](diary/2020-11-01)
 
-
-- [2020](diary/2020)
 - [2019](diary/2019)
-- [2012](diary/2012)
 
 ## Writing technique
 1. 적, 의, 것, 성 빼기 (적의것들)
@@ -29,16 +28,15 @@ Content
 3. 결론먼저
 4. 경험(정성적)으로 기억에 남게 할수있다
 5. 서론을 먼저 나눠 쓴다
-    - 서론에는 본문의 핵심내용을 미리 안내한다.
-    - 서론은 간단 명료하게 쓴다
-    - 본문은 가독성이 중요하다
+  - 서론에는 본문의 핵심내용을 미리 안내한다.
+  - 서론은 간단 명료하게 쓴다
+  - 본문은 가독성이 중요하다
 6. 유머가 있어야 한다
 7. 비유로 설명하는 것은 좋은 방법
 8. 글에 호기심을 담으면 흡입력이 강해진다
-    - 호기심, 궁금증이 글을 읽는 원동력이 된다
     - 위키의 정보글은 호기심을 던지고 설명하는 방식으로 작성
 9. 첫줄에 한줄요약으로 그림을 그릴 수 있도록, 연상을 할 수 있도록 작성
-    그 뒤에 질문과 설명 적기
+  그 뒤에 질문과 설명 적기
 
 + 짧게 쓰지 말고 길게 쓰고 필요없는 부분을 지우는 방식으로 쓰자
 + 간결했으면 좋겠다
@@ -48,14 +46,10 @@ Content
 + 글은 웬만하면 사진과 함께 사진안에 글자를 넣어서 읽기 좋고 보기 좋게 쓰는게 좋겠다
     - 그림이 중요한게 아니라 내용이 중요하다 그런데 이미지가 같이 있으면 보기 수월하고 내용 전달도 쉬워진다. - (횡설수설 다이어리 참고)
 - speak with emotion is good to click with someone - emotion and experience
-- 읽다가 막히지 않고, 따라가다 보면 원하는 목적지에 편하게 도달하는 글이 좋은 글
-내가 아는 것을 남들도 알거라고 생각하고 적으면 땡
-
-[[Think#점진적]]
-[[Think#제한을 둠으로써 새로운 것을 만들어 낼 수 있다]]
-[[Blogging#읽고 싶은 제목]]
-[[Information#모든 진정한 이론은 오직 구체적인 현실속에서만 명료화되고 발전되어야 한다]]
-[[Collection#스토리 없는 단순 나열은 아무리 핵심만 담겨있다고 해도 쓸모가 없다]]
+- [[Think#점진적]]
+- [[Think#제한을 둠으로써 새로운 것을 만들어 낼 수 있다]]
+- [[Blogging#읽고 싶은 제목]]
+- [[Information#모든 진정한 이론은 오직 구체적인 현실속에서만 명료화되고 발전되어야 한다]]
 
 ## How to write Journal
 wiki is fit to me.
@@ -73,12 +67,6 @@ note 4개는 뎁스에 신경쓰고 4개는 넓이에 신경쓰도록 구성
 
 느낀것들은 한달씩 모으기
 연말 회고용으로 쓸 수 있겠다
-
-자료가 괜찮게 느껴졌으면 최대한 정보를 남기고 나중에 정리를 하도록 하자
-데이터를 많이 쌓아놓고 정리하는 것이
-나중에 다시 찾아보는 것보다 편할 것 같다
-
-몇 가지 중 하나를 제시할 때는 다른 것들은 뭐가 있는지 문서 안에 첨부해야 좋겠다
 
 #### Keep specific note to yearly archive
 1. want to know behind or side background, similar thing
@@ -105,14 +93,6 @@ make index file
 - 그 개수는 3개를 넘지 않아서 바로 공유를 할 수 있다
 - 그러면 비슷한 수준의 이야기가 진행될 수 있고 내 머리속에도 그 내용이 정리될 수 있다
 
-#### 글
-처음 그 분야에 접하는 사람은 원리나 본질을 보기보다
-흥미로운, 실제적인 경험을 먼저 보고 싶을 것 같다.
-원리는 그 분야를 좀 더 알고나서 궁금해지지 않을까
-
-#### make table, picture to attach document. which tool use?
-pages
-
 #### think with information.
 - my wiki is my knowledge.
 - if economics document is there. think about economics is go to think category or
@@ -128,17 +108,6 @@ vs
 vs
 주간노트 작성 후 주제별로 파편화 시키기
 
-#### 글마다 예제를 다는 것은 좋은데 예제가 좁은 범위만을 다룬다는 한계도 있다
-
-호기심과 몰입을 위한 도입부, 머리말이 사족이 될 수 있다
-바로 본론만 딱 보고 싶은데 쓸데없다고 느낄 수 있다
-
-날짜로 정리되어있는 기록은 시간이 지나면 예전의 기록은 찾아볼 엄두가 안난다.
-그 날의 특별한 아이디가 있으면 좀 더 나을까?
-
-기록을 찾아볼 때 날짜별로 되어있으면 찾을 엄두가 안나고 지쳐버린다.
-잘 정리된 책이라면 같은 분량이라도 보기 쉬울 것 같다.
-
 -----------------------------------------------------------------------
 
 ## Note Category
@@ -153,7 +122,7 @@ during write note
 - content tag, ex) [[Golang]] tutorial clear
 https://www.youtube.com/watch?v=iwLbRqbkT38&t=85s
 good tag example
-`[[go]]` - `[[go/example]]` - `[[go/example/bbd]]`
+[[go]] - [[go/example]] - [[go/example/bbd]]
 like this can has directory
 in being tagged file need tag root (each other has tag)
 - no no, search tag, then can see when write tag
@@ -169,7 +138,7 @@ in being tagged file need tag root (each other has tag)
 으로 한 아키텍처라도 나눌 수 있음
 
 #### note title
-**keyword** or **goal**?
+**keyword** or **goal**
 
 keyward
 - Software, Company
@@ -207,17 +176,6 @@ todo앱으로 관리할까
 
 todo <-> note how to flow
 
-#### to-do-list
-auto create todo list when write todo?
-if done write a weekly note, remove that in a todo list
-todo organize main-todo menu automatically
-how to manage bookmark
-make todo.txt parsing and done button
-> to-do-list - start but not finished. Does it need a different list?
-> I have done-list. it is managed at week. done-list have category
-> to-do-list has a duration, 1hour, 1day, 1week, 1month, 1year
-> Pomodoro - to-do-list - shell - title-bar - kanban
-
 ## Bookmark
 3 X 3
 - inbox read remind
@@ -225,20 +183,20 @@ make todo.txt parsing and done button
 - read -- good(keep), re-read, source
 - remind -- comment, need some situation, subscribe
 
-just want keep for someday find
+- just want keep for someday find
 - after want view
-    1. timeline in bookmark
-    2. save document and someday want view
-    3. inbox
+ 1. timeline in bookmark
+ 2. save document and someday want view
+ 3. inbox
 - save local? browser? keep note? pocket?
-- 북마크는 아이패드 읽기파일로 저장 -> X
-- 링크 구해서 한번에 읽기파일로 저장 -> X
-- 블로그 subject 분리 -> X
-- 트러블슈팅은 일주일마다 공유 -> X
-- 웹사이트는 킵에 저장 후 mhtml로 변환 -> X
-- 인박스도 원드라이브로? -> X
-- 크롬 모바일 앱으로 관리 -> X
-  - Notion, chrome bookmark --> only chrome bookmark
+북마크는 아이패드 읽기파일로 저장 -> X
+링크 구해서 한번에 읽기파일로 저장 -> X
+블로그 subject 분리 -> X
+트러블슈팅은 일주일마다 공유 -> X
+웹사이트는 킵에 저장 후 mhtml로 변환 -> X
+인박스도 원드라이브로? -> X
+크롬 모바일 앱으로 관리 -> X
+-- Notion, chrome bookmark --> only chrome bookmark
 
 클립은 북마크의 Inbox 개념이다
 그렇다면 읽고 난 후에는 어떻게 관리할까
@@ -300,11 +258,6 @@ header change shortcut: ctrl + alt + 숫자
 - Obsidian (BackLinking)
 - super productivity app has thought that todo list doing with timer
 - vimwiki is good but doesn't have a timer
-
-* Google keep
-오늘 할일 보기 힘들다
-투두 항목이 개수 추적이 힘들다. 그 날 몇개의 작업을 했는지 알고싶다.
-cron으로 inbox 파일을 텔레그램으로 보내줘도 되겠다. 개수도 세서
 
 #### Ideal Note
 검색 기능
@@ -384,11 +337,10 @@ before pomodoro -> need check what todo
 3. some list
 4. todo
  - trello(kanban)?
-5. 인박스
-6. 분류 박스
-7. 생각할 거리, 생각, 짧게 생각 모아놓은 리스트가 있다
-8. 정보
-
+1. 인박스
+2. 분류 박스
+3. 생각할 거리, 생각, 짧게 생각 모아놓은 리스트가 있다
+4. 정보
 생각 정리
 꿀팁 정리
 클립 정리
@@ -414,34 +366,3 @@ before pomodoro -> need check what todo
 2. 잠깐 생각이 떠오르거나 궁금한 것들이 있다.
 3. 오늘 할 일 관리를 어떻게 할지
 - 다시 바로 확인할 내용, 언젠가 확인할 내용, 완료, 진행중,
-
-#### vimwiki
-- vimwiki write two space bar after sentence being a new line
-- category: #### split: -
-- link
-- todo
-- today journal
-- plain text and `:`
-
-in front of trouble note, write `!`
-
-- structure
-    1. 요약
-    2. 큰 그림부터 작은 그림으로
-    3. 사례
-    4. 반례
-    5. 정리
-    6. 참고
-
-#### image
-keep on desktop browser
-이미지를 데스크탑 브라우저용 킵 확장프로그램을 이용하면 이미지와 주소가 같이
-저장된다. 쓸만한 이미지를 킵에 저장 후에 노트로 옮겨야겠다
-
-#### 조건을 단순화
-decision 노트의 조건들을 단순화 시키는게 좋을까
-아니면 고민의 흔적을 모두 남기는게 좋을까
-decision은 모두 남기고 그것을 cleaning에 정리하는게 맞을까
-
-## Reference
-- [번역체-나무위키](https://namu.wiki/w/%EB%B2%88%EC%97%AD%EC%B2%B4%20%EB%AC%B8%EC%9E%A5/%EC%98%81%EC%96%B4#s-2.10)

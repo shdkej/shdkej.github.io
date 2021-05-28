@@ -1,9 +1,10 @@
 ---
-title   : Video
+title : Video
 summary :
-date    : 2020-07-18 09:29:41 +0100
-updated : 2021-05-09 20:57:33 +0100
-tags    : to_know_about_other_subject
+date : 2020-07-18 09:29:41 +0100
+updated : 2020-11-11 19:23:53 +0100
+tags :
+parent : [[Blogging]]
 ---
 
 - For just video that my log

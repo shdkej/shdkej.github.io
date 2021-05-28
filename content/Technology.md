@@ -2,8 +2,8 @@
 title   : Technology
 summary :
 date    : 2020-05-06 19:15:00 +0100
-updated : 2021-05-09 20:59:10 +0100
-tags    : develop
+updated : 2020-11-27 00:01:50 +0100
+tags    : deep_knowledge
 ---
 
 ## [[Linux]]
@@ -112,34 +112,6 @@ sum ns `div` length ns
 #### Recursion
 #### Monad
 
-#### etc
-모나드에서 한 함수의 출력이 다음의 입력이 되는 것은
-[디미터 법칙](../About_Development#지금의 메소드 체이닝과 디미터 법칙의 차이)을 위반하는 전형적인 사례가 아닌가!?
-
-고계함수는 독립적이다? 함수를 받아야하는 지점에서 이미 종속적인 것 아닌가?
-
-클로저를 쓴 함수에서, 어떻게 외부함수가 클로저에 변수를 할당할 수 있는거지?
-
-순수함수를 쓴다고 해서 스레드 세이프하지는 않은 것 같다
-```
-# 순수함수 아님
-func PlusOne(i int) int {
-    return i += 1
-}
-# 순수함수 맞음
-func PlusOne(i int) int {
-    return i + 1
-}
-```
-여기서 i를 공유하면 값이 원하는 대로 나오지 않을 수 있다.
-- 순수함수는 오로지 입력값에 의해서만 동작하므로 충돌 조건이 없다고 한다
-
-그래서 불변 객체를 쓰고, 새로운 객체를 만들어서 해결하려고 한다
-그렇다면 왜 순수함수가 중요할까?
-1. 사이드 이펙트가 없다
-2. 결정성이 있다 (= 멱등성이 있다)
-3. 테스트가 쉽다
-
 #### docker haskell
 - docker-compose need start point
 - Dockerfile need build image
@@ -164,32 +136,27 @@ func PlusOne(i int) int {
 - 도난당한 것으로 보고된 결제 수단에 대해서는 사용을 중지할 수 있어야 한다
 
 #### 분산 대 탈중앙화
-분산
-- 여러가지 일을 나눠 처리
-- 일을 나눠서 하므로 속도 상승, 고가용성 확보
-  지배 개체가 있음
-
-탈중앙화
-- 여러가지 일을 반복해서 처리
-- 신뢰성 상승
-- 모든 개체가 동등
-
-하지만 실제 세계에서 개개인의 의견을 듣는다면 모든 사람의 의견이 모아질 수 없기 때문에
+- 분산
+여러가지 일을 나눠 처리
+일을 나눠서 하므로 속도 상승, 고가용성 확보
+지배 개체가 있음
+- 탈중앙화
+여러가지 일을 반복해서 처리
+신뢰성 상승
+모든 개체가 동등
+- 하지만 실제 세계에서 개개인의 의견을 듣는다면 모든 사람의 의견이 모아질 수 없기 때문에
 여러 사람들의 의견을 모아 말해주는 의원을 뽑는 간접 민주주의 형식이
 나온 것 처럼 블록체인도 대표를 뽑을 수 밖에 없을 것 같다
 - 그렇다면 대표를 뽑는 방법은? 한국 의회를 보면 의회의 힘이 너무 강하다
-    - 스웨덴의 국회의원을 뽑는 방식과 국회의원의 마음가짐을 확인해보자
-
-[[Think#스웨덴 국회]]
-
-디지털화의 효용 대 블록체인의 효용 구분해야 한다
-
-블록체인의 오해
+ - 스웨덴의 국회의원을 뽑는 방식과 국회의원의 마음가짐을 확인해보자
+ - [[Think#스웨덴 국회]]
+- 디지털화의 효용 대 블록체인의 효용 구분해야 한다
+- 블록체인의 오해
 - 거래 비용 절감 (중앙 기관 없이 거래 가능하기 때문에)
-    - 오히려 중개업자가 양산되어 수수료가 더 나오고 있는 실정이다
-    - 동일한 작업을 할 때 에너지가 더 소비된다 (중복 작업을 하기 때문에)
+- 오히려 중개업자가 양산되어 수수료가 더 나오고 있는 실정이다
+- 동일한 작업을 할 때 에너지가 더 소비된다 (중복 작업을 하기 때문에)
 - 데이터 활용 (위변조가 어렵기에 안전하고, 접근 권한 설정이 가능하다)
-    - 대신 모든 데이터가 노출된 상태다(암호화 되어있더라도)
+- 대신 모든 데이터가 노출된 상태다(암호화 되어있더라도)
 - 사용성이 떨어진다
 - 노드, 피어, 트랜잭션
 
@@ -216,25 +183,6 @@ func PlusOne(i int) int {
 ○ 보상이 추가된다 나의 자원은 비워놓고 중앙에서 가져다 쓰기를 원할 수 있다 사용자는 그냥 중앙에서 내려받기를 원하지 내 자원이 사용되기를 원하지 않는다
 - p2p 특성상 노드들이 오프라인 상태일 경우가 발생하는데 이 때 공격에 대비하기 위해 비잔틴문제해결 알고리즘의 얘기가 나오게 되었군
 
-#### 블록체인을 회사 안의 플랫폼으로 사용하는 경우
-신뢰성은 다소 포기하는 것인가?
-블록체인에서 신뢰성은 서로 감시한다는 것에서 오는데 회사가 블록체인을 운영한다면
-감시할 주체가 없지 않은가?
-
-#### 블록체인과 공개 된 정보
-블록체인은 중앙 관리가 없고 각 노드들이 서로 감시하는 방식으로 보안이 유지되는
-컨셉인데 공개 돼있다고 해도 감지하는 시스템이 있어야 알 수 있지 아무리 노드가
-많아도 아무도 안 지켜볼 수도 있다. 인터넷에 수많은 데이터가 있어도 알려져야 그
-정보가 사람들에게 닿는거지 그냥 있다고 누가 알 수 있는 것이 아니다
-블록체인은 보안성이 있는 것인가?
-- 변조가 되면 자신의 해시와 변조된 해시가 다르기 때문에 감지가 된다
-- 위조 시 앞, 뒤의 노드를 같이 변조해야 한다. 그래서 51% 이상해야 탈취가 되는데 그
-정도 자원을 얻으려면 필요한 비용이 훨씬 많이 들게 하여 51% 공격을 무의미하게
-만든다.
-
-채굴과 똑같은 방식인 척 위장한 트랜잭션을 구분해낼 수 있나?
-- 머클 트리
-
 ## Drone
 보조배터리
 드론 몸통
@@ -254,29 +202,32 @@ GPS
 
 호버링
 
+Hobbydirector.com < 부품 사이트
+헤파이토스 << DIY 선구자 [http://blog.naver.com/dkwltmdgus](http://blog.naver.com/dkwltmdgus)
+[http://sensibilityit.tistory.com/category/드론](http://sensibilityit.tistory.com/category/드론) << 상세구현자
+Multiwii < 드론 상태제어 프로그램
+[http://bbulog.tistory.com/18](http://bbulog.tistory.com/18)
+스마트폰 자이로센서 확인 시험 소스 사이트
+
 저가 드론의 FC는 어떻게 자이로센서 모터 등을 값싸게 구성할 수 있는가
 
 FC의 제작 ? 방법은?
 
-참고 사이트
-- [부품 사이트](Hobbydirector.com)
-- [헤파이토스 - DIY 선구자](http://blog.naver.com/dkwltmdgus)
-- [상세구현자](http://sensibilityit.tistory.com/category/드론)
-- Multiwii < 드론 상태제어 프로그램
-- [스마트폰 자이로센서 확인 시험 소스 사이트](http://bbulog.tistory.com/18)
-- [드론 토탈](anadronestarting.com)
-- [졸업작품 만든사람](http://hs36.tistory.com/42)
-- [FC 종류](http://teamgds.tistory.com/78)
-- [드론 부품 구매](http://mechasolution.com)
-- [강의](http://opensource.kofac.re.kr/edu/detail_view.do?aIdx=100)
-- Blynk << 아두이노,라즈베리파이 연동 센서 조절 앱
-- [멀티위 가이드](https://www.openmakerlab.co.kr/single-post/2016/04/14/Open-Maker-Lab-Board%EB%A1%9C-250%EC%BF%BC%EB%93%9C%EC%BD%A5%ED%84%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0)
-- [소스 배포자 Daniel Heo](http://blog.naver.com/PostView.nhn?blogId=peter_jinsoo&logNo=220327320784&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView)
-- [소스](https://blog.naver.com/ejtkddl/220401728787)
-- [코코아팹](https://kocoafab.cc/tutorial/view/596)
-- [자동주행 성공자](http://blog.naver.com/lbiith/220915662242)
-- [카메라 프로그램 오픈 소스](http://zoneminder.readthedocs.io/en/latest/installationguide/index.html)
-- [안드로이드 센서 확인](http://bitsoul.tistory.com/121)
+드론 토탈 < anadronestarting.com
+[http://hs36.tistory.com/42](http://hs36.tistory.com/42) << 졸업작품 만든사람
+[http://teamgds.tistory.com/78](http://teamgds.tistory.com/78) << FC 종류
+[http://mechasolution.com](http://mechasolution.com) 드론 부품 구매
+[http://opensource.kofac.re.kr/edu/detail_view.do?aIdx=100](http://opensource.kofac.re.kr/edu/detail_view.do?aIdx=100) < 강의
+Blynk << 아두이노,라즈베리파이 연동 센서 조절 앱
+[https://www.openmakerlab.co.kr/single-post/2016/04/14/Open-Maker-Lab-Board%EB%A1%9C-250%EC%BF%BC%EB%93%9C%EC%BD%A5%ED%84%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0](https://www.openmakerlab.co.kr/single-post/2016/04/14/Open-Maker-Lab-Board%EB%A1%9C-250%EC%BF%BC%EB%93%9C%EC%BD%A5%ED%84%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0)
+멀티위 가이드
+[http://blog.naver.com/PostView.nhn?blogId=peter_jinsoo&logNo=220327320784&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView](http://blog.naver.com/PostView.nhn?blogId=peter_jinsoo&logNo=220327320784&parentCategoryNo=&categoryNo=&viewDate=&isShowPopularPosts=false&from=postView) <<소스 배포자 Daniel Heo
+[https://blog.naver.com/ejtkddl/220401728787](https://blog.naver.com/ejtkddl/220401728787) << 소스
+[https://kocoafab.cc/tutorial/view/596](https://kocoafab.cc/tutorial/view/596) 코코아팹
+[http://blog.naver.com/lbiith/220915662242](http://blog.naver.com/lbiith/220915662242) 자동주행 성공자
+카메라 프로그램 오픈 소스
+[http://zoneminder.readthedocs.io/en/latest/installationguide/index.html](http://zoneminder.readthedocs.io/en/latest/installationguide/index.html)
+안드로이드 센서 확인 [http://bitsoul.tistory.com/121](http://bitsoul.tistory.com/121)
 
 #### 부품 구매
 연결 조립
@@ -319,7 +270,7 @@ Gyro_x
 센서 보정값
 - 1 필터 (칼만,DMP)
 - 가속도+자이로 값 전달 (안정적으로)
-    - -> 센서의 평균값을 구하고 필터 공식을 대입해 출력값 구한다.
+-> 센서의 평균값을 구하고 필터 공식을 대입해 출력값 구한다.
 - 2 PID
 - 최종 출력값을 안정되게 보내주는 제어방법
 - K = 사용자가 임의의 값을 넣는 것 같다 (?)
@@ -402,9 +353,10 @@ V 11 A 2/5 W 25
 V 11 A 20 W 28
 
 구상 중.. 킷도 괜찮겠다 싶다..
-http://daduino.co.kr/product/detail.html?product_no=1237&cate_no=78&display_group=1
+[http://daduino.co.kr/product/detail.html?product_no=1237&cate_no=78&display_group=1](http://daduino.co.kr/product/detail.html?product_no=1237&cate_no=78&display_group=1)
 
-[motor reference](http://blog.naver.com/79k3le5ze/10110646393)
+#### motor reference
+[http://blog.naver.com/79k3le5ze/10110646393](http://blog.naver.com/79k3le5ze/10110646393)
 
 ## 스포츠 테크놀로지 업체
 - WHOOP
@@ -413,29 +365,6 @@ http://daduino.co.kr/product/detail.html?product_no=1237&cate_no=78&display_grou
 - 국제스포츠연구센터 CIES
 
 ## ML
-#### 인공지능
-기계도 학습에 의해서 정보를 습득하고 공부한다
-데이터 라벨링을 해서 빅데이터를 이용해 공부를 시킨다
-학습은 뇌세포의 연결강화 - 도널드 헵 -> 가중치(weight) 개념의 토대
-인공지능 신경망은 뇌를 모델로 했다. (사람이 기준이다)
-
-현재까지 해결된 문제들
-- 한 방향의 학습모델은 XOR 문제를 해결하지 못한다
-    - Output을 Input에 다시 적용
-    - 역전파 알고리즘
-    - CNN
-- 신경망이 깊어지면 예전 신경망 데이터가 날아간다 (Vanishing Gradient)
-    - 초기화가 중요하고, 초기화의 효율성이 좋아져야 한다.
-    - 자비어 초기화
-- 학습을 많이 시키면 오히려 부정확해진다
-
-인공지능 연구목적
-- 인간 능력 증진
-- 사람이 어떻게 사고하는지 이해하기 위해
-
-> 출처: 야사와 만화로 배우는 인공지능
-
-#### workflow
 - 데이터 클리닝
 - 데이터 축소
 - 데이터변환
@@ -446,12 +375,16 @@ http://daduino.co.kr/product/detail.html?product_no=1237&cate_no=78&display_grou
 - 데이터분리
 - k 겹 교차검증
 
-#### 구성 요소
 placeholder
 Variable
 Matmul
 Nn.relu
 Nn.softmax
+
+Nn 응용으로 간단한 승부예측 프로그램 생성해본다
+
+Y_date = 승,무,패
+X 조건 : 이전 경기와의 경기간격 + 이동거리, 팀 포인트, 상대전적, 선수 컨디션
 
 파일에서 데이터 불러오는 방법
 
@@ -476,14 +409,6 @@ easy update test model
 
 training
 serving
-
-#### ml devops
-data composing
-data preprocessing
-model build to `.h5`
-
-loading model
-route page
 
 #### predicting data
 DNN
@@ -571,79 +496,5 @@ Iot는 어떤 환경을 만들어 줄 수 있을까
 Apple does this strategy too.
 little core, big core
 
-- Arm 아키텍처가 저전력에 무조건 유리하다?
-  코어당 클럭 수를 다르게 할 수 있어서?
-  태블릿에 자주 쓰이는 AP는 arm
-  PC에 자주 쓰이는 CPU는 인텔식 x64
-  arm 아키텍처는 쿨러가 아예 필요 없다?
-
-애플 실리콘은 인텔 cpu보다 더 성능이 좋은 arm cpu를 구현했다
-
 ## Rust
 ## Typescript
-
-## Oauth2
-브라우저, 사용자, 서버, Oauth 제공자
-
-서버는 브라우저에 Oauth를 표시한다
-사용자는 브라우저에 Oauth 버튼을 누른다
-브라우저는 서버에 사용자 정보를 주면서 신호를 준다
-서버는 Oauth 제공자에게 사용자 정보를 준다
-Oauth 제공자는 사용자에게 코드를 보낸다
-사용자는 서버에 코드를 보낸다
-서버는 Oauth 제공자에게 코드와 사용자 정보를 보낸다
-Oauth 제공자는 확인 후 서버에 토큰을 준다
-
-사용자 -> 서버 -> Oauth (사용자 정보)
-사용자 <--------- Oauth (코드)
-사용자 -> 서버 -> Oauth (사용자 정보 + 코드)
-          서버 <- Oauth (인증 후 토큰 제공)
-
-서버가 바뀌어도 사용자는 자신이 원래 하던 일을 그대로 할 수 있나?
-
-## agile
-product build in one day. design to deploy
-
-## 데이터 분석
-데이터 출처 이해
-`# 보통 csv 파일로 받는다`
-데이터 크기 확인
-```
-data = pd.read_csv(file_path)
-data.info()
-```
-데이터 구성 요소(키, 몸무게) 확인
-
-속성 탐색 (데이터로 무엇을 얻어낼지 생각)
-구성 요소 간의 상관 관계 탐색
-분석
-시각화
-
-pandas
-
-분석 결과의 타당성을 검증하기 위해 분석 대상 간 통계적 차이를 검정하는 과정이
-필요하다
-- [ ] 통계적 차이가 뭐지?
-
-1. 텍스트 마이닝: 데이터 파싱 - 시각화
-2. 미래 예측 (회귀 분석)
-
-arima
-의사결정 트리
-랜덤 포레스트
-XGBoost
-heuristic
-
-머신러닝을 위한 데이터
-https://archive.ics.uci.edu/ml/index.php
-
-## react function vs class
-function 안에 function을 쓰면 렌더링 할 때 다시 렌더링해서 성능 저하 우려가 있다
-`useCallback`이라는 함수를 쓰면 재렌더링을 막아준다.
-근데 아예 밖으로 빼도 된다.
-- https://stackoverflow.com/questions/46138145/functions-in-stateless-components
-- useState, useEffect, useCallback 등이 지원된다
-
-class component는 this나 props를 넘겨주는 작업이 있어서 거추장스럽다
-기존에는 react의 lifecycle을 사용하려면 class를 써야했는데, hooks(useEffect
-등)이 등장하면서 해결되었고, 함수형 컴포넌트를 권장하고 있다.

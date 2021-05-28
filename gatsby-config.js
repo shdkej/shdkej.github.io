@@ -7,6 +7,9 @@ module.exports = {
     },
     description: `SH's wiki`,
     siteUrl: `https://shdkej.com`,
+    social: {
+      twitter: `shdkej`
+    }
   },
   plugins: [
     {
@@ -20,9 +23,16 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+        /*
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              showCaptions: true,
+            }
+          },
+        */
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-autolink-headers`,
-          `gatsby-remark-images-anywhere`,
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
@@ -32,24 +42,18 @@ module.exports = {
                 toHeading: 6
             }
           },
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-smartypants`,
+          {
+            resolve: `gatsby-remark-images-anywhere`,
+          },
         ]
       }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-feed`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-          trackingId: "UA-110967461-3",
-      },
-    },
     /*
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -62,5 +66,22 @@ module.exports = {
       }
     },
     */
+    `gatsby-plugin-react-helmet`,
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+          trackingId: "UA-110967461-3",
+      },
+    },
+    `gatsby-plugin-sitemap`,
+    {
+        resolve: `gatsby-plugin-google-adsense`,
+        options: {
+            publisherId: `ca-pub-8002857692825455`
+        }
+    },
   ]
 }

@@ -2,7 +2,7 @@
 title   : Design
 summary :
 date    : 2020-05-18 15:53:37 +0100
-updated : 2021-05-20 21:24:26 +0100
+updated : 2020-11-26 22:47:12 +0100
 tags    : to_know_about_other_subject
 ---
 
@@ -12,11 +12,6 @@ tags    : to_know_about_other_subject
 접근성 기능이 제한되어 있다면 아예 접근할 수가 없게 된다.
 접근성은 최소기능이 아니라 필수기능이어야 한다.
 벽이 아니라 다리가되고, 다리보다는 평평한 길이 되어야 한다.
-- [W3C 접근성 검사기](https://jigsaw.w3.org/css-validator/)
-- [WAVE 접근성 검사기](https://wave.webaim.org/)
-- [네이버 접근성 센터](https://nuli.navercorp.com/education/disabilityType)
-- [명암비 조합 파인더](https://app.contrast-finder.org/?lang=ko)
-- [웹 접근성 가이드라인](http://web-accessibility.carnegiemuseums.org/code/navigation/)
 
 #### 스크린리더가 네비게이션을 읽지 않도록 해야한다
 #### 텍스트로 만든 링크 자체가 의미가 가지게 만들어야 한다
@@ -29,17 +24,17 @@ tags    : to_know_about_other_subject
 ## Color
 텔레비전 모니터나 조명 등에서, 다른 색의 불빛을 겹쳐 새로운 색을 만드는 가산혼합의 삼원색은, 통상 빨강·초록·파랑의 삼색이다.
 그림물감 혼합, 칼라 인쇄로 색 잉크 감산혼합의 경우의 삼원색은, 시안, 마젠타·노랑이다.
-![Color](./img/origin_color.jpeg)
+![Color](https://photos.app.goo.gl/FaUpWvyq4KN5ZbcSA)
 
 가산혼합
-- 빨강	#FF0000
-- 초록	#00FF00
-- 파랑	#0000FF
+빨강	#FF0000
+초록	#00FF00
+파랑	#0000FF
 
 감산혼합
-- 시안	#00FFFF
-- 마젠타 #FF00FF
-- 노랑	#FFFF00
+시안	#00FFFF
+마젠타	#FF00FF
+노랑	#FFFF00
 
 ## Font
 굴림은 산세리프. 꽉 찬 글씨. 둥글둥글한 글씨
@@ -88,8 +83,8 @@ i want when 15" monitor half size view is ... index view is better?
  height:  180px;
  margin-top: -180px;
 }
+https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header
 ```
-- https://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header
 
 #### font-size
 font-size 19 < x < 28
@@ -102,6 +97,5 @@ brunch
 
 ## Reference
 - https://csslayout.io/patterns/
-- [디자인 시스템을 구성하는 방법](https://medium.com/guleum/디자인-시스템을-구성하는-방법-beefa8214884)
-- [디자인 시각적 요소들](https://brunch.co.kr/@shaun/40)
-- [웹폰트](https://wit.nts-corp.com/2017/02/13/4258)
+- https://medium.com/guleum/%EB%94%94%EC%9E%90%EC%9D%B8-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%84-%EA%B5%AC%EC%84%B1%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-beefa8214884
+- https://brunch.co.kr/@shaun/40?utm_source=gaerae.com&utm_campaign=%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%8A%A4%EB%9F%BD%EB%8B%A4&utm_medium=social

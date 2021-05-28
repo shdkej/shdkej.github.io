@@ -11,29 +11,16 @@ const TagsPage = ({
     },
 }) => (
     <Layout title={title}>
-      <h1>Index</h1>
-      <div className="square-field">
+      <h1>Tags</h1>
+      <ul>
         {group.map(tag => (
-            <div className="square">
-            {tag.fieldValue}
-            <ul>
-            {tag.nodes.map(node => (
-                <li>
-                <Link to={node.fields.slug} key={tag.fieldValue}>
-                  {node.frontmatter.title}
-                  ({node.timeToRead > 30
-                      ? <span style={{color:`purple`}}>{node.timeToRead}</span>
-                      : node.timeToRead}min)
-                </Link>
-                </li>
-            ))}
-            </ul>
-            </div>
+            <li key={tag.fieldValue}>
+            <Link to={`/tags/${tag.fieldValue}/`}>
+              {tag.fieldValue} ({tag.totalCount})
+            </Link>
+            </li>
         ))}
-        <div className="square-center">
-            Evolve
-        </div>
-      </div>
+      </ul>
     </Layout>
 )
 
@@ -49,15 +36,7 @@ export const pageQuery = graphql`
     allMarkdownRemark {
       group(field: frontmatter___tags) {
         fieldValue
-        nodes {
-          timeToRead
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
-        }
+        totalCount
       }
     }
   }

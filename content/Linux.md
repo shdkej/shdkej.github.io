@@ -1,9 +1,9 @@
 ---
-title   : Linux
+title : Linux
 summary :
-date    : 2020-05-06 19:57:59 +0100
-updated : 2021-05-27 19:49:51 +0900
-tags    :
+date : 2020-05-06 19:57:59 +0100
+updated : 2020-11-22 16:07:42 +0100
+tags : toy
 ---
 
 ## Directory
@@ -73,22 +73,14 @@ so, need change alt_r -> hangul
 
 #### kubuntu korean setting
 - kubuntu default korean failed
-  - this layout is not korean
+ - this layout is not korean
 - fcfix failed
 - uim byeoru success
-  - `sudo apt-get install uim uim-byeoru`
-  - language settings -> uim
-  - execute uim > set default, remove global option, set byeoru on/off to hangul
+ - `sudo apt-get install uim uim-byeoru`
 
 ## Linux distro
 - base ubuntu, but it is no beauty -> kubuntu, but it is no light-weight -> mx-linux
 - mx linux is not user-friendly, back to the ubuntu
-
-#### distros
-mx linux
-deepin
-chrome
-backslash
 
 #### linux set environment problem
 - vim 8.1 >
@@ -284,6 +276,7 @@ Primary_conninfo = 'host=MASTER IP port=5432 user=repluser password=passwrd'
 ```
 
 [설치](https://www.lesstif.com/pages/viewpage.action?pageId=31850584)
+
 [클러스터링](http://egloos.zum.com/histLinux/v/1227710)
 
 ## oracle DB
@@ -511,11 +504,14 @@ sudo fdisk /dev/sdb
 n
 엔터 엔터
 w
+
 //포맷
 sudo mkfs.ext4 /dev/sdb1
+
 //마운트
 sudo mkdir /exthdd
 sudo mount -t ext4 /dev/sdb1 /exthdd
+
 //부팅 할 때 자동으로 마운트
 ls -l /dev/disk/by-uuid > uuidtxt
 ```
@@ -539,7 +535,7 @@ uuid 내용을 `/etc/fstab` 에 저장
 `df -h` 로 확인
 
 #### How to expand VirtualBox's Virtual Hard Disk - N_CODER
-https://pradeepgali.blogspot.com/2014/01/how-to-expand-virtualboxs-virtual-hard.html
+[https://pradeepgali.blogspot.com/2014/01/how-to-expand-virtualboxs-virtual-hard.html](https://pradeepgali.blogspot.com/2014/01/how-to-expand-virtualboxs-virtual-hard.html)
 
 ## NFS 서비스
 `vi /etc/exports`
@@ -617,12 +613,6 @@ git bash 홈 디렉토리 변경법
 
 [ ] 원격 저장소 branch 가져오기
 
-#### push without login
-- `ssh-keygen -t rsa -C "<git email>" -f $HOME/.ssh/<ssh name>`
-- github web page -> settings -> SSH and GPG keys -> New SSH keys.
-- `ssh -T git@github.com` # test to git
-- `.git/config` > `url = git@github.com:<user>/<repository>.git`
-
 #### git sensitive files delete
 - https://stackoverflow.com/questions/872565/remove-sensitive-files-and-their-commits-from-git-history
 - it also deleted file...
@@ -635,7 +625,6 @@ git bash 홈 디렉토리 변경법
 #### git ignore
 - `git rm --cache (folder -r) <filename>`
 
-
 ## video recording
 [obs-studio](https://obsproject.com/wiki/install-instructions#linux)
 - `apt install ffmpeg`
@@ -645,12 +634,10 @@ git bash 홈 디렉토리 변경법
 - filter setting
     - noise suppression -60dB
 
-
 ## WD Passport Unlock in linux
 - https://github.com/0-duke/wdpassport-utils
 - `sudo pip3 install git+https://github.com/0-duke/wdpassport-utils`
 - `sudo wdpassport-utils.py -u -d /dev/sdb`
-
 
 ## linux battery
 - status check
@@ -695,23 +682,17 @@ git bash 홈 디렉토리 변경법
 
 > 원래 wsl이 설치되고 2로 업그레이드 시켜줘야 하는데 win10 home이라서 그런지 최신버전으로 업데이트해서 그런지 2로 바로 적용됨
 
-#### standard stream
-- stdin
-- stdout
-- stderr
-
-#### SIGTERM
-- 종료 신호. 일반적으로 ctrl+z, ctrl+c 등을 눌렀을 때 신호가 발생하게 되있다
-- 각 프로그래밍 언어에서 시그널 호출이 가능하다
-- SIGINT, SIGKILL 등도 있는데, SIGKILL은 즉각 종료되지만
-  SIGTERM은 신호를 받아서 내부 처리가 가능하다. graceful shutdown을 구현하는
-  등으로 활용 가능하다
+#### what is stdin
+- standard stream
+ - stdin
+ - stdout
+ - stderr
 
 #### crontab not working
-- `/etc/crontab` <-> `crontab -e`
- - `/etc/crontab` is system cron
- - `crontab -e` is user cron
-- `crontab <filename>`
+- /etc/crontab <-> crontab -e
+ - /etc/crontab is system cron
+ - crontab -e is user cron
+- crontab <filename>
 
 #### android mirroring app
 - scrcpy
@@ -770,124 +751,3 @@ drag copy area -> mouse center button click in terminal window
 
 ## ubuntu backup, snapshot
 timeshift
-
-## linux settings
-shortcut - pomodoro alt+space
-bluetooth with my phone
-
-## linux text to image
-```
-echo "Hello world" | convert -size 360x360 xc:white -font "FreeMono" \
-  -pointsize 12 -fill black -annotate +15+30 "@-" -trim \
-  -bordercolor "#FFF" -border 10 +repage hello.gif
-```
-
-## ipad as second monitor
-1. create intel config file
-2. reboot
-3. `./ipad.sh -b -h`
-
-## font broken
-- every font to square
- - `sudo fc-cache --force --verbose`
- - and reboot
-
-## terminal app
-- [terminal browser](https://www.brow.sh/docs/extensions/)
-
-## vim window size
-- `ctrl-w 10 +` window 10 line size up
-
-## vim inoremap
-- `imap <key> <C-O><complex-key>`
-- `<C-O>` means insert mode to revert to normal mode momentarily
-- https://vi.stackexchange.com/questions/13162/inoremap-nnoremap
-
-## ubuntu font
-- mv ttf file to `~/.fonts`
-- terminal font list update `fc-cache -f -v`
-- inconsolata
-
-## python in vim
-- `autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>`
- - https://stackoverflow.com/questions/18948491/running-python-code-in-vim
-
-## linux keyboard delay
-- `xset r rate 200 30`
- - https://wiki.archlinux.org/index.php/Xorg/Keyboard_configuration#Adjusting_typematic_delay_and_rate
-
-## touchpad gesture
-- browser tab close
-- alt tab
-- back, forward
-- notification center
-
-## crontab 에 스크립트 에러 없이 등록하기
-`echo "0 */1   * * *   root    /home/sh/dotfiles/rclone.sh >/dev/null 2>&1" >> /etc/crontab`
-
-#### TLS
-```
-openssl req -X509 -nodes -days 365 -newkey rsa:2048 \
-    -out ingress-tls.crt \
-    -keyout ingress-tls.key \
-    -subj "/CN=example.com/O=ingress-tls"
-```
-
-#### ssh-keygen
-ssh-keygen 으로 키 만들고 pbcopy로 복사
-
-ssh 생성해서 관리하고 github과 연동하는 것을 자연스럽게 할 수 있어야겠다
-ci 이용 시나 push할 때 ssh permission을 확인하려는 목적인가?
-
-.known_hosts
-.authorized_keys
-
-public 과 private.
-private 는 목적지. 서버에서만 가지고 있는다
-public 은 접속자. 클라이언트가 자유롭게 갖는다
-
-ci 툴에서 서버는 ci 서버가 되는 것인가? 클라이언트가 내가 되고?
-- ci 툴이 접속자고, github 저장소가 서버가 되어서, 서버에서 pub키를 가지고
-  접속자가 private key를 가진다
-
-클라우드 서비스에서는 노트북에서 생성한 ssh 를 cloud instance에 넘기고 내가 다시
-public이 되어서 접근하는 것인가?
-private는 미리 aws에 올려놓고 그것을 가져다 쓰도록 하면 좋겠다
-
-포맷을 대비해서 ssh key를 파일로 갖고 있으려고 하는데 private key를 갖고 있어도
-되나?
-
-공개키를 서버에 등록해서 클라이언트가 비밀키를 가지고 있는다?
-
-authorized_keys에 공개 키를 복사해 넣으면, 접속하는 곳에서 비밀키를 물어본다
-
-aws 에서도 pub키를 서버에 보내고, 비밀키는 노트북에 둔다
-
-.pem 파일은 뭐지
-
-ssh 는 다른 컴퓨터에 접근할 때 키를 만들어서
-상대 컴퓨터에 공개키를 제공해서 내가 들어간다고 알려주면 된다?
-상대 컴퓨터가 내 공개키를 가지고 있다는 것은 내 접속을 허용하겠다는 의미다?
-그럼 해커가 공개키를 쑤셔넣으면 보안이 뚫리는건가?
-
-## cleaning a big size file in all git commit
-bfg
-```
-docker run -it --rm \
-    --volume "$PWD:/home/bfg/workspace" \
-    koenrh/bfg \
-    <COMMAND> //ex: --delete-files <filename>
-              //    --strip-blobs-bigger-than 50M
-
-
-git reflog expire --expire=now --all && git gc --prune=now --aggressive
-```
-
-other way - git filter-branch
-
-#### git 브랜치 바꿔서 현재 수정 가져가기
-수정을 했는데 브랜치를 바꿔서 커밋하고 싶은 경우가 있다
-```
-git stash
-git stash branch <new-branch> stash@{0}
-```

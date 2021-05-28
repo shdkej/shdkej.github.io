@@ -2,25 +2,20 @@
 title   : Blogging
 summary : build blog
 date    : 2020-03-17 11:22:19 +0100
-updated : 2021-05-23 18:49:43 +0900
-tags    : communication
+updated : 2020-11-23 22:41:09 +0100
+tags    : share_source
 ---
-
 - https://shdkej.com
 - https://blog.naver.com/shdkej
 - [vlog](Video)
 
 ## Post
 [[Digital_Content]]
-[[Life_Tracking]]
-[Decision Monitor Size](Decision_Monitor_Size)
-[100k concurrent server](100k_concurrent_server)
-[[CI_CD]]
-[[Streaming_server]]
-[[My_space]]
-[[Evolve_Architecture]]
 
 ## Environment
+
+#### wiki with blogging
+- wiki-gatsby
 
 #### static site generator
 - gatsby
@@ -37,6 +32,15 @@ tags    : communication
 - client side is good to second access(moving page to page)
 - server side is good to first access(find webpage, and access webpage)
 
+## 저작권
+남의 컨텐츠를 비슷하게 따라 그려서 블로그에 올려도 되는가?
+기안이 웹에서 검색한 사진을 참고해서 그림을 그리는 것 괜찮은가?
+
+인터넷의 사진을 퍼서 내 블로그에 실어도 되는가?
+- 인용물보다 창작 부분의 내용이 많고, 관련이 있어야 하며 주를 이루어야 한다.
+  구분이 되있어야 하고 변형을 해서는 안되며
+  출처를 남겨야 한다
+- https://m.blog.naver.com/jaming88/221687523030
 
 ## 번역시 고민 요소
 원작자가 쓴 용어를 그대로 쓸 것인가, 편한 용어로 퉁 칠 것인가
@@ -45,29 +49,23 @@ tags    : communication
 
 용어사전. 용어를 직역할 것인가, 비슷한 용어를 끌어올 것인가
 
-의역을 통해 잘 읽히게 할 수 있지만 원작자의 전하는 바와 달라질 수 있다
-의역을 하면 그 시대에만 한정되는 언어로 쓰여질 수 있다
-그 때는 좋아보였지만 갈수록 빛을 잃는 문장이 될 수 있다
-
-원문의 형태와 같게 하는게 좋을까? 긴 문장은 긴 문장으로 번역?
-
-
 ## Content
 - share experience
 - 1 page ~ 2 page
 - easy
 - review need Usage tip
 - with cartoon or picture
-[[Journal#Writing technique]]
+- [[Journal#Writing technique]]
 
-#### 설명을 그림(표, 코드) 위에 놓을까, 밑에 놓을까
+Item List
+- program(develop)
+- program(non-develop)
+- tech gear
+- clothes
+- travel pack
+- Home item
 
-#### 뭔가를 설명하기 위해 추가적인 개념이 있을 경우
-그 개념을 먼저 설명한 뒤에 원래 설명을 한다 vs
-원래 설명을 하고 그 개념을 뒤에 붙인다
-
-프로젝트를 직접 해봄으로써 새로운 개념을 알게 되는게 더 쉬운 것 같아서 원래
-설명을 먼저하는 것이 더 이해하기 쉽지 않을까 싶다.
+day tracking
 
 #### 읽고 싶은 제목
 - 관심 있는 키워드
@@ -114,16 +112,9 @@ note taking
 영어로도 올리기
 작성 시 가이드 보고 올리기
 
-#### Item List
-- program(develop)
-- program(non-develop)
-- tech gear
-- clothes
-- travel pack
-- Home item
-
 #### inspired
 - by john grib for vimwiki to blog
 - ohtani for mandarart table
 
 ![mandarart](img/ohtani.gif)
+https://www.adihsodot.com

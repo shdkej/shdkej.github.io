@@ -8,13 +8,13 @@ import Popup from "../components/popup"
 import BackLink from "../components/backlink"
 
 const MarkDownLinkTohref = (text) => {
-    //const href_text = text.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="../$2" target="_blank">$1</a>')
+    //let href_text = text.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="../$2">$2</a>')
     //href_text = href_text.replace(/\[\[(.+?)\]\]/g, `<a href="../$1">$1</a>`)
     const renders = text.split(/\[\[(.+?)\]\]/g).map(match => {
         if (!match.includes("</")) {
-            return <Popup key={match} text={match} />
+            return <Popup text={match} />
         }
-        return <section key={match} dangerouslySetInnerHTML={{ __html: match }}></section>
+        return <section dangerouslySetInnerHTML={{ __html: match }}></section>
     })
 
     return renders
@@ -24,13 +24,12 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { slug, previous, next} = pageContext
-  const slugTrimSlush = slug.slice(1, -1)
-  const slugToUpper = slugTrimSlush.split("_").map(x => x.charAt(0).toUpperCase() + x.slice(1)).join("_")
-  const blame = "https://github.com/shdkej/shdkej.github.io/blame/master/content/" + slugToUpper + ".md"
+  const slugWithoutSlush = slug.slice(0, -1)
+  const blame = "https://github.com/shdkej/shdkej.github.io/blame/master/content" + slugWithoutSlush + ".md"
 
   //const tocHeader = <p className="content-toc">Table of Contents</p>
   const toc = <nav className="content-toc" dangerouslySetInnerHTML={{ __html: post.tableOfContents }}></nav>
-  const tag = <>Tag: <Link to={`/tags`}>{post.frontmatter.tags}</Link></>
+  const tag = <>Tag: <Link to={`/tags/${post.frontmatter.tags}`}>{post.frontmatter.tags}</Link></>
 
   const parents = post.frontmatter.parent
   const parent_render = <p>parent: <Link to={`/${parents}`}>{parents}</Link></p>
@@ -51,11 +50,11 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           </h1>
           <p>{post.frontmatter.summary}</p>
           <small style={{width: `50%`}}>
-            Created: {post.frontmatter.date} >
+            created: {post.frontmatter.date},
               <a
                 href={blame}
               >
-              Updated: {post.frontmatter.updated}
+              updated: {post.frontmatter.updated}
               </a>
           {parents ? parent_render : null}
           </small>
@@ -93,7 +92,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
           </li>
         </ul>
       </nav>
-      <Utterances repo="shdkej/shdkej.github.io" />
+      <Utterances repo="shdkej/wiki-gatsby" />
     </Layout>
   )
 }
@@ -116,8 +115,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         summary
-        date(formatString: "YYYY, MM DD")
-        updated(formatString: "YYYY, MM DD")
+        date(formatString: "MMMM DD, YYYY")
+        updated(formatString: "MMMM DD, YYYY")
         tags
         parent
       }

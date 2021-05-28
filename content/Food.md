@@ -2,7 +2,7 @@
 title   : Food
 summary :
 date    : 2020-05-04 15:23:16 +0100
-updated : 2021-02-07 02:04:58 +0100
+updated : 2020-11-11 21:29:34 +0100
 tags    : health
 ---
 
@@ -41,12 +41,8 @@ I need 2200~2400 kcal (If I want bulk up, 2500~2800)
 ## Snack
 - Dosirak
 - Tea
-- Smoothie 과일 스무디
+- Smoothie
 - Fruit
-- 채소 음료
-- 닭가슴살
-- 고구마
-- 건강즙 (배도라지즙, 양배추즙 등)
 
 ## Defeats
 당

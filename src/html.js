@@ -22,12 +22,11 @@ export default function HTML(props) {
             `,}}
         />
         <script
-            key="adsense"
-            data-ad-client="ca-pub-8002857692825455"
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+            dangerouslySetInnerHTML={{
+                __html: `
+                <script data-ad-client="ca-pub-8002857692825455" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                `,}}
         />
-        <meta name="naver-site-verification" content="0738293103ffff9ea9eb43b3c9621e5fb353f97b" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

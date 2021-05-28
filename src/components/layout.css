@@ -17,7 +17,7 @@ body {
     margin: 1rem auto;
     padding: 1rem;
     font-size: 1rem;
-    font-family: sans-serif;
+    font-family: ibm plex mono,monospace;
 }
 
 h1 {
@@ -31,19 +31,16 @@ p {
 a {
     color: #40a0bd;
     display: inline-block;
-    max-width: 100%;
+}
+
+article a {
+    width: 70%;
     overflow: hidden;
     text-overflow: ellipsis;
-    vertical-align: middle;
 }
 
 a:visited {
     color: #40a0ba;
-}
-
-pre {
-    background: #161b22;
-    padding: 15px;
 }
 
 code {
@@ -52,19 +49,12 @@ code {
 }
 
 blockquote {
+    font-family: serif;
     font-style: italic;
 }
 
 header h3 {
     margin: 2em 0 0 0;
-}
-
-h4:before {
-    content: "## ";
-}
-
-ul {
-    padding-inline-start: 20px;
 }
 
 :target::before {
@@ -91,38 +81,18 @@ ul {
     }
 }
 
-@media (max-width: 600px) {
-    .square {
-        grid-column: 1 / 4;
-    }
-    .square-center {
-        display: none !important;
-    }
-}
-
-.square-field {
+.square-box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    font-weight: bold;
+    grid-template-rows: repeat(3, 100px);
     grid-gap: 10px;
-    grid-template-areas: ". . ."
-                         ". center ."
-                         ". . ."
 }
 .square {
     border-radius: 5px;
-    border: 1px solid #FFFFFF;
-    padding: 10px;
-}
-.square-center {
-    grid-area: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
-    border-radius: 5px;
-    color: #FFF;
+    border: 1px solid #FFFF5B;
+    font-size: 19px;
+    color: white;
+    font-weight: bold;
 }
 
 .rel {

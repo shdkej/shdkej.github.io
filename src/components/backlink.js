@@ -38,7 +38,7 @@ class BackLink extends React.Component {
                 }
                 `}
             render={data => (
-                <div style={{maxWidth: `90%`}}>
+                <div>
                 {this.findLinks(data.allMarkdownRemark).map(link =>
                     <span>
                     <Link to={link}>

@@ -2,7 +2,7 @@
 title   : Bucket List
 summary :
 date    : 2020-04-23 18:02:50 +0100
-updated : 2021-03-31 13:55:34 +0100
+updated : 2020-11-22 22:42:34 +0100
 tags    : health
 ---
 
@@ -25,9 +25,10 @@ tags    : health
 | 부산 괴정동 남해달인횟집                                     |      |      |
 | Pyeungtaek songtan, BBQ - Polled fork, Brisket               |      |      |
 | 고전원작 영화 보기                                           |      |      |
+| Reference presentation                                       |      |      |
 | [[Travel#Library]]                                           |      |      |
 | 30살까지 레퍼런스 무대 서보기                                |      |      |
-| 섬진강 짚라인                                                |      |      |
+|                                                              |      |      |
 |                                                              |      |      |
 |                                                              |      |      |
 |                                                              |      |      |
@@ -36,7 +37,3 @@ tags    : health
 |                                                              |      |      |
 |                                                              |      |      |
 
-
-
-#### bucket
-place, food, doing

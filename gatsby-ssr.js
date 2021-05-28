@@ -1,5 +1,5 @@
 const React = require("react")
-//const Layout = require("./src/components/layout")
+const Layout = require("./src/components/layout")
 
 exports.onRenderBody = ({ setBodyAttributes }, pluginOptions) => {
     setBodyAttributes({

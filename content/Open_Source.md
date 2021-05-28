@@ -2,8 +2,8 @@
 title   : Open Source
 summary : Open is powerful
 date    : 2020-07-26 10:39:37 +0100
-updated : 2021-04-07 16:57:04 +0100
-tags    : communication
+updated : 2020-11-07 16:39:01 +0100
+tags    : share_source
 ---
 
 ## 오픈소스 기여하기
@@ -24,28 +24,11 @@ there's license
 almost free, but no everything is free.
 
 ## License
-- MIT
-- Apache
-- GPL 사용한 프로그램을 모두 공개해달라는 적극적 오픈소스 요구의 목적
-- LGPL 개선한 소스에 대해 공유해달라는 요청
-- AGPL 서버에서 사용하더라도 공유해달라는 것
-- 그 외 오픈소스를 쓴 것에 대해 명시하도록 요청
+MIT
+Apache
+GPL 사용한 프로그램을 모두 공개해달라는 적극적 오픈소스 요구의 목적
+LGPL 소스를 개선하면 공유해달라는 것
+AGPL 서버에서 사용하더라도 공유해달라는 것
 
-## 소프트웨어 개방의 단점
-- 자신들만의 기술이 공개되어 다른 기업에서 이용하면 자신의 기업이 메리트가
-  없어짐
-    - 핵심기술은 비공개로 하고 API만 개방하면 괜찮을까
-- 허점을 들킬 수 있음
-
-#### 장점
-- 사용자 증가
-- 생각지 못했던 기술이 더해져서 외연 확장
-    - 직접 개발하지 않은 것들이 사용자 필요에 의해 개발될 수 있다
-
-B2B, B2C 에 따라서 가치가 달라질까? B2B에서는 개방화를 할 필요가 없을까?
-
-#### 오픈소스 추천 사이트
-- https://opensourcestash.com/
-- https://free-for.dev/#/
 
 [[Cleaning#Used Tool]]
