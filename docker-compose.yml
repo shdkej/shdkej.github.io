@@ -5,7 +5,7 @@ services:
     volumes:
       - ./:/app
     ports:
-      - 8000:8000
+      - 7000:8000
     working_dir: /app
     #command: gatsby develop -H 0.0.0.0
     command: ./entrypoint.sh

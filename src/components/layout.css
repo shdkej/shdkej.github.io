@@ -16,7 +16,7 @@ body {
     max-width: 900px;
     margin: 1rem auto;
     padding: 1rem;
-    font-size: 1rem;
+    font-size: 19px;
     font-family: sans-serif;
 }
 
@@ -24,8 +24,23 @@ h1 {
     color: var(--heading-color);
 }
 
+h2 {
+    margin-top: 50px;
+}
+
 p {
     color: var(--second-color, var(--main-color));
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+ul {
+    padding-inline-start: 20px;
+    margin-top: 0px;
+}
+
+ul p {
+    margin: 0px;
 }
 
 a {
@@ -61,10 +76,6 @@ header h3 {
 
 h4:before {
     content: "## ";
-}
-
-ul {
-    padding-inline-start: 20px;
 }
 
 :target::before {
