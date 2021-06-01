@@ -2,7 +2,7 @@
 title   : Container
 summary : Docker, Kubernetes
 date    : 2020-12-17 22:01:56 +0100
-updated : 2021-05-23 21:07:54 +0900
+updated : 2021-05-30 10:38:45 +0900
 tags    : deep_knowledge
 ---
 
@@ -506,6 +506,11 @@ chmod +x /usr/local/bin/argocd
 export ARGOCD_PASSWORD=`kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2`
 argocd login <ARGOCD_SERVER>
 argocd account update-password
+```
+```
+echo "test1"
+echo "test2"
+echo "test3"
 ```
 
 argocd 에서 helm 이용하기 `argocd app set <name> --values <value.yml>`

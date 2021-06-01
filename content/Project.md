@@ -2,7 +2,7 @@
 title   : Project
 summary : Plan, co-working
 date    : 2020-06-23 22:34:14 +0100
-updated : 2021-05-27 14:44:48 +0900
+updated : 2021-05-30 09:23:15 +0900
 tags    : deep_knowledge
 ---
 
@@ -186,6 +186,7 @@ tags    : deep_knowledge
     리스트럭쳐
     리카테고링
     태그의 카테고리화
+    그룹화
     - 베어는 태그의 카테고리화가 된다
 
     텍스트 태그화 시켜서 많이 나온 단어 묶어주기
