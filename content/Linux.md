@@ -2,7 +2,7 @@
 title   : Linux
 summary :
 date    : 2020-05-06 19:57:59 +0100
-updated : 2021-05-27 19:49:51 +0900
+updated : 2021-06-01 15:53:53 +0900
 tags    :
 ---
 
@@ -890,4 +890,13 @@ other way - git filter-branch
 ```
 git stash
 git stash branch <new-branch> stash@{0}
+```
+
+#### git ssh
+`~/.ssh/config`에 특정 ssh key를 등록하면 id_rsa 대신 다른 키를 인식 시킬 수 있다
+```
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github
 ```

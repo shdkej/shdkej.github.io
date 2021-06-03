@@ -2,7 +2,7 @@
 title   : Infra Architecture
 summary : 🚀 Server Infra Architecture
 date    : 2020-05-07 20:51:37 +0100
-updated : 2021-05-27 14:51:35 +0900
+updated : 2021-06-01 16:41:00 +0900
 tags    : strong_base
 ---
 
@@ -33,6 +33,7 @@ tags    : strong_base
   사람들은 쫙빠진 것보다 넉넉한 것을 더 좋아하는 점을 생각한다
 - User experience searchable website
 - 서비스는 관리자가 관리하지말고 사용자가 관리할 수 있게 하면 좋겠다
+- 기능을 제공해주지 말고 모듈로 만들 수 있게 하고 여러 개 선택할 수 있도록 한다
 
 [[Information#좋은 아키텍트는 세부사항에 대한 결정을 가능한 한 오랫동안 미룰 수 있는 방향으로 정책을 설계한다.]]
 [[Think#server architecture to using some company service]]
@@ -96,6 +97,10 @@ monorepo vs microrepo
 하나의 툴과 종속성
 - 쿠버네티스의 기능을 모두 쓰는 것이 다른 도구를 줄일 수 있는 방법이다.
   근데 그러면 쿠버네티스에 종속성이 심하게 걸린다
+
+팀 구조
+- 프로젝트별 팀 vs TF 팀 vs 역할별 팀 vs 기능별 팀
+
 
 -----------------------------------------------------------------------
 
@@ -193,6 +198,9 @@ response time
 추세 파악(트렌딩)
 플러밍
 
+#### 문제 분석과 재발 방지
+예측하지 말고 측정한다
+
 #### reference
 - https://andromedarabbit.net/무엇을-모니터링할-것인가/
     - AWS, Kubernetes 등에서의 모니터링 파라미터
@@ -272,3 +280,60 @@ bandwidth (per GB)
 
 ## 프로덕션에 필요한 속성
 보안, 개별 설정을 유연하게 하는 것, 관측성
+
+#### reboot report
+load average 확인 후 cpu bound인지 memory bound인지 disk i/o문제인지 확인하는 것처럼
+문제 감지되면 확인된 기록들을 캡처해서 리포트로 보내주고 재부팅하도록 설정
+소프트웨어 로그, 시스템로그도 같이 캡처
+
+#### 구성보다 관습
+CoC
+설정을 일일이 하기보다 관습적으로 따르게 하고, 설정이 필요할 때만 설정을 하는 방식
+
+#### 서비스가 커져감에 따라 직접 구현해야하는 기능
+깃 레포지토리 > gitlab이 자체 서버 구축 가능하다
+ci 툴
+
+서비스로 제공되는 소프트웨어들
+최소한 이중화가 되도록 해야한다
+
+#### 자동화
+테스트 문서 자동화
+모니터링 문서화
+api 문서화
+service output이 feedback이 되도록
+
+#### component
+db
+backend: lambda
+frontend: nettlify/now/surge
+file: s3
+image: cloudinary
+con: ifttt
+큐/캐시: redislabs
+design: figma
+domain
+dns
+
+오토스케일링 2~8개 파드로 유지
+ingress - 내부 아이피 전달용
+tls인증서, failover, 로깅, 모니터링
+자동dns, ssl, 로드밸런싱: CloudFlare Proxy -> AWS L4 NLB
+cdn
+secret - kubeseal
+clickhouse - 분석데이터
+모든 인프라 코드를 한 곳에 저장해놓고 끌어다쓰기?
+오류 추적
+profiling - cProfile, snakeviz
+
+#### CSP
+Communicating Sequential Processes
+golang의 groutine의 동작 방식이자, 네트워크로 연결되있는 자원들이 서로 통신할 때
+효과적인 모델.
+마이크로서비스에서 수많은 서비스들 간의 연결과 복잡성을 관리하기 위한
+hashicorp의 선택
+
+#### 단일 원천
+진실의 원천
+오컴의 면도날
+추론의 건전성

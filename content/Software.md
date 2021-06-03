@@ -2,7 +2,7 @@
 title   : Software
 summary : Language, Web
 date    : 2020-04-06 14:37:26 +0100
-updated : 2021-05-20 20:58:23 +0100
+updated : 2021-06-01 15:49:00 +0900
 tags    : deep_knowledge
 ---
 
@@ -308,3 +308,12 @@ base64
 이미지 파일 같은 데이터를 json으로 옮긴 후 바로 실행하려면 utf8 호환 등 안맞는
 경우가 있는데
 base64로 인코딩해놓으면 범용성 있게 사용 가능하다
+
+#### json
+- marshal: 논리적 구조를 바이트로
+- unmarshal: 바이트를 논리적 구조로
+- encode: 언어 내부 구조를 json 형태의 스트림으로
+- decode: json을 언어 내부 구조로
+
+표준 입출력은 encode/decode를 이용하면 마샬보다 빠르다
+(http response, file, stdout)

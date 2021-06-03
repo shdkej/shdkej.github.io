@@ -2,13 +2,13 @@
 title   : 노트북 작업환경
 summary : 13 vs 15 vs 17
 date    : 2021-03-03 20:59:13 +0100
-updated : 2021-04-04 10:02:07 +0100
+updated : 2021-06-03 10:51:09 +0900
 tags    :
 parent  : [[Blogging]]
 ---
 
-## 미리 보는 결론
 - 15인치 2 in 1 노트북 + 15인치 보조 모니터 + 빔프로젝트
+    - 이 상태을 선택한다 가정하고 검증한다. (귀류법)
 
 ## 조건
 물리적 제약이 없으면서
@@ -164,6 +164,8 @@ vs
 인치별 텍스트 줄 수
 위치별 적정 모니터 크기 (모니터 인치 거리)
 - https://www.rtings.com/tv/reviews/by-size/size-to-distance-relationship
+
+[[Readability]]
 
 사람의 시야각
 - 고개를 안돌리고 한 화면을 다 담는게 좋은가?

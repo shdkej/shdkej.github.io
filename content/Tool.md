@@ -2,7 +2,7 @@
 title   : Tool
 summary :
 date    : 2020-08-25 14:48:57 +0100
-updated : 2021-05-23 20:22:17 +0900
+updated : 2021-06-01 19:09:33 +0900
 tags    : deep_knowledge
 ---
 
@@ -363,3 +363,69 @@ window 는 nsclient 설치
 근데 무겁다
 
 가벼운데 고가용성만 지원되면 좋겠다
+
+## gRPC
+(Remote Procedure Call)
+
+gRPC 4가지 스트리밍 방식
+* 단일
+* 서버 스트리밍
+* 클라이언트 스트리밍
+* 양방향 스트리밍
+
+3가지 stub
+* Blocking stub
+* (Async) stub
+* Future stub
+
+gRPC가 필요한 이유
+- CORBA 등 과거의 RPC는 높은 복잡도, 높은 학습곡선, 낮은 개발생산성이 문제였다
+- RESTful이 낮은 복잡도, 낮은 학습곡선 등으로 잘 사용하게 됨
+- 그러나 게임 등에서는 성능상의 이유로 위의 CORBA 등이 사용되고 있었음.
+- 구글에서 Stubby를 만들고 gRPC는 오픈소스 버전
+
+Binary Protocol - Text Protocol(REST)
+HTTP/2 base
+- Connection Multiplexing
+- Header Compression
+- 양방향 Streamming
+
+Browser에서 지원해야 함
+데이터가 Binary라 바로 읽기 힘듬
+
+#### grpc
+- protoc 설치: `apt install -y protobuf-comiler`
+- buf 설치
+- `buf.yaml`로 디펜던시 설치
+    - `buf beta mod update`
+- `buf.gne.yaml`로 proto 파일 변환
+- 생성된 swagger.json 을 브라우저에서 보려면 swagger-ui를 설치해야 한다
+
+#### grpc
+gateway에 grpc를 어떻게 등록시키나를 놓쳤는데
+알고보니 grpc서버를 따로 실행하고 gateway에 포트를 알려줘서 접근하게 하는
+방식이었다.
+
+grpc gateway에서 루트 url은 지원을 안한다. 따로 http server에서 작업을 해줘야
+한다.
+
+
+#### grpc
+데이터 아웃풋을 배열로 출력할 때 배열만으로 출력이 안되고 메시지 형태로 된다
+name: [arr1,arr2]
+그래서 받는 쪽에서 name을 골라서 받아야 되는데 이러면 안된다
+
+람다는 reponse body 안에 다 넣어놓는 방식을 쓴다
+
+array 안에서 이름 말고 다른 방식으로 값을 가져오는 방법은?
+각 값마다 일일이 찾는 방법 밖에 없나...
+- marshal, unmarshal
+
+grpc message에 담는 방법 외에 google http body를 이용해서 담을 수 있다.
+`import "google/api/httpbody.proto";`
+`returns (google.api.HttpBody)`
+
+#### reference
+- https://devjin-blog.com/golang-grpc-server-4/
+- https://deepbaksu.github.io/2021/05/01/how-to-REST-from-gRPC/
+- https://tech.buzzvil.com/handbook/grpc/

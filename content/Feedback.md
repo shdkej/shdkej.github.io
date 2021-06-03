@@ -2,7 +2,7 @@
 title   : Feedback
 summary : communication
 date    : 2020-11-15 20:42:56 +0100
-updated : 2021-05-23 20:31:56 +0900
+updated : 2021-06-01 15:53:10 +0900
 tags    : communication
 ---
 
@@ -201,3 +201,6 @@ it 기기 관련 리뷰는 그런 제품들을 사용하는 사람들이 많이 
 
 각 서비스에서 피드백을 어떻게 주느냐를 잘 설정하면
 로그, 데이터 결합, 복잡성 해소가 해결되는 실마리가 될 수 있다
+
+#### feedback
+feedback이 인터럽션이 될 수 있다

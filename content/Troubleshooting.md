@@ -2,7 +2,7 @@
 title   : Trouble Shooting
 summary :
 date    : 2020-06-23 22:39:25 +0100
-updated : 2021-05-20 20:52:03 +0100
+updated : 2021-06-03 09:18:52 +0900
 tags    :
 ---
 
@@ -476,3 +476,7 @@ root로 실행하거나 `runAsUser: 0`
 
 재부팅 후 node 가 NotReady 상태가 됨
 swapoff -a 하니까 됨
+
+## ! Inactive registered OAuth URIs for your project
+api oauth 창에서 redirect로 설정해놓은 주소들이 만료되었나보다.
+현재 안쓰는 주소들이었고, 제거해줬다.

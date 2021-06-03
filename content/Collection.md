@@ -2,7 +2,7 @@
 title   : Collected Data
 summary : Stack
 date    : 2020-10-25 12:56:12 +0100
-updated : 2021-05-09 19:10:51 +0100
+updated : 2021-06-01 16:19:15 +0900
 tags    : idea
 ---
 
@@ -129,6 +129,9 @@ underkg
 단순 나열은 데이터로서의 가치만 있다
 정보전달을 위해서는 필터링을 해야 한다
 특히 짦은 시간 안에 전달하려면 더더욱
+
+#### 별점 > 좋아요
+별점은 정보가 부족하다. 좋아요보다 선택지가 많음에도.
 
 #### suggestion
 - recently update document

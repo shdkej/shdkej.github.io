@@ -2,7 +2,7 @@
 title   :
 summary :
 date    : 2021-05-20 20:33:31 +0100
-updated : 2021-05-25 14:42:02 +0900
+updated : 2021-06-01 19:13:10 +0900
 tags    :
 parent  : [[index]]
 ---
@@ -75,6 +75,18 @@ Devops goal
 데브옵스는 엔지니어의 역할 확장으로서 존재해도 되지 않을까?
 프론트든 백엔드든 qa이든 서버가 어차피 코드화되어 있다면 같이 신경쓰는게 오히려 관리가 쉽지 않을까?
 세분화되고 분리되면 고도화하기 좋긴 하겠다
+
+#### devops
+개발과 운영의 통합은 종속성, 의존성이 아니라 조화다
+각 마이크로 서비스도 데이터영역과 서비스 영역이 서로 의존하는게 아니라 조화를 이루게
+하면 되겠다
+
+#### serverless
+데브옵스를 문화로써 받아들인다면.
+모두 serverless로 만들어서 마이크로서비스화하는게 서버관리 리소스를 없앨 수
+있고,
+그럼에도 서버가 필요한 작업은 모놀리스하게 만든다.
+중앙 집적 리소스 서버에서 모든 자원을 관리한다.
 
 ## SRE
 To upgrade site reliability
@@ -450,3 +462,233 @@ logic이 api안에 포함되고, logic은 api를 몰라도되고, 외부 라이�
 crud 모델을 일반화해서 범용적으로 쓸 수 있도록 하고, extension을 붙여 확장한다
 ID, Name, Date, Content, Tag 로 구성하고, Content에 다시 내용을 구겨넣는다.
 필요한 곳에서 알아서 쓴다?
+
+#### microservice
+한 부분의 변화를 위해 다른 부분을 신경 쓰지 않아야 한다.
+한 부분의 변화가 다른 부분에 영향을 주지 않아야 한다.
+
+#### microservice는 무엇인가
+kubernetes로 여러개의 서비스로 쪼개면 microservice인가?
+micro로 서비스를 만들면 microservice인가?
+monolith와 구분되는 microservice의 특징은 각 서비스가 개별 데이터베이스를 갖는
+것인데, micro는 어떤 구성 방식인가
+
+#### infra와 source를 분리
+쿠버네티스 테스트 레포지토리와 myspace 레포지토리를 분리하고
+Myspace의 폴더가 곧 프로젝트 목록이 되도록 구성
+
+1. Basic 폴더를 만들어서 이를 복사해서 쓰도록한다
+2. Argocd에서 폴더를 등록한다
+3. 배포 완료
+
+인프라 코드도 개발자가 관리하도록 하기 위함.
+개발 코드는 컨테이너 이미지 배포하기까지 자동
+
+Prefix로 infra 서비스와 비즈니스 서비스 구분
+
+argocd를 github action에서 실행한다면
+소스코드와 인프라코드가 분리되있는데
+소스코드 변경을 인프라가 어떻게 알아차릴 수 있지?
+
+소스코드 변경 후 인프라를 다시 건드리면 안된다
+인프라는 인프라대로 관리되고, 소프트웨어 업데이트는 소스코드에서 따로 처리되야 한다
+
+인프라 변경 시 변경될 것은 쿠버네티스 셋팅, 서버 셋팅
+소스 변경 시 변경될 것은 소프트웨어 버전, 세부 설정
+
+둘 다 쿠버네티스 어플라이를 해야되는 건 같다.
+
+인프라 생성 시 argocd 등록 되도록 하고, 그게 소스코드를 보도록 하면 될까?
+1. 레포지토리 생성
+2. 도커 빌드
+3. 인프라 레포에서 폴더 생성
+4. argocd 싱크 등록을 1 레포지토리로 등록
+5. 레포지토리 업데이트
+6. argocd 동작
+
+## 프로젝트 아키텍처
+넷플릭스 모델 - 전체가 하나로 묶여있다
+네이버 모델 - 각 역할별로 분리되있다
+리디북스 모델 - 데이터가 묶여있다
+
+#### 그동안의 아키텍처 모델
+- 3 layer
+- MVC - MVVC - MTV
+- 네트워크 레이어
+- 12 Factor app
+- MSA
+- DDD
+- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- https://ahnheejong.name/articles/package-structure-with-the-principal-of-locality-in-mind/
+- https://mingrammer.com/translation-structuring-applications-in-go/
+- https://geminikim.medium.com/지속-성장-가능한-소프트웨어를-만들어가는-방법-97844c5dab63
+
+#### library
+모든 코드를 라이브러리화 하면 각 라이브러리를 호출하는 어댑터를 만들게 되면 너무
+비대해진다.
+그렇다고 어댑팅 안하면 라이브러리 수정 시 여기 저기서 바꿔야 된다.
+그렇다고 라이브러리를 일관된 형태로 유지하자면 그것도 쉽지 않다
+
+lib1
+- file
+
+source1
+- main
+- lib1-adapter
+
+source2
+- main
+- source1-adapter
+- lib1-adapter
+
+이런 구조가, 라이브러리 변경 시
+
+lib1
+- file-v2 // 변경
+
+source1
+- main
+- lib1-adapter // 변경
+
+source2
+- main
+- source1-adapter
+- lib1-adapter // 변경
+
+수정이 전체에 영향을 미치면 안된다.
+
+#### 개발 시작
+1. 가장 간단한 실행을 위한 설계
+2. 폴더 만들기
+- note
+
+3. 구현해야 하는 것 적고 결과값 적기
+- note/main_test.go
+
+4. 테스트 통과시키기
+- note
+  -  main.go
+  -  main_test.go
+
+5. 기능 추가를 위해 설계
+6. 파일 추가
+7. 반복
+
+그러다가 어느 시점이 되면 아래 정도의 복잡성이 생긴다
+note
+- logic1
+  - main.go
+  - data.go
+  - adapter.go
+- logic2
+- api
+  - http.go
+  - grpc.go
+- lib
+
+이런 구조에서 더 복잡성이 필요해지면 분리하기 좋다는 신호다
+
+그래서 저 코드 구조가 반복되면 확장이 된다
+인프라는 저 구조를 쉽게 컨트롤하도록 구성된다
+
+인프라 - 서비스 - 데이터의 구조로 한 인프라가 구성되고
+이것이 다시 프렉탈로 반복된다
+
+인프라에서 api, logging를 지원해주면 더 좋겠다
+
+#### library 호출
+마이크로서비스의 library를 한곳에 모아서 보여주고
+쉽게 호출해 쓸 수 있도록 해야한다.
+어떻게?
+
+## code design
+main - 메인에서 동작만 나타낸다. 구현은 다른 파일에서 한다
+```
+func main() {
+  init()
+  get()
+  set()
+  health()
+  doSomething()
+}
+```
+http_server - http로 렌더링하는 작업만 수행한다
+logic - 인터페이스를 받아서 인터페이스를 구현한다
+```
+type s struct {
+
+}
+func (s struct) init() {
+
+}
+```
+
+#### 외부 라이브러리 분리
+외부 라이브러리를 분리하려고 하는데, 그러면 폴더 구조가 어떻게 되는거지
+
+- cmd
+- lib1
+- ilb2
+- logic1
+- logci2
+
+이런 식으로 되는 건가
+
+- cmd
+- logic1
+  - lib1
+  - lib2
+- logic2
+  - lib1
+  - lib2
+
+이것보다는 나은 것 같은데 위의 구조에서 라이브러리와 메인 로직의 구분이 안된다
+
+
+- cmd
+- logic1
+
+일단 내 로직이 메인이다
+cmd에서는 이를 한 눈에 보기 좋게 한다
+여기서 이제 라이브러리가 들어간다
+
+- cmd
+- logic1
+  - db_logic
+- db
+
+이렇게 하면 메인에서 구현에 필요한 것을 db에서 받아서 실행하도록 해야한다
+
+외부 라이브러리가 여러 개 중에 하나를 선택할 수도 있다
+
+- cmd
+- logic1
+  - db_logic
+- db
+  - redis
+  - RDBMS
+
+이렇게 하려면 db를 다시 추상화해야한다
+
+...
+- db
+  - redis/
+  - RDBMS/
+  - db.go
+
+근데 이렇게 하면 외부 라이브러리를 구현하는 작업이 다시 되야 되서 별로다
+
+클라이언트 프로그램은 마이크로서비스일 필요 없을 거 같다?
+
+메인은 전체 흐름
+에러 처리는 내부에서 처리?
+메인 파일은 의미가 있어야 하고, 세부 구현은 적지 않도록...
+```
+func main() {
+    if err := initHTTPServer(); err != nil { log.Println(err) }
+    if err = addHealthCheck(); err != nil { log.Println(err) }
+    if err = addLogic(); err != nil { log.Println(err) }
+    if err = addLoggig(); err != nil { log.Println(err) }
+    if err = runHTTPServer(); err != nil { log.Println(err) }
+}
+```

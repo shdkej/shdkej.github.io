@@ -2,7 +2,7 @@
 title   : Container
 summary : Docker, Kubernetes
 date    : 2020-12-17 22:01:56 +0100
-updated : 2021-05-30 10:38:45 +0900
+updated : 2021-06-01 16:32:10 +0900
 tags    : deep_knowledge
 ---
 
@@ -167,10 +167,25 @@ push를 하면 검증을 한다
 - [ ] 빌드 요청은 어떻게?
 - [ ] 버저닝은 어떻게?
 
+#### docker image
+alpine, stretch, slim, buster
+buster, stretch는 debian용
+alpine은 alpine linux로 만든 것
+slim은 그 이미지를 실행하기 위한 최소한의 설치파일만 있는 것
+
+근데 slim보다 alpine이 더 이미지 크기는 작다?
+
 #### docker compose execute bash
 - `entrypoint: /bin/bash` failed
 - `tty:true; stdin_open:true` success
 - `docker-compose run app bash` success
+
+#### docker cmd vs entrypoint
+커맨드 툴을 도커명령어에서 바로 실행하려고 하면
+CMD로 하면 안되고 ENTRYPOINT로 하면 된다
+`docker run hanspell-cli -h`
+
+대신 ENTRYPOINT를 쓰면 -it /bin/sh 는 인식을 못한다
 
 ## kubernetes
 person has very small component, and it compose to one architecture.
@@ -369,6 +384,11 @@ https://github.com/rancher/k3s/issues/1126
 #### k3s monitoring
 - `kubectl apply -k github.com/premist/k3s-kube-prometheus/setup`
 - `kubectl apply -k github.com/premist/k3s-kube-prometheus`
+
+#### k3s helm
+! Kubernetes cluster unreachable
+- `export KUBECONFIG=/etc/rancher/k3s/k3s.yaml`
+- or `kubectl config view --raw >~/.kube/config`
 
 #### k3s connect remotely to the cluster
 ```

@@ -2,7 +2,7 @@
 title   : Journal
 summary : Let's make the results every day.
 date    : 2020-04-02 08:55:34 +0100
-updated : 2021-05-21 18:54:15 +0100
+updated : 2021-06-01 15:47:54 +0900
 tags    : idea
 ---
 
@@ -415,7 +415,7 @@ before pomodoro -> need check what todo
 3. 오늘 할 일 관리를 어떻게 할지
 - 다시 바로 확인할 내용, 언젠가 확인할 내용, 완료, 진행중,
 
-#### vimwiki
+## vimwiki
 - vimwiki write two space bar after sentence being a new line
 - category: #### split: -
 - link
@@ -442,6 +442,16 @@ keep on desktop browser
 decision 노트의 조건들을 단순화 시키는게 좋을까
 아니면 고민의 흔적을 모두 남기는게 좋을까
 decision은 모두 남기고 그것을 cleaning에 정리하는게 맞을까
+
+#### archiving
+2020년의 나와 2021년의 나는 다르지만 2020년의 내 나름의 생각도 있다. 시간이
+지나면서 생각은 바뀌지만 그 때의 생각도 의미가 있다.
+그래서 wiki를 년도별로 브랜치를 따로 따서 아카이빙 해놔야겠다.
+
+```
+git checkout -b 2020 <commit>
+git commit and push
+```
 
 ## Reference
 - [번역체-나무위키](https://namu.wiki/w/%EB%B2%88%EC%97%AD%EC%B2%B4%20%EB%AC%B8%EC%9E%A5/%EC%98%81%EC%96%B4#s-2.10)

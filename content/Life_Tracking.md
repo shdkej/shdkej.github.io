@@ -2,10 +2,11 @@
 title   : Life Tracking
 summary : 어떻게 살고 있는지 알고 싶다
 date    : 2020-12-20 14:46:34 +0100
-updated : 2021-02-07 02:13:01 +0100
+updated : 2021-06-03 11:19:28 +0900
 tags    :
 parent  : [[Blogging]]
 ---
+
 ## life Tracking
 shortcut setting
 news, post, e-book viewer composing
@@ -37,6 +38,11 @@ pdf를 관리하는 것은 플렉슬로 하면 될까
 보관을 무슨 기준으로 하지?
 모두 보관해놓으면 눈에 안띄어서 까먹지 않을까?
 보관하지 않을 기준은?
+
+#### exclude
+- water
+- read article
+- watch tv
 
 #### 캘린더에 그날의
 - 식단
@@ -83,8 +89,8 @@ phone
 - DriveSync, FolderSync 앱을 이용해서 구글드라이브와 연동
 
 - 장소, 컨디션, 날씨, 사진
-20/12/10: 🛌 9.0 💻 6.1 📱 3.1 🥢 2600 🦶 6900 📚 160 🎞️ 1 💵 40,000 🚀 +26
-20/12/10: 🛌 9.0 💻 6.1 📱 3.1 🥢 2600 🦶 6900 📚 160 🎞️ 1 💵 40,000 🚀 +26
+    - 20/12/11: 🛌 9.0 💻 6.1 📱 3.1 🥢 2600 🦶 6900 📚 160 🎞️ 1 💵 40,000 🚀 +26
+    - 20/12/10: 🛌 9.0 💻 6.1 📱 3.1 🥢 2600 🦶 6900 📚 160 🎞️ 1 💵 40,000 🚀 +26
 + 읽은 책 이름, 영화 제목, 먹은 음식, 작업 내용
 
 캘린더에 기록되면 -> 스프레드시트에 쓰기
@@ -177,4 +183,4 @@ todo 등록하면 자동 리마인더
 #### quantified self
 이런게 있었다
 생각하던 데일리 트래킹을 이미 하고 있는 사람들이 있었다
-https://quantifiedself.com/show-and-tell/
+- https://quantifiedself.com/show-and-tell/

@@ -2,7 +2,7 @@
 title   : Network
 summary : 📡 Protocol(TCP, HTTP), IP, DNS, L/B
 date    : 2020-03-16 22:40:07 +0100
-updated : 2021-05-03 22:00:52 +0100
+updated : 2021-06-01 16:40:28 +0900
 tags    : strong_base
 ---
 
@@ -199,6 +199,9 @@ nic 이중화
 - L5 - 논리적인 연결 서비스
 
 ## Load Balance
+#### L4 L7
+L4는 포트 기반 (aws에서는 NLB)
+L7은 포트 + 페이로드 기반, 즉 기능이 더 많은 기기 (aws에서 ALB)
 
 ## CDN (Content Delivery Network)
 네트워크를 여러 군데 둬서 접근을 빨리하는게 핵심인 것 같다.

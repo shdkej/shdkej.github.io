@@ -2,7 +2,7 @@
 title   : The other section in create area
 summary : Music, Construct, Artist, Directer, Author
 date    : 2020-09-29 23:59:25 +0100
-updated : 2021-04-14 14:10:45 +0100
+updated : 2021-06-01 15:57:07 +0900
 tags    : to_know_about_other_subject
 ---
 
@@ -47,6 +47,8 @@ How to perfectly make elevator?
 Can It bring programming
 
 #### Paul rubens
+
+#### 가수는 무대 하나로 자신을 증명할 수 있다
 
 [[Think#개발의 목표]]
 
