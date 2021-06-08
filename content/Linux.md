@@ -2,7 +2,7 @@
 title   : Linux
 summary :
 date    : 2020-05-06 19:57:59 +0100
-updated : 2021-06-01 15:53:53 +0900
+updated : 2021-06-03 20:39:39 +0900
 tags    :
 ---
 
@@ -257,6 +257,16 @@ Postgresql 설치
 2대 연동
 - Wal 이라는 마스터서버의 로그를 만들어 스탠바이서버로 복사 후 스탠바이 서버에서 로그를 복원하는 방식으로 연동이 된다
 - Wal 방식으로 log-shipping 방식과 streaming 방식이 있다.
+
+#### db backup cronjob
+`/etc/rc.local`
+- `docker start postgres && docker start tomcat` 추가
+
+```
+crontab -e
+* * * * * docker exec postgres pg_dumpall > /PGSQL_all.dump
+docker cp postgres:/PGSQL_all.dump /home/pi/docker/postgres-pi/
+```
 
 #### Streaming
 Master
@@ -900,3 +910,10 @@ Host github.com
     User git
     IdentityFile ~/.ssh/github
 ```
+
+#### 라즈베리파이 와이파이 등록
+- `/etc/network/interfaces`
+- `/etc/wpa_supplicant/wpa_supplicant.conf`
+	- 먼저 wpa_passphrase wifi명 wifi비밀번호
+	입력해서 psk 값 얻은 후 복사해서
+	conf 파일에 저장

@@ -2,7 +2,7 @@
 title   : Golang
 summary :
 date    : 2020-05-06 13:00:28 +0100
-updated : 2021-04-14 14:18:48 +0100
+updated : 2021-06-08 10:38:12 +0900
 tags    : deep_knowledge
 ---
 
@@ -48,6 +48,46 @@ tags    : deep_knowledge
 
 #### goroutine
 if main function too short. it finish without running goroutine. so time.Sleep needed
+
+#### go http
+![http](./img/http.svg)
+ServeHTTP와 핸들러에 대한 이해
+- mux = multiplexer
+- Listen - (Handler - ServeHTTP) - Serve?
+- mux = handler, 서버가 serve를 할 때 mux를 받는데, 안넣으면 디폴트 mux를 쓴다.
+- mux는 ServeHTTP를 구현해야 한다.
+- handler interface는 http 패키지에서 정의되있는 것을 보면 ServeHTTP를 갖는
+  인터페이스다. 그래서 ServeHTTP만 가지고 있으면 핸들러로 쳐준다.
+- 그러면 ServeHTTP는 어떤 동작을 해야 하는가
+    - mux라 함은 입력값을 받아서 응답을 해주는 것이다.
+    - URL을 받아 적합한 연결통로를 찾아서 넘겨준다.
+    - ServeHTTP의 역할이 mux의 역할
+    - 요청을 패턴이 일치하는 핸들러를 찾아서 전달해주는 것.
+- handler, handle, handleFunc, handlerFunc 차이 확인
+    - handler는 ServeHTTP를 구현하는 interface, response request 활용 가능
+    - handle은 패턴과 handler를 받아서 쓰는 handler의 wrapper 느낌
+    - handleFunc는 ServeHTTP를 구현한 객체들을 일일이 생성하는 것이
+      불편해서 만들어졌다고 하는데, 잘 모르겠다
+        - handleFunc는 두번째 인자로 받는 func을 ServeHTTP가 실행하도록 해놓은
+          것 뿐이다. (이 func는 writer와 request를 인자로 가져야 하긴 한다)
+        - ServeHTTP가 writer와 request를 가져야 하니까 헷갈렸다.
+    - handle과 handleFunc는 둘다 패턴과 핸들러를 받아 처리한다.
+    - handle은 handler를 받고, handleFunc는 일반함수를 handler로 wrapping 해준다.
+    - handleFunc이 패턴과 함수를 처리한다. http에서는 디폴트 mux에
+      연결해준다.
+    - handlerFunc는 일반 함수를 handler 함수로 wrapping 해준다
+- 멀티플렉서는 패턴 처리를 여러개 한다는 의미다
+
+```
+http.HandleFunc("/", func())
+http.ListenAndServe(":8080", nil)
+
+http.Handle("/", handler)
+http.ListenAndServe(":8080", nil)
+```
+즉 요청을 받으면 ServeHTTP가 실행되고 그 뒤에 원하는 비즈니스 로직을 돌린다.
+- gin 내부를 확인해봐도 ServeHTTP가 라우팅으로 연결해주고 있다.
+- https://dejavuqa.tistory.com/314
 
 ## Library
 #### graphql-go
@@ -169,3 +209,16 @@ API 쓰는데는 사용하는 것 같은데...
 - https://medium.com/@laeshiny/go-code-review-comments-%EC%A0%95%EB%A6%AC-47d05fdb49f6
 
 ## Defects
+vs rust
+
+## Reference
+- [Go에서 DIP](https://simplear.tistory.com/24)
+- [common mistakes in go](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/?ref=hackernoon.com)
+- [Go Hacking.md](https://novemberde.github.io/golang/2021/04/05/Golang-HACKING.html)
+- [ultimate-go](https://github.com/ultimate-go-korean/translation)
+- [Golang과 Clean Architecture](https://blog.puppyloper.com/menus/Golang/articles/Golang%EA%B3%BC%20Clean%20Architecture)
+- [Go error handling](https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully)
+    - (번역) http://cloudrain21.com/golang-graceful-error-handling
+- [Go Standard Layout](https://github.com/golang-standards/project-layout/blob/master/README_ko.md)
+- http://www.dogfootlife.com/archives/452
+- https://umi0410.github.io/blog/golang/go-mutex-semaphore/

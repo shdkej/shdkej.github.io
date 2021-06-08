@@ -2,7 +2,7 @@
 title   : Trouble Shooting
 summary :
 date    : 2020-06-23 22:39:25 +0100
-updated : 2021-06-03 09:18:52 +0900
+updated : 2021-06-03 19:06:11 +0900
 tags    :
 ---
 
@@ -480,3 +480,10 @@ swapoff -a 하니까 됨
 ## ! Inactive registered OAuth URIs for your project
 api oauth 창에서 redirect로 설정해놓은 주소들이 만료되었나보다.
 현재 안쓰는 주소들이었고, 제거해줬다.
+
+### ! golang fatal
+- [X] elasticsearch가 처음 시작이 오래걸려서 서버가 커넥션을 못한다
+커넥션을 못하면 서버가 중지되고 docker에 의해서 재시작 되었으면 좋겠는데
+log.Fatal이 있어도 로그만 남기고 그냥 가만히 있는다
+- Fatal은 되는데 docker가 정지하지 않는다
+    - go run 으로 하면 도커가 꺼지지 않고, build해서 실행파일을 실행시키면 꺼진다.
