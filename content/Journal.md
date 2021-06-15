@@ -2,7 +2,7 @@
 title   : Journal
 summary : Let's make the results every day.
 date    : 2020-04-02 08:55:34 +0100
-updated : 2021-06-01 15:47:54 +0900
+updated : 2021-06-11 11:01:44 +0900
 tags    : idea
 ---
 
@@ -14,6 +14,8 @@ tags    : idea
 - [2020](diary/2020)
 - [2019](diary/2019)
 - [2012](diary/2012)
+
+![graph](./img/graph.png)
 
 ## Writing technique
 1. 적, 의, 것, 성 빼기 (적의것들)

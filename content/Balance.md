@@ -1,6 +1,6 @@
 ---
 title   : Balance, Keep Middle
-summary : 중용, 화
+summary : 중용, 화, 딜레마
 date    : 2020-11-11 14:42:47 +0100
 updated : 2021-06-03 20:40:15 +0900
 tags    : human

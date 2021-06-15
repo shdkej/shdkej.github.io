@@ -24,13 +24,17 @@ h1 {
     color: var(--heading-color);
 }
 
-h2 {
+h2, h4 {
     margin-top: 50px;
+}
+
+h4:before {
+    content: "## ";
 }
 
 p {
     color: var(--second-color, var(--main-color));
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 0px;
 }
 
@@ -62,6 +66,7 @@ pre {
 }
 
 code {
+    display: block;
     overflow: auto;
     color: salmon;
 }
@@ -72,10 +77,6 @@ blockquote {
 
 header h3 {
     margin: 2em 0 0 0;
-}
-
-h4:before {
-    content: "## ";
 }
 
 :target::before {
@@ -124,6 +125,8 @@ h4:before {
     border-radius: 5px;
     border: 1px solid #FFFFFF;
     padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .square-center {
     grid-area: center;

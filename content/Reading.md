@@ -2,7 +2,7 @@
 title   : Reading
 summary : Book, Movie, Article, Post
 date    : 2020-04-04 21:57:00 +0100
-updated : 2021-04-14 21:44:20 +0100
+updated : 2021-06-11 11:15:25 +0900
 tags    : idea
 ---
 
@@ -176,16 +176,9 @@ tags    : idea
 
 #### 클린 코드 책 정말 좋다 소장각
 
-#### good book
-웹 개발자를 위한 대규모 서비스를 지탱하는 기술
-devops와 SE를 위한 리눅스 커널 이야기
-
-#### docker
-> (책) 도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문
-
-subicura님의 글을 보고 입문하고 이 책을 읽으면 탄탄해지기 좋은 것 같다
-
 -----------------------------------------------------------------------
+
+## Book award
 
 - [대문호들의 작품을 가르쳐주세요](t.ly/7M2y)
 - [르 몽드가 선정한 세기의 도서 100권](t.ly/NM0K)
@@ -297,3 +290,18 @@ V.예술,기타
 9. 에른스트 슈마허/ 작은 것이 아름답다/ 1975
 10. 넬슨 만델라/ 자유를 향한 긴 여정/ 1994
 [출처] [[추천 서적]뉴욕타임즈 선정 꼭 읽어야할 책 100권](http://blog.naver.com/qqwwee24/220916631259)
+
+## IT 서적
+- [종립님의 책 추천](https://johngrib.github.io/wiki/my-favorite-books/)
+- https://www.sangkon.com/good_books_for_dev_2018/
+- [개발자 대상 200페이지 이하 추천 도서](https://news.hada.io/topic?id=2187)
+- [개발자 지망생을 위한 주관적 추천도서](https://www.notion.so/44da2a336b864d35bd642bc62a300708)
+- [무료 영어 IT Ebook](https://onecellboy.tistory.com/219?category=401949)
+- [The 25 best programming books of all-time](https://www.best-books.dev/list/best-programming-books)
+- [졸트 상](https://knight76.tistory.com/entry/30031488512)
+
+#### personal recommand
+- 웹 개발자를 위한 대규모 서비스를 지탱하는 기술
+- devops와 SE를 위한 리눅스 커널 이야기
+- 도커/쿠버네티스를 활용한 컨테이너 개발 실전 입문
+  - subicura님의 글을 보고 입문하고 이 책을 읽으면 탄탄해지기 좋은 것 같다

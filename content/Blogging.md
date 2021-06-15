@@ -2,7 +2,7 @@
 title   : Blogging
 summary : build blog
 date    : 2020-03-17 11:22:19 +0100
-updated : 2021-05-23 18:49:43 +0900
+updated : 2021-06-15 18:12:09 +0900
 tags    : communication
 ---
 
@@ -19,6 +19,13 @@ tags    : communication
 [[Streaming_server]]
 [[My_space]]
 [[Evolve_Architecture]]
+
+## About
+- 8 x 8, markdown 기준 1000줄 이하, 200자 1분 기준 30분 이하로 유지하면서 응축.
+- 읽으면 머리에 그려지도록 가독성이 좋은 글을 지향
+- 내가 알게 된 것들을 나의 언어로 작성하여 공유
+- 모든 지식을 알 수 없음을 겸허히 받아들여야 한다...
+- 거인의 어깨에 올라탄다.
 
 ## Environment
 
@@ -78,10 +85,7 @@ tags    : communication
 - 200 word per minute.
 
 #### 블로그 글 아이디어
-- 레벨별 기술 정리
-- 개발 철학
-- How to I analytic something
- - My choose experience
+- My choose experience
 - 기술 히스토리 search and writing bloging
 - Experience sharing
 - erp 하면서 고려했던 것들, 겼었던 것들 정리
@@ -126,4 +130,4 @@ note taking
 - by john grib for vimwiki to blog
 - ohtani for mandarart table
 
-![mandarart](img/ohtani.gif)
+![mandarart](./img/ohtani.gif)

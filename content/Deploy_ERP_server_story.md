@@ -2,7 +2,7 @@
 title   : ERP 서버 개발 스텝 바이 스텝 & 회고
 summary : odoo와 docker-compose를 이용한 erp 서버 구축
 date    : 2020-03-23 13:59:35 +0100
-updated : 2021-06-08 11:27:41 +0900
+updated : 2021-06-15 18:05:33 +0900
 tags    :
 ---
 
@@ -230,3 +230,4 @@ services:
 - ip setting automatic to vagrant
 - repository split
 - docker build to image
+- announcing update

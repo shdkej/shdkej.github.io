@@ -2,7 +2,7 @@
 title   : Project
 summary : Plan, co-working
 date    : 2020-06-23 22:34:14 +0100
-updated : 2021-06-03 20:36:14 +0900
+updated : 2021-06-15 17:39:08 +0900
 tags    : deep_knowledge
 ---
 
@@ -130,6 +130,10 @@ tags    : deep_knowledge
     볼펜: 유니
     안드로이드 자동화: 태스커
     등등
+
+    - 디스콰이엇 이라는 사이트가 있었다. 이 사이트는 개인이 피드 형식으로 새로운
+      프로덕트를 등록해서 보도록 되있다. 이 사이트에 내가 원하는 기능을 기여할
+      수 있으면 좋겠다.
 
 
 - [ ] my dashboard
