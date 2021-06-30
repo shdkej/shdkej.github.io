@@ -1,8 +1,8 @@
 ---
-title   : Infra Architecture
-summary : 🚀 Server Infra Architecture
+title   : 🚀 Server Infra Architecture
+summary : 변화, 정리, 순환, 측정
 date    : 2020-05-07 20:51:37 +0100
-updated : 2021-06-01 16:41:00 +0900
+updated : 2021-06-20 18:19:31 +0900
 tags    : strong_base
 ---
 
@@ -10,6 +10,7 @@ tags    : strong_base
 인프라 구축 및 배포를 쉽고 빠르게, 피드백을 잘 받아 점진적으로 발전하는 환경
 
 #### More
+- 변하지 않을 것과 변할 것을 정해놓고 조정한다.
 - check feedback
     - 어떤 항목을 봐야 이것이 잘 진행되는지를 확인 할 수 있어야 한다
     - 변화의 기록을 챙겨야 한다 (following changed thing)

@@ -2,7 +2,7 @@
 title   :
 summary :
 date    : 2021-05-20 20:33:31 +0100
-updated : 2021-06-01 19:13:10 +0900
+updated : 2021-06-29 15:39:00 +0900
 tags    :
 parent  : [[index]]
 ---
@@ -518,6 +518,7 @@ argocd를 github action에서 실행한다면
 - 12 Factor app
 - MSA
 - DDD
+- JAM stack
 - [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 - https://ahnheejong.name/articles/package-structure-with-the-principal-of-locality-in-mind/
 - https://mingrammer.com/translation-structuring-applications-in-go/

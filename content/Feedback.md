@@ -2,12 +2,12 @@
 title   : Feedback
 summary : communication
 date    : 2020-11-15 20:42:56 +0100
-updated : 2021-06-01 15:53:10 +0900
+updated : 2021-06-30 17:17:56 +0900
 tags    : communication
 ---
 
 ## feedback circuit
-![feedback_circuit](img/feedback.png)
+![feedback_circuit](./img/feedback.png)
 > http://cad.kyungpook.ac.kr/micro/feedback/feedback-detail.html
 
 

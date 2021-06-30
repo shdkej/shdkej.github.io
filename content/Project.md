@@ -2,7 +2,7 @@
 title   : Project
 summary : Plan, co-working
 date    : 2020-06-23 22:34:14 +0100
-updated : 2021-06-15 17:39:08 +0900
+updated : 2021-06-23 09:59:13 +0900
 tags    : deep_knowledge
 ---
 
@@ -97,6 +97,7 @@ tags    : deep_knowledge
     - 한국의 product hunt
     어피티, 뉴닉 같은 뉴스레터.
     동영상 플레이어 등 소프트웨어 검색 및 비교용 사이트가 없다
+    - alternative.to 등 있긴 하다.
     계속 키워드로 검색해서 새로운 물건이 나오면 파싱하는 사이트를 만들면 어떨까
     수동 업로드도 당연히 되야겠다
 
@@ -118,8 +119,6 @@ tags    : deep_knowledge
 
     - 각 카테고리별로 하나만 꼽을지, 기준을 세우고 기준별로 제품을 꼽을지,
       아니면 많이 가져와서 순서를 매길지
-
-    유스디스
 
     변증법
 

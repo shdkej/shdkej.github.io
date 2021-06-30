@@ -2,8 +2,8 @@
 title   : 어떻게 자료를 모으고 공부해야할까
 summary : 연습, 연구, 검색, 전문가
 date    : 2020-10-17 12:59:37 +0100
-updated : 2021-06-15 17:57:41 +0900
-tags    : to_know_about_other_subject
+updated : 2021-06-16 09:55:07 +0900
+tags    : integration
 ---
 
 ## Summary

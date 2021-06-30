@@ -2,8 +2,8 @@
 title   : Economics
 summary : And money management
 date    : 2020-05-06 12:29:12 +0100
-updated : 2021-05-20 21:37:09 +0100
-tags    : to_know_about_other_subject
+updated : 2021-06-16 09:56:19 +0900
+tags    : integration
 ---
 
 1.경기 회복기

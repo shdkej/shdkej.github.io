@@ -2,8 +2,8 @@
 title   : Company
 summary :
 date    : 2021-02-27 20:53:57 +0100
-updated : 2021-05-23 20:34:12 +0900
-tags    : to_know_about_other_subject
+updated : 2021-06-16 09:56:11 +0900
+tags    : integration
 ---
 
 ## About company

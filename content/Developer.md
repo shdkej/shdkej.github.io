@@ -2,29 +2,29 @@
 title   : Developer
 summary :
 date    : 2020-04-08 22:40:39 +0100
-updated : 2021-06-09 19:19:29 +0900
+updated : 2021-06-23 16:53:39 +0900
 tags    : strong_base
 ---
 
 - [ ] 내가 할 수 있다는 것을 어떻게 어필하지?
 - [ ] 이력서에 나타낼게 없는데 어떡하지?
+- [ ] 코딩테스트 통과 가능?
+- [ ] 깃헙을 보면 내 활동 파악 가능?
 
 ## Why me?
 데브옵스로서 개발자가 코드에만 집중하고, 배포 된 서버의 안정적인 구동까지
 단순화하는 것을 할 수 있다
-
-#### 나를 세일즈
-인터뷰는 서로가 서로를 알아가는 과정이다.
-쫄면 안되고 질문에 대답만 하려는 태도도 안되고
-내가 뭘 해줄 수 있는지 어필해야 한다
-
-상대방이 원하는 것을 알아보고 그것에 맞는 사람임을 어필
 
 #### 내 생각들을 담은 앱을 만든다
 모으고 정리 (편집)
 변증법적인 개선 (Evolve, Flexible, Cycle, Feedback)
 
 #### [[Resume]]
+- [ ] 나를 세일즈
+    인터뷰는 서로가 서로를 알아가는 과정이다.
+    쫄면 안되고 질문에 대답만 하려는 태도도 안되고
+    내가 뭘 해줄 수 있는지 어필해야 한다
+- [ ] 상대방이 원하는 것을 알아보고 그것에 맞는 사람임을 어필
 - [ ] Add Experience solve a problem
 - [ ] Add achivement
 - [ ] Delete don’t explain project
@@ -46,22 +46,8 @@ tags    : strong_base
 - [ ] 내 역량이 파악이 되는가?
     어떤 경험을 했고 어떤 마음을 가지고 있는지 잘 어필하고 싶다
 - [ ] 기업별 맞춤 지원 내용, 제안을 서머리에 적자
-
-- problem solving ability
-    - I've maintain machine before being developer. that's always been occurred error. and error have core cause, I have found 5 years. and then I think I have major of solving problem.
-
-코딩테스트 통과 가능?
-깃헙을 보면 내 활동 파악 가능?
-
-실전 경험이 없어서 우려하는 점을 어떻게 풀어나갈까
-- 시행착오가 일어날 것이다
-- 느릴 것이다
-
-커뮤니티를 통한 지원
-
-나만의 킥
-
-남들 한거 따라가는데 그치면 안되고, 내 필요를 추가해야한다
+- [ ] 서류에는 이제까지 회사에서 진행했던 프로젝트를 상세히 썼고, 거기서 내가 수행한 역할과 책임을 작성했다. 자소서 부분은 '문과생'이었던 내가 회사에 들어오기까지 얼만큼 노력했고, 들어오고 나서도 어떠한 노력을 하고 있는지 작성했다.
+- [ ] 문장이 길어지면 첫 문장을 읽고, 뒷 문장을 읽고 싶게끔 되야 한다.
 
 #### 회사가 뽑고 싶은 개발자
 - 쓰고 있는 기술에 경험이 있는 사람
@@ -93,6 +79,7 @@ what is the condition that selects the company state?
 - 회사가 가진 매력을 알고 싶다
 - 같이 일할 팀원들이 어떻게 일하는지 알고 싶다
 - 회사의 분위기
+- 조직의 경험을 어떻게 축적하고 있는가?
 
 ## Key Experience
 - docker / kubernetes - Container
@@ -113,6 +100,16 @@ terraform, ansible로 반복되는 아키텍처 관리 작업을 코드로 관�
 
 #### 가볍고 범용적인 인프라
 컨테이너를 이용한 효율적인 시스템 구축
+
+- 실전 경험이 없어서 우려하는 점을 어떻게 풀어나갈까
+    - 시행착오가 일어날 것이다
+    - 느릴 것이다
+- 커뮤니티를 통한 지원
+- 나만의 킥
+- 남들 한거 따라가는데 그치면 안되고, 내 필요를 추가해야한다
+- problem solving ability
+    - I've maintain machine before being developer. that's always been occurred error. and error have core cause, I have found 5 years. and then I think I have major of solving problem.
+
 
 ------------------------------------------------------------------------
 

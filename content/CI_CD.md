@@ -2,7 +2,7 @@
 title   : CI/CD 라인 구성 연습
 summary : 정적 소스 체크와 Ansible, Terraform, ArgoCD 를 이용한 배포
 date    : 2021-03-09 13:25:01 +0100
-updated : 2021-05-23 20:37:47 +0900
+updated : 2021-06-17 10:26:47 +0900
 tags    :
 parent  : [[Blogging]]
 ---
@@ -112,6 +112,9 @@ ci/cd 선택요소
     echo ::set-output name=stdout::`go test -cover -v`
     ```
     - stdout을 바로 받으려면 이렇게만 해도 된다
+- cache
+    - actions/cache 이용
+    - `if: steps.cache.outputs.cache-hit != 'true'` 로 체크
 - terraform 구동
     - `uses: hashicorp/setup-terraform@v1`
     - terraform cloud 토큰 생성 후 이용 가능

@@ -2,7 +2,7 @@
 title   : Linux
 summary :
 date    : 2020-05-06 19:57:59 +0100
-updated : 2021-06-03 20:39:39 +0900
+updated : 2021-06-28 16:45:09 +0900
 tags    :
 ---
 
@@ -766,6 +766,11 @@ EndSection
 ! but 20-intel file make some problem
 when entering full screen whatever. it is freezing.
 
+## ipad as second monitor
+1. create intel config file
+2. reboot
+3. `./ipad.sh -b -h`
+
 ## numpad as mouse pointer
 setting -> assistive -> mouse keys
 set mouse pointer speed
@@ -791,11 +796,6 @@ echo "Hello world" | convert -size 360x360 xc:white -font "FreeMono" \
   -pointsize 12 -fill black -annotate +15+30 "@-" -trim \
   -bordercolor "#FFF" -border 10 +repage hello.gif
 ```
-
-## ipad as second monitor
-1. create intel config file
-2. reboot
-3. `./ipad.sh -b -h`
 
 ## font broken
 - every font to square

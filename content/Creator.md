@@ -2,8 +2,8 @@
 title   : The other section in create area
 summary : Music, Construct, Artist, Directer, Author
 date    : 2020-09-29 23:59:25 +0100
-updated : 2021-06-01 15:57:07 +0900
-tags    : to_know_about_other_subject
+updated : 2021-06-17 15:30:56 +0900
+tags    : integration
 ---
 
 * Music -- song-writing, musical, concert
@@ -12,7 +12,7 @@ tags    : to_know_about_other_subject
 * Directer
 * Author -- essay, novel
 
-#### directer, creater, producer, executive producer, writer,
+## directer, creater, producer, executive producer, writer,
 제작, 연출
 
 제작이 프로듀서, 기획자
@@ -37,7 +37,6 @@ NG 후에 편집점을 위해 박수를 쳐서 편집점을 쉽게 찾게 한다
 개발에서 동기를 맞추는 힌트가 될 수 있을까
 
 #### 편집
-
 분류할 편, 모을 집
 
 공부의 왕도가 여기도 있었네
@@ -45,12 +44,15 @@ NG 후에 편집점을 위해 박수를 쳐서 편집점을 쉽게 찾게 한다
 #### Elevator
 How to perfectly make elevator?
 Can It bring programming
-
-#### Paul rubens
+> 투명한 유리 속에 있는 엘리베이터를 보고
 
 #### 가수는 무대 하나로 자신을 증명할 수 있다
 
 [[Think#개발의 목표]]
+
+## Artist
+#### Paul rubens
+#### 에셔
 
 ## computer science와 software engineer의 상관관계?
 

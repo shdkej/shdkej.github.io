@@ -2,8 +2,8 @@
 title   : 생활 법률 상식
 summary :
 date    : 2021-04-21 17:11:10 +0100
-updated : 2021-05-20 21:14:04 +0100
-tags    : to_know_about_other_subject
+updated : 2021-06-16 09:56:09 +0900
+tags    : integration
 ---
 
 ## 저작권

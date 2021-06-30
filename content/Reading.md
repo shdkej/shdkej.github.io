@@ -2,7 +2,7 @@
 title   : Reading
 summary : Book, Movie, Article, Post
 date    : 2020-04-04 21:57:00 +0100
-updated : 2021-06-11 11:15:25 +0900
+updated : 2021-06-24 17:52:37 +0900
 tags    : idea
 ---
 
