@@ -2,8 +2,8 @@
 title   : Natural
 summary :
 date    : 2021-02-27 21:07:23 +0100
-updated : 2021-05-20 21:14:11 +0100
-tags    :
+updated : 2021-07-01 10:19:19 +0900
+tags    : idea
 ---
 
 ## 자연스럽게

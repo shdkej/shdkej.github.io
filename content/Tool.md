@@ -2,7 +2,7 @@
 title   : Tool
 summary :
 date    : 2020-08-25 14:48:57 +0100
-updated : 2021-06-11 11:16:17 +0900
+updated : 2021-07-01 09:48:40 +0900
 tags    : deep_knowledge
 ---
 
@@ -260,7 +260,7 @@ Browser에서 지원해야 함
 
 #### grpc
 - protoc 설치: `apt install -y protobuf-comiler`
-- buf 설치
+- buf 설치: https://docs.buf.build/installation/
 - `buf.yaml`로 디펜던시 설치
     - `buf beta mod update`
 - `buf.gne.yaml`로 proto 파일 변환
@@ -290,7 +290,38 @@ grpc message에 담는 방법 외에 google http body를 이용해서 담을 수
 `import "google/api/httpbody.proto";`
 `returns (google.api.HttpBody)`
 
+#### grpc
+1. object.proto 파일 생성
+2. buf.gen.yaml 파일 생성 // proto-gen-go로 할 수 있지만 설정 일일이 하기 번거롭다
+    ```
+    version: v1beta1
+    plugins:
+      - name: go
+        out: ./pb
+        opt:
+          - paths=source_relative
+      - name: go-grpc
+        out: ./pb
+        opt:
+          - paths=source_relative
+    ```
+3. buf generate
+4. server.go 로 proto에서 정의한 함수 구현
+
+#### grpc 구현 시
+client도 같이 구현해야하나??
+그러면 메인 로직에서 CRUD 만들고, server에서 CRUD 만들고, client에서 또 만들어야
+한다. ㄷㄷㄷ
+
+서버는 자신의 마이크로서비스에서 실행하도록 하고, 클라이언트는 임포트해서 가져다
+쓰도록 되어있다.
+
 #### reference
 - https://devjin-blog.com/golang-grpc-server-4/
 - https://deepbaksu.github.io/2021/05/01/how-to-REST-from-gRPC/
 - https://tech.buzzvil.com/handbook/grpc/
+
+## text preprocessing
+- 단어 빈도 수 체크
+- 조사 제거
+- 불용어 제거

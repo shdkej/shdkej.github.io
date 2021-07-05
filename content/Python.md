@@ -2,7 +2,7 @@
 title   : Python
 summary : Beautiful, Explicit, Simple, Complex than complicated.
 date    : 2020-05-06 12:40:23 +0100
-updated : 2021-05-03 22:07:44 +0100
+updated : 2021-07-03 16:48:24 +0900
 tags    : deep_knowledge
 ---
 
@@ -22,6 +22,7 @@ tags    : deep_knowledge
 - interpreter, dynamic type
 - floor division?
 - GIL
+    - [[Computer_Architecture#GIL is mutex for python to prevent use object by multi thread.]]
 - debugging
 - wrapper
 

@@ -2,8 +2,8 @@
 title   : Readability
 summary : simple, minimal, portable, universal, limit, module, light-weight
 date    : 2020-11-14 20:31:25 +0100
-updated : 2021-05-20 21:44:07 +0100
-tags    :
+updated : 2021-07-01 10:18:41 +0900
+tags    : develop
 ---
 
 ## Navigator

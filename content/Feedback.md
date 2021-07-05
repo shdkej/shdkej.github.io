@@ -2,7 +2,7 @@
 title   : Feedback
 summary : communication
 date    : 2020-11-15 20:42:56 +0100
-updated : 2021-06-30 17:17:56 +0900
+updated : 2021-07-01 10:25:59 +0900
 tags    : communication
 ---
 
@@ -204,3 +204,13 @@ it 기기 관련 리뷰는 그런 제품들을 사용하는 사람들이 많이 
 
 #### feedback
 feedback이 인터럽션이 될 수 있다
+
+#### feedback 회로
+인풋 아웃풋
+아웃풋을 통해 인풋을 조절해서 원하는 아웃풋으로 유지하도록 한다.
+인풋을 뭘로하고 아웃풋을 뭘로 해야 하나.
+아웃풋이 기대값이 있다면 함수형으로 만들면 피드백 루프가 필요없을 수 있겠다.
+
+#### google에서 grpc request와 response를 따로 하는 이유
+구글 api는 왜 각 속성마다 request와 response를 따로 만드나?
+- 입력값과 출력값이 각 함수마다 다르기 때문...

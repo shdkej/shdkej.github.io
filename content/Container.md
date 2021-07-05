@@ -2,7 +2,7 @@
 title   : Container
 summary : Docker, Kubernetes
 date    : 2020-12-17 22:01:56 +0100
-updated : 2021-06-01 16:32:10 +0900
+updated : 2021-07-05 13:15:13 +0900
 tags    : deep_knowledge
 ---
 
@@ -14,31 +14,23 @@ tags    : deep_knowledge
 - portable
 - light-weight
 
-#### container serverless
-- knative, lstio, open-faas
-- heroku getting started test
-
 #### Docker image vs compose
 - image vs volume
-    - test with volume, deploy with image
+  - test with volume, deploy with image
 
 #### docker logs
 - make stdout
- - `echo "test" >> /proc/1/fd/1`
-
-#### docker logging
---log-opt
-    max-size
-    max-file
+  - `echo "test" >> /proc/1/fd/1`
+- `--log-opt`
+  - `max-size`
+  - `max-file`
 
 Fluentd와 Eleasticsearch를 이용해서 로그 수집 및 검색
 
 표준출력(stdout)으로 로그를 출력하도록 두고, 이를 수집하도록 한다.
+
 nginx는 stdout으로 출력되도록 설정이 필요하다
 - 1.19.8 버전을 쓰는 지금은 stdout으로 출력되도록 설정되어있다.
-
-#### locale
-dockerfile에 locale, time 등 설정 해두는게 좋지 않을까
 
 #### container
 libcontainer 개발로 kernel에서 namespaces, cgroups 등을 직접 실행
@@ -49,6 +41,7 @@ LXC는 다른 호스트에서 실행했을 때 설정 차이로 동일하게 돌
 있었다고 한다.
 도커도 버전 다르면 안돌아간다.
 
+Container 구동 원리
 - `chroot` - 입력받은 디렉토리를 루트로 하여 격리된 환경을 만들어준다
 - cgroups - 시스템 리소스를 격리할 수 있다(cpu, memory, network, disk)
 - overlayFS - 프로세스 간 파일 시스템 분리
@@ -63,6 +56,9 @@ LXC는 다른 호스트에서 실행했을 때 설정 차이로 동일하게 돌
     - net - `ip netns add <ns name>` 네트워크 규칙들을 새롭게 받는다
 - https://speakerdeck.com/devinjeon/containerbuteo-dasi-salpyeoboneun-kubernetes-pod-dongjag-weonri?slide=29
 
+네임스페이스와 컨테이너, 네트워크까지 잘 정리된 링크
+- https://www.44bits.io/ko/keyword/linux-namespace
+
 #### Docker의 위기?
 - container is light-weight and portable more than virtual machine image
 - but it can same work that PC's work
@@ -73,8 +69,8 @@ LXC는 다른 호스트에서 실행했을 때 설정 차이로 동일하게 돌
 - Image Download -> Extract Image -> Execute Container
 - Container has cgroups, namespace, networking
 - alternative to Buildah, skopeo, podman
- - docker is one big process. It can make single point of failure.
- - divide docker position by 3.
+  - docker is one big process. It can make single point of failure.
+  - divide docker position by 3.
 
 #### Dockerfile
 - 바이너리를 도커파일에서 받을 때 체크섬을 검증하는 내용을 적으면 이미지의 신뢰성이 올라간다
@@ -83,8 +79,9 @@ LXC는 다른 호스트에서 실행했을 때 설정 차이로 동일하게 돌
     - `USER sam`
     - 간단하다
 - docker.sock은 호스트의 도커 컨테이너 관리를 장악할 수 있다
+- dockerfile에 locale, time 등 설정 해두는게 좋지 않을까
 
-#### volume
+#### docker-compose를 이용해 이미지를 바로 배포하는 것과 Dockerfile을 쓰는 것
 dockerfile 없이 이미지로만 할 때의 문제점?
 - 어떤 것을 바꿨는지 추적하기 힘들다
 - 설치파일들 찾기 힘들다
@@ -104,19 +101,17 @@ docker-compose up 을 하면 이미지를 새로 부른다? volume
 dockerfile -> image -> pods
 build -> push -> kubernetes apply(set image)
 
-- [ ] 이미지를 기반으로 작업을 하면 이미지가 업데이트 되었는데 이전 버전으로
-      작업하던 사람들은?
-
 개발환경에서는 볼륨을 해서 compose로 개발하고
 배포 시에는 Dockerfile을 이미지화해서 배포한다
 개발디렉토리는 Dockerfile에도 COPY에 있어야하고, compose에도 볼륨을 한다.
 개발환경에서 쓰는 이미지는 배포 시 쓰는 이미지와 같은 것을 사용한다.
 이미지 빌드는 CD pipeline을 통해서 한다. 이미지 혼동을 막기 위해
-
+- [ ] 이미지를 기반으로 작업을 하면 이미지가 업데이트 되었는데 이전 버전으로
+      작업하던 사람들은?
 - [ ] 최초 작업 시 이미지가 없어서 compose를 실행 못시키니, 빌드 파이프라인을 먼저 만든다?
 
 내가 원하는게 디렉토리 전체를 덮어쓰는게 아니라 일부만 수정하는 거라서 좀 꼬였다
-- [ ] 일일이 COPY를 하나? compose에서는 어떻게?
+- [ ] 일일이 COPY를 해야 하나? compose에서는 어떻게?
 
 ```
 Dockerfile
@@ -187,8 +182,8 @@ CMD로 하면 안되고 ENTRYPOINT로 하면 된다
 
 대신 ENTRYPOINT를 쓰면 -it /bin/sh 는 인식을 못한다
 
-## kubernetes
-person has very small component, and it compose to one architecture.
+## Kubernetes
+A person has a very small component, and it composes of one architecture.
 the kuberetes seem to be this.
 and I want to make software like this architecture.
 strong small component to flexible architecture.
@@ -245,7 +240,7 @@ but devops works is not clear.
 deployment 정지시키려면 scale --replicas=0 으로 해야되나보다
 - pod을 삭제하는 건 kill로 한다
 
-#### kubernetes
+#### kubernetes test
 - local test, production build pipeline
 - local test with only dockerfile
 - local test with same with production
@@ -261,6 +256,28 @@ deployment 정지시키려면 scale --replicas=0 으로 해야되나보다
 - hpa
 - service
 - minikube
+
+#### 쿠버네티스 클러스터 중에 마스터가 자원을 많이 쓰나, 노드가 많이쓰나?
+master
+- api server, etcd 등 기본적으로 자원을 많이 사용한다.
+
+서비스가 빡세게 돌면 노드가 많이쓰나?
+
+쿠버네티스 로그 서비스 추가해서
+노드 하나를 일부러 끄면 로그 잘 남는지 확인하고
+죽은 서버를 살릴 수 있을지 확인
+
+ram 1기가 서버에 ram 0.5를 쓰는 서비스를 6개를 레플리카하면 동작하나?
+- 자원 한도 넘어가면 파드를 안 만든다.
+
+글러스터fs 와 db 레플리케이션을
+쿠버네티스에서 편하게 할 수 있는 방법이 있나?
+
+클러스터를 한번씩 껐다 켜서 리프레시 했을때 안좋은점이 있을까?
+없다면 접속자 적은 시간을 뽑아서 한 서버씩 재부팅 해줘야겠다
+페일오버 테스트도 되고, os도 리프레시 되지 않을까
+
+걱정되는 점은 한쪽 노드에 팟들이 몰려있다가 다시 돌아갈 때 과부하 걸리지 않을지
 
 #### docker kubernetes istio
 | docker   | kubernetes               | istio                        |
@@ -372,6 +389,9 @@ set `export KUBECONFIG=/etc/rancher/k3s/k3s.yaml`
 https://github.com/rancher/k3s/issues/1126
 
 #### eks vs ec2 autoscale and setting kubernetes vs kubernetes hpa
+
+#### container serverless
+- knative, lstio, open-faas
 
 #### k3s
 - token `/var/lib/rancher/k3s/server/node-token`

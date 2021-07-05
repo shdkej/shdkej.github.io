@@ -2,8 +2,8 @@
 title   : Collected Data
 summary : Stack
 date    : 2020-10-25 12:56:12 +0100
-updated : 2021-06-01 16:19:15 +0900
-tags    : idea
+updated : 2021-07-02 16:28:16 +0900
+tags    : develop
 ---
 
 ## 사기가 일어나는 분야를 찾아보자
@@ -129,6 +129,39 @@ underkg
 단순 나열은 데이터로서의 가치만 있다
 정보전달을 위해서는 필터링을 해야 한다
 특히 짦은 시간 안에 전달하려면 더더욱
+
+#### filter
+- google search filter
+    - "<keyword>",<keyword1> | <keyword2>, -<keyword>, <keyword> * <must keyword>
+    - <2020>..<2021>
+- 노션의 데이터베이스 필터
+- 빅데이터 대시보드의 화면 구성
+- cncf 전체 조망도 사이트인데 필터링이 잘 되있다
+    - https://landscape.cncf.io/card-mode?grouping=no&license=open-source&sort=first-commit
+
+#### 태그를 잘 활용해보자
+태그 활용 사례들을 살펴보자(aws, bear)
+태그를 잘 활용하도록 돕는 서비스를 찾아보자
+
+#### 아카이빙 시스템
+방송국, 경찰서, 법원, 출판업계
+
+#### text manipulation
+- gpt3를 이용해서 원하는 주제의 책을 검색할 수 있을까
+- 베이지안 필터로 제목을 읽어 카테고리를 설정할 수 있다
+- 구글에서 인덱스, 링크 가중치,
+
+## 업데이트 알림 봇
+신간 알림
+소프트웨어 업데이트 알림
+최저가 알림
+재고 알림
+등 알려줘야 할 것들이 많은데 이를 한 곳에서 관리하고 쉽게 추가할 수 있는 것이
+필요하다.
+개인마다 추가를 할 수 있도록 하고, 플러그인으로 기능을 추가할 수 있어야겠다.
+
+- [쿠팡 가격 하락 알리미](http://m.ppomppu.co.kr/new/bbs_view.php?id=social&no=25567)
+- [신간 서적 알림 봇](https://github.com/overworks/aladin-newbook-notifier)
 
 #### 별점 > 좋아요
 별점은 정보가 부족하다. 좋아요보다 선택지가 많음에도.

@@ -2,8 +2,8 @@
 title   : History
 summary : history, behind story, reference
 date    : 2020-11-14 20:52:00 +0100
-updated : 2021-05-20 20:57:54 +0100
-tags    :
+updated : 2021-07-01 10:19:32 +0900
+tags    : idea
 ---
 
 ## History
