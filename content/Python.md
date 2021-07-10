@@ -2,7 +2,7 @@
 title   : Python
 summary : Beautiful, Explicit, Simple, Complex than complicated.
 date    : 2020-05-06 12:40:23 +0100
-updated : 2021-07-03 16:48:24 +0900
+updated : 2021-07-08 09:51:29 +0900
 tags    : deep_knowledge
 ---
 
@@ -188,17 +188,17 @@ import re
 
 #### reminder recommend python
 - Filtering method
- - Demographic Filtering
- - Content Based Filtering
- - Collaborative Filtering- https://www.kaggle.com/ibtesama/getting-started-with-a-movie-recommendation-system
+  - Demographic Filtering
+  - Content Based Filtering
+  - Collaborative Filtering- https://www.kaggle.com/ibtesama/getting-started-with-a-movie-recommendation-system
 - ? find visualization system about csv file for weight manage
 - upload lambda with pandas, scikit-learn
- - https://medium.com/@korniichuk/lambda-with-pandas-fd81aa2ff25e
+  - https://medium.com/@korniichuk/lambda-with-pandas-fd81aa2ff25e
 
 #### 비동기 프로그래밍
 - asyncio
- - get_event_loop() - asyncio 시작
- - loop.run_until_complete() - 이벤트 루프 시작
+  - get_event_loop() - asyncio 시작
+  - loop.run_until_complete() - 이벤트 루프 시작
 - 그린 스레드
 - 스케쥴링을 하드웨어가 아닌 애플리케이션 코드가 대신한다.
 - Gevent 는 그린스레드 + eventlet 이다

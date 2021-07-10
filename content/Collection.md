@@ -2,7 +2,7 @@
 title   : Collected Data
 summary : Stack
 date    : 2020-10-25 12:56:12 +0100
-updated : 2021-07-02 16:28:16 +0900
+updated : 2021-07-07 13:42:49 +0900
 tags    : develop
 ---
 
@@ -73,6 +73,7 @@ property
 속성
 파라미터
 entity
+scheme
 
 #### 가로, 세로
 - row, column

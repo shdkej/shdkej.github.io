@@ -2,7 +2,7 @@
 title   : Fail Experience
 summary : How to prevent failure again
 date    : 2020-05-06 14:18:40 +0100
-updated : 2021-04-14 21:27:32 +0100
+updated : 2021-07-08 14:05:04 +0900
 tags    : health
 ---
 
@@ -46,7 +46,7 @@ nvme와 sata의 차이를 찾아보고 둘의 작동방식이 다름을 알았�
 
 ## problem solving
 - faced problem
-- return before change
+- return to before change
 - change each one
 - find exactly problem
 - solve

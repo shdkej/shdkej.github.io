@@ -2,7 +2,7 @@
 title   : Trouble Shooting
 summary :
 date    : 2020-06-23 22:39:25 +0100
-updated : 2021-07-01 10:17:59 +0900
+updated : 2021-07-05 14:12:53 +0900
 tags    : develop
 ---
 
@@ -283,15 +283,6 @@ opt 안붙이면 경로를 현재 폴더 기준에서 새로 생성해버린다
 - 일단 쿠버네티스 자원들을 제거해야겠는데, api server가 접속이 안되는데
   어떻게 정지시킬 수 있지?
     - 쿠버네티스 자체를 정지하는 방법. (정지 후 빨리 접속해서 다 딜리트 시킨다)
-        - master
-            - kube-apiserver
-            - kube-scheduler
-            - kube-controller
-            - kubelet
-            - kube-proxy
-        - node
-            - kubelet
-            - kube-proxy
     - 마스터를 껐다 켜서 api server를 다시 돌게 할 수 있다
 - k3s 서버를 찾아야하고, k3s 를 꺼도 다시 켜진다...
     - k3s kill all script가 k3s 설치 시 깔린다. `/usr/local/bin/k3s-killall.sh`

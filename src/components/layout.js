@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 
 import "./layout.css";
 import ClientOnly from "./ClientOnly";
-import Search from "./search.js";
+import Search from "./search";
 
 const Layout = ({ title, children, data }) => {
     let header;

@@ -2,7 +2,7 @@
 title   : Container
 summary : Docker, Kubernetes
 date    : 2020-12-17 22:01:56 +0100
-updated : 2021-07-05 13:15:13 +0900
+updated : 2021-07-08 16:19:16 +0900
 tags    : deep_knowledge
 ---
 
@@ -80,6 +80,16 @@ Container 구동 원리
     - 간단하다
 - docker.sock은 호스트의 도커 컨테이너 관리를 장악할 수 있다
 - dockerfile에 locale, time 등 설정 해두는게 좋지 않을까
+
+#### docker compose에서 빌드 단계의 이미지를 쓸 수 있을까
+Dockerfile은 멀티 빌드로 해놓고 배포시에는 마지막 빌드 이미지를 쓰지만
+개발 시에는 빌드한 것으로 쓰고 싶은데
+```
+build
+  context: ./
+  target: build
+```
+build에 target으로 이름 맞춰주면 된다.
 
 #### docker-compose를 이용해 이미지를 바로 배포하는 것과 Dockerfile을 쓰는 것
 dockerfile 없이 이미지로만 할 때의 문제점?
@@ -224,6 +234,18 @@ but devops works is not clear.
 
 설정 리소스
 - configmap
+
+#### api
+- master
+    - kube-apiserver
+    - kube-scheduler
+    - kube-controller
+    - kubelet
+    - kube-proxy
+    - etcd
+- node
+    - kubelet
+    - kube-proxy
 
 #### kubernetes volume
 특정 노드의 폴더를 사용할 때는 hostPath를 사용할 수 있다.

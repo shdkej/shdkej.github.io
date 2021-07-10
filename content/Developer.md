@@ -2,7 +2,7 @@
 title   : Developer
 summary :
 date    : 2020-04-08 22:40:39 +0100
-updated : 2021-07-02 16:15:56 +0900
+updated : 2021-07-08 14:30:58 +0900
 tags    : strong_base
 ---
 
@@ -64,6 +64,10 @@ tags    : strong_base
 - 구체적인 구현 능력
 
 [[About_Development#같이 일하고 싶은 개발자]]
+
+#### 깊이 있는 경험
+"제한된 시간에 모든 걸 공부하는 건 불가능하기 때문에 몇 가지를 깊이 이해하는 것이 중요합니다. “내가 시간이 없어서 그렇지 깊게 파면 이렇게 잘할 수 있다!”라는 걸 어필할 수 있다면, 회사 입장에서도 “뽑은 다음에 키우면 되겠다”라고 생각할 수 있습니다."
+ https://subicura.com/2021/06/27/study-guide
 
 #### why I choose this company
 - vision can growth with me

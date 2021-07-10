@@ -2,7 +2,7 @@
 title   :
 summary :
 date    : 2021-05-20 20:33:31 +0100
-updated : 2021-07-02 15:54:54 +0900
+updated : 2021-07-08 14:27:08 +0900
 tags    : develop
 ---
 
@@ -263,6 +263,13 @@ Observability를 높인다.
 
 예측하는 것이 아니라 관찰할 수 있도록 만든 후 관찰 하는 것.
 
+Observability
+post mortem
+무엇을 보여줄 수 있는가
+무엇을 해결해야 하는가
+어떤 문제가 생길 것 같은가
+이 문제가 발생했는지를 내가 설정하지 않아도 알 수 있으려면 바로 observability가 필요하다
+
 #### etc
 깃랩의 문서 관리방법을 도입해서 문서 최신 상태 유지 및 지속적 업그레이드
 
@@ -271,13 +278,6 @@ Observability를 높인다.
 소프트웨어 피드백 루프
 
 한눈에 파악
-
-Observability
-post mortem
-무엇을 보여줄 수 있는가
-무엇을 해결해야 하는가
-어떤 문제가 생길 것 같은가
-이 문제가 발생했는지를 내가 설정하지 않아도 알 수 있으려면 바로 observability가 필요하다
 
 #### architecture
 단일고장점이 없는 아키텍처라면
@@ -540,6 +540,9 @@ argocd를 github action에서 실행한다면
 - DDD
 - JAM stack
 - [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- 육각형 아키텍처
+- DCI data, context, interface 제임스 코플리언
+- BCE bounded control entity
 - https://ahnheejong.name/articles/package-structure-with-the-principal-of-locality-in-mind/
 - https://mingrammer.com/translation-structuring-applications-in-go/
 - https://geminikim.medium.com/지속-성장-가능한-소프트웨어를-만들어가는-방법-97844c5dab63

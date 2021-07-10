@@ -6,7 +6,6 @@ import SEO from "../components/seo";
 import Utterances from "../components/utteranc";
 import Popup from "../components/popup";
 import BackLink from "../components/backlink";
-import Box from "../components/box";
 
 const MarkDownLinkTohref = (text) => {
     //const href_text = text.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="../$2" target="_blank">$1</a>')

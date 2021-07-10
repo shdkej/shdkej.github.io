@@ -2,7 +2,7 @@
 title   : Balance, Keep Middle
 summary : 중용, 화, 딜레마
 date    : 2020-11-11 14:42:47 +0100
-updated : 2021-07-02 09:59:20 +0900
+updated : 2021-07-08 15:19:53 +0900
 tags    : human
 ---
 
@@ -568,6 +568,18 @@ vs
 확장은 필연적으로 복잡성을 만든다
 
 #### 이동통신 시스템이 분산 처리 시스템에서 잘 돌아가고 있는 사례인 것 같다
+데이터베이스의 레플리카 기능과 샤딩
+일라스틱서치
+하둡
+
+#### Multi Processing
+분산 시스템의 고민과 비슷한 고민이 멀티 프로세스를 사용하려는 시도에도 있겠다.
+
+MPI라는 인터페이스가 있다.
+- https://operatingsystems.tistory.com/entry/High-Performance-Computing-MPI
+- http://hpcschool.kr/usc/wp-content/uploads/sites/10/2014/04/MPI.pdf
+
+Apache의 MPM
 
 #### 분산 개발 환경의 해결책으로 ci가 나왔다
 분산 서비스간의 통합도 ci 같이 할 수 있을까
@@ -716,3 +728,9 @@ vs
 
 친구가 내가 봤을 때 이상해보이는 상황에 놓여있을 때
 그냥 지켜봐줘야할 때와 얘기를 해줘야할 때를 잘 판단할 수 있을까
+
+#### 훈련과 혹사의 차이는?
+철은 사용하지 않으면 녹슨다
+위장은 죽만 먹으면 약해진다
+근육은 자극을 주어 강화시킬 수 있다
+관절은 닳는다
