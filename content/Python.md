@@ -2,7 +2,7 @@
 title   : Python
 summary : Beautiful, Explicit, Simple, Complex than complicated.
 date    : 2020-05-06 12:40:23 +0100
-updated : 2021-07-14 09:51:08 +0900
+updated : 2021-07-14 18:01:13 +0900
 tags    : deep_knowledge
 ---
 
@@ -269,3 +269,7 @@ b.append([0,1,2,3,4,5,6,7,8,9])
 # b address over d ???
 ```
 
+## Reference
+- [generator](https://realpython.com/introduction-to-python-generators/)
+-[yield](https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do/231855#231855)
+- [한글 인코딩](https://redscreen.tistory.com/163)

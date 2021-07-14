@@ -2,7 +2,7 @@
 title   : Open Source
 summary : Open is powerful
 date    : 2020-07-26 10:39:37 +0100
-updated : 2021-07-10 12:16:10 +0900
+updated : 2021-07-14 17:59:41 +0900
 tags    : communication
 ---
 
@@ -60,3 +60,11 @@ versioning 할 때 1.2.x 로 해서 x부분은 오류 수정용으로 해서 하
 - https://free-for.dev/#/
 
 [[Cleaning#Used Tool]]
+
+## Reference
+- [AWS와 Elastic 라이센스 분쟁 - by outsider](https://blog.outsider.ne.kr/1533)
+- [AWS와 Elastic 라이센스 분쟁 - by opsnow](https://blog.opsnow.com/35)
+- [오픈소스 릴리즈 팁](https://spoqa.github.io/2017/09/28/foss-release-tips.html)
+- [오픈소스 구조와 모듈 파악하기](https://kdydesign.github.io/2020/10/19/open-source-flow/)
+- [오픈소스 컨트리뷰터 찾기](https://www.sosconhistory.net/soscon2019/content/data/session/Day%201_1630_1.pdf)
+- [오픈소스 개발기](https://deview.kr/data/deview/session/attach/1500_T1_박재성_깃헙%204.4K%20스타%20billboard.js%20메인테이너가%20들려주는%20오픈소스%20개발기.pdf)

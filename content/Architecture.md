@@ -2,7 +2,7 @@
 title   : 🚀 Server Infra Architecture
 summary : 변화, 정리, 순환, 측정
 date    : 2020-05-07 20:51:37 +0100
-updated : 2021-07-13 13:34:59 +0900
+updated : 2021-07-14 16:41:39 +0900
 tags    : strong_base
 ---
 
@@ -408,6 +408,8 @@ load average 확인 후 cpu bound인지 memory bound인지 disk i/o문제인지 
 
 #### 구성보다 관습, CoC
 설정을 일일이 하기보다 관습적으로 따르게 하고, 설정이 필요할 때만 설정을 하는 방식
+
+같은 약자로 Code of Conduct(행동 규범)이 있어 헷갈릴 수 있다.
 
 #### 서비스가 커져감에 따라 직접 구현해야하는 기능
 깃 레포지토리 > gitlab이 자체 서버 구축 가능하다

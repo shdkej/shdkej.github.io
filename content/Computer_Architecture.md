@@ -2,7 +2,7 @@
 title   : Computer Architecture
 summary : 🖥️ CPU, Memory, OS, Kernel
 date    : 2020-03-16 22:40:45 +0100
-updated : 2021-05-23 20:46:03 +0900
+updated : 2021-07-14 17:15:51 +0900
 tags    : strong_base
 ---
 
@@ -15,30 +15,35 @@ tags    : strong_base
 Transistor -> Flipflop -> IC -> CPU or RAM
 - AND OR XOR
 - ARU MBR MAR -- John von neumann
-- low level - Assembly - complier - high level language
+
+low level - Assembly - complier - high level language
 - low level (CISC - intel, RISC - arm)
+    - 기계어는 CPU와 1:1 관계라 어셈블리어가 기계어 구조에 맞춰 변환되면 CPU는 동작한다.
 - USER want to running program: HDD -> RAM -> CPU (process) -> OUTPUT
 - really running CPU with RAM and process scheduler
+
+#### process
+디스크에 저장된 프로그램이 코드와 데이터를 갖고 있다.
+이를 실행시키면 프로세스를 RAM에 적재하면서 코드와 데이터를 가져오고, 스택과
+힙을 할당 받는다.
+코드를 읽는 것은 CPU에서 메모리를 불러와 명령을 수행한다.
 
 #### Process, Thread
 in 1970, computer has only 1 process, can run one program. process can make
   run multiple program. but people need multi-work. so multi-processing
   invented.
 
-#### process
-디스크에 저장된 프로그램이 코드와 데이터를 갖고 있으면 이를 실행시키면
-프로세스를 RAM에 적재하면서 코드와 데이터를 가져오고, 스택과 힙을 할당 받는다
-코드를 읽는 것은 CPU에서 메모리를 불러와 명령을 수행한다.
-
 [[Software#History]]
 
 -----------------------------------------------------------------------
 
 ## MEMORY
-- why cpu is fast, memory is slow
-- Data - Code text
-- Heap - Global variable
-- Stack - region variable
+- Code - Code text, 기계어(Machine Code) ex) RISC
+- Data - Global, Const variable
+- Stack - region(local) variable, function
+- Heap - dynamic variable
+    - 힙 영역에 malloc으로 생성한 동적 변수가 들어가고 이 주소값을 잃어버리면 메모리
+    릭이 발생한다고 한다. (다른 언어에서는 new로 할당하기도 함)
 
 [[Data_Structure]]
 

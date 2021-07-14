@@ -1,8 +1,8 @@
 ---
-title   : CI/CD 라인 구성 연습
+title   : CI/CD 구성 연습
 summary : 정적 소스 체크와 Ansible, Terraform, ArgoCD 를 이용한 배포
 date    : 2021-03-09 13:25:01 +0100
-updated : 2021-07-13 18:40:22 +0900
+updated : 2021-07-14 15:52:27 +0900
 tags    :
 parent  : [[Blogging]]
 ---
