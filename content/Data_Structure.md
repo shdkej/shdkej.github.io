@@ -2,7 +2,7 @@
 title   : Data Structure
 summary :
 date    : 2020-03-25 08:02:32 +0100
-updated : 2021-05-03 21:59:13 +0100
+updated : 2021-07-13 14:16:52 +0900
 tags    : strong_base
 ---
 
@@ -135,7 +135,20 @@ insertAfter(int item) {
 - 무결성,복잡도 분석, 그래프 알고리즘, np-완비
 
 #### DFS
+
 #### BFS
+```py
+def bfs(graph, root):
+    visited = set()
+    queue = deque([root])
+    while queue:
+        child = queue.popleft()
+        for neighbour in graph[child]:
+            if neighbour not in visited:
+                visited.add(neighbour)
+                queue.append(neighbour)
+```
+
 #### Using Hash Tables
 #### Variables/Pointers manipulation
 #### reverse linked list (duplicates, removing duplicates)

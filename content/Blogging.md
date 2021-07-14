@@ -2,7 +2,7 @@
 title   : Blogging
 summary : build blog
 date    : 2020-03-17 11:22:19 +0100
-updated : 2021-06-15 18:12:09 +0900
+updated : 2021-07-13 13:39:15 +0900
 tags    : communication
 ---
 
@@ -27,23 +27,6 @@ tags    : communication
 - 모든 지식을 알 수 없음을 겸허히 받아들여야 한다...
 - 거인의 어깨에 올라탄다.
 
-## Environment
-
-#### static site generator
-- gatsby
- - I'm choice this
- - it is graphql friendly
-- jekyll
-- nextjs
-
-#### speed
-- server side rendering
-- client side rendering
-- seo
-- speed with first access or second access
-- client side is good to second access(moving page to page)
-- server side is good to first access(find webpage, and access webpage)
-
 
 ## 번역시 고민 요소
 원작자가 쓴 용어를 그대로 쓸 것인가, 편한 용어로 퉁 칠 것인가
@@ -57,7 +40,13 @@ tags    : communication
 그 때는 좋아보였지만 갈수록 빛을 잃는 문장이 될 수 있다
 
 원문의 형태와 같게 하는게 좋을까? 긴 문장은 긴 문장으로 번역?
+- 형태를 유지하되, 어투는 한국식으로 바꾸는게 좋겠다.
 
+#### 수파리의 관점에서 번역
+번역할 때 파파고로 먼저 돌리고 내가 다시 다듬는게 그리 나쁜 것은 아닌 것 같다.
+
+작성자가 작성한 글의 맛을 살리기 위해 문장의 길이는 최대한 맞추는 방향으로
+해야겠다(쉼표, 마침표). 대신 번역투 느낌은 안나도록 최대한 신경써야 한다.
 
 ## Content
 - share experience

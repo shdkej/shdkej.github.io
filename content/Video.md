@@ -2,7 +2,7 @@
 title   : Video
 summary :
 date    : 2020-07-18 09:29:41 +0100
-updated : 2021-06-16 09:56:15 +0900
+updated : 2021-07-10 11:21:23 +0900
 tags    : integration
 ---
 
@@ -45,7 +45,7 @@ Variable feel, if every cut as the same composition. It is boring
 ## Cinematic
 
 ## Video
-- navigator
+# - navigator
 - subtitle
 - floating current subject on left-top
 - quickly

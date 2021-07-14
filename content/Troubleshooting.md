@@ -2,7 +2,7 @@
 title   : Trouble Shooting
 summary :
 date    : 2020-06-23 22:39:25 +0100
-updated : 2021-07-05 14:12:53 +0900
+updated : 2021-07-13 14:18:11 +0900
 tags    : develop
 ---
 
@@ -478,3 +478,12 @@ api oauth 창에서 redirect로 설정해놓은 주소들이 만료되었나보�
 log.Fatal이 있어도 로그만 남기고 그냥 가만히 있는다
 - Fatal은 되는데 docker가 정지하지 않는다
     - go run 으로 하면 도커가 꺼지지 않고, build해서 실행파일을 실행시키면 꺼진다.
+
+## k3s
+    - cgroup memory 에러 발생
+        - sudo vi /boot/firmware/cmdline.txt
+          Add cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1 into end of the file.
+        - https://github.com/k3s-io/k3s/issues/2067
+
+#### docker react 404s will fallback to /
+일단 `docker-compose.yml` 에 `stdin_open: true` 넣어주면 되긴 된다

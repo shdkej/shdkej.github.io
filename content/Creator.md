@@ -2,7 +2,7 @@
 title   : The other section in create area
 summary : Music, Construct, Artist, Directer, Author
 date    : 2020-09-29 23:59:25 +0100
-updated : 2021-06-17 15:30:56 +0900
+updated : 2021-07-10 11:38:46 +0900
 tags    : integration
 ---
 
@@ -47,6 +47,11 @@ Can It bring programming
 > 투명한 유리 속에 있는 엘리베이터를 보고
 
 #### 가수는 무대 하나로 자신을 증명할 수 있다
+
+#### 디자이너, 가수, 연기자
+이전의 기술을 몸에만 체득하고 있지 물리적으로 가질 수 없다.
+그럼에도 그들은 뛰어난 결과물을 만들어낸다.
+개발자도 이전의 코드를 계속 안고가려고 고집하기보다 기술적 성장을 목적으로 배우면 될까
 
 [[Think#개발의 목표]]
 

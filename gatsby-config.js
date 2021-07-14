@@ -32,6 +32,10 @@ module.exports = {
                             toHeading: 6,
                         },
                     },
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {},
+                    },
                 ],
             },
         },

@@ -2,7 +2,7 @@
 title   : WEB
 summary :
 date    : 2021-03-22 21:41:28 +0100
-updated : 2021-04-14 14:21:35 +0100
+updated : 2021-07-10 11:55:29 +0900
 tags    :
 ---
 
@@ -75,3 +75,37 @@ Web api - task queue - js thread?
 비슷한 것들로
 aside, nav, header, footer 등이 있다
 이를 semantic(의미론적인) 태그라고 한다
+
+## static site generator
+React 등으로 개발 후 html 정적 페이지로 만들어서 가볍게 서버를 돌릴 수 있도록
+해준다.
+- gatsby
+  - I'm choice this
+  - it is graphql friendly
+- jekyll
+- nextjs
+
+#### speed
+- server side rendering
+- client side rendering
+- seo
+- speed with first access or second access
+- client side is good to second access(moving page to page)
+- server side is good to first access(find webpage, and access webpage)
+
+#### SSR CSR
+둘 다 html로 만들어놓을 수는 있다.
+서버에서 만들어진 html을 전달하고 javascript를 나중에 불러온다
+SSR은 매 호출마다 새로 요청하고, CSR은 한번 로딩하면 다시 호출 안한다.
+- 요청이 생기면 데이터는 다시 호출할 수도 있다.
+
+구글에서 검색 후 빠르게 페이지 확인하고 다른 블로그로 넘어갈 때 CSR 페이지는
+느리다.
+
+커뮤니티 사이트에 CSR을 적용하면 페이지당 이동속도가 빠를까? 글쎄 아닐 것 같다.
+- 새로운 글이 계속 생겨 서버에서 계속 데이터를 받아와야 한다.
+- 클라이언트에서 모두 로딩해야 하는데, 그러면 처음 속도가 미친듯이 느릴 것이다.
+
+useEffect는 브라우저에서 로딩해서 동작할텐데
+
+nextjs는 처음엔 SSR, 로딩 후에는 CSR로 동작해서 두 장점을 모두 가져온다.

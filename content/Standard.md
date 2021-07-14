@@ -2,11 +2,11 @@
 title   : 변증법, 수파리, 피드백, 메뉴얼, 제한
 summary : 기존의 것을 익히고, 반대로 생각해보고, 더 나은 것을 만든다
 date    : 2021-04-20 19:10:41 +0100
-updated : 2021-07-08 14:29:19 +0900
+updated : 2021-07-10 12:06:11 +0900
 tags    : human
 ---
 
-# rule / prepare / Limit / plan
+# rule / prepare / Limit
 
 ## 변증법
 ## 수파리

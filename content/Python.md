@@ -2,7 +2,7 @@
 title   : Python
 summary : Beautiful, Explicit, Simple, Complex than complicated.
 date    : 2020-05-06 12:40:23 +0100
-updated : 2021-07-08 09:51:29 +0900
+updated : 2021-07-14 09:51:08 +0900
 tags    : deep_knowledge
 ---
 
@@ -21,14 +21,9 @@ tags    : deep_knowledge
 - generators (how to use, when is useful), yield
 - interpreter, dynamic type
 - floor division?
-- GIL
-    - [[Computer_Architecture#GIL is mutex for python to prevent use object by multi thread.]]
+- [GIL](Computer_Architecture#GIL is mutex for python to prevent use object by multi thread.)
 - debugging
 - wrapper
-
-[[Software#pointer vs reference]]
-[[Data_Structure#Python]]
-
 - what is python? What are the benefits of using python?
     - object
     - modules
@@ -46,6 +41,9 @@ tags    : deep_knowledge
 - How are arguments passed by value or by reference
 - How can you share global variables across modules
 
+
+[[Software#pointer vs reference]]
+[[Data_Structure#Python]]
 
 #### compiler
 CPython
@@ -129,16 +127,16 @@ id(c) # 0x0600 임의의 값. a와 다르다는 의미
 id(d) # 0x0800 임의의 값. a와 다르다는 의미
 
 a[0][0] = 0
-print(a) # [[0,2,3],[4,5,6]]
-print(b) # [[0,2,3],[4,5,6]]
-print(c) # [[0,2,3],[4,5,6]] 중첩 된 곳을 참조해버렸다
-print(d) # [[1,2,3],[4,5,6]]
+print(a) # [ [0,2,3], [4,5,6] ]
+print(b) # [ [0,2,3],[4,5,6] ]
+print(c) # [ [0,2,3],[4,5,6] ] 중첩 된 곳을 참조해버렸다
+print(d) # [ [1,2,3],[4,5,6] ]
 
 a[0] = [1]
-print(a) # [[1],[4,5,6]]
-print(b) # [[1],[4,5,6]]
-print(c) # [[0,2,3],[4,5,6]]
-print(d) # [[1,2,3],[4,5,6]]
+print(a) # [ [1],[4,5,6] ]
+print(b) # [ [1],[4,5,6] ]
+print(c) # [ [0,2,3],[4,5,6] ]
+print(d) # [ [1,2,3],[4,5,6] ]
 ```
 copy.copy() 는 [:]와 동일하다
 

@@ -2,7 +2,7 @@
 title   : Developer
 summary :
 date    : 2020-04-08 22:40:39 +0100
-updated : 2021-07-08 14:30:58 +0900
+updated : 2021-07-13 13:48:01 +0900
 tags    : strong_base
 ---
 
@@ -187,6 +187,12 @@ Do you like programming? If yes, why?
 
 #### basic
 - OOP (what is good, why use this)
+   - oop의 문제점
+    객체에 데이터를 감추는 캡슐화를 중요시하지만 언젠가는 객체의 데이터 접근이
+    필요할 것이다.
+    동일한 호출이 매번 다른 결과를 생성할 수 있다.
+    수학적이지 않다. 상태가 가변적이라서.
+    - go로 배우는 함수형 프로그래밍
 - when cache is not useful, and even dangerous
     - 새로운 데이터만 계속 들어오면 캐시미스가 발생.
 - mvc problem

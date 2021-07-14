@@ -2,7 +2,7 @@
 title   : Software
 summary : Language, Web
 date    : 2020-04-06 14:37:26 +0100
-updated : 2021-07-01 13:40:51 +0900
+updated : 2021-07-10 11:57:01 +0900
 tags    : deep_knowledge
 ---
 
@@ -192,8 +192,13 @@ c# 제네릭
     - C#에서 람다나 클로저를 구현할 때 delegate를 이용해서 구현한다
 - += -= 을 이용해서 함수를 연결 시킬 수 있다
 
+#### C# linq
+- SQL문처럼 C# 안에서 쿼리를 할 수 있는 느낌인데,
+선언형으로 호출하는 형식이라 C# 의 함수 구현체 같은 느낌이 된다.
+
 #### 데이터 타입을 명시하는 것의 메리트
 - 사전 체크를 안해도 항상 그 형태가 온다는 것을 보장해준다
+- 개발자의 실수를 개발 단계에서 줄여준다.
 
 #### abstraction and automation
 design -> implement -> test -> deploy -> update

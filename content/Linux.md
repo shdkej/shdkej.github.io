@@ -2,7 +2,7 @@
 title   : Linux
 summary :
 date    : 2020-05-06 19:57:59 +0100
-updated : 2021-07-02 18:48:30 +0900
+updated : 2021-07-10 12:24:09 +0900
 tags    : develop
 ---
 
@@ -780,9 +780,6 @@ set mouse pointer speed
 ## linux copy and paste in terminal with mouse
 drag copy area -> mouse center button click in terminal window
 
-## ssh key-gen
-`ssh-keygen -t rsa`
-
 ## ubuntu backup, snapshot
 timeshift
 
@@ -835,7 +832,7 @@ echo "Hello world" | convert -size 360x360 xc:white -font "FreeMono" \
 ## crontab 에 스크립트 에러 없이 등록하기
 `echo "0 */1   * * *   root    /home/sh/dotfiles/rclone.sh >/dev/null 2>&1" >> /etc/crontab`
 
-#### TLS
+## TLS
 ```
 openssl req -X509 -nodes -days 365 -newkey rsa:2048 \
     -out ingress-tls.crt \
@@ -843,108 +840,13 @@ openssl req -X509 -nodes -days 365 -newkey rsa:2048 \
     -subj "/CN=example.com/O=ingress-tls"
 ```
 
-#### ssh-keygen
-ssh-keygen 으로 키 만들고 pbcopy로 복사
+#### ssh key-gen
+`ssh-keygen -t rsa`
 
-ssh 생성해서 관리하고 github과 연동하는 것을 자연스럽게 할 수 있어야겠다
-ci 이용 시나 push할 때 ssh permission을 확인하려는 목적인가?
+mac에서는 ssh-keygen 으로 키 만들고 pbcopy로 복사 할 수 있다.
 
-.known_hosts
-.authorized_keys
-
-public 과 private.
-private 는 목적지. 서버에서만 가지고 있는다
-public 은 접속자. 클라이언트가 자유롭게 갖는다
-
-ci 툴에서 서버는 ci 서버가 되는 것인가? 클라이언트가 내가 되고?
-- ci 툴이 접속자고, github 저장소가 서버가 되어서, 서버에서 pub키를 가지고
-  접속자가 private key를 가진다
-
-클라우드 서비스에서는 노트북에서 생성한 ssh 를 cloud instance에 넘기고 내가 다시
-public이 되어서 접근하는 것인가?
-private는 미리 aws에 올려놓고 그것을 가져다 쓰도록 하면 좋겠다
-
-포맷을 대비해서 ssh key를 파일로 갖고 있으려고 하는데 private key를 갖고 있어도
-되나?
-
-공개키를 서버에 등록해서 클라이언트가 비밀키를 가지고 있는다?
-
-authorized_keys에 공개 키를 복사해 넣으면, 접속하는 곳에서 비밀키를 물어본다
-
-aws 에서도 pub키를 서버에 보내고, 비밀키는 노트북에 둔다
-
-.pem 파일은 뭐지
-
-ssh 는 다른 컴퓨터에 접근할 때 키를 만들어서
-상대 컴퓨터에 공개키를 제공해서 내가 들어간다고 알려주면 된다?
-상대 컴퓨터가 내 공개키를 가지고 있다는 것은 내 접속을 허용하겠다는 의미다?
-그럼 해커가 공개키를 쑤셔넣으면 보안이 뚫리는건가?
-
-공개키, 대칭키
-- 공개키는 비밀키를 공유하지 않아도 된다는 점에서의 장점이 있다.
-- 대신 공개키를 가지고 있으면 누구나 정보를 볼 수 있다?
-- 공개키로 암호화한 것은 비밀키가 없으면 볼 수 없다.
-- 공개키 방식만으로는 서버에서 클라이언트에 안전하게 정보를 전달할 수 없다.
-    - 비밀키가 해독을 해야하는데, 서버는 정보를 전달하는 쪽이니까.
-
-공개키로 암호화 된 것을 복호화 할 수 있다. 그래서 공개키 방식은 파일의 안전을
-보장해주지는 않는다. 하지만 그 파일의 신원을 확인해줄 수 있다.
-
-RSA는 결과값을 가지고 있어도 원래의 값을 알 수 없는 소수의 소인수분해의 어려움을
-통해 강력한 보안성을 가진다.
-이게 TLS에서 어떻게 쓰이는거지?
-비밀키가 원래의 값이고 공개키가 결과값인가?
-- TLS = RSA + 대칭키
-- HTTPS는 HTTP + TLS
-
-SSH 와 TLS를 같은 원리로 생각했다.
-ssh에도 public_key와 private_key가 있지 않은가
-TLS에는 crt와 key가 있다,
-
-해시 함수 MD5, SHA <-> 대칭키 AES, 공개키 RSA
-
-GPG - 개인용 메시지를 암호화하려고 할 때 쓴다
-- 내 공개키는 마구 뿌린다
-- 그러면 내 공개키를 이용해 만든 데이터는 내 비밀키로만 열 수 있다.
-- 내 공개키를 갖고 있다고 내 정보에 접근할 수는 없나? 수신용인가?
-- 주인장의 사이트에 공개키가 올려져 있어도 그것이 조작된 것일 수도 있다. 그래서
-  CA 업체에서 이를 검증한다.
-
-- [X] SSH에서 pub키는 gpg키처럼 마구 공유해도 되는게 아니지 않나? pub키만 있으면
-      서버에 마음대로 접속할 수 있는데
-      - pub키가 서버가 갖는 키고, 클라이언트는 private key를 갖는다.
-      - 그래서 pub키가 많이 퍼지면 클라이언트는 많은 곳을 갈 수 있다.
-      authorized_keys, known_hosts
-    - authorized_keys에는 pub키가 들어간다. 서버측에.
-
-비밀키도 어차피 키를 지켜야한다는 것은 하나의 비밀키를 공유하고 그것을 지키는
-것과 똑같다. 근데 비밀키를 공유한 적이 있냐 없냐의 차이로 보안성의 차이가 있다.
-
-- [ ] HTTPS도 공개키 방식처럼 암호화를 개인키로 하면 비밀키로 복호화를 해야하는 방식인가?
-- [ ] 공개키는 누구나 가질 수 있다. 비밀키로 암호화 한 것을 공개키로 누구나 열 수
-   있다면 내용이 지켜지지는 않을 것 같다.
-   - 그래서 End-2-End 암호화도 신경 써야 한다.
-   - HTTPS에서 인증서로 신원을 확인하고, 그 통신에서 확인한 랜덤값으로 다시 키를
-     만들어서 그 키로 데이터를 암호화한다.
-   - 클라이언트가 처음 접속할 때 보내준 공개키로 랜덤키를 암호화해서 서버에
-     주고, 그 키로 정보를 공유한다. 즉, 처음 만들었던 인증서는 신원확인용이다.
-        - 신원 확인은 제 3자가 한다. (CA 업체)
-   - 즉, HTTPS는 공개키 방식과 대칭키(암호) 방식을 모두 쓴다.
-   - https://bravenamme.github.io/2019/12/03/https-2/
-- [ ] 비밀키를 서버가 갖고, 공개키는 아무나 갖는다. 근데 CI에서 비밀키를 가지는
-   것은 어떻게 생각해야하지? 브라우저에서는 서버가 비밀키를 갖는다.
-    - 비밀키를 클라이언트가 갖는다. CI secret에 비밀키를 입력하면 builder에
-      접근할 수 있게 된다. pub키는 어떻게 등록했더라? 다시 동영상 봐야겠다.
-        - pub키를 deploy key에 넣고 private key를 secret에 넣었다
-          github도 이렇게 되나? 되네
-
-
-#### HTTPS
-- [ ] 서버가 자신임을 증명해야 하는 이유는?
-    - 클라이언트는 어차피 불량한 사이트에 들어가도 작업이 정상적으로 될텐데.
-    - 중간에 길을 꺾어서 자신에게 결제하게 하는 것은 막을 수 있겠다.
-    - 중간에 데이터 탈취를 못하게 하는 역할이 주 역할인가?
-- [ ] HTTPS는 국가에서 막기 힘든 이유는?
+ubuntu에서는 xclip 이용
+- `alias clipboard='xclip -selection clipboard'`
 
 
 ## cleaning a big size file in all git commit

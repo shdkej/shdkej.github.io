@@ -2,7 +2,7 @@
 title   : Golang
 summary :
 date    : 2020-05-06 13:00:28 +0100
-updated : 2021-06-08 10:38:12 +0900
+updated : 2021-07-14 10:11:06 +0900
 tags    : deep_knowledge
 ---
 
@@ -50,35 +50,40 @@ tags    : deep_knowledge
 if main function too short. it finish without running goroutine. so time.Sleep needed
 
 #### go http
-![http](./img/http.svg)
 ServeHTTP와 핸들러에 대한 이해
-- mux = multiplexer
-- Listen - (Handler - ServeHTTP) - Serve?
+
+![http](./img/http.svg)
+
+mux = multiplexer
+- 멀티플렉서는 패턴 처리를 여러개 한다는 의미다
+
+Listen - (Handler - ServeHTTP) - Serve?
 - mux = handler, 서버가 serve를 할 때 mux를 받는데, 안넣으면 디폴트 mux를 쓴다.
 - mux는 ServeHTTP를 구현해야 한다.
 - handler interface는 http 패키지에서 정의되있는 것을 보면 ServeHTTP를 갖는
   인터페이스다. 그래서 ServeHTTP만 가지고 있으면 핸들러로 쳐준다.
-- 그러면 ServeHTTP는 어떤 동작을 해야 하는가
-    - mux라 함은 입력값을 받아서 응답을 해주는 것이다.
-    - URL을 받아 적합한 연결통로를 찾아서 넘겨준다.
-    - ServeHTTP의 역할이 mux의 역할
-    - 요청을 패턴이 일치하는 핸들러를 찾아서 전달해주는 것.
-- handler, handle, handleFunc, handlerFunc 차이 확인
-    - handler는 ServeHTTP를 구현하는 interface, response request 활용 가능
-    - handle은 패턴과 handler를 받아서 쓰는 handler의 wrapper 느낌
-    - handleFunc는 ServeHTTP를 구현한 객체들을 일일이 생성하는 것이
-      불편해서 만들어졌다고 하는데, 잘 모르겠다
-        - handleFunc는 두번째 인자로 받는 func을 ServeHTTP가 실행하도록 해놓은
-          것 뿐이다. (이 func는 writer와 request를 인자로 가져야 하긴 한다)
-        - ServeHTTP가 writer와 request를 가져야 하니까 헷갈렸다.
-    - handle과 handleFunc는 둘다 패턴과 핸들러를 받아 처리한다.
-    - handle은 handler를 받고, handleFunc는 일반함수를 handler로 wrapping 해준다.
-    - handleFunc이 패턴과 함수를 처리한다. http에서는 디폴트 mux에
-      연결해준다.
-    - handlerFunc는 일반 함수를 handler 함수로 wrapping 해준다
-- 멀티플렉서는 패턴 처리를 여러개 한다는 의미다
 
-```
+그러면 ServeHTTP는 어떤 동작을 해야 하는가
+- mux라 함은 입력값을 받아서 응답을 해주는 것이다.
+- URL을 받아 적합한 연결통로를 찾아서 넘겨준다.
+- ServeHTTP의 역할이 mux의 역할
+- 요청을 패턴이 일치하는 핸들러를 찾아서 전달해주는 것.
+
+handler, handle, handleFunc, handlerFunc 차이 확인
+- handler는 ServeHTTP를 구현하는 interface, response request 활용 가능
+- handle은 패턴과 handler를 받아서 쓰는 handler의 wrapper 느낌
+- handleFunc는 ServeHTTP를 구현한 객체들을 일일이 생성하는 것이
+  불편해서 만들어졌다고 하는데, 잘 모르겠다
+    - handleFunc는 두번째 인자로 받는 func을 ServeHTTP가 실행하도록 해놓은
+      것 뿐이다. (이 func는 writer와 request를 인자로 가져야 하긴 한다)
+    - ServeHTTP가 writer와 request를 가져야 하니까 헷갈렸다.
+- handle과 handleFunc는 둘다 패턴과 핸들러를 받아 처리한다.
+- handle은 handler를 받고, handleFunc는 일반함수를 handler로 wrapping 해준다.
+- handleFunc이 패턴과 함수를 처리한다. http에서는 디폴트 mux에
+  연결해준다.
+- handlerFunc는 일반 함수를 handler 함수로 wrapping 해준다
+
+```go
 http.HandleFunc("/", func())
 http.ListenAndServe(":8080", nil)
 
@@ -91,14 +96,16 @@ http.ListenAndServe(":8080", nil)
 
 ## Library
 #### graphql-go
-- gqlgen
- - Need update just 2 file
- 1. `resolver.go` -- implement function
-  - or `schema.resolvers.go`
- 2. `schema.graphqls` -- data structure setting
-  - auto generate to gqlgen
-   - `model.go`
-   - `generated.go`
+gqlgen
+
+Need update just 2 file
+1. `resolver.go` -- implement function
+    or `schema.resolvers.go`
+2. `schema.graphqls` -- data structure setting
+
+auto generate to gqlgen
+  - `model.go`
+  - `generated.go`
 
 ## [measure execution time in go](https://coderwall.com/p/cp5fya/measuring-execution-time-in-go)
 
@@ -209,7 +216,29 @@ API 쓰는데는 사용하는 것 같은데...
 - https://medium.com/@laeshiny/go-code-review-comments-%EC%A0%95%EB%A6%AC-47d05fdb49f6
 
 ## Defects
-vs rust
+#### 고 모듈에서 버전관리가 별로다
+시멘틱 버저닝을 지원하지 않고 패키지에 v2처럼 버저닝을 하기를 권장한다.
+js에서는 package.json으로 자체 모듈 버저닝뿐 아니라 의존성 관리도 유연하게 할 수 있다.
+그래서 시멘틱 버저닝과 체인지로그 관리도 쉽게 할 수 있는데, go는 안된다.
+
+#### 패키지 관리
+Golang을 예로 들면, 1.x 버전을 사용하고 있는데 2.x버전이 나오면 자동 업데이트를
+하면 안되고 그렇다고 그냥 방치하거나 수시로 들어가서 확인하는 것도 번거롭다.
+그렇다면 자신의 레파지토리에 있는 라이브러리들을 읽어서 업데이트 하라고 알림
+같은게 오면 좋겠다. 아 그러면 CI 작업 시에 알려주면 되겠다.
+npm에서는 패키지 설치할 때 알려줄 수 있다. 근데 이러면 설치랑 업데이트가 섞여서
+알아보기 힘들지 않을까
+
+Go에서 패키지 배포를 해봐야겠다
+note-server/server와
+note-server/data-store를 한 레파지토리에서 따로 임포트해서 쓸 수 있을까?
+아니면 data-store를 가져오면 딴 것도 같이 가져와질까?
+- 상위 레벨에서 깃 레파지토리를 가져온다. 버전도 함께.
+
+고의 장점이 깃에만 올라가있으면 가져올 수 있다는 것이다.
+
+#### vs rust
+
 
 ## Reference
 - [Go에서 DIP](https://simplear.tistory.com/24)

@@ -2,7 +2,7 @@
 title   : Feedback
 summary : communication
 date    : 2020-11-15 20:42:56 +0100
-updated : 2021-07-01 10:25:59 +0900
+updated : 2021-07-13 13:56:45 +0900
 tags    : communication
 ---
 
@@ -13,30 +13,18 @@ tags    : communication
 
 ## review, report, monitoring, response, communication
 
-5F
+#### 5F
 - fact, feeling, finding, future, feedback
-
-running server with auto attachment
-auto feedback
-- running well?
-- how speed?
-- any problem?
-- need more?
-
-program -> feedback -> program -> feedback
-- program send data to feedback
-- feedback send data to program
-
-running well:  health check
-
-how speed: test script
-
-any problem: log
-
-need more: receive client voice
 
 선순환
 - 좋은 인재 - 좋은 글 - 많은 독자 - 수익 증가 - 좋은 인재
+
+#### 시너지
+투명성, 공유, 인터렉션
+
+#### 프로페셔널과 선순환
+영화현장에서 배두나가 빼어난 프로페셔널한 모습을 보여주니 다른 관계자들도
+프로페셔널한 부분을 끌어내려고 하는 선순환이 일어났다고 한다
 
 [[Archive#review of 6 months of german life]]
 
@@ -58,6 +46,25 @@ need more: receive client voice
 grafana는 다양한 메트릭을 보여줄 수 있어서 사용하되, 한눈에 보는 페이지는 따로
 관리해야겠다
 - grafana에서 셋팅하는게 무난해보인다... alert 설정도 좋고, export도 잘되고
+
+running server with auto attachment
+auto feedback
+- running well?
+- how speed?
+- any problem?
+- need more?
+
+program -> feedback -> program -> feedback
+- program send data to feedback
+- feedback send data to program
+
+running well:  health check
+
+how speed: test script
+
+any problem: log
+
+need more: receive client voice
 
 
 ## Feedback
@@ -105,6 +112,10 @@ grafana는 다양한 메트릭을 보여줄 수 있어서 사용하되, 한눈�
 개인 개발 시에는 메신저로 오게 할까
 근데 메신저로 오면 업무의 연속성이 안좋을 것 같다
 노트북으로 작업할 때는 노트북에서 바로 볼 수 있어야겠는데
+
+#### 빠른 피드백 vs 인터럽트
+어느 정도가 적당한 빠른 피드백일까
+약속된 시간에 주는 신호는 노이즈가 되어 무시가 될 수 있다.
 
 #### search
 1. 시작점을 찾는다 (내부에 들어가기 전에 내 생각을 먼저 확인한다)

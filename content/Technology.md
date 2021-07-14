@@ -2,7 +2,7 @@
 title   : Technology
 summary :
 date    : 2020-05-06 19:15:00 +0100
-updated : 2021-05-09 20:59:10 +0100
+updated : 2021-07-10 12:03:30 +0900
 tags    : develop
 ---
 
@@ -544,8 +544,7 @@ Iot는 어떤 환경을 만들어 줄 수 있을까
 #### Item
 - 회사 사무실용 IOT 구상
 - 모듈화
-- 무선 LAN
-- LoRa
+- 무선 LAN - LoRa
 
 #### Iot 적용 가능 분야
 - 사무실
@@ -601,6 +600,16 @@ Oauth 제공자는 확인 후 서버에 토큰을 준다
 
 서버가 바뀌어도 사용자는 자신이 원래 하던 일을 그대로 할 수 있나?
 
+#### oauth2.0
+- 로그인
+- 토큰 획득
+- 토큰 및 아이디로 내부 저장
+- 토큰을 사용자 헤더에 갖도록 하기
+
+토큰 확인
+사용자 확인
+요청 동작 실행
+
 ## agile
 product build in one day. design to deploy
 
@@ -647,3 +656,26 @@ function 안에 function을 쓰면 렌더링 할 때 다시 렌더링해서 성�
 class component는 this나 props를 넘겨주는 작업이 있어서 거추장스럽다
 기존에는 react의 lifecycle을 사용하려면 class를 써야했는데, hooks(useEffect
 등)이 등장하면서 해결되었고, 함수형 컴포넌트를 권장하고 있다.
+
+
+## android
+- flutter 설치, android studio 설치
+- flutter 플러그인 설치
+- https://flutter-ko.dev/docs/get-started/codelab
+- 첫 실행 시 license 에러
+    - android 설치 시 java도 설치하므로 java home을 따로 설치 안하고 sdk
+      command-line tools를 설치한다.
+    - https://www.androidhuman.com/2021-06-02-flutter_android_license_noclassdeffound
+- flutter doctor
+
+## TV의 통신은 안정적인 이유?
+tv도 어차피 컴퓨터가 각 가정에 송신하는 것 아닌가?
+근데 방송국 서버실이 그렇게 구축되있다면 모바일도 서버용량에는 문제가 없을 것 같은데 끊김이 있고 성능이 왔다갔다 한다.
+
+tv는 어떻게 그렇게 안정적으로 송신할 수 있지?
+
+둘다 전파로 변환해서 쏘는건 마찬가지인데
+
+안테나에 송신하는 장치로 보내기만 하면 나머지는 송신시스템이 알아서 하는건가?
+모바일은 왜 그렇게 안되지?
+방송국은 24시간 연결되있는 주파수가 있어서 되고 모바일은 계속 신호를 새로 잡아야해서 그런걸까

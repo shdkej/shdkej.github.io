@@ -3,9 +3,10 @@ services:
   gatsby:
     build: ./
     volumes:
-      - ./:/app
+      - ./:/srv
+      - /srv/node_modules
+      - /srv/.cache
     ports:
       - 7000:8000
-    working_dir: /app
-    #command: gatsby develop -H 0.0.0.0
-    command: ./entrypoint.sh
+    working_dir: /srv
+    command: gatsby develop -H 0.0.0.0
