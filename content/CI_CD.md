@@ -2,7 +2,7 @@
 title   : CI/CD 구성 연습
 summary : 정적 소스 체크와 Ansible, Terraform, ArgoCD 를 이용한 배포
 date    : 2021-03-09 13:25:01 +0100
-updated : 2021-07-14 15:52:27 +0900
+updated : 2021-07-22 18:22:33 +0900
 tags    :
 parent  : [[Blogging]]
 ---
@@ -139,7 +139,14 @@ ci/cd 선택요소
 
 #### jenkins
 수동 배포도 되는 것이 장점
+
 코드 분리 가능 (github action, circle ci는 불가)
+
+선언형과 groovy같은 스크립티드 문법 중 선택해서 쓸 수 있는데, 선언형으로 안되는
+것들이 있어서 스크립티드를 써야하는 경우가 있다고 한다.
+
+Configuration as code 플러그인을 설치하면 코드로 설정 관리 가능
+- https://tech.kakao.com/2021/07/16/devops-for-msa/
 
 #### pipeline
 백엔드는 깃 폴더 내에서 작업하고

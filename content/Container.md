@@ -2,7 +2,7 @@
 title   : Container
 summary : Docker, Kubernetes
 date    : 2020-12-17 22:01:56 +0100
-updated : 2021-07-13 13:45:51 +0900
+updated : 2021-07-22 17:29:34 +0900
 tags    : deep_knowledge
 ---
 
@@ -718,6 +718,27 @@ connect to '<HOST_IP>:30900' in browser
 10. 클러스터를 애완동물처럼 다루기 + 마스터에 너무 큰 부하주는 것
 11. +1. latest tag 사용하는 것
 - https://coffeewhale.com/kubernetes/mistake/2020/11/29/mistake-10/
+
+#### kubernetes in VCNC
+상용 kubernetes를 위한 추가 도구
+
+ingress - ingress controller
+- nginx vs aws nlb
+- Class ELB는 동시에 많은 연결을 처리하려면 웜업이 필요하다
+- nlb는 gRPC를 지원하지 않는다.
+- 트래픽 흐름: NLB - NodePort - NGINX ingress controller - service
+    - 외부 로드밸런서를 추가하는 것이 클러스터 오토스케일러를 추가하는 것처럼
+      불가피한 것일까
+
+AWS IAM을 사용하기 위해 kube2iam 사용 (19년 03월) -> EKS에서는 지원될 듯
+
+로그
+- fluentd를 daemonset으로 노드마다 실행해서 cloudwatch로 전송
+- https://github.com/fluent/fluentd-kubernetes-daemonset
+
+모니터링
+
+https://engineering.vcnc.co.kr/2019/03/kubernetes-on-aws/
 
 -----------------------------------------------------------------------
 

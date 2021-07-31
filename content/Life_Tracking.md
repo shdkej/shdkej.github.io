@@ -2,7 +2,7 @@
 title   : Life Tracking
 summary : 어떻게 살고 있는지 알고 싶다
 date    : 2020-12-20 14:46:34 +0100
-updated : 2021-07-01 10:26:43 +0900
+updated : 2021-07-22 18:02:29 +0900
 tags    :
 parent  : [[Blogging]]
 ---
@@ -192,3 +192,15 @@ todo 등록하면 자동 리마인더
 이런게 있었다
 생각하던 데일리 트래킹을 이미 하고 있는 사람들이 있었다
 - https://quantifiedself.com/show-and-tell/
+
+#### 류비셰프의 시간 관리법
+https://johngrib.github.io/wiki/book-lyubishev/
+
+#### rss로 안되는 업데이트 알림 받는 방법 확인
+좋아하는 작가의 신작
+- 알라딘, 리디북스에서 신간 알림 됨
+일반 도서, IT 도서 신간 알림 봇 있음
+내가 쓰는 소프트웨어 릴리즈 소식
+
+난 사진도 많이 안찍고 sns도 많이 안해서 정보가 적고 잘 모여있는 편인데도 한 곳에
+모으기가 힘들다

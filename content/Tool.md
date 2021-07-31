@@ -2,7 +2,7 @@
 title   : Tool
 summary :
 date    : 2020-08-25 14:48:57 +0100
-updated : 2021-07-01 09:48:40 +0900
+updated : 2021-07-22 18:04:43 +0900
 tags    : deep_knowledge
 ---
 
@@ -145,6 +145,11 @@ need delete `.terraform` dir, and `terraform init`
 #### serverless
 - python requirements
     - need install plugin serverless-python-requirements
+
+#### serverless
+- json으로 invoke 안됨
+- nltk 다운로드 후 파일 못읽음
+- konlpy 사용 시 java환경 필요한데 안됨
 
 ## vault
 - install file

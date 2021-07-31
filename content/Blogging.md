@@ -2,7 +2,7 @@
 title   : Blogging
 summary : build blog
 date    : 2020-03-17 11:22:19 +0100
-updated : 2021-07-13 13:39:15 +0900
+updated : 2021-07-22 17:27:39 +0900
 tags    : communication
 ---
 
@@ -12,13 +12,22 @@ tags    : communication
 
 ## Post
 [[Digital_Content]]
+
 [[Life_Tracking]]
+
 [Decision Monitor Size](Decision_Monitor_Size)
+
 [100k concurrent server](100k_concurrent_server)
+
 [[CI_CD]]
+
 [[Streaming_server]]
+
 [[My_space]]
+
 [[Evolve_Architecture]]
+
+[[Note_Management]]
 
 ## About
 - 8 x 8, markdown 기준 1000줄 이하, 200자 1분 기준 30분 이하로 유지하면서 응축.
@@ -41,6 +50,10 @@ tags    : communication
 
 원문의 형태와 같게 하는게 좋을까? 긴 문장은 긴 문장으로 번역?
 - 형태를 유지하되, 어투는 한국식으로 바꾸는게 좋겠다.
+
+#### 번역체
+인터넷에서 자동 번역된 것들이 많아서 제대로 독해가 안되는 경험을 많이 겪었기
+때문에 자동 번역된 느낌이 드는 글들은 거부감이 확 든다.
 
 #### 수파리의 관점에서 번역
 번역할 때 파파고로 먼저 돌리고 내가 다시 다듬는게 그리 나쁜 것은 아닌 것 같다.
