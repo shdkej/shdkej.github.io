@@ -1,8 +1,8 @@
 ---
-title   : Evolve
-summary :
+title   : 점진적으로 개선하기
+summary : Evolve
 date    : 2021-02-27 20:53:19 +0100
-updated : 2021-07-22 18:09:26 +0900
+updated : 2021-08-07 18:01:08 +0900
 tags    : human
 ---
 

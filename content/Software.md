@@ -2,8 +2,8 @@
 title   : Software
 summary : Language, Web
 date    : 2020-04-06 14:37:26 +0100
-updated : 2021-07-22 17:27:09 +0900
-tags    : deep_knowledge
+updated : 2021-08-07 18:05:10 +0900
+tags    : strong_base
 ---
 
 ## Agile

@@ -2,7 +2,7 @@
 title   : 노트를 어떻게 관리해야 할까
 summary :
 date    : 2021-07-22 17:09:54 +0900
-updated : 2021-07-31 22:25:28 +0900
+updated : 2021-07-31 22:28:01 +0900
 tags    :
 parent  : [[Blogging]]
 ---

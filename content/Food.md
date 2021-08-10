@@ -2,7 +2,7 @@
 title   : Food
 summary :
 date    : 2020-05-04 15:23:16 +0100
-updated : 2021-02-07 02:04:58 +0100
+updated : 2021-08-02 13:20:18 +0900
 tags    : health
 ---
 
@@ -59,7 +59,7 @@ I need 2200~2400 kcal (If I want bulk up, 2500~2800)
 
 ## ETC
 Big mushroom is so tasty
-But sasomgi is not tasty i need take care
+But sasongi is not tasty. i need take care
 
 마시는 간편식(랩노쉬, 디스이즈푸드)를 하루 종일 먹어도 영양소만 채워진다면 먹어도 되는 것인가?
 - 소화불량
