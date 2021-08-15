@@ -34,7 +34,6 @@ h4:before {
 
 p {
     color: var(--second-color, var(--main-color));
-    margin-top: 10px;
     margin-bottom: 0px;
 }
 

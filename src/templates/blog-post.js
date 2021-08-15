@@ -75,7 +75,12 @@ const BlogPostTemplate = ({ data, pageContext }) => {
                     </small>
                 </header>
                 {toc}
-                <p>---</p>
+                <div
+                    style={{
+                        borderTop: `1px solid`,
+                        align: `center`,
+                    }}
+                ></div>
                 {md}
                 <hr />
             </article>

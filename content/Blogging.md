@@ -2,7 +2,7 @@
 title   : Blogging
 summary : build blog
 date    : 2020-03-17 11:22:19 +0100
-updated : 2021-07-22 17:27:39 +0900
+updated : 2021-08-15 21:44:05 +0900
 tags    : communication
 ---
 
@@ -28,6 +28,8 @@ tags    : communication
 [[Evolve_Architecture]]
 
 [[Note_Management]]
+
+[EKS_terraform](eks_with_terraform)
 
 ## About
 - 8 x 8, markdown 기준 1000줄 이하, 200자 1분 기준 30분 이하로 유지하면서 응축.
