@@ -2,7 +2,7 @@
 title   : 건강을 위해 챙길 것들
 summary :
 date    : 2020-12-14 16:06:38 +0100
-updated : 2021-05-20 21:14:28 +0100
+updated : 2021-09-16 21:52:33 +0900
 tags    : health
 ---
 
@@ -18,8 +18,7 @@ tags    : health
 음식을 먹기 전에 잘 안말리면 에탄올을 섭취하는게 되어서 위험할 수 있다
 스크린은 극세사 천으로만
 
-#### 블루라이트
-
+블루라이트 차단은 효과가 있다고 보기 힘든 것 같다.
 
 
 #### 폴리에스터 옷이 신체에 미치는 영향
@@ -66,6 +65,20 @@ http://www.newstof.com/news/articleView.html?idxno=1640
 
 ## 관절
 
+#### 손목
+같은 문제를 겪을 직업들
+- 피아니스트
+- 만화가
+
+분리형 키보드, 인체공학 키보드
+- https://www.youtube.com/watch?v=cOmEzt9n-mw
+
+#### 오른쪽 시프트키를 안쓰는 방법을 찾아봐야겠다. 방향키도 쓰지말고
+:, ㅆ, insert 모드에서 방향키를 컨트롤 hjkl로 맵핑해야겠다.
+; -> :
+[ 스니펫으로 {}
+9 스니펫으로 ()
+
 ## Football
 #### Liverpool
 
@@ -83,3 +96,4 @@ http://www.newstof.com/news/articleView.html?idxno=1640
 수 3,4
 포백일 때 미드필드의 움직임
 스리백일 때의 움직임
+

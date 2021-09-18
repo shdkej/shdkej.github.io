@@ -2,7 +2,7 @@
 title   : Computer Architecture
 summary : 🖥️ CPU, Memory, OS, Kernel
 date    : 2020-03-16 22:40:45 +0100
-updated : 2021-07-14 17:15:51 +0900
+updated : 2021-08-29 00:16:56 +0900
 tags    : strong_base
 ---
 
@@ -38,12 +38,18 @@ in 1970, computer has only 1 process, can run one program. process can make
 -----------------------------------------------------------------------
 
 ## MEMORY
+
+#### C 언어가 메모리를 사용하는 방식
 - Code - Code text, 기계어(Machine Code) ex) RISC
 - Data - Global, Const variable
 - Stack - region(local) variable, function
 - Heap - dynamic variable
     - 힙 영역에 malloc으로 생성한 동적 변수가 들어가고 이 주소값을 잃어버리면 메모리
     릭이 발생한다고 한다. (다른 언어에서는 new로 할당하기도 함)
+
+자바는 JVM 위에서 동작하고 메모리 동작 방식이 다르다.
+
+파이썬, javascript 같은 인터프리터 언어도 동작이 다르다.
 
 [[Data_Structure]]
 

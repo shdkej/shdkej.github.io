@@ -2,7 +2,7 @@
 title   : Network
 summary : 📡 Protocol(TCP, HTTP), IP, DNS, L/B
 date    : 2020-03-16 22:40:07 +0100
-updated : 2021-06-01 16:40:28 +0900
+updated : 2021-09-16 20:52:54 +0900
 tags    : strong_base
 ---
 
@@ -203,6 +203,19 @@ nic 이중화
 L4는 포트 기반 (aws에서는 NLB)
 L7은 포트 + 페이로드 기반, 즉 기능이 더 많은 기기 (aws에서 ALB)
 
+#### LB
+내부 서비스는 로드밸런스 포트만 열어두고 로드밸런서에서 필터링?
+그래도 똑같나;
+로드밸런서에서 커트하는 옵션을 넣어야 하네;
+
+로드밸런서에는 리스너, 타겟 그룹이라는게 항상 따라온다
+
+분명 ELB가 있고, NLB, ALB는 나중에 나온 것 같은데, 그런 얘기가 안나온다
+
+ELB라 불리우는 Classic Load Balancer는 l4/L7을 같이 지원하는데 현재 ALB보다는
+기능이 적은 끔찍한 혼종이고,
+NLB가 17/09/07에 나왔다.
+
 ## CDN (Content Delivery Network)
 네트워크를 여러 군데 둬서 접근을 빨리하는게 핵심인 것 같다.
 - 해외 접근 시 빠르게 하는 역할
@@ -255,6 +268,10 @@ Vlan의 우선순위 설정시 여러대면?
 루프백 했을 때 신호 안오면 내 랜카드 불량이다
 
 ## Information Theory
+
+#### 네트워크 대역폭 확인
+- 내가 가입한 인터넷 속도
+- 랜카드 스펙
 
 #### Reference
 - http://www.tcpipguide.com/free/t_HTTPOverviewHistoryVersionsandStandards-2.htm

@@ -2,7 +2,7 @@
 title   : Economics
 summary : And money management
 date    : 2020-05-06 12:29:12 +0100
-updated : 2021-06-16 09:56:19 +0900
+updated : 2021-09-16 20:57:15 +0900
 tags    : integration
 ---
 
@@ -71,8 +71,7 @@ tags    : integration
 #### ISA
 
 #### 주택청약
-국민주택 한 회에 10만원까지만 인정
-최대납입가능 금액은 50만원
+국민주택은 24개월 24회 1순위. 1회 10만원까지 인정 (최대납입가능 금액은 50만원)
 국민주택은 1500만원 납입금액이 있으면 된다
 근데 150회의 횟수제한이 있어서 10만원씩 150회를 넣는게 유리
 
@@ -83,6 +82,10 @@ tags    : integration
 근데 1순위는 기본조건이고 가점이 높아야 한다
 국민이든 민영이든
 무주택 기간, 가족 수, 가입기간
+
+가점제는 힘들고, 추첨제를 노려볼 수 있다
+
+즉, 10만원씩 꼬박꼬박 넣고, 민영이 되면 한번에 마저 넣으면 된다.
 
 https://www.cardif.co.kr/ko/life-stage/for-safe-start/my-dream-my-house-all-you-need-to-know-about-saving-for-house
 https://www.hankyung.com/finance/article/202008073368i

@@ -2,7 +2,7 @@
 title   : Blogging
 summary : build blog
 date    : 2020-03-17 11:22:19 +0100
-updated : 2021-08-15 21:44:05 +0900
+updated : 2021-09-05 09:26:21 +0900
 tags    : communication
 ---
 
@@ -30,6 +30,8 @@ tags    : communication
 [[Note_Management]]
 
 [EKS_terraform](eks_with_terraform)
+
+[[Spring_TestCode]]
 
 ## About
 - 8 x 8, markdown 기준 1000줄 이하, 200자 1분 기준 30분 이하로 유지하면서 응축.
@@ -121,6 +123,25 @@ note taking
 에센셜한 것들만 딱 올려놓기
 영어로도 올리기
 작성 시 가이드 보고 올리기
+
+#### 블로그 글 쓸 때 요소
+요약 설명 관련사항
+
+#### 자료 정보 지식 지혜
+![data_to_wisdom](img/data_to_wisdom.png)
+
+#### 문서
+![documentation](./img/documentation.png)
+- https://documentation.divio.com/
+
+
+정보제공(정보공유)
+알림(알아주면 감사)
+요청(반드시)
+
+뉴스기사(포스트)
+에세이
+문학
 
 #### Item List
 - program(develop)

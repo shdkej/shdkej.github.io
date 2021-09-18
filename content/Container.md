@@ -2,7 +2,7 @@
 title   : Container
 summary : Docker, Kubernetes
 date    : 2020-12-17 22:01:56 +0100
-updated : 2021-07-22 17:29:34 +0900
+updated : 2021-09-17 22:09:50 +0900
 tags    : deep_knowledge
 ---
 
@@ -246,6 +246,11 @@ but devops works is not clear.
 - node
     - kubelet
     - kube-proxy
+
+#### 쿠버네티스는 os와 클라우드를 추상화할 수 있나?
+서비스의 장애가 os에 영향을 미쳐도 서비스를 격리하면 문제가 해결될 수 있나?
+그렇다면 '쿠버네티스', '마이크로서비스', '데이터'가 소프트웨어의 큰 줄기가 될 수 있다
+원래는 인프라, 서비스, 데이터인 것을 쿠버네티스가 인프라를 완전 대체?
 
 #### kubernetes volume
 특정 노드의 폴더를 사용할 때는 hostPath를 사용할 수 있다.
@@ -739,6 +744,63 @@ AWS IAM을 사용하기 위해 kube2iam 사용 (19년 03월) -> EKS에서는 지
 모니터링
 
 https://engineering.vcnc.co.kr/2019/03/kubernetes-on-aws/
+
+#### eks 참고사항
+쿠버네티스 버전 업 시 전체 노드 새로 올린다?
+
+EKS의 파드들이 IAM을 인증받는 방법은?
+- kube2iam
+
+EKS에서는 워커 노드 당 Pod 개수 제한이 있다 - flannel을 쓰면 해결되지만 기본은
+제약이 있다.
+
+ECS, fargate, lambda 차이는?
+- Fargate: 서버리스 컨테이너
+
+AZ, multi region도 지원해주나?
+
+네트워크 구조
+- Region - VPC(논리적) - subnet - AZ - route table - Security groups -
+- vpc, subnet, route table 각각 cidr을 설정 가능하다?
+
+nginx-ingress deprecate 됐고, ingress-nginx를 쓰게 된다.
+
+eks에서도 kubernetes metrics-server를 통해서 오토스케일링 조절하나?
+- cluster autoscaler라는게 있다
+
+부하 테스트
+`ab -c 200 -n 200 -t 30 http://$(kubectl get ingress/backend-ingress -o jsonpath='{.status.loadBalancer.ingress[*].hostname}')/contents/aws`
+
+- [ ] provider "kubernetes"는 뭐지
+
+#### 배포 후 롤백 테스트
+지금 서버에 버전 두 개 만들어서 올리고 배포 후, 테스트하고 롤백하는 것 10초 컷
+gif로 만들어보기
+
+```
+docker build -t <image:tag> .
+docker push <image:tag>
+kubectl set image deployment/<name> <name>=<image:tag> --record
+kubectl rollout history deployment/<name>
+```
+
+띄워져 있어야하는 팟 개수 / 현재 개수 확인 바로 할 수 있는 방법은?
+- `kubectl get deploy -A`
+
+카오스 툴 띄워서 회복 잘 하는지 테스트
+- 동작안함..ㅠㅠ
+
+#### helm을 안쓰고 kubernetes로 가변적인 배포를 쉽게 할 수 없을까
+helm에 install --values도 values 파일을 작성해야하는데, 이러면 그냥 kubernetes
+snippet으로 만들어도 큰 차이는 없을 것 같다...
+괜히 helm을 안깔아도 될 것 같은데
+
+gist에 파일을 올려놓고, 설정파일에 이름을 넣어서 이름 확인해서 어떤 gist를
+가져올지만 정해서 불러와서 실행시키면 되겠다.
+gitkube라는 서비스도 있다. kubernetes 안에다가 리소스를 만들어놓고 감시하는
+컨셉이다
+
+이제 세부적인 설정이 필요해지면 어떻게 수정하지
 
 -----------------------------------------------------------------------
 

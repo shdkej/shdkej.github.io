@@ -2,7 +2,7 @@
 title   : Math
 summary : Math, Physics, Electronics
 date    : 2020-05-07 20:58:03 +0100
-updated : 2021-05-23 21:01:46 +0900
+updated : 2021-09-16 20:54:25 +0900
 tags    : strong_base
 ---
 
@@ -205,3 +205,8 @@ LTE는 정지상태에서 1Gbps 가 나온다고 한다. 이동 시 100Mbps
 
 1000bps = 1.25B/s
 100Mbps = 12.5MB/s 초당 12.5MB 다운
+
+이더넷으로 연결 후 확인해야 제대로 나온다
+벤치비나 통신사 제공 프로그램 이용
+와이파이는 20메가도 잘 안나온다고 한다
+

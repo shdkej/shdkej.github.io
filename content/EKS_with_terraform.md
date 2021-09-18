@@ -2,7 +2,7 @@
 title   : EKS 맛보기
 summary : 근데 이제 Terraform을 곁들인
 date    : 2021-08-15 14:41:14 +0900
-updated : 2021-08-15 22:38:48 +0900
+updated : 2021-08-17 22:18:42 +0900
 tags    :
 parent  : [[Blogging]]
 ---
@@ -280,6 +280,11 @@ ELB, NLB 등 로드밸런서 연결
 terraform destory를 해도 그 리전에 처음 네트워크를 만들게 되면 기본 네트워크로
 설정되어 삭제가 안됩니다
 비용은 따로 나오지 않으니 다음에 삭제해도 되고, 콘솔에서 직접 삭제해도 됩니다.
+
+##### eks 선언 안했는데자동생성된거 확인
+- 로드 밸런스
+- 시큐리티그룹
+- 라우팅 테이블
 
 
 지금까지 EKS를 terraform 으로 빌드하고 EKS의 Cluster Autoscaler 기능을

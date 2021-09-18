@@ -2,7 +2,7 @@
 title   : Trouble Shooting
 summary :
 date    : 2020-06-23 22:39:25 +0100
-updated : 2021-07-13 14:18:11 +0900
+updated : 2021-09-17 00:05:19 +0900
 tags    : develop
 ---
 
@@ -487,3 +487,10 @@ log.Fatal이 있어도 로그만 남기고 그냥 가만히 있는다
 
 #### docker react 404s will fallback to /
 일단 `docker-compose.yml` 에 `stdin_open: true` 넣어주면 되긴 된다
+
+#### golang server TODO
+버그가 있다.
+- [ ] 새로 고침 하다보면 결과값을 못 받아올 때가 있다.
+- [ ] es 서버는 패닉이 자꾸 뜬다
+- git 폴더 onedrive에 있는 거 로컬이랑 똑같은지 확인
+    - 다르다... 어떡하지

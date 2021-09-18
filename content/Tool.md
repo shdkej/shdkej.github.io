@@ -2,7 +2,7 @@
 title   : Tool
 summary :
 date    : 2020-08-25 14:48:57 +0100
-updated : 2021-07-22 18:04:43 +0900
+updated : 2021-09-17 00:39:42 +0900
 tags    : deep_knowledge
 ---
 
@@ -321,6 +321,10 @@ client도 같이 구현해야하나??
 서버는 자신의 마이크로서비스에서 실행하도록 하고, 클라이언트는 임포트해서 가져다
 쓰도록 되어있다.
 
+#### grpc 통신 속도 확인
+grpc가 아니어도 되지만 grpc로 하면 속도를 확보할 수 있다.
+- [ ] grpc호출하려면 grpc호출 로직을 짜야하나? 간단하게 호출할 수 있는 방법은?
+
 #### reference
 - https://devjin-blog.com/golang-grpc-server-4/
 - https://deepbaksu.github.io/2021/05/01/how-to-REST-from-gRPC/
@@ -330,3 +334,23 @@ client도 같이 구현해야하나??
 - 단어 빈도 수 체크
 - 조사 제거
 - 불용어 제거
+
+## react table
+react-table (검색, 정렬)
+react-table-filter (각 열별로 겹치는 이름 필터 가능)
+- https://blog.logrocket.com/complete-guide-building-smart-data-table-react/
+
+#### api gateway
+api gateway를 쓰게되면 운영서버에서 띄운 것을 이용해서 테스트를 해도 되나?
+로컬에서 개발자마다 띄워야되면 너무 귀찮을 것 같은데 그렇다고 아예 안쓸 수도 없고.
+
+운영 환경의 docker container를 개발할 때 가져와서 쓰고
+새로운 옵션이 필요하면 운영 환경에 풀 리퀘스트를 하도록 하면 점진적 개선이
+되겠다
+kubernetes nginx ingress 확인 해보기
+istio와 비교
+- [X] nginx도 api gateway라고 할 수 있나?
+    - 있겠다. kong도 nginx기반으로 만들어진 것 같다.
+
+api gateway or istio
+- 응답이 body 안에 담긴다. body를 읽어서 판단한다

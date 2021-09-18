@@ -2,7 +2,7 @@
 title   : Linux
 summary :
 date    : 2020-05-06 19:57:59 +0100
-updated : 2021-07-10 12:24:09 +0900
+updated : 2021-09-16 22:54:18 +0900
 tags    : develop
 ---
 
@@ -645,6 +645,48 @@ git bash 홈 디렉토리 변경법
 #### git ignore
 - `git rm --cache (folder -r) <filename>`
 
+#### git simulation
+https://learngitbranching.js.org/?locale=ko
+
+#### git cheatsheet
+상황별 스크립트를 만든다.
+반복적으로 쓴다
+
+지금 상황
+- github flow로 진행
+- master에 운영 소스
+- 기능 브랜치 여러 개 진행 중
+- 1. 기능 브랜치에 접근해서 내 작업을 진행
+    - 기능 브랜치에 머지?
+- 2. 내 브랜치를 만들어서 기능 브랜치를 땡겨오기?
+
+꼬인 상황
+- 기능 브랜치에 들어가서 작업 중
+- 기능 브랜치의 최신 버전을 받기 위해 내 작업은 커밋을 만들어놓고 풀을 했다
+- 가져온 최신 버전이 충돌을 일으켜서 HEAD^로 되돌아갔다.
+- 충돌버전은 없어졌지만, 내 커밋도 없어졌다
+- 다시 내가 작업하던 상태로 돌리고, 최신 커밋도 받고 싶다.
+- 어떻게 하면 될까
+    - 새 브랜치에서 기능 브랜치를 머지한다.
+    - git fetch를 하고, rebase로 내 커밋을 마지막 커밋과 합치고, 작업한다.
+    - 또는 rebase 대신 merge를 해서 분기를 보여줄 수 있다.
+    - pull을 바로 해도 똑같이 동작한다. --rebase를 넣으면 merge 대신 rebase한다.
+    - 내 문제는 pull을 하고 reset HEAD^ 한 부분에서 꼬임이 있었던 것 같다
+    - 게다가 stash도 pop 했으니 뭔가 변화가 생겼을 것 같다.
+
+- 리베이스는 어떻게 써야 효과적일까
+    - 내가 기능 브랜치에서 빠져나와서 작업하고 리베이스 해서 합치면 되나!?
+    - 그러면 마찬가지로 마스터만 남고 개발하던 흔적들은 합쳐지게 할 수 있겠다?
+- 이전 커밋으로 갔다가 원래 위치로 돌아오는 법은?
+    - log에서 돌아간 상태가 맨 위에 있게 되지 않나?
+- 작업하다가 버그 픽스할 게 생기면 커밋해놓고 리베이스 -i 해서 쓸데없는 커밋은
+  빼고 다른 라인으로 만들 수 있다. 그래도 그 커밋은 남아있어서 따로 올릴 수
+  있겠지?
+    - 그러면 그 커밋을 어떻게 조회하지? 브랜치 달라고 커밋 조회 가능한가?
+
+git pull = git fetch(원격 저장소의 상태를 다운받고)
+            + git merge(내 커밋을 원격저장소와 합친다)
+
 
 ## video recording
 [obs-studio](https://obsproject.com/wiki/install-instructions#linux)
@@ -902,3 +944,12 @@ fzf | xargs rm 이런 식으로 쓴다
 - 이미 갖고 있는 프로젝트에서는 리모트 설정
     - `git remote set-url origin git@github.com/<username>/<repo>.git`
 - https://zzpanqing.github.io/2017/02/28/github-push-without-username-and-password.html
+
+#### 쉘명령어 앞에 &붙이면 백그라운드 작업
+
+#### albert
+mac의 alfred를 ubuntu에서 비슷하게 구현.
+이걸로 문서와 북마크를 한 곳에서 검색할 수 있다.
+근데 북마크를 한번씩 들여다보면서 뭐가 있는지 알때도 있는데 그것은 따로
+구현해야한다
+파일 내부 단어 검색이 안되는데 구현되면 좋겠다 > 근데 그러면 검색이 오래걸리겠다

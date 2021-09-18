@@ -2,7 +2,7 @@
 title   : Collected Data
 summary : Stack
 date    : 2020-10-25 12:56:12 +0100
-updated : 2021-07-10 11:28:57 +0900
+updated : 2021-09-17 00:22:26 +0900
 tags    : develop
 ---
 
@@ -140,6 +140,10 @@ underkg
 - cncf 전체 조망도 사이트인데 필터링이 잘 되있다
     - https://landscape.cncf.io/card-mode?grouping=no&license=open-source&sort=first-commit
 
+#### 리스트를 보여줘야 한다면 편의성을 위해 반드시 필요한 것
+전체 개수 알려주기
+필터로 검색할 수 있게 하기
+
 #### 태그를 잘 활용해보자
 태그 활용 사례들을 살펴보자(aws, bear)
 태그를 잘 활용하도록 돕는 서비스를 찾아보자
@@ -237,6 +241,54 @@ underkg
 외면한다
 
 [[About_Development#VS#자연의 프랙탈]]
+
+#### 비동기
+큐
+동시작업
+우체국
+
+코드리뷰 풀리퀘스트
+- 작업이 밀리면 지치게된다
+- 나중에 몰아서 하려면 힘들다
+- 놓치고 지나갈 수 있다
+- PR이 너무 많은 내용을 담고 있으면 보기 힘들다
+
+#### awesome snippet
+```
+// internal function to find the correct place for a node in a tree
+func insertNode(node, newNode *Node) {
+ if newNode.key < node.key {
+  if node.left == nil {
+   node.left = newNode
+  } else {
+   insertNode(node.left, newNode)
+  }
+ } else {
+  if node.right == nil {
+   node.right = newNode
+  } else {
+   insertNode(node.right, newNode)
+  }
+ }
+}
+```
+> wow...
+
+```
+# 먼저 조건을 확인하고 (제약사항 체크), 실제 해야할 동작을 쓰는 패턴
+if (condition1) return (doSomething1)
+if (condition2) return (doSomething2)
+if (condition3) return (doSomething3)
+if (condition4) return (doSomething4)
+
+doWorking
+```
+
+#### facebook 설치 시 가입할 커뮤니티
+- [ ] https://www.facebook.com/groups/earlyddorai/
+awskrug
+opentutorials
+...
 
 -----------------------------------------------------------------------
 
