@@ -2,7 +2,7 @@
 title   : Communication
 summary :
 date    : 2020-12-15 15:35:32 +0100
-updated : 2021-07-22 17:35:50 +0900
+updated : 2021-10-20 22:23:05 +0900
 tags    : communication
 ---
 
@@ -99,3 +99,7 @@ tags    : communication
 
 #### 사람을 대할 때
 모두 각자의 장점을 갖고 있다. 장점을 찾으려고 하고 내가 그것을 배우면 좋겠다.
+
+
+#### Reasonable, emotion, 대안을 제시한다
+open mind

@@ -1,6 +1,6 @@
 :root {
-    --main-color: #282c34;
-    --second-color: silver;
+    --main-color: black;
+    --second-color: #f5f5f7;
     --heading-color: darkorange;
 }
 
@@ -24,8 +24,13 @@ h1 {
     color: var(--heading-color);
 }
 
+h2:before {
+    content: "# ";
+}
+
 h2, h4 {
     margin-top: 50px;
+    margin-left: -15px;
 }
 
 h4:before {
@@ -99,6 +104,12 @@ header h3 {
     }
     .toc-header {
         top: 280px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content-toc {
+        margin-top: 50px;
     }
 }
 

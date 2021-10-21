@@ -1,8 +1,8 @@
 ---
 title   : Technology
-summary :
+summary : IT 전반의 기술들에 대한 관심
 date    : 2020-05-06 19:15:00 +0100
-updated : 2021-07-10 12:03:30 +0900
+updated : 2021-10-15 23:24:19 +0900
 tags    : develop
 ---
 
@@ -476,6 +476,32 @@ easy update test model
 
 training
 serving
+
+#### mlops
+first-order-model: gif를 이용해서 사진을 특정 동작을 하도록 구현한다
+build-model: 간단한 모델 생성 파일
+keras-flask-deploy-webapp: 간단한 플라스크 구동 앱. h5파일을 빌드하고 실행한다
+cnn: cactus recognizer, cnn 모델 생성 파일 있다
+
+build-model을 이용해서 모델을 빌드하고 keras-flask-deploy-webapp으로 실행한다
+
+! keyerror: sample_weight_mode 에러가 뜬다
+- model.save()와 model.save_weight 차이가 뭔데
+
+keras-deploy는 지금 텐서플로 모델을 불러와서 실행하고 있다.
+커스텀 모델을 실행 가능하도록 설정 필요하다
+
+! h5 마다 다 차이가 있어서 실행이 잘 안된다.
+
+tensorflow Serving server라는게 있어서 모델을 여기에 저장해놓고
+플라스크에서 호출해서 쓸 수 있다
+그냥 모델을 플라스크 서버에 저장할 수도 있지만, 분리도 가능하다
+- [serving server](https://towardsdatascience.com/deploying-keras-models-using-tensorflow-serving-and-flask-508ba00f1037)
+- pb 파일만 사용 가능, h5를 pb로 변환 가능
+
+weight가 뭐고
+weight, losses, optimizers를 h5 파일 안에 넣는단다
+저 값들이 있으면 예측모델이 되는건가
 
 #### ml devops
 data composing

@@ -2,7 +2,7 @@
 title   : Food
 summary :
 date    : 2020-05-04 15:23:16 +0100
-updated : 2021-08-29 14:51:57 +0900
+updated : 2021-09-24 21:58:38 +0900
 tags    : health
 ---
 
@@ -65,7 +65,6 @@ But sasongi is not tasty. i need take care
 - 소화불량
 - 장건강
 - 위건강
-- 고혈압, 당뇨
 - 간
 - 콩팥
 

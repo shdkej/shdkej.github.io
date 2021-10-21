@@ -2,7 +2,7 @@
 title   : Linux
 summary :
 date    : 2020-05-06 19:57:59 +0100
-updated : 2021-09-16 22:54:18 +0900
+updated : 2021-09-24 20:50:11 +0900
 tags    : develop
 ---
 
@@ -644,6 +644,9 @@ git bash 홈 디렉토리 변경법
 
 #### git ignore
 - `git rm --cache (folder -r) <filename>`
+
+#### git show
+커밋 메시지, 수정된 파일 목록, 변경 내용 확인용
 
 #### git simulation
 https://learngitbranching.js.org/?locale=ko

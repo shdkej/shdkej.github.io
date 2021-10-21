@@ -2,7 +2,7 @@
 title   : Blogging
 summary : build blog
 date    : 2020-03-17 11:22:19 +0100
-updated : 2021-09-05 09:26:21 +0900
+updated : 2021-10-15 22:38:28 +0900
 tags    : communication
 ---
 
@@ -24,8 +24,6 @@ tags    : communication
 [[Streaming_server]]
 
 [[My_space]]
-
-[[Evolve_Architecture]]
 
 [[Note_Management]]
 
@@ -95,7 +93,6 @@ tags    : communication
 - 기술 히스토리 search and writing bloging
 - Experience sharing
 - erp 하면서 고려했던 것들, 겼었던 것들 정리
- - erp를 위한 서버구성 짜기
 - 홈페이지 구성요소에 대한 글 블로그 첫글 (블로그 아키텍처)
 - tdd를 어떻게 공부해나갈지도 기록해야겠다
 - 메모리의 지역성. 위치별 속도 차이 부터 시작해서 캐시, 메모리, 리스트 속도로 비교
@@ -156,3 +153,49 @@ note taking
 - ohtani for mandarart table
 
 ![mandarart](./img/ohtani.gif)
+
+## Video
+- For just video that my log
+- Use only the phone. No accessory. No Lighting.
+- No edit photo.
+- No footstep
+- Speedy
+
+- video sound volume different in same people play-list. If I make video, need check this
+
+#### 확인할 것
+- 눈에 본대로 표현
+- 주제를 가지고
+- 안정감 있게
+- 프레임에 주제에 집중하되 프레임 바깥을 느낄 수 있으면 좋겠다 프레임에 갇히지 않았으면 좋겠다
+- 아웃포커싱으로 주제를 나타내는 것 좋지만 다 나왔으면 좋겠다
+- 인위적이지 않았으면 좋겠다. 원래 있는 것의 다른 시각으로 나타내면 좋지 새로운 것을 만들어내는 것은 조심해야겠다
+- 필터를 안쓰고 싶다
+    - 조명과 사진 필터는 확실히 효과가 있다
+- 글은 중간 중간 사진을 배치, 영상도 중간 중간 B컷을 배치하고 화면 바뀌면 구도를 변경
+
+
+## Drawing
+## Cartoon
+Font
+One sentence one balloon
+Serif San serif
+One ballon is egg, fill word to like yellow part
+Some cut has a different feel
+Variable feel, if every cut as the same composition. It is boring
+
+## Photograph
+* 조리개 F
+ - 낮을수록 구멍 큼 빛을 많이 받아들임, 어두울 때 밝게함
+* 셔터스피드 s
+ - 빛을 모을 시간, 느리게 하면 흔들림이 많이 들어간다
+* 감도 ISO
+ - 낮을수록 빛에 둔감하다? 밤에는 빛이 적어 고감도 사용
+
+## Cinematic
+
+## Video
+# - navigator
+- subtitle
+- floating current subject on left-top
+- quickly

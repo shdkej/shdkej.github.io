@@ -2,7 +2,7 @@
 title   : Container
 summary : Docker, Kubernetes
 date    : 2020-12-17 22:01:56 +0100
-updated : 2021-09-17 22:09:50 +0900
+updated : 2021-10-15 22:55:03 +0900
 tags    : deep_knowledge
 ---
 
@@ -204,14 +204,14 @@ but devops works is not clear.
 - `kubectl run curl --image=radial/busyboxplus:curl -i --tty`
 - pods cluster inside curl pod
 
-- keep focusing only bisuness logic
+keep focusing only bisuness logic
 - 1. monitoring - feedback - update logic
 - 2. data management
 - production deploy behavior make easy
   - update and rollback
   - scale up and down
 
-- https://github.com/dennyzhang/cheatsheet-kubernetes-A4/blob/master/README.org
+https://github.com/dennyzhang/cheatsheet-kubernetes-A4/blob/master/README.org
 - ClusterIP vs NodePort vs Ingress
 - service account?
 - cluster role?
@@ -367,7 +367,6 @@ coredns 1.12 버전부터 사용, 호환성을 위해 라벨링은 kube-dns로 �
 - how to test account system?
     - check send complete
     - check response code
-
 - stress test per process
     - `while true; do curl http://localhost; done`
     - hpa
@@ -484,6 +483,7 @@ knative
 
 #### deploy
 deploy spinnaker
+
 kubernetes는 github에서 돌아가야 한다. 근데 로컬에서도 똑같이 할 수 있어야 한다
 github action에 종속되지 않고 CI를 하려면 스크립트를 호출하는 방식으로 해야하나
 github action server와 비슷한 서버를 만들어서 에러 시 리다이렉트 해야하나

@@ -1,8 +1,8 @@
----
+--
 title   : Trouble Shooting
 summary :
 date    : 2020-06-23 22:39:25 +0100
-updated : 2021-09-17 00:05:19 +0900
+updated : 2021-10-20 22:23:48 +0900
 tags    : develop
 ---
 

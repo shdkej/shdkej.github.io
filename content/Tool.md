@@ -2,7 +2,7 @@
 title   : Tool
 summary :
 date    : 2020-08-25 14:48:57 +0100
-updated : 2021-09-17 00:39:42 +0900
+updated : 2021-10-15 23:25:27 +0900
 tags    : deep_knowledge
 ---
 
@@ -354,3 +354,14 @@ istio와 비교
 
 api gateway or istio
 - 응답이 body 안에 담긴다. body를 읽어서 판단한다
+
+#### kong reference
+kong을 yaml로 관리하는게 있는데, decK
+이 yml이 인식하는 것들이 어떤게 있는지 api가 어딧는지 모르겠다
+
+decK를 쓰는게 아니라 kong 자체 declarative 설정이 있다.
+
+admin api 페이지에 나열되있긴 한데, 보기 힘들다
+
+#### kong grpc gateway
+kong으로 grpc 서버에 접속해서 grpc gateway를 만들 수 있다.

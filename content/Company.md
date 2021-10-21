@@ -1,8 +1,8 @@
 ---
 title   : Company
-summary :
+summary : 다른 회사들에 대한 정보, 경험, 내가 회사에서 일하면서 느낀 것들
 date    : 2021-02-27 20:53:57 +0100
-updated : 2021-09-16 23:37:25 +0900
+updated : 2021-10-02 01:02:42 +0900
 tags    : integration
 ---
 

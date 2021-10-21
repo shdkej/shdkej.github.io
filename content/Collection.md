@@ -2,7 +2,7 @@
 title   : Collected Data
 summary : Stack
 date    : 2020-10-25 12:56:12 +0100
-updated : 2021-09-17 00:22:26 +0900
+updated : 2021-10-15 23:06:21 +0900
 tags    : develop
 ---
 
@@ -291,5 +291,7 @@ opentutorials
 ...
 
 -----------------------------------------------------------------------
+
+:행동:input:
 
 [[About_Development#VS]]
