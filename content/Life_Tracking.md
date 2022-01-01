@@ -2,7 +2,7 @@
 title   : Life Tracking
 summary : 어떻게 살고 있는지 알고 싶다
 date    : 2020-12-20 14:46:34 +0100
-updated : 2021-07-22 18:02:29 +0900
+updated : 2021-12-02 22:49:50 +0900
 tags    :
 parent  : [[Blogging]]
 ---
@@ -204,3 +204,6 @@ https://johngrib.github.io/wiki/book-lyubishev/
 
 난 사진도 많이 안찍고 sns도 많이 안해서 정보가 적고 잘 모여있는 편인데도 한 곳에
 모으기가 힘들다
+
+
+#### 하루를 눈으로 보고싶다

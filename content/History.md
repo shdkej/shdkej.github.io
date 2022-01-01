@@ -2,7 +2,7 @@
 title   : History
 summary : history, behind story, reference
 date    : 2020-11-14 20:52:00 +0100
-updated : 2021-07-01 10:19:32 +0900
+updated : 2021-12-04 12:35:45 +0900
 tags    : idea
 ---
 
@@ -130,3 +130,81 @@ apple은 가져온 것을 수익화하는 것에 성공했다.
 1984, 멋진 신세계, 과거 정부의 검열 사례 등
 현재의 검열과 과거의 검열이 다른 상황이지만, 현재의 상황을 돌아보게 된다,
 하지만 현재의 상황에 맞게 또 다른 이유와 합리화가 이루어지긴 한다.
+
+#### history of it
+Word
+- imprative
+- proponent
+- percolate
+- notion
+- intent
+- precisely
+- consist
+- precise
+- primitive
+
+Keyword
+- composabliity
+- data race
+- type theory
+- russell's paradox
+- isomorphism
+- morhisms, objects
+
+Collection of individual computer make to see one computer.
+concurrently
+fail independent
+
+storage - CAP
+computation - Map Reduce
+Messaging
+stablity - distribute system.
+
+abstraction, composition, identity
+
+first-order logic
+
+the chomsky Hierarchy
+
+하드웨어 컴퓨터를 만들어낸 아이디어
+- 찰스 배비지: 19세기 초 계산 기계 제작
+    - 폰 노이만: CPU - OS, CPU에 폰노이만 구조 제시하여 컴퓨터 효율 증가
+        - OS - Multics - Unix
+    - 천공카드 - Assembly(제럴드 와인버그) - C(켄트 백, 데니스 리치, 커닝햄)
+- 알론조 처치
+- 튜링: 불 대수를 이용해 컴퓨터가 논리 연산을 할 수 있다는 것을 발견
+    - 컴퓨터 알고리즘, 컴퓨터 역할 고도화
+
+정보 이론 논리구조 -> 0,1 을 정보로 변환시킨 아이디어
+- 조지 불: True와 False로 논리 구조 구현 가능하다.
+- 버니바 부시: 인터넷, 하이퍼텍스트 개념 제시
+- 클로드 섀넌: 디지털회로 창시. 통신의 수학적 이론, 정보통신 이론
+- 팀 버너스 리: WWW, HTTP
+
+- 자료형: B에는 자료형이 없었다고 한다. - C에서 추가됨
+- 문자
+- ASCII (1963)
+- Array
+    - 폰 노이만 - 머지솔트에 사용
+    - FORTRAN에도 사용
+
+Analog -> Digital
+Electronic
+Computing -> Information communication
+Machine -> Computer
+Phone -> Internet
+
+ICT 관련 분야
+- 컴퓨터 아키텍처
+- 정보
+- 통신
+- 데이터 구조
+- 네트워크
+- 이산수학
+- 수리논리학
+- 오토마타
+
+#### story, history
+소프트웨어에는 스토리가 있다
+처음 만들게된 계기부터 요구사항에 따른 새로운 기능과 기존 기능의 변화 등
+이런 스토리를 책으로 읽고 싶다

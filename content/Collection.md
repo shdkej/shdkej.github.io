@@ -2,7 +2,7 @@
 title   : Collected Data
 summary : Stack
 date    : 2020-10-25 12:56:12 +0100
-updated : 2021-10-15 23:06:21 +0900
+updated : 2021-12-04 14:15:12 +0900
 tags    : develop
 ---
 
@@ -295,3 +295,23 @@ opentutorials
 :행동:input:
 
 [[About_Development#VS]]
+
+#### 코로나
+헬스
+도서관
+축구
+모임
+
+#### 한 브랜드를 분석하여 A-to-Z를 알아볼 수 있는 잡지
+매거진 B
+
+#### 투자가 필요하지만 좋은 툴들
+데본씽크
+1Password
+
+#### 좋은 이름의 기준 s.m.a.r.t
+- search
+- mix
+- agree
+- remember
+- type (typing)

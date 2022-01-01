@@ -2,7 +2,7 @@
 title   : CI/CD 구성 연습
 summary : 정적 소스 체크와 Ansible, Terraform, ArgoCD 를 이용한 배포
 date    : 2021-03-09 13:25:01 +0100
-updated : 2021-07-22 18:22:33 +0900
+updated : 2021-10-23 20:47:38 +0900
 tags    :
 parent  : [[Blogging]]
 ---
@@ -487,3 +487,135 @@ workflow 실패 시 에러 메시지와 함께 피드백 주는 방법 확인
 
 시맨틱 버저닝에서 버그 픽스와 피쳐 추가가 같이 있으면 버그 픽스 태그 따로, 피쳐
 추가 태그 따로 올리는게 맞지 않나?
+
+## Deploy
+
+#### infra와 source를 분리
+쿠버네티스 테스트 레포지토리와 myspace 레포지토리를 분리하고
+Myspace의 폴더가 곧 프로젝트 목록이 되도록 구성
+
+1. Basic 폴더를 만들어서 이를 복사해서 쓰도록한다
+2. Argocd에서 폴더를 등록한다
+3. 배포 완료
+
+인프라 코드도 개발자가 관리하도록 하기 위함.
+개발 코드는 컨테이너 이미지 배포하기까지 자동
+
+Prefix로 infra 서비스와 비즈니스 서비스 구분
+
+argocd를 github action에서 실행한다면
+소스코드와 인프라코드가 분리되있는데
+소스코드 변경을 인프라가 어떻게 알아차릴 수 있지?
+
+소스코드 변경 후 인프라를 다시 건드리면 안된다
+인프라는 인프라대로 관리되고, 소프트웨어 업데이트는 소스코드에서 따로 처리되야 한다
+
+인프라 변경 시 변경될 것은 쿠버네티스 셋팅, 서버 셋팅
+소스 변경 시 변경될 것은 소프트웨어 버전, 세부 설정
+
+둘 다 쿠버네티스 어플라이를 해야되는 건 같다.
+
+인프라 생성 시 argocd 등록 되도록 하고, 그게 소스코드를 보도록 하면 될까?
+1. 레포지토리 생성
+2. 도커 빌드
+3. 인프라 레포에서 폴더 생성
+4. argocd 싱크 등록을 1 레포지토리로 등록
+5. 레포지토리 업데이트
+6. argocd 동작
+
+#### deploy
+서버의 kube config를 가져온다 - private key를 github secret에 등록시키고 scp를
+이용한다
+변경된 파일을 인식해서 apply 한다
+
+1. 인프라에서 추가를 하면 서비스에 설정파일을 주입한다.
+2. 서비스에서 간단한 파일이라도 추가해서 신호를 준다
+- 관건은 서비스를 업데이트 했을 때 따로 설정 없이 인프라가 알아챌 수 있는지인데
+- cron을 계속 한다? 무리...
+    - argocd도 근데 레포지토리를 cron하는 방식 아닌가?
+- argocd로 배포를 하면 처음 등록만 수동으로 해주면 된다.
+- kubernetes를 워크플로우에서 동작하면 argocd 필요 없다
+- argocd가 소스코드 변경을 보는게 아니라 yaml 파일을 보는거라...
+
+지금은 일단 elasticsearch에 dockerfile 빌드할 때 synonym 파일을 집어넣었다
+이러면 github과 연동이 안되어서 버전 업데이트 할 때 날아간다.
+대응 방법을 생각해야 한다
+쿠버네티스 로컬에서 볼륨을 만들어서 연결해도 github에 업데이트는 못한다
+cron으로 파일을 파싱해야 할까. 매일 한번씩 카피해서 올려도 될듯
+
+kubernetes 같은 네임스페이스에서 연결하는 방법은?
+서비스로 클러스터 ip는 오픈
+서비스 이름으로 인식은 한다.
+그러면 서버에서 호스트 명을 서비스명과 맞춰줘야 한다.
+
+#### argocd
+terraform 으로 master ip 얻어서 argocd 마스터로 전달
+인프라 레포에서는 생성만 하고, 싱크는 argocd가 github을 보면서 할 수 있나?
+
+서비스 레포에서 푸시 -> 도커 이미지 변경 -> 인프라 레포에서 변경 인식
+-> argocd sync
+- 소스 레파지토리에서 인프라 레파지토리의 버전값을 변경하고 푸시하는 방식으로
+사용하더라
+
+- argocd에서 kubernetes.local로 접속하는게 어디?
+
+#### 배포
+스테이징 서버 없이 카나리로 테스트
+실제환경에서 카나리 테스트
+
+데이터에 문제 생길 것에 대비해서 업데이트 시 스냅샷을 찍어놓고 찍은 후 생긴
+데이터를 따로 더할 수 있게한다
+문제가 생기면 스냅샷으로 롤백하고 추가된 데이터를 더한다
+
+스냅샷과 데이터복구가 잘 되는지 검증한다
+
+#### canary release
+카나리 배포를 할 때 프로덕션에 할 게 아니라 내부 서버로 카나리를 해놓으면
+검사하기 더 수월할까?
+프로덕션에서 테스트하는 것이 내부에서 보는 것과 차이가 없을까?
+프로덕션에서의 환경을 봐야하기 때문에 프로덕션을 봐야할까?
+
+#### 스테이징 대신 카나리로 직접 테스트
+그러면 카나리 하다가 전체가 문제가 생기면 어떻게 하냐는 걱정 생긴다
+
+격리를 잘 하고, 고가용성을 챙기고
+데이터 변경으로 인한 영향이 없도록 해야한다
+
+
+먼저 쿠버네티스, 깃헙을 이용해 개발하다가
+팀이 따로 분리되어 전문화 되면 비로소 자체 시스템이 필요하지 않을까
+
+처음에는 여러 역할이 한 팀에 있고, 이 팀들을 관리하는 팀이 있는 구조에서
+팀을 관리하는 팀을 관리하는 팀이 필요해지는 시점 정도부터 세부적인 팀의 분리를 하던가, 상위팀이 하위 팀을 위한 툴을 개발하는 팀으로 역할을 하던가 하면 되지 않을까
+
+#### 다른 버전을 사람들이 쓰면 문제가 생긴다
+특히 db 처리에서 차이가 있으면 그렇겠다
+롤링업데이트는 괜찮은게 맞나?
+- 어댑터 패턴이라는 것이 있다
+  점진적 업데이트 시 이전 버전의 데이터를 갖고 있다가 출력을 바꿔주는 식
+
+카나리를 먼저 하고 롤링 업데이트를 하면 되지 않을까?
+db 같은 업데이트는 카나리로 하는게 좋겠다
+
+#### without stage server
+I want to make only 2 stages environment
+development & production
+
+what is problem
+- staging server need exist?
+- production safe
+- production server has problem
+- managing critical data
+- real world simulation
+
+if in kubernetes. staging server is not problem. just one more pods?
+
+is it over-resource?
+CD pipeline can replace staging server?
+
+- gitflow
+- master, dev, release, stage, hotfix -- too much
+- dev, test, stage, prod -- too much
+- multi stage is require?
+
+can parsing data from every node?

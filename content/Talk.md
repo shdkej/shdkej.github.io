@@ -2,7 +2,7 @@
 title   : Communication
 summary :
 date    : 2020-12-15 15:35:32 +0100
-updated : 2021-10-20 22:23:05 +0900
+updated : 2021-12-04 13:55:25 +0900
 tags    : communication
 ---
 
@@ -103,3 +103,5 @@ tags    : communication
 
 #### Reasonable, emotion, 대안을 제시한다
 open mind
+
+#### 말할 때 감정을 담으면 듣기 쉬워진다

@@ -2,7 +2,7 @@
 title   : 밸런스 맞추기
 summary : 중용, 딜레마, Balance, 조화
 date    : 2020-11-11 14:42:47 +0100
-updated : 2021-10-21 00:06:29 +0900
+updated : 2021-10-24 20:03:26 +0900
 tags    : human
 ---
 
@@ -257,6 +257,11 @@ vs
 온라인게임에서는 모두를 위한 평등한 게임은 모두를 만족시킬 수 없는 환상에 불과한 것일까
 https://m.fmkorea.com/best/2991103061
 
+#### 닌텐도 게임은 버그가 없나?
+예전 콘솔게임은 업데이트도 안되는데 버그를 어떻게 잡았나?
+- 버그가 없지 않다
+- 하지만 이 버그를 이용해 게임 매니아들이 또 다른 컨텐츠로 이용한다.
+
 #### 공과 과
 누구나 과오가 있기 마련인데
 공인에게 과의 책임을 언제까지 물려야 하는가
@@ -480,9 +485,12 @@ if the store has many choices of contents, I want to go there.
 경제학에서 고전주의에서는 세상을 확실성이 있는 것이라 봤는데 그 이후 만들어진 이론인 케인즈학파 등에서는 세상을 불확실성이 높고 복잡하다고 한다.
 과거에는 다 안다고 생각했던 것들이 더 많은 것을 알고 난 다음에는 몰랐었음을 알게 된다.
 
+#### 모으기보다 나누기
+수집하고 아끼는 것도 좋지만 나눠주고 적게 가지는 것도 가치있다. 내 것을 아끼려고
+하면 옹졸해진다. 베푸려고 하면 내가 커진다.
+
 ## think of my own that write in the note is just own me. it can be wrong.
 so, I need to communicate with people and check my think.
-
 
 [[Reference#쉬운 것부터 해야한다]]
 

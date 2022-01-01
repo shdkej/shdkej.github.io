@@ -2,7 +2,7 @@
 title   : Tool
 summary :
 date    : 2020-08-25 14:48:57 +0100
-updated : 2021-10-15 23:25:27 +0900
+updated : 2021-10-23 20:49:08 +0900
 tags    : deep_knowledge
 ---
 
@@ -365,3 +365,6 @@ admin api 페이지에 나열되있긴 한데, 보기 힘들다
 
 #### kong grpc gateway
 kong으로 grpc 서버에 접속해서 grpc gateway를 만들 수 있다.
+
+## husky를 쓰면 git hooks를 github에서 공유할 수 있다
+근데 이것을 쓰면 써야하는 도구가 늘어남을 의미한다

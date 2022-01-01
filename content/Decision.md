@@ -2,7 +2,7 @@
 title   : Decision
 summary : To reduce what need to be cared for.
 date    : 2020-05-06 12:58:37 +0100
-updated : 2021-09-24 22:33:33 +0900
+updated : 2021-12-02 23:22:04 +0900
 tags    : health
 ---
 
@@ -798,6 +798,10 @@ kmyjh2004 유튜브 집스커버리
 낙성대
 수유
 천호
+신림
+군자
+장승배기역  동작도서관
+구로역 구로도서관
 
 풀옵션
 카뱅 대출 1억

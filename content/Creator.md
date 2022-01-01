@@ -2,7 +2,7 @@
 title   : The other section in create area
 summary : Music, Construct, Artist, Directer, Author
 date    : 2020-09-29 23:59:25 +0100
-updated : 2021-07-10 11:38:46 +0900
+updated : 2021-12-04 14:05:48 +0900
 tags    : integration
 ---
 
@@ -60,6 +60,16 @@ Can It bring programming
 #### 에셔
 
 ## computer science와 software engineer의 상관관계?
+
+## 좋은 작품의 예
+- 시간이 지나도 좋아보이는 것(낡지 않고 세련된 것, 고전)
+- 한 장면도 여러 해석이 가능한 상황
+- 여러 번 봐도 새롭게 느껴지는 상황
+- 봐도 봐도 안 질리는 것
+- 오래될수록 가치있어 지는 것
+
+적고 보니 모두 고전이라고 불리우는 작품들의 특징이다. 고전이 아닌 것 중에 좋다고
+생각한 것들의 예가 추가되면 좋겠다.
 
 ## 예술가와 엔지니어의 차이
 예술가는 내가 원하는 것을 만들고

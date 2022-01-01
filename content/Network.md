@@ -22,7 +22,7 @@ tags    : strong_base
 
 #### 왜 1byte는 8bit 일까
 처음에는 1byte를 6,7,8 정해진 것 없이 각 업체마다 다르게 사용했다
-ASCII가 128개의 문자를 표현할 수 있어서 이게 기준이 된 것이라는 설이 유력하다
+ASCII가 128개의 문자를 표현할 수 있어서 이게 기준이 된 것이라는 설이 유력하다 (2^7=128)
 
 #### TCP network
 대역폭은 BDP(Bandwidth Delay Product)라는 것과 관계있는데

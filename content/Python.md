@@ -2,7 +2,7 @@
 title   : Python
 summary : Beautiful, Explicit, Simple, Complex than complicated.
 date    : 2020-05-06 12:40:23 +0100
-updated : 2021-07-14 18:01:13 +0900
+updated : 2021-12-04 13:54:06 +0900
 tags    : deep_knowledge
 ---
 
@@ -108,6 +108,32 @@ class Test():
  #a.test()와 달리 에러 발생 안함
  #test1
 ```
+#### Python concept with id() function.
+Everything is an Object in Python
+- Even function and class, id()
+
+variable Assignment and Aliasing
+- `hello = 'Hello world'`
+- `world = hello`
+- hello's id equal with world's id
+
+`==` operator, `is` operator
+- `==` compares the value
+- `is` compares the identities(i.e. memory addresses)
+
+integer caching
+- -5 ~ 255 are caching
+
+shallow and deep copies
+- shallow copy make new object.
+- deep copy make new object and if layer has a nested layer, recursively copy
+
+a = 1000 을 해놓고 a+=1을 하면 a의 주소는 변한다
+다시 a = 1000 을 하면 1000의 주소는 할당해제 되고 가비지컬랙터가 수거해가서
+새로운 주소가 할당된다
+할당되었다는 것은 메모리를 차지하고 있다는 것.
+가비지 컬렉터가 수거해가나? 언제? del 명령어가 있다
+-5 에서 256이 기본적으로 할당되어 있어서 아이디가 고정되는 것
 
 #### shallow copy, deep copy
 파이썬은 기본적으로 대입 연산 시 값이 아닌 레퍼런스를 참조한다.
