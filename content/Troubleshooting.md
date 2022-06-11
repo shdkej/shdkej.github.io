@@ -485,6 +485,12 @@ log.Fatal이 있어도 로그만 남기고 그냥 가만히 있는다
           Add cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1 into end of the file.
         - https://github.com/k3s-io/k3s/issues/2067
 
+
+
+## ETC
+#### github id/password 로그인 막힌 문제
+https 로 받은 패키지들 ssh로 받아야 ssh로 인증됨
+
 #### docker react 404s will fallback to /
 일단 `docker-compose.yml` 에 `stdin_open: true` 넣어주면 되긴 된다
 

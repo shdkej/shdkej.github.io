@@ -1,12 +1,12 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from "react"
+import { Link } from "gatsby"
 
-import "./layout.css";
-import ClientOnly from "./ClientOnly";
+import "./layout.css"
+import ClientOnly from "./ClientOnly"
 import Search from "./search";
 
 const Layout = ({ title, children, data }) => {
-    let header;
+    let header
     header = (
         <nav>
             <Link to={`/`}>{title}</Link>
@@ -15,7 +15,7 @@ const Layout = ({ title, children, data }) => {
             <> | </>
             <Link to={`/about`}>ABOUT</Link>
         </nav>
-    );
+    )
 
     return (
         <div>
@@ -36,7 +36,7 @@ const Layout = ({ title, children, data }) => {
                 </small>
             </footer>
         </div>
-    );
-};
+    )
+}
 
-export default Layout;
+export default Layout

@@ -9,6 +9,8 @@ diary
 *.swp
 node_modules
 tags
+content/j
+content/.obsidian
 
 # Logs
 logs

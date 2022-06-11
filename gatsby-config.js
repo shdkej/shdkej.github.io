@@ -1,3 +1,9 @@
+/**
+ * Configure your Gatsby site with this file.
+ *
+ * See: https://www.gatsbyjs.com/docs/gatsby-config/
+ */
+
 module.exports = {
     siteMetadata: {
         title: `SH`,
@@ -22,7 +28,6 @@ module.exports = {
                 plugins: [
                     `gatsby-remark-copy-linked-files`,
                     `gatsby-remark-autolink-headers`,
-                    `gatsby-remark-images-anywhere`,
                     {
                         resolve: `gatsby-remark-table-of-contents`,
                         options: {
@@ -41,7 +46,6 @@ module.exports = {
         },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
-        `gatsby-plugin-feed`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sitemap`,
         {
@@ -50,20 +54,5 @@ module.exports = {
                 trackingId: "UA-110967461-3",
             },
         },
-        // this (optional) plugin enables Progressive Web App + Offline functionality
-        // To learn more, visit: https://gatsby.dev/offline
-        // `gatsby-plugin-offline`,
-        {
-            resolve: `gatsby-plugin-manifest`,
-            options: {
-                name: `SH`,
-                short_name: `SH`,
-                start_url: `/`,
-                background_color: `#ffffff`,
-                theme_color: `#663399`,
-                display: `minimal-ui`,
-                icon: `static/favicon.png`,
-            },
-        },
     ],
-};
+}

@@ -68,3 +68,6 @@ versioning 할 때 1.2.x 로 해서 x부분은 오류 수정용으로 해서 하
 - [오픈소스 구조와 모듈 파악하기](https://kdydesign.github.io/2020/10/19/open-source-flow/)
 - [오픈소스 컨트리뷰터 찾기](https://www.sosconhistory.net/soscon2019/content/data/session/Day%201_1630_1.pdf)
 - [오픈소스 개발기](https://deview.kr/data/deview/session/attach/1500_T1_박재성_깃헙%204.4K%20스타%20billboard.js%20메인테이너가%20들려주는%20오픈소스%20개발기.pdf)
+
+인기 있는 오픈소스 프로젝트 만드는 팁 | GeekNews
+[https://news.hada.io/topic?id=5379](https://news.hada.io/topic?id=5379)

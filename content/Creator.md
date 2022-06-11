@@ -166,7 +166,7 @@ Can It bring programming
 
 ## abstract
 - [ ] 추상 미술에 대해 알아보면서 추상화에 대해 힌트를 얻을 수 있을까
-- [과학과 추상미술](https://drive.google.com/file/d/1nqqk70oWAOR3GmFOyYE6izUC3vdDRuwl/view?usp=sharing)
+- [과학과 추상미술](https://drive.google.com/file/d/19pachfgZJGI8OJIwpVD9saQ_e-5fprJX/view?usp=sharing)
 - [1913년 초기 추상 정의와 논쟁, 로베르 들로네, 말레비치](https://hri997.tistory.com/m/101)
 
 추상적인 것에 구체적 사례를 추가해야겠다

@@ -182,3 +182,7 @@ python에서는 pip
 - 만화에서 좌에서 우로 본다는 관습적인 속성을 이용해서 말풍선을 배치한다
 - 일본만 해도 읽는 방향이 반대인데, 만화라는 컨텐츠는 이동 시 수정이 필요하다
 - 애초에 쓰는 언어가 다르긴 하지만...
+
+#### 어디까지 추상화할지
+https://devocean.sk.com/blog/techBoardDetail.do?ID=163365
+> 첫번째 workflow 의 문제점은 우선 정확히 어떤 명령어가 실행되는지 알기 어렵고, endpoint url 을 변경하는 등의 추가 옵션을 설정할 경우 aws cli 문서가 아니라 다른 곳에서는 아무짝에도 쓸모없는 jakejarvist/s3-sync-action 의 문서를 봐야 한다는 것이다
