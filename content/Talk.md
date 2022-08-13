@@ -2,7 +2,7 @@
 title   : Communication
 summary :
 date    : 2020-12-15 15:35:32 +0100
-updated : 2021-12-04 13:55:25 +0900
+updated : 2022-08-13 19:05:20 +0900
 tags    : communication
 ---
 
@@ -105,6 +105,5 @@ tags    : communication
 open mind
 
 #### 말할 때 감정을 담으면 듣기 쉬워진다
-
-꾹꾹 눌러담은 말보다  
+꾹꾹 눌러담은 말보다
 어떤 말이 튀어나올지 모르니까 죄송하다고 양해를 구하고 말하는 게 더 현실적이다

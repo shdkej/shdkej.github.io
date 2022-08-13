@@ -2,7 +2,7 @@
 title   : Collected Data
 summary : Stack
 date    : 2020-10-25 12:56:12 +0100
-updated : 2021-12-04 14:15:12 +0900
+updated : 2022-08-07 22:04:42 +0900
 tags    : develop
 ---
 
@@ -34,6 +34,7 @@ tags    : develop
 ## 틀을 딱 짜놓고 맞춰서 만드는 작품과 상황에 맞추는 작품
 #### 후자
 고레에다 히로카즈
+홍상수
 
 ## good app
 - netflix - valuable content

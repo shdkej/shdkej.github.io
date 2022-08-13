@@ -2,7 +2,7 @@
 title   : Journal
 summary : Let's make the results every day.
 date    : 2020-04-02 08:55:34 +0100
-updated : 2021-12-04 14:04:13 +0900
+updated : 2022-08-13 18:35:10 +0900
 tags    : idea
 ---
 
@@ -540,6 +540,9 @@ git commit and push
 #### 노트
 goal, 목표를 어느 노트에 넣을지
 
+#### 목표를 decision 노트에 넣는다
+[[Reference#목표를 decision 노트에 넣는다]]
+
 #### 마감 기간이 있는 것을 따로 모아서 링크를 걸어서 별개의 글로 만든다
 여행계획, 개발 프로젝트, 책
 
@@ -841,6 +844,10 @@ journal에서 이 노트가 검색이 되려면?
         - 선택의 순간
         - 질문
         - 어쩔 수 없이 한 선택
+
+#### 처음에 어떤 기능이 좋다고 생각해도
+나중에 그것에 대해 반박하는 게 생기고 그러면 왜 좋았는지에 대해 다시
+생각해봐야 하는 상황이 생기기에 좋았던 점을 기록해놓아야 한다
 
 ## Reference
 - [번역체-나무위키](https://namu.wiki/w/%EB%B2%88%EC%97%AD%EC%B2%B4%20%EB%AC%B8%EC%9E%A5/%EC%98%81%EC%96%B4#s-2.10)

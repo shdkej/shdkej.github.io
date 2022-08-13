@@ -2,7 +2,7 @@
 title   : Movie
 summary :
 date    : 2020-04-12 15:42:05 +0100
-updated : 2021-07-22 17:45:57 +0900
+updated : 2022-08-13 18:29:59 +0900
 tags    : idea
 parent  : [[Reading]]
 ---
@@ -42,6 +42,12 @@ parent  : [[Reading]]
 
 다운받을 때 이름에
 HDrip DVDrip BRrip BDrip Bluray 순으로 좋으나 HDrip 이상이면 큰 차이 없다고 함
+
+## 작품 깊게 즐기기
+- 프리뷰
+- 감상
+- 리뷰
+- 비하인드
 
 ## Review
 
