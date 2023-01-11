@@ -269,6 +269,16 @@ if else를 쓰는 절차적인 방식을, 어떤 인자가 필요하니 이게 �
 api는 인터페이스를 호출하고 인터페이스는 유닛함수를 호출하고
 유닛함수는 외부라이브러리와 분리시킨다?
 
+#### statement, expression
+for, if, while은 statement,
+map, filter는 expression
+
+#### 함수형 언어
+함수형언어를 쓰면 코드 읽고 추론하기가 쉬워진다?
+- https://www.youtube.com/watch?v=H6JxxWL6bJI
+
+수학적이면 완성도가 높아지는 것 같다. 이런 점에서 함수형 표현을 쓰는게 좋은거 같다
+
 ## code
 - 코드만으로 얘기할 수 있도록 보기 좋은 코드
 - 문서화는 중요하다 코드만 봐도 되게 하면 더 좋겠지만
@@ -493,3 +503,31 @@ security:authentication-manager
 클래스로 할 수 있을까?
 
 타입을 보고 결정?
+
+#### 개발 노하우
+삭제는 딜리트가 아니라 isDelete를 true로 바꾸고  
+히스토리를 추가하는 작업  
+
+진짜 삭제가 필요한 경우는?
+
+#### 프로그래밍 언어 추상화 단계
+기계어 0101010
+어셈블리어
+명령형 코드 for
+선언형 코드 filter()
+
+#### iterator 함수 감싸기
+iterator를 쓰는 함수는 내부가 for문을 돌리고 원하는 처리를 하는 동일한 구조로 되어있다
+이걸 계속 반복해서 쓰기보다 감싼 함수에서 실행하게 하면 좋겠다
+
+#### iterable, iterator 차이?
+list 같이 요소를 순회할 수 있는 것을 iterable이라 한다
+iterator도 iterable한 객체인데 iterator는 한 개씩 꺼내 쓰기 위한 것이라 iterable이 iterator는 아니다
+
+#### iterator와 stream 비교  
+- iterator를 간결하게 쓰게 해주는게 stream  
+  
+query로 필터링하는 것과 stream filter 비교  
+- 많은 양에서는 무조건 쿼리가 빠름  
+- 그동안 db 최적화가 아주 많이 이뤄졌기 때문
+iterator도 iterable하니까 map을 쓸 수 있지 않을까?

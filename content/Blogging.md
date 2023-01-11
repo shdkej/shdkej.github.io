@@ -15,11 +15,9 @@ tags    : communication
 
 [[Life_Tracking]]
 
-[Decision Monitor Size](Decision_Monitor_Size)
+[Decision Monitor Size](Decision_Monitor_Size.md)
 
-[100k concurrent server](100k_concurrent_server)
-
-[[CI_CD]]
+[100k concurrent server](100k_concurrent_server.md)
 
 [[Streaming_server]]
 
@@ -27,7 +25,7 @@ tags    : communication
 
 [[Note_Management]]
 
-[EKS_terraform](eks_with_terraform)
+[EKS_terraform](EKS_with_terraform.md)
 
 [[Spring_TestCode]]
 
@@ -37,6 +35,10 @@ tags    : communication
 - 내가 알게 된 것들을 나의 언어로 작성하여 공유
 - 모든 지식을 알 수 없음을 겸허히 받아들여야 한다...
 - 거인의 어깨에 올라탄다.
+
+#### 형식과 리듬
+글을 쓰는데 두 가지 방식
+형식에 맞추냐 리듬에 맞추냐
 
 
 ## 번역시 고민 요소
@@ -195,7 +197,7 @@ Variable feel, if every cut as the same composition. It is boring
 ## Cinematic
 
 ## Video
-# - navigator
+- navigator
 - subtitle
 - floating current subject on left-top
 - quickly

@@ -134,8 +134,8 @@ underkg
 
 #### filter
 - google search filter
-    - "<keyword>",<keyword1> | <keyword2>, -<keyword>, <keyword> * <must keyword>
-    - <2020>..<2021>
+    - `"<keyword>",<keyword1> | <keyword2>, -<keyword>, <keyword> * <must keyword>`
+    - `<2020>..<2021>`
 - 노션의 데이터베이스 필터
 - 빅데이터 대시보드의 화면 구성
 - cncf 전체 조망도 사이트인데 필터링이 잘 되있다
@@ -323,3 +323,11 @@ opentutorials
 만약 우주를 채우는 물질이 새롭게 발견된다면 큰 변화가 된다
 
 강력,약력,전자기력의 양자역학, 중력의 상대성이론을 통합하려는 시도. 이것이 성공하면 우주 탄생의 신비에 한 발 다가갈 수 있다
+
+
+#### marketing
+마케팅의 4P  
+  
+product, price, place, promotion
+
+#collection

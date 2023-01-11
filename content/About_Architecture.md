@@ -83,3 +83,41 @@ Quick recovery scenario
 
 젤다의전설  
 오픈형월드게임
+
+
+#### 당근마켓 당근페이 인프라 구축 이야기
+핀테크 기업으로서 보안 등 제약이 있는 상황에서 클라우드 서비스를 이용해야 했음
+
+1. 로그인서비스를 어떻게 구성했는가
+	- 계정 별로 환경 분리
+	- 로그인 제한 -> 계정 별로 분리되어있지만 로그인은 대표계정에서 한다. cloudfnc와 동일하네
+		- 로그인은 security라는 계정이고 이 계정은 로그인만을 위해서 사용하고, 이렇게 로그인하면 dev, sta, prod 계정에 접속이 가능하게 된다. 외부 접근권한이 있는 security가 탈취되어도 dev에 접근 못하게 되면 아무것도 할 수 없다는 식
+	- 계정 탈취 시 여파 최소화
+2. 서버 접근을 어떻게 할 것인가
+	- teleport - ssh 접속 후 행동을 영상으로 녹화해서 보여준다
+3. 애플리케이션 구성을 어떻게 할 것인가
+	- kubernetes vs ec2
+	- 쿠버네티스가 오버 엔지니어링이 아닐까 싶었지만
+	   같은 회사 다른 서비스에서 사용중이어서 조언을 얻을 수 있었고, 같은 팀의 팀원이 사용 경험이 있어서 충분히 도움을 받을 수 있는 환경이어서 사용하기로 했다
+	- alb -> istio 변환 예정
+4. 배포 파이프라인 구성을 어떻게 할 것인가
+	- eks 에 맞는 도구를 찾으려고 했다
+	- 툴에 대한 운영 경험이 있고 Github과 연계가 손쉽게 구성될 수 있는 기술 스택 선택
+	- Github Actions, Argocd, Argocd pipeline
+	- github 설치형을 n5.4xlarge 에 사용. 디스크 관리만 하면 무리없이 사용하기에 좋았음
+5. 관측 시스템을 어떻게 구성할 것인가
+	- 컨플라이언스 (보안) 문제로 SaaS 사용이 힘들었음 (Datadog, new relic 등)
+	- ElasticStack, Prometheus, Grafana 로 직접 구축
+	- FileBeat, Node Exporter 는 DaemonSet으로 올림
+	- Prometheus Operator를 이용해 Prometheus를 구성함
+	- AWS 리소스는 CloudWatch를 통해 모니터링
+		- SNS -> AWS Chatbot을 통해 Slack 으로 발송. (이전에는 람다를 직접 구현했어야했음)
+6. 성능 테스트를 어떻게 진행할 것인가
+	- locust (kubernetes용인 klocust를 이용)
+	- 테스트의 목적
+		- 최대 성능을 측정하는 형태는 목적이 불분명
+		- 10분 동안의 테스트를 통해 99퍼센타일 응답 시간이 100 ms 이내일 때의 최대 TPS를 구하려고 함 -> 99%가 진행됐을 때의 응답 시간이 100ms ?
+		- 파드 하나당 400TPS 라는 수치를 얻게 됨
+	- 테스트를 하면서 close_wait 소켓이 쌓이는 현상 발견. undertow를 netty로 변경
+
+https://www.youtube.com/watch?v=8a2-b9X7Xno

@@ -151,7 +151,7 @@ terraform, ansible로 반복되는 아키텍처 관리 작업을 코드로 관�
 2. What is your greatest achievement?
 
 3. Can you explain your experience?
-[[Deploy_ERP_server_story]]
+[[blog/Deploy_ERP_server_story]]
 - I've build internal ERP server for 40 employees
 
 4. Why you apply this position?

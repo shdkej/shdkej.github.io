@@ -32,14 +32,14 @@ tags    : integration
 ![Color](./img/origin_color.jpeg)
 
 가산혼합
-- 빨강	#FF0000
-- 초록	#00FF00
-- 파랑	#0000FF
+- 빨강	`#FF0000`
+- 초록	`#00FF00`
+- 파랑	`#0000FF`
 
 감산혼합
-- 시안	#00FFFF
-- 마젠타 #FF00FF
-- 노랑	#FFFF00
+- 시안	`#00FFFF`
+- 마젠타 `#FF00FF`
+- 노랑	`#FFFF00`
 
 ## Font
 굴림은 산세리프. 꽉 찬 글씨. 둥글둥글한 글씨

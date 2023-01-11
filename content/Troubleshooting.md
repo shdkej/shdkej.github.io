@@ -421,7 +421,7 @@ kubernetes에서 deployment로 만든 pod 에서 image가 이상한 곳에서 �
 - 일단 오픈된 서버에서 앱으로는 들어가진다
 - web과 db가 연결이 안된다
   - label 추가
-  - app.kubernetes.io/part-of:<name> 를 전체에 추가
+  - `app.kubernetes.io/part-of:<name>` 를 전체에 추가
 
 db 레플리카를 두개로 하면 데이터는 어떻게 되는가
 replica 2로 하고 접속 시 db와 연결 안됨
@@ -437,7 +437,7 @@ web 접속 시 the database system is starting up
 db 데이터 손상 재설치..
 
 노드 추가 후 기존 노드에 있는 POD 옮기기
-- kubectl cordon     <node-name>
+- `kubectl cordon     <node-name>`
 
 노드에 포드 할당 안하도록 설정
 - kubectl drain
@@ -492,6 +492,15 @@ log.Fatal이 있어도 로그만 남기고 그냥 가만히 있는다
           Add cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1 into end of the file.
         - https://github.com/k3s-io/k3s/issues/2067
 
+
+#### ubuntu 22 업데이트 후 문제점
+한 영 할 때 팝업이 뜸
+- gnome extension 에서 이를 막아주는 게 있음
+- https://extensions.gnome.org/extension/4559/quick-lang-switch/
+
+caps lock 을 ctrl로 바꾼 설정이 동작 안함
+
+side terminal 동작 안함 deprecate 됨. 새로 찾아야 함
 
 
 ## ETC

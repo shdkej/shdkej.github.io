@@ -7,6 +7,12 @@ tags    :
 parent  : [[About_Architecture]]
 ---
 
+Infra - Cloud
+CI / CD
+Container
+Fail Tolerance / Chaos
+Monitoring
+
 # DevOps
 
 what is benefit of devops
