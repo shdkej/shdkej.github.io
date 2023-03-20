@@ -959,3 +959,74 @@ mac의 alfred를 ubuntu에서 비슷하게 구현.
 
 #### markdown 줄 수 검색
 wc -l *.md | sort -rh | head -n 16
+
+
+#### 변경 사항만 가져와서 빌드하기
+```
+git diff --name-only | grep 'packages' | sed 's,^\(.*\)/\(.*\)/\([^/]*\),\2,'  
+  
+for o in $OUTPUT;  
+do  
+echo $o;  
+done;  
+  
+---  
+  
+FROM node:14.17.1 as build  
+ARG BUILD_CONTEXT  
+  
+WORKDIR /app  
+COPY package.json .  
+COPY yarn.lock .  
+COPY ./packages/$BUILD_CONTEXT/package.json packages/$BUILD_CONTEXT/  
+RUN yarn install  
+  
+COPY ./packages/$BUILD_CONTEXT packages/$BUILD_CONTEXT  
+RUN yarn build:$BUILD_CONTEXT  
+  
+FROM nginx:stable-alpine  
+ARG BUILD_CONTEXT  
+COPY --from=build /app/packages/$BUILD_CONTEXT/build /usr/share/nginx/html  
+COPY nginx.conf /etc/nginx/conf.d/default.conf  
+EXPOSE 80  
+CMD ["nginx", "-g", "daemon off;"]  
+---  
+  
+  
+FROM node:14.17.1 as build  
+ARG BUILD_CONTEXT  
+ARG BUILD  
+  
+WORKDIR /app  
+COPY package.json .  
+COPY yarn.lock .  
+COPY ./packages/banadio-common packages/banadio-common  
+COPY ./packages/$BUILD_CONTEXT/package.json packages/$BUILD_CONTEXT/  
+COPY ./packages/$BUILD_CONTEXT packages/$BUILD_CONTEXT  
+RUN yarn install --production  
+RUN yarn build:$BUILD  
+---  
+  
+FROM node:14.17.1-alpine  
+ARG BUILD_CONTEXT  
+ARG BUILD  
+  
+RUN addgroup -g 1001 -S next  
+RUN adduser -S nextjs -u 1001  
+  
+WORKDIR /app  
+  
+COPY ./packages/banadio-common packages/banadio-common  
+COPY --from=build /[app/package.json](http://app/package.json) ./package.json  
+COPY --from=build --chown=nextjs:next /[app/packages/$BUILD_CONTEXT/.next](http://app/packages/$BUILD_CONTEXT/.next) packages/$BUILD_CONTEXT/.next  
+COPY --from=build /app/packages/$BUILD_CONTEXT/public packages/$BUILD_CONTEXT/public  
+COPY --from=build /[app/packages/$BUILD_CONTEXT/package.json](http://app/packages/$BUILD_CONTEXT/package.json) packages/$BUILD_CONTEXT/package.json  
+COPY --from=build /app/packages/$BUILD_CONTEXT/node_modules packages/$BUILD_CONTEXT/node_modules  
+RUN yarn workspace $BUILD_CONTEXT add next  
+  
+USER nextjs  
+  
+EXPOSE 3000  
+# CMD ["yarn", "start:BUILD"]
+```
+

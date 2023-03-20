@@ -7,7 +7,11 @@ tags    :
 parent  : [[About_Architecture]]
 ---
 
-#
+# Micro Service Architecture
+
+MSA 는 작은 규모에서는 과한 느낌이 있다
+모놀리스로 쉽게 관리가 될 것을 MSA를 사용하면 관리포인트가 엄청 많아진다
+
 ## micro service
 - every node make end-point, http, grpc
     - need documentation

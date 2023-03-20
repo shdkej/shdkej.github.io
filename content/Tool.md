@@ -368,3 +368,8 @@ kong으로 grpc 서버에 접속해서 grpc gateway를 만들 수 있다.
 
 ## husky를 쓰면 git hooks를 github에서 공유할 수 있다
 근데 이것을 쓰면 써야하는 도구가 늘어남을 의미한다
+
+
+#### dynamodb
+"dynamodb의 프로비져닝된 용량(?) 부족에 따른 쓰로틀링 이슈를 겪으면서 dynamodb에 대한 회의"  
+[https://blog.rewuio.com/entry/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EA%B8%B0-aurora-serverless#:~:text=dynamodb%EC%9D%98%20%ED%94%84%EB%A1%9C%EB%B9%84%EC%A0%B8%EB%8B%9D%EB%90%9C,dynamodb%EC%97%90%20%EB%8C%80%ED%95%9C%20%ED%9A%8C%EC%9D%98%EA%B0%80](https://blog.rewuio.com/entry/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EA%B8%B0-aurora-serverless#:~:text=dynamodb%EC%9D%98%20%ED%94%84%EB%A1%9C%EB%B9%84%EC%A0%B8%EB%8B%9D%EB%90%9C,dynamodb%EC%97%90%20%EB%8C%80%ED%95%9C%20%ED%9A%8C%EC%9D%98%EA%B0%80)

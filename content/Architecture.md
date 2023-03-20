@@ -463,6 +463,13 @@ bandwidth (per GB)
 
 #### 프로덕션에 필요한 속성
 보안, 개별 설정을 유연하게 하는 것, 관측성
+  
+- 되돌릴 수 있는가  
+- 복구할 수 있는가  
+- 수습이 가능한가
+- 인수인계할 때 무리가 없는가 (사람을 구할 수 있는가)
+- 안정성  
+
 
 #### component
 db
@@ -532,3 +539,31 @@ service output이 feedback이 되도록
 #### 메시지 큐
 sqs에 실패처리용 큐를 하나 만들어서 거기에 담아서 에러를 확인한다.
 메시지큐에서 실패한 것들을 받으면 람다를 실행하게 해서 오류처리 할 수 있다
+
+
+## AWS
+연결된 서비스 : serverless, cloud, gcp, azure, container
+
+### 신규 업데이트 확인
+- 신규 업데이트 확인
+	- aws blog
+	- aws reinvent
+
+### 네트워크
+- [[Network]]
+- 격리
+	- vpc
+- 외부 연결
+
+### 컴퓨팅
+- 서버
+- 컨테이너
+
+### 스토리지
+- fully management service
+	- rds
+	- aurora
+- serverless
+	- [[Architecture]]
+
+### 기타

@@ -37,6 +37,7 @@ tags    : idea
 [http://blog.tnote.kr/221020286684](http://blog.tnote.kr/221020286684)
 
 #### 아키타현 이나니아 우동
+디카마츠도 유명한듯
 
 #### Fukuoka
 시티패스 개강추 후쿠오카 돌때 개꿀
