@@ -127,6 +127,8 @@ but personal interest is good.
 
 > 새로운 시대의 권력, 마이크로 파워 - 천훙안, 미래의 창
 
+[[Team_management]]
+
 ## 20세기 이전은 천재가 시대를 바꿨다면 이후는 통합의 시대가 될 것이다
 
 ## 평론

@@ -109,11 +109,6 @@ you were finish
 - Is there blood coming out of my ears?
 - Be ... to none
 
-#### english pronounce
-- R L
-- P F
-- A E
-- C K
 
 #### 헷갈리는 단어
 - serve 제공하다
@@ -166,6 +161,11 @@ Remove vs delete
 sign off on 승인하다 wrap up 마무리하다 bring up언급하다 work on공들이다 forward 전달하다
 
 
+#### english pronounce
+- R L
+- P F
+- A E
+- C K
 #### 영어 발음
 L 발음은 혀를 내미는 느낌. 윗니 뒤에 혀가 붙는다
 R 발음은 혀를 속에서 굴리는 느낌. 개가 으르렁 하는 느낌

@@ -20,14 +20,13 @@ tags    : idea
 | 멀티미디어 - 바그너에서 가상현실까지               |        |      |
 | 후츠파 윤종록                                      |        |      |
 | 소로우 월든                                        |        |      |
-| 라틴어수업                                         |        |      |
 | 배삼식                                             |        |      |
 | 마거릿 애트우드 그레이스                           |        |      |
 | 오만과편견                                         |        |      |
 | 카뮈 - 시지프신화                                  |        |      |
 | 카뮈 - 작가노트                                    |        |      |
 | 그림자 노동의 역습                                 |        |      |
-| 멋진신세계                                         |        |      |
+| // 멋진신세계                                         |        |      |
 | 총,균,쇠                                           |        |      |
 | 칼 세이건 - 코스모스                               |        |      |
 | 브라이언 그린 - 우주의 구조                        |        |      |
@@ -72,7 +71,7 @@ tags    : idea
 | 컴퓨터 과학이 여는 세계       |      |
 
 사회과학을위한 질적연구 핸드북,김영천,아카데미프레스
-
+침묵의 세계 - 막스 피카르트, 까치
 
 
 #### 수학자들은 뭘할까? 어떻게 살까?  
@@ -143,9 +142,9 @@ it 쪽 학술지 있으려나
 
 #### sapiens
 - I've read sapiens. and then I'd like to read about after world war 2
- because computer and network made after that war.
+ because computer and network are made after that war.
  Computer and world war is very relevant
-- Knowing history is make me develop better software. because software is
+- Knowing history is make me able to develop a better software. because software is
  evolved from every previous software like history.
 [[Reading]]
 
@@ -213,6 +212,8 @@ it 쪽 학술지 있으려나
 - 애자일하고 순환적인 방식. 좋다
 - 한 주제를 집중해서 조망한다고 해도 보는 관점은 수없이 많을 수 있고, 그러면 한 곳에 담을 수도 없다.
   차라리 한 주제를 잡고 전체를 훑는 방식이 더 구체적일 수 있겠다
+-> 알고보니 1권이 고대 2권이 근대 3권이 현대인게 맞았다.
+
 
 > 추상은 본질적이고 변하지 않는 것을 남기려는 시도
 

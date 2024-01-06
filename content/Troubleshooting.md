@@ -11,11 +11,9 @@ This page has a lot of different area's problem. \
 You should search your specific trouble with `Ctrl+F`.
 
 #### 문제해결법
-조건을 단순하고 명확하게 정리
-
-조건과 관련된 정보를 찾아 연결
-
-근거없는 무엇이 개입되지 않아야 함
+##### 조건을 단순하고 명확하게 정리
+##### 조건과 관련된 정보를 찾아 연결
+##### 근거없는 무엇이 개입되지 않아야 함
 
 #### jupyter notebook
 - install not working
@@ -243,11 +241,11 @@ from https://stackoverflow.com/questions/6265502/getting-rid-of-does-not-point-t
 - wasm function not defined
     - cache clear
 
-## keyboard setting was initialized in zshrc sometimes
+#### keyboard setting was initialized in zshrc sometimes
 is it sudo's problem? no
 when timeshift run, it's initialized
 
-## npm global permission denied
+#### npm global permission denied
 ```
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'

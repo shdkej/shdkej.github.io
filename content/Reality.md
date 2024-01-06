@@ -110,7 +110,6 @@ standard is good to people who generally read a content person in internet.
 톨스토이는 귀족적, 신학적,
 도스토예프스키는 빈민, 현실적
 
-
 상반된 이야기를 하는것 같지만 둘 모두 위대하고 두 위인들은 공존한다.
 
 #### 예술이 존재하는 이유

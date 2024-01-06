@@ -113,3 +113,4 @@ brunch
 - [디자인 시스템을 구성하는 방법](https://medium.com/guleum/디자인-시스템을-구성하는-방법-beefa8214884)
 - [디자인 시각적 요소들](https://brunch.co.kr/@shaun/40)
 - [웹폰트](https://wit.nts-corp.com/2017/02/13/4258)
+- [안전하게 따라 할 수 있는 비주얼 디자인 규칙들](https://news.hada.io/topic?id=8573)
