@@ -27,6 +27,18 @@ export default function HTML(props) {
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         />
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPKPTMNVF5"></script>
+        <script>
+            dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-GPKPTMNVF5');
+          `
+        </script>
         <meta name="naver-site-verification" content="0738293103ffff9ea9eb43b3c9621e5fb353f97b" />
         {props.headComponents}
       </head>
