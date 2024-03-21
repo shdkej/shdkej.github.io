@@ -2,7 +2,7 @@
 title   : 노트를 어떻게 관리해야 할까
 summary :
 date    : 2021-07-22 17:09:54 +0900
-updated : 2021-07-31 22:28:01 +0900
+updated : 2024-03-21 09:17:03 +0900
 tags    :
 parent  : [[Blogging]]
 ---
@@ -98,7 +98,7 @@ parent  : [[Blogging]]
 있었습니다만, 방대한 컨텐츠 속에 인상 깊은 내용을 찾기가 힘들었습니다.
 
 ##### 제텔카스텐
-![zettel](zettel.png)
+![zettel](../img/zettel.png)
 출처: https://twitter.com/LuhmannArchiv/status/1114201165510713344
 제텔카스텐의 실물 사진
 
