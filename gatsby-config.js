@@ -48,6 +48,7 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sitemap`,
+        `gatsby-plugin-image`,
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
