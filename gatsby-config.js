@@ -46,7 +46,7 @@ module.exports = {
             options: {
               maxWidth: 900,
               showCaptions: true,
-              wrapperStyle: "margin: 1rem 0;",
+              wrapperStyle: "margin: 0 0 50px auto;",
             },
           },
         ],
