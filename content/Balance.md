@@ -25,9 +25,6 @@ tags: human
 
 교육의 가치 vs 몰라도 괜찮아
 
-![mandarart](./img/ohtani.gif)
-![test](./img/zettel.png)
-
 #### 다른 사람의 말을 듣는 유연 vs 다른 사람의 말에 영향 받지 않는 강한 에고
 
 - 나를 틀에 넣으려는 사람에 대한 반발
