@@ -22,7 +22,7 @@ type Data = {
           tags: string
           summary: string
         }
-        timeToRead: int
+        timeToRead: number
         fields: {
           slug: string
         }
@@ -39,26 +39,30 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
     <Layout title={siteTitle}>
       <SEO title="Sam" />
       {posts.map(({ node }) => {
-        if (node.frontmatter.title === '') { return }
+        if (node.frontmatter.title === "") {
+          return
+        }
         const title = node.frontmatter.title || node.fields.slug
         const date = node.frontmatter.updated || node.frontmatter.date
         const readTime = <>{node.timeToRead} min</>
         return (
           <article key={node.fields.slug}>
             <header>
-                <Link style={{ boxShadow: `none` }}
-                to={node.fields.slug}>
-                  {title}
-                </Link>
-              <small> - {readTime} {date}</small>
+              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                {title}
+              </Link>
+              <small>
+                {" "}
+                - {readTime} {date}
+              </small>
             </header>
             <section>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.summary
+                  __html: node.frontmatter.summary,
                 }}
               />
-              <br/>
+              <br />
             </section>
           </article>
         )
@@ -77,8 +81,8 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-        sort: { fields: [frontmatter___updated], order: DESC },
-        filter: { frontmatter: {parent: {glob: "Blogging"}}},
+      sort: { frontmatter: { updated: DESC } }
+      filter: { frontmatter: { parent: { glob: "Blogging" } } }
     ) {
       edges {
         node {

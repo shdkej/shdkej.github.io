@@ -3,38 +3,39 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 
 const TagsPage = ({
-    data: {
-        allMarkdownRemark: { group },
-        site: {
-            siteMetadata: { title },
-        },
+  data: {
+    allMarkdownRemark: { group },
+    site: {
+      siteMetadata: { title },
     },
+  },
 }) => (
-    <Layout title={title}>
-      <h1>Index</h1>
-      <div className="square-field">
-        {group.map(tag => (
-            <div className="square">
-            {tag.fieldValue}
-            <ul>
+  <Layout title={title}>
+    <h1>Index</h1>
+    <div className="square-field">
+      {group.map(tag => (
+        <div className="square">
+          {tag.fieldValue}
+          <ul>
             {tag.nodes.map(node => (
-                <li>
+              <li>
                 <Link to={node.fields.slug} key={tag.fieldValue}>
-                  {node.frontmatter.title}
-                  ({node.timeToRead > 30
-                      ? <span style={{color:`purple`}}>{node.timeToRead}</span>
-                      : node.timeToRead}min)
+                  {node.frontmatter.title}(
+                  {node.timeToRead > 30 ? (
+                    <span style={{ color: `purple` }}>{node.timeToRead}</span>
+                  ) : (
+                    node.timeToRead
+                  )}
+                  min)
                 </Link>
-                </li>
+              </li>
             ))}
-            </ul>
-            </div>
-        ))}
-        <div className="square-center">
-            Evolve
+          </ul>
         </div>
-      </div>
-    </Layout>
+      ))}
+      <div className="square-center">Evolve</div>
+    </div>
+  </Layout>
 )
 
 export default TagsPage
@@ -47,7 +48,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark {
-      group(field: frontmatter___tags) {
+      group(field: { frontmatter: { tags: SELECT } }) {
         fieldValue
         nodes {
           timeToRead
