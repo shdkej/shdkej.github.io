@@ -1,10 +1,10 @@
 ---
-title:
-summary:
-date: 2021-12-04 13:02:13 +0900
-updated: 2021-12-04 13:02:15 +0900
-tags:
-parent: [[About_Architecture]]
+title   :
+summary :
+date    : 2021-12-04 13:02:13 +0900
+updated : 2021-12-04 13:02:15 +0900
+tags    :
+parent  : [[About_Architecture]]
 ---
 
 # Micro Service Architecture
@@ -13,16 +13,14 @@ MSA 는 작은 규모에서는 과한 느낌이 있다
 모놀리스로 쉽게 관리가 될 것을 MSA를 사용하면 관리포인트가 엄청 많아진다
 
 ## micro service
-
 - every node make end-point, http, grpc
-  - need documentation
+    - need documentation
 - flexible micro service
-  - it can be split and compose
+    - it can be split and compose
 - logging and visualization
 - 마이크로서비스에서 문제가 생긴 지점을 바로 확인할 방법은?
 
 #### 마이크로 서비스
-
 라이브러리를 쓰듯이 다른 서비스들을 사용하면 성능 상의 손해가 있다
 마이크로아키텍처는 관리할 지점이 늘어나는 단점이 있지 않나
 
@@ -42,7 +40,6 @@ MSA 는 작은 규모에서는 과한 느낌이 있다
   - api gateway는 외부에서의 접속, 서비스 메시는 내부의 네트워크 관리
 
 왜 마이크로 서비스인가
-
 - 마이크로 서비스를 위해서는 필연적으로 서비스 간 커뮤니케이션이 필요하고,
   비동기 통신과 동기 통신을 잘 구분해서 사용해야 한다.
   - 동기는 API를 이용해서, 비동기는 메시지 큐를 이용해서.
@@ -62,21 +59,17 @@ MSA 는 작은 규모에서는 과한 느낌이 있다
   (현재의 커뮤니티가 이 역할을 하고 있는 것일까? Web 2.0)
 
 #### 마이크로서비스
-
 포인트
-
 - 단일 고장 지점을 없앤다
 - 의존 영역을 분리한다
 - 빠르고 가벼운 사이즈를 유지한다
 
 이를 어렵게 하는 요소
-
 - API endpoint가 많아져서 이를 일일이 관리하기 힘들어 API Gateway라는 것을 이용하려 하는데 이 API gateway가 단일 고장점이 되버린다
 - 흩어져 있는 데이터 여러개를 합쳐서 사용해야 할 경우가 있다
 - 처음에는 작은 사이즈지만 요구사항이 늘어남에 따라 사이즈는 필연적으로 커진다.
 
 이에 대한 마이크로서비스의 대응방법
-
 - sidecar 패턴으로 API gateway를 없애고 각 서비스에 연결점을 붙인다
 - SAGA, CQRS
 - 사이즈가 커지면 다시 분리한다.
@@ -114,30 +107,24 @@ monolith와 구분되는 microservice의 특징은 각 서비스가 개별 데�
 유저 정보 유지해서 계속 불러오는 효율적인 방법은?
 
 모놀리스에서 함수호출을 이벤트 드리븐이 대체했을 때 고속처리가 가능한가? 배민은 되긴 하나보다
-
 - 같은 네트워크에 있다면 rpc로 서비스가 나눠져 있으면 rpc로 데이터를 취합해 api gateway가 모은 데이터를 리턴해주면 된다
 
 쿠버네티스에서는 RBAC가 어느 순간에 동작하는거지?
 
 #### library 호출
-
 마이크로서비스의 library를 한곳에 모아서 보여주고
 쉽게 호출해 쓸 수 있도록 해야한다.
 어떻게?
 
 #### 서비스메시
-
 규칙기반의 부하분산으로
 배포(테스트에 배포)와 릴리즈(프로덕션에 배포)를 분리하기 좋다고 한다
 
 텔레메트리 관리
-
 - 네트워크 트래픽 관련 지표 수집 및 추적
 
 #### SOA, MSA, DDD
-
 service oriented architecture
-
 - 중간에 enterprise service bus를 둬서 서비스 간 공유를 하려고 했으나, 당시
   시대상 팀 구조가 변화에 재빠르게 대응하지 못했고, MSA와 비슷한 목표를 가졌으나
   성공하지 못했다.
@@ -145,7 +132,6 @@ service oriented architecture
   마이크로 서비스는 서비스의 수가 많고, 이를 관리하는 방법이 필요하다
 
 #### event driven architecture
-
 - in micro service, each service need send some event.
 - if not implement event, can parse some data?
 - http server <- event producer -> queue
@@ -154,7 +140,6 @@ service oriented architecture
 - lambda can assign http or sqs. how to get data?
 
 #### banksalad github
-
 - awesome style이라는 레파지토리로 사내 행동강령을 모아놓았다. awesome
 - python template을 만들어 사용하고 있다
 
@@ -163,19 +148,16 @@ service oriented architecture
 사내 인적 리소스 관리도 git으로 하면 좋겠다
 
 #### microservice experience
-
 - [배민](https://www.youtube.com/watch?v=BnS6343GTkY)
-  - 결제 장애 시 결제만 장애나는 환경을 원했다.
-  - 모놀리스 서버 테이블이 700개... >> 분리 후에도 한 서비스에 테이블이 많이
-    있을 것
-  - 이벤트 기반으로 하니 훨씬 효율이 증가했다.
+    - 결제 장애 시 결제만 장애나는 환경을 원했다.
+    - 모놀리스 서버 테이블이 700개... >> 분리 후에도 한 서비스에 테이블이 많이
+      있을 것
+    - 이벤트 기반으로 하니 훨씬 효율이 증가했다.
 - [11번가](https://www.youtube.com/watch?v=J-VP0WFEQsY)
-  - Spring cloud 이용
+    - Spring cloud 이용
 
 #### junk food
-
 넷플릭스가 마이크로서비스를 하면서 느꼈던 개발의 주요 문제점
-
 - dependency
   - circuit breaker 로 의존성 있는 서버가 죽는 것에 대응
 - Scale
@@ -184,9 +166,7 @@ service oriented architecture
 - Change
 
 #### Observability를 높이기 위해서는 어떻게 해야할까
-
 이 문제가 발생했는지를 내가 설정하지 않아도 알 수 있으려면 바로 observability가 필요하다
-
 - 피드백을 받기 위해
 - 문제가 일어나기 전에 예측하기 위해?
 - 분산 환경에서 모니터링이 한눈에 되어야 한다
@@ -216,20 +196,16 @@ Observability를 높인다. 이것을 카오스 엔지니어링이라고 한다.
 - 어떤 문제가 생길 것 같은가
 
 #### architecture process organization
-
-![triangle](./img/triangle.png)
+![triangle](img/triangle.png)
 출처: https://kihoonkim.github.io/2018/03/25/Microservices%20Architecture/first-msa-retro/
 
 #### When many people come to site. how to keep working server
-
 1. allow maximum people, others redirect to queue.
 2. scale out
 
 #### 섀시
-
 에러 체크, 로깅, 헬스체크, 회로 차단 등 마이크로서비스에 필요한 것들을 만들어놓은 것을 이용하자는 마이크로서비스 섀시라는 개념이 이미 있었다
 go-kit, micro 참고
-
 - 외부화(엔드포인트 적용)
 - 헬스체크
 - 모니터링 지표 뽑기
@@ -238,7 +214,7 @@ go-kit, micro 참고
 - 분산 추적
 - 로깅(액션 기록)
 - 보안
-  이 기능들을 메인로직에 적을 필요없이 섀시를 적용시키면 자동으로 기능이 수행된다
+이 기능들을 메인로직에 적을 필요없이 섀시를 적용시키면 자동으로 기능이 수행된다
 
 그리고 서비스 메시는 섀시의 진화 형태가 될 것인데, 현재는 일부 기능만 구현하고 있고, 아직 완전 대체제는 아니다
 istio, linkerd
@@ -246,7 +222,6 @@ istio, linkerd
 istio에서 분산 추적을 하려면 app: deployname 을 라벨링 해줘야 한다
 
 #### 마이크로서비스에서 두 서비스에서 불러온 데이터를 어떻게 합칠까
-
 두 서비스면 그냥 호출하는데서 부르면 되겠지만
 rdbms에서 하던 조인처럼 자유자재로 하기에는 성능이 안나온다
 
@@ -254,7 +229,6 @@ CQRS의 쿼리를 이 상황에 쓰던가
 아니면 쿼리를 모아서 rdbms로 모으는 추가적인 리소스를 이용해서 해결?
 
 #### CQRS
-
 쿼리와 커맨드를 분리했다.
 쿼리는 CRUD의 Read의 개념이고
 커맨드는 나머지 CUD의 개념이다.
@@ -276,6 +250,7 @@ log data 나 db table 등을
 
 변경에 유연한 것들은 무엇이 있을까
 
+
 관리요소가 많아지면 일관성이 깨지기 쉽다
 코드가 많아지면 고쳐야하는 지점이 늘어난다
 
@@ -284,11 +259,13 @@ log data 나 db table 등을
 마이크로서비화도 무한정 많이 할게 아니라 탈출지점을 만드는게 좋겠다
 한 팀이 감당할 서비스를 생각해서
 
+
 분산 데이터
 분산 서비스
 분산 환경을 컨트롤하는 게 필요하다
 
 복잡성도 분산 환경에서 있고 분산이 곧 개별적인 인간 세상과 닮은 소프트웨어의 구조
+
 
 마이크로서비스의 경계설정
 데이터 쿼리 트랜잭션
@@ -304,8 +281,6 @@ log data 나 db table 등을
 관리포인트는 줄일 수 있어야 한다.
 
 #### 마이크로서비스 잘 구축해보고 싶다 (이벤트 처리)
-
 카프카 이용하는 마이크로서비스 예제 보고싶다
-
 - github.com/gilbutITbook/007035
 - github.com/gilbutITbook/006947

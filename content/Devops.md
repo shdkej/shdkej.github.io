@@ -13,6 +13,8 @@ Container
 Fail Tolerance / Chaos
 Monitoring
 
+[[*CI_CD]]
+
 # DevOps
 
 what is benefit of devops

@@ -1,9 +1,10 @@
 ---
-title   : The other section in create area
-summary : Music, Construct, Artist, Directer, Author
-date    : 2020-09-29 23:59:25 +0100
-updated : 2021-12-04 14:05:48 +0900
-tags    : integration
+title: 창작자들
+summary: Music, Construct, Artist, Directer, Author
+date: 2020-09-29 23:59:25 +0100
+updated: 2021-12-04 14:05:48 +0900
+tags:
+  - integration
 ---
 
 ## 창작자가 있는 분야
@@ -69,7 +70,12 @@ Can It bring programming
 빛의 위치에 따라 색이 달리 보이는 현상을 이용한 인상주의
 프로이트의 무의식에 영감 받아 초현실과 현실을 
 
-
+#### 작가의 의도가 작품에 의도라고 생각할 수는 없다  
+작품을 보고 질문을 한다면
+- 작품을 만들면서 무슨 생각을 했는지  
+- 왜 그리려고 했는지  
+- 작품을 보고 어떤 생각을 하시는지  
+- 의도한것이 있는지
 
 ## computer science와 software engineer의 상관관계?
 
@@ -182,6 +188,11 @@ Can It bring programming
 - [1913년 초기 추상 정의와 논쟁, 로베르 들로네, 말레비치](https://hri997.tistory.com/m/101)
 
 추상적인 것에 구체적 사례를 추가해야겠다
+
+#### 추상
+사람이 다루기 쉽게 하는것?  
+사람이 이해하기 쉽게 하는것?  
+필요한 부분만 뽑아내는것?
 
 
 #### 안톤 체호프

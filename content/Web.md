@@ -36,6 +36,11 @@ tags    : deep_knowledge
 - 웹에서 센서를 추가해서 감지한다
 [[Design]]
 
+
+[침하하로 옮기면 침착맨님 글썼는지 상시 체크해야되겠네요..? : 네이버 카페]([https://m.cafe.naver.com/ca-fe/web/cafes/29646865/articles/243917?fromList=true#:~:text=%EB%B0%A9%EC%9E%A5%EB%8B%98%EC%9D%B4%20%EA%B8%80%EC%93%B8%EB%95%8C%EB%A7%88%EB%8B%A4%20%ED%95%B8%EB%93%9C%ED%8F%B0%EC%97%90%20%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC](https://m.cafe.naver.com/ca-fe/web/cafes/29646865/articles/243917?fromList=true#:~:text=%EB%B0%A9%EC%9E%A5%EB%8B%98%EC%9D%B4%20%EA%B8%80%EC%93%B8%EB%95%8C%EB%A7%88%EB%8B%A4%20%ED%95%B8%EB%93%9C%ED%8F%B0%EC%97%90%20%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC))
+- "방장님이 글쓸때마다 핸드폰에 푸시알림"
+
+
 #### 웹페이지에서 있으면 좋은 편의성 UI  
 - 위 아래, 댓글로 가는 네비게이션  
 - 사이드 바
@@ -197,3 +202,65 @@ dagger 는 로컬에서 테스트하고 사용할 수 있다?
 
 #### reference
 유튜브 댓글 버튼 이펙트 잘 만든듯 - 다크모드에서 마우스 갖다 댔을 때 느낌이 좋음
+
+## Cloud
+#### Route53
+DNS
+- Domain Name System
+- 호스트 이름을 IP로 번역해주는 것 (google.com => 172.217.18.36)
+- Domain Registrar - Route53, GoDaddy
+- DNS Records - A(ipv4), AAAA(ipv6), CNAME(다른 호스트네임), NS(DNS 주소)
+- Zone File
+- Name Server - 
+- Top Level Domain : .com, .us, .in
+- Second Level Domain - amazon.com, google.com, ...
+- Sub Domain - www
+- 웹브라우저 -> 웹서버 -> 로컬 DNS -> .com DNS -> example.com DNS 
+개요
+- 퍼블릭 호스팅 존, 프라이빗 호스팅 존 설정 가능
+- 프라이빗 호스팅 존도 퍼블릭 처럼 같은 가격
+TTL
+CNAME vs Alias
+- CNAME은 다른 서브도메인을 매핑 가능
+- Alias는 aws 의 주소를 매핑 가능 (EC2의 DNS name에는 매핑 안됨)
+라우팅 정책
+- 심플
+- 가중치
+- 지연 시간 기반 (route53에서 미리 측정한 값?)
+
+#### CloudFront
+개요
+- CDN
+- 엣지에 콘텐츠가 캐시된다
+- aws의 216개의 엣지로케이션 모두를 사용한다
+- DDoS를 막아준다
+- Origins (연결 가능한 리소스)
+	- S3 bucket
+	- Custom Origin (HTTP)
+- 프라이빗 VPC에 접속할 수 없음 (ALB를 통해 우회 가능)
+캐싱 및 캐싱 정책
+- header
+- query string
+- cookies
+- none, whitelist, include all-except, all
+캐시 무효화
+- 백엔드가 변경되도 cloudfront는 알 수 없음
+- TTL이 끝나야 백엔드를 다시 치기 때문
+- 그래서 캐시 무효화가 필요함
+- 근데 무효화를 언제 실행할 것인가 -> 백엔드가 배포되면 수동으로?
+오리진으로서의 ALB
+- 프라이빗 VPC에는 Edge Location이 접근할 수 없고 Edge Location의 보안그룹도 열어줘야 함
+- 그래서 ALB를 이용해서 EC2는 프라이빗으로 두고 ALB를 연결하게 할 수 있다
+지리적 제한
+- 접속 허용 국가, 제한 국가 설정 가능
+Signed URL/쿠키
+고급개념
+- 가격
+	- price class all 모든 리전을 사용하고 가장 퍼포먼스가 좋지만 비싸다
+	- price class 200 200개만 쓰는데 조금 싸다
+	- price class 100 100개만 쓰는데 조금 싸다
+- 멀티 오리진
+- field level encryption
+Real Time Logs
+- kinesis datastream을 통해 실시간 로깅을 할 수 있음
+- api 요청에 대해 몇%만 로그를 남길지 설정할 수 있음

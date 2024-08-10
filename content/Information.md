@@ -347,6 +347,8 @@ https://ditoday.com/%eb%a9%94%ed%83%80%ed%8f%ac%ec%99%80-ui/
 #### less is more
 > Ludwig Mies van der Rohe
 
+#### less is bore
+
 #### 전쟁
 보급로가 중요하다
 무관을 문관으로 키우나, 문관을 무관으로 키우나? 둘 다 어렵다
@@ -775,3 +777,11 @@ https://www.dokdok.co/brief/nae-gaeinjeongboyi-mirae-deiteo3beob-ihaehagi
 법의 자의적해석범위는 합리적인가?  
   
 판결가에게도 보수적인 성향이 있고 진보적인 성향이 있다
+
+#### 컨퍼런스 유튜브
+컨퍼런스 영상이 유튜브에 올라온게 있을텐데
+- [https://github.com/hibuz/dev-conf-replay](https://github.com/hibuz/dev-conf-replay)  
+- [https://gent.tistory.com/525](https://gent.tistory.com/525)
+
+대기업 컨퍼런스
+https://channy.creation.net/blog/1482

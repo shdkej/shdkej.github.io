@@ -1,9 +1,10 @@
 ---
-title   : Computer Architecture
-summary : 🖥️ CPU, Memory, OS, Kernel
-date    : 2020-03-16 22:40:45 +0100
-updated : 2021-08-29 00:16:56 +0900
-tags    : strong_base
+title: 컴퓨터 사이언스
+summary: 🖥️ CPU, Memory, OS, Kernel
+date: 2020-03-16 22:40:45 +0100
+updated: 2021-08-29 00:16:56 +0900
+tags:
+  - strong_base
 ---
 
 ## Summary

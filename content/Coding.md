@@ -1,9 +1,10 @@
 ---
-title   : Coding Rule?
-summary : Coding Convention, Design Principle
-date    : 2020-03-16 21:13:05 +0100
-updated : 2023-02-04 23:31:36 +0900
-tags    : strong_base
+title: 코딩
+summary: Coding Convention, Design Principle
+date: 2020-03-16 21:13:05 +0100
+updated: 2023-02-04 23:31:36 +0900
+tags:
+  - strong_base
 ---
 
 ## 요약
