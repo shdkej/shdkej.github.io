@@ -88,7 +88,7 @@ tags:
 - **배경**
   - 야간 시간에 운영상 필요하지 않은 앱들을 종료시키고 오전에 다시 실행시키는 스케줄러를 만들어 비용 절감
 - **사용한 리소스**
-  - argo cronjob, secret
+  - argocd, kubernetes cronjob, secret
 
 ![스케줄러다이어그램](img/스케줄러다이어그램.png)
 
