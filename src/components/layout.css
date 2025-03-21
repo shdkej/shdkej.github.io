@@ -168,3 +168,9 @@ header h3 {
   display: inline;
   color: salmon;
 }
+
+figcaption {
+  font-size: 0.8em;
+  text-align: center;
+  color: #999;
+}
