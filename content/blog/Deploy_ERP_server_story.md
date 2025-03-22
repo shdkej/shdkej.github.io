@@ -1,24 +1,29 @@
 ---
-title   : ERP 서버 개발 스텝 바이 스텝 & 회고
-summary : odoo와 docker-compose를 이용한 erp 서버 구축
-date    : 2020-03-23 13:59:35 +0100
-updated : 2021-06-15 18:05:33 +0900
-tags    :
+title: ERP 서버 개발 스텝 바이 스텝 & 회고
+summary: odoo와 docker-compose를 이용한 erp 서버 구축
+date: 2020-03-23 13:59:35 +0100
+updated: 2021-06-15 18:05:33 +0900
+tags:
 ---
 
 ## 목표
+
 회사의 내부 전산 작업화를 위해 ERP 서버를 구축해
 데이터를 한 곳에 모으고, 추적하고, 관리하기
 
 docker-compose.yml 파일 하나로 구성
+
 - odoo -- postgresql -- nginx -- nagios 형태가 된다
 
 ## Step by Step
+
 ### Docker를 사용해서 어떤 환경에서도 쉽고 빠르게 서버를 관리
+
 docker 에 대해서는 [subicura님의 블로그](https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html)에 잘 정리되어 있어서 이것을 보면 바로
 사용가능할 것 같다.
 
 우분투 기준 설치 방법
+
 ```
 apt install -y docker.io
 usermod -aG docker $USER
@@ -39,6 +44,7 @@ DB는 mysql, mssql, postgresql을 두고 봤을 때 postgresql이 docker에서 �
 그대로 옮기기 좋다고 하여 사용.
 
 `docker-compose.yml` 기본 뼈대
+
 ```
 version: '3'
 services:
@@ -50,6 +56,7 @@ services:
 ```
 
 ### docker compose 로 여러 서비스 같이 관리한다
+
 포트, 아이디, 비밀번호 설정 등 추가적인 설정을 더해줬다
 
 ```
@@ -88,13 +95,14 @@ volumes: # 세미콜론(:) 뒤에 공백으로 해두면 docker에서 임의의 
 `docker-compose up` 을 해주면 odoo와 postgresql을 돌릴 수 있다.
 브라우저를 띄워서 `localhost:8069` 입력하고 조금 기다리면 화면이 뜬다
 
-![erp_first_page](erp_first_page.png)
+![erp_first_page](../img/erp_first_page.png)
 
 여기까지만 해도 프로그램 자체는 띄울 수 있다
 그런데 각 상황에 맞게 수정을 해줘야 하는데,
 각 프로그램의 관리 파일을 찾아서 볼륨을 시켜주는 작업을 해야 한다.
 
 ### 수정하고 지웠다가 다시 실행해보기
+
 처음 아이디와 비밀번호는 admin으로 입력하면 로그인이 된다.
 
 `http://localhost:8069/web/database/manager` 에 접속하면 db를 새로 만들거나
@@ -106,7 +114,7 @@ addons_external 폴더로 이동 후에 수정하던지, 새로 만들어서 사
 project 모듈로 한 번 테스트 해보자
 바로 확인하기 위해 views 쪽을 수정해본다.
 
-![before_update](before_update.png)
+![before_update](../img/before_update.png)
 
 ```
 > docker exec -it --user root odoo_erp_1 /bin/bash
@@ -122,23 +130,27 @@ $ exit
 > docker restart odoo_erp_1
 ```
 
-![after_update](after_update.png)
+![after_update](../img/after_update.png)
 
 odoo 가 아니더라도 volumes를 이용해서 수정할 폴더를 따로 빼놓고 수정할 내용은
 그곳에 넣는 방식으로 하면 수정된 내용을 바로 적용하기 좋았다
 
 지운 후 재실행 했을 때 작업했던 것이 남아있는지 확인해보자
+
 ```
 docker-compose down
 docker-compose up
 ```
+
 이렇게 하면 위에서 docker exec 이후 수정했던 부분은 초기화 되므로 이 작업을
 자동화 해주어야 한다.
 그래서 docker-compose.yml 파일 하나로만 구성 하려던 계획대로 되지는 않았다
 대신 확장성이 높아졌다.
 
 ### docker-compose 확장 및 개선
+
 Dockerfile 을 docker-compose.yml 이 있던 위치에 저장
+
 ```
 FROM odoo:10.0
 USER root
@@ -148,30 +160,38 @@ RUN rm -rf /usr/lib/python2.7/dist-packages/odoo/addons/project
 ```
 
 다시 docker-compose.yml 수정
+
 ```
 services:
   erp:
     image: odoo:10.0
 ```
+
 ->
+
 ```
 services:
   erp:
     build: ./
 ```
+
 다시 `docker-compose up` 을 해서 확인 가능하다
 
 다른 컴퓨터로 옮기기 위해서는 볼륨했던 것을 찾아서 옮겨주면 된다
+
 ```
 docker volume ls
 docker volume inspect <odoo-erp-data>
 ```
-![docker volume ls](docker_volume.png)
+
+![docker volume ls](../img/docker_volume.png)
+
 ```
 docker-compose stop
 sudo cp -r /var/lib/docker/volumes/odoo_test_odoo-erp-data/_data/ ./erp-data
 sudo cp -r /var/lib/docker/volumes/odoo_test_odoo-db-data/_data/ ./db-data
 ```
+
 기존 데이터를 가져오고
 
 ```
@@ -182,10 +202,12 @@ cp -r ./erp-data/_data/* /var/lib/docker/volumes/odoo_test_odoo-erp-data/_data
 cp -r ./db-data/_data/* /var/lib/docker/volumes/odoo_test_odoo-db-data/_data
 docker-compose start
 ```
+
 다시 가져온 데이터를 원래 위치로 보내준다.
 DB에서 추가 설정 필요 없이 바로 데이터 적용이 된다
 
 이렇게 하면 5개의 파일 및 폴더로 ERP 서버를 구동하게 된다
+
 ```
 # 폴더 트리
 addons/ # 수정할 프로젝트 파일들
@@ -196,10 +218,11 @@ db-data/ # db 내부 데이터들
 ```
 
 ### 간단한 모니터링을 위해 nagios를 이용했다
+
 - Nagios - light weight, lots of modules, well documentation
 
-
 위 작성된 내용에 추가
+
 ```
 services:
 ...
@@ -212,6 +235,7 @@ services:
 ```
 
 ### 추가로 SSL 설정
+
 ```
 services:
 ...
@@ -224,6 +248,7 @@ services:
 전체 소스는 [github](https://github.com/shdkej/odoo_gvm)에서 볼 수 있다
 
 ## 아쉬운 점
+
 - CI/CD
 - Test Code
 - HAproxy
