@@ -1,19 +1,21 @@
 ---
-title   : Technology
-summary : IT 전반의 기술들에 대한 관심
-date    : 2020-05-06 19:15:00 +0100
-updated : 2021-12-04 12:27:04 +0900
-tags    : develop
+title: Technology
+summary: IT 전반의 기술들에 대한 관심
+date: 2020-05-06 19:15:00 +0100
+updated: 2021-12-04 12:27:04 +0900
+tags: develop
 ---
 
 ## [[Linux]]
 
 ## 전자회로의 역사
+
 전자회로는 능동소자를 활용한 회로. 다이오드,트랜지스터,저항,콘덴서 등
 반도체의 발전과 함께 전자회로는 발전해나갔다.[^1]
 [^1]:(http://www.amkor.co.kr/archives)
 
 트랜지스터
+
 - 접합형, BJT, 전계효과(FET), 박막 트랜지스터(FET), MOSFET, CMOS
 
 능동소자 중 반도체 소자의 대표적인 소자로 트랜지스터가 있다.
@@ -27,12 +29,15 @@ tags    : develop
 
 플레밍에 의해 다이오드(이극진공관) 개발 - 1904년
 트랜지스터 발명 - 1947년
+
 - 벨 연구소 연구원들(월터 브래튼, 존 바딘(접점 트랜지스터),윌리엄 쇼클리(접촉 트랜지스터))
 
 집적회로 발명 - 1958년 텍사스 인스트루먼트사
+
 - [집적회로 발전단계](http://m.blog.daum.net/dasomcap/891)
 
 ㅇ집적회로 분류
+
 - TTL
 - CMOS
 - ROM
@@ -47,9 +52,10 @@ tags    : develop
 
 ㅇ 트랜지스터 -2 전계효과 트랜지스터(FET)
 단극성 트랜지스터
+
 - JFET
 - MOSFET
-참고 : [http://www.bloter.net/archives/218176](http://www.bloter.net/archives/218176)
+  참고 : [http://www.bloter.net/archives/218176](http://www.bloter.net/archives/218176)
 
 CPU 의 발전 (intel)
 1971 - 4004, 108kHz, 2300개의 트랜지스터, 10마이크로 공정
@@ -65,54 +71,68 @@ CPU 의 발전 (intel)
 2002 - 펜티엄4, 2~3.06GHz , 90nm - 대신 전력소비량이 130W에 달함
 2005 - 코어2(듀얼코어도 됨) ,1GHz, 65W, 65nm - 작동속도를 낮췄으나 실제 성능은 펜티엄4와 비슷
 2008 - 코어2 2세대 45nm 2GHz, 60W - 누설전류 심화 -> High-K 소재 사용
+
 - i3,i5,i7 브랜드 시작, 45nm,
-2010 - 32nm[클락데일 i5] ->2011 샌디브릿지-> 2012 22nm 코어 3세대[아이비브릿지]
-->4세대 하스웰 (전력소비량 감소 집중)
-2013 - 14nm 진입을 위해 3D 핀펫 기술 도입
-2015 - 14nm , 19억개의 트랜지스터, 브로드웰
+  2010 - 32nm[클락데일 i5] ->2011 샌디브릿지-> 2012 22nm 코어 3세대[아이비브릿지]
+  ->4세대 하스웰 (전력소비량 감소 집중)
+  2013 - 14nm 진입을 위해 3D 핀펫 기술 도입
+  2015 - 14nm , 19억개의 트랜지스터, 브로드웰
 
 ## Functional_Programming
+
 #### haskell
+
 - basic function
- - head [2, 3, 4] -- 2,  [2] -- 2
- - tail [2, 3, 4] -- [3, 4], [2] -- []
- - init [2, 3, 4] -- [2, 3], [2] -- []
- - last [2, 3, 4] -- 4,  [2] -- 2
- - take 2 [2, 3, 4] -- [2, 3]
- - drop 2 [2, 3, 4] -- [4]
- - !!
- - product
- - ++
- - reverse
- - length
+- head [2, 3, 4] -- 2, [2] -- 2
+- tail [2, 3, 4] -- [3, 4], [2] -- []
+- init [2, 3, 4] -- [2, 3], [2] -- []
+- last [2, 3, 4] -- 4, [2] -- 2
+- take 2 [2, 3, 4] -- [2, 3]
+- drop 2 [2, 3, 4] -- [4]
+- !!
+- product
+- ++
+- reverse
+- length
 - function rule
- - f a+b -- f(a) + b
- - f a b -- f(x, y) -- not working -- using with currying
- - f (a,b) -- f(a,b)
- - f (a+b) -- f(a+b)
- - f (g x) -- f(g(x))
- - f x (g y) -- f(x g(y))
- - f x * g y -- f(x) * g(y)
+- f a+b -- f(a) + b
+- f a b -- f(x, y) -- not working -- using with currying
+- f (a,b) -- f(a,b)
+- f (a+b) -- f(a+b)
+- f (g x) -- f(g(x))
+- f x (g y) -- f(x g(y))
+- f x _ g y -- f(x) _ g(y)
+
 ```
 sum ns `div` length ns
 = div (sum ns) (length ns)
 ```
+
 - Currying
 - `add :: Int -> (Int -> Int)` = `add :: Int -> Int -> Int`
 
-
 #### First Object(Class) Citizen
+
 #### High-order function
+
 #### Pure function
+
 #### Immutable
+
 #### declarative
+
 #### Currying
+
 #### Memoization
+
 #### Composition
+
 #### Recursion
+
 #### Monad
 
 #### etc
+
 모나드에서 한 함수의 출력이 다음의 입력이 되는 것은
 [디미터 법칙](../About_Development#지금의 메소드 체이닝과 디미터 법칙의 차이)을 위반하는 전형적인 사례가 아닌가!?
 
@@ -121,6 +141,7 @@ sum ns `div` length ns
 클로저를 쓴 함수에서, 어떻게 외부함수가 클로저에 변수를 할당할 수 있는거지?
 
 순수함수를 쓴다고 해서 스레드 세이프하지는 않은 것 같다
+
 ```
 # 순수함수 아님
 func PlusOne(i int) int {
@@ -131,31 +152,37 @@ func PlusOne(i int) int {
     return i + 1
 }
 ```
+
 여기서 i를 공유하면 값이 원하는 대로 나오지 않을 수 있다.
+
 - 순수함수는 오로지 입력값에 의해서만 동작하므로 충돌 조건이 없다고 한다
 
 그래서 불변 객체를 쓰고, 새로운 객체를 만들어서 해결하려고 한다
 그렇다면 왜 순수함수가 중요할까?
+
 1. 사이드 이펙트가 없다
 2. 결정성이 있다 (= 멱등성이 있다)
 3. 테스트가 쉽다
 
 #### docker haskell
+
 - docker-compose need start point
 - Dockerfile need build image
 - how to make easy build
 - haskell init spent too long time but docker not executable..
 
 ## Block chain
+
 - 분산경제포럼
-코인은 한계가 있어보인다.
-블록체인 이슈 PoS vs DPoS
-모든 구성원에게 투표권한을 주느냐, 간접 투표로 하느냐
-[[블록체인] 개발자를 위한 블록체인 로드맵](https://hamait.tistory.com/951)
-암호화 기술의 개방(DES)
-프라이버시 보호 운동 -> 사이퍼펑크(암호(cipher) + 사이버펑크(악동))
+  코인은 한계가 있어보인다.
+  블록체인 이슈 PoS vs DPoS
+  모든 구성원에게 투표권한을 주느냐, 간접 투표로 하느냐
+  [[블록체인] 개발자를 위한 블록체인 로드맵](https://hamait.tistory.com/951)
+  암호화 기술의 개방(DES)
+  프라이버시 보호 운동 -> 사이퍼펑크(암호(cipher) + 사이버펑크(악동))
 
 #### 데이비드 차움
+
 - 금융거래 암호화를 통해 개인의 프라이버시를 보호하려 시도
 - 익명성 가진 결제수단의 부작용 인지. 조건을 제시
 
@@ -164,12 +191,15 @@ func PlusOne(i int) int {
 - 도난당한 것으로 보고된 결제 수단에 대해서는 사용을 중지할 수 있어야 한다
 
 #### 분산 대 탈중앙화
+
 분산
+
 - 여러가지 일을 나눠 처리
 - 일을 나눠서 하므로 속도 상승, 고가용성 확보
   지배 개체가 있음
 
 탈중앙화
+
 - 여러가지 일을 반복해서 처리
 - 신뢰성 상승
 - 모든 개체가 동등
@@ -177,25 +207,28 @@ func PlusOne(i int) int {
 하지만 실제 세계에서 개개인의 의견을 듣는다면 모든 사람의 의견이 모아질 수 없기 때문에
 여러 사람들의 의견을 모아 말해주는 의원을 뽑는 간접 민주주의 형식이
 나온 것 처럼 블록체인도 대표를 뽑을 수 밖에 없을 것 같다
+
 - 그렇다면 대표를 뽑는 방법은? 한국 의회를 보면 의회의 힘이 너무 강하다
-    - 스웨덴의 국회의원을 뽑는 방식과 국회의원의 마음가짐을 확인해보자
+  - 스웨덴의 국회의원을 뽑는 방식과 국회의원의 마음가짐을 확인해보자
 
 [[Think#스웨덴 국회]]
 
 디지털화의 효용 대 블록체인의 효용 구분해야 한다
 
 블록체인의 오해
+
 - 거래 비용 절감 (중앙 기관 없이 거래 가능하기 때문에)
-    - 오히려 중개업자가 양산되어 수수료가 더 나오고 있는 실정이다
-    - 동일한 작업을 할 때 에너지가 더 소비된다 (중복 작업을 하기 때문에)
+  - 오히려 중개업자가 양산되어 수수료가 더 나오고 있는 실정이다
+  - 동일한 작업을 할 때 에너지가 더 소비된다 (중복 작업을 하기 때문에)
 - 데이터 활용 (위변조가 어렵기에 안전하고, 접근 권한 설정이 가능하다)
-    - 대신 모든 데이터가 노출된 상태다(암호화 되어있더라도)
+  - 대신 모든 데이터가 노출된 상태다(암호화 되어있더라도)
 - 사용성이 떨어진다
 - 노드, 피어, 트랜잭션
 
 블록체인은 신뢰가 존재하지 않는 네트워크에서도 신뢰할 수 있는 기록을 작성할 수 있는 방법을 연구하는 분야
 
 #### 하이퍼레저 패브릭
+
 이더리움과 다른 프라이빗 블록체인
 오더링시스템 하에서
 네트워크를 설정하고 CA를 설정하여 시작하고
@@ -210,51 +243,59 @@ func PlusOne(i int) int {
 이제 클라이언트 어플리케이션에서 입력을 받아 체인코드를 통해 검증하고 이 검증된 내용은 오더링 서비스를 통해 블록을 만들어 각 피어에 접속된다. 그 후 보증정책을 통과하면 장부에 기록되고 채널에 블록연결되게 된다
 
 #### 블록체인의 암호화폐는 익명이어야 하나?
+
 - 정보공개는 하지만 탈중앙화되어 자유롭게 거래하는 것에 의의가 있는게 아닌가?
 - p2p는 누군가는 내 것을 남에게 주어야 한다 그리고 그것은 거부감이 들 수 있다
-○ 이 것을 어떻게 다르게 생각 할 수 있을까
-○ 보상이 추가된다 나의 자원은 비워놓고 중앙에서 가져다 쓰기를 원할 수 있다 사용자는 그냥 중앙에서 내려받기를 원하지 내 자원이 사용되기를 원하지 않는다
+  ○ 이 것을 어떻게 다르게 생각 할 수 있을까
+  ○ 보상이 추가된다 나의 자원은 비워놓고 중앙에서 가져다 쓰기를 원할 수 있다 사용자는 그냥 중앙에서 내려받기를 원하지 내 자원이 사용되기를 원하지 않는다
 - p2p 특성상 노드들이 오프라인 상태일 경우가 발생하는데 이 때 공격에 대비하기 위해 비잔틴문제해결 알고리즘의 얘기가 나오게 되었군
 
 #### 블록체인을 회사 안의 플랫폼으로 사용하는 경우
+
 신뢰성은 다소 포기하는 것인가?
 블록체인에서 신뢰성은 서로 감시한다는 것에서 오는데 회사가 블록체인을 운영한다면
 감시할 주체가 없지 않은가?
 
 #### 블록체인과 공개 된 정보
+
 블록체인은 중앙 관리가 없고 각 노드들이 서로 감시하는 방식으로 보안이 유지되는
 컨셉인데 공개 돼있다고 해도 감지하는 시스템이 있어야 알 수 있지 아무리 노드가
 많아도 아무도 안 지켜볼 수도 있다. 인터넷에 수많은 데이터가 있어도 알려져야 그
 정보가 사람들에게 닿는거지 그냥 있다고 누가 알 수 있는 것이 아니다
 블록체인은 보안성이 있는 것인가?
+
 - 변조가 되면 자신의 해시와 변조된 해시가 다르기 때문에 감지가 된다
 - 위조 시 앞, 뒤의 노드를 같이 변조해야 한다. 그래서 51% 이상해야 탈취가 되는데 그
-정도 자원을 얻으려면 필요한 비용이 훨씬 많이 들게 하여 51% 공격을 무의미하게
-만든다.
+  정도 자원을 얻으려면 필요한 비용이 훨씬 많이 들게 하여 51% 공격을 무의미하게
+  만든다.
 
 채굴과 똑같은 방식인 척 위장한 트랜잭션을 구분해낼 수 있나?
+
 - 머클 트리
 
 #### 코인 대신 nft?
+
 nft를 가진 사람들만 이용할 수 있는 것을 제공해서
 nft를 회원권의 개념으로 쓴다고 충섭님께 들었다
 일리있다. 전자적인 회원권
 기존의 회원권과 차이가 없고 오버 테크놀러지라 생각했는데 필요한 곳도 있을 수도...?
 
 #### Blockchain
+
 키워드
+
 - 공개키 개인키
 - 해시함수
 - 머클트리
-    - 자식 중 하나만 변경되어도 감지가능
-    - 최상위의 노드만 확인하면 됨
+  - 자식 중 하나만 변경되어도 감지가능
+  - 최상위의 노드만 확인하면 됨
 - 비대칭 암호화 기법
 - ECDSA
 - 작업증명
 - 지분증명
-    - BFT 기반
-    - 체(간)기반
-    - 소수의 검증집단을 두게되면 익명성이 사라진다?
+  - BFT 기반
+  - 체(간)기반
+  - 소수의 검증집단을 두게되면 익명성이 사라진다?
 - DPOS 위임지분증명
 - 비트코인은 18년말 난이도가 101배 정도 상승할 것으로 설계되었으나 실제로는
   7조배 상승.
@@ -266,9 +307,11 @@ nft를 회원권의 개념으로 쓴다고 충섭님께 들었다
 
 비트코인은 처음의 코인과 나중에 얻는 코인이 다른 에너지가 사용되었는데 처음에
 얻은 것의 가치가 힘들게 얻은 것과 동일하다는 것은 이상하지 않은가?
+
 - 시간이라는 가치가 밸런스를 맞춰주나?
 
 ## Drone
+
 보조배터리
 드론 몸통
 모터 4개
@@ -292,6 +335,7 @@ GPS
 FC의 제작 ? 방법은?
 
 참고 사이트
+
 - [부품 사이트](Hobbydirector.com)
 - [헤파이토스 - DIY 선구자](http://blog.naver.com/dkwltmdgus)
 - [상세구현자](http://sensibilityit.tistory.com/category/드론)
@@ -312,6 +356,7 @@ FC의 제작 ? 방법은?
 - [안드로이드 센서 확인](http://bitsoul.tistory.com/121)
 
 #### 부품 구매
+
 연결 조립
 모터 구동 확인
 센서값을 받아와서 ESC에 값 전달 모터 구동 확인
@@ -322,6 +367,7 @@ FC의 제작 ? 방법은?
 GPS 위치 인식
 
 #### 제어
+
 PID 제어 + 필터 > ESC
 필터 - DMP, Complementary Filtering, Kalman Filtering
 Kalman Filter 는 복잡성에 비해 정확도가 떨어진다고 한다.
@@ -350,15 +396,16 @@ Accel_xz,accel_yz
 Accel_angle_y,accel_angle_x
 Gyro_x
 센서 보정값
+
 - 1 필터 (칼만,DMP)
 - 가속도+자이로 값 전달 (안정적으로)
-    - -> 센서의 평균값을 구하고 필터 공식을 대입해 출력값 구한다.
+  - -> 센서의 평균값을 구하고 필터 공식을 대입해 출력값 구한다.
 - 2 PID
 - 최종 출력값을 안정되게 보내주는 제어방법
 - K = 사용자가 임의의 값을 넣는 것 같다 (?)
-- P : K * err -> P= Kp * err
-- I : K * err의 적분값 -> I+=Ki*err*dt
-- D : K * err의 미분값 -> D=-Kd*(dInput/dt)
+- P : K _ err -> P= Kp _ err
+- I : K * err의 적분값 -> I+=Ki*err\*dt
+- D : K _ err의 미분값 -> D=-Kd_(dInput/dt)
 - P+I+D 값을 ESC에 보내준다.
 - Err = Setpoint - input ( setpoint ? )
 - dErr = err - prevErr -> dInput = input - prevInput
@@ -371,6 +418,7 @@ Yaw
 센서값 초기화 -> 센서 평균값 추출 -> 센서 계산값 -> 필터값 적용 -> PID 적용 -> 모터
 
 #### 부품 구매
+
 드론 제작 시작
 라즈베리파이로 똑똑한 드론 만들기 프로젝트
 
@@ -385,25 +433,27 @@ GPS 센서
 조종용 휴대폰 - 앱 제작 필요
 
 우려되는 점
+
 1. 라즈베리파이가 모터를 구동할 파워를 가질 수 있는가
 2. 보조배터리로 전원공급이 가능할까
 
-------
+---
 
 구성
 라즈베리파이 - MPU-6500 (칼만 필터,PID 제어)
 ㄴ 변속기 - 모터
 ㄴ 배터리
-+ 휴대폰 카메라 ( 그냥 장착 )
-MPU-6500 으로 읽은 위치 값을 변속기에 출력값으로 넣어 컨트롤.
 
--------
+- 휴대폰 카메라 ( 그냥 장착 )
+  MPU-6500 으로 읽은 위치 값을 변속기에 출력값으로 넣어 컨트롤.
+
+---
 
 호버링 기능
 좌표위치 이동
 휴대폰 카메라 연동
 
--------
+---
 
 모터 변속기 센서 프레임 구매 필요
 라즈베리파이의 전력 사용 한계값 구하고
@@ -439,31 +489,35 @@ http://daduino.co.kr/product/detail.html?product_no=1237&cate_no=78&display_grou
 
 [motor reference](http://blog.naver.com/79k3le5ze/10110646393)
 
-
 ## ML
+
 #### 인공지능
+
 기계도 학습에 의해서 정보를 습득하고 공부한다
 데이터 라벨링을 해서 빅데이터를 이용해 공부를 시킨다
 학습은 뇌세포의 연결강화 - 도널드 헵 -> 가중치(weight) 개념의 토대
 인공지능 신경망은 뇌를 모델로 했다. (사람이 기준이다)
 
 현재까지 해결된 문제들
+
 - 한 방향의 학습모델은 XOR 문제를 해결하지 못한다
-    - Output을 Input에 다시 적용
-    - 역전파 알고리즘
-    - CNN
+  - Output을 Input에 다시 적용
+  - 역전파 알고리즘
+  - CNN
 - 신경망이 깊어지면 예전 신경망 데이터가 날아간다 (Vanishing Gradient)
-    - 초기화가 중요하고, 초기화의 효율성이 좋아져야 한다.
-    - 자비어 초기화
+  - 초기화가 중요하고, 초기화의 효율성이 좋아져야 한다.
+  - 자비어 초기화
 - 학습을 많이 시키면 오히려 부정확해진다
 
 인공지능 연구목적
+
 - 인간 능력 증진
 - 사람이 어떻게 사고하는지 이해하기 위해
 
 > 출처: 야사와 만화로 배우는 인공지능
 
 #### workflow
+
 - 데이터 클리닝
 - 데이터 축소
 - 데이터변환
@@ -475,6 +529,7 @@ http://daduino.co.kr/product/detail.html?product_no=1237&cate_no=78&display_grou
 - k 겹 교차검증
 
 #### 구성 요소
+
 placeholder
 Variable
 Matmul
@@ -486,11 +541,13 @@ Nn.softmax
 일단 입력데이터를 만들어내야 한다
 
 leaner regression - 선형 회귀
+
 - 비례 관계에 있다고 여겨지는 사건 예측 할 때 사용 가능
 
 cost function
 
 gradient descent algorithm
+
 - 제일 좋은 가중치를 얻어낸다
 
 convex function
@@ -498,6 +555,7 @@ convex function
 sigmoid
 
 #### MLOps
+
 continuous training model
 continuous deploy model
 easy update test model
@@ -506,6 +564,7 @@ training
 serving
 
 #### mlops
+
 first-order-model: gif를 이용해서 사진을 특정 동작을 하도록 구현한다
 build-model: 간단한 모델 생성 파일
 keras-flask-deploy-webapp: 간단한 플라스크 구동 앱. h5파일을 빌드하고 실행한다
@@ -514,6 +573,7 @@ cnn: cactus recognizer, cnn 모델 생성 파일 있다
 build-model을 이용해서 모델을 빌드하고 keras-flask-deploy-webapp으로 실행한다
 
 ! keyerror: sample_weight_mode 에러가 뜬다
+
 - model.save()와 model.save_weight 차이가 뭔데
 
 keras-deploy는 지금 텐서플로 모델을 불러와서 실행하고 있다.
@@ -524,6 +584,7 @@ keras-deploy는 지금 텐서플로 모델을 불러와서 실행하고 있다.
 tensorflow Serving server라는게 있어서 모델을 여기에 저장해놓고
 플라스크에서 호출해서 쓸 수 있다
 그냥 모델을 플라스크 서버에 저장할 수도 있지만, 분리도 가능하다
+
 - [serving server](https://towardsdatascience.com/deploying-keras-models-using-tensorflow-serving-and-flask-508ba00f1037)
 - pb 파일만 사용 가능, h5를 pb로 변환 가능
 
@@ -532,6 +593,7 @@ weight, losses, optimizers를 h5 파일 안에 넣는단다
 저 값들이 있으면 예측모델이 되는건가
 
 #### ml devops
+
 data composing
 data preprocessing
 model build to `.h5`
@@ -540,6 +602,7 @@ loading model
 route page
 
 #### predicting data
+
 DNN
 csv
 make model
@@ -553,16 +616,19 @@ regression for predict
 classification for choice one of the fruit
 
 #### Machine Learning framework
+
 - tensorflow
 - torch
 - keras
 - scikit learn
 
 #### tensorflow
+
 - tensorboard in docker
- - `--bind_all`
+- `--bind_all`
 
 #### GAN
+
 진짜데이터를 기준으로
 제네레이터가 진짜데이터와 비슷한 것을 계속 생성하고
 검사자는 진짜데이터와 제네레이터 데이터를 비교해서 진짜를 찾는과정인데
@@ -571,22 +637,26 @@ classification for choice one of the fruit
 데이터가 충분치 않을 때 사용하면 원하는 데이터를 얻어낼 수 있다
 
 ## 축구관련 프로그래밍
+
 축구정보 웹 페이지 제작
 승부예측페이지?
 팀 두개를 선택하면 내가 짠 로직으로 승패를 예측하는 페이지 제작해보자
 파싱 가능한 데이터목록 필요
-+ 내가 생각하는 승부의 포인트
-역배확률 높은 경기 목록 띄우기
+
+- 내가 생각하는 승부의 포인트
+  역배확률 높은 경기 목록 띄우기
 
 비프로 - 축구 비디오 분석 회사
 
 ## 스포츠 테크놀로지 업체
+
 - WHOOP
 - Volt Athletics
 - Moov
 - 국제스포츠연구센터 CIES
 
 #### 이전의 경기상황을 미루어 현재의 결과를 유추해내는 프로그램 제작
+
 - 주요선수의 부재
 - 원정 경기 이후 일정
 - 선수들의 컨디션 고려
@@ -594,21 +664,25 @@ classification for choice one of the fruit
 - 챔스 경기 후 리그 경기 승률
 
 ## IoT
+
 Iot 가 사람들의 삶을 어떻게 변화시켜 줄 수 있을까
 Iot는 어떤 환경을 만들어 줄 수 있을까
 
 #### protocol
+
 - zigbee
 - BLE
 - WIFI
 - 비콘
 
 #### Item
+
 - 회사 사무실용 IOT 구상
 - 모듈화
 - 무선 LAN - LoRa
 
 #### Iot 적용 가능 분야
+
 - 사무실
 - 공장
 - 학교
@@ -620,6 +694,7 @@ Iot는 어떤 환경을 만들어 줄 수 있을까
 - 에어컨
 
 ## arm의 장점
+
 저전력, 저소음
 
 단점
@@ -641,9 +716,11 @@ little core, big core
 애플 실리콘은 인텔 cpu보다 더 성능이 좋은 arm cpu를 구현했다
 
 ## Rust
+
 ## Typescript
 
 ## Oauth2
+
 브라우저, 사용자, 서버, Oauth 제공자
 
 서버는 브라우저에 Oauth를 표시한다
@@ -658,11 +735,12 @@ Oauth 제공자는 확인 후 서버에 토큰을 준다
 사용자 -> 서버 -> Oauth (사용자 정보)
 사용자 <--------- Oauth (코드)
 사용자 -> 서버 -> Oauth (사용자 정보 + 코드)
-          서버 <- Oauth (인증 후 토큰 제공)
+서버 <- Oauth (인증 후 토큰 제공)
 
 서버가 바뀌어도 사용자는 자신이 원래 하던 일을 그대로 할 수 있나?
 
 #### oauth2.0
+
 - 로그인
 - 토큰 획득
 - 토큰 및 아이디로 내부 저장
@@ -673,16 +751,20 @@ Oauth 제공자는 확인 후 서버에 토큰을 준다
 요청 동작 실행
 
 ## agile
+
 product build in one day. design to deploy
 
 ## 데이터 분석
+
 데이터 출처 이해
 `# 보통 csv 파일로 받는다`
 데이터 크기 확인
+
 ```
 data = pd.read_csv(file_path)
 data.info()
 ```
+
 데이터 구성 요소(키, 몸무게) 확인
 
 속성 탐색 (데이터로 무엇을 얻어낼지 생각)
@@ -694,6 +776,7 @@ pandas
 
 분석 결과의 타당성을 검증하기 위해 분석 대상 간 통계적 차이를 검정하는 과정이
 필요하다
+
 - [ ] 통계적 차이가 뭐지?
 
 1. 텍스트 마이닝: 데이터 파싱 - 시각화
@@ -709,9 +792,11 @@ heuristic
 https://archive.ics.uci.edu/ml/index.php
 
 ## react function vs class
+
 function 안에 function을 쓰면 렌더링 할 때 다시 렌더링해서 성능 저하 우려가 있다
 `useCallback`이라는 함수를 쓰면 재렌더링을 막아준다.
 근데 아예 밖으로 빼도 된다.
+
 - https://stackoverflow.com/questions/46138145/functions-in-stateless-components
 - useState, useEffect, useCallback 등이 지원된다
 
@@ -719,18 +804,19 @@ class component는 this나 props를 넘겨주는 작업이 있어서 거추장�
 기존에는 react의 lifecycle을 사용하려면 class를 써야했는데, hooks(useEffect
 등)이 등장하면서 해결되었고, 함수형 컴포넌트를 권장하고 있다.
 
-
 ## android
+
 - flutter 설치, android studio 설치
 - flutter 플러그인 설치
 - https://flutter-ko.dev/docs/get-started/codelab
 - 첫 실행 시 license 에러
-    - android 설치 시 java도 설치하므로 java home을 따로 설치 안하고 sdk
-      command-line tools를 설치한다.
-    - https://www.androidhuman.com/2021-06-02-flutter_android_license_noclassdeffound
+  - android 설치 시 java도 설치하므로 java home을 따로 설치 안하고 sdk
+    command-line tools를 설치한다.
+  - https://www.androidhuman.com/2021-06-02-flutter_android_license_noclassdeffound
 - flutter doctor
 
 ## TV의 통신은 안정적인 이유?
+
 tv도 어차피 컴퓨터가 각 가정에 송신하는 것 아닌가?
 근데 방송국 서버실이 그렇게 구축되있다면 모바일도 서버용량에는 문제가 없을 것 같은데 끊김이 있고 성능이 왔다갔다 한다.
 
@@ -742,8 +828,8 @@ tv는 어떻게 그렇게 안정적으로 송신할 수 있지?
 모바일은 왜 그렇게 안되지?
 방송국은 24시간 연결되있는 주파수가 있어서 되고 모바일은 계속 신호를 새로 잡아야해서 그런걸까
 
-
 #### 스마트 워치가 수면 측정 하는 원리
+
 가속계, 적외선 기술
 가속계: 움직임을 판단해 잠에 들었는지 확인
 적외선 PPG: 심박수와 심박변이도 확인
