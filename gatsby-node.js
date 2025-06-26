@@ -61,10 +61,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     let value = createFilePath({ node, getNode })
     value = value.toLowerCase()
+    // 하위 폴더 경로 제거: 마지막 segment만 사용
+    const segments = value.split("/").filter(Boolean)
+    const last = segments[segments.length - 1]
+    const newSlug = `/${last}/`
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: newSlug,
     })
   }
 }
