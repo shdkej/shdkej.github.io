@@ -3,8 +3,7 @@ title: 🚀 아키텍처
 summary: 변화, 정리, 순환, 측정
 date: 2020-05-07 20:51:37 +0100
 updated: 2021-10-23 21:22:04 +0900
-tags:
-  - strong_base
+tags: fundamental
 ---
 
 ## Goal

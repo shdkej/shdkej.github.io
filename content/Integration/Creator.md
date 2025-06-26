@@ -3,8 +3,7 @@ title: 창작자들
 summary: Music, Construct, Artist, Directer, Author
 date: 2020-09-29 23:59:25 +0100
 updated: 2021-12-04 14:05:48 +0900
-tags:
-  - integration
+tags: integration
 ---
 
 ## 창작자가 있는 분야

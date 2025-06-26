@@ -1,12 +1,13 @@
 ---
-title   : Software
-summary : Language, Web
-date    : 2020-04-06 14:37:26 +0100
-updated : 2021-12-02 23:12:47 +0900
-tags    : strong_base
+title: Software
+summary: Language, Web
+date: 2020-04-06 14:37:26 +0100
+updated: 2021-12-02 23:12:47 +0900
+tags: fundamental
 ---
 
 ## 소프트웨어
+
 - 사람 소프트웨어 사람
 - 제작자 소프트웨어 유저
 - 소프트웨어 - 유저
@@ -18,6 +19,7 @@ tags    : strong_base
 개발자, 소프트웨어 자체, 유저에게 모두 영향을 받고 미친다
 
 #### 소프트웨어는 현대의 도구다
+
 소프트웨어는 망치 같은 도구가 될 수도 있고 하나의 작은 우주가 될 수도 있다.
 필요한 것을 공간, 시간의 제약 없이 쓸 수 있는 도구
 메타도구
@@ -29,6 +31,7 @@ tags    : strong_base
 사용자에게 직관적인 사용이 되어야 한다
 
 #### 소프트웨어는 변경을 위해서 있다
+
 종이에 쓰면 수정이 힘든 것에 비해 소프트웨어의는 변경이 자유롭다
 
 선택 전에 기준을 세우는 것에 고민을 하고, 기준점에만 들어온다면 빠르게 선택한다
@@ -37,42 +40,52 @@ tags    : strong_base
 #### 계속 관리해주지 않아도 유지되는 소프트웨어가 만들어질 수 있을까
 
 #### 컨셉을 가진 소프트웨어
+
 풀속성 포켓몬만 모으는 사람처럼 컨셉을 가지면 재밌겠다
 근데 시야가 좁아지고, 특정한 영역에 고립되는 것은 조심해야겠다
 
-
 ## Agile
+
 #### TL;DR
-* **Individuals and interactions** over processes and tools
-* **Working software** over comprehensive documentation
-* **Customer collaboration** over contract negotiation
-* **Responding to change** over following a plan
-- https://www.agilealliance.org/agile101/the-agile-manifesto/
+
+- **Individuals and interactions** over processes and tools
+- **Working software** over comprehensive documentation
+- **Customer collaboration** over contract negotiation
+- **Responding to change** over following a plan
+
+* https://www.agilealliance.org/agile101/the-agile-manifesto/
 
 #### 애자일의 완성도
+
 다 완성된 후에 보여주는 완성도보다 구현한 것을 계속 확인받으면서 수정해나가는
 완성도가 높다
+
 - 서비스를 기획하는 상황이라면 도메인 전문가가 고객의 역할을 할 수 있겠다.
   기획자가 도메인 전문가가 될 수도 있고
 
 고객은 잘 되고 있는지는 알고 싶어하지만, 계속 물어보는 것은 원하지 않는다
 
 ## Software
+
 - Algorithm: Mathematically complete composition.
 - Program: Combination of Algorithm.
 
 #### 소프트웨어, 서비스에서 무료로 제공되어야 하는 부분과 돈을 받아야 하는 부분
+
 기능의 90%는 무료로 제공하고 10%는 유료로 제공해야 한다는 의견이 있다.
+
 - 유튜브의 광고 정책과 컨텐츠 소비의 가치에 대해
   - 유튜브가 동영상의 광고를 임의로 넣고 있다.
     컨텐츠 제공자는 광고를 안넣고 싶다고 해도 유튜브에서 강제로 넣는 것이다.
 
 ## Concurrency
+
 - Race conditions
 - Deadlocks
 - Testing Concurrency
 
 #### 동시성 병렬성 블록킹
+
 - 동시성 : 하나의 코어가 여러 작업을 조금씩 하는 것, = 비동기, 전체 동작시간은 같지만 효율성 증가됨
 - 병렬성 : 코어나 스레드를 여러개 두어 여러 작업을 한번에 하는 것, 시간은 줄어들지만 비용이 증가
 - 동기 : 하나의 코어가 하나의 작업만 하는 것
@@ -94,6 +107,7 @@ golang에서 goroutine은 비동기로 기본 동작하고, for 문으로 gorout
 동기는 전화
 
 #### 비동기 프로그램의 실행 처리 사례
+
 사용자가 입력을 주는 부분 A
 반응 해야 하는 부분 B
 B는 A에다가 함수를 전달해놓고
@@ -107,20 +121,25 @@ A - 메시지 큐 - B
 이렇게 되면 의존성도 떨어지고 속도가 빠른 메시지 큐로 인해 더 좋은 응답을 할 수 있게 된다
 
 #### javascript callback
+
 콜백함수
+
 - 함수의 호출 시점을 사용자가 아닌 프로그램으로(시스템에서) 결정하는 함수
 
 클로저
+
 - 자신을 호출한 함수 범위의 변수와 자신 내부의 지역변수를 모두 사용할 수 있는 상태
 - 자신을 호출한 함수 범위의 변수를 내부에서 사용할 수 있다는 것이 포인트
 - 호출 시의 컨텍스트를 저장하고 싶을 때 사용한다
 - js에서 커링을 구현할 때 사용된다
 
 컨텍스트
+
 - global context, function context, eval context
 - 실행 컨텍스트
 
 Promise
+
 - 콜백함수를 깔끔하게 표현하는 방식
 - function().then().catch().then() 의 형식으로 사용한다
 - then() 안에서
@@ -134,25 +153,29 @@ function(){
 
 })
 ```
+
 - 로 작성 시 첫번째 function은 성공했을 시 실행되고,
   두번째 function은 실패했을 시 실행되게 된다
 - fulfill, pending 등의 상태가 있으며, 상태에 따라 실행 가능해진다
 - promise 를 호출하려면 리턴이 promise 이거나 promise로 생성되어야 한다
 
 에로우 표현법
+
 - `=>` 로 표현해서 `function(){return}` 을 명시하지 않도록 해주는 표현법
 - `var x = (y) => y*y;`
 - this 는 호출된 스코프에서 상속받는다
 
 ## pointer vs reference
+
 - pointer is address of value
 - reference is refer to value, share the address. (shallow copied object)
 - pointer can re-assign, ref cannot. just same type, value, address.
 - pointer has its own memory address, ref shares the same address.
 - in python, it is shallow copy vs deep copy
 - in Golang,
-    - pointer is a variable which stores the address of another variable
-    - reference is a variable which refers to another variable
+  - pointer is a variable which stores the address of another variable
+  - reference is a variable which refers to another variable
+
 ```
 a := 1
 b := 2
@@ -166,37 +189,46 @@ ap = &b
 // ap value = 2
 // ap2 value = 5
 ```
+
 - https://spf13.com/post/go-pointers-vs-references/
 
 #### 'int' is not an object, 'Integer' is.
+
 [파이썬 3에는 오버플로우가 없다?](t.ly/flKE)
 
 ## object
+
 - first citizen function
-    - callable like value
+  - callable like value
 - value != object?
 - class != object?
 - int
-    - int in c, int size is 4bytes = 2^32, it is fix.
+  - int in c, int size is 4bytes = 2^32, it is fix.
 - (Data) types
 - int is class? types?
 - type != object?
 
 ## C++ 50 계명 - 이것만은 기억하자.
+
 [HAMA 블로그](https://hamait.tistory.com/1043?category=76104)
 
 ## Design Pattern
+
 Singleton
+
 - 여러곳에서 하나의 객체만을 사용해야할 때 사용
 - ex) theme, globalconfig
 
 Strategy
+
 - 객체들을 모듈화해서 수정이나 추가 시 전체코드를 건드리기보다 각각의 모듈만 건드리게끔 유도. 모듈을 만든 후 모듈 셋팅용 함수를 만들어서 수정은 한 곳에서만 하도록 구현
 
 Command
+
 - 모듈화를 하는 것은 strategy와 같으나 strategy는 하나의 기능을 여러방식으로 구현하는 것이라면 이것은 기능 자체를 여러개 만드는 개념
 
 Adapter
+
 - 추상화를 시켜서 형태가 다른(인자를 다르게 받는) 객체를 기존 객체를 부르듯이 부를 수 있게 하는 것
 - ex) 외부 라이브러리 사용 시
 
@@ -206,10 +238,12 @@ Adapter
 대신 코드는 좀 더 지저분해질 것이다
 
 Proxy
+
 - 호출하는 시점을 proxy가 실행된 후에만 실행되게하여 무거운 작업 시 가벼운 것들을 먼저 보여주게 할 수 있다
 - //코드는 의존성이 없지만 proxy라는 구조는 다른 객체를 포함하는 구조라서 그다지 매력적이지 않다. 다른 방법으로 무거운 작업을 딜레이할 방법은? Promis 콜백처럼
 
 #### generic
+
 c++ 템플릿
 c# 제네릭
 
@@ -220,83 +254,97 @@ c# 제네릭
 정적 형지정을 동적 형언어처럼 쓰려고 만든건가 싶다
 
 #### typescript
+
 한 파일 안에 타입을 적어놓음으로써 변수 타입 확인을 쉽게 할 수 있다?
 파일이 필요한 내용만 최소한 있는 것이 좋을까
 관련 내용은 참조할 수 있게 같이 있는게 좋을까
 
 #### delegate
+
 - 메소드와 동일한 타입의 델리게이트를 만든다 (매개변수, 리턴타입)
-    - 제네릭(템플릿)을 이용해서 타입 일반화를 할 수 있다
+  - 제네릭(템플릿)을 이용해서 타입 일반화를 할 수 있다
 - 콜백함수? 클로저 같은 느낌인가
 - 클로저를 이용해서 커링 함수 만드는 것과 비슷하게 쓰인다
-    - C#에서 람다나 클로저를 구현할 때 delegate를 이용해서 구현한다
+  - C#에서 람다나 클로저를 구현할 때 delegate를 이용해서 구현한다
 - += -= 을 이용해서 함수를 연결 시킬 수 있다
 
 #### C# linq
+
 - SQL문처럼 C# 안에서 쿼리를 할 수 있는 느낌인데,
-선언형으로 호출하는 형식이라 C# 의 함수 구현체 같은 느낌이 된다.
+  선언형으로 호출하는 형식이라 C# 의 함수 구현체 같은 느낌이 된다.
 
 #### 데이터 타입을 명시하는 것의 메리트
+
 - 사전 체크를 안해도 항상 그 형태가 온다는 것을 보장해준다
 - 개발자의 실수를 개발 단계에서 줄여준다.
 
 #### abstraction and automation
+
 design -> implement -> test -> deploy -> update
 
 - If I am a backend engineer
-Am I need test the kubernetes? or just local test and push?
-	* how to divide development environment and production?
-yes. developer should have test everything. no limit.
+  Am I need test the kubernetes? or just local test and push? \* how to divide development environment and production?
+  yes. developer should have test everything. no limit.
 
 commit -> docker test -> confirm commit -> push -> lint and test
 confirm PR -> deploy -> send report
 
 ## procedure, declarative
+
 if else를 쓰는 절차적인 방식을, 어떤 인자가 필요하니 이게 없으면 만들어라 라는
 선언적 방식으로 바꿔 관리를 쉽게 한다
 
 함수가 한가지 일만 하는지 확인하는 방법은 추상화 수준이 일관된지 확인한다
 
 ## 변수에 get, set을 설정한다고 객체가 되는게 아니라
+
 추상화를 통해 구현은 감추고 추상화 된 인터페이스를 보게 해야 클래스를 사용한다고 할 수 있다
 
 #### 객체는 내부구조를 숨겨야 한다고 한다
+
 변수를 프라이빗으로 하고 함수로 제어하는 것이 변수를 직접 조종하는 것보다 나은 이유
+
 - 변수에 특정한 속성을 넣어줘야 할 때 get 함수만 수정하면 변수 값을 쉽게 변경 할 수 있다
 - 다른 객체가 직접 값에 접근을 못하게 해서 원하는 동작을 지킬 수 있다.
 
 #### 사용자가 직접 호출하는 api는 최대한 추상적으로 하고
+
 api는 인터페이스를 호출하고 인터페이스는 유닛함수를 호출하고
 유닛함수는 외부라이브러리와 분리시킨다?
 
 #### statement, expression
+
 for, if, while은 statement,
 map, filter는 expression
 
 #### 함수형 언어
+
 함수형언어를 쓰면 코드 읽고 추론하기가 쉬워진다?
+
 - https://www.youtube.com/watch?v=H6JxxWL6bJI
 
 수학적이면 완성도가 높아지는 것 같다. 이런 점에서 함수형 표현을 쓰는게 좋은거 같다
 
 ## code
+
 - 코드만으로 얘기할 수 있도록 보기 좋은 코드
 - 문서화는 중요하다 코드만 봐도 되게 하면 더 좋겠지만
 - 주석 대신 프로그램만 읽어서 이해가 되도록
-    - 하지만 주석은 필요하다
+  - 하지만 주석은 필요하다
 - 직관적으로 쓴다
 - 코드가 간결해야 한다
 - 클린코드를 지향하는 이유는 모든 서비스는 단번에 완성도를 100으로 만들 수 없고 유지보수와 기능추가가 반드시 필요하기 때문에 이를 편하게 하기 위함이다.
 
 #### Plus
+
 - 가벼워야 한다. 그래서 외부 API나 라이브러리를 안쓰고 싶었다
-    - no dependency, low coupling
+  - no dependency, low coupling
 - 안전한 동작 - 회사일을 하면서
 - 하나하나의 시스템이 완성도 높은 시스템으로 구성할 수 있도록
 - 엘리베이터의 안정성이 보장되는 것처럼 (보장된다는 것이 100%는 아니다) 프로그램도 안정성이 보장되어야 한다.
-    - 엘리베이터는 하나의 제품 자체로만 구동한다. (자연 환경의 변수는 있다)
-      그런데 프로그램은 OS, Kernal, 사용자의 기존 작업 환경 등이 영향을 끼친다.
-    - 그저 동작하는 프로그램만으로는 부족하다 테스트코드를 만듬으로서 안정성을 높일 수 있다. 또 다른 방법은 무엇이 있을까
+  - 엘리베이터는 하나의 제품 자체로만 구동한다. (자연 환경의 변수는 있다)
+    그런데 프로그램은 OS, Kernal, 사용자의 기존 작업 환경 등이 영향을 끼친다.
+  - 그저 동작하는 프로그램만으로는 부족하다 테스트코드를 만듬으로서 안정성을 높일 수 있다. 또 다른 방법은 무엇이 있을까
 - Transparent
 - 확장 시 확장하는 그 자체만 코드가 작성되어야 하고 기존의 코드를 건드리면 좀 별로다
 - 외부 모듈 사용 시에는 코드를 분리한다. 호출하는 함수와 실제 동작하는 함수로
@@ -315,11 +363,11 @@ map, filter는 expression
   같은 클래스 안에 있어야 한다면 어떻게 구분할 수 있을까
 - 개인 프로젝트는 라이브러리를 쓰기 보다 구현을 하고 싶다
 - 소프트웨어 사용을 하다보면 데이터는 계속 쌓일텐데 그 때마다 디스크를 늘리는건 아쉽다
--  원하는 개발을 위해 기준을 세워놓아 흔들림 없이 목표를 이루어 나가야한다
+- 원하는 개발을 위해 기준을 세워놓아 흔들림 없이 목표를 이루어 나가야한다
 - 내 개발을 위한 철학을 만들어 두고, 내 것 뿐만 아니라 회사일을 할 때도 쓰는
   개발 최저 기준도 만들어놓는다
 - Clean code / low coupling / module / single responsible
-- safety     / light weight / divide / api, test, log, error handling
+- safety / light weight / divide / api, test, log, error handling
 - high performance, optimization, multi-function
 - 라이브러리 재사용성이 좋도록 한다
   라이브러리 사용 시 내부를 몰라도 되도록 해야한다
@@ -330,6 +378,7 @@ map, filter는 expression
   그래서 코드를 재사용하기 좋게 만들어야 한다
 
 ## 함수를 거쳐서 호출하는 것과 바로 호출하는 것 속도 차이 비교
+
 python
 10000회 수행 시
 함수를 타면 3ms,
@@ -347,6 +396,7 @@ golang
 함수를 타면 0.46ms,
 
 ## when useful pointer?
+
 - 큰 자료형을 옮길 때 객체를 넘기는 것보다 메모리 참조하도록 하는게 가볍다
 - 메모리에 직접 접근해서 작업할 필요가 있는 경우가 있다
 
@@ -359,6 +409,7 @@ golang
 - 포인터를 이용해서도 동시성을 구현해서 잘 이용한다
 
 ## 직렬화
+
 압축
 http header content type
 
@@ -369,6 +420,7 @@ base64
 base64로 인코딩해놓으면 범용성 있게 사용 가능하다
 
 #### json
+
 - marshal: 논리적 구조를 바이트로
 - unmarshal: 바이트를 논리적 구조로
 - encode: 언어 내부 구조를 json 형태의 스트림으로
@@ -378,6 +430,7 @@ base64로 인코딩해놓으면 범용성 있게 사용 가능하다
 (http response, file, stdout)
 
 ## 람다 아키텍처
+
 1억건의 데이터가 매일 쌓인다면 이것을 조회할 때 오래 걸린다
 
 이를 해결하기 위해 매일 하루를 요약한 테이블을 만들면 1년의 데이터가 365줄로 요약된다
@@ -388,6 +441,7 @@ base64로 인코딩해놓으면 범용성 있게 사용 가능하다
 하둡이 배치처리를 하는 방식이라 빅데이터에 쓰인다
 
 ## JPA
+
 ORM이 코드의 객체성과 DB의 관계성을 매꾸기 위해 나왔다고 한다.
 그래서 DB를 item.getName() 이런 식으로 호출할 수 있게 되었다.
 마이크로서비스에서 다른 서비스의 데이터를 item.getName() 처럼 가져오려고 했던게
@@ -400,7 +454,9 @@ C#의 Linq는 SQL문처럼 작성하고 선언형으로 작성함으로서 함�
 가져가려고 한다.
 
 ## 동적 컨텐츠 vs 정적 컨텐츠
+
 동적
+
 - 채팅
 - 데이터 변경(주식)
 
@@ -408,6 +464,7 @@ C#의 Linq는 SQL문처럼 작성하고 선언형으로 작성함으로서 함�
 더 빨라서 주식 정보의 경우에는 동적으로 변경되는게 효율적이다.
 
 #### Go micro를 보면 실행시키기 위해 몇줄이 필요한데
+
 그러지말고 start만 하면 기본 실행 되고
 셋팅은 coc로 설정하면 설정되고 그냥 쓸 수 있게 하는게 좋을 것 같다
 
@@ -419,6 +476,7 @@ C#의 Linq는 SQL문처럼 작성하고 선언형으로 작성함으로서 함�
 플러그인의 단점이 일일이 찾아봐야 기능을 쓸 수 있다는 것인데, 이 부분을 개선할 필요가 있다
 
 #### micro
+
 grpc는 내가 모르는 코드를 너무 많이 생성한다. micro도 마찬가지
 나는 오히려 cookiecutter처럼 내가 알지만 매번 만들기 귀찮은 것을 쉽게 만들어주는
 것을 원한다. create-react-app처럼.
@@ -428,27 +486,32 @@ kubernetes는... 점차 속속들이 알아나가야지...
 입력과 출력을 받는 형태만 갖추면 바로 찾아서 연결해서 쓰도록
 
 #### 스프링 빈
+
 주요 속성
+
 - class (필수)
 - id: bean의 고유 식별자. 이름에 의미 없음!?
 - scope
 - constructor-arg: 생성 시 생성자에 전달할 인수
 - property: 생성 시 bean setter에 전달할 인수
-    - ref
-    - value
+  - ref
+  - value
 - init method
 - destroy method
 
 <context:annotation-config/> 를 쓰면 빈 설정을 어노테이션을 검색해 반영한다
 
 #### 스프링 시큐리티
+
 security:authentication-manager
+
 - 인자로 받은 Authentication 객체가 유효하다면 Principal을 담고있는 이것을
   리턴한다.
-    - security:authentication-provider
+  - security:authentication-provider
     manager가 직접 처리 안하고 provider에 위임한다.
 
 #### 메소드 체이닝
+
 기차 충돌
 빌더 패턴
 디미터의 법칙
@@ -465,37 +528,44 @@ security:authentication-manager
 흐름이 없는 코드, 상태가 없는 코드
 
 #### 지금의 메소드 체이닝과 디미터 법칙의 차이
+
 디미터 법칙은 호출한 객체의 함수가 다른 객체를 불러 처음 호출한 객체와 다른
 객체를 부르기 위한 것이 되어버린 메소드 체이닝이 복잡도를 높이는 점을 지적한다
 지금의 메소드 체이닝은 메소드가 기존에 호출했던 객체를 반환함으로써 가독성을
 높이는 효과를 위해 사용되고 있다
 
 #### go 에서 외부공개함수는 대문자로 시작하는데
+
 메인로직 외에는 공개하지 않도록 짜야겠다
 
 근데 인터페이스로 만들면 다 공개해야되는거 아닌가
+
 - 인터페이스로 쓰는건 공개하고, 인터페이스 함수 내에 있는 것은 감추면 되겠다
 
 #### Python HowDoI 라이브러리
-라이브러리 사용자가 쓰지 않는 함수는 함수명 앞에 _(언더바)를 붙이고, 테스트 시
+
+라이브러리 사용자가 쓰지 않는 함수는 함수명 앞에 \_(언더바)를 붙이고, 테스트 시
 사용자가 쓰는 함수만을 통해 테스트한다고 한다
 
 #### 플러그인 만드는 법
+
 비즈니스 로직이 바라보는 인터페이스가 있고,
 이 인터페이스를 구현하는게 플러그인이라면.
 
 플러그인의 예
+
 - 크롬 확장 프로그램
-    - 크롬의 정보를 불러와서 크롬에 표시하게 해준다.
+  - 크롬의 정보를 불러와서 크롬에 표시하게 해준다.
 - 그놈 확장 프로그램
-    - 그놈 인터페이스의 값을 내 기능을 실행시키고 동작하게 한다.
+  - 그놈 인터페이스의 값을 내 기능을 실행시키고 동작하게 한다.
 - 비주얼 스튜디오 코드의 확장 프로그램
-    - 원하는 기능을 실행하도록 해준다.
+  - 원하는 기능을 실행하도록 해준다.
 
 플러그인을 설치하면 기존의 흐름을 낚아채서 조절한 후 다시 갖다 놓는 그림이다.
 그렇다면 플러그인을 실행하도록 하는 로직을 구현해놔야겠다
 
 #### 특정한 값을 보고 분기해줄 때 어떻게하면 좋을까
+
 어떤 알림인지 타입을 보고 결정하게 될텐데
 타입에 맞는 핸들러를 매칭해줄때
 스위치를 쓸까
@@ -505,29 +575,35 @@ security:authentication-manager
 타입을 보고 결정?
 
 #### 개발 노하우
+
 삭제는 딜리트가 아니라 isDelete를 true로 바꾸고  
-히스토리를 추가하는 작업  
+히스토리를 추가하는 작업
 
 진짜 삭제가 필요한 경우는?
 
 #### 프로그래밍 언어 추상화 단계
+
 기계어 0101010
 어셈블리어
 명령형 코드 for
 선언형 코드 filter()
 
 #### iterator 함수 감싸기
+
 iterator를 쓰는 함수는 내부가 for문을 돌리고 원하는 처리를 하는 동일한 구조로 되어있다
 이걸 계속 반복해서 쓰기보다 감싼 함수에서 실행하게 하면 좋겠다
 
 #### iterable, iterator 차이?
+
 list 같이 요소를 순회할 수 있는 것을 iterable이라 한다
 iterator도 iterable한 객체인데 iterator는 한 개씩 꺼내 쓰기 위한 것이라 iterable이 iterator는 아니다
 
-#### iterator와 stream 비교  
-- iterator를 간결하게 쓰게 해주는게 stream  
-  
-query로 필터링하는 것과 stream filter 비교  
-- 많은 양에서는 무조건 쿼리가 빠름  
+#### iterator와 stream 비교
+
+- iterator를 간결하게 쓰게 해주는게 stream
+
+query로 필터링하는 것과 stream filter 비교
+
+- 많은 양에서는 무조건 쿼리가 빠름
 - 그동안 db 최적화가 아주 많이 이뤄졌기 때문
-iterator도 iterable하니까 map을 쓸 수 있지 않을까?
+  iterator도 iterable하니까 map을 쓸 수 있지 않을까?

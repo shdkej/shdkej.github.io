@@ -1,10 +1,9 @@
 ---
-title:
+title: DevOps
 summary:
 date: 2021-12-04 13:02:50 +0900
 updated: 2021-12-04 13:32:09 +0900
-tags:
-parent: [[About_Architecture]]
+tags: deep_knowledge
 ---
 
 Infra - Cloud

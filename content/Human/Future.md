@@ -3,7 +3,7 @@ title: 미래
 summary: Plan, Goal, Milestone
 date: 2021-02-27 20:54:15 +0100
 updated: 2021-10-23 20:24:12 +0900
-tags:
+tags: human
 ---
 
 # 목표, 계획, 시간, 다음 세대

@@ -1,52 +1,58 @@
 ---
 title: Linux,
-summary: 
+summary:
 date: 2020-05-06 19:57:59 +0100
 updated: 2022-08-13 19:01:28 +0900
-tags:
-  - develop
+tags: deep_knowledge
 ---
 
 # Linux
+
 ## Directory
+
 - `/`
 - `/bin` - 기본 명령어가 저장된 디렉토리
 - `/sbin` - ifconfig 등 시스템관리자용 명령어가 저장된 디렉토리
 - `/home` - 사용자의 홈 디렉토리
-    - `useradd` 명령어로 새 사용자를 생성하면 생성자와 같은 이름의 디렉토리 생성됨
+  - `useradd` 명령어로 새 사용자를 생성하면 생성자와 같은 이름의 디렉토리 생성됨
 - `/tmp` - 공용디렉토리, 임시 작업 디렉토리
 - `/lib` - 커널 모듈 파일,라이브러리 파일 존재
 - 커널이 필요로 하는 파일들이 존재
 - `/usr` - 일반사용자들이 주로 사용하는 디렉토리
-    - 일반 사용자용 명령어는 /usr/bin 에 위치한다.
+  - 일반 사용자용 명령어는 /usr/bin 에 위치한다.
 - `/var` - 일시적으로 저장하기 위한 디렉토리
-    - 내용이 수시로 변경될 수 있는 파일
+  - 내용이 수시로 변경될 수 있는 파일
 - `/dev` - 디바이스 파일 ( CD-ROM 등 )
 - `/etc` - 시스템 설정 파일이 존재하는 디렉토리
 - `/boot`
 - `/proc`
 
 ## bash script cheatsheet
-* echo with color: `GREEN='\033[0;32m'`, `NOCOLOR='\033[0m'`
-* check package installed: `if ! dpkg -s $PACKAGES >/dev/null 2>&1; then`
-* check command with argument: `x=''`, `if [ -z ${1+x} ] then` //$1 = first argument
-* check file exist: `if [ -e <file> ] then`
-* check root: `if [ "$(whoami)" != "root" ] then`
-* check input:
+
+- echo with color: `GREEN='\033[0;32m'`, `NOCOLOR='\033[0m'`
+- check package installed: `if ! dpkg -s $PACKAGES >/dev/null 2>&1; then`
+- check command with argument: `x=''`, `if [ -z ${1+x} ] then` //$1 = first argument
+- check file exist: `if [ -e <file> ] then`
+- check root: `if [ "$(whoami)" != "root" ] then`
+- check input:
+
 ```
 echo -n "please input"
 read INPUT
 if [ -z $INPUT ] then
 ```
-* break when error occurred: `set -u -e`
-* error occurred but prevent break: `<some command> || echo "failed"`
-* allow every question: `yes | <some command>`
-* write text to file: `echo <text> >> <file>`
-* date: `$(date '+%F=%H=%M')`
-* delete old file: `find <dir> -name "*.png" -type f -mtime +3 -delete`
+
+- break when error occurred: `set -u -e`
+- error occurred but prevent break: `<some command> || echo "failed"`
+- allow every question: `yes | <some command>`
+- write text to file: `echo <text> >> <file>`
+- date: `$(date '+%F=%H=%M')`
+- delete old file: `find <dir> -name "*.png" -type f -mtime +3 -delete`
 
 ## linux environment script (startup files)
+
 interactive shell - terminal console
+
 1. /etc/profile
 2. ~/.profile
 3. ~/.bash_profile
@@ -59,13 +65,16 @@ zshrc
 non-interactive shell - script
 
 ## automatically run command when turn on the computer
+
 /etc/rc.local
 /etc/init.d/rc.local
 
 ## ubuntu korean
+
 alt_r can't recognized.
 so, need change alt_r -> hangul
 `/usr/share/X11/xkb/keycodes/evdev`
+
 ```
 //<\RALT\> = 108; \ 는 빼고
 ...
@@ -74,6 +83,7 @@ so, need change alt_r -> hangul
 ```
 
 #### kubuntu korean setting
+
 - kubuntu default korean failed
   - this layout is not korean
 - fcfix failed
@@ -83,16 +93,19 @@ so, need change alt_r -> hangul
   - execute uim > set default, remove global option, set byeoru on/off to hangul
 
 ## Linux distro
+
 - base ubuntu, but it is no beauty -> kubuntu, but it is no light-weight -> mx-linux
 - mx linux is not user-friendly, back to the ubuntu
 
 #### distros
+
 mx linux
 deepin
 chrome
 backslash
 
 #### linux set environment problem
+
 - vim 8.1 >
 - vim doesn't support python. -python
 - zsh chsh
@@ -104,42 +117,50 @@ backslash
 - need set start bar
 
 ## curl
+
 폴더 다운로드
+
 - wget -r http://download/images
-특정 폴더에 다운로드
+  특정 폴더에 다운로드
 - wget -P /home/user/Downloads 'http://image.url.png'
 
 ## sudo
+
 /etc/group 에 root 에 사용자 추가
 /etc/sudoers 권한 수정 후 root ALL=(ALL:ALL) ALL 밑에 사용자 추가
 
 ## search large file
+
 du -h --max-depth=1 /
 du -h / | sort -rh | head -n 10
 용량 큰 거 10개만 출력
 
 ## 한국 시간 맞추기
+
 - ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 ## backup
+
 - 전체 시스템 백업
-    - `tar -cvpzf backcup.tar.gz --exclude=/proc --exclude=/lost+found --exclude=/backup.tar.gz --exclude=/mnt --exclude=/sys /`
+  - `tar -cvpzf backcup.tar.gz --exclude=/proc --exclude=/lost+found --exclude=/backup.tar.gz --exclude=/mnt --exclude=/sys /`
 - 홈 디렉토리만 백업
-    - `tar -cvpzf backuphome.tar.gz --one-file-system /home`
-    - `tar 옵션 압축한파일명 압축할경로`
+  - `tar -cvpzf backuphome.tar.gz --one-file-system /home`
+  - `tar 옵션 압축한파일명 압축할경로`
 - 옵션
-    - c : tar로 묶음
-    - v : 압축과정 화면 추력
-    - p : 파일 권한 저장
-    - z : gzip으로 압축,해제
-    - f : 파일 이름 지정
-    - C : 경로 지정
-    - x : tar 압축 해제
+  - c : tar로 묶음
+  - v : 압축과정 화면 추력
+  - p : 파일 권한 저장
+  - z : gzip으로 압축,해제
+  - f : 파일 이름 지정
+  - C : 경로 지정
+  - x : tar 압축 해제
 - 복구
-    - `tar -xvpfz backuphome.tar.gz`
+  - `tar -xvpfz backuphome.tar.gz`
 
 backup.sh 스크립트 짜기
+
 - 압축
+
 ```
 #!/bin/bash
 //tar -옵션 /백업할디렉토리/백업파일명 /백업할 대상
@@ -147,19 +168,22 @@ tar -czpf /backup/backup.'date +%Y%m%d%H%M%S'.tgz
 ```
 
 - 날짜 형식 쓰는 법
-    - `$(date +"%Y-%d-%m")`
+  - `$(date +"%Y-%d-%m")`
 - 10일 지난 파일 삭제
-    - `find /backup/ -type f -mtime +10 | sort | xargs rm -f`
+  - `find /backup/ -type f -mtime +10 | sort | xargs rm -f`
 
 자동화 설정
 crontab 에 내용 입력
+
 - `-l` 현재 등록된 작업보기
 - `-e` 편집하기
 - minute hour day month week(0=Sunday, 1=Monday)
 - `sqldump` 후 백업 추가
 
 ## iptables
+
 조건
+
 - --source(s) 출발지 IP주소
 - --destination(d) 도착지 IP주소
 - --protocol(p) 특정 프로토콜(tcp,udp)
@@ -184,6 +208,7 @@ crontab 에 내용 입력
 - -P 기본정책을 변경한다
 
 KEYWORD
+
 - ACCEPT 받는다
 - DROP 버린다
 - REJECT
@@ -195,7 +220,9 @@ KEYWORD
 - INVALID 어디에도 속하지 않은 패킷
 
 ## 서버 보안 설정
+
 ssh 보안
+
 - `/etc/ssh/sshd_config`
 - ip 제한
 - 포트 변경
@@ -203,21 +230,24 @@ ssh 보안
 - Fail2ban 설치 ( 로그인 시도 아이피 차단 프로그램 )
 
 #### ssh
+
 - `sudo apt remove -y openssh-server`
 - `sudo apt-get install -y openssh-server`
 - `sudo su`
 - Port 수정
- - #PasswordAuthentication yes
+- #PasswordAuthentication yes
 - `sudo service ssh --full-restart`
 
 > ssh에서는 인터넷 끊기면 세션 끊기는데 mosh에서는 세션 유지된다고 한다
 
 일반 사용자 su 명령어 제한
+
 - /bin/su 파일 접속 권한 설정
 - /etc/pam.d/su 파일 auth required 주석 해제
 - /etc/group 에 wheel(관리자 권한 대행 그룹) 에 원하는 유저 추가
 
 계정관리
+
 - Passwd 정책
 - /etc/login.defs
 - 그룹 권한
@@ -230,38 +260,47 @@ ssh 보안
 파일 권한 관리
 
 방화벽 관리
+
 - /etc/sysconfig/iptables
 - 방화벽 설정
-`-A INPUT -m state --state NEW -m udp -p udp --dport 53 -j ACCEPT`
+  `-A INPUT -m state --state NEW -m udp -p udp --dport 53 -j ACCEPT`
 
 파티션 분리
 
 캐쉬 메모리 삭제
+
 - Free -m 확인
 - Sync && echo 3 > /proc/sys/vm/drop_caches 삭제
 - Crontab 에 추가
 
 ## DB
+
 Postgresql 설치
+
 - `yum install -y postgresql-server`
 
 기본 디렉터리
+
 - /var/lib/pgsql/data
 - Or /var/lib/postgresql/9.5/main/
 - Data 저장 위치로 좋은 곳 -> /etc/stgresql/9.5/main/data
 
 시작
+
 - Postgres 계정으로 접속 후 진행
 - Initdb
 - Pg_ctl start
 - Psql
 
 2대 연동
+
 - Wal 이라는 마스터서버의 로그를 만들어 스탠바이서버로 복사 후 스탠바이 서버에서 로그를 복원하는 방식으로 연동이 된다
 - Wal 방식으로 log-shipping 방식과 streaming 방식이 있다.
 
 #### db backup cronjob
+
 `/etc/rc.local`
+
 - `docker start postgres && docker start tomcat` 추가
 
 ```
@@ -271,25 +310,31 @@ docker cp postgres:/PGSQL_all.dump /home/pi/docker/postgres-pi/
 ```
 
 #### Streaming
+
 Master
+
 - Replication 전용 유저 생성
 - CREATE ROLE repluser WITH REPLICATION PASSWORD 'password' LOGIN;
 - Pg_hba.conf 파일 편집(맨 밑에 추가)
 - Host replication repluser 허용할IP md5
 - Postgresql.conf 편집
-- Listen_addresses = '*'
+- Listen_addresses = '\*'
 - Wal_level = hot_standby
 - Max_wal_senders = 2 wal 파일을 전송 할 수 있는 최대 서버 수
 - Wal_keep_segments = 32 마스터 서버 디렉토리에 보관할 wal 의 갯수
 
 Standby
+
 - `sudo -u postgres /usr/pgsql-9.5/bin/pg_basebackup -h MASTER IP -D /var/lib/pgsql-9.5/data -U repluser -v -P --xlog-method=stream`
 - `postgresql.conf`
+
 ```
 Listen_addresses = '*'
 Hot_standby = on
 ```
+
 - `recovery.conf` 생성
+
 ```
 Standby_mode = on
 Primary_conninfo = 'host=MASTER IP port=5432 user=repluser password=passwrd'
@@ -299,42 +344,45 @@ Primary_conninfo = 'host=MASTER IP port=5432 user=repluser password=passwrd'
 [클러스터링](http://egloos.zum.com/histLinux/v/1227710)
 
 ## oracle DB
+
 - lsnrctl start
 - sqlplus /nolog
 - connect sys/oracle as sysdba
 - startup
 - CREATE TABLE dept(deptno NUMBER(2),
-                    dname VARCHAR2(14),
-                    create_date date);
+  dname VARCHAR2(14),
+  create_date date);
 - desc dept;
-- select * from dept; //확인
+- select \* from dept; //확인
 - alter table dept
-Add (job_id varchar2(9)); -- 테이블에 추가
--alter table dept
-Modify (job_id Number(2)); -- 테이블 수정
--alter table dept
-RENAME COLUMN deptno TO no; -- 칼럼 이름 변경
--alter table dept
+  Add (job_id varchar2(9)); -- 테이블에 추가
+  -alter table dept
+  Modify (job_id Number(2)); -- 테이블 수정
+  -alter table dept
+  RENAME COLUMN deptno TO no; -- 칼럼 이름 변경
+  -alter table dept
 - DROP COLUMN job_id; --- 칼럼 삭제
 - DROP TABLE dept; -- 삭제
--show recyclebin; -- 삭제 되면 recyclebin 으로 가고 이걸 볼 수 있다.
--FLASHBACK TABLE dept TO BEFORE DROP; -- 되살리기
--INSERT INTO dept(deptno,dname,create_date)
-VALUES(10,'maketing','15-feb-0'); --- 열 내용 추가
-- select * from dept where dname = 'it';
+  -show recyclebin; -- 삭제 되면 recyclebin 으로 가고 이걸 볼 수 있다.
+  -FLASHBACK TABLE dept TO BEFORE DROP; -- 되살리기
+  -INSERT INTO dept(deptno,dname,create_date)
+  VALUES(10,'maketing','15-feb-0'); --- 열 내용 추가
+- select \* from dept where dname = 'it';
 - UPDATE dept SET dname='accounting' --- 내용 수정
-WHERE deptno = 10 ; -- dept 의 deptno=10 인 쪽의 dname을 accounting 으로 변경
+  WHERE deptno = 10 ; -- dept 의 deptno=10 인 쪽의 dname을 accounting 으로 변경
 - CREATE TABLE dept(
-Deptno number(2) CONSTRAINT dept_deptno_pk PRIMARY KEY,
-Dname VARCHAR2(14) CONSTRAINT dept_dname_nn NOT NULL,
-Email VARCHAR2(30) CONSTRAINT dept_email_uk1 UNIQUE);
----> primary key 조건을 건 deptno 생성;
-not null 조건을 건 dname 생성;
-unique 조건을 건 email 생성; ---> primary key 는 not null과 unique 조건 포함됨;
-제약조건의 이름은 알아볼 수 있게 저렇게 해주는게 좋음
+  Deptno number(2) CONSTRAINT dept_deptno_pk PRIMARY KEY,
+  Dname VARCHAR2(14) CONSTRAINT dept_dname_nn NOT NULL,
+  Email VARCHAR2(30) CONSTRAINT dept_email_uk1 UNIQUE);
+  ---> primary key 조건을 건 deptno 생성;
+  not null 조건을 건 dname 생성;
+  unique 조건을 건 email 생성; ---> primary key 는 not null과 unique 조건 포함됨;
+  제약조건의 이름은 알아볼 수 있게 저렇게 해주는게 좋음
 
 ## DNS
+
 name server 유형
+
 - Primary : 주 네임서버
 - Secondary : 백업 서버
 - Cache only server : 지사용
@@ -342,7 +390,9 @@ name server 유형
 설치 - `yum install -y bind*`
 
 셋팅
+
 - /etc/named.conf
+
 ```
 Option
 - Allow-query
@@ -356,9 +406,11 @@ Option
 - 마스터 - Allow-transfer {슬레이브 주소;};
 - 슬레이브 - masters {마스터 주소;};
 ```
+
 - /var/named/domain.zone
 
 레코드
+
 - SOA : zone파일의 시작. 도메인명을 적고 점을 꼭 찍는다. 도메인명과 관리자 이메일을 옆에 적는다. 네임서버가 인증 된 자료를 갖고 있음을 의미한다.
 - NS : 해당 도메인에 대한 네임서버를 나타낸다 (?)
 - A : 도메인에 IP를 부여한다.
@@ -367,31 +419,37 @@ Option
 - PTR : ip 주소에 대해 도메인명을 매핑 (역방향)
 
 #### 참고
+
 `/etc/host.conf`
+
 - DNS 주소값 찾을 때 어떤 DNS를 참조할지 정해놓는 파일
 - `/etc/hosts` 등을 먼저 찾게 할 수 있다
 
 `/etc/resolv.conf` - 호스트가 사용하려는 네임서버를 지정하는 파일
 
 상대방 네트워크 찾아가는 순서
+
 1. /etc/hosts
 2. Cached dns data (방문했던 적 있는 곳인지)
 3. DNS server query
+
 - http://www.naver.com query
-    - 10.0.2.200 -> 10.0.2.53:53 query -> root dns server query(힌트 정보만 알려준다)
-    - .com dns server ip
-    - .com dns server query
-    - .com dns server answer
-    - naver.com dns server ip
-    - naver.com dns server
-    - naver.com dns server
-    - http://www.naver.com ip
-    - to 10.0.2.200
-    - http://www.naver.com ip
-    - Browser -> ip address call
+  - 10.0.2.200 -> 10.0.2.53:53 query -> root dns server query(힌트 정보만 알려준다)
+  - .com dns server ip
+  - .com dns server query
+  - .com dns server answer
+  - naver.com dns server ip
+  - naver.com dns server
+  - naver.com dns server
+  - http://www.naver.com ip
+  - to 10.0.2.200
+  - http://www.naver.com ip
+  - Browser -> ip address call
 
 #### Setting
+
 - `vi /etc/named.conf`
+
 ```
 11 line: 10.0.2.53;
 17 line: Allow-query : any;
@@ -404,7 +462,9 @@ Option
 - `service named restart`
 
 And then,
+
 - `vi sana.twice.zone`
+
 ```
 IN SOA 도메인 ; 주소
 //맨 밑에
@@ -432,56 +492,66 @@ www IN A 123.123.123.123 ; [www.abc.net](http://www.abc.net) 도메인이 찾아
 mail IN A 123.123.123.123
 * IN A 123.123.123.123 ; 모든 서브 도메인이 찾아갈 서버 IP
 ```
+
 출처: (http://jobdahan.net/server_linux/895790)
 
 ## storage
+
 기본 파티션 분할
+
 - `/boot` : 부팅 파일들 저장. 첫번째 파티션으로. 부팅 빨라짐. 100~500MB
 - `/`
 - `/tmp` : 웹파일들 저장됨. 보안문제로 분할 필요
 - `swap` : 가상메모리로 사용되는 부분 . 사용자의 메모리의 2배 정도로 설정
 
 LVM
+
 - 논리 볼륨 매니저
 - 기존 파티션으로 분할 해 놓으면 용량 부족이나 증설 시 복잡한데 이를 이용하면 바로 구현할 수 있다.
 
 설정
+
 - /boot 만 100MB로 분리 후 나머지 LVM 으로 만든 후 LVM에서 /(루트), /home, /tmp 로 나눈다.
 - fdisk /dev/sda
 - 디스크 분할
 
 nfs 설정
+
 - /etc/exports 접속 허용할 PC 설정
 - /공유폴더 허용IP(옵션) 허용IP(옵션) (복수 가능)
 - 옵션
-    - r w 읽기 쓰기
-    - no-root-squash 루트 자격으로 접근 가능하도록 마운트
-    - root-squash 루트 자격으로 접근해도 유저로 접근
-    - noaccess 디렉토리 접근 못하게 한다
-    - no_all_squash root를 제외하고 서버와 클라이언트의 사용자들을 하나의 권한을 가지도록 설정한다.
-    - storage에서 포트 열어주고 web 등에서 마운트 시킨다
-    - `mount -t nfs <storage IP>`: /디렉토리 /마운트 할 디렉토리
+  - r w 읽기 쓰기
+  - no-root-squash 루트 자격으로 접근 가능하도록 마운트
+  - root-squash 루트 자격으로 접근해도 유저로 접근
+  - noaccess 디렉토리 접근 못하게 한다
+  - no_all_squash root를 제외하고 서버와 클라이언트의 사용자들을 하나의 권한을 가지도록 설정한다.
+  - storage에서 포트 열어주고 web 등에서 마운트 시킨다
+  - `mount -t nfs <storage IP>`: /디렉토리 /마운트 할 디렉토리
 
 Storage 2대 연동? vs Storage 확장?
 
 nfs 대신 glusterfs 를 쓰면 좋겠다
 
 #### 디스크 설정
+
 - 기본 설정에서 하드 추가
 - 설치 시
-    - 디스크 설정에서
-    - create Custom Layout
-    - create - standard - /boot -
-    - Sda만 선택
-    - 다시 Create
-    - 또 create - LVM Physical Volume -
-    - 전체 할당(Fill to maximum allowable size) - sdb만
-    - Create - LVM Volume Group - 완료
+  - 디스크 설정에서
+  - create Custom Layout
+  - create - standard - /boot -
+  - Sda만 선택
+  - 다시 Create
+  - 또 create - LVM Physical Volume -
+  - 전체 할당(Fill to maximum allowable size) - sdb만
+  - Create - LVM Volume Group - 완료
 
 #### quota
+
 `yum -y quota`
+
 - `vi /etc/fstab`
-/home Defaults 뒤에
+  /home Defaults 뒤에
+
 ```
 usrjquota=aquota.user,grpjquota=aquota.
 group,jqfmt=vfsv1
@@ -491,6 +561,7 @@ group,jqfmt=vfsv1
 - `quotacheck -cugmv /home`
 - `quotaon /home`
 - `repquota /home`
+
 ```
 fdisk /dev/sdc
 N 새 설정
@@ -504,10 +575,12 @@ W 저장
 `pvcreate /dev/sdc1` 피지컬볼륨 생성
 
 볼륨 그룹
+
 - `vgcreate 볼륨명 /dev/sdc1` 볼륨그룹 생성
 - `vgdisplay` 볼륨그룹 확인
 
 로컬 볼륨 LV ( 논리 볼륨 )
+
 - `lvcreate` `-l` (개수로 설정) `-L` (크기로 설정) `-n` (이름) 명령옵션
 - `lvcreate -l 11517 -n` 로컬볼륨이름 볼륨그룹 이름
 - `mkdir /volume`
@@ -515,8 +588,11 @@ W 저장
 - `mount /dev/볼륨그룹/로컬볼륨 /volume`
 
 ## Virtual box Ubuntu HDD 추가
+
 virtual box에서 추가
+
 - 파티션 잡아주기
+
 ```
 fdisk -l
 sudo fdisk /dev/sdb
@@ -539,25 +615,31 @@ uuid 내용을 `/etc/fstab` 에 저장
 `df -h` 로 확인
 
 #### virtual box ubuntu hdd 용량 확장
+
 - `diskpart`로 vhd 용량 확장
 - gpartition iso 설치
 - gpartition으로 vhd 저장공간 설정
 - lvm 으로 잡혀있다면 lvm 확장
 
 확장
+
 - `lvextend /dev/mapper/ubuntu--vg-root -l +2048`
 - `resize2fs /dev/mapper/ubuntu--vg-root`
 
 `df -h` 로 확인
 
 #### How to expand VirtualBox's Virtual Hard Disk - N_CODER
+
 https://pradeepgali.blogspot.com/2014/01/how-to-expand-virtualboxs-virtual-hard.html
 
 ## NFS 서비스
+
 `vi /etc/exports`
+
 - `/home/nfs-share 10.0.2.0/24(rw,sync,no_root_squash,no_all-squash)`
 
 And then,
+
 - `mkdir /home/nfs-share` //nfs-share 폴더에 디렉토리 생성
 - `chown itwill.itwill /home/nfs-share -R` //사용자 권한 설정
 - `service rpcbind start && chkconfig rpcbind on`
@@ -565,24 +647,29 @@ And then,
 - `yum install -y -q nfs*`
 - `df -hT` << 마운트 됐는지 확인
 - `ls -al /home` << 파일 확인;
-    - 아이디와 비밀번호 설정을 안해놔서 권한 설정이 안되있음
+  - 아이디와 비밀번호 설정을 안해놔서 권한 설정이 안되있음
 - `useradd itwill`
 - `passwd itwill`
 - `umount 10.0.2.21:/home/nfs-share`
 - `mount -t nfs 10.0.2.21:/home/nfs-share` 연결할 당시 계정 따라감
 
 ## FTP 서비스
+
 - `vi etc/vsftpd`
+
 ```
 12 : No
 96 : 주석 제거 ( chroot <- 최상위디렉토리 한계설정 사용자가 접근 못하게 )
 116 : use_localtime=YES < 우리나라 시간으로 맞춰줌;;
 ```
+
 - `service vsftpd start`
 - `chkconfig vsftpd on`
 
 [DNS]
+
 - `vi /etc/named.conf`
+
 ```
 11 line: 10.0.2.53; 추가
          Allow-query : any; 추가
@@ -590,79 +677,89 @@ And then,
 37 : type master;
 38 : name.zone
 ```
+
 - `service named start && chkconfig named on`
 - `cd /var/named`
 
 [WINDOW]
 DNS 주소 10.0.2.53 으로 바꿔준다.
+
 - `cp named.localhost name.zone -a`
 - `service named restart`
 
 ## video recording
+
 [obs-studio](https://obsproject.com/wiki/install-instructions#linux)
+
 - `apt install ffmpeg`
 - `sudo add-apt-repository ppa:obsproject/obs-studio`
 - `sudo apt update`
 - `sudo apt install obs-studio`
 - filter setting
-    - noise suppression -60dB
-
+  - noise suppression -60dB
 
 ## WD Passport Unlock in linux
+
 - https://github.com/0-duke/wdpassport-utils
 - `sudo pip3 install git+https://github.com/0-duke/wdpassport-utils`
 - `sudo wdpassport-utils.py -u -d /dev/sdb`
 
-
 ## linux battery
+
 - status check
- - `upower -i /org/freedesktop/UPower/devices/battery_BAT0`
- - or `sudo tlp-stat -b`
+- `upower -i /org/freedesktop/UPower/devices/battery_BAT0`
+- or `sudo tlp-stat -b`
 - performance upgrade
- - TLP
+- TLP
 
 #### i3
+
 - config file `~/.config/i3/config`
 - network manager
- - `nmcli device wifi connect <wifi-name> password <password>`
+- `nmcli device wifi connect <wifi-name> password <password>`
 
 #### w3m
+
 - `apt-get install w3m-img`
 - need component
 - history of search list > `~/.w3m/history`
 - search shortcut
 
 #### code-server
+
 - code-server 설치하면 브라우저로 code 사용 가능
- - code-server로 실행하면 코드를 불러와야함
-  - 볼륨 시키면 된다
-  - 프로젝트 볼륨 따로 설정, 볼륨 따로 되있어서 도커 죽어도 유지가능
+- code-server로 실행하면 코드를 불러와야함
+- 볼륨 시키면 된다
+- 프로젝트 볼륨 따로 설정, 볼륨 따로 되있어서 도커 죽어도 유지가능
 
 #### WSL
+
 1. windows 에 wsl 설치 후
 2. vscode 설치 후 빌드환경 셋업
 3. 윈도우 업데이트 (빌드번호 18xxx 이상)
 4. 설정->업데이트 및 복구에서 개발자모드로 변경
 5. 윈도우 기능에서 [서브 터미널 사용] 체크, [가상화 사용] 체크
-7. 터미널에서 명령어 입력(아마도 위에 체크하는 부분과 동일한 듯)
-    - `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
-    - `Enable-windowsOptionalFeature -Online -FeatureName VirtualMachinePlatform`
-8. store에서 우분투 설치
-    - or in terminal (ubuntu 1804) `Invoke-WebRequeset -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu1804.zip -UseBasicParsing`
-    - or in terminal (ubuntu 1604) `Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing`
-    - `Add-AppxPackage .\Ubuntu.appx`
-    - `Expand-Archive ~/Ubuntu.zip C:\Distros\Ubuntu`
-9. 확인
-    - `wsl -l -v`
+6. 터미널에서 명령어 입력(아마도 위에 체크하는 부분과 동일한 듯)
+   - `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
+   - `Enable-windowsOptionalFeature -Online -FeatureName VirtualMachinePlatform`
+7. store에서 우분투 설치
+   - or in terminal (ubuntu 1804) `Invoke-WebRequeset -Uri https://aka.ms/wsl-ubuntu-1804 -OutFile ~/Ubuntu1804.zip -UseBasicParsing`
+   - or in terminal (ubuntu 1604) `Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing`
+   - `Add-AppxPackage .\Ubuntu.appx`
+   - `Expand-Archive ~/Ubuntu.zip C:\Distros\Ubuntu`
+8. 확인
+   - `wsl -l -v`
 
 > 원래 wsl이 설치되고 2로 업그레이드 시켜줘야 하는데 win10 home이라서 그런지 최신버전으로 업데이트해서 그런지 2로 바로 적용됨
 
 #### standard stream
+
 - stdin
 - stdout
 - stderr
 
 #### SIGTERM
+
 - 종료 신호. 일반적으로 ctrl+z, ctrl+c 등을 눌렀을 때 신호가 발생하게 되있다
 - 각 프로그래밍 언어에서 시그널 호출이 가능하다
 - SIGINT, SIGKILL 등도 있는데, SIGKILL은 즉각 종료되지만
@@ -670,43 +767,51 @@ DNS 주소 10.0.2.53 으로 바꿔준다.
   등으로 활용 가능하다
 
 #### crontab not working
+
 - `/etc/crontab` <-> `crontab -e`
- - `/etc/crontab` is system cron
- - `crontab -e` is user cron
+- `/etc/crontab` is system cron
+- `crontab -e` is user cron
 - `crontab <filename>`
 
 #### android mirroring app
+
 - scrcpy
- - `--bit-rate 2M --max-size 800` bitrate down
- - `-S` turn screen off
- - https://github.com/Genymobile/scrcpy
+- `--bit-rate 2M --max-size 800` bitrate down
+- `-S` turn screen off
+- https://github.com/Genymobile/scrcpy
 - kde connect
- - `ufw allow 1714:1764/udp`
- - `ufw allow 1714:1764/tcp`
+- `ufw allow 1714:1764/udp`
+- `ufw allow 1714:1764/tcp`
 
 #### replace all directory in linux using regex
+
 - `find ./ -type f | xargs sed -i 's/  / /g'`[^1]
 
 #### vim visual mode selection
+
 - `vnoremap // y:Ag <C-R>=fnameescape(@")<CR><CR>`
- - https://stackoverflow.com/questions/28011155/using-ack-vim-on-visual-selection
+- https://stackoverflow.com/questions/28011155/using-ack-vim-on-visual-selection
 
 #### vim lag
+
 - `:syntime on` -> move around -> `:syntime report`
- - encode uri
- - highlight matching pair
- - lsp --> make on/off
- - airline - git get head
- - https://stackoverflow.com/questions/19030290/syntax-highlighting-causes-terrible-lag-in-vim
+- encode uri
+- highlight matching pair
+- lsp --> make on/off
+- airline - git get head
+- https://stackoverflow.com/questions/19030290/syntax-highlighting-causes-terrible-lag-in-vim
 
 ## external monitor
+
 - `xrandr --newmode`
 - `xrandr --addmode`
 - `xrandr --output`
 - `x11vnc -clip`
 
 ! xrandr: cannot find output 'VIRTUAL1'
+
 - write to `/usr/share/X11/xorg.conf.d/20-intel.conf`
+
 ```
 Section "Device"
     Identifier "intelgpu0"
@@ -719,27 +824,31 @@ EndSection
 when entering full screen whatever. it is freezing.
 
 ## ipad as second monitor
+
 1. create intel config file
 2. reboot
 3. `./ipad.sh -b -h`
 
 ## numpad as mouse pointer
+
 setting -> assistive -> mouse keys
-set mouse pointer speed
-    - `sudo apt-get install xkbset`
-    - `xkbset ma 60 10 10 5 10`
+set mouse pointer speed - `sudo apt-get install xkbset` - `xkbset ma 60 10 10 5 10`
 
 ## linux copy and paste in terminal with mouse
+
 drag copy area -> mouse center button click in terminal window
 
 ## ubuntu backup, snapshot
+
 timeshift
 
 ## linux settings
+
 shortcut - pomodoro alt+space
 bluetooth with my phone
 
 ## linux text to image
+
 ```
 echo "Hello world" | convert -size 360x360 xc:white -font "FreeMono" \
   -pointsize 12 -fill black -annotate +15+30 "@-" -trim \
@@ -747,44 +856,54 @@ echo "Hello world" | convert -size 360x360 xc:white -font "FreeMono" \
 ```
 
 ## font broken
+
 - every font to square
- - `sudo fc-cache --force --verbose`
- - and reboot
+- `sudo fc-cache --force --verbose`
+- and reboot
 
 ## terminal app
+
 - [terminal browser](https://www.brow.sh/docs/extensions/)
 
 ## vim window size
+
 - `ctrl-w 10 +` window 10 line size up
 
 ## vim inoremap
+
 - `imap <key> <C-O><complex-key>`
 - `<C-O>` means insert mode to revert to normal mode momentarily
 - https://vi.stackexchange.com/questions/13162/inoremap-nnoremap
 
 ## ubuntu font
+
 - mv ttf file to `~/.fonts`
 - terminal font list update `fc-cache -f -v`
 - inconsolata
 
 ## python in vim
+
 - `autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>`
- - https://stackoverflow.com/questions/18948491/running-python-code-in-vim
+- https://stackoverflow.com/questions/18948491/running-python-code-in-vim
 
 ## linux keyboard delay
+
 - `xset r rate 200 30`
- - https://wiki.archlinux.org/index.php/Xorg/Keyboard_configuration#Adjusting_typematic_delay_and_rate
+- https://wiki.archlinux.org/index.php/Xorg/Keyboard_configuration#Adjusting_typematic_delay_and_rate
 
 ## touchpad gesture
+
 - browser tab close
 - alt tab
 - back, forward
 - notification center
 
 ## crontab 에 스크립트 에러 없이 등록하기
+
 `echo "0 */1   * * *   root    /home/sh/dotfiles/rclone.sh >/dev/null 2>&1" >> /etc/crontab`
 
 ## TLS
+
 ```
 openssl req -X509 -nodes -days 365 -newkey rsa:2048 \
     -out ingress-tls.crt \
@@ -793,40 +912,46 @@ openssl req -X509 -nodes -days 365 -newkey rsa:2048 \
 ```
 
 #### ssh key-gen
+
 `ssh-keygen -t rsa`
 
 mac에서는 ssh-keygen 으로 키 만들고 pbcopy로 복사 할 수 있다.
 
 ubuntu에서는 xclip 이용
+
 - `alias clipboard='xclip -selection clipboard'`
 
-
 #### 라즈베리파이 와이파이 등록
+
 - `/etc/network/interfaces`
 - `/etc/wpa_supplicant/wpa_supplicant.conf`
-	- 먼저 wpa_passphrase wifi명 wifi비밀번호
-	입력해서 psk 값 얻은 후 복사해서
-	conf 파일에 저장
+  - 먼저 wpa_passphrase wifi명 wifi비밀번호
+    입력해서 psk 값 얻은 후 복사해서
+    conf 파일에 저장
 
 #### ubuntu theme 꾸미기
+
 - ~/.themes 또는 /usr/share/.themes 폴더 생성
 - gnome look 사이트 들어가서 gnome-shell 또는 gtk3에서 원하는 테마 찾기
 - 다운로드하여 압축 풀어서 폴더째로 .themes에 넣는다
 - tweak에서 폴더이름 찾을 수 있다.
 
 #### 리눅스에서 fzf로 파일명을 찾아서 삭제하려면
+
 fzf | xargs rm 이런 식으로 쓴다
 
 #### github without password
+
 - 처음 클론할 때 설정하던지
-    - `git clone `
+  - `git clone `
 - 이미 갖고 있는 프로젝트에서는 리모트 설정
-    - `git remote set-url origin git@github.com/<username>/<repo>.git`
+  - `git remote set-url origin git@github.com/<username>/<repo>.git`
 - https://zzpanqing.github.io/2017/02/28/github-push-without-username-and-password.html
 
 #### 쉘명령어 앞에 &붙이면 백그라운드 작업
 
 #### albert
+
 mac의 alfred를 ubuntu에서 비슷하게 구현.
 이걸로 문서와 북마크를 한 곳에서 검색할 수 있다.
 근데 북마크를 한번씩 들여다보면서 뭐가 있는지 알때도 있는데 그것은 따로
@@ -834,92 +959,97 @@ mac의 alfred를 ubuntu에서 비슷하게 구현.
 파일 내부 단어 검색이 안되는데 구현되면 좋겠다 > 근데 그러면 검색이 오래걸리겠다
 
 #### markdown 줄 수 검색
-wc -l *.md | sort -rh | head -n 16
 
+wc -l \*.md | sort -rh | head -n 16
 
 #### 변경 사항만 가져와서 빌드하기
+
 ```
-git diff --name-only | grep 'packages' | sed 's,^\(.*\)/\(.*\)/\([^/]*\),\2,'  
-  
-for o in $OUTPUT;  
-do  
-echo $o;  
-done;  
-  
----  
-  
-FROM node:14.17.1 as build  
-ARG BUILD_CONTEXT  
-  
-WORKDIR /app  
-COPY package.json .  
-COPY yarn.lock .  
-COPY ./packages/$BUILD_CONTEXT/package.json packages/$BUILD_CONTEXT/  
-RUN yarn install  
-  
-COPY ./packages/$BUILD_CONTEXT packages/$BUILD_CONTEXT  
-RUN yarn build:$BUILD_CONTEXT  
-  
-FROM nginx:stable-alpine  
-ARG BUILD_CONTEXT  
-COPY --from=build /app/packages/$BUILD_CONTEXT/build /usr/share/nginx/html  
-COPY nginx.conf /etc/nginx/conf.d/default.conf  
-EXPOSE 80  
-CMD ["nginx", "-g", "daemon off;"]  
----  
-  
-  
-FROM node:14.17.1 as build  
-ARG BUILD_CONTEXT  
-ARG BUILD  
-  
-WORKDIR /app  
-COPY package.json .  
-COPY yarn.lock .  
-COPY ./packages/banadio-common packages/banadio-common  
-COPY ./packages/$BUILD_CONTEXT/package.json packages/$BUILD_CONTEXT/  
-COPY ./packages/$BUILD_CONTEXT packages/$BUILD_CONTEXT  
-RUN yarn install --production  
-RUN yarn build:$BUILD  
----  
-  
-FROM node:14.17.1-alpine  
-ARG BUILD_CONTEXT  
-ARG BUILD  
-  
-RUN addgroup -g 1001 -S next  
-RUN adduser -S nextjs -u 1001  
-  
-WORKDIR /app  
-  
-COPY ./packages/banadio-common packages/banadio-common  
-COPY --from=build /[app/package.json](http://app/package.json) ./package.json  
-COPY --from=build --chown=nextjs:next /[app/packages/$BUILD_CONTEXT/.next](http://app/packages/$BUILD_CONTEXT/.next) packages/$BUILD_CONTEXT/.next  
-COPY --from=build /app/packages/$BUILD_CONTEXT/public packages/$BUILD_CONTEXT/public  
-COPY --from=build /[app/packages/$BUILD_CONTEXT/package.json](http://app/packages/$BUILD_CONTEXT/package.json) packages/$BUILD_CONTEXT/package.json  
-COPY --from=build /app/packages/$BUILD_CONTEXT/node_modules packages/$BUILD_CONTEXT/node_modules  
-RUN yarn workspace $BUILD_CONTEXT add next  
-  
-USER nextjs  
-  
-EXPOSE 3000  
+git diff --name-only | grep 'packages' | sed 's,^\(.*\)/\(.*\)/\([^/]*\),\2,'
+
+for o in $OUTPUT;
+do
+echo $o;
+done;
+
+---
+
+FROM node:14.17.1 as build
+ARG BUILD_CONTEXT
+
+WORKDIR /app
+COPY package.json .
+COPY yarn.lock .
+COPY ./packages/$BUILD_CONTEXT/package.json packages/$BUILD_CONTEXT/
+RUN yarn install
+
+COPY ./packages/$BUILD_CONTEXT packages/$BUILD_CONTEXT
+RUN yarn build:$BUILD_CONTEXT
+
+FROM nginx:stable-alpine
+ARG BUILD_CONTEXT
+COPY --from=build /app/packages/$BUILD_CONTEXT/build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+---
+
+
+FROM node:14.17.1 as build
+ARG BUILD_CONTEXT
+ARG BUILD
+
+WORKDIR /app
+COPY package.json .
+COPY yarn.lock .
+COPY ./packages/banadio-common packages/banadio-common
+COPY ./packages/$BUILD_CONTEXT/package.json packages/$BUILD_CONTEXT/
+COPY ./packages/$BUILD_CONTEXT packages/$BUILD_CONTEXT
+RUN yarn install --production
+RUN yarn build:$BUILD
+---
+
+FROM node:14.17.1-alpine
+ARG BUILD_CONTEXT
+ARG BUILD
+
+RUN addgroup -g 1001 -S next
+RUN adduser -S nextjs -u 1001
+
+WORKDIR /app
+
+COPY ./packages/banadio-common packages/banadio-common
+COPY --from=build /[app/package.json](http://app/package.json) ./package.json
+COPY --from=build --chown=nextjs:next /[app/packages/$BUILD_CONTEXT/.next](http://app/packages/$BUILD_CONTEXT/.next) packages/$BUILD_CONTEXT/.next
+COPY --from=build /app/packages/$BUILD_CONTEXT/public packages/$BUILD_CONTEXT/public
+COPY --from=build /[app/packages/$BUILD_CONTEXT/package.json](http://app/packages/$BUILD_CONTEXT/package.json) packages/$BUILD_CONTEXT/package.json
+COPY --from=build /app/packages/$BUILD_CONTEXT/node_modules packages/$BUILD_CONTEXT/node_modules
+RUN yarn workspace $BUILD_CONTEXT add next
+
+USER nextjs
+
+EXPOSE 3000
 # CMD ["yarn", "start:BUILD"]
 ```
 
 # GIT
+
 사용자 정보 등록
+
 - `git config --global user.name "shdkej"`
 - `git config --global user.email shdkej@naver.com`
 - `--global` : 절대적으로 설정된다. 프로젝트마다 다른 이름과 메일을 쓰려면 이 옵션을 뺀다
 - commit 할 때마다 이 정보를 사용한다
 
 git bash 홈 디렉토리 변경법
+
 - `.bashrc` 파일을 만들어 원하는 위치를 입력한다
 - bash 실행 - `vi ~/.bashrc`
 - `$HOME` 환경변수를 바꾼다
 - 바로가기 아이콘의 시작 위치를 바꾼다.
 
 #### ADD - COMMIT - PUSH
+
 - `git add {filename}`
 - `git commit -m "comment"`
 - `git remote add origin <원격 서버 주소>`
@@ -927,82 +1057,93 @@ git bash 홈 디렉토리 변경법
 - `git pull` - 원격 저장소 내용 가져오기
 
 #### Branch 관리
+
 - 생성 : `git branch <branch-name>`
 - 삭제 : `-d`
 - Branch간 이동 : `git checkout <branch-name>`
 - 목록
-    - `git branch`
-    - `-r` : 원격저장소의 branch 리스트를 보여준다
-    - `-a` : 모든저장소를 보여준다.
+  - `git branch`
+  - `-r` : 원격저장소의 branch 리스트를 보여준다
+  - `-a` : 모든저장소를 보여준다.
 
 [ ] 원격 저장소 branch 가져오기
 
 #### push without login
+
 - `ssh-keygen -t rsa -C "<git email>" -f $HOME/.ssh/<ssh name>`
 - github web page -> settings -> SSH and GPG keys -> New SSH keys.
 - `ssh -T git@github.com` # test to git
 - `.git/config` > `url = git@github.com:<user>/<repository>.git`
 
 #### git sensitive files delete
+
 - https://stackoverflow.com/questions/872565/remove-sensitive-files-and-their-commits-from-git-history
 - it also deleted file...
 
 #### git hooks
+
 - `cp .git/hooks/pre-commit.sample .git/hooks/pre-commit`
 - need permission
- - `chmod +x .git/hooks/pre-commit`
+- `chmod +x .git/hooks/pre-commit`
 
 #### git ignore
+
 - `git rm --cache (folder -r) <filename>`
 
 #### git show
+
 커밋 메시지, 수정된 파일 목록, 변경 내용 확인용
 
 #### git simulation
+
 https://learngitbranching.js.org/?locale=ko
 
 #### git cheatsheet
+
 상황별 스크립트를 만든다.
 반복적으로 쓴다
 
 지금 상황
+
 - github flow로 진행
 - master에 운영 소스
 - 기능 브랜치 여러 개 진행 중
 - 1. 기능 브랜치에 접근해서 내 작업을 진행
-    - 기능 브랜치에 머지?
+  - 기능 브랜치에 머지?
 - 2. 내 브랜치를 만들어서 기능 브랜치를 땡겨오기?
 
 꼬인 상황
+
 - 기능 브랜치에 들어가서 작업 중
 - 기능 브랜치의 최신 버전을 받기 위해 내 작업은 커밋을 만들어놓고 풀을 했다
 - 가져온 최신 버전이 충돌을 일으켜서 HEAD^로 되돌아갔다.
 - 충돌버전은 없어졌지만, 내 커밋도 없어졌다
 - 다시 내가 작업하던 상태로 돌리고, 최신 커밋도 받고 싶다.
 - 어떻게 하면 될까
-    - 새 브랜치에서 기능 브랜치를 머지한다.
-    - git fetch를 하고, rebase로 내 커밋을 마지막 커밋과 합치고, 작업한다.
-    - 또는 rebase 대신 merge를 해서 분기를 보여줄 수 있다.
-    - pull을 바로 해도 똑같이 동작한다. --rebase를 넣으면 merge 대신 rebase한다.
-    - 내 문제는 pull을 하고 reset HEAD^ 한 부분에서 꼬임이 있었던 것 같다
-    - 게다가 stash도 pop 했으니 뭔가 변화가 생겼을 것 같다.
+
+  - 새 브랜치에서 기능 브랜치를 머지한다.
+  - git fetch를 하고, rebase로 내 커밋을 마지막 커밋과 합치고, 작업한다.
+  - 또는 rebase 대신 merge를 해서 분기를 보여줄 수 있다.
+  - pull을 바로 해도 똑같이 동작한다. --rebase를 넣으면 merge 대신 rebase한다.
+  - 내 문제는 pull을 하고 reset HEAD^ 한 부분에서 꼬임이 있었던 것 같다
+  - 게다가 stash도 pop 했으니 뭔가 변화가 생겼을 것 같다.
 
 - 리베이스는 어떻게 써야 효과적일까
-    - 내가 기능 브랜치에서 빠져나와서 작업하고 리베이스 해서 합치면 되나!?
-    - 그러면 마찬가지로 마스터만 남고 개발하던 흔적들은 합쳐지게 할 수 있겠다?
+  - 내가 기능 브랜치에서 빠져나와서 작업하고 리베이스 해서 합치면 되나!?
+  - 그러면 마찬가지로 마스터만 남고 개발하던 흔적들은 합쳐지게 할 수 있겠다?
 - 이전 커밋으로 갔다가 원래 위치로 돌아오는 법은?
-    - log에서 돌아간 상태가 맨 위에 있게 되지 않나?
+  - log에서 돌아간 상태가 맨 위에 있게 되지 않나?
 - 작업하다가 버그 픽스할 게 생기면 커밋해놓고 리베이스 -i 해서 쓸데없는 커밋은
   빼고 다른 라인으로 만들 수 있다. 그래도 그 커밋은 남아있어서 따로 올릴 수
   있겠지?
-    - 그러면 그 커밋을 어떻게 조회하지? 브랜치 달라고 커밋 조회 가능한가?
+  - 그러면 그 커밋을 어떻게 조회하지? 브랜치 달라고 커밋 조회 가능한가?
 
-git pull = git fetch(원격 저장소의 상태를 다운받고)
-    + git merge(내 커밋을 원격저장소와 합친다)
-
+git pull = git fetch(원격 저장소의 상태를 다운받고) + git merge(내 커밋을 원격저장소와 합친다)
 
 ## cleaning a big size file in all git commit
+
 bfg
+
 ```
 docker run -it --rm \
     --volume "$PWD:/home/bfg/workspace" \
@@ -1017,14 +1158,18 @@ git reflog expire --expire=now --all && git gc --prune=now --aggressive
 other way - git filter-branch
 
 #### git 브랜치 바꿔서 현재 수정 가져가기
+
 수정을 했는데 브랜치를 바꿔서 커밋하고 싶은 경우가 있다
+
 ```
 git stash
 git stash branch <new-branch> stash@{0}
 ```
 
 #### git ssh
+
 `~/.ssh/config`에 특정 ssh key를 등록하면 id_rsa 대신 다른 키를 인식 시킬 수 있다
+
 ```
 Host github.com
     HostName github.com
@@ -1032,19 +1177,22 @@ Host github.com
     IdentityFile ~/.ssh/github
 ```
 
-
 # ETC
+
 ## prometheus
+
 - node-exporter
-    - collect system metrics
+  - collect system metrics
 - alert-manager
 
 #### ELK vs TICK
+
 - ELK -- log metrics
 - TICK -- system metrics
 - what is prometheus, loki,
 
 #### grafana alert
+
 monitoring 서버도 테스트 서버용과 프로덕션 서버용을 따로 두나?
 
 alert를 만드려면 graph여야하고, $variable 로 되있는 템플릿을 쓸 수 없다.
@@ -1053,46 +1201,56 @@ alert를 만들고 싶은 graph를 복사해서 variable을 고치고 사용하�
 sensu는 어떤 기능들을 제공해주고 있지?
 
 grafana daily report
+
 - enterprise 기능이었다. 오픈소스로 구현된 것도 있을 것이다
 
 ## TICK
+
 - too heavy
 - I want to find lightweight visualistic monitoring service
 - go to prometheus
 
 ## Benchmark
+
 1. 구글개발자도구 audits
 
 [[Architecture]]
 
 #### nginx alternative
+
 - [openlitespeed](https://openlitespeed.org/)
 
 ## ansible
+
 - https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-18-04
 - setting /etc/ansible/hosts
 - terraform provision execute only during create
 
 #### ansible command vs shell
+
 command isn't running in $HOME, shell is
 command can't use operations like <,>,|,&
 command is more secure.
 https://blog.confirm.ch/ansible-modules-shell-vs-command/
 
 #### ansible
+
 - ansible-galaxy
 - setting `/etc/ansible/hosts` file or make hosts file with `-i`
-    - it need `,`
+  - it need `,`
+
 ```
 [webserver]
 server_ip
 # <work_directory>/hosts
 ```
+
 - hosts test `ansible webserver -m ping -i hosts --private-key <private-key> -u <user>`
- - https://alex.dzyoba.com/blog/terraform-ansible/
+- https://alex.dzyoba.com/blog/terraform-ansible/
 - how to connect with pub file
 
 ## Nginx letsencrypt
+
 - DNS setting
 - install letsencrypt
 - `letsencrypt certonly --standalone`
@@ -1100,10 +1258,12 @@ server_ip
 - run Nginx
 
 ## terraform vs serverless
+
 - note-reminder has terraform trigger option.
 - it's not good..
 
 #### 테라폼만 쓸지 서버리스를 같이 쓸지 고민중
+
 서버리스는 개별적인 앱을 빠르게 빌드하고 다시 만들 때 가볍게 사용하기 좋고
 테라폼은 좀 더 넓게 공유되는 자원을 관리할 때 쓰기 좋다
 
@@ -1111,8 +1271,10 @@ server_ip
 https://www.serverless.com/blog/definitive-guide-terraform-serverless/
 
 ## terraform
+
 - Need update when changing a provisioner
 - ! resource "null_resource" -> null
+
   - Do `terraform init`
 
 - terraform taint aws_instance.example-server
@@ -1127,10 +1289,11 @@ https://www.serverless.com/blog/definitive-guide-terraform-serverless/
 - ! aws_instance remote-exec ssh connection not working
   - user = "root" -> user = "ubuntu"
 - `letsencrypt -d <domain> -m <email> -n(all agree) --agree-tos`
+
   - https://github.com/ployst/docker-letsencrypt/issues/18
 
 - gcp metadata need ${}
- - `ssh-keys = "username:${file("<PATH>")}"`
+- `ssh-keys = "username:${file("<PATH>")}"`
 - Event Handling with sns, sqs
 - https://dev.to/frosnerd/event-handling-in-aws-using-sns-sqs-and-lambda-2ng
 - lambda function to python
@@ -1145,6 +1308,7 @@ https://www.serverless.com/blog/definitive-guide-terraform-serverless/
 - every apply update s3, using `etag`
 
 #### terraform ansible
+
 - for provision `sleep 120;` is good to waiting ec2 instance creation
 - ansible-playbook to make with ip, ip + `,`
 - terraform has `depends_on`
@@ -1152,17 +1316,21 @@ https://www.serverless.com/blog/definitive-guide-terraform-serverless/
 #### use module. For different folders can use once.
 
 #### github action terraform
+
 - how to hide secret file
   - gcp credential file
 
 #### ! change backend bucket
+
 need delete `.terraform` dir, and `terraform init`
 
 #### AWS Dynamodb terraform
+
 - attribute need index
 - any key can write, if exist with attribute
 
 ## serverless
+
 - install `curl -o- -L https://slss.io/install | bash`
 - !Error: spawn /home/sh/.serverless/bin/xdg-open ENOENT
   - no install xdg-open. manual install and copy to serverless/bin directory
@@ -1171,36 +1339,44 @@ need delete `.terraform` dir, and `terraform init`
   - run `serverless` for first setting
 
 #### serverless
+
 - python requirements
-    - need install plugin serverless-python-requirements
+  - need install plugin serverless-python-requirements
 
 #### serverless
+
 - json으로 invoke 안됨
 - nltk 다운로드 후 파일 못읽음
 - konlpy 사용 시 java환경 필요한데 안됨
 
 ## vault
+
 - install file
 - move bin directory
 
 #### vault in gcp
+
 1. run docker ``
-    - what is different with server-mode and another
+   - what is different with server-mode and another
 2. add ssh
 3. save file
 4. read file
 
 ## google calendar api
+
 1. credential.json 생성
 2. `pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib`
 3. 코드 실행
 4. 인증
 5. token.pickle 생성되고 코드 실행됨
+
 - https://developers.google.com/calendar/quickstart/python
 
 ## nagios
+
 Docker로 설치 후
 `/opt/nagios/etc/` 설정파일 설정
+
 - `/etc/resource` : 환경변수 설정파일
 - object/Commend
 - object/contacts
@@ -1209,39 +1385,47 @@ Docker로 설치 후
 - nagios
 
 window 는 nsclient 설치
+
 - 서버에서 command.cfg 파일에서 check_nt 부분 비밀번호 명시
 - Telegram 연동 소스 받아서 설정
 
 #### for docker monitoring
+
 `chown nagios /var/run/docker.sock`
 
 #### nagios 비밀번호 변경
+
 - `htpasswd -c /opt/nagios/etc/htpasswd.users nagiosadmin`
 - 콘솔로 비밀번호 입력
 
 ## aws lambda cronjob
+
 - using cloudwatch event rule, event target, lambda permission
 - more option cloudwatch log group, cloudwatch log subscription filter
 - https://www.thedevcoach.co.uk/terraform-lambda-scheduled-event/
 
 #### serverless aws sqs lambda
+
 - sqs to lambda message parsing
 - event['Records'][0]['body']
 - lambda python requests
 - cannot version 3.8, can 3.6
 
 ## devdash
+
 - google analytic settings
 - enable google report api
 - export project json
 
 #### cloud
+
 - L/B free cloud
-    - nothing
+  - nothing
 - GCP app engine 28/d free
-    - it can be scaling
+  - it can be scaling
 
 #### Current Used infra
+
 - telegrambot(serverless)
 - monitoring
 - content based recommend(need s3 csv file)(terraform)
@@ -1250,33 +1434,38 @@ window 는 nsclient 설치
 - github pages
 - cloudflare
 - empty
- - ec2
- - gce
- - gcp app engine
- - heroku
+- ec2
+- gce
+- gcp app engine
+- heroku
 - oracle 2대
 
 ## 카프카와 다른 메시지큐
+
 카프카는 분산, 고가용성, 고속에 특화
 근데 무겁다
 
 가벼운데 고가용성만 지원되면 좋겠다
 
 ## gRPC
+
 (Remote Procedure Call)
 
 gRPC 4가지 스트리밍 방식
-* 단일
-* 서버 스트리밍
-* 클라이언트 스트리밍
-* 양방향 스트리밍
+
+- 단일
+- 서버 스트리밍
+- 클라이언트 스트리밍
+- 양방향 스트리밍
 
 3가지 stub
-* Blocking stub
-* (Async) stub
-* Future stub
+
+- Blocking stub
+- (Async) stub
+- Future stub
 
 gRPC가 필요한 이유
+
 - CORBA 등 과거의 RPC는 높은 복잡도, 높은 학습곡선, 낮은 개발생산성이 문제였다
 - RESTful이 낮은 복잡도, 낮은 학습곡선 등으로 잘 사용하게 됨
 - 그러나 게임 등에서는 성능상의 이유로 위의 CORBA 등이 사용되고 있었음.
@@ -1284,6 +1473,7 @@ gRPC가 필요한 이유
 
 Binary Protocol - Text Protocol(REST)
 HTTP/2 base
+
 - Connection Multiplexing
 - Header Compression
 - 양방향 Streamming
@@ -1292,14 +1482,16 @@ Browser에서 지원해야 함
 데이터가 Binary라 바로 읽기 힘듬
 
 #### grpc
+
 - protoc 설치: `apt install -y protobuf-comiler`
 - buf 설치: https://docs.buf.build/installation/
 - `buf.yaml`로 디펜던시 설치
-    - `buf beta mod update`
+  - `buf beta mod update`
 - `buf.gne.yaml`로 proto 파일 변환
 - 생성된 swagger.json 을 브라우저에서 보려면 swagger-ui를 설치해야 한다
 
 #### grpc
+
 gateway에 grpc를 어떻게 등록시키나를 놓쳤는데
 알고보니 grpc서버를 따로 실행하고 gateway에 포트를 알려줘서 접근하게 하는
 방식이었다.
@@ -1307,8 +1499,8 @@ gateway에 grpc를 어떻게 등록시키나를 놓쳤는데
 grpc gateway에서 루트 url은 지원을 안한다. 따로 http server에서 작업을 해줘야
 한다.
 
-
 #### grpc
+
 데이터 아웃풋을 배열로 출력할 때 배열만으로 출력이 안되고 메시지 형태로 된다
 name: [arr1,arr2]
 그래서 받는 쪽에서 name을 골라서 받아야 되는데 이러면 안된다
@@ -1317,6 +1509,7 @@ name: [arr1,arr2]
 
 array 안에서 이름 말고 다른 방식으로 값을 가져오는 방법은?
 각 값마다 일일이 찾는 방법 밖에 없나...
+
 - marshal, unmarshal
 
 grpc message에 담는 방법 외에 google http body를 이용해서 담을 수 있다.
@@ -1324,24 +1517,26 @@ grpc message에 담는 방법 외에 google http body를 이용해서 담을 수
 `returns (google.api.HttpBody)`
 
 #### grpc
+
 1. object.proto 파일 생성
 2. buf.gen.yaml 파일 생성 // proto-gen-go로 할 수 있지만 설정 일일이 하기 번거롭다
-    ```
-    version: v1beta1
-    plugins:
-      - name: go
-        out: ./pb
-        opt:
-          - paths=source_relative
-      - name: go-grpc
-        out: ./pb
-        opt:
-          - paths=source_relative
-    ```
+   ```
+   version: v1beta1
+   plugins:
+     - name: go
+       out: ./pb
+       opt:
+         - paths=source_relative
+     - name: go-grpc
+       out: ./pb
+       opt:
+         - paths=source_relative
+   ```
 3. buf generate
 4. server.go 로 proto에서 정의한 함수 구현
 
 #### grpc 구현 시
+
 client도 같이 구현해야하나??
 그러면 메인 로직에서 CRUD 만들고, server에서 CRUD 만들고, client에서 또 만들어야
 한다. ㄷㄷㄷ
@@ -1350,25 +1545,32 @@ client도 같이 구현해야하나??
 쓰도록 되어있다.
 
 #### grpc 통신 속도 확인
+
 grpc가 아니어도 되지만 grpc로 하면 속도를 확보할 수 있다.
+
 - [ ] grpc호출하려면 grpc호출 로직을 짜야하나? 간단하게 호출할 수 있는 방법은?
 
 #### reference
+
 - https://devjin-blog.com/golang-grpc-server-4/
 - https://deepbaksu.github.io/2021/05/01/how-to-REST-from-gRPC/
 - https://tech.buzzvil.com/handbook/grpc/
 
 ## text preprocessing
+
 - 단어 빈도 수 체크
 - 조사 제거
 - 불용어 제거
 
 ## react table
+
 react-table (검색, 정렬)
 react-table-filter (각 열별로 겹치는 이름 필터 가능)
+
 - https://blog.logrocket.com/complete-guide-building-smart-data-table-react/
 
 #### api gateway
+
 api gateway를 쓰게되면 운영서버에서 띄운 것을 이용해서 테스트를 해도 되나?
 로컬에서 개발자마다 띄워야되면 너무 귀찮을 것 같은데 그렇다고 아예 안쓸 수도 없고.
 
@@ -1377,13 +1579,16 @@ api gateway를 쓰게되면 운영서버에서 띄운 것을 이용해서 테스
 되겠다
 kubernetes nginx ingress 확인 해보기
 istio와 비교
-- [X] nginx도 api gateway라고 할 수 있나?
-    - 있겠다. kong도 nginx기반으로 만들어진 것 같다.
+
+- [x] nginx도 api gateway라고 할 수 있나?
+  - 있겠다. kong도 nginx기반으로 만들어진 것 같다.
 
 api gateway or istio
+
 - 응답이 body 안에 담긴다. body를 읽어서 판단한다
 
 #### kong reference
+
 kong을 yaml로 관리하는게 있는데, decK
 이 yml이 인식하는 것들이 어떤게 있는지 api가 어딧는지 모르겠다
 
@@ -1392,12 +1597,14 @@ decK를 쓰는게 아니라 kong 자체 declarative 설정이 있다.
 admin api 페이지에 나열되있긴 한데, 보기 힘들다
 
 #### kong grpc gateway
+
 kong으로 grpc 서버에 접속해서 grpc gateway를 만들 수 있다.
 
 ## husky를 쓰면 git hooks를 github에서 공유할 수 있다
+
 근데 이것을 쓰면 써야하는 도구가 늘어남을 의미한다
 
-
 #### dynamodb
+
 "dynamodb의 프로비져닝된 용량(?) 부족에 따른 쓰로틀링 이슈를 겪으면서 dynamodb에 대한 회의"  
 [https://blog.rewuio.com/entry/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EA%B8%B0-aurora-serverless#:~:text=dynamodb%EC%9D%98%20%ED%94%84%EB%A1%9C%EB%B9%84%EC%A0%B8%EB%8B%9D%EB%90%9C,dynamodb%EC%97%90%20%EB%8C%80%ED%95%9C%20%ED%9A%8C%EC%9D%98%EA%B0%80](https://blog.rewuio.com/entry/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EA%B8%B0-aurora-serverless#:~:text=dynamodb%EC%9D%98%20%ED%94%84%EB%A1%9C%EB%B9%84%EC%A0%B8%EB%8B%9D%EB%90%9C,dynamodb%EC%97%90%20%EB%8C%80%ED%95%9C%20%ED%9A%8C%EC%9D%98%EA%B0%80)

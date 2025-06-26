@@ -3,7 +3,7 @@ title: Technology
 summary: IT 전반의 기술들에 대한 관심
 date: 2020-05-06 19:15:00 +0100
 updated: 2021-12-04 12:27:04 +0900
-tags: develop
+tags: fundamental
 ---
 
 ## [[Tool]]
