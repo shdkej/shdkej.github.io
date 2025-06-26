@@ -1,44 +1,56 @@
 ---
-title   : Coding Rule?
-summary : Coding Convention, Design Principle
-date    : 2020-03-16 21:13:05 +0100
-updated : 2021-04-17 21:24:53 +0100
-tags    : strong_base
+title: Coding Rule?
+summary: Coding Convention, Design Principle
+date: 2020-03-16 21:13:05 +0100
+updated: 2021-04-17 21:24:53 +0100
+tags: fundamental
 ---
 
 ## TL;DR
+
 How can I get a good code? there's many rule. e.g. SOLID, DRY, YAGNI.
 But there's too many rule. that's good though, pick 8 rules and keep reminding
 to write code, so I summarized this 8 rules.
 
------------------------------------------------------------------------
+---
 
 ## SOLID
+
 ## TDD
+
 ## OOP
+
 ## Functional Programming
+
 ## Clean code
+
 ## Coding convention
+
 ## Error Handling
+
 ## Loging
 
 ## SOLID
+
 **Abstraction, One Behavior class, Encapsulation**
+
 - S One class should work one behavior and **Single reason to change**
- - reason to change is not bug-fix and refactoring. it's about design level
+- reason to change is not bug-fix and refactoring. it's about design level
 - O is Open to Expend, Close to Change
 - L Sub class should run program that substitution with base class
 - I interface make keep **small**. Don't provide method that client doesn't use.
 - D depend upon **abstraction**, not concretion.
 
 ## OOP
+
 - **Encapsulation, Composition, Inheritance, Delegation, Polymorphism, Open recursion**
 - coupling vs cohesion
 - same Input, should same output
 - Encapsulation = Module?
-    - Encapsulation is hide the value
+  - Encapsulation is hide the value
 
 #### 폴리모피즘 Polymorphism
+
 객체 생성 시 고정된 객체를 만드는 것이 아니라 기준만 만들고 실제 구현은 각 상황에 맞게 수정할 수 있게 하는 것
 
 인터페이스나 추상클래스를 이용하여 이를 상속해서 여러 객체를 하나의 기준으로 만드는 것
@@ -49,6 +61,7 @@ to write code, so I summarized this 8 rules.
 ## Functional Programming
 
 ## Coding Convention
+
 Depends on Company rule. use lint in editor
 
 - python -- underscore
@@ -57,35 +70,41 @@ Depends on Company rule. use lint in editor
 - `tab` vs `space`
 
 ## Clean Code
+
 - Robert C. Martin
 - https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29
 
 - Meaningful naming
 
 ## TDD
+
 - at least make test code.
 - Test, Log(error handling), API
 
 #### Why Test?
+
 - code make concrete
 - [The Art of Software Testing](https://drive.google.com/file/d/13r0fkQbcbd_2DG34l9Mm5VMRk8ewIImS/view?usp=sharing)
 
 #### BDD, DDD
 
 #### unit testing, system testing
+
 - https://www.geeksforgeeks.org/difference-between-unit-testing-and-system-testing/
 - unit testing
- - single module base,
+- single module base,
 - system testing
- - depends specific requirement, totally test
+- depends specific requirement, totally test
 
 #### Refactoring
+
 - Change makes improve. like revision of writer's book
 - Refactoring can make a more good code like Writer make revision is going to make
   a good word
 - Don't be afraid of refactoring
 
 ## Error Handling
+
 - Exception File, Network
 
 ```
@@ -153,9 +172,10 @@ Operation1() {
 }
 ```
 
------------------------------------------------------------------------
+---
 
 ## ETC
+
 - consider domain. domain is gonna make design.
 - minimize change code when need change.
 - code communication이 되도록 보기 좋은 코드 (Readability with code communication)
@@ -175,11 +195,13 @@ Operation1() {
 - 확장 시 확장하는 그 자체만 코드가 작성되어야 하고 기존의 코드를 건드리면 좀 별로다
 
 #### Language Design Principle
+
 [C](Software#History)
 [[Python#The Zen of Python]]
 [[Golang#Philosophy]]
 
 #### Internal Links
+
 [[Architecture#Goal]]
 [[Project#Project start]]
 [[Think#개발의 목표]]
@@ -190,6 +212,7 @@ Operation1() {
 [[Technology#Functional_Programming]]
 
 ## Reference
+
 - https://en.wikipedia.org/wiki/SOLID
 - https://en.wikipedia.org/wiki/Object-oriented_programming
 - https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/
