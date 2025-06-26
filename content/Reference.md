@@ -3,7 +3,8 @@ title: 연구와 조사
 summary: 연구, 조사, 정보, 연습, 연구, 검색, 전문가
 date: 2020-10-17 12:59:37 +0100
 updated: 2023-02-01 22:35:05 +0900
-tags: integration
+tags:
+  - integration
 ---
 
 ## Summary
@@ -608,7 +609,7 @@ https://hut.mearie.org/xy-problem/
 
 #### 단일 진실의 원천 SSOT
 
-![SSOT](./img/ssot.png)
+![[Pasted image 20230223201018.png]]
 https://coffeewhale.com/kubernetes/gitops/argocd/2020/02/10/gitops-argocd/
 
 한동안 찾던 건데 여기 있었다

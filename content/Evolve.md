@@ -3,7 +3,8 @@ title: 점진적으로 개선하기
 summary: Evolve
 date: 2021-02-27 20:53:19 +0100
 updated: 2022-08-13 19:12:23 +0900
-tags: human
+tags:
+  - human
 ---
 
 ## 점진적

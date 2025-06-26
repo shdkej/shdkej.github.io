@@ -3,7 +3,8 @@ title: 창작자들
 summary: Music, Construct, Artist, Directer, Author
 date: 2020-09-29 23:59:25 +0100
 updated: 2021-12-04 14:05:48 +0900
-tags: integration
+tags:
+  - integration
 ---
 
 ## 창작자가 있는 분야
@@ -67,6 +68,14 @@ Can It bring programming
 개발자도 이전의 코드를 계속 안고가려고 고집하기보다 기술적 성장을 목적으로 배우면 될까
 
 [[Think#개발의 목표]]
+
+#### 작가의 초기 중기 말기
+
+초기는보이는대로 표현하는거
+중기는 느낀걸 그려내는거
+말기는 느낀걸 내 세계로 가져와서 표현하는거
+
+- 천경자
 
 ## Artist
 

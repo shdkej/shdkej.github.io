@@ -3,7 +3,8 @@ title: 코딩
 summary: Coding Convention, Design Principle
 date: 2020-03-16 21:13:05 +0100
 updated: 2023-02-04 23:31:36 +0900
-tags: strong_base
+tags:
+  - strong_base
 ---
 
 ## 요약
@@ -299,7 +300,7 @@ log 설정
 
 #### Language Design Principle
 
-[C](Software#History)
+[C](Software.md#History)
 [[Python#The Zen of Python]]
 [[Golang#Philosophy]]
 

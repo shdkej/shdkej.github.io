@@ -211,7 +211,7 @@ DNS
 - Domain Registrar - Route53, GoDaddy
 - DNS Records - A(ipv4), AAAA(ipv6), CNAME(다른 호스트네임), NS(DNS 주소)
 - Zone File
-- Name Server - 
+- Name Server
 - Top Level Domain : .com, .us, .in
 - Second Level Domain - amazon.com, google.com, ...
 - Sub Domain - www

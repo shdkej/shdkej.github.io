@@ -785,3 +785,8 @@ https://www.dokdok.co/brief/nae-gaeinjeongboyi-mirae-deiteo3beob-ihaehagi
 
 대기업 컨퍼런스
 https://channy.creation.net/blog/1482
+
+#### 포스텔의 법칙
+유연성의 극대화를 위해서는 한 부품의 출력범위가 상당히 작고 잘 정의되어야 한다
+입력은 관대하게 출력은 보수적으로
+#architecture

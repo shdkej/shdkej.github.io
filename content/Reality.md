@@ -3,7 +3,7 @@ title: 현실 속에서 이상을 키우기
 summary: Reality
 date: 2021-02-27 20:53:06 +0100
 updated: 2021-08-07 18:02:10 +0900
-tags: human
+tags:
 ---
 
 ## 이상과 현실
