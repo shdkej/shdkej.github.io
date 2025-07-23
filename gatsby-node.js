@@ -17,10 +17,8 @@ exports.createPages = async ({ graphql, actions }) => {
                 title
                 tags
               }
+              fileAbsolutePath
             }
-          }
-          nodes {
-            fileAbsolutePath
           }
         }
       }
@@ -43,6 +41,14 @@ exports.createPages = async ({ graphql, actions }) => {
     const next = index === 0 ? null : posts[index - 1].node
     const slug = post.node.fields.slug.toLowerCase()
 
+    // 파일 경로에서 content 폴더 이후의 상대 경로 추출
+    const fileAbsolutePath = post.node.fileAbsolutePath
+    const contentIndex = fileAbsolutePath.indexOf("/content/")
+    const relativePath =
+      contentIndex !== -1
+        ? fileAbsolutePath.substring(contentIndex + 9) // '/content/' 길이만큼 제거
+        : fileAbsolutePath
+
     createPage({
       path: slug,
       component: blogPost,
@@ -50,6 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: post.node.fields.slug,
         previous,
         next,
+        filePath: relativePath,
       },
     })
   })
