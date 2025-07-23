@@ -11,7 +11,7 @@ const Layout = ({ title, children }) => {
     <nav>
       <Link to={`/`}>{title}</Link>
       <> | </>
-      <Link to={`/tags`}>INDEX</Link>
+      <Link to={`/tags`}>WIKI</Link>
       <> | </>
       <Link to={`/about`}>ABOUT</Link>
     </nav>
