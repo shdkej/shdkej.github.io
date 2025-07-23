@@ -2,8 +2,8 @@
 title: Trouble Shooting
 summary:
 date: 2020-06-23 22:39:25 +0100
-updated: 2022-08-13 18:30:42 +0900
-tags: deep_knowledge
+updated: 2025-07-23 10:24:46 +0900
+tags: meta
 ---
 
 # Disclaimer
@@ -11,14 +11,15 @@ tags: deep_knowledge
 This page has a lot of different area's problem. \
 You should search your specific trouble with `Ctrl+F`.
 
-#### 문제해결법
+## 문제해결법
 
-##### 조건을 단순하고 명확하게 정리
+#### 조건을 단순하고 명확하게 정리
 
-##### 조건과 관련된 정보를 찾아 연결
+#### 조건과 관련된 정보를 찾아 연결
 
-##### 근거없는 무엇이 개입되지 않아야 함
+#### 근거없는 무엇이 개입되지 않아야 함
 
+## 처리 완료
 #### jupyter notebook
 
 - install not working
