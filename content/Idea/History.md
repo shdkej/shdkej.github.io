@@ -11,7 +11,7 @@ tags    : idea
 [[Network#WWW]]
 [[About_Development#story, history]]
 [[Reading#sapiens]]
-[[Reference#History, Background, Trade-off, Revision, Behind_story]]
+[[Exploration#History, Background, Trade-off, Revision, Behind_story]]
 
 [[file:~/Documents/shannon1948.pdf]]
 
@@ -85,19 +85,13 @@ somebody who already know their industry is good to know.
 
 ## Behind story
 
-## Reference
-
-## Tracking
-[[Movie]]
-[[Reading]]
-
 ## footprint
-사이버네틱스 이론 노버트 위너
-조지프 릭라이더
-테드 넬슨, 안드리스 반 담(하이퍼텍스트)
-더글라스 엥겔바트(텍스트 편집 시스템, 마우스)
-밥 테일러, 앨런 케이
-버니바 부시, 클라우드 섀넌
+- 사이버네틱스 이론 노버트 위너
+- 조지프 릭라이더
+- 테드 넬슨, 안드리스 반 담(하이퍼텍스트)
+- 더글라스 엥겔바트(텍스트 편집 시스템, 마우스)
+- 밥 테일러, 앨런 케이
+- 버니바 부시, 클라우드 섀넌
 
 #### shannon claude - information theory
 - 통신을 위한 정보를 가공, 정량화하는 작업 (압축, 필터)
