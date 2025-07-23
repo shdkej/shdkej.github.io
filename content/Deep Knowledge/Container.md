@@ -2,11 +2,11 @@
 title   : Container
 summary : Docker, Kubernetes
 date    : 2020-12-17 22:01:56 +0100
-updated : 2021-10-15 22:55:03 +0900
+updated : 2025-07-23 10:01:55 +0900
 tags    : deep_knowledge
 ---
 
-## Container
+# Container
 
 #### docker strength
 - isolation process
@@ -16,7 +16,7 @@ tags    : deep_knowledge
 
 #### Docker image vs compose
 - image vs volume
-  - test with volume, deploy with image
+    - test with volume, deploy with image
 
 #### docker logs
 - make stdout
@@ -192,7 +192,7 @@ CMD로 하면 안되고 ENTRYPOINT로 하면 된다
 
 대신 ENTRYPOINT를 쓰면 -it /bin/sh 는 인식을 못한다
 
-## Kubernetes
+# Kubernetes
 A person has a very small component, and it composes of one architecture.
 the kuberetes seem to be this.
 and I want to make software like this architecture.
@@ -319,6 +319,7 @@ ram 1기가 서버에 ram 0.5를 쓰는 서비스를 6개를 레플리카하면 
 
 롤백, 자원관리, 모니터링, 시크릿 관리
 
+## Network Resource
 #### nginx vs istio
 - service -> Ingress
 - istio Gateway -> Virtual Service -> Destination Rule
@@ -363,6 +364,7 @@ coredns 1.12 버전부터 사용, 호환성을 위해 라벨링은 kube-dns로 �
 `myapplication.namespace.svc.cluster.local` 형식으로 되있다
 - https://jonnung.dev/kubernetes/2020/05/11/kubernetes-dns-about-coredns/
 
+## Test
 #### test
 - how to test account system?
     - check send complete
@@ -410,6 +412,7 @@ case 2. stream output check
 api서버가 어떻게 부하를 받는지 확인
 
 
+## Plugin
 #### helm k3s Kubernetes cluster unreachable error
 set `export KUBECONFIG=/etc/rancher/k3s/k3s.yaml`
 https://github.com/rancher/k3s/issues/1126
@@ -802,9 +805,36 @@ gitkube라는 서비스도 있다. kubernetes 안에다가 리소스를 만들�
 
 이제 세부적인 설정이 필요해지면 어떻게 수정하지
 
+#### 클러스터 네임스페이스 컨텍스트
+- 컨텍스트 안에 클러스터, 사용자, 네임스페이스가 있음
+- $KUBECONFIG 에 새로 생성한 config 파일을 넣으면 --kubeconfig config-demo 명령어를 안쳐줘도 됨
+
+```bash
+source <(kubectl completion zsh)  # 현재 셸에 zsh의 자동 완성 설정
+echo '[[ $commands[kubectl] ]] && source <(kubectl completion zsh)' >> ~/.zshrc # 자동 완성을 zsh 셸에 영구적으로 추가한다.
+```
+
+##### 새로운 유저로 get pod 하기
+- 인증서 등록
+- config-demo 만들기
+- role 만들기
+- roleBinding 만들기
+- CSR 만들기
+- 인증서 approve 하기
+- auth can-i 실행해서 확인
+
+##### 인증서 재설정 필요
+minikube 재시작 후 서버 포트 변경됨
+- minikube context에서
+- `openssl genrsa -out developer.key 2048`
+- `openssl req -new -key developer.key -out developer.csr -subj "/CN=developer"`
+- `k apply CSR.yaml`
+- `k certificate approve developer`
+- `k auth can-i list pods --as developer`
+
 -----------------------------------------------------------------------
 
-## Kubernetes Basic
+## Kubernetes External Library Installation
 #### 설치
 - `curl -s https://packages.cloude.google.com/apt/doc/apt-key.gpg | apt-key add -`
 - `/etc/apt/sources.list.d/kubernetes.list` 파일에

@@ -2,17 +2,20 @@
 title: DevOps
 summary:
 date: 2021-12-04 13:02:50 +0900
-updated: 2021-12-04 13:32:09 +0900
+updated: 2025-07-23 10:03:03 +0900
 tags: deep_knowledge
 ---
 
-Infra - Cloud
-CI / CD
-Container
-Fail Tolerance / Chaos
-Monitoring
+## 데브옵스의 목표는
+> 개발자로 구성된 소규모 팀이 기능을 독립적으로 구현하고, 프로덕션과 유사한 환경에서 정확성을 검증하며, 코드를 프로덕션 환경으로 빠르고 안전하게 배포하는 것이다.
+> - Devops Handbook (https://johngrib.github.io/wiki/devops/)
 
-[[*CI_CD]]
+
+- Infra - Cloud
+- CI / CD
+- Container
+- Fail Tolerance / Chaos
+- Monitoring
 
 # DevOps
 
@@ -60,7 +63,7 @@ Devops goal
 - 제품 개발에 참여하는 인원들 간의 장애물을 낮추기 위해 노력
 
 데브옵스는 다른 영역도 취미로 하는게 좋겠다
-다른 작업을 편하게 해주는게 대브옵스의 목표라고 생각.
+다른 작업을 편하게 해주는게 대브옵스의 목표라고 생각
 
 가볍고, 의존성 없고, 쉬운 설정 및 이동이 가능하며, 피드백 루프를 개발 프로세스에
 잘 녹여내는 시스템 구축을 지향하며, 개발에만 집중할 수 있는 환경을 만들기 위해

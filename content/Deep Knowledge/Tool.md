@@ -1,8 +1,8 @@
 ---
-title: Linux,
+title: Linux, GIT, ETC
 summary:
 date: 2020-05-06 19:57:59 +0100
-updated: 2022-08-13 19:01:28 +0900
+updated: 2025-07-23 10:04:53 +0900
 tags: deep_knowledge
 ---
 
@@ -63,6 +63,10 @@ interactive non-login shell
 zshrc
 
 non-interactive shell - script
+
+#### hammerspoon 파일을 dotfile에 추가
+- 기존 파일을 dotfile로 옮기고
+- `ln -s 절대경로/file 옮길위치/파일명`
 
 ## automatically run command when turn on the computer
 
@@ -1032,6 +1036,29 @@ EXPOSE 3000
 # CMD ["yarn", "start:BUILD"]
 ```
 
+## arm의 장점
+
+저전력, 저소음
+
+단점
+호환성, 저성능
+
+인텔도 저전력을 위해 뭔가 시도 중
+하이브리드 코어로
+4개의 저사양 코어와 1개의 고사양 코어를 같이 구성.
+
+Apple does this strategy too.
+little core, big core
+
+- Arm 아키텍처가 저전력에 무조건 유리하다?
+  코어당 클럭 수를 다르게 할 수 있어서?
+  태블릿에 자주 쓰이는 AP는 arm
+  PC에 자주 쓰이는 CPU는 인텔식 x64
+  arm 아키텍처는 쿨러가 아예 필요 없다?
+
+애플 실리콘은 인텔 cpu보다 더 성능이 좋은 arm cpu를 구현했다
+
+
 # GIT
 
 사용자 정보 등록
@@ -1176,6 +1203,12 @@ Host github.com
     User git
     IdentityFile ~/.ssh/github
 ```
+
+git fatal: Not possible to fast-forward, aborting. 문제
+- git config --unset 으로 잘 안됐음
+- pull.ff 가 2개 설정돼있음
+- git config --edit 으로 지워주니까 됨
+- pull.rebase false가 default
 
 # ETC
 
@@ -1606,5 +1639,5 @@ kong으로 grpc 서버에 접속해서 grpc gateway를 만들 수 있다.
 
 #### dynamodb
 
-"dynamodb의 프로비져닝된 용량(?) 부족에 따른 쓰로틀링 이슈를 겪으면서 dynamodb에 대한 회의"  
+"dynamodb의 프로비져닝된 용량(?) 부족에 따른 쓰로틀링 이슈를 겪으면서 dynamodb에 대한 회의"
 [https://blog.rewuio.com/entry/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EA%B8%B0-aurora-serverless#:~:text=dynamodb%EC%9D%98%20%ED%94%84%EB%A1%9C%EB%B9%84%EC%A0%B8%EB%8B%9D%EB%90%9C,dynamodb%EC%97%90%20%EB%8C%80%ED%95%9C%20%ED%9A%8C%EC%9D%98%EA%B0%80](https://blog.rewuio.com/entry/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EA%B8%B0-aurora-serverless#:~:text=dynamodb%EC%9D%98%20%ED%94%84%EB%A1%9C%EB%B9%84%EC%A0%B8%EB%8B%9D%EB%90%9C,dynamodb%EC%97%90%20%EB%8C%80%ED%95%9C%20%ED%9A%8C%EC%9D%98%EA%B0%80)

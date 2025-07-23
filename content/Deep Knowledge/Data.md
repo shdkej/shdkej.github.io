@@ -19,6 +19,15 @@ tags: deep_knowledge
 - NoSQL, CAP theorem
 - N+1 Problem
 
+#### 대용량 작업
+- 람다에서 한번에 많은 요청을 비동기로 하게 될 때 최대요청량을 제한 (p-limit)
+- 대용량의 검색이 필요할 때 무조건 paging 또는 iterator 또는 stream을 써야 메모리 문제가 발생하지 않는다는 것
+- select 시 10만 건 이상이 조회되는 경우 피하기 위해 stream 이나 paging 필요함
+	- paging도 10만건 넘는 대용량에서는 성능이 딸려서 기간 제한을 두거나 카운트를 안하고 다음 페이지, 마지막 페이지로만 이동하게 시킴
+	- 메모리가 한정적이기 때문에 select를 계속 들고 있어도 안되고 조작도 힘듬
+- 스프링에서 메모리가 계속 쌓이는 원인 중 2차캐시를 사용 중이면 old 메모리를 gc가 잘 회수해가지 못한다. gc가 잘 동작하도록 유도해줘야 한다
+	- 일단 2차캐시 끄니까 메모리 사용량이 줄어듬. 계속 쌓이던게 잘 안없어져서 계속 늘어남
+
 #### NoSQL
 
 ## Redis
@@ -36,7 +45,7 @@ tags: deep_knowledge
 - set vs hash vs strings in article
 - ? which type fit for index file -- hash?
 - true,false type -> bitmap 1.2M 10,000,000
-  - [source](t.ly/KqGO)
+	- [source](t.ly/KqGO)
 
 #### redis hash crud
 

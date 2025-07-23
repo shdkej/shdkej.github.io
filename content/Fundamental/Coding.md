@@ -2,7 +2,7 @@
 title: 코딩
 summary: Coding Convention, Design Principle
 date: 2020-03-16 21:13:05 +0100
-updated: 2023-02-04 23:31:36 +0900
+updated: 2025-07-23 10:05:41 +0900
 tags: fundamental
 ---
 
@@ -35,7 +35,7 @@ tags: fundamental
 - **Encapsulation, Composition, Inheritance, Delegation, Polymorphism, Open recursion**
 - same Input, should same output
 - Encapsulation = Module?
-  - Encapsulation is hide the value
+    - Encapsulation is hide the value
 
 #### 폴리모피즘
 
@@ -76,18 +76,43 @@ tags: fundamental
 클래스의 변수를 메소드가 여러개 잘 사용하면 응집도가 높다고 볼 수 있다
 각 객체 간 연결이 느슨하게 되있으면 결합도가 낮다고 한다
 
-## Functional Programming
+#### DI, IoC
 
-불변성
+DI의 이점이 뭐지?
 
-## Coding Convention
+프레임워크와 라이브러리의 차이가 DI의 예시
 
-회사의 컨벤션 룰을 따르자. lint도 설정하고
+의존성을 외부에서 주입할 수 있는 스프링의 기능 확인
 
-- python -- underscore
-- golang -- camel
-- `-` vs `_`
-- `tab` vs `space`
+main에서 한 방향으로 호출하는 방식에서 함수가 접근하는 방식으로 갔을 때의 장점은?
+
+생성자로 외부에서 주입해주거나, setter를 이용해서 주입해주는 것이 DI
+
+- 외부에서 주입해주는 것이 main에서 호출하는 흐름과는 같은 방향 같은데?
+- 함수 내에서 생성하는게 아니라 외부에서 알려주는 흐름은 화살표가 반대로 되는게 아니라 화살표가 옮겨진 느낌이다. 더 추상화해서 호출한다는 느낌이지 제어 방향이 역전되었다는 느낌은 안든다.
+- 함수의 입장에서는 자신이 생성하던 것을 주입 받으니까 역전이긴 하다. 근데 전체 프로그램 입장에서는 같은 흐름 같다.
+
+이렇게 했을 때 라이브러리는 라이브러리로 활용성은 높아지겠는데, 사용자 입장에서는 직접 객체를 주입해줘야 하지 않나?
+
+스프링이 IoC를 지원해준다는게 무슨 뜻이지?
+
+- @Component로 표시해줘서 등록해두고 쓰는 모양이다.
+- application.xml이라는 파일에 bean을 정의해준다. 근데 이러면 호출자가 부르는 것에 비해 이득이 있나?
+- 또는 빈 생성용 자바 파일을 만들어서 선언해준다.
+
+
+
+스프링
+
+- 내가 생각하던 템플릿 제공 프레임워크의 개념의 완성형 버전
+- 여기서 나온 개념들을 알아두면 개발에 잘 써먹을 수 있을 것 같다.
+
+AOP
+
+- 라이브러리(모듈)의 재사용성을 높이기 위해 관점을 기준으로 모은다는 개념
+- 이에 따르는 추가 개념들이 많은데, 예전 같았으면 이런 개념들을 본질에서 벗어나는 부차적인 것이라 생각해서 보기 싫었을텐데, 라이브러리를 모으기 위한 고민을 하는 지금에서는 다른 사람들이 어떤 방식으로 이 문제를 해결하려고 했는지 보는 좋은 레퍼런스로 느껴진다. 그냥 개념들을 보는 것보다, 나의 고민과 필요가 있어야 다른 내용도 관심이 가는 것 같다.
+  - 어떤 접근법으로 보고 있는지 확인하는 차원에서 관심이 간다.
+
 
 ## Clean Code
 
@@ -95,6 +120,12 @@ tags: fundamental
 - https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29
 
 - Meaningful naming
+
+#### Clean code
+심플한 코드(클린 코드)를 지향하는 이유는 모든 서비스는 단번에 완성도를 100으로
+만들 수 없고 유지보수와 기능추가가 반드시 필요하기 때문에 이를 편하게 하기
+위함이다.
+
 
 ## TDD
 
@@ -261,7 +292,16 @@ golang의 일반 error는 너무 단순해서 에러가 어디서 났는지 확�
 
 - errormessage(err)로 만들어서 에러 메시지를 띄우는 설비 프로그램 방식
 
-## dash(-) vs underscore(\_)
+## Coding Convention
+
+회사의 컨벤션 룰을 따르자. lint도 설정하고
+
+- python -- underscore
+- golang -- camel
+- `-` vs `_`
+- `tab` vs `space`
+
+#### dash(-) vs underscore(\_)
 
 dash
 
@@ -295,6 +335,37 @@ log 설정
 - 클래스 기반 언어: 한번 정의한 것은 그대로 사용된다
 - 프로토타입 기반 언어: 문맥에 따라 의미가 달라질 수 있다
 
+
+#### if statement
+
+긍정을 먼저 쓴다?
+뒤에 고정값을 둔다?
+
+#### 해피 패쓰만 생각하지 않기
+- 나보다 똑똑한 사람들이 만들어내는 예외상황이 생긴다
+- 바운더리(경계선) 예외처리 확인 반드시 해야한다.
+
+#### 프로그램에서 어려운 문제
+
+상태 충돌(메모리 데드락)
+예외 케이스
+일관될 수 없는 상황
+
+#### 개발
+
+1. 확장성을 생각한다. (가독성, 모듈)
+2. 요구사항을 퀄리티 있게 개발한다
+3. 엣지 케이스를 확인한다 (최악의 상황을 대비한다)
+
+#### 코드 짤때 고려할점
+응집도 결합도
+동시성 (병목)
+멱등성
+가독성
+에러처리
+
+#### 큰 common.js 파일이나 util.js파일은 라이브러리 재사용성을 좋게해주지 못한다
+
 ---
 
 #### Language Design Principle
@@ -323,6 +394,54 @@ log 설정
 - https://github.com/rwaldron/idiomatic.js/blob/master/translations/ko_KR/readme.md
 
 ---
+
+## Code
+#### statement, expression
+
+for, if, while은 statement,
+map, filter는 expression
+
+#### code design
+
+main - 메인에서 동작만 나타낸다. 구현은 다른 파일에서 한다
+
+```
+func main() {
+  init()
+  get()
+  set()
+  health()
+  doSomething()
+}
+```
+
+http_server - http로 렌더링하는 작업만 수행한다
+logic - 인터페이스를 받아서 인터페이스를 구현한다
+
+```
+type s struct {
+
+}
+func (s struct) init() {
+
+}
+```
+
+메인은 전체 흐름
+에러 처리는 내부에서 처리?
+메인 파일은 의미가 있어야 하고, 세부 구현은 적지 않도록...
+
+```
+func main() {
+    if err := initHTTPServer(); err != nil { log.Println(err) }
+    if err = addHealthCheck(); err != nil { log.Println(err) }
+    if err = addLogic(); err != nil { log.Println(err) }
+    if err = addLoggig(); err != nil { log.Println(err) }
+    if err = runHTTPServer(); err != nil { log.Println(err) }
+}
+```
+
+
 
 # Python
 
@@ -526,7 +645,6 @@ is 는 객체를 확인하고, ==은 값을 확인한다
 맨 위에 `#-*- coding:utf-8 -*-` 입력
 
 #### requests
-
 ```py
 import requests
 data = {'id':'12','password':'12'}
@@ -543,7 +661,6 @@ F.readlines() - 반환값이 리스트
 .split()
 
 #### 정규식
-
 ```
 import re
 .compile
@@ -795,7 +912,7 @@ golang library, 실행파일, 서버
 build
 run
 install - build 시 캐시
-mod init <directory>
+`mod init <directory>`
 
 - go test 하면 모듈 업데이트 된다
 - - go mod tidy 안쓰는 모듈 정리
@@ -814,7 +931,7 @@ main 파일을 여러 개 만들고 싶어하는 사람들이 많아서 cmd라�
 
 - redis
   - https://medium.com/@gilcrest_65433/basic-redis-examples-with-go-a3348a12878e
-- mux handler <-> http handler what's different
+- mux handler - http handler what's different
 - update nav css
 - html render
   - static
@@ -947,3 +1064,317 @@ json으로 리턴을 하고, json으로 입력을 받게 하고 싶다.
 - [Go Standard Layout](https://github.com/golang-standards/project-layout/blob/master/README_ko.md)
 - http://www.dogfootlife.com/archives/452
 - https://umi0410.github.io/blog/golang/go-mutex-semaphore/
+
+---
+
+# 다트 비동기
+
+- 기초
+	- 동기/비동기 차이
+	- 호출 사례
+	- 블록/논블록, 동기/비동기
+	- 다트는 싱글 스레드 환경 (정확히는 싱글 isolate가 기본값이라는 것 같음)
+- 사용법
+	- Future로 리턴값 감싸기, 뒤에는 async 붙여주기
+	- `Future<int> sum(int a, int b) async {}`
+	- 호출 시 await 사용
+	- `final result = await sum(1, 2)`
+	- await 대신 then 도 사용 가능
+- async vs isolate
+	- isolate를 쓰면 스레드가 별개로 생성되서 동작한다고 한다 (병렬 동작 가능)
+	- [ ] 이게 어떻게 구현되어있는거지?
+		- 설계 자체를 스레드 기반이 아니라 isolate 기반으로 해서 이걸 여러개 만들 수 있게 했다. 대신 스레드처럼 서로 자원 공유하지 않고 독립적으로 구성된다
+	- js와 같이 이벤트루프와 이벤트큐가 있다
+- event loop
+	- event queue
+	- microtask queue
+	- future가 completed 인 경우 microtask queue에 then 콜백이 들어간다. future.value, future.sync 인 경우 그렇다.
+		- future value는 리턴값이 결과값이라 future 객체가 아니다
+		- future sync는 동기적으로 실행 후 리턴값을 future.value로 받는다
+- future와 함께 쓰는 함수
+	 - wait : 리스트로 함수를 받아서 모두 완료되면 리턴
+	- then, whenComplete : 에러 발생 시 then은 실행안함
+	- any : 성공하든 실패하든 먼저 끝난걸 리턴
+- stream
+	- future는 결과값을 모아서 보여주고
+	- stream은 결과값이 생성중에도 계속 컨트롤 할 수 있다
+- 호출 실패 되는 경우
+	- 동기일때 비동기 호출 시 응답값이 필요할 때
+
+## android
+
+- flutter 설치, android studio 설치
+- flutter 플러그인 설치
+- https://flutter-ko.dev/docs/get-started/codelab
+- 첫 실행 시 license 에러
+  - android 설치 시 java도 설치하므로 java home을 따로 설치 안하고 sdk
+    command-line tools를 설치한다.
+  - https://www.androidhuman.com/2021-06-02-flutter_android_license_noclassdeffound
+- flutter doctor
+
+---
+
+# Functional_Programming
+
+불변성
+
+#### 함수형 언어
+
+함수형언어를 쓰면 코드 읽고 추론하기가 쉬워진다?
+
+- https://www.youtube.com/watch?v=H6JxxWL6bJI
+
+수학적이면 완성도가 높아지는 것 같다. 이런 점에서 함수형 표현을 쓰는게 좋은거 같다
+
+#### haskell
+
+- basic function
+- head [2, 3, 4] -- 2, [2] -- 2
+- tail [2, 3, 4] -- [3, 4], [2] -- []
+- init [2, 3, 4] -- [2, 3], [2] -- []
+- last [2, 3, 4] -- 4, [2] -- 2
+- take 2 [2, 3, 4] -- [2, 3]
+- drop 2 [2, 3, 4] -- [4]
+- !!
+- product
+- ++
+- reverse
+- length
+- function rule
+- f a+b -- f(a) + b
+- f a b -- f(x, y) -- not working -- using with currying
+- f (a,b) -- f(a,b)
+- f (a+b) -- f(a+b)
+- f (g x) -- f(g(x))
+- f x (g y) -- f(x g(y))
+- f x _ g y -- f(x) _ g(y)
+
+```
+sum ns `div` length ns
+= div (sum ns) (length ns)
+```
+
+- Currying
+- `add :: Int -> (Int -> Int)` = `add :: Int -> Int -> Int`
+
+#### First Object(Class) Citizen
+
+#### High-order function
+
+#### Pure function
+
+#### Immutable
+
+#### declarative
+
+#### Currying
+
+#### Memoization
+
+#### Composition
+
+#### Recursion
+
+#### Monad
+
+#### etc
+
+모나드에서 한 함수의 출력이 다음의 입력이 되는 것은
+[디미터 법칙](../About_Development#지금의 메소드 체이닝과 디미터 법칙의 차이)을 위반하는 전형적인 사례가 아닌가!?
+
+고계함수는 독립적이다? 함수를 받아야하는 지점에서 이미 종속적인 것 아닌가?
+
+클로저를 쓴 함수에서, 어떻게 외부함수가 클로저에 변수를 할당할 수 있는거지?
+
+순수함수를 쓴다고 해서 스레드 세이프하지는 않은 것 같다
+
+```
+# 순수함수 아님
+func PlusOne(i int) int {
+    return i += 1
+}
+# 순수함수 맞음
+func PlusOne(i int) int {
+    return i + 1
+}
+```
+
+여기서 i를 공유하면 값이 원하는 대로 나오지 않을 수 있다.
+
+- 순수함수는 오로지 입력값에 의해서만 동작하므로 충돌 조건이 없다고 한다
+
+그래서 불변 객체를 쓰고, 새로운 객체를 만들어서 해결하려고 한다
+그렇다면 왜 순수함수가 중요할까?
+
+1. 사이드 이펙트가 없다
+2. 결정성이 있다 (= 멱등성이 있다)
+3. 테스트가 쉽다
+
+#### docker haskell
+
+- docker-compose need start point
+- Dockerfile need build image
+- how to make easy build
+- haskell init spent too long time but docker not executable..
+
+---
+
+# Javascript
+
+
+## react function vs class
+
+function 안에 function을 쓰면 렌더링 할 때 다시 렌더링해서 성능 저하 우려가 있다
+`useCallback`이라는 함수를 쓰면 재렌더링을 막아준다.
+근데 아예 밖으로 빼도 된다.
+
+- https://stackoverflow.com/questions/46138145/functions-in-stateless-components
+- useState, useEffect, useCallback 등이 지원된다
+
+class component는 this나 props를 넘겨주는 작업이 있어서 거추장스럽다
+기존에는 react의 lifecycle을 사용하려면 class를 써야했는데, hooks(useEffect
+등)이 등장하면서 해결되었고, 함수형 컴포넌트를 권장하고 있다.
+
+
+## javascript callback
+
+콜백함수
+
+- 함수의 호출 시점을 사용자가 아닌 프로그램으로(시스템에서) 결정하는 함수
+
+클로저
+
+- 자신을 호출한 함수 범위의 변수와 자신 내부의 지역변수를 모두 사용할 수 있는 상태
+- 자신을 호출한 함수 범위의 변수를 내부에서 사용할 수 있다는 것이 포인트
+- 호출 시의 컨텍스트를 저장하고 싶을 때 사용한다
+- js에서 커링을 구현할 때 사용된다
+
+컨텍스트
+
+- global context, function context, eval context
+- 실행 컨텍스트
+
+Promise
+
+- 콜백함수를 깔끔하게 표현하는 방식
+- function().then().catch().then() 의 형식으로 사용한다
+- then() 안에서
+
+```
+then(function(){
+
+},
+
+function(){
+
+})
+```
+
+- 로 작성 시 첫번째 function은 성공했을 시 실행되고,
+  두번째 function은 실패했을 시 실행되게 된다
+- fulfill, pending 등의 상태가 있으며, 상태에 따라 실행 가능해진다
+- promise 를 호출하려면 리턴이 promise 이거나 promise로 생성되어야 한다
+
+에로우 표현법
+
+- `=>` 로 표현해서 `function(){return}` 을 명시하지 않도록 해주는 표현법
+- `var x = (y) => y*y;`
+- this 는 호출된 스코프에서 상속받는다
+
+#### 실행 컨텍스트 생성 시 렉시컬 스코프 내의 선언이 끌어올려 지는 게 호이스팅이다
+["실행 컨텍스트 생성 시 렉시컬 스코프 내의 선언이 끌어올려 지는 게 호이스팅이다"](https://medium.com/@limsungmook/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%8A%94-%EC%99%9C-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%EC%9D%84-%EC%84%A0%ED%83%9D%ED%96%88%EC%9D%84%EA%B9%8C-997f985adb42#:~:text=%EC%8B%A4%ED%96%89%20%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%20%EC%83%9D%EC%84%B1%20%EC%8B%9C%20%EB%A0%89%EC%8B%9C%EC%BB%AC%20%EC%8A%A4%EC%BD%94%ED%94%84%20%EB%82%B4%EC%9D%98%20%EC%84%A0%EC%96%B8%EC%9D%B4%20%EB%81%8C%EC%96%B4%EC%98%AC%EB%A0%A4%20%EC%A7%80%EB%8A%94%20%EA%B2%8C%20%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85%EC%9D%B4%EB%8B%A4%27%EB%9E%80)
+
+#### 'int' is not an object, 'Integer' is.
+
+[파이썬 3에는 오버플로우가 없다?](t.ly/flKE)
+
+## object
+
+- first citizen function
+  - callable like value
+- value != object?
+- class != object?
+- int
+  - int in c, int size is 4bytes = 2^32, it is fix.
+- (Data) types
+- int is class? types?
+- type != object?
+
+## C++ 50 계명 - 이것만은 기억하자.
+
+[HAMA 블로그](https://hamait.tistory.com/1043?category=76104)
+
+#### generic
+
+c++ 템플릿
+c# 제네릭
+
+타입 고정을 하는 강타입 언어에서 여러 타입을 허용하게 하고 싶을 때 오버로딩을
+통해 여러 함수를 만들어야 하는데 그렇기 되면 중복이 많아지므로 여러 타입을
+받는 일반 클래스, 함수를 만드는 방식
+
+정적 형지정을 동적 형언어처럼 쓰려고 만든건가 싶다
+
+#### typescript
+
+한 파일 안에 타입을 적어놓음으로써 변수 타입 확인을 쉽게 할 수 있다?
+파일이 필요한 내용만 최소한 있는 것이 좋을까
+관련 내용은 참조할 수 있게 같이 있는게 좋을까
+
+#### delegate
+
+- 메소드와 동일한 타입의 델리게이트를 만든다 (매개변수, 리턴타입)
+  - 제네릭(템플릿)을 이용해서 타입 일반화를 할 수 있다
+- 콜백함수? 클로저 같은 느낌인가
+- 클로저를 이용해서 커링 함수 만드는 것과 비슷하게 쓰인다
+  - C#에서 람다나 클로저를 구현할 때 delegate를 이용해서 구현한다
+- += -= 을 이용해서 함수를 연결 시킬 수 있다
+
+#### C# linq
+
+- SQL문처럼 C# 안에서 쿼리를 할 수 있는 느낌인데,
+  선언형으로 호출하는 형식이라 C# 의 함수 구현체 같은 느낌이 된다.
+
+#### 데이터 타입을 명시하는 것의 메리트
+
+- 사전 체크를 안해도 항상 그 형태가 온다는 것을 보장해준다
+- 개발자의 실수를 개발 단계에서 줄여준다.
+
+
+## code
+
+- 코드만으로 얘기할 수 있도록 보기 좋은 코드
+- 문서화는 중요하다 코드만 봐도 되게 하면 더 좋겠지만
+- 주석 대신 프로그램만 읽어서 이해가 되도록
+  - 하지만 주석은 필요하다
+- 직관적으로 쓴다
+- 코드가 간결해야 한다
+- 클린코드를 지향하는 이유는 모든 서비스는 단번에 완성도를 100으로 만들 수 없고 유지보수와 기능추가가 반드시 필요하기 때문에 이를 편하게 하기 위함이다.
+
+
+#### 함수를 거쳐서 호출하는 것과 바로 호출하는 것 속도 차이 비교
+
+python
+- 10000회 수행 시
+- 함수를 타면 3ms,
+- 함수를 안타면 2ms,
+- 분기를 안타면 1ms,
+
+1000000회 수행 시
+- 함수를 타면 140ms,
+- 함수를 타는데 할당 없이 바로 호출하면 130ms,
+- 함수를 안타면 60ms,
+- 분기를 안타면 40~80ms
+
+golang
+- 1000000회 수행 시
+- 함수를 타면 0.46ms,
+
+#### when useful pointer?
+
+- 큰 자료형을 옮길 때 객체를 넘기는 것보다 메모리 참조하도록 하는게 가볍다
+- 메모리에 직접 접근해서 작업할 필요가 있는 경우가 있다
+- 포인터에 직접 접근하여 데이터를 바꾸는 방식은 변수를 처음 할당만 하고 바꾸지 않는 함수형 프로그래밍 관점에서는 사이드이펙트가 큰 안좋은 방식이 아닌가? 함수형언어에서는 포인터가 없나?
+	- 함수형 언어는 불변성을 이용하는 것이고, 포인터는 포인터대로의 용도가 있다
+	- 트레이드 오프지, 어느 하나가 우수한 것이 아니다
+	- 포인터를 이용해서도 동시성을 구현해서 잘 이용한다
