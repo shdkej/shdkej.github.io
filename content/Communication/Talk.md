@@ -6,9 +6,6 @@ updated : 2022-08-13 19:05:20 +0900
 tags    : communication
 ---
 
-* Listening    -- friendly, vibe, similar interesting
-* Speaking     -- Think my voice and delivery
-
 ## 말이 잘 통한다는게 어떤 것일까
 포용력
 - 의견 조율이 잘 되야 한다
@@ -25,6 +22,8 @@ tags    : communication
 - 듣는걸 잘한다고 생각했는데, 그냥 듣는게 아니라 잘 들어야 한다
 
 인터뷰이는 듣기만 하는게 아니다
+* Listening    -- friendly, vibe, similar interesting
+* Speaking     -- Think my voice and delivery
 
 ## 설득은 무엇인가
 설득은 어떤 경우에 하는 것인가
@@ -66,9 +65,6 @@ tags    : communication
 
 #### 비즈니스 협상
 
-#### 사람 사이에 사랑이 있으면 티끌을 감싸준다
-사랑하는 사람이 떠나가면 죽고 싶을 정도로 힘들다.
-근데 사랑이 떠나가도 삶은 계속된다
 
 #### 좋은 태도
 행동에 이유가 있어야 한다

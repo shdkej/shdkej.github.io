@@ -61,6 +61,18 @@ versioning 할 때 1.2.x 로 해서 x부분은 오류 수정용으로 해서 하
 
 [[Cleaning#Used Tool]]
 
+## 발표
+
+#### 40분 발표
+40분 발표라면 전체를 구조화해서 10분마다 재밌는 포인트를 배치한다든지 체계적으로 만들 수 있다. 전체를 한 눈에 만들 수 있다. 글도 읽는 시간을 고려해서 중간 중간 포인트를 넣을 수 있겠다
+
+#### 계몽주의의 틀을 벗어난 강의 형식. 
+발표할때도 공감이 이어지는 형식이면 좋겠다
+
+#### In the conference
+doesn't need a count of a second.
+just need a minute.
+
 ## Reference
 - [AWS와 Elastic 라이센스 분쟁 - by outsider](https://blog.outsider.ne.kr/1533)
 - [AWS와 Elastic 라이센스 분쟁 - by opsnow](https://blog.opsnow.com/35)
