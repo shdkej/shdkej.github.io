@@ -20,6 +20,111 @@ body {
   font-family: sans-serif;
 }
 
+/* 데스크탑에서만 적용되는 부드러운 테마 */
+@media (min-width: 768px) {
+  body {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+  }
+
+  p {
+    color: #e0e0e0;
+    margin-bottom: 1.2em;
+    text-align: justify;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #f0f0f0;
+    line-height: 1.4;
+    margin-bottom: 0.8em;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    border-bottom: 2px solid #404040;
+    padding-bottom: 0.3em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    border-bottom: 1px solid #404040;
+    padding-bottom: 0.2em;
+  }
+
+  h3 {
+    font-size: 1.4em;
+    color: #d0d0d0;
+  }
+
+  a {
+    color: #7bb3d1;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.2s ease;
+  }
+
+  a:hover {
+    border-bottom-color: #7bb3d1;
+  }
+
+  a:visited {
+    color: #7bb3ce;
+  }
+
+  /* 코드 블록 가독성 향상 */
+  pre {
+    background: #1e1e1e;
+    border: 1px solid #404040;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 1.5em 0;
+  }
+
+  code {
+    color: #ff9d6b;
+    background: rgba(255, 157, 107, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  /* 인용구 스타일 개선 */
+  blockquote {
+    border-left: 2px solid #555;
+    padding-left: 1.2em;
+    margin: 1.5em 0;
+    color: #b8b8b8;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1em 1.2em;
+  }
+
+  /* 목록 가독성 향상 */
+  ul,
+  ol {
+    padding-left: 2em;
+    margin: 1.2em 0;
+  }
+
+  li {
+    margin: 0.5em 0;
+    line-height: 1.6;
+  }
+
+  /* 이미지 캡션 개선 */
+  figcaption {
+    color: #b0b0b0;
+    font-size: 0.9em;
+    margin-top: 0.5em;
+  }
+}
+
 h1 {
   color: var(--heading-color);
 }

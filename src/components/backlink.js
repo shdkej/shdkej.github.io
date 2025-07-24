@@ -1,57 +1,46 @@
-import React from "react"
-import { Link, StaticQuery, graphql } from 'gatsby';
+import React, { useState } from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
-class BackLink extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            open: false,
-        };
-    }
+const BackLink = props => {
+  const [open, setOpen] = useState(false)
 
-    findLinks = (pages) => {
-        const contents = pages.nodes.filter(page => page.rawMarkdownBody.includes(this.props.text));
-        const content = contents.map(c => c.fields.slug)
-        return content
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark {
+        nodes {
+          headings {
+            value
+          }
+          fields {
+            slug
+          }
+          rawMarkdownBody
+        }
+      }
     }
+  `)
 
-    Matches = (text) => {
-        return text.match(/\[\[(.+?)\]\]/g)
-    }
+  const findLinks = pages => {
+    const contents = pages.nodes.filter(page =>
+      page.rawMarkdownBody.includes(props.text)
+    )
+    const content = contents.map(c => c.fields.slug)
+    return content
+  }
 
-    render() {
-        return (
-            <StaticQuery
-                query={graphql`
-                query {
-                    allMarkdownRemark {
-                        nodes {
-                            headings {
-                                value
-                            }
-                            fields {
-                                slug
-                            }
-                            rawMarkdownBody
-                        }
-                    }
-                }
-                `}
-            render={data => (
-                <div style={{maxWidth: `90%`}}>
-                {this.findLinks(data.allMarkdownRemark).map(link =>
-                    <span>
-                    <Link to={link}>
-                        {link}
-                    </Link>
-                    ,
-                    </span>
-                )}
-                </div>
-                )}
-            />
-        )
-    }
+  const Matches = text => {
+    return text.match(/\[\[(.+?)\]\]/g)
+  }
+
+  return (
+    <div style={{ maxWidth: `90%` }}>
+      {findLinks(data.allMarkdownRemark).map(link => (
+        <span key={link}>
+          <Link to={link}>{link}</Link>,
+        </span>
+      ))}
+    </div>
+  )
 }
 
-export default BackLink;
+export default BackLink
