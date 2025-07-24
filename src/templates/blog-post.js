@@ -7,22 +7,40 @@ import Utterances from "../components/utteranc"
 import Popup from "../components/popup"
 import BackLink from "../components/backlink"
 
-const MarkDownLinkTohref = text => {
-  //const href_text = text.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="../$2" target="_blank">$1</a>')
-  //href_text = href_text.replace(/\[\[(.+?)\]\]/g, `<a href="../$1">$1</a>`)
-  const renders = text.split(/\[\[(.+?)\]\]/g).map(match => {
-    if (!match.includes("</")) {
-      return <Popup key={match} text={match} />
-    }
-    return (
-      <section
-        key={match}
-        dangerouslySetInnerHTML={{ __html: match }}
-      ></section>
-    )
+const MarkDownLinkTohref = (text, slug) => {
+  // [[#태그]] 형태를 현재 페이지의 앵커 링크로 처리
+  let processedText = text.replace(/\[\[#(.+?)\]\]/g, (match, tag) => {
+    const currentSlug = slug
+      .toLowerCase()
+      .replace(/[^a-z0-9_]/g, "")
+      .replace(/\s+/g, "-")
+    const processedTag = tag.toLowerCase().replace(/\s+/g, "-")
+    return `<a href="/${currentSlug}/#${processedTag}">${tag}</a>`
   })
 
-  return renders
+  // [[페이지#태그]] 형태를 처리
+  processedText = processedText.replace(
+    /\[\[(.+?)#(.+?)\]\]/g,
+    (match, page, tag) => {
+      const lowercasePage = page
+        .toLowerCase()
+        .replace(/[^a-z0-9_]/g, "")
+        .replace(/\s+/g, "-")
+      const processedTag = tag.toLowerCase().replace(/\s+/g, "-")
+      return `<a href="/${lowercasePage}/#${processedTag}">${page}#${tag}</a>`
+    }
+  )
+
+  // [[링크]] 형태를 처리 (띄어쓰기를 대시로 변환)
+  processedText = processedText.replace(/\[\[(.+?)\]\]/g, (match, link) => {
+    const lowercaseLink = link
+      .toLowerCase()
+      .replace(/[^a-z0-9_]/g, "")
+      .replace(/\s+/g, "-")
+    return `<a href="/${lowercaseLink}/">${link}</a>`
+  })
+
+  return <section dangerouslySetInnerHTML={{ __html: processedText }}></section>
 }
 
 const BlogPostTemplate = ({ data, pageContext }) => {
@@ -55,7 +73,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
   )
 
   const backLinks = <BackLink text={post.frontmatter.title}></BackLink>
-  const md = MarkDownLinkTohref(post.html)
+  const md = MarkDownLinkTohref(post.html, slug)
 
   return (
     <Layout title={siteTitle}>
