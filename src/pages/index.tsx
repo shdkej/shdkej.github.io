@@ -3,7 +3,7 @@ import React from "react"
 import { PageProps, Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 type Data = {
   site: {
@@ -37,7 +37,7 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
 
   return (
     <Layout title={siteTitle}>
-      <SEO title="Sam" />
+      <Seo title="Sam" />
       {posts.map(({ node }) => {
         if (node.frontmatter.title === "") {
           return

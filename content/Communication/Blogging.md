@@ -2,7 +2,7 @@
 title   : Blogging
 summary : build blog
 date    : 2020-03-17 11:22:19 +0100
-updated : 2025-07-23 09:58:34 +0900
+updated : 2025-07-24 19:28:18 +0900
 tags    : communication
 ---
 
@@ -11,23 +11,15 @@ tags    : communication
 - [vlog](Video)
 
 ## Post
-[[Digital_Content]]
-
-[[Life_Tracking]]
-
-[Decision Monitor Size](Decision_Monitor_Size.md)
-
-[100k concurrent server](100k_concurrent_server.md)
-
-[[Streaming_server]]
-
-[[My_space]]
-
-[[Note_Management]]
-
-[EKS_terraform](EKS_with_terraform.md)
-
-[[Spring_TestCode]]
+- [[Digital_Content]]
+- [[Life_Tracking]]
+- [Decision Monitor Size](Decision_Monitor_Size.md)
+- [100k concurrent server](100k_concurrent_server.md)
+- [[Streaming_server]]
+- [[My_space]]
+- [[Note_Management]]
+- [EKS_terraform](EKS_with_terraform.md)
+- [[Spring_TestCode]]
 
 ## About
 - 8 x 8, markdown 기준 1000줄 이하, 200자 1분 기준 30분 이하로 유지하면서 응축.

@@ -2,7 +2,7 @@
 title   : Decision
 summary : To reduce what need to be cared for.
 date    : 2020-05-06 12:58:37 +0100
-updated : 2025-07-23 10:08:13 +0900
+updated : 2025-07-24 19:27:55 +0900
 tags    : health
 ---
 
@@ -20,7 +20,7 @@ tags    : health
 - 여러 개 중에 고르는데 사고 나면 바꾸기 싫을 때. e.g. [[#Notebook]]
 - 여러 개 중에 고르는데 여러 개를 써보고 판단. e.g. [[#Note]]
 - 진행 방향을 고르기 (선택지가 추상적). e.g.
-- 할지 안할지 둘 중 하나를 고르기. e.g. [[# 연금저축 할지 말지]]
+- 할지 안할지 둘 중 하나를 고르기. e.g. [[#연금저축 할지 말지]]
 
 #### check point make reduce only 8 point.
 
