@@ -1,6 +1,6 @@
 :root {
-  --main-color: black;
-  --second-color: #f5f5f7;
+  --main-color: #2a2a2a;
+  --second-color: #e0e0e0;
   --heading-color: darkorange;
 }
 
@@ -140,6 +140,14 @@ body {
   /* 홈페이지 줄 간격 조정 */
   article {
     line-height: 1.2;
+    border-bottom: 1px solid #404040;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+  }
+
+  article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
   }
 
   article header {
@@ -171,6 +179,24 @@ body {
   .square li {
     margin: 0.2em 0;
     line-height: 1.2;
+  }
+
+  /* Google AdSense 광고 마진 */
+  .adsbygoogle {
+    margin-top: 2em !important;
+    margin-bottom: 2em !important;
+    display: block !important;
+  }
+
+  /* Google 자동 배치 광고 마진 */
+  .google-auto-placed {
+    margin-top: 2em !important;
+    margin-bottom: 2em !important;
+  }
+
+  .ap_container {
+    margin-top: 2em !important;
+    margin-bottom: 2em !important;
   }
 }
 
