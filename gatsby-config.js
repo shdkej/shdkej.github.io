@@ -28,6 +28,7 @@ module.exports = {
         plugins: [
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-autolink-headers`,
+          `gatsby-remark-check-links`,
           {
             resolve: `gatsby-remark-table-of-contents`,
             options: {
@@ -52,6 +53,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,

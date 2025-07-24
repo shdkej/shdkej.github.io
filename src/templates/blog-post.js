@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Utterances from "../components/utteranc"
 import Popup from "../components/popup"
 import BackLink from "../components/backlink"
@@ -59,7 +59,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout title={siteTitle}>
-      <SEO title={post.frontmatter.title} description={post.excerpt} />
+      <Seo title={post.frontmatter.title} description={post.excerpt} />
       <article>
         <header>
           <h1>{post.frontmatter.title}</h1>
