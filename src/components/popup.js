@@ -1,33 +1,28 @@
-import React, { useState } from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import React from "react"
+import { Link, StaticQuery, graphql } from "gatsby"
 import ReactMarkdown from "react-markdown"
 
-const Popup = props => {
-  const [open, setOpen] = useState(false)
-
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark {
-        nodes {
-          fields {
-            slug
-          }
-          rawMarkdownBody
-        }
-      }
+class Popup extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      open: false,
     }
-  `)
-
-  const onPopup = () => {
-    setOpen(true)
+  }
+  onPopup = () => {
+    this.setState({
+      open: true,
+    })
   }
 
-  const offPopup = () => {
-    setOpen(false)
+  offPopup = () => {
+    this.setState({
+      open: false,
+    })
   }
 
-  const renderHeader = pages => {
-    const input = props.text.split("#")
+  renderHeader = pages => {
+    const input = this.props.text.split("#")
     const title = input[0].replace("[[", "").toLowerCase()
     const tag = input[1] ? input[1].replace("]]", "") : ""
     const content = pages.nodes.find(
@@ -39,37 +34,56 @@ const Popup = props => {
     return paragraph
   }
 
-  const text = props.text.toLowerCase()
-  const url = text.replace(/ /g, "-")
-
-  return (
-    <div
-      role="link"
-      tabIndex="0"
-      onMouseEnter={onPopup}
-      onMouseLeave={offPopup}
-    >
-      <Link to={"/" + url}>
-        {text.split("#").length > 1 ? text.split("#")[1] : text}
-      </Link>
-      <div
-        role="link"
-        tabIndex="0"
-        onMouseDown={offPopup}
-        style={{
-          background: `#343a40`,
-          position: `absolute`,
-          zIndex: `1`,
-          marginLeft: `100px`,
-          width: `50%`,
-        }}
-      >
-        {open ? (
-          <ReactMarkdown>{renderHeader(data.allMarkdownRemark)}</ReactMarkdown>
-        ) : null}
-      </div>
-    </div>
-  )
+  render() {
+    const text = this.props.text.toLowerCase()
+    const url = text.replace(/ /g, "-")
+    return (
+      <StaticQuery
+        query={graphql`
+          query {
+            allMarkdownRemark {
+              nodes {
+                fields {
+                  slug
+                }
+                rawMarkdownBody
+              }
+            }
+          }
+        `}
+        render={data => (
+          <div
+            role="link"
+            tabIndex="0"
+            onMouseEnter={() => this.onPopup()}
+            onMouseLeave={() => this.offPopup()}
+          >
+            <Link to={"/" + url}>
+              {text.split("#").length > 1 ? text.split("#")[1] : text}
+            </Link>
+            <div
+              role="link"
+              tabIndex="0"
+              onMouseDown={() => this.offPopup()}
+              style={{
+                background: `#343a40`,
+                position: `absolute`,
+                zIndex: `1`,
+                marginLeft: `100px`,
+                width: `50%`,
+              }}
+            >
+              {this.state.open ? (
+                <ReactMarkdown>
+                  {this.renderHeader(data.allMarkdownRemark)}
+                </ReactMarkdown>
+              ) : null}
+            </div>
+          </div>
+        )}
+      />
+    )
+  }
 }
 
 export default Popup

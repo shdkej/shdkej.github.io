@@ -20,6 +20,27 @@ body {
   font-family: sans-serif;
 }
 
+/* 홈페이지 줄 간격 조정 */
+.blog-post-item {
+  line-height: 1.2;
+  border-left: 2px solid #404040;
+  padding-left: 16px;
+  margin-bottom: 32px;
+}
+
+.blog-post-item:last-child {
+  margin-bottom: 0;
+}
+
+/* 모바일에서 세로선 조정 */
+@media (max-width: 767px) {
+  .blog-post-item {
+    border-left: 1px solid #404040;
+    padding-left: 12px;
+    margin-bottom: 24px;
+  }
+}
+
 /* 데스크탑에서만 적용되는 부드러운 테마 */
 @media (min-width: 768px) {
   body {
@@ -137,19 +158,6 @@ body {
     color: #9bc7e0;
   }
 
-  /* 홈페이지 줄 간격 조정 */
-  article {
-    line-height: 1.2;
-    border-bottom: 1px solid #404040;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-  }
-
-  article:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-  }
-
   article header {
     line-height: 1.2;
   }
@@ -179,24 +187,6 @@ body {
   .square li {
     margin: 0.2em 0;
     line-height: 1.2;
-  }
-
-  /* Google AdSense 광고 마진 */
-  .adsbygoogle {
-    margin-top: 2em !important;
-    margin-bottom: 2em !important;
-    display: block !important;
-  }
-
-  /* Google 자동 배치 광고 마진 */
-  .google-auto-placed {
-    margin-top: 2em !important;
-    margin-bottom: 2em !important;
-  }
-
-  .ap_container {
-    margin-top: 2em !important;
-    margin-bottom: 2em !important;
   }
 }
 

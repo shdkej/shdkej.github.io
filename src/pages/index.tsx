@@ -38,6 +38,7 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
   return (
     <Layout title={siteTitle}>
       <Seo title="Sam" />
+      <br />
       {posts.map(({ node }) => {
         if (node.frontmatter.title === "") {
           return
@@ -46,12 +47,12 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
         const date = node.frontmatter.updated || node.frontmatter.date
         const readTime = <>{node.timeToRead} min</>
         return (
-          <article key={node.fields.slug}>
+          <article key={node.fields.slug} className="blog-post-item">
             <header>
               <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                 {title}
               </Link>
-              <small>
+              <small style={{ color: "#888" }}>
                 {" "}
                 - {readTime} {date}
               </small>
@@ -62,7 +63,6 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
                   __html: node.frontmatter.summary,
                 }}
               />
-              <br />
             </section>
           </article>
         )

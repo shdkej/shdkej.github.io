@@ -1,9 +1,10 @@
 ---
-title   : Feedback
-summary : communication
-date    : 2020-11-15 20:42:56 +0100
-updated : 2021-07-22 18:23:23 +0900
-tags    : communication
+title: Feedback
+summary: review, communication, software
+date: 2020-11-15 20:42:56 +0100
+updated: 2021-07-22 18:23:23 +0900
+tags:
+  - communication
 ---
 
 ## feedback circuit
@@ -11,7 +12,8 @@ tags    : communication
 > http://cad.kyungpook.ac.kr/micro/feedback/feedback-detail.html
 
 
-## review, report, monitoring, response, communication
+## Review
+report, monitoring, response, communication
 
 #### 5F
 - fact, feeling, finding, future, feedback
@@ -76,7 +78,7 @@ need more: receive client voice
 - 슈팅 후 원하는 위치에 갔는지 확인하는 것도 피드백
   - 슈팅을 어떻게 했는지 모르고 감으로만 차면 감만 늘고, 기술적 성장은 안된다
 
-## 피드백은 잘 진행되고 있는지 평가할 지표가 있으면 명확해진다
+#### 피드백은 잘 진행되고 있는지 평가할 지표가 있으면 명확해진다
 계획이 성공되려면 중간 중간 평가할 요소가 있어야겠다
 추적할 수 있는 지표
 
@@ -117,10 +119,13 @@ need more: receive client voice
 노트북으로 작업할 때는 노트북에서 바로 볼 수 있어야겠는데
 
 #### 빠른 피드백 vs 인터럽트
+feedback이 인터럽션이 될 수 있다.
+
 어느 정도가 적당한 빠른 피드백일까
+
 약속된 시간에 주는 신호는 노이즈가 되어 무시가 될 수 있다.
 
-#### search
+#### search 하는 경험을 피드백을 녹여보기
 1. 시작점을 찾는다 (내부에 들어가기 전에 내 생각을 먼저 확인한다)
     - 피드백을 빨리 받아서 고치는 방법을 알고 싶다
     - 피드백을 효율적으로 받는 방법을 알고 싶다
@@ -180,9 +185,9 @@ need more: receive client voice
 - 정보의 출처에서 연결된 정보가 또 나온다
 
 #### feedback
-머신러닝에서의 피드백
-학기마다 보는 시험도 피드백
-하루를 되돌아보는것도 좋은 피드백이다
+- 머신러닝에서의 피드백
+- 학기마다 보는 시험도 피드백
+- 하루를 되돌아보는것도 좋은 피드백이다
 
 상용서비스라면 유저들이 활동하는 영역에서 사용 경험이 산발적으로 나올 수 있다
 이런 피드백도 잘 수집하면 좋긴 하겠다
@@ -215,9 +220,6 @@ it 기기 관련 리뷰는 그런 제품들을 사용하는 사람들이 많이 
 
 각 서비스에서 피드백을 어떻게 주느냐를 잘 설정하면
 로그, 데이터 결합, 복잡성 해소가 해결되는 실마리가 될 수 있다
-
-#### feedback
-feedback이 인터럽션이 될 수 있다
 
 #### feedback 회로
 인풋 아웃풋
