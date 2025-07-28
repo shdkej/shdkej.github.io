@@ -8,7 +8,7 @@ tags: communication
 
 ## feedback circuit
 
-![feedback_circuit](./img/feedback.png)
+![feedback_circuit](../img/feedback.png)
 
 > http://cad.kyungpook.ac.kr/micro/feedback/feedback-detail.html
 

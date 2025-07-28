@@ -172,11 +172,11 @@ bold는 헤더에 쓰이고 있으니 진짜 볼드로 강조한 내용은 하�
 
 #### 자료 정보 지식 지혜
 
-![data_to_wisdom](img/data_to_wisdom.png)
+![data_to_wisdom](../img/data_to_wisdom.png)
 
 #### 문서
 
-![documentation](./img/documentation.png)
+![documentation](../img/documentation.png)
 
 - https://documentation.divio.com/
 
@@ -193,7 +193,7 @@ bold는 헤더에 쓰이고 있으니 진짜 볼드로 강조한 내용은 하�
 - by john grib for vimwiki to blog
 - ohtani for mandarart table
 
-![mandarart](./img/ohtani.gif)
+![mandarart](../img/ohtani.gif)
 
 ## 번역
 

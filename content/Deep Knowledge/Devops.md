@@ -7,9 +7,10 @@ tags: deep_knowledge
 ---
 
 ## 데브옵스의 목표는
-> 개발자로 구성된 소규모 팀이 기능을 독립적으로 구현하고, 프로덕션과 유사한 환경에서 정확성을 검증하며, 코드를 프로덕션 환경으로 빠르고 안전하게 배포하는 것이다.
-> - Devops Handbook (https://johngrib.github.io/wiki/devops/)
 
+> 개발자로 구성된 소규모 팀이 기능을 독립적으로 구현하고, 프로덕션과 유사한 환경에서 정확성을 검증하며, 코드를 프로덕션 환경으로 빠르고 안전하게 배포하는 것이다.
+>
+> - Devops Handbook (https://johngrib.github.io/wiki/devops/)
 
 - Infra - Cloud
 - CI / CD
@@ -358,4 +359,4 @@ How to add production data to training data?
 
 ## DevOps for ML
 
-![devops_for_ml](img/devops_for_ml.png)
+![devops_for_ml](../img/devops_for_ml.png)

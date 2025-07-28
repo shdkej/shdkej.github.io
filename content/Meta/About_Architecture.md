@@ -132,8 +132,6 @@ HTTP 프로토콜, ITU 주파수 대역 등의 규약은 제약이 아니라 통
 집에 있는 가구들이나, 집 자체에 결함이 생기면 전체를 고치기보다 부품만 교체하기를 원한다.
 라즈베리파이가 100대 있으면, 각 역할별로 나눠져 있어도, 고쳐야하는 요소가 많아져서 번거롭다.
 
-
-
 #### 프로젝트를 모듈로 구성
 
 모듈은 한 팀의 인원정도만 사용
@@ -283,18 +281,17 @@ Apache의 MPM
 kums의 설계와 매우 유사하게 구성되어있다
 신기하다
 
-
-
 #### 개발 시작부터 확장의 반복
+
 1. 가장 간단한 실행을 위한 설계
 2. 폴더 만들기
-    - note
+   - note
 3. 구현해야 하는 것 적고 결과값 적기
-    - note/main_test.go
+   - note/main_test.go
 4. 테스트 통과시키기
-    - note
-      -  main.go
-      -  main_test.go
+   - note
+     - main.go
+     - main_test.go
 5. 기능 추가를 위해 설계
 6. 파일 추가
 7. 반복
@@ -302,6 +299,7 @@ kums의 설계와 매우 유사하게 구성되어있다
 그러다가 어느 시점이 되면 아래 정도의 복잡성이 생긴다
 
 note
+
 - logic1
   - main.go
   - data.go
@@ -320,6 +318,7 @@ note
 이것이 다시 프렉탈로 반복된다
 
 #### A/S, after service
+
 a/s can announce to me that what I missed, and what can I grow.
 a/s is just doing the same work. not to be known.
 sometimes when before the same work. it is good to evolve knowledge. but cannot control what I want.
@@ -327,15 +326,19 @@ it makes me spent time a lot. and annoying.
 a/s is need
 
 #### Design First is Good
+
 But, Don't be loose. Quick Response. small thing first
 
 #### 3개의 의견
+
 서로를 견제하며, 지원하고, 공유하는 구조가 좋은 가치를 만들기에
 좋은 구조인 것 같다
 쿠버네티스를 이렇게 사용할 수 있을까
 
 #### 외부 라이브러리 분리
+
 외부 라이브러리를 분리하려고 하는데, 그러면 폴더 구조가 어떻게 되는거지
+
 - cmd
 - lib1
 - ilb2
@@ -380,6 +383,7 @@ cmd에서는 이를 한 눈에 보기 좋게 한다
 이렇게 하려면 db를 다시 추상화해야한다
 
 ...
+
 - db
   - redis/
   - RDBMS/
@@ -405,6 +409,7 @@ cmd에서는 이를 한 눈에 보기 좋게 한다
 http 서버가 grpc 클라이언트도 해야한다
 
 #### micro crud
+
 service - crud-service - extension
 
 crud : api <- logic <- library
@@ -419,6 +424,7 @@ ID, Name, Date, Content, Tag 로 구성하고, Content에 다시 내용을 구�
 필요한 곳에서 알아서 쓴다?
 
 #### 마이크로서비스도 인터페이스를 만족하도록 구성하는 것이 좋겠다
+
 우리 회사의 api는 다른 기능이라도 같은 방식으로 동작합니다 라고 알려주면
 사용자가 다른 서비스에도 쉽게 접근할 수 있겠다
 
@@ -426,6 +432,7 @@ ID, Name, Date, Content, Tag 로 구성하고, Content에 다시 내용을 구�
 커지니까 필요에 따라 기간을 정해서 가져올 수 있도록 구현하면 좋을 것 같다
 
 #### business logic
+
 비즈니스 로직의 함수는 추상적이면 좋겠지만 세부 구현도 비즈니스 로직에 들어가야
 한다. 외부 라이브러리에 비즈니스 로직이 안들어가기 때문에.
 함수 구현은 추상적으로 하고 test code로 세부를 테스트하면 될까?
@@ -433,17 +440,20 @@ ID, Name, Date, Content, Tag 로 구성하고, Content에 다시 내용을 구�
 인터페이스에 추상이 남아있고, 구현은 세부적으로 하면 될까
 
 #### input, logic, output의 구조 (레고 모델)
+
 go-kit, gRPC도 이런 구조로 구성하려고 했다. 이 방법이 먹히는 것 같다.
 openfaas도 request, response 구조
 
 레고모듈이 완벽한건 아니지만 괜찮은 모델이다
 
 부족한 부분
+
 - 유기적인 얽힘이 되면 좋겠다
 
 api gateway에서 이걸 처리하고
 로직은 json만 대응하도록
 로직에서는 내가 필요한 데이터가 있는지 확인하는 발리데이션을 해서 로직 수행
+
 - json으로 입력받아 json으로 출력
 - http response로 출력
 
@@ -454,11 +464,13 @@ grpc로 이걸 하면 proto 파일에 모델, 함수 적고, 구현파일을 만
 여기에 grpc gateway를 써서 http로 받을 수 있게 하고, documentation 되는지 확인
 
 api는 연결부위 설계를 잘 해야겠다. input값, output값
+
 - 메인로직을 만들고 컨테이너화해서 배포하면, 사이드카가 api routing해주고,
   데이터 보관하도록 만들고 싶다. 메인로직의 input과 output만 잘 유도하면 될 것
   같은데, fastapi와 python 머신러닝 api화 해주는 서비스가 있던데 확인해봐야겠다.
 
 #### 유한 상태 기계 state machine
+
 input -> output 으로 가는 구조인데
 수학적 안정성을 가진 구조
 
@@ -469,19 +481,23 @@ if - else 로 관리하기 힘든 상태관리를 안정적으로 할 수 있게
 input output 구조가 수학적으로 안정성을 가질 수 있다는 것이다.
 
 #### library
+
 모든 코드를 라이브러리화 하면 각 라이브러리를 호출하는 어댑터를 만들게 되고 너무
 비대해진다.
 그렇다고 어댑팅 안하면 라이브러리 수정 시 여기 저기서 바꿔야 된다.
 그렇다고 라이브러리를 일관된 형태로 유지하자면 그것도 쉽지 않다
 
 lib1
+
 - file
 
 source1
+
 - main
 - lib1-adapter
 
 source2
+
 - main
 - source1-adapter
 - lib1-adapter
@@ -489,13 +505,16 @@ source2
 이런 구조가, 라이브러리 변경 시
 
 lib1
+
 - file-v2 // 변경
 
 source1
+
 - main
 - lib1-adapter // 변경
 
 source2
+
 - main
 - source1-adapter
 - lib1-adapter // 변경
@@ -503,6 +522,7 @@ source2
 수정이 전체에 영향을 미치면 안된다.
 
 #### 라이브러리를 api 처럼 호출하기
+
 모놀리스에서 다른 모듈 간 데이터 불러올 때 임포트 해서 함수로 호출한다
 마이크로서비스에서 api로 호출하는게 일반적이겠지만
 임포트 라이브러리를 만들어서 직접 api에 접근하는게 아니라 라이브러리를 통해서 접근하게 하면 전환이 쉬울 것 같다
@@ -524,10 +544,10 @@ Purchase.product = Product
 프로젝트 메인이 아니라 라이브러리 메인을 체크해야겠다
 
 | api | -- | business logic | -- | data crud
-           | business logic2 |
-           | 3               |
-           | 4               |
-           | 5               |
+| business logic2 |
+| 3 |
+| 4 |
+| 5 |
 
 이렇게 구성 돼있다면 data crud는 공통 로직으로 쓰는 역할(share library)
 비즈니스 로직에서는 api로 crud를 제어한다.
@@ -544,12 +564,14 @@ grpc로 만들어서 쓴다
 받아들이는 부분도 있어야하는데.. 그러면 데이터베이스 쪽만 2단계가 되서 마음에
 안든다
 
-![msa](./img/msa.png)
+![msa](../img/msa.png)
 
 #### 아키텍처를 만들면서 구체적인 예제를 적으면서 해본다 :행동:
+
 예제가 있어서 내용이 길어지는 부분은 트레이드오프...
 
 #### 한 아키텍처에 너무 많은 것을 넣으려고 하다가 이도저도 아니게 되겠다
+
 처음에 집중할 목표를 잡고 작게 작게 처리해 나가야 하겠다 :행동:
 
 개인이 제작하는 프로그램에는 규모의 한계가 있다
@@ -563,6 +585,7 @@ grpc로 만들어서 쓴다
 길을 잃은 것 같다. 어떻게 길을 찾아야 할까
 
 #### 레고식 아키텍처
+
 ```go
 type Lego struct {
     Name string
@@ -578,8 +601,6 @@ func Attach(r Request) Lego {
     return result
 }
 ```
-
-
 
 입력, 로직, 출력 형태로 함수들(또는 api endpoint)을 제작하면 모듈로 쓰기 좋을 것 같다
 
@@ -642,13 +663,9 @@ func main() {
 
 ```
 
-
-
 ```
 protoc --
 ```
-
-
 
 이것이 요청을 받아 출력을 해주는 gRPC의 뼈대다.
 
@@ -660,16 +677,10 @@ go의 마이크로서비스 섀시인 micro와 go-kit에서 이를 구현해놨�
 
 awesome grpc에 정보가 모여 있다.
 
-
-
 이걸 모델과 로직을 입력해서 결과는 /feature 호출하면 feature를 리턴해주는 api 역할을 해야한다.
-
-
 
 필터 역할 하는 api라면
 
 {name:"sam", age:"10"}, {name:"kim", age:"15"} 이라는 값을 입력으로 넣으면
 
 정렬해서 정렬된 값을 리턴해주는 api가 만들어져야 한다
-
-

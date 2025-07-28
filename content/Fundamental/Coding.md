@@ -35,7 +35,7 @@ tags: fundamental
 - **Encapsulation, Composition, Inheritance, Delegation, Polymorphism, Open recursion**
 - same Input, should same output
 - Encapsulation = Module?
-    - Encapsulation is hide the value
+  - Encapsulation is hide the value
 
 #### 폴리모피즘
 
@@ -100,8 +100,6 @@ main에서 한 방향으로 호출하는 방식에서 함수가 접근하는 방
 - application.xml이라는 파일에 bean을 정의해준다. 근데 이러면 호출자가 부르는 것에 비해 이득이 있나?
 - 또는 빈 생성용 자바 파일을 만들어서 선언해준다.
 
-
-
 스프링
 
 - 내가 생각하던 템플릿 제공 프레임워크의 개념의 완성형 버전
@@ -113,7 +111,6 @@ AOP
 - 이에 따르는 추가 개념들이 많은데, 예전 같았으면 이런 개념들을 본질에서 벗어나는 부차적인 것이라 생각해서 보기 싫었을텐데, 라이브러리를 모으기 위한 고민을 하는 지금에서는 다른 사람들이 어떤 방식으로 이 문제를 해결하려고 했는지 보는 좋은 레퍼런스로 느껴진다. 그냥 개념들을 보는 것보다, 나의 고민과 필요가 있어야 다른 내용도 관심이 가는 것 같다.
   - 어떤 접근법으로 보고 있는지 확인하는 차원에서 관심이 간다.
 
-
 ## Clean Code
 
 - Robert C. Martin
@@ -122,10 +119,10 @@ AOP
 - Meaningful naming
 
 #### Clean code
+
 심플한 코드(클린 코드)를 지향하는 이유는 모든 서비스는 단번에 완성도를 100으로
 만들 수 없고 유지보수와 기능추가가 반드시 필요하기 때문에 이를 편하게 하기
 위함이다.
-
 
 ## TDD
 
@@ -335,13 +332,13 @@ log 설정
 - 클래스 기반 언어: 한번 정의한 것은 그대로 사용된다
 - 프로토타입 기반 언어: 문맥에 따라 의미가 달라질 수 있다
 
-
 #### if statement
 
 긍정을 먼저 쓴다?
 뒤에 고정값을 둔다?
 
 #### 해피 패쓰만 생각하지 않기
+
 - 나보다 똑똑한 사람들이 만들어내는 예외상황이 생긴다
 - 바운더리(경계선) 예외처리 확인 반드시 해야한다.
 
@@ -358,6 +355,7 @@ log 설정
 3. 엣지 케이스를 확인한다 (최악의 상황을 대비한다)
 
 #### 코드 짤때 고려할점
+
 응집도 결합도
 동시성 (병목)
 멱등성
@@ -396,6 +394,7 @@ log 설정
 ---
 
 ## Code
+
 #### statement, expression
 
 for, if, while은 statement,
@@ -440,8 +439,6 @@ func main() {
     if err = runHTTPServer(); err != nil { log.Println(err) }
 }
 ```
-
-
 
 # Python
 
@@ -645,6 +642,7 @@ is 는 객체를 확인하고, ==은 값을 확인한다
 맨 위에 `#-*- coding:utf-8 -*-` 입력
 
 #### requests
+
 ```py
 import requests
 data = {'id':'12','password':'12'}
@@ -661,6 +659,7 @@ F.readlines() - 반환값이 리스트
 .split()
 
 #### 정규식
+
 ```
 import re
 .compile
@@ -838,7 +837,7 @@ if main function too short. it finish without running goroutine. so time.Sleep n
 
 ServeHTTP와 핸들러에 대한 이해
 
-![http](./img/http.svg)
+![http](../img/http.svg)
 
 mux = multiplexer
 
@@ -1070,36 +1069,36 @@ json으로 리턴을 하고, json으로 입력을 받게 하고 싶다.
 # 다트 비동기
 
 - 기초
-	- 동기/비동기 차이
-	- 호출 사례
-	- 블록/논블록, 동기/비동기
-	- 다트는 싱글 스레드 환경 (정확히는 싱글 isolate가 기본값이라는 것 같음)
+  - 동기/비동기 차이
+  - 호출 사례
+  - 블록/논블록, 동기/비동기
+  - 다트는 싱글 스레드 환경 (정확히는 싱글 isolate가 기본값이라는 것 같음)
 - 사용법
-	- Future로 리턴값 감싸기, 뒤에는 async 붙여주기
-	- `Future<int> sum(int a, int b) async {}`
-	- 호출 시 await 사용
-	- `final result = await sum(1, 2)`
-	- await 대신 then 도 사용 가능
+  - Future로 리턴값 감싸기, 뒤에는 async 붙여주기
+  - `Future<int> sum(int a, int b) async {}`
+  - 호출 시 await 사용
+  - `final result = await sum(1, 2)`
+  - await 대신 then 도 사용 가능
 - async vs isolate
-	- isolate를 쓰면 스레드가 별개로 생성되서 동작한다고 한다 (병렬 동작 가능)
-	- [ ] 이게 어떻게 구현되어있는거지?
-		- 설계 자체를 스레드 기반이 아니라 isolate 기반으로 해서 이걸 여러개 만들 수 있게 했다. 대신 스레드처럼 서로 자원 공유하지 않고 독립적으로 구성된다
-	- js와 같이 이벤트루프와 이벤트큐가 있다
+  - isolate를 쓰면 스레드가 별개로 생성되서 동작한다고 한다 (병렬 동작 가능)
+  - [ ] 이게 어떻게 구현되어있는거지?
+    - 설계 자체를 스레드 기반이 아니라 isolate 기반으로 해서 이걸 여러개 만들 수 있게 했다. 대신 스레드처럼 서로 자원 공유하지 않고 독립적으로 구성된다
+  - js와 같이 이벤트루프와 이벤트큐가 있다
 - event loop
-	- event queue
-	- microtask queue
-	- future가 completed 인 경우 microtask queue에 then 콜백이 들어간다. future.value, future.sync 인 경우 그렇다.
-		- future value는 리턴값이 결과값이라 future 객체가 아니다
-		- future sync는 동기적으로 실행 후 리턴값을 future.value로 받는다
+  - event queue
+  - microtask queue
+  - future가 completed 인 경우 microtask queue에 then 콜백이 들어간다. future.value, future.sync 인 경우 그렇다.
+    - future value는 리턴값이 결과값이라 future 객체가 아니다
+    - future sync는 동기적으로 실행 후 리턴값을 future.value로 받는다
 - future와 함께 쓰는 함수
-	 - wait : 리스트로 함수를 받아서 모두 완료되면 리턴
-	- then, whenComplete : 에러 발생 시 then은 실행안함
-	- any : 성공하든 실패하든 먼저 끝난걸 리턴
+  - wait : 리스트로 함수를 받아서 모두 완료되면 리턴
+  - then, whenComplete : 에러 발생 시 then은 실행안함
+  - any : 성공하든 실패하든 먼저 끝난걸 리턴
 - stream
-	- future는 결과값을 모아서 보여주고
-	- stream은 결과값이 생성중에도 계속 컨트롤 할 수 있다
+  - future는 결과값을 모아서 보여주고
+  - stream은 결과값이 생성중에도 계속 컨트롤 할 수 있다
 - 호출 실패 되는 경우
-	- 동기일때 비동기 호출 시 응답값이 필요할 때
+  - 동기일때 비동기 호출 시 응답값이 필요할 때
 
 ## android
 
@@ -1221,7 +1220,6 @@ func PlusOne(i int) int {
 
 # Javascript
 
-
 ## react function vs class
 
 function 안에 function을 쓰면 렌더링 할 때 다시 렌더링해서 성능 저하 우려가 있다
@@ -1234,7 +1232,6 @@ function 안에 function을 쓰면 렌더링 할 때 다시 렌더링해서 성�
 class component는 this나 props를 넘겨주는 작업이 있어서 거추장스럽다
 기존에는 react의 lifecycle을 사용하려면 class를 써야했는데, hooks(useEffect
 등)이 등장하면서 해결되었고, 함수형 컴포넌트를 권장하고 있다.
-
 
 ## javascript callback
 
@@ -1282,6 +1279,7 @@ function(){
 - this 는 호출된 스코프에서 상속받는다
 
 #### 실행 컨텍스트 생성 시 렉시컬 스코프 내의 선언이 끌어올려 지는 게 호이스팅이다
+
 ["실행 컨텍스트 생성 시 렉시컬 스코프 내의 선언이 끌어올려 지는 게 호이스팅이다"](https://medium.com/@limsungmook/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%8A%94-%EC%99%9C-%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%EC%9D%84-%EC%84%A0%ED%83%9D%ED%96%88%EC%9D%84%EA%B9%8C-997f985adb42#:~:text=%EC%8B%A4%ED%96%89%20%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%20%EC%83%9D%EC%84%B1%20%EC%8B%9C%20%EB%A0%89%EC%8B%9C%EC%BB%AC%20%EC%8A%A4%EC%BD%94%ED%94%84%20%EB%82%B4%EC%9D%98%20%EC%84%A0%EC%96%B8%EC%9D%B4%20%EB%81%8C%EC%96%B4%EC%98%AC%EB%A0%A4%20%EC%A7%80%EB%8A%94%20%EA%B2%8C%20%ED%98%B8%EC%9D%B4%EC%8A%A4%ED%8C%85%EC%9D%B4%EB%8B%A4%27%EB%9E%80)
 
 #### 'int' is not an object, 'Integer' is.
@@ -1340,7 +1338,6 @@ c# 제네릭
 - 사전 체크를 안해도 항상 그 형태가 온다는 것을 보장해준다
 - 개발자의 실수를 개발 단계에서 줄여준다.
 
-
 ## code
 
 - 코드만으로 얘기할 수 있도록 보기 좋은 코드
@@ -1351,22 +1348,24 @@ c# 제네릭
 - 코드가 간결해야 한다
 - 클린코드를 지향하는 이유는 모든 서비스는 단번에 완성도를 100으로 만들 수 없고 유지보수와 기능추가가 반드시 필요하기 때문에 이를 편하게 하기 위함이다.
 
-
 #### 함수를 거쳐서 호출하는 것과 바로 호출하는 것 속도 차이 비교
 
 python
+
 - 10000회 수행 시
 - 함수를 타면 3ms,
 - 함수를 안타면 2ms,
 - 분기를 안타면 1ms,
 
 1000000회 수행 시
+
 - 함수를 타면 140ms,
 - 함수를 타는데 할당 없이 바로 호출하면 130ms,
 - 함수를 안타면 60ms,
 - 분기를 안타면 40~80ms
 
 golang
+
 - 1000000회 수행 시
 - 함수를 타면 0.46ms,
 
@@ -1375,6 +1374,6 @@ golang
 - 큰 자료형을 옮길 때 객체를 넘기는 것보다 메모리 참조하도록 하는게 가볍다
 - 메모리에 직접 접근해서 작업할 필요가 있는 경우가 있다
 - 포인터에 직접 접근하여 데이터를 바꾸는 방식은 변수를 처음 할당만 하고 바꾸지 않는 함수형 프로그래밍 관점에서는 사이드이펙트가 큰 안좋은 방식이 아닌가? 함수형언어에서는 포인터가 없나?
-	- 함수형 언어는 불변성을 이용하는 것이고, 포인터는 포인터대로의 용도가 있다
-	- 트레이드 오프지, 어느 하나가 우수한 것이 아니다
-	- 포인터를 이용해서도 동시성을 구현해서 잘 이용한다
+  - 함수형 언어는 불변성을 이용하는 것이고, 포인터는 포인터대로의 용도가 있다
+  - 트레이드 오프지, 어느 하나가 우수한 것이 아니다
+  - 포인터를 이용해서도 동시성을 구현해서 잘 이용한다
