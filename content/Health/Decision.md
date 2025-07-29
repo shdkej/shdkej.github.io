@@ -5,7 +5,7 @@ date    : 2020-05-06 12:58:37 +0100
 updated : 2025-07-24 19:27:55 +0900
 tags    : health
 ---
-![[Fo7bVw0aAAACI4F.png]]
+![decision](../img/Fo7bVw0aAAACI4F.png)
 ## 요약
 - 선택지를 3개로 줄인다
 - 선택이 힘들면 조건을 늘린다

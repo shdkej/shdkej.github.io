@@ -6,7 +6,7 @@ updated : 2025-07-23 10:12:04 +0900
 tags    : human
 ---
 
-# Rule / Prepare / Limit
+## Rule / Prepare / Limit
 
 변증법, 수파리, 피드백, 메뉴얼, 제한
 
@@ -97,10 +97,7 @@ but manual can make stiff and limit.
 
 -----------------------------------------------------------------------
 
-## 룰
-룰이 중요한게 아니라 일관성이 중요하다
-
-## manual
+## Manual
 변화하기 쉬운 메뉴얼을 만들어서 메뉴얼에 갇히는게 아니라 일에 날개를 달아줘야 한다
 
 장점
@@ -118,6 +115,8 @@ but manual can make stiff and limit.
 체계를 만들 때 구구절절 일일이 정하는게 아니라
 시작점을 제시하고 흥미를 돋구어서 파악을 할 수 있게 하면 좋겠다
 
+#### 룰
+룰이 중요한게 아니라 일관성이 중요하다
 
 #### 메뉴얼 vs 장인
 장인의 작품을 누가 만들어도 똑같게 메뉴얼화 한다면 똑같은 결과가 나올까?
@@ -126,8 +125,7 @@ but manual can make stiff and limit.
 #### manual
 >사람을 측정하고 평가하려고 하면 조직의 신뢰가 무너지고 무의미한 성과 주의의
 >조직이 될 수 있다. 제품 데이터를 측정해야 한다. 라는 의견이 있다.
->
->> https://murianwind.blogspot.com/2015/01/blog-post_28.html
+> - https://murianwind.blogspot.com/2015/01/blog-post_28.html
 
 #### 개발 프로세스가 있어서 개발자가 누구냐에 큰 영향을 받지 않게 할 수 있다?
 개발자는 그럼 누가 와도 상관 없다는 것인가?
