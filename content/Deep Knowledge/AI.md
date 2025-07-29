@@ -5,6 +5,9 @@ date: 2025-07-15 15:35:32 +0100
 updated: 2025-07-23 10:09:49 +0900
 tags: deep_knowledge
 ---
+![study_ai](F4fl0tfacAAt-8z.jpeg.jpg)
+
+
 - AI
 	- 머신러닝
 	- 모델
