@@ -6,7 +6,7 @@ updated : 2021-12-02 22:49:50 +0900
 tags    :
 parent  : [[Blogging]]
 ---
-
+![[unnamed (1).jpg]]
 ## life Tracking
 shortcut setting
 news, post, e-book viewer composing
