@@ -1,0 +1,1419 @@
+<!DOCTYPE html><html lang="kr"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><script>
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "446ekw0kl6");
+            </script><script data-ad-client="ca-pub-8002857692825455" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><meta name="naver-site-verification" content="0738293103ffff9ea9eb43b3c9621e5fb353f97b"/><meta name="generator" content="Gatsby 5.14.5"/><meta data-react-helmet="true" name="description" content="Goal 인프라 구축 및 배포를 쉽고 빠르게, 피드백을 잘 받아 점진적으로 발전하는 환경 좋은 아키텍트는 세부사항에 대한 결정을 가능한 한 오랫동안 미룰 수 있는 방향으로 정책을 설계한다. More 변하지 않을 것과 변할 것을 정해놓고 조정한다. check feedback…"/><meta data-react-helmet="true" property="og:title" content="🚀 아키텍처"/><meta data-react-helmet="true" property="og:description" content="Goal 인프라 구축 및 배포를 쉽고 빠르게, 피드백을 잘 받아 점진적으로 발전하는 환경 좋은 아키텍트는 세부사항에 대한 결정을 가능한 한 오랫동안 미룰 수 있는 방향으로 정책을 설계한다. More 변하지 않을 것과 변할 것을 정해놓고 조정한다. check feedback…"/><meta data-react-helmet="true" property="og:type" content="website"/><style data-href="/styles.0bc8040cf30328e16aff.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#f8f8f2;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}:root{--main-color:#2a2a2a;--second-color:#e0e0e0;--heading-color:#ff8c00}[data-theme=dark]{--main-color:silver;--second-color:#000;--heading-color:salmon}body{background-color:var(--main-color,var(--second-color));color:var(--second-color);font-family:sans-serif;font-size:19px;margin:1rem auto;max-width:900px;padding:1rem}.blog-post-item{border-left:2px solid #404040;line-height:1.2;margin-bottom:32px;padding-left:16px}.blog-post-item:last-child{margin-bottom:0}@media (max-width:767px){.blog-post-item{border-left:1px solid #404040;margin-bottom:24px;padding-left:12px}}@media (min-width:768px){body{background-color:#2a2a2a;letter-spacing:.01em;line-height:1.7}body,p{color:#e0e0e0}p{margin-bottom:1.2em;text-align:justify}h1,h2,h3,h4,h5,h6{color:#f0f0f0;line-height:1.4;margin-bottom:.8em}h1{border-bottom:2px solid #404040;font-size:2.2em;padding-bottom:.3em}h2{border-bottom:1px solid #404040;font-size:1.8em;padding-bottom:.2em}h3{color:#d0d0d0;font-size:1.4em}a{border-bottom:1px solid transparent;color:#7bb3d1;text-decoration:none;transition:border-bottom-color .2s ease}a:hover{border-bottom-color:#7bb3d1}a:visited{color:#7bb3ce}pre{background:#1e1e1e;border:1px solid #404040;border-radius:6px;margin:1.5em 0;padding:20px}code{background:rgba(255,157,107,.1);border-radius:3px;color:#ff9d6b;padding:2px 6px}blockquote{background:hsla(0,0%,100%,.02);border-left:2px solid #555;color:#b8b8b8;font-style:italic;margin:1.5em 0;padding:1em 1.2em}ol,ul{margin:1.2em 0;padding-left:2em}li{line-height:1.6;margin:.5em 0}figcaption{color:#b0b0b0;font-size:.9em;margin-top:.5em}.content-toc a{color:#7bb3d1;margin:0;padding:0;text-decoration:underline;transition:color .2s ease}.content-toc a:hover{color:#9bc7e0}article header,article section,article small{line-height:1.2}.square,.square-field{line-height:1.3}.square ul{line-height:1.2;margin-top:.5em}.square li{line-height:1.2;margin:.2em 0}}h1{color:var(--heading-color)}h2:before{content:"# "}h2,h3,h4{margin-left:-15px;margin-top:50px}h4:before{content:"## "}p{color:var(--second-color,var(--main-color));margin-bottom:0}ul{margin-top:0;padding-inline-start:20px}ul p{margin:0}li{margin-bottom:5px;margin-top:5px}a{color:#40a0bd;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;vertical-align:top}a:visited{color:#40a0ba}pre{background:#161b22;padding:15px}code{color:salmon;display:block;overflow:auto}blockquote{font-style:italic}header h3{margin:2em 0 0}:target:before{content:"";display:block;height:50px;margin-top:-50px}@media (min-width:1200px){.content-toc{display:block;max-height:60vh;overflow-x:hidden;overflow-y:auto;padding:0 20px;position:fixed;right:0;top:300px;width:20%}.toc-header{top:280px}}@media (max-width:1200px){.content-toc{margin-top:50px}}@media (max-width:600px){.square{grid-column:1/4}.square-center{display:none!important}}.square-field{grid-gap:10px;display:grid;font-weight:700;grid-template-areas:". . ." ". center ." ". . .";grid-template-columns:repeat(3,1fr)}.square{border:1px solid #fff;border-radius:5px;overflow:hidden;padding:10px;text-overflow:ellipsis}.square-center{align-items:center;background:linear-gradient(90deg,#6a11cb 0,#2575fc);border-radius:5px;color:#fff;display:flex;grid-area:center;justify-content:center}.rel{display:inline-block;opacity:.8;padding:5px}:not(pre)>code[class*=language-]{background:none;color:salmon;display:inline}figcaption{color:#999;font-size:.8em;text-align:center}</style><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><title data-react-helmet="true">🚀 아키텍처 | SH</title><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GPKPTMNVF5"></script><script>
+    window.GATSBY_GTAG_PLUGIN_GA_TRACKING_ID = (
+      'G-GPKPTMNVF5'
+    );
+    window.GATSBY_GTAG_PLUGIN_ANONYMIZE = false;
+
+    var options = {
+      send_page_view: false
+    };
+    if (false) {
+      options.anonymize_ip = true;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-GPKPTMNVF5', options);
+  </script></head><body class=""><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><header><nav><a href="/">SH</a> | <a href="/tags/">WIKI</a> | <a href="/about/">ABOUT</a></nav></header><br/>---<main><article><header><h1>🚀 아키텍처</h1><p>변화, 정리, 순환, 측정</p><small style="width:50%">Created: <!-- -->2020, 05 07<!-- --> &gt;<a href="https://github.com/shdkej/shdkej.github.io/blame/master/content/Fundamental/Architecture.md">Updated: <!-- -->2025, 07 23</a></small></header><nav class="content-toc"><strong>Table of Contents</strong><div><ul>
+<li>
+<p><a href="#goal">Goal</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#%EC%A2%8B%EC%9D%80-%EC%95%84%ED%82%A4%ED%85%8D%ED%8A%B8%EB%8A%94-%EC%84%B8%EB%B6%80%EC%82%AC%ED%95%AD%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B2%B0%EC%A0%95%EC%9D%84-%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%95%9C-%EC%98%A4%EB%9E%AB%EB%8F%99%EC%95%88-%EB%AF%B8%EB%A3%B0-%EC%88%98-%EC%9E%88%EB%8A%94-%EB%B0%A9%ED%96%A5%EC%9C%BC%EB%A1%9C-%EC%A0%95%EC%B1%85%EC%9D%84-%EC%84%A4%EA%B3%84%ED%95%9C%EB%8B%A4">좋은 아키텍트는 세부사항에 대한 결정을 가능한 한 오랫동안 미룰 수 있는 방향으로 정책을 설계한다.</a></li>
+<li><a href="#more">More</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#summary">Summary</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#need-component">Need Component</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#check-point">Check Point</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#csp">CSP</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#monitoring">Monitoring</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#system">system</a></li>
+<li><a href="#web">web</a></li>
+<li><a href="#%EC%9B%B9-%EC%84%B1%EB%8A%A5-%ED%99%95%EC%9D%B8-%EC%A7%80%ED%91%9C">웹 성능 확인 지표</a></li>
+<li><a href="#%EB%A9%94%EC%9D%B8-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%ED%8C%90%EB%84%AC%EC%97%90%EC%84%9C-%EB%B3%B4%EC%97%AC%EC%A0%B8%EC%95%BC-%ED%95%A0-%EA%B2%83%EB%93%A4">메인 모니터링 판넬에서 보여져야 할 것들</a></li>
+<li><a href="#monitoring-1">monitoring</a></li>
+<li><a href="#alert">alert</a></li>
+<li><a href="#etc">etc</a></li>
+<li><a href="#%ED%8A%B8%EB%9E%98%ED%94%BD%EC%9D%84-%EC%B8%A1%EC%A0%95%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95">트래픽을 측정하는 방법?</a></li>
+<li><a href="#%EC%84%9C%EB%B2%84%EB%A5%BC-%EC%98%A4%EB%9E%98-%EC%BC%9C%EB%86%93%EC%95%98%EC%9D%84-%EB%95%8C-%EC%83%9D%EA%B8%B0%EB%8A%94-%EB%AC%B8%EC%A0%9C%EC%A0%90">서버를 오래 켜놓았을 때 생기는 문제점</a></li>
+<li><a href="#%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EB%B2%94%EC%A3%BC">모니터링 범주</a></li>
+<li><a href="#%EB%AC%B8%EC%A0%9C-%EB%B6%84%EC%84%9D%EA%B3%BC-%EC%9E%AC%EB%B0%9C-%EB%B0%A9%EC%A7%80">문제 분석과 재발 방지</a></li>
+<li><a href="#%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-%EA%B2%AA%EB%8A%94-%EB%AC%B8%EC%A0%9C">대규모 서버에서 겪는 문제</a></li>
+<li><a href="#%EB%8C%80%EC%9A%A9%EB%9F%89-%ED%8A%B8%EB%9E%98%ED%94%BD">대용량 트래픽</a></li>
+<li><a href="#%EC%9D%98%EC%82%AC-%EA%B2%B0%EC%A0%95-%ED%8A%B8%EB%A6%AC%EB%A1%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%ED%95%98%EB%A9%B4-%EB%90%98%EB%A0%A4%EB%82%98">의사 결정 트리로 시스템 모니터링 하면 되려나</a></li>
+<li><a href="#observability%EB%A5%BC-%EB%86%92%EC%9D%B4%EA%B8%B0-%EC%9C%84%ED%95%B4%EC%84%9C%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C">Observability를 높이기 위해서는 어떻게 해야할까</a></li>
+<li><a href="#reference">reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#security">Security</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#jwt-oauth-session">jwt, oauth, session</a></li>
+<li><a href="#double-check-error-handling-logging-security">double check, error handling, logging, security</a></li>
+<li><a href="#reference-1">reference</a></li>
+<li><a href="#ssh">SSH</a></li>
+<li><a href="#ssltls">SSL/TLS</a></li>
+<li><a href="#tls">TLS</a></li>
+<li><a href="#https">HTTPS</a></li>
+<li><a href="#oauth">OAuth</a></li>
+<li><a href="#security-1">security</a></li>
+<li><a href="#user-%EC%84%B8%EC%85%98-%EA%B4%80%EB%A6%AC">user 세션 관리</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#distributed-systems">Distributed Systems</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#how-to-test">how to test</a></li>
+<li><a href="#when-would-you-use-requestreply-and-publishsubscribe">when would you use request/reply and publish/subscribe</a></li>
+<li><a href="#server-stress-test">server stress test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#production">Production</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#%ED%94%84%EB%A1%9C%EB%8D%95%EC%85%98%EC%97%90-%ED%95%84%EC%9A%94%ED%95%9C-%EC%86%8D%EC%84%B1">프로덕션에 필요한 속성</a></li>
+<li><a href="#component">component</a></li>
+<li><a href="#%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B0%80-%EC%BB%A4%EC%A0%B8%EA%B0%90%EC%97%90-%EB%94%B0%EB%9D%BC-%EC%A7%81%EC%A0%91-%EA%B5%AC%ED%98%84%ED%95%B4%EC%95%BC%ED%95%98%EB%8A%94-%EA%B8%B0%EB%8A%A5">서비스가 커져감에 따라 직접 구현해야하는 기능</a></li>
+<li><a href="#reboot-report">reboot report</a></li>
+<li><a href="#%EA%B5%AC%EC%84%B1%EB%B3%B4%EB%8B%A4-%EA%B4%80%EC%8A%B5-coc">구성보다 관습, CoC</a></li>
+<li><a href="#%EC%9E%90%EB%8F%99%ED%99%94">자동화</a></li>
+<li><a href="#%EC%9E%90%EB%8F%99%ED%99%94%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90-%EC%9E%90%EB%8F%99%ED%99%94%EB%B3%B4%EB%8B%A4%EB%8A%94-%EC%9D%BC%EA%B4%84%EC%A0%81%EC%9A%A9%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90-%EC%9D%BC-%EC%88%98-%EC%9E%88%EA%B2%A0%EB%8B%A4">자동화의 문제점 (자동화보다는 일괄적용의 문제점 일 수 있겠다)</a></li>
+<li><a href="#ai%EC%99%80-%EC%9E%90%EB%8F%99%ED%99%94">AI와 자동화</a></li>
+<li><a href="#%EB%A9%94%EC%8B%9C%EC%A7%80-%ED%81%90">메시지 큐</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#aws">AWS</a></p>
+<ul>
+<li>
+<p><a href="#%EC%8B%A0%EA%B7%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%99%95%EC%9D%B8">신규 업데이트 확인</a></p>
+</li>
+<li>
+<p><a href="#%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC">네트워크</a></p>
+</li>
+<li>
+<p><a href="#%EC%BB%B4%ED%93%A8%ED%8C%85">컴퓨팅</a></p>
+</li>
+<li>
+<p><a href="#%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80">스토리지</a></p>
+</li>
+<li>
+<p><a href="#%EA%B8%B0%ED%83%80">기타</a></p>
+<ul>
+<li><a href="#%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4%EB%A5%BC-%EC%84%A0%ED%98%B8">서버리스를 선호</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98">아키텍처</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#%EC%9D%BC%EA%B4%80%EC%84%B1%EC%9D%B4-%EC%A4%91%EC%9A%94%ED%95%9C-%EA%B2%83-%EA%B0%99%EB%8B%A4">일관성이 중요한 것 같다.</a></li>
+<li><a href="#%EC%A4%91%EC%8B%AC%EB%A7%8C-%EB%82%A8%EA%B8%B4%EB%8B%A4">중심만 남긴다</a></li>
+<li><a href="#%EC%9D%B8%ED%94%84%EB%9D%BC-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C-3-%EC%9A%94%EC%86%8C">인프라 개발자의 관점에서 3 요소</a></li>
+<li><a href="#%ED%95%9C-%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9D%98-%EA%B5%AC%EC%A1%B0">한 서비스의 구조</a></li>
+<li><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98">프로젝트 아키텍처</a></li>
+<li><a href="#%EA%B7%B8%EB%8F%99%EC%95%88%EC%9D%98-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EB%AA%A8%EB%8D%B8">그동안의 아키텍처 모델</a></li>
+<li><a href="#%EC%A2%8B%EC%9D%80-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EA%B0%80-%EC%84%B1%EA%B3%B5%EC%9D%84-%EB%B3%B4%EC%9E%A5%ED%95%98%EC%A7%80%EB%8A%94-%EC%95%8A%EC%A7%80%EB%A7%8C-%EB%82%98%EC%81%98%EB%A9%B4-%EB%A7%9D%ED%95%9C%EB%8B%A4">좋은 아키텍처가 성공을 보장하지는 않지만 나쁘면 망한다</a></li>
+<li><a href="#%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-1">아키텍처</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4">아키텍처 레퍼런스</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80">아키텍처 모범 사례</a></li>
+<li><a href="#%EC%8B%9C%ED%80%80%EC%8A%A4">시퀀스</a></li>
+<li><a href="#%ED%8C%A8%ED%84%B4%ED%99%94">패턴화</a></li>
+<li><a href="#%EB%8B%B9%EA%B7%BC%EB%A7%88%EC%BC%93-%EB%8B%B9%EA%B7%BC%ED%8E%98%EC%9D%B4-%EC%9D%B8%ED%94%84%EB%9D%BC-%EA%B5%AC%EC%B6%95-%EC%9D%B4%EC%95%BC%EA%B8%B0">당근마켓 당근페이 인프라 구축 이야기</a></li>
+<li><a href="#%EB%8B%B9%EA%B7%BC-%EC%B1%84%ED%8C%85-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98">당근 채팅 시스템 아키텍처</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#micro-service-architecture">Micro Service Architecture</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C-%EC%84%9C%EB%B9%84%EC%8A%A4">마이크로 서비스</a></li>
+<li><a href="#%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4">마이크로서비스</a></li>
+<li><a href="#library-%ED%98%B8%EC%B6%9C">library 호출</a></li>
+<li><a href="#%EC%84%9C%EB%B9%84%EC%8A%A4%EB%A9%94%EC%8B%9C">서비스메시</a></li>
+<li><a href="#soa-msa-ddd">SOA, MSA, DDD</a></li>
+<li><a href="#event-driven-architecture">event driven architecture</a></li>
+<li><a href="#banksalad-github">banksalad github</a></li>
+<li><a href="#microservice-experience">microservice experience</a></li>
+<li><a href="#junk-food">junk food</a></li>
+<li><a href="#architecture-process-organization">architecture process organization</a></li>
+<li><a href="#when-many-people-come-to-site-how-to-keep-working-server">When many people come to site. how to keep working server</a></li>
+<li><a href="#%EC%84%80%EC%8B%9C">섀시</a></li>
+<li><a href="#%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4%EC%97%90%EC%84%9C-%EB%91%90-%EC%84%9C%EB%B9%84%EC%8A%A4%EC%97%90%EC%84%9C-%EB%B6%88%EB%9F%AC%EC%98%A8-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%A9%EC%B9%A0%EA%B9%8C">마이크로서비스에서 두 서비스에서 불러온 데이터를 어떻게 합칠까</a></li>
+<li><a href="#cqrs">CQRS</a></li>
+<li><a href="#%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%9E%98-%EA%B5%AC%EC%B6%95%ED%95%B4%EB%B3%B4%EA%B3%A0-%EC%8B%B6%EB%8B%A4-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%B2%98%EB%A6%AC">마이크로서비스 잘 구축해보고 싶다 (이벤트 처리)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></nav><div style="border-top:1px solid;align:center"></div><section><h2 id="goal" style="position:relative;"><a href="#goal" aria-label="goal permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Goal</h2>
+<p>인프라 구축 및 배포를 쉽고 빠르게, 피드백을 잘 받아 점진적으로 발전하는 환경</p>
+<h4 id="좋은-아키텍트는-세부사항에-대한-결정을-가능한-한-오랫동안-미룰-수-있는-방향으로-정책을-설계한다" style="position:relative;"><a href="#%EC%A2%8B%EC%9D%80-%EC%95%84%ED%82%A4%ED%85%8D%ED%8A%B8%EB%8A%94-%EC%84%B8%EB%B6%80%EC%82%AC%ED%95%AD%EC%97%90-%EB%8C%80%ED%95%9C-%EA%B2%B0%EC%A0%95%EC%9D%84-%EA%B0%80%EB%8A%A5%ED%95%9C-%ED%95%9C-%EC%98%A4%EB%9E%AB%EB%8F%99%EC%95%88-%EB%AF%B8%EB%A3%B0-%EC%88%98-%EC%9E%88%EB%8A%94-%EB%B0%A9%ED%96%A5%EC%9C%BC%EB%A1%9C-%EC%A0%95%EC%B1%85%EC%9D%84-%EC%84%A4%EA%B3%84%ED%95%9C%EB%8B%A4" aria-label="좋은 아키텍트는 세부사항에 대한 결정을 가능한 한 오랫동안 미룰 수 있는 방향으로 정책을 설계한다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>좋은 아키텍트는 세부사항에 대한 결정을 가능한 한 오랫동안 미룰 수 있는 방향으로 정책을 설계한다.</h4>
+<h4 id="more" style="position:relative;"><a href="#more" aria-label="more permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>More</h4>
+<ul>
+<li>
+<p>변하지 않을 것과 변할 것을 정해놓고 조정한다.</p>
+</li>
+<li>
+<p>check feedback</p>
+<ul>
+<li>어떤 항목을 봐야 이것이 잘 진행되는지를 확인 할 수 있어야 한다</li>
+<li>변화의 기록을 챙겨야 한다 (following changed thing)</li>
+</ul>
+</li>
+<li>
+<p>local loading file time > 0.4s</p>
+</li>
+<li>
+<p>external network time > 0.4s. - total 0.8s</p>
+</li>
+<li>
+<p>백업 잘 해야 한다. 백업 전략을 세워야 한다</p>
+</li>
+<li>
+<p>auto scaling</p>
+</li>
+<li>
+<p>auto recovery</p>
+</li>
+<li>
+<p>시스템 구성을 하나하나 검증하며 도입하기</p>
+</li>
+<li>
+<p>재사용성</p>
+</li>
+<li>
+<p>복잡도는 낮추고 싶고 서비스는 많이 만들고 싶다</p>
+</li>
+<li>
+<p>배포용 이미지를 만든다.
+배포용 이미지는 항상 처음부터 새로 빌드되어야 한다.
+덮고 덮는 방식은 불확실성을 증가시킨다.</p>
+</li>
+<li>
+<p>도메인을 생각하자. 도메인이 디자인을 만든다.</p>
+</li>
+<li>
+<p>Fail_Fast</p>
+</li>
+<li>
+<p>고효율 저비용</p>
+</li>
+<li>
+<p>덮는 방식인 프레임워크보다 붙이는 방식인 어댑터 방식이 좋다</p>
+</li>
+<li>
+<p>내부적으로는 효율을 최대로 하되 사람들은 쫙빠진 것보다 넉넉한 것을 더 좋아하는 점을 생각한다</p>
+</li>
+<li>
+<p>User experience searchable website</p>
+</li>
+<li>
+<p>서비스는 관리자가 관리하지말고 사용자가 관리할 수 있게 하면 좋겠다</p>
+</li>
+<li>
+<p>기능을 제공해주지 말고 모듈로 만들 수 있게 하고 여러 개 선택할 수 있도록 한다</p>
+</li>
+<li>
+<p>새로운 툴이 관리점은 줄이고, 편의기능은 늘릴 수 있으면 좋겠다.</p>
+</li>
+</ul>
+<p><a href="/information/#좋은-아키텍트는-세부사항에-대한-결정을-가능한-한-오랫동안-미룰-수-있는-방향으로-정책을-설계한다.">Information#좋은 아키텍트는 세부사항에 대한 결정을 가능한 한 오랫동안 미룰 수 있는 방향으로 정책을 설계한다.</a>
+<a href="/think/#server-architecture-to-using-some-company-service">Think#server architecture to using some company service</a></p>
+<h2 id="summary" style="position:relative;"><a href="#summary" aria-label="summary permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h2>
+<ul>
+<li>code with log, test, api</li>
+<li>CI with lint, test, performance, dependency</li>
+<li>CD with deploy</li>
+<li>Monitoring with check node, api, log, performance</li>
+</ul>
+<h4 id="need-component" style="position:relative;"><a href="#need-component" aria-label="need component permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Need Component</h4>
+<ul>
+<li>MQ</li>
+<li>M/L</li>
+<li>Elasticsearch</li>
+<li><a href="/information/#무질서한-원숭이(chaos-monkey)">Information#무질서한 원숭이(Chaos Monkey)</a></li>
+<li>new software to kubernetes cluster</li>
+</ul>
+<h2 id="check-point" style="position:relative;"><a href="#check-point" aria-label="check point permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Check Point</h2>
+<p>수시 배포</p>
+<ul>
+<li>결과를 빠르게 확인 가능</li>
+<li>에러 확률 증가 - 빠른 롤백으로 위험도 낮출 수 있음</li>
+</ul>
+<p>주간 배포</p>
+<ul>
+<li>너무 큰 배포 단위가 될 수 있음</li>
+<li>테스트 상태의 결과와 실제 결과가 다를 수 있음</li>
+<li>배포일자에 에러 집중</li>
+</ul>
+<p>강제성을 얼만큼 할지, 자율성을 얼만큼 할지</p>
+<p>업무가 가능한지 아닌지 판단할 방법</p>
+<ul>
+<li>업무를 받으면 어떻게 시작하면 좋을지? 관계가 어떻게 되있는지 알아야 하는데..</li>
+</ul>
+<p>SOLID - Open Closed Principle
+변화를 최소화 하기 위해 변화 예상가능한 부분을 설계시 나눠놓아야 한다는 원칙인데
+그 기준선을 어떻게 설정하느냐가 중요할 것 같다</p>
+<p>divide code / config file</p>
+<p>자주 변하는 것과 자주 변하지 않는 것 고려하기
+자주 변하지 않는 것은 신경 안써도 되도록 하기</p>
+<p>디렉토리 단위를 기능별로 할지, 역할별로 할지</p>
+<ul>
+<li>코드 분리 기준
+회사에서는 레이어별로 나눴다
+마이크로서비스에서는 기능별로 나눈다</li>
+</ul>
+<p>monorepo vs microrepo</p>
+<ul>
+<li>깊이 vs 넓이</li>
+<li>디렉토리를 중첩시켜 한 레포 안에 둘지</li>
+<li>디렉토리가 중첩되면 프로젝트를 분리 시켜 레포를 나눌지</li>
+</ul>
+<p>개발은 docker compose로 운영은 kubernetes로 하도록 사람들을 유도할 수
+있을까? 나는 이렇게 작업하고 있는가?
+<a href="/container/#docker-compose를-이용해-이미지를-바로-배포하는-것과-dockerfile을-쓰는-것">Container#docker-compose를 이용해 이미지를 바로 배포하는 것과 Dockerfile을 쓰는 것</a></p>
+<p>회사의 소프트웨어를 자체적으로 구축한 것을 쓰느냐, 잘 가져다 쓰느냐</p>
+<ul>
+<li>나의 아키텍처를 너무 좋아하게 되면
+다른 아키텍처를 거부하게 되거나 보기 힘들어지지 않을까</li>
+<li>내 아키텍처를 만들기보다 다른 사람들의 아키텍처를 받아들이는게 나을까</li>
+<li><a href="/about_development/#쿠팡이-자체적으로-만든-서킷브레이커와-api-gateway">About_Development#쿠팡이 자체적으로 만든 서킷브레이커와 api gateway</a></li>
+</ul>
+<p>하나의 툴과 종속성</p>
+<ul>
+<li>쿠버네티스의 기능을 모두 쓰는 것이 다른 도구를 줄일 수 있는 방법이다.
+근데 그러면 쿠버네티스에 종속성이 심하게 걸린다</li>
+</ul>
+<p>팀 구조</p>
+<ul>
+<li>프로젝트별 팀 vs TF 팀 vs 역할별 팀 vs 기능별 팀</li>
+</ul>
+<h4 id="csp" style="position:relative;"><a href="#csp" aria-label="csp permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CSP</h4>
+<p>Communicating Sequential Processes
+golang의 groutine의 동작 방식이자, 네트워크로 연결되있는 자원들이 서로 통신할 때
+효과적인 모델.
+마이크로서비스에서 수많은 서비스들 간의 연결과 복잡성을 관리하기 위한
+hashicorp의 선택</p>
+<hr>
+<h2 id="monitoring" style="position:relative;"><a href="#monitoring" aria-label="monitoring permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Monitoring</h2>
+<ul>
+<li>urgent</li>
+<li>important</li>
+</ul>
+<h4 id="system" style="position:relative;"><a href="#system" aria-label="system permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>system</h4>
+<ul>
+<li>보안 (로그인 체크)</li>
+<li>load average</li>
+<li>error message</li>
+<li>memory</li>
+<li>disk</li>
+<li>network + time wait port</li>
+<li><a href="https://www.mimul.com/blog/linux-server-operations/">https://www.mimul.com/blog/linux-server-operations/</a></li>
+</ul>
+<h4 id="web" style="position:relative;"><a href="#web" aria-label="web permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>web</h4>
+<ul>
+<li>api response time</li>
+<li>웹 요청량</li>
+<li>homepage health</li>
+<li>접속자 로그</li>
+<li>접속한 페이지</li>
+<li>사람들이 어떤 메뉴를 많이 쓰는지 확인</li>
+</ul>
+<h4 id="웹-성능-확인-지표" style="position:relative;"><a href="#%EC%9B%B9-%EC%84%B1%EB%8A%A5-%ED%99%95%EC%9D%B8-%EC%A7%80%ED%91%9C" aria-label="웹 성능 확인 지표 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>웹 성능 확인 지표</h4>
+<ul>
+<li>DNS Lookup time</li>
+<li>tcp 연결 시간 (브라우저와 서버간 연결 시간)</li>
+<li>SSL 연결 시간</li>
+<li>첫 번째 바이트 다운로드 시간</li>
+<li>전체 다운로드 시간</li>
+</ul>
+<h4 id="메인-모니터링-판넬에서-보여져야-할-것들" style="position:relative;"><a href="#%EB%A9%94%EC%9D%B8-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%ED%8C%90%EB%84%AC%EC%97%90%EC%84%9C-%EB%B3%B4%EC%97%AC%EC%A0%B8%EC%95%BC-%ED%95%A0-%EA%B2%83%EB%93%A4" aria-label="메인 모니터링 판넬에서 보여져야 할 것들 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>메인 모니터링 판넬에서 보여져야 할 것들</h4>
+<p>node 대수
+cpu, memory 사용량
+응답량
+처리 시간</p>
+<ul>
+<li>cpu, memory, disk, network</li>
+</ul>
+<h4 id="monitoring-1" style="position:relative;"><a href="#monitoring-1" aria-label="monitoring 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>monitoring</h4>
+<ul>
+<li>application, framework, os, cloud 이 정도가 기본 관리 영역이겠다.</li>
+<li>정상 상태를 추가해야한다. 범위를 정해서 이 정도면 정상인 범위로 놓고, 정상
+범위 내를 계속 건드려서 카오스 테스팅 하고, 범위 벗어난 값은 다 알림
+보내도록 해보면 좋겠다</li>
+</ul>
+<h4 id="alert" style="position:relative;"><a href="#alert" aria-label="alert permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>alert</h4>
+<ul>
+<li>알림은 정말 확인해야 하는 것과 일반적인 안내를 분리해야 하고 확실히 눈에 띄게 해야 한다</li>
+</ul>
+<h4 id="etc" style="position:relative;"><a href="#etc" aria-label="etc permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>etc</h4>
+<ul>
+<li>각 서비스 상태</li>
+<li>노드 살아 있는지 체크</li>
+<li>접속자 수</li>
+<li>응답시간</li>
+<li>처리시간</li>
+<li>DB 관련</li>
+<li>접속한 어플리캐이션</li>
+<li>부하율</li>
+<li>알람</li>
+<li>docker up/total</li>
+<li>트래픽 관리</li>
+<li>GCDN</li>
+<li>static code analysis</li>
+<li>lambda, ec2, s3, Dynamodb</li>
+<li>GCP</li>
+</ul>
+<h4 id="트래픽을-측정하는-방법" style="position:relative;"><a href="#%ED%8A%B8%EB%9E%98%ED%94%BD%EC%9D%84-%EC%B8%A1%EC%A0%95%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95" aria-label="트래픽을 측정하는 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>트래픽을 측정하는 방법?</h4>
+<p>tps
+접속자 수
+resource usage
+page view
+api count
+loading time
+response time</p>
+<h4 id="서버를-오래-켜놓았을-때-생기는-문제점" style="position:relative;"><a href="#%EC%84%9C%EB%B2%84%EB%A5%BC-%EC%98%A4%EB%9E%98-%EC%BC%9C%EB%86%93%EC%95%98%EC%9D%84-%EB%95%8C-%EC%83%9D%EA%B8%B0%EB%8A%94-%EB%AC%B8%EC%A0%9C%EC%A0%90" aria-label="서버를 오래 켜놓았을 때 생기는 문제점 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>서버를 오래 켜놓았을 때 생기는 문제점</h4>
+<p>아파치에서 동시작업을 위해
+자식 프로세스를 생성하도록 하고, 부모 프로세스와 메모리를 일정 부분 공유하면서
+메모리를 절약하는데,
+공유되는 메모리의 양이 시간이 지날수록 적어져서 자식 프로세스를 재시작
+해줘야한다고 한다</p>
+<p>이처럼 시간이 지남에 따라 성능 저하를 일으키는게 있으면 확인해봐야겠다</p>
+<p>그야말로 켜놓고만 있었는데 성능이 안좋아지는 원인 중 하나였다</p>
+<p>리눅스에서 jiffies 라는 변수가 32비트라 500일 정도 지나면 오버플로우 될 수
+있었는데 최신 커널은 64비트로 할당되어 최신 커널을 쓰면 넉넉해진다</p>
+<p>쿠버네티스단, 리눅스단, 기타 서비스단에서 체크 필요
+주로 데이터가 쌓이거나 메모리 사용량이 쌓일 때 문제가 생긴다</p>
+<h4 id="모니터링-범주" style="position:relative;"><a href="#%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%EB%B2%94%EC%A3%BC" aria-label="모니터링 범주 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>모니터링 범주</h4>
+<p>프로파일링
+로깅
+트레이싱
+메트릭
+알림
+디버깅
+추세 파악(트렌딩)
+플러밍</p>
+<h4 id="문제-분석과-재발-방지" style="position:relative;"><a href="#%EB%AC%B8%EC%A0%9C-%EB%B6%84%EC%84%9D%EA%B3%BC-%EC%9E%AC%EB%B0%9C-%EB%B0%A9%EC%A7%80" aria-label="문제 분석과 재발 방지 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>문제 분석과 재발 방지</h4>
+<p>예측하지 말고 측정한다</p>
+<h4 id="대규모-서버에서-겪는-문제" style="position:relative;"><a href="#%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-%EA%B2%AA%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="대규모 서버에서 겪는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>대규모 서버에서 겪는 문제</h4>
+<p>데이터
+CPU
+네트워크</p>
+<p>데이터의 동기화
+cpu 병목
+네트워크 병목</p>
+<p>load average를 확인하고
+sar을 통해 cpu 문제인지 io문제인지 확인한다</p>
+<h4 id="대용량-트래픽" style="position:relative;"><a href="#%EB%8C%80%EC%9A%A9%EB%9F%89-%ED%8A%B8%EB%9E%98%ED%94%BD" aria-label="대용량 트래픽 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>대용량 트래픽</h4>
+<p>WAS에서 문제가 생길 때 다중화로 해결이 힘든 이유</p>
+<ul>
+<li>다른 WAS를 찾아야 한다.</li>
+<li>로그인 정보를 전달해줘야 한다. (세션 클러스터링 필요)
+<ul>
+<li>그에 따른 관리 지점 증가</li>
+</ul>
+</li>
+</ul>
+<p>데이터베이스 다중화 힘든 이유</p>
+<ul>
+<li>동기화</li>
+</ul>
+<h4 id="의사-결정-트리로-시스템-모니터링-하면-되려나" style="position:relative;"><a href="#%EC%9D%98%EC%82%AC-%EA%B2%B0%EC%A0%95-%ED%8A%B8%EB%A6%AC%EB%A1%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81-%ED%95%98%EB%A9%B4-%EB%90%98%EB%A0%A4%EB%82%98" aria-label="의사 결정 트리로 시스템 모니터링 하면 되려나 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>의사 결정 트리로 시스템 모니터링 하면 되려나</h4>
+<p>load average yes</p>
+<ul>
+<li>cpu bound</li>
+<li>io bound</li>
+</ul>
+<p>load average no</p>
+<ul>
+<li>network
+근데 이러면 dfs로 전체탐색을 해야하겠네</li>
+</ul>
+<h4 id="observability를-높이기-위해서는-어떻게-해야할까" style="position:relative;"><a href="#observability%EB%A5%BC-%EB%86%92%EC%9D%B4%EA%B8%B0-%EC%9C%84%ED%95%B4%EC%84%9C%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C" aria-label="observability를 높이기 위해서는 어떻게 해야할까 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Observability를 높이기 위해서는 어떻게 해야할까</h4>
+<p>이 문제가 발생했는지를 내가 설정하지 않아도 알 수 있으려면 바로 observability가 필요하다</p>
+<ul>
+<li>피드백을 받기 위해</li>
+<li>문제가 일어나기 전에 예측하기 위해?</li>
+<li>분산 환경에서 모니터링이 한눈에 되어야 한다</li>
+<li>Metrics, Events, Logs, Traces 를 한눈에 확인한다</li>
+<li>예측하지 못한 문제를 찾으려고 한다</li>
+<li><a href="https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%96%B4%EC%9D%B4%EB%A1%A0">제어이론</a>에서
+**관측 가능성(observability)**이란, 시스템의 **출력 변수(output variable)**를
+사용하여 **상태 변수(state variable)**에 대한 정보를 알아낼 수 있는지를
+나타내는 용어이다. 시스템의 출력 변수를 사용하여 특정 상태 변수에 대한 정보를
+알아낼 수 있을 때 그 상태 변수는 **관측 가능하다(observable)**고 하며,
+시스템의 모든 상태 변수가 관측 가능할 때 그 시스템은 관측 가능하다고 한다.</li>
+<li>메트릭이란? 최적의 네트워크 경로 또는 측정 가능한 단위(평가지표)</li>
+</ul>
+<p>서버를 가상화해서 사용 시 서버는 추상화가 되고 서버의 상태를 일일이 확인할 필요가 없다. 문제가 생기면 없애고 새로 만들면 되기 때문에.</p>
+<p>근데 문제가 생겼는지 확인하려면 기준점이 있어야 하고, 기준이 설정되어 있지 않다면 문제가 발생했는지 알 수 없다</p>
+<p>정상 상태를 정의하고, 비정상 상태로 만든 후 정상 상태로 돌리는 것을 통해
+Observability를 높인다. 이것을 카오스 엔지니어링이라고 한다.</p>
+<p>예측하는 것이 아니라 관찰할 수 있도록 만든 후 관찰 하는 것.</p>
+<ul>
+<li>Observability</li>
+<li>post mortem</li>
+<li>무엇을 보여줄 수 있는가</li>
+<li>무엇을 해결해야 하는가</li>
+<li>어떤 문제가 생길 것 같은가</li>
+</ul>
+<p>서비스 장애 시간
+지표
+SLO</p>
+<p>SLO는 목표고 SLI는 지표다
+지표가 있어야 그걸 기반으로 목표를 세운다</p>
+<p>부팅시간 10초 이내는 합리적인 지표일까?
+시스템이 고장났을 때 빨리 재시작 되는게 중요할 것 같은데 어차피 헬스체크 간격이 15초라면 부팅시간이 의미가 있을까. 헬스체크 간격을 그렇다고 너무 빠르게 할 필요 있을까?</p>
+<p>Log Trace Metric
+프로메테우스는 메트릭 전문
+로키는 로그 전문
+Tempo라는 트레이싱 전문도 생겼구나
+트레이스는 네트웍 영역이고 다른 툴이 필요
+SigNoz라는 오픈소스 툴이 있다
+OpenTelemetry와 연계가 잘 되는 듯</p>
+<h4 id="reference" style="position:relative;"><a href="#reference" aria-label="reference permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>reference</h4>
+<ul>
+<li><a href="https://andromedarabbit.net/%EB%AC%B4%EC%97%87%EC%9D%84-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80/">https://andromedarabbit.net/무엇을-모니터링할-것인가/</a>
+<ul>
+<li>AWS, Kubernetes 등에서의 모니터링 파라미터</li>
+</ul>
+</li>
+<li><a href="https://www.mimul.com/blog/linux-server-operations/">https://www.mimul.com/blog/linux-server-operations/</a>
+<ul>
+<li>리눅스 시스템 상태 확인 스크립트</li>
+</ul>
+</li>
+<li><a href="https://brunch.co.kr/@leedongins/75">CPU 지표</a></li>
+<li><a href="https://luavis.me/server/linux-performance-analysis">리눅스 60초 안에 상황 파악하기</a></li>
+</ul>
+<hr>
+<h2 id="security" style="position:relative;"><a href="#security" aria-label="security permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Security</h2>
+<ul>
+<li>how to manage ssh key?
+<ol>
+<li>make every each computer</li>
+<li>keep other storage</li>
+</ol>
+</li>
+</ul>
+<p><a href="/tool/#서버-보안-설정">Tool#서버 보안 설정</a></p>
+<h4 id="jwt-oauth-session" style="position:relative;"><a href="#jwt-oauth-session" aria-label="jwt oauth session permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jwt, oauth, session</h4>
+<ul>
+<li>token can make easy check current users count?</li>
+</ul>
+<h4 id="double-check-error-handling-logging-security" style="position:relative;"><a href="#double-check-error-handling-logging-security" aria-label="double check error handling logging security permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>double check, error handling, logging, security</h4>
+<h4 id="reference-1" style="position:relative;"><a href="#reference-1" aria-label="reference 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>reference</h4>
+<ul>
+<li><a href="https://www.slideshare.net/ssuser800974/ss-76664853">암호화 이것만 알면 된다</a></li>
+</ul>
+<h4 id="ssh" style="position:relative;"><a href="#ssh" aria-label="ssh permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SSH</h4>
+<h4 id="ssltls" style="position:relative;"><a href="#ssltls" aria-label="ssltls permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SSL/TLS</h4>
+<ul>
+<li>HTTP를 HTTPS로 만들어주는게 TLS 연동하는 거</li>
+<li>SSL은 처음 나왔을 때 이름. 현재는 TLS라고 불림</li>
+<li>SSL3.0 이 TLS1.0과 같음</li>
+<li>TLS 1.2가 2008년 버전이고 TLS1.3이 2018년에 나옴</li>
+<li>빨라지고, 단순화되었다.</li>
+<li>nginx나 브라우저에서도 TLS1.3이 지원되어야 한다</li>
+</ul>
+<h4 id="tls" style="position:relative;"><a href="#tls" aria-label="tls permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TLS</h4>
+<p>ssh 생성해서 관리하고 github과 연동하는 것을 자연스럽게 할 수 있어야겠다
+ci 이용 시나 push할 때 ssh permission을 확인하려는 목적인가?</p>
+<p>.known_hosts
+.authorized_keys</p>
+<p>public 과 private.
+private 는 목적지. 한 곳에서만 가지고 있는다
+public 은 접속자. 모두가 자유롭게 갖는다</p>
+<p>ci 툴에서 서버는 ci 서버가 되는 것인가? 클라이언트가 내가 되고?</p>
+<ul>
+<li>ci 툴이 접속자고, github 저장소가 서버가 되어서, 서버에서 pub키를 가지고
+접속자가 private key를 가진다</li>
+<li>서버가 접속자고, 나는 목적지</li>
+</ul>
+<p>클라우드 서비스에서는 노트북에서 생성한 ssh 를 cloud instance에 넘기고 내가 다시
+public이 되어서 접근하는 것인가?
+private는 미리 aws에 올려놓고 그것을 가져다 쓰도록 하면 좋겠다</p>
+<ul>
+<li>ec2에서 pem키를 받는 것은 ec2가 목적지고 내가 접속자</li>
+</ul>
+<p>포맷을 대비해서 ssh key를 파일로 갖고 있으려고 하는데 private key를 갖고 있어도
+되나?</p>
+<p>공개키를 서버에 등록해서 클라이언트가 비밀키를 가지고 있는다?</p>
+<p>authorized_keys에 공개 키를 복사해 넣으면, 접속하는 곳에서 비밀키를 물어본다</p>
+<p>aws 에서도 pub키를 서버에 보내고, 비밀키는 노트북에 둔다</p>
+<p>.pem 파일은 뭐지 = 형태만 다른 private key와 같은 용도</p>
+<p><del>ssh 는 다른 컴퓨터에 접근할 때 키를 만들어서</del>
+<del>상대 컴퓨터에 공개키를 제공해서 내가 들어간다고 알려주면 된다?</del>
+<del>상대 컴퓨터가 내 공개키를 가지고 있다는 것은 내 접속을 허용하겠다는 의미다?</del>
+<del>그럼 해커가 공개키를 쑤셔넣으면 보안이 뚫리는건가?</del></p>
+<p>공개키, 대칭키</p>
+<ul>
+<li>공개키는 비밀키를 공유하지 않아도 된다는 점에서의 장점이 있다.</li>
+<li>대신 공개키를 가지고 있으면 누구나 정보를 볼 수 있다?</li>
+<li>공개키로 암호화한 것은 비밀키가 없으면 볼 수 없다.</li>
+<li>공개키 방식만으로는 서버에서 클라이언트에 안전하게 정보를 전달할 수 없다.
+<ul>
+<li>비밀키가 해독을 해야하는데, 서버는 정보를 전달하는 쪽이니까.</li>
+</ul>
+</li>
+</ul>
+<p>공개키로 암호화 된 것을 복호화 할 수 있다. 그래서 공개키 방식은 파일의 안전을
+보장해주지는 않는다. 하지만 그 파일의 신원을 확인해줄 수 있다.</p>
+<p>RSA는 결과값을 가지고 있어도 원래의 값을 알 수 없는 소수의 소인수분해의 어려움을
+통해 강력한 보안성을 가진다.
+이게 TLS에서 어떻게 쓰이는거지?
+비밀키가 원래의 값이고 공개키가 결과값인가?</p>
+<ul>
+<li>TLS = RSA + 대칭키</li>
+<li>HTTPS는 HTTP + TLS</li>
+</ul>
+<p>SSH 와 TLS를 같은 원리로 생각했다.
+ssh에도 public_key와 private_key가 있지 않은가
+TLS에는 crt와 key가 있다,</p>
+<p>해시 함수 MD5, SHA &#x3C;-> 대칭키 AES, 공개키 RSA</p>
+<p>GPG - 개인용 메시지를 암호화하려고 할 때 쓴다</p>
+<ul class="contains-task-list">
+<li>
+<p>내 공개키는 마구 뿌린다</p>
+</li>
+<li>
+<p>그러면 내 공개키를 이용해 만든 데이터는 내 비밀키로만 열 수 있다.</p>
+</li>
+<li>
+<p>내 공개키를 갖고 있다고 내 정보에 접근할 수는 없나? 수신용인가?</p>
+</li>
+<li>
+<p>주인장의 사이트에 공개키가 올려져 있어도 그것이 조작된 것일 수도 있다. 그래서
+CA 업체에서 이를 검증한다.</p>
+</li>
+<li class="task-list-item">
+<p><input type="checkbox" checked disabled> SSH에서 pub키는 gpg키처럼 마구 공유해도 되는게 아니지 않나? pub키만 있으면 서버에 마음대로 접속할 수 있는데</p>
+<ul>
+<li>pub키가 서버가 갖는 키고, 클라이언트는 private key를 갖는다.</li>
+<li>그래서 pub키가 많이 퍼지면 클라이언트는 많은 곳을 갈 수 있다.</li>
+<li>authorized_keys, known_hosts</li>
+<li>authorized_keys에는 pub키가 들어간다. 서버측에.</li>
+</ul>
+</li>
+</ul>
+<p>비밀키도 어차피 키를 지켜야한다는 것은 하나의 비밀키를 공유하고 그것을 지키는
+것과 똑같다. 근데 비밀키를 공유한 적이 있냐 없냐의 차이로 보안성의 차이가 있다.</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> HTTPS도 공개키 방식처럼 암호화를 개인키로 하면 비밀키로 복호화를 해야하는 방식인가?</li>
+<li class="task-list-item"><input type="checkbox" disabled> 공개키는 누구나 가질 수 있다. 비밀키로 암호화 한 것을 공개키로 누구나 열 수
+있다면 내용이 지켜지지는 않을 것 같다.
+<ul>
+<li>그래서 End-2-End 암호화도 신경 써야 한다.</li>
+<li>HTTPS에서 인증서로 신원을 확인하고, 그 통신에서 확인한 랜덤값으로 다시 키를
+만들어서 그 키로 데이터를 암호화한다.</li>
+<li>클라이언트가 처음 접속할 때 보내준 공개키로 랜덤키를 암호화해서 서버에
+주고, 그 키로 정보를 공유한다. 즉, 처음 만들었던 인증서는 신원확인용이다.
+<ul>
+<li>신원 확인은 제 3자가 한다. (CA 업체)</li>
+</ul>
+</li>
+<li>즉, HTTPS는 공개키 방식과 대칭키(암호) 방식을 모두 쓴다.</li>
+<li><a href="https://bravenamme.github.io/2019/12/03/https-2/">https://bravenamme.github.io/2019/12/03/https-2/</a></li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" disabled> 비밀키를 서버가 갖고, 공개키는 아무나 갖는다. 근데 CI에서 비밀키를 가지는
+것은 어떻게 생각해야하지? 브라우저에서는 서버가 비밀키를 갖는다.
+<ul>
+<li>비밀키를 클라이언트가 갖는다. CI secret에 비밀키를 입력하면 builder에
+접근할 수 있게 된다. pub키는 어떻게 등록했더라? 다시 동영상 봐야겠다.
+<ul>
+<li>pub키를 deploy key에 넣고 private key를 secret에 넣었다
+github도 이렇게 되나? 되네</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="https" style="position:relative;"><a href="#https" aria-label="https permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTPS</h4>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> 서버가 자신임을 증명해야 하는 이유는?
+<ul>
+<li>클라이언트는 어차피 불량한 사이트에 들어가도 작업이 정상적으로 될텐데.</li>
+<li>중간에 길을 꺾어서 자신에게 결제하게 하는 것은 막을 수 있겠다.</li>
+<li>중간에 데이터 탈취를 못하게 하는 역할이 주 역할인가?</li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" disabled> HTTPS는 국가에서 막기 힘든 이유는?</li>
+</ul>
+<h4 id="oauth" style="position:relative;"><a href="#oauth" aria-label="oauth permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OAuth</h4>
+<p><a href="/technology/#oauth2">Technology#Oauth2</a></p>
+<h4 id="security-1" style="position:relative;"><a href="#security-1" aria-label="security 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>security</h4>
+<ul>
+<li><a href="https://www.slideshare.net/DoyoonKim30/20-vault-107929281">vault</a></li>
+<li><a href="https://lazyhoneyant.tistory.com/m/7">jwt</a>
+ssh
+session</li>
+</ul>
+<h4 id="user-세션-관리" style="position:relative;"><a href="#user-%EC%84%B8%EC%85%98-%EA%B4%80%EB%A6%AC" aria-label="user 세션 관리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>user 세션 관리</h4>
+<p>하나의 서버를 스케일 아웃해서 여러 대로 만들어놓으면 유저 정보가 어느 곳에는
+있고, 어디에는 없는 상황이 벌어진다. 이를 해결하는 방법이 몇개 있는데.</p>
+<p>sticky</p>
+<ul>
+<li>유저가 처음 접속한 서버에 계속 접속하도록 유지하는 방법.</li>
+<li>서버 과부하가 일어날 수 있다.</li>
+<li>서버가 뻗으면 데이터를 잃기 때문에 단일 실패지점이 된다.</li>
+</ul>
+<p>clustering</p>
+<ul>
+<li>각 서버끼리 데이터를 공유해서 동기화하는 방식</li>
+<li>데이터 동기화를 하는데 자원이 많이 소비될 수 있다.</li>
+</ul>
+<p>따로 세션 서버를 두는 방식</p>
+<ul>
+<li>접속 시 세션 서버에서 데이터를 불러와서 검증하는 방식</li>
+<li>관리 지점이 증가한다.</li>
+<li>OAuth가 이를 대신해준다.
+<ul>
+<li>대신 유저 정보를 따로 관리해서 이용할 수 있어야 한다. 서비스 개선을 위해.</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://chagokx2.tistory.com/93">https://chagokx2.tistory.com/93</a></p>
+<hr>
+<h2 id="distributed-systems" style="position:relative;"><a href="#distributed-systems" aria-label="distributed systems permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Distributed Systems</h2>
+<h4 id="how-to-test" style="position:relative;"><a href="#how-to-test" aria-label="how to test permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>how to test</h4>
+<h4 id="when-would-you-use-requestreply-and-publishsubscribe" style="position:relative;"><a href="#when-would-you-use-requestreply-and-publishsubscribe" aria-label="when would you use requestreply and publishsubscribe permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>when would you use request/reply and publish/subscribe</h4>
+<h4 id="server-stress-test" style="position:relative;"><a href="#server-stress-test" aria-label="server stress test permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>server stress test</h4>
+<ul>
+<li>redis i/o test</li>
+<li>go http server</li>
+<li>kubernetes pod</li>
+<li>simple http server stress test</li>
+</ul>
+<ol>
+<li>find report</li>
+<li>manual test
+<ul>
+<li>make test code
+<ul>
+<li>while</li>
+<li>concurrent</li>
+</ul>
+</li>
+<li>curl
+<ul>
+<li><code class="language-text">ulimit -n</code> -> 1024 (default) -> <code class="language-text">ulimit -n 10000</code></li>
+<li><code class="language-text">while true; do curl localhost; done</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>it depends on CPU, memory</li>
+</ul>
+<hr>
+<h2 id="production" style="position:relative;"><a href="#production" aria-label="production permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Production</h2>
+<h4 id="프로덕션에-필요한-속성" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EB%8D%95%EC%85%98%EC%97%90-%ED%95%84%EC%9A%94%ED%95%9C-%EC%86%8D%EC%84%B1" aria-label="프로덕션에 필요한 속성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로덕션에 필요한 속성</h4>
+<p>보안, 개별 설정을 유연하게 하는 것, 관측성</p>
+<ul>
+<li>되돌릴 수 있는가</li>
+<li>복구할 수 있는가</li>
+<li>수습이 가능한가</li>
+<li>인수인계할 때 무리가 없는가 (사람을 구할 수 있는가)</li>
+<li>안정성</li>
+</ul>
+<h4 id="component" style="position:relative;"><a href="#component" aria-label="component permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>component</h4>
+<p>db
+backend: lambda
+frontend: nettlify/now/surge
+file: s3
+image: cloudinary
+con: ifttt
+큐/캐시: redislabs
+design: figma
+domain
+dns</p>
+<p>오토스케일링 2~8개 파드로 유지
+ingress - 내부 아이피 전달용
+tls인증서, failover, 로깅, 모니터링
+자동dns, ssl, 로드밸런싱: CloudFlare Proxy -> AWS L4 NLB
+cdn
+secret - kubeseal
+clickhouse - 분석데이터
+모든 인프라 코드를 한 곳에 저장해놓고 끌어다쓰기?
+오류 추적
+profiling - cProfile, snakeviz</p>
+<p>서버 부하 분산 - haproxy and zookeeper</p>
+<ul>
+<li>로드 밸런싱 후 헬스체크 해서 이상 발생시 자동 재실행 스크립트 실행</li>
+<li>서버 증설 확장 용이</li>
+<li>다운되도 대응 가능(failover)</li>
+</ul>
+<h4 id="서비스가-커져감에-따라-직접-구현해야하는-기능" style="position:relative;"><a href="#%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B0%80-%EC%BB%A4%EC%A0%B8%EA%B0%90%EC%97%90-%EB%94%B0%EB%9D%BC-%EC%A7%81%EC%A0%91-%EA%B5%AC%ED%98%84%ED%95%B4%EC%95%BC%ED%95%98%EB%8A%94-%EA%B8%B0%EB%8A%A5" aria-label="서비스가 커져감에 따라 직접 구현해야하는 기능 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>서비스가 커져감에 따라 직접 구현해야하는 기능</h4>
+<p>깃 레포지토리 > gitlab이 자체 서버 구축 가능하다
+ci 툴</p>
+<p>서비스로 제공되는 소프트웨어들
+최소한 이중화가 되도록 해야한다</p>
+<h4 id="reboot-report" style="position:relative;"><a href="#reboot-report" aria-label="reboot report permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>reboot report</h4>
+<p>load average 확인 후 cpu bound인지 memory bound인지 disk i/o문제인지 확인하는 것처럼
+문제 감지되면 확인된 기록들을 캡처해서 리포트로 보내주고 재부팅하도록 설정
+소프트웨어 로그, 시스템로그도 같이 캡처</p>
+<h4 id="구성보다-관습-coc" style="position:relative;"><a href="#%EA%B5%AC%EC%84%B1%EB%B3%B4%EB%8B%A4-%EA%B4%80%EC%8A%B5-coc" aria-label="구성보다 관습 coc permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>구성보다 관습, CoC</h4>
+<p>설정을 일일이 하기보다 관습적으로 따르게 하고, 설정이 필요할 때만 설정을 하는 방식</p>
+<p>같은 약자로 Code of Conduct(행동 규범)이 있어 헷갈릴 수 있다.</p>
+<h4 id="자동화" style="position:relative;"><a href="#%EC%9E%90%EB%8F%99%ED%99%94" aria-label="자동화 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>자동화</h4>
+<p>자동화는 오류를 일으키기 쉽다
+조심히 도입해야한다</p>
+<p>메타적으로</p>
+<p>흐름만 만들고 세부사항은 자동화해서 알아서 일하게 한다</p>
+<p>service output이 feedback이 되도록</p>
+<ul>
+<li>테스트 문서 자동화</li>
+<li>모니터링 문서화</li>
+<li>api 문서화</li>
+</ul>
+<h4 id="자동화의-문제점-자동화보다는-일괄적용의-문제점-일-수-있겠다" style="position:relative;"><a href="#%EC%9E%90%EB%8F%99%ED%99%94%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90-%EC%9E%90%EB%8F%99%ED%99%94%EB%B3%B4%EB%8B%A4%EB%8A%94-%EC%9D%BC%EA%B4%84%EC%A0%81%EC%9A%A9%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90-%EC%9D%BC-%EC%88%98-%EC%9E%88%EA%B2%A0%EB%8B%A4" aria-label="자동화의 문제점 자동화보다는 일괄적용의 문제점 일 수 있겠다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>자동화의 문제점 (자동화보다는 일괄적용의 문제점 일 수 있겠다)</h4>
+<p>자동이 자동으로 잘 동작안하는 걸 자주 보고
+스마트가 스마트하지 않았고
+한번에가 한번에 되지 않았다
+전체를 스크립트를 짜서 변환시키는 것도 항상 실패하는 것들이 나온다.</p>
+<h4 id="ai와-자동화" style="position:relative;"><a href="#ai%EC%99%80-%EC%9E%90%EB%8F%99%ED%99%94" aria-label="ai와 자동화 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AI와 자동화</h4>
+<ul>
+<li>사람이 하면 누락이 생길 수 있다</li>
+<li>스크립트로 하면 기계적으로 동작한다. 정해진 폼이 아니면 이상한걸 막 가져온다</li>
+<li>AI로 하면 결과가 매번 다르고 정확하지 않다</li>
+</ul>
+<h4 id="메시지-큐" style="position:relative;"><a href="#%EB%A9%94%EC%8B%9C%EC%A7%80-%ED%81%90" aria-label="메시지 큐 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>메시지 큐</h4>
+<p>sqs에 실패처리용 큐를 하나 만들어서 거기에 담아서 에러를 확인한다.
+메시지큐에서 실패한 것들을 받으면 람다를 실행하게 해서 오류처리 할 수 있다</p>
+<h2 id="aws" style="position:relative;"><a href="#aws" aria-label="aws permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AWS</h2>
+<p>연결된 서비스 : serverless, cloud, gcp, azure, container</p>
+<h3 id="신규-업데이트-확인" style="position:relative;"><a href="#%EC%8B%A0%EA%B7%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8-%ED%99%95%EC%9D%B8" aria-label="신규 업데이트 확인 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>신규 업데이트 확인</h3>
+<ul>
+<li>신규 업데이트 확인
+<ul>
+<li>aws blog</li>
+<li>aws reinvent</li>
+</ul>
+</li>
+</ul>
+<h3 id="네트워크" style="position:relative;"><a href="#%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC" aria-label="네트워크 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>네트워크</h3>
+<ul>
+<li><a href="/network/">Network</a></li>
+<li>격리
+<ul>
+<li>vpc</li>
+</ul>
+</li>
+<li>외부 연결</li>
+</ul>
+<h3 id="컴퓨팅" style="position:relative;"><a href="#%EC%BB%B4%ED%93%A8%ED%8C%85" aria-label="컴퓨팅 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>컴퓨팅</h3>
+<ul>
+<li>서버</li>
+<li>컨테이너</li>
+</ul>
+<h3 id="스토리지" style="position:relative;"><a href="#%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80" aria-label="스토리지 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>스토리지</h3>
+<ul>
+<li>fully management service
+<ul>
+<li>rds</li>
+<li>aurora</li>
+</ul>
+</li>
+<li>serverless</li>
+</ul>
+<h3 id="기타" style="position:relative;"><a href="#%EA%B8%B0%ED%83%80" aria-label="기타 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>기타</h3>
+<h4 id="서버리스를-선호" style="position:relative;"><a href="#%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4%EB%A5%BC-%EC%84%A0%ED%98%B8" aria-label="서버리스를 선호 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>서버리스를 선호</h4>
+<p>아키텍처를 그릴 때 서버리스로 가능한지 먼저 확인한다
+서버리스로 할 수 없는 특징이 없다면 서버리스로 시도한다
+관리포인트가 줄어드는점
+모듈화가 되어서 다른 서비스 연결이 잘 되는점
+가벼운점
+작업의 실행을 보장할 수 있다</p>
+<p>서버리스로 하기 어려운 특징이 어떤게 있냐면
+이번회사를 다니면서 백엔드 서버가 딱 있으니까 좋다고 느낀게 있었다
+쿼리로 데이터 관리할 수 있는 점 - 트랜잭션
+머신러닝처럼 컴퓨팅 성능이 중요한 경우
+실시간성이 중요한 서비스</p>
+<p>그래서 람다의 한계를 배우게 된다</p>
+<ul>
+<li>지속 연결이 필요하면 못 쓴다</li>
+<li>빠른 응답이 필요하면 못 쓴다</li>
+</ul>
+<p>fargate도 서버리스 컨테이너 서버이기 때문에 서버리스를 쓰는거긴 하다</p>
+<h2 id="아키텍처" style="position:relative;"><a href="#%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98" aria-label="아키텍처 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>아키텍처</h2>
+<p><a href="/standard/">Standard</a>
+<a href="/decision/">Decision</a>
+<a href="/think/#러셀과-화이트헤드">Think#러셀과 화이트헤드</a>
+<a href="/architecture/#분산">분산</a></p>
+<h4 id="일관성이-중요한-것-같다" style="position:relative;"><a href="#%EC%9D%BC%EA%B4%80%EC%84%B1%EC%9D%B4-%EC%A4%91%EC%9A%94%ED%95%9C-%EA%B2%83-%EA%B0%99%EB%8B%A4" aria-label="일관성이 중요한 것 같다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>일관성이 중요한 것 같다.</h4>
+<p>각 회사마다 저마다의 아키텍처가 있어서 개발자는 그 아키텍처를 파악해야한다.
+그렇다면 한 부분을 알았을 때 다른 부분도 그와 비슷하거나 일관성이 잘 유지되어
+있는 구조라면 쉽게 익힐 수 있다. 어떤 아키텍처인지는 그 다음 문제인 것 같다.
+일단 일관성이 있으면 가독성이 올라가고, 이것이 소프트웨어를 좋게 만들어준다.</p>
+<h4 id="중심만-남긴다" style="position:relative;"><a href="#%EC%A4%91%EC%8B%AC%EB%A7%8C-%EB%82%A8%EA%B8%B4%EB%8B%A4" aria-label="중심만 남긴다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>중심만 남긴다</h4>
+<p>개발 로직, 중앙 문서 관리 서비스, 코드 저장소, 데이터 저장소</p>
+<h4 id="인프라-개발자의-관점에서-3-요소" style="position:relative;"><a href="#%EC%9D%B8%ED%94%84%EB%9D%BC-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C-3-%EC%9A%94%EC%86%8C" aria-label="인프라 개발자의 관점에서 3 요소 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>인프라 개발자의 관점에서 3 요소</h4>
+<p>인프라 - 데이터 - 서비스</p>
+<p>서비스 안에는 백엔드, 프론트, 디자인, 기타 등등이 또 따로 있을 것이다.
+인프라에는 시큐리티, 로깅 등등이 있고,
+모든 요소에 QA와 테스트가 있다.</p>
+<h4 id="한-서비스의-구조" style="position:relative;"><a href="#%ED%95%9C-%EC%84%9C%EB%B9%84%EC%8A%A4%EC%9D%98-%EA%B5%AC%EC%A1%B0" aria-label="한 서비스의 구조 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>한 서비스의 구조</h4>
+<p>계산 중심 구조(cpu) vs 데이터 중심 구조</p>
+<h4 id="프로젝트-아키텍처" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98" aria-label="프로젝트 아키텍처 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로젝트 아키텍처</h4>
+<ul>
+<li>넷플릭스 모델 - 전체가 하나로 묶여있다</li>
+<li>네이버 모델 - 각 역할별로 분리되있다</li>
+<li>리디북스 모델 - 데이터가 묶여있다</li>
+</ul>
+<h4 id="그동안의-아키텍처-모델" style="position:relative;"><a href="#%EA%B7%B8%EB%8F%99%EC%95%88%EC%9D%98-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EB%AA%A8%EB%8D%B8" aria-label="그동안의 아키텍처 모델 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>그동안의 아키텍처 모델</h4>
+<ul>
+<li>3 layer</li>
+<li>MVC - MVVC - MTV</li>
+<li>네트워크 레이어</li>
+<li>12 Factor app</li>
+<li>MSA</li>
+<li>DDD</li>
+<li>JAM stack</li>
+<li><a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a></li>
+<li>SOA</li>
+</ul>
+<p>그리고</p>
+<ul>
+<li>육각형 아키텍처</li>
+<li>DCI data, context, interface 제임스 코플리언</li>
+<li>BCE bounded control entity</li>
+<li><a href="https://ahnheejong.name/articles/package-structure-with-the-principal-of-locality-in-mind/">https://ahnheejong.name/articles/package-structure-with-the-principal-of-locality-in-mind/</a></li>
+<li><a href="https://mingrammer.com/translation-structuring-applications-in-go/">https://mingrammer.com/translation-structuring-applications-in-go/</a></li>
+<li><a href="https://geminikim.medium.com/%EC%A7%80%EC%86%8D-%EC%84%B1%EC%9E%A5-%EA%B0%80%EB%8A%A5%ED%95%9C-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%A5%BC-%EB%A7%8C%EB%93%A4%EC%96%B4%EA%B0%80%EB%8A%94-%EB%B0%A9%EB%B2%95-97844c5dab63">https://geminikim.medium.com/지속-성장-가능한-소프트웨어를-만들어가는-방법-97844c5dab63</a></li>
+<li><a href="https://overthecode.io/the-meaning-and-limits-of-atomic-design-from-a-software-design-perspective/">https://overthecode.io/the-meaning-and-limits-of-atomic-design-from-a-software-design-perspective/</a></li>
+</ul>
+<h4 id="좋은-아키텍처가-성공을-보장하지는-않지만-나쁘면-망한다" style="position:relative;"><a href="#%EC%A2%8B%EC%9D%80-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%EA%B0%80-%EC%84%B1%EA%B3%B5%EC%9D%84-%EB%B3%B4%EC%9E%A5%ED%95%98%EC%A7%80%EB%8A%94-%EC%95%8A%EC%A7%80%EB%A7%8C-%EB%82%98%EC%81%98%EB%A9%B4-%EB%A7%9D%ED%95%9C%EB%8B%A4" aria-label="좋은 아키텍처가 성공을 보장하지는 않지만 나쁘면 망한다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>좋은 아키텍처가 성공을 보장하지는 않지만 나쁘면 망한다</h4>
+<p>나쁘지 않게 하는 것은 되야한다
+완벽보다는 안정
+Ddd는 쉽게 설명가능한가? 복잡한 구조라도 쉽게 설명되면 된다
+쉽게설명되지 않으면 나쁘다
+객체지향을 넘어 인간지향 인간중심
+나쁘면 안된다는걸 생각하지만 안티패턴을 피하는 방어적 접근보다는 좋은걸 찾는 공격적 접근을 하고싶다</p>
+<p>아키텍처가 시스템 구성을 다 정하는게 아니라
+이해관계자와 먼저 요구사항을 정의하고
+팀원들과 기술적 문제해결방법을 의논하고 패턴을 같이 찾고 정하게 되는 건가보다</p>
+<p>충섭팀장님의 쿰스를 이끄는게 아키텍처의 모습을 그대로 보여준거 같다 잘 기억해야할듯</p>
+<p>푸시 개발했던게 프로젝트 진행하면서 중간에 반발이 생긴 사례인거 같다 푸시 개발 과정을 정리하는 것도 좋을듯
+Nhn에 수많은 요청을 보낸것부터 새로운 api 개방을 요청하고 사용한 것까지</p>
+<blockquote>
+<p>개발자에서 아키텍트로 - 마이클 킬링</p>
+</blockquote>
+<h4 id="아키텍처-1" style="position:relative;"><a href="#%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-1" aria-label="아키텍처 1 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>아키텍처</h4>
+<blockquote>
+<p>정책과 세부사항으로, 룰과 가이드를 구분.
+아키텍처의 목표는 정책과 세부사항을 적절히 구분해 세부사항의 결정은 최대한 미룰
+수 있게 하는 것</p>
+<blockquote>
+<p>클린 아키텍처</p>
+</blockquote>
+</blockquote>
+<p>아키텍처 구축의 목표점은 없다
+<strong>좋은 기준점을 만들어서 그 기준점을 계속 개선해나가는 것이 최선</strong></p>
+<p>이런 관점에서 쿠버네티스, react, graphql, backend를 어떻게 구성해야하나?
+정책과 세부사항이 너무 많으면 기준점을 잘 지켜나갈 수 있을까?</p>
+<p>선택과 집중, 유연하고 융합적인 환경 - 두 가치를 어떻게 잘 융합할 수 있을까</p>
+<p>분산화 하는 것이 시대의 흐름</p>
+<p>심플하게 유지. 0에서 10은 심플이 아니다. 100에서 10이 심플</p>
+<p>제한이 필요하다</p>
+<p>큰 그림 > 작은 그림</p>
+<p>비즈니스 로직에서 추상화를 어디까지 하는게 좋을까
+과한 추상화는 실체가 없다는 느낌을 줄 수 있겠다.
+어디까지 추상화를 할지는 어떤 목적으로 프로그램을 만드느냐에 따라 조정된다
+모든 것이 추상화되고 가변적일 필요는 없다
+Mysql tip 글에서 DB 모델링 시 지나친 추상화를 하지 말라는 조언이 있었다.</p>
+<ul>
+<li>언어를 넘어서는 추상화
+<ul>
+<li>포팅을 쉽게 할 정도의 추상화</li>
+</ul>
+</li>
+</ul>
+<p>설정가능해야하고 플러그인 방식으로 동작</p>
+<h2 id="아키텍처-레퍼런스" style="position:relative;"><a href="#%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4" aria-label="아키텍처 레퍼런스 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>아키텍처 레퍼런스</h2>
+<h4 id="아키텍처-모범-사례" style="position:relative;"><a href="#%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EB%AA%A8%EB%B2%94-%EC%82%AC%EB%A1%80" aria-label="아키텍처 모범 사례 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>아키텍처 모범 사례</h4>
+<p>"서버 기반 아키텍처 모범 사례가 있습니다.(단일 장애 지점 제거, 배포 전 변경
+사항 테스트, 중요한 데이터 암호화 등)"
+<a href="https://dc2348.tistory.com/6#:~:text=%EC%84%9C%EB%B2%84%20%EA%B8%B0%EB%B0%98%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%20%EB%AA%A8%EB%B2%94%20%EC%82%AC%EB%25A%F0%9F%99%8B%E2%80%8D%E2%99%82%EF%B8%8F1%80%EA%B0%80%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.(%EB%8B%A8%EC%9D%BC%20%EC%9E%A5%EC%95%A0%20%EC%A7%80%EC%A0%90%20%EC%A0%9C%EA%B1%B0%2C%20%EB%B0%B0%ED%8F%AC%20%EC%A0%84%20%EB%B3%80%EA%B2%BD%20%EC%82%AC%ED%95%AD%20%ED%85%8C%EC%8A%A4%ED%8A%B8%2C%20%EC%A4%91%EC%9A%94%ED%95%9C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%95%94%ED%98%B8%ED%99%94%20%EB%93%B1)">https://dc2348.tistory.com/6#:~:text=%EC%84%9C%EB%B2%84%20%EA%B8%B0%EB%B0%98%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%20%EB%AA%A8%EB%B2%94%20%EC%82%AC%EB%A🙋‍♂️1%80%EA%B0%80%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.(%EB%8B%A8%EC%9D%BC%20%EC%9E%A5%EC%95%A0%20%EC%A7%80%EC%A0%90%20%EC%A0%9C%EA%B1%B0%2C%20%EB%B0%B0%ED%8F%AC%20%EC%A0%84%20%EB%B3%80%EA%B2%BD%20%EC%82%AC%ED%95%AD%20%ED%85%8C%EC%8A%A4%ED%8A%B8%2C%20%EC%A4%91%EC%9A%94%ED%95%9C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%95%94%ED%98%B8%ED%99%94%20%EB%93%B1)</a></p>
+<ul>
+<li>단순한 동작을 여러겹으로 겹치면 깔끔하고 보기도 좋지 않을까?</li>
+<li>유닉스의 파이프라인처럼 api를 파이프라이닝 해서 원하는 값을 만들어도 괜찮을까
+<ul>
+<li>함수형 프로그래밍을 이용해서 파이프라이닝 형태로 만들어주는 api를 만들어서 api로 api를 불러서 파이프라이닝 하는 것.</li>
+</ul>
+</li>
+</ul>
+<h4 id="시퀀스" style="position:relative;"><a href="#%EC%8B%9C%ED%80%80%EC%8A%A4" aria-label="시퀀스 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>시퀀스</h4>
+<p>어두운 도서관 입구에서 시작해서
+가장 중심인 곳은 가장 밝은 판테온 형태의 밝은 전시관이 있다</p>
+<p><a href="/20220501/#빨강---핑크---보라">2022-05-01#빨강 - 핑크 - 보라</a></p>
+<h4 id="패턴화" style="position:relative;"><a href="#%ED%8C%A8%ED%84%B4%ED%99%94" aria-label="패턴화 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>패턴화</h4>
+<p>가드레일을 만들되 자유도를 느낄 수 있도록</p>
+<p>젤다의전설
+오픈형월드게임</p>
+<h4 id="당근마켓-당근페이-인프라-구축-이야기" style="position:relative;"><a href="#%EB%8B%B9%EA%B7%BC%EB%A7%88%EC%BC%93-%EB%8B%B9%EA%B7%BC%ED%8E%98%EC%9D%B4-%EC%9D%B8%ED%94%84%EB%9D%BC-%EA%B5%AC%EC%B6%95-%EC%9D%B4%EC%95%BC%EA%B8%B0" aria-label="당근마켓 당근페이 인프라 구축 이야기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>당근마켓 당근페이 인프라 구축 이야기</h4>
+<p>핀테크 기업으로서 보안 등 제약이 있는 상황에서 클라우드 서비스를 이용해야 했음</p>
+<ol>
+<li>로그인서비스를 어떻게 구성했는가
+<ul>
+<li>계정 별로 환경 분리</li>
+<li>로그인 제한 -> 계정 별로 분리되어있지만 로그인은 대표계정에서 한다. cloudfnc와 동일하네
+<ul>
+<li>로그인은 security라는 계정이고 이 계정은 로그인만을 위해서 사용하고, 이렇게 로그인하면 dev, sta, prod 계정에 접속이 가능하게 된다. 외부 접근권한이 있는 security가 탈취되어도 dev에 접근 못하게 되면 아무것도 할 수 없다는 식</li>
+</ul>
+</li>
+<li>계정 탈취 시 여파 최소화</li>
+</ul>
+</li>
+<li>서버 접근을 어떻게 할 것인가
+<ul>
+<li>teleport - ssh 접속 후 행동을 영상으로 녹화해서 보여준다</li>
+</ul>
+</li>
+<li>애플리케이션 구성을 어떻게 할 것인가
+<ul>
+<li>kubernetes vs ec2</li>
+<li>쿠버네티스가 오버 엔지니어링이 아닐까 싶었지만
+같은 회사 다른 서비스에서 사용중이어서 조언을 얻을 수 있었고, 같은 팀의 팀원이 사용 경험이 있어서 충분히 도움을 받을 수 있는 환경이어서 사용하기로 했다</li>
+<li>alb -> istio 변환 예정</li>
+</ul>
+</li>
+<li>배포 파이프라인 구성을 어떻게 할 것인가
+<ul>
+<li>eks 에 맞는 도구를 찾으려고 했다</li>
+<li>툴에 대한 운영 경험이 있고 Github과 연계가 손쉽게 구성될 수 있는 기술 스택 선택</li>
+<li>Github Actions, Argocd, Argocd pipeline</li>
+<li>github 설치형을 n5.4xlarge 에 사용. 디스크 관리만 하면 무리없이 사용하기에 좋았음</li>
+</ul>
+</li>
+<li>관측 시스템을 어떻게 구성할 것인가
+<ul>
+<li>컨플라이언스 (보안) 문제로 SaaS 사용이 힘들었음 (Datadog, new relic 등)</li>
+<li>ElasticStack, Prometheus, Grafana 로 직접 구축</li>
+<li>FileBeat, Node Exporter 는 DaemonSet으로 올림</li>
+<li>Prometheus Operator를 이용해 Prometheus를 구성함</li>
+<li>AWS 리소스는 CloudWatch를 통해 모니터링
+<ul>
+<li>SNS -> AWS Chatbot을 통해 Slack 으로 발송. (이전에는 람다를 직접 구현했어야했음)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>성능 테스트를 어떻게 진행할 것인가
+<ul>
+<li>locust (kubernetes용인 klocust를 이용)</li>
+<li>테스트의 목적
+<ul>
+<li>최대 성능을 측정하는 형태는 목적이 불분명</li>
+<li>10분 동안의 테스트를 통해 99퍼센타일 응답 시간이 100 ms 이내일 때의 최대 TPS를 구하려고 함 -> 99%가 진행됐을 때의 응답 시간이 100ms ?</li>
+<li>파드 하나당 400TPS 라는 수치를 얻게 됨</li>
+</ul>
+</li>
+<li>테스트를 하면서 close_wait 소켓이 쌓이는 현상 발견. undertow를 netty로 변경</li>
+</ul>
+</li>
+</ol>
+<p><a href="https://www.youtube.com/watch?v=8a2-b9X7Xno">https://www.youtube.com/watch?v=8a2-b9X7Xno</a></p>
+<h4 id="당근-채팅-시스템-아키텍처" style="position:relative;"><a href="#%EB%8B%B9%EA%B7%BC-%EC%B1%84%ED%8C%85-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98" aria-label="당근 채팅 시스템 아키텍처 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>당근 채팅 시스템 아키텍처</h4>
+<p>큰 회사에서도 개발을 하는 인원은 적을 수 있고 최대한 매니지드 서비스를 이용하는 경향이 있다</p>
+<p>dynamodb를 쓰면서 에러는 거의 안나서 안정적이었다
+근데 쿼리를 잘 쓰기 어렵고 인덱스를 건 item만 가져올 수 있어서 인덱스를 잘 두어야하기 때문에 설계에 대해서 고민이 많이 필요함, Full scan은 안해야한다
+채팅방 하나를 partition하나 정의
+sort key는 message의 id로 설정</p>
+<p>redis cluster로 stateless하게 웹소켓용으로 썼고 좋아보임</p>
+<h2 id="micro-service-architecture" style="position:relative;"><a href="#micro-service-architecture" aria-label="micro service architecture permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Micro Service Architecture</h2>
+<p>MSA 는 작은 규모에서는 과한 느낌이 있다
+모놀리스로 쉽게 관리가 될 것을 MSA를 사용하면 관리포인트가 엄청 많아진다</p>
+<ul>
+<li>every node make end-point, http, grpc
+<ul>
+<li>need documentation</li>
+</ul>
+</li>
+<li>flexible micro service
+<ul>
+<li>it can be split and compose</li>
+</ul>
+</li>
+<li>logging and visualization</li>
+<li>마이크로서비스에서 문제가 생긴 지점을 바로 확인할 방법은?</li>
+</ul>
+<h4 id="마이크로-서비스" style="position:relative;"><a href="#%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C-%EC%84%9C%EB%B9%84%EC%8A%A4" aria-label="마이크로 서비스 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>마이크로 서비스</h4>
+<p>라이브러리를 쓰듯이 다른 서비스들을 사용하면 성능 상의 손해가 있다
+마이크로아키텍처는 관리할 지점이 늘어나는 단점이 있지 않나</p>
+<ul>
+<li>
+<p>메시지 기반의 비동기 통신</p>
+</li>
+<li>
+<p>사가 패턴 - 데이터 일관성 유지를 위해</p>
+</li>
+<li>
+<p>도메인 주도 설계</p>
+</li>
+<li>
+<p>이벤트 소싱 패턴</p>
+</li>
+<li>
+<p>API</p>
+</li>
+<li>
+<p>서비스 메시</p>
+</li>
+<li>
+<p>서비스 디스커버리</p>
+</li>
+<li>
+<p>메시지 처리</p>
+</li>
+<li>
+<p>서킷 브레이커</p>
+</li>
+<li>
+<p>API gateway, 서비스 메시, 서비스 디스커버리 차이는?</p>
+<ul>
+<li>서비스 메시 안에 서비스 디스커버리가 보통 내장되있다</li>
+<li>api gateway는 외부에서의 접속, 서비스 메시는 내부의 네트워크 관리</li>
+</ul>
+</li>
+</ul>
+<p>왜 마이크로 서비스인가</p>
+<ul>
+<li>
+<p>마이크로 서비스를 위해서는 필연적으로 서비스 간 커뮤니케이션이 필요하고,
+비동기 통신과 동기 통신을 잘 구분해서 사용해야 한다.</p>
+<ul>
+<li>동기는 API를 이용해서, 비동기는 메시지 큐를 이용해서.</li>
+<li>각 서비스 간 데이터를 메시지 큐에 발행하고 구독하는 식으로 데이터 공유,
+이벤트 처리가 가능하다.</li>
+</ul>
+</li>
+<li>
+<p>마이크로 서비스를 일일이 관리하기 보다 서비스 디스커버리를 이용해서 자유롭게
+생성과 운영이 되게 해야겠다</p>
+</li>
+<li>
+<p>단일고장점이 없도록 노드를 여러 개 두어 관리하는 것이 좋겠다.</p>
+</li>
+<li>
+<p>큰 팀을 작은 팀으로 나누면 팀 간 대화에 장벽이 생기고, 안개가 생긴다. 다른
+팀의 영역에는 안들어가려고 하고, 그 쪽에서 일어난 일이 전달이 안될 때가
+많아진다. 어떻게 이 장벽을 없앨 수 있을까</p>
+</li>
+<li>
+<p>핵가족에 이어 1인가구가 늘어남에 따라 대가족일 때는 자연스럽게 알 수 있던
+것들이 이제는 공부를 해야 알 수 있게 되었다.</p>
+</li>
+<li>
+<p>수평적인 연결망이 만들어져서 정보공유를 할 수 있게 해야한다. 회사에서 팀장이
+있고 팀장회의를 하는 것과 비슷한 느낌이지만 수평적인 관계의 연결망으로.
+(현재의 커뮤니티가 이 역할을 하고 있는 것일까? Web 2.0)</p>
+</li>
+</ul>
+<h4 id="마이크로서비스" style="position:relative;"><a href="#%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4" aria-label="마이크로서비스 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>마이크로서비스</h4>
+<p>포인트</p>
+<ul>
+<li>단일 고장 지점을 없앤다</li>
+<li>의존 영역을 분리한다</li>
+<li>빠르고 가벼운 사이즈를 유지한다</li>
+</ul>
+<p>이를 어렵게 하는 요소</p>
+<ul>
+<li>API endpoint가 많아져서 이를 일일이 관리하기 힘들어 API Gateway라는 것을 이용하려 하는데 이 API gateway가 단일 고장점이 되버린다</li>
+<li>흩어져 있는 데이터 여러개를 합쳐서 사용해야 할 경우가 있다</li>
+<li>처음에는 작은 사이즈지만 요구사항이 늘어남에 따라 사이즈는 필연적으로 커진다.</li>
+</ul>
+<p>이에 대한 마이크로서비스의 대응방법</p>
+<ul>
+<li>sidecar 패턴으로 API gateway를 없애고 각 서비스에 연결점을 붙인다</li>
+<li>SAGA, CQRS</li>
+<li>사이즈가 커지면 다시 분리한다.</li>
+</ul>
+<p>미이크로서비스간 데이터 통합과 작업 일관성 유지를 위해 다른 서비스가 필요한데
+이를 커밋과 적용으로 나누는 방식으로 할 수 있고
+사가 패턴을 이용해 해결할 수도 있다</p>
+<p>쿠버네티스의 구조처럼 마이크로서비스를 구현하면 되지 않을까</p>
+<p>데이터를 다 분리해놓고 중앙에 모아서 처리하다가 요청이 자주 오간다 싶으면
+연결하는 길을 추가?</p>
+<p>한 마이크로서비스의 단위를 로직 - 데이터베이스 - 사이드카로 놓고 사용
+이 마이크로서비스를 관리하는 툴을 생각해본다</p>
+<p>중앙에 데이터들이 하나로 묶인다
+한 마이크로서비스에 요청이 오면 그 응답으로 메시지를 보낸다
+메시지는 중앙, 관리자에게 전달되고, 관리자는 피드백으로 중앙에는 업데이트로
+이용된다</p>
+<p>한 부분의 변화를 위해 다른 부분을 신경 쓰지 않아야 한다.
+한 부분의 변화가 다른 부분에 영향을 주지 않아야 한다.</p>
+<p>kubernetes로 여러개의 서비스로 쪼개면 microservice인가?
+micro로 서비스를 만들면 microservice인가?
+monolith와 구분되는 microservice의 특징은 각 서비스가 개별 데이터베이스를 갖는
+것인데, micro는 어떤 구성 방식인가</p>
+<p>어차피 한 사람이 모든 마이크로서비스를 관리할 수 없다?
+그래서 모놀리스에서 서로 엮여있던 것을 마이크로화해서 편하게 관리할 수 있게
+하는거지 마이크로서비스를 무한정 많이 만드는 것이 목적은 아닐 것이다.
+한 사람이 다루는 서비스를 제한 해주는 것이 좋겠다.</p>
+<p>유저 정보 유지해서 계속 불러오는 효율적인 방법은?</p>
+<p>모놀리스에서 함수호출을 이벤트 드리븐이 대체했을 때 고속처리가 가능한가? 배민은 되긴 하나보다</p>
+<ul>
+<li>같은 네트워크에 있다면 rpc로 서비스가 나눠져 있으면 rpc로 데이터를 취합해 api gateway가 모은 데이터를 리턴해주면 된다</li>
+</ul>
+<p>쿠버네티스에서는 RBAC가 어느 순간에 동작하는거지?</p>
+<h4 id="library-호출" style="position:relative;"><a href="#library-%ED%98%B8%EC%B6%9C" aria-label="library 호출 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>library 호출</h4>
+<p>마이크로서비스의 library를 한곳에 모아서 보여주고
+쉽게 호출해 쓸 수 있도록 해야한다.
+어떻게?</p>
+<h4 id="서비스메시" style="position:relative;"><a href="#%EC%84%9C%EB%B9%84%EC%8A%A4%EB%A9%94%EC%8B%9C" aria-label="서비스메시 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>서비스메시</h4>
+<p>규칙기반의 부하분산으로
+배포(테스트에 배포)와 릴리즈(프로덕션에 배포)를 분리하기 좋다고 한다</p>
+<p>텔레메트리 관리</p>
+<ul>
+<li>네트워크 트래픽 관련 지표 수집 및 추적</li>
+</ul>
+<h4 id="soa-msa-ddd" style="position:relative;"><a href="#soa-msa-ddd" aria-label="soa msa ddd permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SOA, MSA, DDD</h4>
+<p>service oriented architecture</p>
+<ul>
+<li>중간에 enterprise service bus를 둬서 서비스 간 공유를 하려고 했으나, 당시
+시대상 팀 구조가 변화에 재빠르게 대응하지 못했고, MSA와 비슷한 목표를 가졌으나
+성공하지 못했다.</li>
+<li>MSA의 핵심은 통신 처리이고, 이 처리 흐름을 만들어내는 서비스 메시가 등장했다.
+마이크로 서비스는 서비스의 수가 많고, 이를 관리하는 방법이 필요하다</li>
+</ul>
+<h4 id="event-driven-architecture" style="position:relative;"><a href="#event-driven-architecture" aria-label="event driven architecture permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>event driven architecture</h4>
+<ul>
+<li>in micro service, each service need send some event.</li>
+<li>if not implement event, can parse some data?</li>
+<li>http server &#x3C;- event producer -> queue
+DB
+lambda</li>
+<li>lambda can assign http or sqs. how to get data?</li>
+</ul>
+<h4 id="banksalad-github" style="position:relative;"><a href="#banksalad-github" aria-label="banksalad github permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>banksalad github</h4>
+<ul>
+<li>awesome style이라는 레파지토리로 사내 행동강령을 모아놓았다. awesome</li>
+<li>python template을 만들어 사용하고 있다</li>
+</ul>
+<p>이렇게 회사 내 자료들을 메타적으로 관리하는 레포지토리를 만들어서 관리하면
+좋겠다.
+사내 인적 리소스 관리도 git으로 하면 좋겠다</p>
+<h4 id="microservice-experience" style="position:relative;"><a href="#microservice-experience" aria-label="microservice experience permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>microservice experience</h4>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=BnS6343GTkY">배민</a>
+<ul>
+<li>결제 장애 시 결제만 장애나는 환경을 원했다.</li>
+<li>모놀리스 서버 테이블이 700개... >> 분리 후에도 한 서비스에 테이블이 많이
+있을 것</li>
+<li>이벤트 기반으로 하니 훨씬 효율이 증가했다.</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=J-VP0WFEQsY">11번가</a>
+<ul>
+<li>Spring cloud 이용</li>
+</ul>
+</li>
+</ul>
+<h4 id="junk-food" style="position:relative;"><a href="#junk-food" aria-label="junk food permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>junk food</h4>
+<p>넷플릭스가 마이크로서비스를 하면서 느꼈던 개발의 주요 문제점</p>
+<ul>
+<li>dependency
+<ul>
+<li>circuit breaker 로 의존성 있는 서버가 죽는 것에 대응</li>
+</ul>
+</li>
+<li>Scale
+<ul>
+<li>EVCache</li>
+</ul>
+</li>
+<li>Variance</li>
+<li>Change</li>
+</ul>
+<h4 id="architecture-process-organization" style="position:relative;"><a href="#architecture-process-organization" aria-label="architecture process organization permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>architecture process organization</h4>
+<p><img src="../img/triangle.png" alt="triangle">
+출처: <a href="https://kihoonkim.github.io/2018/03/25/Microservices%20Architecture/first-msa-retro/">https://kihoonkim.github.io/2018/03/25/Microservices%20Architecture/first-msa-retro/</a></p>
+<h4 id="when-many-people-come-to-site-how-to-keep-working-server" style="position:relative;"><a href="#when-many-people-come-to-site-how-to-keep-working-server" aria-label="when many people come to site how to keep working server permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>When many people come to site. how to keep working server</h4>
+<ol>
+<li>allow maximum people, others redirect to queue.</li>
+<li>scale out</li>
+</ol>
+<h4 id="섀시" style="position:relative;"><a href="#%EC%84%80%EC%8B%9C" aria-label="섀시 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>섀시</h4>
+<p>에러 체크, 로깅, 헬스체크, 회로 차단 등 마이크로서비스에 필요한 것들을 만들어놓은 것을 이용하자는 마이크로서비스 섀시라는 개념이 이미 있었다
+go-kit, micro 참고</p>
+<ul>
+<li>외부화(엔드포인트 적용)</li>
+<li>헬스체크</li>
+<li>모니터링 지표 뽑기</li>
+<li>서비스 디스커버리</li>
+<li>회로 차단</li>
+<li>분산 추적</li>
+<li>로깅(액션 기록)</li>
+<li>보안
+이 기능들을 메인로직에 적을 필요없이 섀시를 적용시키면 자동으로 기능이 수행된다</li>
+</ul>
+<p>그리고 서비스 메시는 섀시의 진화 형태가 될 것인데, 현재는 일부 기능만 구현하고 있고, 아직 완전 대체제는 아니다
+istio, linkerd</p>
+<p>istio에서 분산 추적을 하려면 app: deployname 을 라벨링 해줘야 한다</p>
+<h4 id="마이크로서비스에서-두-서비스에서-불러온-데이터를-어떻게-합칠까" style="position:relative;"><a href="#%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4%EC%97%90%EC%84%9C-%EB%91%90-%EC%84%9C%EB%B9%84%EC%8A%A4%EC%97%90%EC%84%9C-%EB%B6%88%EB%9F%AC%EC%98%A8-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%ED%95%A9%EC%B9%A0%EA%B9%8C" aria-label="마이크로서비스에서 두 서비스에서 불러온 데이터를 어떻게 합칠까 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>마이크로서비스에서 두 서비스에서 불러온 데이터를 어떻게 합칠까</h4>
+<p>두 서비스면 그냥 호출하는데서 부르면 되겠지만
+rdbms에서 하던 조인처럼 자유자재로 하기에는 성능이 안나온다</p>
+<p>CQRS의 쿼리를 이 상황에 쓰던가
+아니면 쿼리를 모아서 rdbms로 모으는 추가적인 리소스를 이용해서 해결?</p>
+<h4 id="cqrs" style="position:relative;"><a href="#cqrs" aria-label="cqrs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CQRS</h4>
+<p>쿼리와 커맨드를 분리했다.
+쿼리는 CRUD의 Read의 개념이고
+커맨드는 나머지 CUD의 개념이다.
+Read를 조합해서 나머지 명령을 하는 경우가 많고,
+Read 작업이 다른 작업과 사용되는 빈도에도 차이가 있기도 하다.
+마이크로 서비스에서 특히 다른 DB에서 가져올 때 조합하기 위해 이렇게 분리하면 좋을 것 같다
+이 개념에서는 애초에 모델, 서비스 자체에서 쿼리와 커맨드를 분리해서 다른 서비스로 만들라고 한다</p>
+<p>사가
+애그리거트
+쿼리
+api</p>
+<p>log data 나 db table 등을
+초기에 설계해서 쭉 써야하는 것보다는
+변경에 유연했으면 좋겠다
+변경에는 근거가 필요하지만, 실제로 변경할때는 쉽게 할 수 있도록
+마이그레이션이 쉽지 않다</p>
+<p>변경에 유연한 것들은 무엇이 있을까</p>
+<p>관리요소가 많아지면 일관성이 깨지기 쉽다
+코드가 많아지면 고쳐야하는 지점이 늘어난다</p>
+<p>마이크로서비스는 내 생활방식과 다르다</p>
+<p>마이크로서비화도 무한정 많이 할게 아니라 탈출지점을 만드는게 좋겠다
+한 팀이 감당할 서비스를 생각해서</p>
+<p>분산 데이터
+분산 서비스
+분산 환경을 컨트롤하는 게 필요하다</p>
+<p>복잡성도 분산 환경에서 있고 분산이 곧 개별적인 인간 세상과 닮은 소프트웨어의 구조</p>
+<p>마이크로서비스의 경계설정
+데이터 쿼리 트랜잭션
+데이터 모아서 처리하기</p>
+<p>마이크로서비스는 데이터가 뿔뿔이 흩어져있다고 느낄 수 있다
+신경써야할 요소가 많아진다고 볼 수 있다
+넷플릭스는 이것을 어떻게 관리하지?</p>
+<p>모놀리스로 개발하다보면 기존에 것에 계속 추가해야하고 수정해야한다.
+새로운 기능이 필요하면 기존 구조를 건드려야 할 수도 있다
+이것을 막기 위해 마이크로서비스를 쓰지만
+관리포인트는 줄일 수 있어야 한다.</p>
+<h4 id="마이크로서비스-잘-구축해보고-싶다-이벤트-처리" style="position:relative;"><a href="#%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%9E%98-%EA%B5%AC%EC%B6%95%ED%95%B4%EB%B3%B4%EA%B3%A0-%EC%8B%B6%EB%8B%A4-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%B2%98%EB%A6%AC" aria-label="마이크로서비스 잘 구축해보고 싶다 이벤트 처리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>마이크로서비스 잘 구축해보고 싶다 (이벤트 처리)</h4>
+<p>카프카 이용하는 마이크로서비스 예제 보고싶다</p>
+<ul>
+<li>github.com/gilbutITbook/007035</li>
+<li>github.com/gilbutITbook/006947</li>
+</ul></section><hr/></article><nav><div style="max-width:90%"></div>Tag: <a href="/tags/">fundamental</a><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/tool/">← <!-- -->Linux, GIT, ETC</a></li><li><a rel="next" href="/math/">Math<!-- --> →</a></li></ul></nav><div></div></main><footer><small>© 2020, Built with<!-- --> <a href="https://www.gatsbyjs.org">Gatsby</a>, Inspired by<!-- --> <a href="https://johngrib.github.io/">john grib</a> and<!-- --> <a href="https://devroom.io">Ariejan de Vroom</a></small></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/architecture/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-f5adcedd35fd79dd097b.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-995dc061fefb8a2b6378.js\"],\"component---src-pages-about-js\":[\"/component---src-pages-about-js-2b56c919f1406d5412e6.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-87b4768eaf25f0e5a3f3.js\"],\"component---src-pages-tags-js\":[\"/component---src-pages-tags-js-e341062119bd0ed513dc.js\"],\"component---src-pages-wiki-js\":[\"/component---src-pages-wiki-js-978ffc6b31ea14d00f78.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-2357f6d6e33c4f2d0777.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="3edc847819d5f9a537e9";</script><script src="/webpack-runtime-6be9f1a6e9fb8e985f03.js" async></script><script src="/framework-f70f545f8287a5fac375.js" async></script><script src="/app-f5adcedd35fd79dd097b.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
