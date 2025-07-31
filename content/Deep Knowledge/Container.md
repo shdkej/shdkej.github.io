@@ -256,6 +256,20 @@ https://github.com/dennyzhang/cheatsheet-kubernetes-A4/blob/master/README.org
 특정 노드의 폴더를 사용할 때는 hostPath를 사용할 수 있다.
 근데 노드 상관 없이 폴더를 써야하는 경우가 대부분일 것이다
 
+#### 쿠버네티스 네트워크의 이해
+팟들끼리의 통신은 veth 을 통해서 하게 된다 eth0 -> docker0 -> veth0
+그리고 eth0이 어떤 veth0과 연결되어 있는지 라우팅 테이블이 존재한다
+하지만 팟은 언제든 사라졌다가 다시 생겨날 수 있어서 이를 추상화하는 레이어가 하나 필요하고 이것을 service로 만들었다
+(IP 네트워크는 보통 자신의 host에서 목적지를 찾지 못하면 상위 게이트웨이로 전달하도록 동작)
+service는 리눅스 커널 기능인 netfilter와 iptables를 이용한다
+kube-proxy라는 녀석도 같이 동작에 관여하는데 얘는 netfilter에 규칙을 수정하는 역할만 하고 실제 동작은 netfilter에서 이루어진다
+클러스터 외부에서 트래픽을 내부로 전달하고 싶다면 로드밸런서를 이용한다
+외부에서 요청이 오면 NodePort를 거쳐서 내부 Node의 ip를 찾게 되고 이것이 다시 netfilter를 거쳐서 팟을 찾을 수 있게 된다
+하지만 NodePort를 확장한 LoadBalancer Service도 제약사항이 있는데 한개의 로드밸런서가 여러 서비스를 연결하지 못한다는 점이다.
+그래서 ingress가 나왔다
+ingress는 그래서 한개의 로드밸런서로 여러 서비스를 유연하게 설정할 수 있게 해준다
+ingress는 ingress-controller가 동작하게 해야하고, 각 클라우드 플랫폼 마다 ingress-controller 구현체가 있다
+
 #### deploy
 - 배포와 릴리즈를 분리
   쿠버네티스에 apply를 해도 실제 서버에 바로 적용되는게 아니라 서비스 메시에서

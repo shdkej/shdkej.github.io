@@ -177,6 +177,15 @@ s3를 데이터 소스로 사용하니까 명령어를 알게 된다!
 	- 얼마나 필요한가
 
 
+#### AI Stack
+![[Pasted image 20250726151858.png]]
+AI Stack
+- https://www.youtube.com/watch?v=0HB6NIrRe2A
+- Semiconductor
+- cloud
+- fm
+- application
+
 ## 머신러닝
 
 지도학습 : 입력값과 결과를 같이 알려주는 것

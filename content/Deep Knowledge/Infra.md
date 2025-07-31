@@ -56,6 +56,13 @@ bandwidth (per GB)
 - container registry
 - https://georgepaw.medium.com/how-to-run-the-cheapest-kubernetes-cluster-at-1-per-day-9287abb90cee
 
+
+#### NAT gateway 비용이 은근 많이 나올 수 있음
+- 프라이빗망의 인스턴스가 퍼블릭에 접근해야 하는 경우 통신됨
+- S3에 업로드/다운로드가 많이 일어난다면 비용 폭탄
+	- S3 전용 VPC Endpoint를 쓰면 무료라고 한다
+	- S3와 DynamoDB는 Gateway 형식의 Endpoint. VPC당 20개 쓸 수 있음
+
 ## VPC
 
 외부 - VPC - AZ - subnet - instance - route table - igw (subnet을 퍼블릭으로 만들어주는 것과 같은 효과) - nat gateway (subnet이 private 상태로 인터넷 연결) - NACL (control ALLOW and DENY) - security group (control only ALLOW)
@@ -116,6 +123,12 @@ AWS가 책임지는 것
 - 키를 자주 바꿔주는 것
 - 적절한 권한을 설정하는 것
 - 접근에 대한 분석, 권한 리뷰
+
+## Storage
+
+glacier
+https://bluese05.tistory.com/35
+- 데이터 가져오고 검색하는게 좀 한계가 있어서 활용도는 떨어지는 듯
 
 
 ## Hands-on
