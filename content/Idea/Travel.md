@@ -34,6 +34,10 @@ tags    : idea
 - 인테리어
 - 경치
 
+안대랑 마스크 챙겨가면 좋을 듯
+chann massage
+푸켓 숙소 - https://blog.naver.com/hellosydney02/223485097446
+
 #### 치앙마이
 
 샴록 치앙마이 호텔 13

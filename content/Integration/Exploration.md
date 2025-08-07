@@ -617,7 +617,7 @@ https://hut.mearie.org/xy-problem/
 
 #### 단일 진실의 원천 SSOT
 
-![[Pasted image 20230223201018.png]]
+![ssot](../img/ssot.png)
 https://coffeewhale.com/kubernetes/gitops/argocd/2020/02/10/gitops-argocd/
 
 한동안 찾던 건데 여기 있었다

@@ -1,9 +1,10 @@
 ---
 title: 아키텍처 단상
-summary:
+summary: 확장성, 모듈, 분산
 date: 2021-05-20 20:33:31 +0100
 updated: 2025-07-23 10:47:30 +0900
-tags: meta
+tags:
+  - meta
 ---
 
 ## 확장성
@@ -43,6 +44,11 @@ hdd로 구축된 서버에서 한대만 ssd로 교체해서 상황을 지켜보�
 
 데이터베이스를 커스터마이징하기보다 어댑터를 이용해 원본은 잘 지켜나가서 새로운
 것이 생겼을 때 바로 도입할 수 있는 환경
+
+#### 관리 편한 인프라
+- 기본 매커니즘이 단순하고 간결하고 명확한
+- 요즘 플러그인 방식
+- 간단한 형태를 유지하면서 변화에 유연한 서비스
 
 #### 변하는 것과 변하지 않는 것 :vs:collection:
 
@@ -273,7 +279,6 @@ Apache의 MPM
 #### 알림 시스템 설계
 
 가상 면접 사례로 배우는 대규모 시스템 설계 기초
-
 - 인사이트
 
 10장 알림 시스템 설계
@@ -299,15 +304,14 @@ kums의 설계와 매우 유사하게 구성되어있다
 그러다가 어느 시점이 되면 아래 정도의 복잡성이 생긴다
 
 note
-
 - logic1
-  - main.go
-  - data.go
-  - adapter.go
+	- main.go
+	- data.go
+	- adapter.go
 - logic2
 - api
-  - http.go
-  - grpc.go
+	- http.go
+	- grpc.go
 - lib
 
 이런 구조에서 더 복잡성이 필요해지면 분리하기 좋다는 신호다.
@@ -339,55 +343,67 @@ But, Don't be loose. Quick Response. small thing first
 
 외부 라이브러리를 분리하려고 하는데, 그러면 폴더 구조가 어떻게 되는거지
 
+```
 - cmd
 - lib1
 - ilb2
 - logic1
 - logic2
+```
 
 이런 식으로 되는 건가
 
+```
 - cmd
 - logic1
-  - lib1
-  - lib2
+	- lib1
+	- lib2
 - logic2
-  - lib1
-  - lib2
+	- lib1
+	- lib2
+```
 
 이것보다는 나은 것 같은데 위의 구조에서 라이브러리와 메인 로직의 구분이 안된다
 
+```
 - cmd
 - logic1
+```
 
 일단 내 로직이 메인이다
 cmd에서는 이를 한 눈에 보기 좋게 한다
 여기서 이제 라이브러리가 들어간다
 
+```
 - cmd
 - logic1
-  - db_logic
+	- db_logic
 - db
+```
 
 이렇게 하면 메인에서 구현에 필요한 것을 db에서 받아서 실행하도록 해야한다
 
 외부 라이브러리가 여러 개 중에 하나를 선택할 수도 있다
 
+```
 - cmd
 - logic1
-  - db_logic
+	- db_logic
 - db
-  - redis
-  - RDBMS
+	- redis
+	- RDBMS
+```
 
 이렇게 하려면 db를 다시 추상화해야한다
 
 ...
 
+```
 - db
-  - redis/
-  - RDBMS/
-  - db.go
+	- redis/
+	- RDBMS/
+	- db.go
+```
 
 근데 이렇게 하면 외부 라이브러리를 구현하는 작업이 다시 되야 되서 별로다
 
@@ -487,37 +503,35 @@ input output 구조가 수학적으로 안정성을 가질 수 있다는 것이�
 그렇다고 어댑팅 안하면 라이브러리 수정 시 여기 저기서 바꿔야 된다.
 그렇다고 라이브러리를 일관된 형태로 유지하자면 그것도 쉽지 않다
 
+```
 lib1
-
 - file
 
 source1
-
 - main
 - lib1-adapter
 
 source2
-
 - main
 - source1-adapter
 - lib1-adapter
+```
 
 이런 구조가, 라이브러리 변경 시
 
+```
 lib1
-
 - file-v2 // 변경
 
 source1
-
 - main
 - lib1-adapter // 변경
 
 source2
-
 - main
 - source1-adapter
 - lib1-adapter // 변경
+```
 
 수정이 전체에 영향을 미치면 안된다.
 

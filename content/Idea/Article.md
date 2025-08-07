@@ -6,10 +6,67 @@ updated : 2025-07-23 10:13:41 +0900
 tags    : idea
 ---
 
+#### 북마크
+[https://slashpage.com/haebom/psychology101](https://slashpage.com/haebom/psychology101)
+
+https://neal.fun/internet-artifacts/
+
+[https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/79/selectInfoRptList.do](https://www.consumer.go.kr/user/ftc/consumer/cnsmrBBS/79/selectInfoRptList.do)
+
+https://tech.kakaoenterprise.com/154
+
+https://brunch.co.kr/@goodgdg/68
+
+https://dokdo2013.tistory.com/m/13?utm_campaign=asb&utm_medium=blog&utm_source=awesome-blogs.petabytes.org
+
+https://wiki.webnori.com/display/devbegin/DevBegin
+
+
+
+## 인터넷에서 본 것들에 대한 감상
+
+#### 2025
+
+https://www.youtube.com/watch?v=OHpYh10gphc
+- 적게 일하고 성과 내는 법
+- 몰입
+- 시스템 만큼만 운영된다
+- 100명의 팔로워를 먼저 모으고 작업을 만든다 (집중 고객 10명을 모은다)
+- 나의 시급 이하의 작업은 위임한다. 먼저 나의 시급을 측정한다.
+
+https://www.youtube.com/watch?v=KbleIwApqu4
+- 천재들의 노트 습관
+- 뉴턴
+	- 용도에 따라 세 종류의 노트 사용
+	- 책을 읽고 메모하며 **저자에게 질문을 던지는 노트**
+	- 문제를 분석하고 가설을 세워 이를 증명하는 노트
+	- **자신만의 해법을 구체적으로 풀어쓴 노트** - 이건 그냥 책이 되네
+	- 자신이 얻은 정보에 대해 끝까지 검증한다
+- 아인슈타인
+	- 대부분의 정보를 영상으로 기억함..
+	- 머리로 기억한 것을 재해석하여 노트로 기록
+- 에디슨
+	- 자신이 얻은 정보 모두를 기록한다
+	- 손에 잡히는 대로 노트 기록하고 이후에 특정 크기의 노트에 정리한다
+	- 특허에 유리하도록 고려해서 내용을 정리한다
+- 다빈치
+	- 수첩 크기의 노트를 옷에 달고 다니며 다양한 관심사를 순서 없이 기록
+	- 떠오르는 개념들을 스케치한 뒤 그 주변에 객관적인 정보와 직접 관찰한 정보 기록
+	- 이후에 이어서 작업할 수 있도록 과감하게 여백을 남긴다
+	- 이미 알고 있던 개념 + 새로 알게 된 개념의 연결
+- 정약용
+	- 수사차록법
+	- 중요한 문장을 베껴쓰되 자신의 생각을 덧붙인다
+- 뉴턴의 노트법은 기가 막힌다. 정말 좋은 아웃풋이 나올 수 있을 듯. 내가 원하는 방식임
+
+
+
+## Bookmark
+
 - 웹에서 가져온 내용에 대한 태그를 무엇으로 해야할까
     - webpage? scrap? bookmark? -> article
 
-## Bookmark
+
 3 X 3
 - inbox read remind
 - inbox -- inbox, pending

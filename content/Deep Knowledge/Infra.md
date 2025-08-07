@@ -6,7 +6,6 @@ updated: 2025-07-23 10:10:00 +0900
 tags: deep_knowledge
 ---
 
-# Cloud
 
 ## About Cloud
 #### 모든것을 위한 클라우드는 없다
@@ -62,6 +61,57 @@ bandwidth (per GB)
 - S3에 업로드/다운로드가 많이 일어난다면 비용 폭탄
 	- S3 전용 VPC Endpoint를 쓰면 무료라고 한다
 	- S3와 DynamoDB는 Gateway 형식의 Endpoint. VPC당 20개 쓸 수 있음
+
+#### Serverless
+
+채팅서비스에서의 람다가 적합하지 않을 수도 있겠다
+처음엔 인스턴트성이 강해서 필요할때만 켜지는게 효율적이다 생각했는데
+콜드스타트 문제로 처음 응답이 느릴 수 있고
+그걸 해결하고자 계속 켜지게하면 사용시간이 늘면서 비용이 늘고 람다를 쓰는 의미가 없어질 수도 있다
+GPT도 동일하게 말해준다. 지속실행이 어렵고, 사용자가 많아지면 비용이 급증하고, 웹소켓 상태 관리가 어렵고 높은 지연시간이 있다
+- Lambda는 **요청당 비용**이 발생하므로, 사용자마다 개별 Lambda가 떠 있으면 **비용 부담이 큼**
+
+그래서 fargate를 쓰는게 대안이고 redis pub/sub도 써서 메시지 브로드캐스팅용으로 쓰기를 제안한다
+
+데이터베이스는 
+- 실시간 메시지 전송은 Elasticache
+- 채팅 로그 단순 저장은 DynamoDB, (유저 정보도 여기 저장하지 못할 이유가 없다)
+- 채팅방/유저 데이터 관리는 RDS
+
+#### 람다를 기가 막히게 사용하고 싶다 + 큐와 함께
+
+왜 람다가 좋으냐
+
+람다를 써도 될까 람다를 쓰면 안되는 경우
+
+pLimit
+팬아웃
+큐와의 조합
+
+콜드스타트는 여전히 느리고,
+어느순간 트래픽이 폭증하면서 온디멘드와 별반 차이가 없어졌고,
+오만 수단을 다 동원해도 배포가 너무 느림
+
+#### 서버리스를 선호
+아키텍처를 그릴 때 서버리스로 가능한지 먼저 확인한다
+서버리스로 할 수 없는 특징이 없다면 서버리스로 시도한다
+관리포인트가 줄어드는점
+모듈화가 되어서 다른 서비스 연결이 잘 되는점
+가벼운점
+작업의 실행을 보장할 수 있다
+
+서버리스로 하기 어려운 특징이 어떤게 있냐면
+이번회사를 다니면서 백엔드 서버가 딱 있으니까 좋다고 느낀게 있었다
+쿼리로 데이터 관리할 수 있는 점 - 트랜잭션
+머신러닝처럼 컴퓨팅 성능이 중요한 경우
+실시간성이 중요한 서비스
+
+그래서 람다의 한계를 배우게 된다
+- 지속 연결이 필요하면 못 쓴다
+- 빠른 응답이 필요하면 못 쓴다
+
+fargate도 서버리스 컨테이너 서버이기 때문에 서버리스를 쓰는거긴 하다
+
 
 ## VPC
 
@@ -237,31 +287,324 @@ EBS, EFS, FSx
 Athena : S3에 저장되어 있는 로그를 쿼리할 수 있는 기능
 
 
-# Security
+---
+
+## TEMP
 
 
-# SRE
+iam 역할과 정책 비교
+- 정책은 사용자, 역할, 그룹에 할당하는 실제 규칙
+irsa
+- IAM Roles for Service Accounts
 
-To upgrade site reliability
 
-1. Monitoring
-   - Monitoring various content
-   - Make automation
-2. Performance check
+#### 변경 파일만 검사하는 lint
+- git diff
+	- `git diff $(git merge-base origin/${base} origin/${head})..origin/${head} --name-only --diff-filter=d | grep -E '.(js|jsx|ts|tsx)$'`
+	- git merge-base : base 브랜치와 타겟 브랜치의 공통 조상을 찾는다
+	- -name-only : 파일 이름만 출력한다.
+	- -diff-filter=d : 삭제된 파일은 제외한다
+	- grep -E : 특정 확장자만 필터링
+- github actions에서 fetch 기본값은 최신 커밋 하나만 가져오는 건데 공통조상을 찾기 위해 전체 히스토리를 가져옴
 
-Quick recovery scenario
 
-- Check error 5xx, when error occurred rollback to prev version. And reporting
-  error situation. Which are link, behavior, data, code line, build package,
-  (commit source)
+#### 인프라
+* subnet, route table
+	* route table에 변경할 서브넷이 aws에는 만들어져있고, 이를 테라폼으로 안가져와서 이걸 가져와서 route table에 적용할지, 바로 그냥 스트링으로 입력할지?
+* 스테이징 서버 subnet 끼리 연결해줄 수 있도록 연결
+* terraform import 로 aws에서 땡겨올 수 있다.
+	* terraform으로 이름만 만들어서 import 하고 내용 입력해서 plan해서 쓸 수 있다.
+	* plan 해서 aws랑 sync하고 원하는 상태로 변경.
+	* 각 폴더가 루트라서 data.terraform_remote_import 써서 output 만들어서 데이터 받아온다.
+		* 루트끼리 데이터 교환을 바로 못하나? 모듈에서는 됐던것 같은데
+* AZ존 a, c에 비해 b, d가 잘 안되는 이슈가 있다.
+	* 주로 a를 쓰고 c는 eks 하면서 조금씩 추가하고 있다.
+* eks subnet 자동으로 만들어진 것들
+	* 통신을 위한 포트가 랜덤으로 열려있음
+	* nlb client는 0.0.0.0으로 열려있고 health는 특정 서브넷마다 할당 되있다. 왜그렇지?
+		* 임의 설정 가능한지 어노테이션 확인
+* NLB
+	* 웹소켓 등 다른 프로토콜 쓸 수 있다
+	* 빠르다
+	* 바이패스로 지나가는 느낌이라 시큐리티 그룹으로 설정 못해준다
+* 테라폼
+	* 버전 업데이트에 따른 수정사항이 생기면 내가 바꾼 거랑 섞여서 보기 힘들다
+* 인그레스 컨트롤러
+	* class로 인그레스 어떤거 쓸지 선택, 디폴트 elb, nlb는 선택 필요
+	* stable/nginx-ingress가 만료되서 새로 업데이트 해야한다
+	* EKS 업데이트 시 인스턴스가 재생성 해야되서 elb에서 다시 수동으로 인스턴스를 잡아줘야하는 이슈가 있다
+		* eks internal로 직접 만들어서 수동 설정하는게 있다
+* kubectx 로 컨텍스트 설정
+* 운영에서는 에러 뜨면 바로 반응 오는게 맞다
+* elb - nlb 일 필요 없다
+* ldap, saml #infra
+	* aws login 등 할 때 마이크로소프트 saml 이용해서 중앙에서 권한 제어한다.
+* browser에서
+	* response-header에 content-security-policy로 컨텐츠 http 제한, https는 허용하는 식으로
+* 새로운 k8s 리소스 생성하기
+	* 1. helm create 하고 운영서버 데이터 적당히 옮긴다
+	* 2. argocd 웹 들어가서 앱 생성
+* NLB -> ALB
+	* 주소 앞에 www를 붙이는 처리를 기존에는 apache 웹서버를 이용해서 했었는데, ALB에서 리다이렉트 처리가 가능해서 ALB를 사용하려 한다.
+		* 관리포인트가 줄어든다
+	* 문제는 ALB의 IP 주소가 한번씩 바뀌어서 NLB가 ALB를 못바라본다.
+	* 그래서 람다를 이용해 NLB가 ALB를 찾을 수 있게 해주고 있다.
+* monorepo with yarn workspace
+	* 같은 프로젝트 안에 다른 서비스끼리 참조하면 임포트를 해줘야하나?
+- 캐시
+	- 캐시 전체 페이지 하고 있는데 비회원,회원 구분된 페이지에서 비회원화면이 캐시되있으면 회원이 접속해도 캐시된 화면 출력되는데 그래서 새로운 구분값이 추가되면 캐시페이지도 구분해줘야한다.
+- 장애 : 서비스가 의도한 대로 동작하지 않는 모든 것
+- 장애감지 - telegram 으로 alert megazone과 구축
+- /var/log/mesages에 리눅스의 기본적인 로그가 남고 어떤 프로세스가 죽었는지 확인됨
+- 인프라 모니터링 + APM 으로 요청 검사
+- 빈스톡의 nginx 기본 설정이 잘 막혀있도록 설정되어있음
 
-#### 서비스 사용자 수용량 확인
 
-서비스가 빠른지 확인 방법 Throughput, Latency
+#### ec2 os 패치
+- devops, sta running 으로 검색
+- 인스턴스 백업
+	- 이미지 및 템플릿 - 이미지 생성 = 스냅샷 생성
+	- 이미지 이름은 인스턴스 이름 + BACKUP-날짜
+	- 운영에서는 재부팅 안 함을 활성화
+	- AMI 에 생성됨, 볼륨 생성됨, 스냅샷 생성됨
+- 시연은 JUMPSERVER를 이용해서 접속해서 했음 
+	- (근데 끊어져서 서버가 뻑난적이 있음. 접속이 끊어지면 안됨)
+- os 확인 - centos
+- sudo yum update -x docker* (docker 관련 리소스는 업데이트 안함)
+	- docker는 업데이트를 안했는데도 도커가 재시작 되는 경우가 있음
+	- 운영에서는 해당 인스턴스를 LB에서 빼주는게 안전
+	- 도커는 업데이트 해도 되는데 파라미터 수정해줘야 함
+- 리눅스 재시작
+	- sudo shutdown -r now
+- 패치 확인
+	- last reboot
+	- version 이 다르게 표시된 걸로 확인
+- 도커 컨테이너 확인해서 실행 안되어있으면 실행
+- /usr/lib/systemd/system/docker.service
+	- ExecStart=/usr/bin/dockerd 이 줄에 -H 옵션이 붙어있다면
+	- 뒤에 -H 붙이지 않는 걸로 수정해줘야 함
+	- -H fd:// --containerd=/run/containerd/containerd.sock
+- 수정파일 적용
+	- sudo systemctl daemon-reload
 
-- Throughput 시간당 처리량 TPS, RPS 등
-  - 병목 발생한다
-- Latency 응답 지연 시간
-  - 모든 서비스 지연시간이 영향을 준다
+EB Incorrect application version found on all instances. Expected version 에러
+- 인스턴스 1개면 EC2 리부팅 해주면 다시 됨
 
-부하발생시키기
+#### eks
+개발자 작업내역 로깅?
+개발자별 권한관리
+
+```
+awslogs get /aws/lambda/lambda-func-fnc-stg-an2-send-email-nhn ALL \
+  --start='1h ago' --watch \
+  --profile ums-dev --aws-region ap-northeast-2
+```
+
+
+
+#### 점프서버
+jumpserver 안쓰면 다른 ssh 툴로 접속해야 하나?
+docker 업데이트 후 수정해야하는 것과 아닌 것의 차이는?
+dockerfile은 어디에 있을까?
+
+- 서버 접근 제어 솔루션
+- 점프서버를 aws2020에 설치하여 사용
+- 누가 언제 접속하고 어떤걸 했는지 로깅
+- 동영상으로도 저장
+
+#### 시스템 버전 업데이트 어떻게 할 것인가
+#infra 
+ec2, rds 업데이트
+stg-eks 는 terraform
+rds 는 aws console에서 수정 눌러서 업데이트
+- 블루/그린 배포 추가된듯?
+- mysql 5.6 -> 8로 업데이트 시 인스턴스 변경 필요한데 어떻게 하면 사이드이펙이 적을까
+
+500에러
+ALB에서 500 에러가 발생 가능하다
+ELB는 가지고 있는 큐가 1024개 제한이 있다
+
+#### RDS 디비 접속
+#infra
+서브넷이 private용으로 돼있는데
+security group 만 풀어주면 접속이 되나? 아니면 서브넷도 풀어줘야 하나?
+서브넷이 nat 만 열려있어서 그렇다. igw 연결 시켜줘야 했음.
+근데 db-public을 만드는 방향으로 가야함
+
+
+#### IAM
+IAM 적용에는 시간이 걸린다 #infra 
+
+#### 서버리스 단점
+- 도큐먼트
+- 어떤 입력값을 쓸 수 있는지 나와있는 문서가 없다
+	- cloudformation 값을 참고 할 수 있음
+#infra 
+
+#### 키네시스 로컬 테스트
+- docker-compose 실행
+- stream 생성
+- 큐에 넣기
+- 이터레이터 조회
+	- 이터레이터로 레코드 조회
+- 레코드 데이터 base64 디코딩
+- 이터레이터 유효기간 때문에 처음에만 조회가 된다
+- 이터레이터를 새로 받으면 ~ 된다
+- 이터레이터를 먼저 환경변수에 세팅하고, 값을 넣으면 그 이터레이터로 조회가능
+
+로컬 키네시스 테스트
+- 이터레이터 하나 확인 (source get_records.sh 하면 환경변수에 저장 가능)
+	- 키네시스로 전송
+	- 레코드 확인 (레코드가 배열로 여러개 있음)
+	- base64 디코딩
+	- json 형식으로 변환
+stderr, stdout 일 때 처리를 다르게 해줘야 하나..
+#infra 
+
+cdn -> 
+cache, cdn을 둬서 사용자가 많아져도 부하를 줄일 수 있다
+헤더를 한줄로 만들어서 람다로 분해해서 cdn에서 인식하게 한다
+- 조작을 방지하기 위해
+#infra
+
+[[이벤트 드리븐]] #infra 
+
+- 쿠버네티스
+	- 인그레스로 연결 접속 허용하는 사람 설정
+	- 인그레스 여러 개 사용하면서 적합한 것 사용
+
+- lb용으로 서브넷 따로 따져있음
+- 스테이지는 스팟인스턴스 사용
+- 디비는 메모리많은걸 써서 캐시 잘 되게 함. 조인할때도 그렇고 메모리에 적재할때 부족하면 느려져서 많으면 좋음
+- eks_manage_user 로 하면 생성할때만 설정가능해서 role로 관리하는게 나을수도
+- proxy_protocol_v2 -> 클라이언트 ip 전달을 위해 헤더에 값 넣어주기 위한 설정 (https://purpleio.atlassian.net/wiki/spaces/PURPLEIO/pages/168067247/AWS+ELB+ALB+NLB+CLB+nginx+ingress+EC2)
+	- nlb 는 ppv2 지원
+	- alb 는 x-forwarded-for 헤더에 기본 지원
+	- nlb 에 annotation 설정 해주면 됨
+	- configMap 에도 설정
+	- 타겟 그룹에 preserve client ip address 값에 따라
+		- sg에 클라이언트 ip 를 열어줘야 할 수 있음
+- 디비는 테라폼으로 같이 묶여있으면 지울때 날라가면 크리티컬
+	- 그냥 테라폼코드를 지우면 삭제하는 동작을 해서 따로 안보게 하는 설정을 해줘야 함
+
+blue, green은 statefulset 으로 되있는데 다른건 뭘로 되어있는지? <-> deployment
+- deployment 대신 쓰는건데
+- service를 다른걸 쓴다
+- 파드가 죽다 살아나도 그 파드 그대로 사용된다
+
+ec2에 설치된 오라클은 플러그인같은걸 쓰고 있었는데 RDS에서는 못써서, 근데 개선할 예정
+
+lb controller
+- ELB, NLB 를 쿠버네티스가 관리할 수 있게 해주는 컨트롤러
+- ingress controller가 예전버전인데 이걸 써야 nlb - ingress 연결이 된다?
+- https://docs.aws.amazon.com/ko_kr/eks/latest/userguide/alb-ingress.html
+
+CLB에 비해 NLB 의 달라진 점은 어떤게 있지
+
+버전을 variable로 다 빼도 될까?
+- 차트별로 버전 확인하려면 어떤 리소스인지 봐야되서 왔다갔다 하기 번거로울 수 있다
+
+locals랑 variables랑 뭐가 다르지
+- locals 는 상수
+- variables 는 terrafrom 명령어 칠 때 사용자가 변수 주입 가능
+- output 은 모듈 외부에서 값 받아쓸 때 사용 가능
+
+2023으로 만든거에 helm으로 만든거는 eks 위에서 안뜨나?
+- argo를 먼저 띄워놓고 그걸로 띄우나? <-> 모니터링 같은 시스템 쪽은 argo로 배포 안해도 될텐데
+- helm 자체가 eks 위에서 실행되긴 해야하는데
+
+https://sineui.home.blog/2020/02/29/aws-eks-clb-alb%EB%A1%9C-%EC%9D%B4%EC%A0%84%ED%95%98%EA%B8%B0-1-%EB%B0%B0%EA%B2%BD/
+
+
+#### argocd
+처음 깔면 레포지토리 등록
+gitlab에서 repository > deploy token 에서 토큰 생성 후에 등록
+argocd에서 destination 추가
+
+a 레코드로 하면 한번에 아이피를 찌르는데
+cname 을 거치면 한번 더 쳐야 되서 a 레코드가 낫다
+
+argocd에서 kubernetes namespace를 바꿀 때 ingress가 안지워지면 새로운 ingress가 안뜬다. 자동으로 안됨. service나 deployment도 안지워지고 새로운게 뜸
+
+---
+
+- [ ] kubernetes toleration, taint
+	- taint
+		- 노드에 설정
+		- 팟이 할당 안되도록 하는 설정
+		- 이름을 명시적으로 설정. (ex: system, normal, large)
+		- tolerations와 함께 써서 특정 노드에만 뜨게 하기 위해 사용
+	- tolerations
+		- 팟에 설정
+		- key, operator, value, effect 를 taint에 설정된 것과 같게 입력해주면
+		- taint가 설정 되어 있어도 할당 되게 해줌
+		- 만약 해당 taint값이 없으면 생성이 실패되나?
+		- node selector와는 어떤 관계지
+		- node affinity도 있음
+
+route 53 연결 해줬는데 인증서가 kolonmall 이 없는걸로 연결되서 400으로 에러남
+- 인증서 바꿔주면 시간 지나면 적용 됨. 캐시 남아있을 수 있음
+
+ingress에 nodeSelector가 manage로 되어있던데 eks 만들때는 manage로 tag 걸어논게 없던데 이상없이 잘 떴음. manage는 기본으로 생성되는건가 아니면 이름 없으면 그냥 아무거나 붙는건가?
+
+kop-api 띄우다가 image 없다고 에러 뜸
+- ecr에 lifecycle policy에 50개까지만 저장한다고 설정되어있음
+
+kop-web, kop-hybris beta 는 kop30-frontend 에서 ingress를 띄워서 연결해서 쓰고 있음
+
+external dns를 helm으로 띄워서 팟이 인터벌 간격마다 확인하면서 dns 할당하는 역할을 함
+주소 매핑할때는 kubernetes 에 어노테이션 달아주면 되는데, ingress에 hosts 등록되어있어도 되는 거 같다
+
+keyv-cronjob
+- 레디스에 쓸데없는 거 쌓인 거 지워주는 크론
+- 무슨 라이브러리 쓰는게 있는데 그거때문에 데이터가 계속 쌓여서 메모리를 많이 차지해서 임시로 지워주게 처리함
+- 그 라이브러리가 keyv 일 수 있음
+
+레디스 elasticache 버전이랑 클라이언트 버전 맞춰주기
+
+디비나 레디스같은 건 인바운드 열어줘야 할 수 있으니 확인
+
+하이브리스도 레디스에 로그인 세션 저장해서 사용중
+
+- aws cni 
+	- container network interface
+	- eks 가 아닌 기본 쿠버네티스를 띄울 때는 calico 등을 썼었는데 그것의 aws 버전
+
+모니터링 테라폼 켤 때 aws cni 에서 ip 할당 안되는 에러 발생
+인스턴스 마다 할당 가능한 ip 제한이 있다 - 근데 xlarge 정도면 충분한듯
+aws cni 설정 중에 minimum ip 관련 설정이 있다
+aws cni 설정을 지우고 띄워보니 뜬다
+- [ ] warm 어쩌고 설정이 어떤 건지 확인
+- [ ] 해당 ip 설정 어떻게 하면 좋을지 확인
+- aws eks cni
+	- 이 설정이 eks 설정 전체에 되는거라 minumum 설정 때문에 전체 ip가 부족했을 수 있을까?
+	- warm ip
+	- warm prefix target
+		- 이걸 4로 했을 때의 의미는?
+		- 이거 말고 다른 설정이 보통 안내되긴 하는데 잘 설정한거맞나?
+		- ENABLE_PREFIX_DELEGATION 이 설정은 없어도 되나?
+	- minimum ip target
+		- 노드가 처음 나타날 때 최소 IP 할당 개수
+	- l-ipamd
+	- c6i.xlarge 58 - eni max pods
+![[Pasted image 20231102182900.png]]
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html
+
+eni 할당 모드에 secondary ip mode와 prefix 모드가 있다
+![[Pasted image 20231102170558.png]]
+https://www.eksworkshop.com/docs/networking/prefix/
+https://dobby-isfree.tistory.com/201
+- secondary ip mode가 디폴트인데
+- prefix 모드가 새로 나왔고 aws에서 권장하는 옵션
+- prefix 모드로 하면 ip 할당에 api 호출이 필요없이 빠르게 된다고 한다.
+
+
+https://aws.amazon.com/ko/about-aws/whats-new/2022/12/amazon-s3-automatically-enable-block-public-access-disable-access-control-lists-buckets-april-2023/
+- s3 정책 수정되어서 최근 s3 버킷은 생성 시 ownership 유형 설정 추가 필요
+
+loki 설치하니까 너무 팟이 많아서 인스턴스가 더 떠서 다 필요한 건지 확인
+레플리카 줄여서 띄움
+
+그라파나에서 로키 수동 등록
+
+그라파나 ldap 로그인 다 허용되서 제한 필요

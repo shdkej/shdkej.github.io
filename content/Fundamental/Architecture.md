@@ -6,13 +6,12 @@ updated: 2025-07-23 10:05:21 +0900
 tags: fundamental
 ---
 
-## Goal
+## 아키텍처 설계 목표
 
 인프라 구축 및 배포를 쉽고 빠르게, 피드백을 잘 받아 점진적으로 발전하는 환경
 
-#### 좋은 아키텍트는 세부사항에 대한 결정을 가능한 한 오랫동안 미룰 수 있는 방향으로 정책을 설계한다.
-
-#### More
+#### 아키텍처 필수 고려사항
+좋은 아키텍트는 세부사항에 대한 결정을 가능한 한 오랫동안 미룰 수 있는 방향으로 정책을 설계한다.
 
 - 변하지 않을 것과 변할 것을 정해놓고 조정한다.
 - check feedback
@@ -25,116 +24,181 @@ tags: fundamental
 - auto recovery
 - 시스템 구성을 하나하나 검증하며 도입하기
 - 재사용성
-- 복잡도는 낮추고 싶고 서비스는 많이 만들고 싶다
+
+#### 그 외 고려사항
 - 배포용 이미지를 만든다.
-  배포용 이미지는 항상 처음부터 새로 빌드되어야 한다.
-  덮고 덮는 방식은 불확실성을 증가시킨다.
+	- 배포용 이미지는 항상 처음부터 새로 빌드되어야 한다. 덮고 덮는 방식은 불확실성을 증가시킨다.
 - 도메인을 생각하자. 도메인이 디자인을 만든다.
 - Fail_Fast
 - 고효율 저비용
-
 - 덮는 방식인 프레임워크보다 붙이는 방식인 어댑터 방식이 좋다
 - 내부적으로는 효율을 최대로 하되 사람들은 쫙빠진 것보다 넉넉한 것을 더 좋아하는 점을 생각한다
 - User experience searchable website
 - 서비스는 관리자가 관리하지말고 사용자가 관리할 수 있게 하면 좋겠다
 - 기능을 제공해주지 말고 모듈로 만들 수 있게 하고 여러 개 선택할 수 있도록 한다
 - 새로운 툴이 관리점은 줄이고, 편의기능은 늘릴 수 있으면 좋겠다.
-
-[[Information#좋은 아키텍트는 세부사항에 대한 결정을 가능한 한 오랫동안 미룰 수 있는 방향으로 정책을 설계한다.]]
-[[Think#server architecture to using some company service]]
-
-## Summary
-
-- code with log, test, api
-- CI with lint, test, performance, dependency
-- CD with deploy
-- Monitoring with check node, api, log, performance
-
-#### Need Component
-
-- MQ
-- M/L
-- Elasticsearch
-- [[Information#무질서한 원숭이(Chaos Monkey)]]
-- new software to kubernetes cluster
+- 복잡도는 낮추고 싶고 서비스는 많이 만들고 싶다
+- SOLID - Open Closed Principle
+	- 변화를 최소화 하기 위해 변화 예상가능한 부분을 설계시 나눠놓아야 한다는 원칙인데 그 기준선을 어떻게 설정하느냐가 중요할 것 같다
+- [[Devops#server architecture to using some company service]]
 
 ## Check Point
 
-수시 배포
-
-- 결과를 빠르게 확인 가능
-- 에러 확률 증가 - 빠른 롤백으로 위험도 낮출 수 있음
-
-주간 배포
-
-- 너무 큰 배포 단위가 될 수 있음
-- 테스트 상태의 결과와 실제 결과가 다를 수 있음
-- 배포일자에 에러 집중
-
-강제성을 얼만큼 할지, 자율성을 얼만큼 할지
-
-업무가 가능한지 아닌지 판단할 방법
-
-- 업무를 받으면 어떻게 시작하면 좋을지? 관계가 어떻게 되있는지 알아야 하는데..
-
-SOLID - Open Closed Principle
-변화를 최소화 하기 위해 변화 예상가능한 부분을 설계시 나눠놓아야 한다는 원칙인데
-그 기준선을 어떻게 설정하느냐가 중요할 것 같다
-
-divide code / config file
-
-자주 변하는 것과 자주 변하지 않는 것 고려하기
-자주 변하지 않는 것은 신경 안써도 되도록 하기
-
-디렉토리 단위를 기능별로 할지, 역할별로 할지
-
+- 수시 배포
+	- 결과를 빠르게 확인 가능
+	- 에러 확률 증가 - 빠른 롤백으로 위험도 낮출 수 있음
+- 주간 배포
+	- 너무 큰 배포 단위가 될 수 있음
+	- 테스트 상태의 결과와 실제 결과가 다를 수 있음
+	- 배포일자에 에러 집중
+- 강제성을 얼만큼 할지, 자율성을 얼만큼 할지
+- 업무가 가능한지 아닌지 판단할 방법
+	- 업무를 받으면 어떻게 시작하면 좋을지? 관계가 어떻게 되있는지 알아야 하는데..
+- divide code / config file
+- 자주 변하는 것과 자주 변하지 않는 것 고려하기
+	- 자주 변하지 않는 것은 신경 안써도 되도록 하기
+- 디렉토리 단위를 기능별로 할지, 역할별로 할지
 - 코드 분리 기준
-  회사에서는 레이어별로 나눴다
-  마이크로서비스에서는 기능별로 나눈다
-
-monorepo vs microrepo
-
+	- 회사에서는 레이어별로 나눴다
+	- 마이크로서비스에서는 기능별로 나눈다
+- monorepo vs microrepo
 - 깊이 vs 넓이
 - 디렉토리를 중첩시켜 한 레포 안에 둘지
-- 디렉토리가 중첩되면 프로젝트를 분리 시켜 레포를 나눌지
+	- 디렉토리가 중첩되면 프로젝트를 분리 시켜 레포를 나눌지
+- 회사의 소프트웨어를 자체적으로 구축한 것을 쓰느냐, 잘 가져다 쓰느냐
+	- 나의 아키텍처를 너무 좋아하게 되면 다른 아키텍처를 거부하게 되거나 보기 힘들어지지 않을까
+	- 내 아키텍처를 만들기보다 다른 사람들의 아키텍처를 받아들이는게 나을까
+	- [[About_Development#쿠팡이 자체적으로 만든 서킷브레이커와 api gateway]]
+- 하나의 툴과 종속성
+	- 쿠버네티스의 기능을 모두 쓰는 것이 다른 도구를 줄일 수 있는 방법이다. 근데 그러면 쿠버네티스에 종속성이 심하게 걸린다
+- 팀 구조
+	- 프로젝트별 팀 vs TF 팀 vs 역할별 팀 vs 기능별 팀
+- 개발은 docker compose로 운영은 kubernetes로 하도록 사람들을 유도할 수 있을까? 나는 이렇게 작업하고 있는가?
+	- [[Container#docker-compose를 이용해 이미지를 바로 배포하는 것과 Dockerfile을 쓰는 것]]
 
-개발은 docker compose로 운영은 kubernetes로 하도록 사람들을 유도할 수
-있을까? 나는 이렇게 작업하고 있는가?
-[[Container#docker-compose를 이용해 이미지를 바로 배포하는 것과 Dockerfile을 쓰는 것]]
 
-회사의 소프트웨어를 자체적으로 구축한 것을 쓰느냐, 잘 가져다 쓰느냐
+## 아키텍처
 
-- 나의 아키텍처를 너무 좋아하게 되면
-  다른 아키텍처를 거부하게 되거나 보기 힘들어지지 않을까
-- 내 아키텍처를 만들기보다 다른 사람들의 아키텍처를 받아들이는게 나을까
-- [[About_Development#쿠팡이 자체적으로 만든 서킷브레이커와 api gateway]]
+#### 일관성이 중요한 것 같다.
+각 회사마다 저마다의 아키텍처가 있어서 개발자는 그 아키텍처를 파악해야한다.
+그렇다면 한 부분을 알았을 때 다른 부분도 그와 비슷하거나 일관성이 잘 유지되어
+있는 구조라면 쉽게 익힐 수 있다. 어떤 아키텍처인지는 그 다음 문제인 것 같다.
+일단 일관성이 있으면 가독성이 올라가고, 이것이 소프트웨어를 좋게 만들어준다.
 
-하나의 툴과 종속성
+#### 중심만 남긴다
+개발 로직, 중앙 문서 관리 서비스, 코드 저장소, 데이터 저장소
 
-- 쿠버네티스의 기능을 모두 쓰는 것이 다른 도구를 줄일 수 있는 방법이다.
-  근데 그러면 쿠버네티스에 종속성이 심하게 걸린다
+#### 인프라 개발자의 관점에서 3 요소
+인프라 - 데이터 - 서비스
 
-팀 구조
+서비스 안에는 백엔드, 프론트, 디자인, 기타 등등이 또 따로 있을 것이다.
+인프라에는 시큐리티, 로깅 등등이 있고,
+모든 요소에 QA와 테스트가 있다.
 
-- 프로젝트별 팀 vs TF 팀 vs 역할별 팀 vs 기능별 팀
+#### 한 서비스의 구조
+계산 중심 구조(cpu) vs 데이터 중심 구조
 
-#### CSP
+#### 프로젝트 아키텍처
+- 넷플릭스 모델 - 전체가 하나로 묶여있다
+- 네이버 모델 - 각 역할별로 분리되있다
+- 리디북스 모델 - 데이터가 묶여있다
 
-Communicating Sequential Processes
-golang의 groutine의 동작 방식이자, 네트워크로 연결되있는 자원들이 서로 통신할 때
-효과적인 모델.
-마이크로서비스에서 수많은 서비스들 간의 연결과 복잡성을 관리하기 위한
-hashicorp의 선택
+#### 그동안의 아키텍처 모델
+- 3 layer
+- MVC - MVVC - MTV
+- 네트워크 레이어
+- 12 Factor app
+- MSA
+- DDD
+- JAM stack
+- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- SOA
+
+그리고
+- 육각형 아키텍처
+- DCI data, context, interface 제임스 코플리언
+- BCE bounded control entity
+- https://ahnheejong.name/articles/package-structure-with-the-principal-of-locality-in-mind/
+- https://mingrammer.com/translation-structuring-applications-in-go/
+- https://geminikim.medium.com/지속-성장-가능한-소프트웨어를-만들어가는-방법-97844c5dab63
+- https://overthecode.io/the-meaning-and-limits-of-atomic-design-from-a-software-design-perspective/
+
+#### SOA, MSA, DDD
+service oriented architecture
+- 중간에 enterprise service bus를 둬서 서비스 간 공유를 하려고 했으나, 당시
+  시대상 팀 구조가 변화에 재빠르게 대응하지 못했고, MSA와 비슷한 목표를 가졌으나
+  성공하지 못했다.
+- MSA의 핵심은 통신 처리이고, 이 처리 흐름을 만들어내는 서비스 메시가 등장했다.
+  마이크로 서비스는 서비스의 수가 많고, 이를 관리하는 방법이 필요하다
+
+#### 좋은 아키텍처가 성공을 보장하지는 않지만 나쁘면 망한다
+
+나쁘지 않게 하는 것은 되야한다
+완벽보다는 안정
+Ddd는 쉽게 설명가능한가? 복잡한 구조라도 쉽게 설명되면 된다
+쉽게설명되지 않으면 나쁘다
+객체지향을 넘어 인간지향 인간중심
+나쁘면 안된다는걸 생각하지만 안티패턴을 피하는 방어적 접근보다는 좋은걸 찾는 공격적 접근을 하고싶다
+
+아키텍처가 시스템 구성을 다 정하는게 아니라
+이해관계자와 먼저 요구사항을 정의하고
+팀원들과 기술적 문제해결방법을 의논하고 패턴을 같이 찾고 정하게 되는 건가보다
+
+충섭팀장님의 쿰스를 이끄는게 아키텍처의 모습을 그대로 보여준거 같다 잘 기억해야할듯
+
+푸시 개발했던게 프로젝트 진행하면서 중간에 반발이 생긴 사례인거 같다 푸시 개발 과정을 정리하는 것도 좋을듯
+Nhn에 수많은 요청을 보낸것부터 새로운 api 개방을 요청하고 사용한 것까지
+
+> 개발자에서 아키텍트로 - 마이클 킬링
+
+#### 아키텍처
+
+> 정책과 세부사항으로, 룰과 가이드를 구분.
+> 아키텍처의 목표는 정책과 세부사항을 적절히 구분해 세부사항의 결정은 최대한 미룰 수 있게 하는 것
+> - 클린 아키텍처
+
+아키텍처 구축의 목표점은 없다
+**좋은 기준점을 만들어서 그 기준점을 계속 개선해나가는 것이 최선**
+
+이런 관점에서 쿠버네티스, react, graphql, backend를 어떻게 구성해야하나?
+정책과 세부사항이 너무 많으면 기준점을 잘 지켜나갈 수 있을까?
+
+선택과 집중, 유연하고 융합적인 환경 - 두 가치를 어떻게 잘 융합할 수 있을까
+
+분산화 하는 것이 시대의 흐름
+
+심플하게 유지. 0에서 10은 심플이 아니다. 100에서 10이 심플
+
+제한이 필요하다
+
+큰 그림 > 작은 그림
+
+비즈니스 로직에서 추상화를 어디까지 하는게 좋을까
+과한 추상화는 실체가 없다는 느낌을 줄 수 있겠다.
+어디까지 추상화를 할지는 어떤 목적으로 프로그램을 만드느냐에 따라 조정된다
+모든 것이 추상화되고 가변적일 필요는 없다
+Mysql tip 글에서 DB 모델링 시 지나친 추상화를 하지 말라는 조언이 있었다.
+
+- 언어를 넘어서는 추상화
+  - 포팅을 쉽게 할 정도의 추상화
+
+설정가능해야하고 플러그인 방식으로 동작
+
+#### 관련 백링크
+- [[Standard]]
+- [[Decision]]
+- [[Reality#러셀과 화이트헤드]]
+
 
 ---
 
 ## Monitoring
 
+#### 중요한 포인트
 - urgent
 - important
 
 #### system
-
 - 보안 (로그인 체크)
 - load average
 - error message
@@ -160,23 +224,28 @@ hashicorp의 선택
 - 첫 번째 바이트 다운로드 시간
 - 전체 다운로드 시간
 
+#### 트래픽을 측정하는 방법?
+
+- tps
+- 접속자 수
+- resource usage
+- page view
+- api count
+- loading time
+- response time
+
 #### 메인 모니터링 판넬에서 보여져야 할 것들
 
-node 대수
-cpu, memory 사용량
-응답량
-처리 시간
-
-- cpu, memory, disk, network
+- node 대수
+- cpu, memory 사용량
+	- cpu, memory, disk, network
+- 응답량
+- 처리 시간
 
 #### monitoring
 
 - application, framework, os, cloud 이 정도가 기본 관리 영역이겠다.
-- 정상 상태를 추가해야한다. 범위를 정해서 이 정도면 정상인 범위로 놓고, 정상
-  범위 내를 계속 건드려서 카오스 테스팅 하고, 범위 벗어난 값은 다 알림
-  보내도록 해보면 좋겠다
-
-#### alert
+- 정상 상태를 추가해야한다. 범위를 정해서 이 정도면 정상인 범위로 놓고, 정상 범위 내를 계속 건드려서 카오스 테스팅 하고, 범위 벗어난 값은 다 알림 보내도록 해보면 좋겠다
 - 알림은 정말 확인해야 하는 것과 일반적인 안내를 분리해야 하고 확실히 눈에 띄게 해야 한다
 
 #### etc
@@ -196,16 +265,6 @@ cpu, memory 사용량
 - static code analysis
 - lambda, ec2, s3, Dynamodb
 - GCP
-
-#### 트래픽을 측정하는 방법?
-
-tps
-접속자 수
-resource usage
-page view
-api count
-loading time
-response time
 
 #### 서버를 오래 켜놓았을 때 생기는 문제점
 
@@ -512,31 +571,6 @@ clustering
 
 https://chagokx2.tistory.com/93
 
----
-
-## Distributed Systems
-
-#### how to test
-
-#### when would you use request/reply and publish/subscribe
-
-#### server stress test
-
-- redis i/o test
-- go http server
-- kubernetes pod
-- simple http server stress test
-
-1. find report
-2. manual test
-   - make test code
-     - while
-     - concurrent
-   - curl
-     - `ulimit -n` -> 1024 (default) -> `ulimit -n 10000`
-     - `while true; do curl localhost; done`
-
-- it depends on CPU, memory
 
 ---
 
@@ -545,7 +579,6 @@ https://chagokx2.tistory.com/93
 #### 프로덕션에 필요한 속성
 
 보안, 개별 설정을 유연하게 하는 것, 관측성
-
 - 되돌릴 수 있는가
 - 복구할 수 있는가
 - 수습이 가능한가
@@ -554,16 +587,16 @@ https://chagokx2.tistory.com/93
 
 #### component
 
-db
-backend: lambda
-frontend: nettlify/now/surge
-file: s3
-image: cloudinary
-con: ifttt
-큐/캐시: redislabs
-design: figma
-domain
-dns
+- db
+- backend: lambda
+- frontend: nettlify/now/surge
+- file: s3
+- image: cloudinary
+- con: ifttt
+- 큐/캐시: redislabs
+- design: figma
+- domain
+- dns
 
 오토스케일링 2~8개 파드로 유지
 ingress - 내부 아이피 전달용
@@ -582,13 +615,24 @@ profiling - cProfile, snakeviz
 - 서버 증설 확장 용이
 - 다운되도 대응 가능(failover)
 
+#### Program
+- code with log, test, api
+- CI with lint, test, performance, dependency
+- CD with deploy
+- Monitoring with check node, api, log, performance
+
+#### Need Extra Component
+- MQ
+- M/L
+- Elasticsearch
+- [[Information#무질서한 원숭이(Chaos Monkey)]]
+
 #### 서비스가 커져감에 따라 직접 구현해야하는 기능
 
-깃 레포지토리 > gitlab이 자체 서버 구축 가능하다
-ci 툴
-
-서비스로 제공되는 소프트웨어들
-최소한 이중화가 되도록 해야한다
+- 깃 레포지토리 > gitlab이 자체 서버 구축 가능하다
+- ci 툴
+- 서비스로 제공되는 소프트웨어들
+- 최소한 이중화가 되도록 해야한다
 
 #### reboot report
 
@@ -617,6 +661,13 @@ service output이 feedback이 되도록
 - 모니터링 문서화
 - api 문서화
 
+업무자동화 한번에 왜 안되는가
+- 새로운 업무환경을 이혀야 함
+- 엑셀로 관리되는 데이터. 수기로 입력해야만 하는 데이터
+- 아는 범위까지만 최적화 되고 놓친 부분이 있으면 거기가 꼬인다.
+- 기존 시스템을 다 파악하기 힘들다. DB 테이블 명세와 메뉴얼 부족
+- 보안적인 요소
+
 #### 자동화의 문제점 (자동화보다는 일괄적용의 문제점 일 수 있겠다)
 
 자동이 자동으로 잘 동작안하는 걸 자주 보고
@@ -634,241 +685,38 @@ service output이 feedback이 되도록
 sqs에 실패처리용 큐를 하나 만들어서 거기에 담아서 에러를 확인한다.
 메시지큐에서 실패한 것들을 받으면 람다를 실행하게 해서 오류처리 할 수 있다
 
-## AWS
+#### CSP
 
-연결된 서비스 : serverless, cloud, gcp, azure, container
+Communicating Sequential Processes
+golang의 groutine의 동작 방식이자, 네트워크로 연결되있는 자원들이 서로 통신할 때 효과적인 모델.
+마이크로서비스에서 수많은 서비스들 간의 연결과 복잡성을 관리하기 위한 hashicorp의 선택
 
-### 신규 업데이트 확인
 
-- 신규 업데이트 확인
-  - aws blog
-  - aws reinvent
+## Distributed Systems
 
-### 네트워크
+#### how to test
 
-- [[Network]]
-- 격리
-	- vpc
-- 외부 연결
+istio를 쓰면 플로우 모니터링 하긴 용이하다
 
-### 컴퓨팅
+#### when would you use request/reply and publish/subscribe
 
-- 서버
-- 컨테이너
+#### server stress test
 
-### 스토리지
+- redis i/o test
+- go http server
+- kubernetes pod
+- simple http server stress test
 
-- fully management service
-	- rds
-	- aurora
-- serverless
+1. find report
+2. manual test
+   - make test code
+     - while
+     - concurrent
+   - curl
+     - `ulimit -n` -> 1024 (default) -> `ulimit -n 10000`
+     - `while true; do curl localhost; done`
 
-
-### 기타
-
-#### 서버리스를 선호
-아키텍처를 그릴 때 서버리스로 가능한지 먼저 확인한다
-서버리스로 할 수 없는 특징이 없다면 서버리스로 시도한다
-관리포인트가 줄어드는점
-모듈화가 되어서 다른 서비스 연결이 잘 되는점
-가벼운점
-작업의 실행을 보장할 수 있다
-
-서버리스로 하기 어려운 특징이 어떤게 있냐면
-이번회사를 다니면서 백엔드 서버가 딱 있으니까 좋다고 느낀게 있었다
-쿼리로 데이터 관리할 수 있는 점 - 트랜잭션
-머신러닝처럼 컴퓨팅 성능이 중요한 경우
-실시간성이 중요한 서비스
-
-그래서 람다의 한계를 배우게 된다
-- 지속 연결이 필요하면 못 쓴다
-- 빠른 응답이 필요하면 못 쓴다
-
-fargate도 서버리스 컨테이너 서버이기 때문에 서버리스를 쓰는거긴 하다
-
-
-## 아키텍처
-
-[[Standard]]
-[[Decision]]
-[[Think#러셀과 화이트헤드]]
-[[#분산]]
-
-#### 일관성이 중요한 것 같다.
-각 회사마다 저마다의 아키텍처가 있어서 개발자는 그 아키텍처를 파악해야한다.
-그렇다면 한 부분을 알았을 때 다른 부분도 그와 비슷하거나 일관성이 잘 유지되어
-있는 구조라면 쉽게 익힐 수 있다. 어떤 아키텍처인지는 그 다음 문제인 것 같다.
-일단 일관성이 있으면 가독성이 올라가고, 이것이 소프트웨어를 좋게 만들어준다.
-
-#### 중심만 남긴다
-개발 로직, 중앙 문서 관리 서비스, 코드 저장소, 데이터 저장소
-
-#### 인프라 개발자의 관점에서 3 요소
-인프라 - 데이터 - 서비스
-
-서비스 안에는 백엔드, 프론트, 디자인, 기타 등등이 또 따로 있을 것이다.
-인프라에는 시큐리티, 로깅 등등이 있고,
-모든 요소에 QA와 테스트가 있다.
-
-#### 한 서비스의 구조
-계산 중심 구조(cpu) vs 데이터 중심 구조
-
-#### 프로젝트 아키텍처
-- 넷플릭스 모델 - 전체가 하나로 묶여있다
-- 네이버 모델 - 각 역할별로 분리되있다
-- 리디북스 모델 - 데이터가 묶여있다
-
-#### 그동안의 아키텍처 모델
-- 3 layer
-- MVC - MVVC - MTV
-- 네트워크 레이어
-- 12 Factor app
-- MSA
-- DDD
-- JAM stack
-- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-- SOA
-
-그리고
-- 육각형 아키텍처
-- DCI data, context, interface 제임스 코플리언
-- BCE bounded control entity
-- https://ahnheejong.name/articles/package-structure-with-the-principal-of-locality-in-mind/
-- https://mingrammer.com/translation-structuring-applications-in-go/
-- https://geminikim.medium.com/지속-성장-가능한-소프트웨어를-만들어가는-방법-97844c5dab63
-- https://overthecode.io/the-meaning-and-limits-of-atomic-design-from-a-software-design-perspective/
-
-
-#### 좋은 아키텍처가 성공을 보장하지는 않지만 나쁘면 망한다
-
-나쁘지 않게 하는 것은 되야한다
-완벽보다는 안정
-Ddd는 쉽게 설명가능한가? 복잡한 구조라도 쉽게 설명되면 된다
-쉽게설명되지 않으면 나쁘다
-객체지향을 넘어 인간지향 인간중심
-나쁘면 안된다는걸 생각하지만 안티패턴을 피하는 방어적 접근보다는 좋은걸 찾는 공격적 접근을 하고싶다
-
-아키텍처가 시스템 구성을 다 정하는게 아니라
-이해관계자와 먼저 요구사항을 정의하고
-팀원들과 기술적 문제해결방법을 의논하고 패턴을 같이 찾고 정하게 되는 건가보다
-
-충섭팀장님의 쿰스를 이끄는게 아키텍처의 모습을 그대로 보여준거 같다 잘 기억해야할듯
-
-푸시 개발했던게 프로젝트 진행하면서 중간에 반발이 생긴 사례인거 같다 푸시 개발 과정을 정리하는 것도 좋을듯
-Nhn에 수많은 요청을 보낸것부터 새로운 api 개방을 요청하고 사용한 것까지
-
-> 개발자에서 아키텍트로 - 마이클 킬링
-
-#### 아키텍처
-
-> 정책과 세부사항으로, 룰과 가이드를 구분.
-> 아키텍처의 목표는 정책과 세부사항을 적절히 구분해 세부사항의 결정은 최대한 미룰
-> 수 있게 하는 것
->
-> > 클린 아키텍처
-
-아키텍처 구축의 목표점은 없다
-**좋은 기준점을 만들어서 그 기준점을 계속 개선해나가는 것이 최선**
-
-이런 관점에서 쿠버네티스, react, graphql, backend를 어떻게 구성해야하나?
-정책과 세부사항이 너무 많으면 기준점을 잘 지켜나갈 수 있을까?
-
-선택과 집중, 유연하고 융합적인 환경 - 두 가치를 어떻게 잘 융합할 수 있을까
-
-분산화 하는 것이 시대의 흐름
-
-심플하게 유지. 0에서 10은 심플이 아니다. 100에서 10이 심플
-
-제한이 필요하다
-
-큰 그림 > 작은 그림
-
-비즈니스 로직에서 추상화를 어디까지 하는게 좋을까
-과한 추상화는 실체가 없다는 느낌을 줄 수 있겠다.
-어디까지 추상화를 할지는 어떤 목적으로 프로그램을 만드느냐에 따라 조정된다
-모든 것이 추상화되고 가변적일 필요는 없다
-Mysql tip 글에서 DB 모델링 시 지나친 추상화를 하지 말라는 조언이 있었다.
-
-- 언어를 넘어서는 추상화
-  - 포팅을 쉽게 할 정도의 추상화
-
-설정가능해야하고 플러그인 방식으로 동작
-
-
-## 아키텍처 레퍼런스
-#### 아키텍처 모범 사례
-
-"서버 기반 아키텍처 모범 사례가 있습니다.(단일 장애 지점 제거, 배포 전 변경
-사항 테스트, 중요한 데이터 암호화 등)"
-https://dc2348.tistory.com/6#:~:text=%EC%84%9C%EB%B2%84%20%EA%B8%B0%EB%B0%98%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%20%EB%AA%A8%EB%B2%94%20%EC%82%AC%EB%A🙋‍♂️1%80%EA%B0%80%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.(%EB%8B%A8%EC%9D%BC%20%EC%9E%A5%EC%95%A0%20%EC%A7%80%EC%A0%90%20%EC%A0%9C%EA%B1%B0%2C%20%EB%B0%B0%ED%8F%AC%20%EC%A0%84%20%EB%B3%80%EA%B2%BD%20%EC%82%AC%ED%95%AD%20%ED%85%8C%EC%8A%A4%ED%8A%B8%2C%20%EC%A4%91%EC%9A%94%ED%95%9C%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%95%94%ED%98%B8%ED%99%94%20%EB%93%B1)
-
-
-- 단순한 동작을 여러겹으로 겹치면 깔끔하고 보기도 좋지 않을까?
-- 유닉스의 파이프라인처럼 api를 파이프라이닝 해서 원하는 값을 만들어도 괜찮을까
-	- 함수형 프로그래밍을 이용해서 파이프라이닝 형태로 만들어주는 api를 만들어서 api로 api를 불러서 파이프라이닝 하는 것.
-
-
-#### 시퀀스
-
-어두운 도서관 입구에서 시작해서
-가장 중심인 곳은 가장 밝은 판테온 형태의 밝은 전시관이 있다
-
-[[2022-05-01#빨강 - 핑크 - 보라]]
-
-#### 패턴화
-
-가드레일을 만들되 자유도를 느낄 수 있도록
-
-젤다의전설
-오픈형월드게임
-
-#### 당근마켓 당근페이 인프라 구축 이야기
-
-핀테크 기업으로서 보안 등 제약이 있는 상황에서 클라우드 서비스를 이용해야 했음
-
-1. 로그인서비스를 어떻게 구성했는가
-   - 계정 별로 환경 분리
-   - 로그인 제한 -> 계정 별로 분리되어있지만 로그인은 대표계정에서 한다. cloudfnc와 동일하네
-     - 로그인은 security라는 계정이고 이 계정은 로그인만을 위해서 사용하고, 이렇게 로그인하면 dev, sta, prod 계정에 접속이 가능하게 된다. 외부 접근권한이 있는 security가 탈취되어도 dev에 접근 못하게 되면 아무것도 할 수 없다는 식
-   - 계정 탈취 시 여파 최소화
-2. 서버 접근을 어떻게 할 것인가
-   - teleport - ssh 접속 후 행동을 영상으로 녹화해서 보여준다
-3. 애플리케이션 구성을 어떻게 할 것인가
-   - kubernetes vs ec2
-   - 쿠버네티스가 오버 엔지니어링이 아닐까 싶었지만
-     같은 회사 다른 서비스에서 사용중이어서 조언을 얻을 수 있었고, 같은 팀의 팀원이 사용 경험이 있어서 충분히 도움을 받을 수 있는 환경이어서 사용하기로 했다
-   - alb -> istio 변환 예정
-4. 배포 파이프라인 구성을 어떻게 할 것인가
-   - eks 에 맞는 도구를 찾으려고 했다
-   - 툴에 대한 운영 경험이 있고 Github과 연계가 손쉽게 구성될 수 있는 기술 스택 선택
-   - Github Actions, Argocd, Argocd pipeline
-   - github 설치형을 n5.4xlarge 에 사용. 디스크 관리만 하면 무리없이 사용하기에 좋았음
-5. 관측 시스템을 어떻게 구성할 것인가
-   - 컨플라이언스 (보안) 문제로 SaaS 사용이 힘들었음 (Datadog, new relic 등)
-   - ElasticStack, Prometheus, Grafana 로 직접 구축
-   - FileBeat, Node Exporter 는 DaemonSet으로 올림
-   - Prometheus Operator를 이용해 Prometheus를 구성함
-   - AWS 리소스는 CloudWatch를 통해 모니터링
-     - SNS -> AWS Chatbot을 통해 Slack 으로 발송. (이전에는 람다를 직접 구현했어야했음)
-6. 성능 테스트를 어떻게 진행할 것인가
-   - locust (kubernetes용인 klocust를 이용)
-   - 테스트의 목적
-     - 최대 성능을 측정하는 형태는 목적이 불분명
-     - 10분 동안의 테스트를 통해 99퍼센타일 응답 시간이 100 ms 이내일 때의 최대 TPS를 구하려고 함 -> 99%가 진행됐을 때의 응답 시간이 100ms ?
-     - 파드 하나당 400TPS 라는 수치를 얻게 됨
-   - 테스트를 하면서 close_wait 소켓이 쌓이는 현상 발견. undertow를 netty로 변경
-
-https://www.youtube.com/watch?v=8a2-b9X7Xno
-
-#### 당근 채팅 시스템 아키텍처
-큰 회사에서도 개발을 하는 인원은 적을 수 있고 최대한 매니지드 서비스를 이용하는 경향이 있다
-
-dynamodb를 쓰면서 에러는 거의 안나서 안정적이었다
-근데 쿼리를 잘 쓰기 어렵고 인덱스를 건 item만 가져올 수 있어서 인덱스를 잘 두어야하기 때문에 설계에 대해서 고민이 많이 필요함, Full scan은 안해야한다
-채팅방 하나를 partition하나 정의
-sort key는 message의 id로 설정
-
-redis cluster로 stateless하게 웹소켓용으로 썼고 좋아보임
+- it depends on CPU, memory
 
 ## Micro Service Architecture
 
@@ -995,16 +843,6 @@ monolith와 구분되는 microservice의 특징은 각 서비스가 개별 데�
 
 - 네트워크 트래픽 관련 지표 수집 및 추적
 
-#### SOA, MSA, DDD
-
-service oriented architecture
-
-- 중간에 enterprise service bus를 둬서 서비스 간 공유를 하려고 했으나, 당시
-  시대상 팀 구조가 변화에 재빠르게 대응하지 못했고, MSA와 비슷한 목표를 가졌으나
-  성공하지 못했다.
-- MSA의 핵심은 통신 처리이고, 이 처리 흐름을 만들어내는 서비스 메시가 등장했다.
-  마이크로 서비스는 서비스의 수가 많고, 이를 관리하는 방법이 필요하다
-
 #### event driven architecture
 
 - in micro service, each service need send some event.
@@ -1019,28 +857,26 @@ service oriented architecture
 - awesome style이라는 레파지토리로 사내 행동강령을 모아놓았다. awesome
 - python template을 만들어 사용하고 있다
 
-이렇게 회사 내 자료들을 메타적으로 관리하는 레포지토리를 만들어서 관리하면
-좋겠다.
+이렇게 회사 내 자료들을 메타적으로 관리하는 레포지토리를 만들어서 관리하면 좋겠다.
 사내 인적 리소스 관리도 git으로 하면 좋겠다
 
 #### microservice experience
 
 - [배민](https://www.youtube.com/watch?v=BnS6343GTkY)
-  - 결제 장애 시 결제만 장애나는 환경을 원했다.
-  - 모놀리스 서버 테이블이 700개... >> 분리 후에도 한 서비스에 테이블이 많이
-    있을 것
-  - 이벤트 기반으로 하니 훨씬 효율이 증가했다.
+	- 결제 장애 시 결제만 장애나는 환경을 원했다.
+	- 모놀리스 서버 테이블이 700개... >> 분리 후에도 한 서비스에 테이블이 많이 있을 것
+	- 이벤트 기반으로 하니 훨씬 효율이 증가했다.
 - [11번가](https://www.youtube.com/watch?v=J-VP0WFEQsY)
-  - Spring cloud 이용
+	- Spring cloud 이용
 
 #### junk food
 
 넷플릭스가 마이크로서비스를 하면서 느꼈던 개발의 주요 문제점
 
 - dependency
-  - circuit breaker 로 의존성 있는 서버가 죽는 것에 대응
+	- circuit breaker 로 의존성 있는 서버가 죽는 것에 대응
 - Scale
-  - EVCache
+	- EVCache
 - Variance
 - Change
 
@@ -1133,9 +969,31 @@ log data 나 db table 등을
 이것을 막기 위해 마이크로서비스를 쓰지만
 관리포인트는 줄일 수 있어야 한다.
 
-#### 마이크로서비스 잘 구축해보고 싶다 (이벤트 처리)
+## AWS
 
-카프카 이용하는 마이크로서비스 예제 보고싶다
+연결된 서비스 : serverless, cloud, gcp, azure, container
 
-- github.com/gilbutITbook/007035
-- github.com/gilbutITbook/006947
+### 신규 업데이트 확인
+
+- 신규 업데이트 확인
+  - aws blog
+  - aws reinvent
+
+### 네트워크
+
+- [[Network]]
+- 격리
+	- vpc
+- 외부 연결
+
+### 컴퓨팅
+
+- 서버
+- 컨테이너
+
+### 스토리지
+
+- fully management service
+	- rds
+	- aurora
+- serverless

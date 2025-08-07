@@ -192,6 +192,12 @@ CMD로 하면 안되고 ENTRYPOINT로 하면 된다
 
 대신 ENTRYPOINT를 쓰면 -it /bin/sh 는 인식을 못한다
 
+#### docker 간 통신
+- compose 에서 네트워크 명시적으로 설정해줘서 compose에 설정한 이름으로 통신하면 된다고 한다
+- --network host 를 써도 된다고 한다
+- docker buildx build --network host --platform linux/arm64 -t goodby .
+- https://marshallku.com/dev/deploy-rust-with-docker
+
 # Kubernetes
 A person has a very small component, and it composes of one architecture.
 the kuberetes seem to be this.
@@ -319,6 +325,31 @@ ram 1기가 서버에 ram 0.5를 쓰는 서비스를 6개를 레플리카하면 
 페일오버 테스트도 되고, os도 리프레시 되지 않을까
 
 걱정되는 점은 한쪽 노드에 팟들이 몰려있다가 다시 돌아갈 때 과부하 걸리지 않을지
+
+#### 쿠버네티스는 어떻게 복잡성을 관리하는가
+- ingress -> service -> deployment 식의 계층적 추상화
+- namespace 격리
+- controller pattern - 이건 좀 더 찾아보자
+	- 각 리소스별 전용 컨트롤러가 상태 관리
+	- 단일 책임 원칙으로 복잡성 분산
+	- Reconciliation Loop로 일관된 동작 보장
+- Operator pattern
+	- 도메인 특화 로직을 CRD로 추상화
+	- 인간의 운영 지식을 코드로 전환
+- 그치만 쿠버네티스도 한계가 있다
+	- 노드 수 제한도 있고
+	- API 서버가 초당 수천개 요청에서 성능 저하하는 처리량 한계도 있다
+	- 컨트롤 플레인은 사용량이 선형적으로 증가할 수 밖에 없다
+- 또한 복잡성의 새로운 차원이 있다
+	- 네트워킹 오버헤드 (CNI 성능 이슈)
+	- 스토리지 관리 복잡성 증가
+	- 보안 정책의 기하급수적 복잡성
+	- 디버깅과 트러블슈팅의 어려움
+- 그래서 클러스터를 분리해야한다
+	- 팀별 / 환경별
+	- 그러면 분리된 클러스터도 관리를 쉽게 할 수 있어야 한다
+	- 하나의 클러스터로 다 하려고 하는건 확장적이지 못하다
+
 
 #### docker kubernetes istio
 | docker   | kubernetes                        | istio                        |
