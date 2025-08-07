@@ -2,9 +2,8 @@
 title: My Space
 summary: 나의 시스템을 계속 운영한다
 date: 2021-04-14 14:00:48 +0100
-updated: 2025-08-08 05:48:55 +0900
+updated: 2025-08-08 05:52:42 +0900
 tags: meta
-parent: Blogging
 ---
 
 ## 확장 가능하고 변경이 쉬운 환경 구축하기.
