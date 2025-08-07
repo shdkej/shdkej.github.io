@@ -2,9 +2,8 @@
 title: Business
 summary: 경영, 다른 회사들에 대한 정보, 경험
 date: 2021-02-27 20:53:57 +0100
-updated: 2025-07-24 19:35:05 +0900
-tags:
-  - integration
+updated: 2025-08-08 05:48:09 +0900
+tags: integration
 ---
 
 ## 경영
