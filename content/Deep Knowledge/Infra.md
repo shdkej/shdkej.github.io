@@ -5,6 +5,22 @@ date: 2025-05-06 19:57:59 +0100
 updated: 2025-07-23 10:10:00 +0900
 tags: deep_knowledge
 ---
+## 인프라 레벨
+
+#### 최소한의 인프라
+- 정적 페이지
+- CDN
+- S3 저장소
+- 람다
+- API Gateway
+
+#### 규모가 커짐에 따라 안정적인 운영을 위한 추가 인프라
+- 데이터베이스
+- 캐시
+- 오토스케일러
+
+#### 강력하게 탄탄한 인프라
+- 메시지 큐
 
 
 ## About Cloud
@@ -112,6 +128,49 @@ pLimit
 
 fargate도 서버리스 컨테이너 서버이기 때문에 서버리스를 쓰는거긴 하다
 
+서버가 필요한 작업
+- 데이터베이스에 접근
+- api 핸들링 (클라이언트에서 가능할듯)
+- 모니터링?
+
+람다의 약점
+- 느린 시작
+- 모노리스에 비해 통신의 비용이 든다(마이크로서비스라면 비슷)
+
+로컬 테스트와 배포된 람다 간에 연결성을 높여보도록 구성해봐야겠다
+
+serverless에 배포 전 로컬 테스트.
+배포 후 자동 테스트
+배포 후 에러 처리
+
+## AWS
+
+연결된 서비스 : serverless, cloud, gcp, azure, container
+
+### 신규 업데이트 확인
+
+- 신규 업데이트 확인
+  - aws blog
+  - aws reinvent
+
+### 네트워크
+
+- [[Network]]
+- 격리
+	- vpc
+- 외부 연결
+
+### 컴퓨팅
+
+- 서버
+- 컨테이너
+
+### 스토리지
+
+- fully management service
+	- rds
+	- aurora
+- serverless
 
 ## VPC
 
@@ -179,6 +238,11 @@ AWS가 책임지는 것
 glacier
 https://bluese05.tistory.com/35
 - 데이터 가져오고 검색하는게 좀 한계가 있어서 활용도는 떨어지는 듯
+
+#### 메시지 큐
+
+sqs에 실패처리용 큐를 하나 만들어서 거기에 담아서 에러를 확인한다.
+메시지큐에서 실패한 것들을 받으면 람다를 실행하게 해서 오류처리 할 수 있다
 
 
 ## Hands-on
@@ -288,6 +352,28 @@ Athena : S3에 저장되어 있는 로그를 쿼리할 수 있는 기능
 
 
 ---
+## Test 전략
+
+#### how to test
+
+istio를 쓰면 플로우 모니터링 하긴 용이하다
+
+#### server stress test
+- redis i/o test
+- go http server
+- kubernetes pod
+- simple http server stress test
+
+1. find report
+2. manual test
+   - make test code
+     - while
+     - concurrent
+   - curl
+     - `ulimit -n` -> 1024 (default) -> `ulimit -n 10000`
+     - `while true; do curl localhost; done`
+
+- it depends on CPU, memory
 
 ## TEMP
 
@@ -525,6 +611,8 @@ a 레코드로 하면 한번에 아이피를 찌르는데
 cname 을 거치면 한번 더 쳐야 되서 a 레코드가 낫다
 
 argocd에서 kubernetes namespace를 바꿀 때 ingress가 안지워지면 새로운 ingress가 안뜬다. 자동으로 안됨. service나 deployment도 안지워지고 새로운게 뜸
+
+
 
 ---
 

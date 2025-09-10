@@ -20,9 +20,13 @@ report, monitoring, response, communication
 
 - fact, feeling, finding, future, feedback
 
-선순환
-
+#### 선순환
 - 좋은 인재 - 좋은 글 - 많은 독자 - 수익 증가 - 좋은 인재
+
+#### 선순환
+응원하는 사람과 응원받는 사람이 서로 힘을 받는다
+마라톤 대회에서 음료를 나눠주는 사람들과 음료를 받으며 회복하는 사람들
+서로 고마워하며 서로 행복해한다
 
 #### 시너지
 
@@ -33,7 +37,7 @@ report, monitoring, response, communication
 영화현장에서 배두나가 빼어난 프로페셔널한 모습을 보여주니 다른 관계자들도
 프로페셔널한 부분을 끌어내려고 하는 선순환이 일어났다고 한다
 
-[[-Archive#review of 6 months of german life]]
+[[Archive#review of 6 months of german life]]
 
 #### 선순환
 

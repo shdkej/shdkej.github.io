@@ -5,7 +5,7 @@ date    : 2020-05-06 12:39:36 +0100
 updated : 2021-04-13 21:03:32 +0100
 tags    : communication
 ---
-![[unnamed (12).jpg]]
+![on](../img/aintoonto.jpg)
 
 **elaborate** -- revision
 
