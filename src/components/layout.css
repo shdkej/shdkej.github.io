@@ -250,6 +250,7 @@ code {
   display: block;
   overflow: auto;
   color: salmon;
+  word-break: break-all;
 }
 
 blockquote {

@@ -28,7 +28,6 @@ tags: deep_knowledge
 - 스프링에서 메모리가 계속 쌓이는 원인 중 2차캐시를 사용 중이면 old 메모리를 gc가 잘 회수해가지 못한다. gc가 잘 동작하도록 유도해줘야 한다
 	- 일단 2차캐시 끄니까 메모리 사용량이 줄어듬. 계속 쌓이던게 잘 안없어져서 계속 늘어남
 
-#### NoSQL
 
 ## Redis
 
@@ -181,6 +180,19 @@ term, bool
 - scripts will show down your searches
 
 ? how to manage score? (weight)
+
+
+## 클릭하우스
+
+- 분석용 데이터를 저장하기 좋은 데이터베이스
+- Postgres에서 저장한 트랜잭션 데이터를 분석을 위해 옮기는게 일반적인 사용 방법
+- 그래서 CDC 도구를 이용해서 rdb에서 옮기는 것도 구성할 수 있음
+- 실시간 복제 : postgres -> cdc -> kafka -> clickhouse
+- 배치성 복제 : postgres -> airflow -> clickhouse
+- aws athena가 이 역할을 할 수 있다고 한다. 좋은데?
+	- 실시간성이면 클릭하우스가 성능면이나 비용면이나 나을 것이고
+	- 배치성으로 구해도 괜찮으면 athena로도 감당 가능 할 것 같다
+
 
 ---
 
