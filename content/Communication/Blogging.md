@@ -140,6 +140,13 @@ note taking
 
 근데 그 주제에 처음 접할때는 서론이 필요하다
 
+#### 여행 동선 지도에 표시하는법 
+- https://www.tripline.net/, 
+- earthtory.com, 
+- https://www.google.com/maps/d/?hl=ko, 
+- https://travelmap.net/
+
+
 ## 노하우
 
 #### 단순한거에 집중해야한다
@@ -297,3 +304,19 @@ Variable feel, if every cut as the same composition. It is boring
   - 빛을 모을 시간, 느리게 하면 흔들림이 많이 들어간다
 - 감도 ISO
   - 낮을수록 빛에 둔감하다? 밤에는 빛이 적어 고감도 사용
+
+## 네이버 블로그
+
+체험단 사이트
+- 블랙키위
+- 리뷰노트
+
+
+체험단 템플릿
+- 가게 정면샷
+- 가게 내부 분위기
+- 메뉴
+- 주차
+- 특이사항
+- 맛
+- 데이트 기준 고려사항

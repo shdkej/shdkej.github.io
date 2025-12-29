@@ -6,32 +6,7 @@ updated : 2025-08-01 07:14:21 +0900
 tags    : fundamental
 ---
 
-좋은 소프트웨어는 기존의 흐름을 바꾸는게 아니라 길을 잡아주고 확장된 길을 열어준다
-- git
-- Kubernetes
-- Docker
-
-
 # Linux
-
-## Directory
-
-- `/`
-- `/bin` - 기본 명령어가 저장된 디렉토리
-- `/sbin` - ifconfig 등 시스템관리자용 명령어가 저장된 디렉토리
-- `/home` - 사용자의 홈 디렉토리
-  - `useradd` 명령어로 새 사용자를 생성하면 생성자와 같은 이름의 디렉토리 생성됨
-- `/tmp` - 공용디렉토리, 임시 작업 디렉토리
-- `/lib` - 커널 모듈 파일,라이브러리 파일 존재
-- 커널이 필요로 하는 파일들이 존재
-- `/usr` - 일반사용자들이 주로 사용하는 디렉토리
-  - 일반 사용자용 명령어는 /usr/bin 에 위치한다.
-- `/var` - 일시적으로 저장하기 위한 디렉토리
-  - 내용이 수시로 변경될 수 있는 파일
-- `/dev` - 디바이스 파일 ( CD-ROM 등 )
-- `/etc` - 시스템 설정 파일이 존재하는 디렉토리
-- `/boot`
-- `/proc`
 
 ## bash script cheatsheet
 
@@ -73,11 +48,6 @@ non-interactive shell - script
 #### hammerspoon 파일을 dotfile에 추가
 - 기존 파일을 dotfile로 옮기고
 - `ln -s 절대경로/file 옮길위치/파일명`
-
-## automatically run command when turn on the computer
-
-/etc/rc.local
-/etc/init.d/rc.local
 
 ## ubuntu korean
 
@@ -507,26 +477,12 @@ mail IN A 123.123.123.123
 
 ## storage
 
-기본 파티션 분할
-
-- `/boot` : 부팅 파일들 저장. 첫번째 파티션으로. 부팅 빨라짐. 100~500MB
-- `/`
-- `/tmp` : 웹파일들 저장됨. 보안문제로 분할 필요
-- `swap` : 가상메모리로 사용되는 부분 . 사용자의 메모리의 2배 정도로 설정
-
-LVM
-
-- 논리 볼륨 매니저
-- 기존 파티션으로 분할 해 놓으면 용량 부족이나 증설 시 복잡한데 이를 이용하면 바로 구현할 수 있다.
-
 설정
-
 - /boot 만 100MB로 분리 후 나머지 LVM 으로 만든 후 LVM에서 /(루트), /home, /tmp 로 나눈다.
 - fdisk /dev/sda
 - 디스크 분할
 
 nfs 설정
-
 - /etc/exports 접속 허용할 PC 설정
 - /공유폴더 허용IP(옵션) 허용IP(옵션) (복수 가능)
 - 옵션
@@ -761,20 +717,6 @@ DNS 주소 10.0.2.53 으로 바꿔준다.
    - `wsl -l -v`
 
 > 원래 wsl이 설치되고 2로 업그레이드 시켜줘야 하는데 win10 home이라서 그런지 최신버전으로 업데이트해서 그런지 2로 바로 적용됨
-
-#### standard stream
-
-- stdin
-- stdout
-- stderr
-
-#### SIGTERM
-
-- 종료 신호. 일반적으로 ctrl+z, ctrl+c 등을 눌렀을 때 신호가 발생하게 되있다
-- 각 프로그래밍 언어에서 시그널 호출이 가능하다
-- SIGINT, SIGKILL 등도 있는데, SIGKILL은 즉각 종료되지만
-  SIGTERM은 신호를 받아서 내부 처리가 가능하다. graceful shutdown을 구현하는
-  등으로 활용 가능하다
 
 #### crontab not working
 
@@ -1056,29 +998,6 @@ EXPOSE 3000
 # CMD ["yarn", "start:BUILD"]
 ```
 
-## arm의 장점
-
-저전력, 저소음
-
-단점
-호환성, 저성능
-
-인텔도 저전력을 위해 뭔가 시도 중
-하이브리드 코어로
-4개의 저사양 코어와 1개의 고사양 코어를 같이 구성.
-
-Apple does this strategy too.
-little core, big core
-
-- Arm 아키텍처가 저전력에 무조건 유리하다?
-  코어당 클럭 수를 다르게 할 수 있어서?
-  태블릿에 자주 쓰이는 AP는 arm
-  PC에 자주 쓰이는 CPU는 인텔식 x64
-  arm 아키텍처는 쿨러가 아예 필요 없다?
-
-애플 실리콘은 인텔 cpu보다 더 성능이 좋은 arm cpu를 구현했다
-
-
 # GIT
 
 사용자 정보 등록
@@ -1236,44 +1155,7 @@ Host github.com
 
 # ETC
 
-## prometheus
-
-- node-exporter
-  - collect system metrics
-- alert-manager
-
-#### ELK vs TICK
-
-- ELK -- log metrics
-- TICK -- system metrics
-- what is prometheus, loki,
-
-#### grafana alert
-
-monitoring 서버도 테스트 서버용과 프로덕션 서버용을 따로 두나?
-
-alert를 만드려면 graph여야하고, $variable 로 되있는 템플릿을 쓸 수 없다.
-alert를 만들고 싶은 graph를 복사해서 variable을 고치고 사용하면 된다.
-
-sensu는 어떤 기능들을 제공해주고 있지?
-
-grafana daily report
-
-- enterprise 기능이었다. 오픈소스로 구현된 것도 있을 것이다
-
-## TICK
-
-- too heavy
-- I want to find lightweight visualistic monitoring service
-- go to prometheus
-
-## Benchmark
-
-1. 구글개발자도구 audits
-
-[[Architecture]]
-
-#### nginx alternative
+## nginx alternative
 
 - [openlitespeed](https://openlitespeed.org/)
 
@@ -1635,7 +1517,7 @@ react-table-filter (각 열별로 겹치는 이름 필터 가능)
 
 - https://blog.logrocket.com/complete-guide-building-smart-data-table-react/
 
-#### api gateway
+## api gateway
 
 api gateway를 쓰게되면 운영서버에서 띄운 것을 이용해서 테스트를 해도 되나?
 로컬에서 개발자마다 띄워야되면 너무 귀찮을 것 같은데 그렇다고 아예 안쓸 수도 없고.

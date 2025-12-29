@@ -49,6 +49,16 @@ tags: deep_knowledge
 - 위 아래, 댓글로 가는 네비게이션
 - 사이드 바
 
+#### 별점 > 좋아요
+
+별점은 정보가 부족하다. 좋아요보다 선택지가 많음에도.
+
+#### suggestion
+
+- recently update document
+- related document with this document
+- related document with interests
+
 #### 데스크탑, 모바일 일관된 UI vs 한 환경에 집중
 
 - 보여주는 컨텐츠 개수를 많이해서 일관되게 (유튜브)
@@ -256,101 +266,13 @@ dagger 는 로컬에서 테스트하고 사용할 수 있다?
 - 패키지 관리
 	- bun 도 가볍게 빠르게 되는걸로 요새 뜨지만 pnpm이 안정적이면서 빠르다고 함
 
-## Cloud
-
-#### Route53
-
-DNS
-
-- Domain Name System
-- 호스트 이름을 IP로 번역해주는 것 (google.com => 172.217.18.36)
-- Domain Registrar - Route53, GoDaddy
-- DNS Records - A(ipv4), AAAA(ipv6), CNAME(다른 호스트네임), NS(DNS 주소)
-- Zone File
-- Name Server
-- Top Level Domain : .com, .us, .in
-- Second Level Domain - amazon.com, google.com, ...
-- Sub Domain - www
-- 웹브라우저 -> 웹서버 -> 로컬 DNS -> .com DNS -> example.com DNS
-  개요
-- 퍼블릭 호스팅 존, 프라이빗 호스팅 존 설정 가능
-- 프라이빗 호스팅 존도 퍼블릭 처럼 같은 가격
-  TTL
-  CNAME vs Alias
-- CNAME은 다른 서브도메인을 매핑 가능
-- Alias는 aws 의 주소를 매핑 가능 (EC2의 DNS name에는 매핑 안됨)
-  라우팅 정책
-- 심플
-- 가중치
-- 지연 시간 기반 (route53에서 미리 측정한 값?)
-
-#### CloudFront
-
-개요
-
-- CDN
-- 엣지에 콘텐츠가 캐시된다
-- aws의 216개의 엣지로케이션 모두를 사용한다
-- DDoS를 막아준다
-- Origins (연결 가능한 리소스)
-  - S3 bucket
-  - Custom Origin (HTTP)
-- 프라이빗 VPC에 접속할 수 없음 (ALB를 통해 우회 가능)
-  캐싱 및 캐싱 정책
-- header
-- query string
-- cookies
-- none, whitelist, include all-except, all
-  캐시 무효화
-- 백엔드가 변경되도 cloudfront는 알 수 없음
-- TTL이 끝나야 백엔드를 다시 치기 때문
-- 그래서 캐시 무효화가 필요함
-- 근데 무효화를 언제 실행할 것인가 -> 백엔드가 배포되면 수동으로?
-  오리진으로서의 ALB
-- 프라이빗 VPC에는 Edge Location이 접근할 수 없고 Edge Location의 보안그룹도 열어줘야 함
-- 그래서 ALB를 이용해서 EC2는 프라이빗으로 두고 ALB를 연결하게 할 수 있다
-  지리적 제한
-- 접속 허용 국가, 제한 국가 설정 가능
-  Signed URL/쿠키
-  고급개념
-- 가격
-  - price class all 모든 리전을 사용하고 가장 퍼포먼스가 좋지만 비싸다
-  - price class 200 200개만 쓰는데 조금 싸다
-  - price class 100 100개만 쓰는데 조금 싸다
-- 멀티 오리진
-- field level encryption
-  Real Time Logs
-- kinesis datastream을 통해 실시간 로깅을 할 수 있음
-- api 요청에 대해 몇%만 로그를 남길지 설정할 수 있음
+#### React ref는 뭘까
+- react의 선언적 흐름을 벗어나서 직접 DOM이나 컴포넌트를 조작하고 싶은 예외적인 경우 사용
+- 리렌더링을 발생 안시켜서 이를 이용할 수 있음
 
 
-## Oauth2
+## 기타
 
-브라우저, 사용자, 서버, Oauth 제공자
-
-서버는 브라우저에 Oauth를 표시한다
-사용자는 브라우저에 Oauth 버튼을 누른다
-브라우저는 서버에 사용자 정보를 주면서 신호를 준다
-서버는 Oauth 제공자에게 사용자 정보를 준다
-Oauth 제공자는 사용자에게 코드를 보낸다
-사용자는 서버에 코드를 보낸다
-서버는 Oauth 제공자에게 코드와 사용자 정보를 보낸다
-Oauth 제공자는 확인 후 서버에 토큰을 준다
-
-사용자 -> 서버 -> Oauth (사용자 정보)
-사용자 <--------- Oauth (코드)
-사용자 -> 서버 -> Oauth (사용자 정보 + 코드)
-서버 <- Oauth (인증 후 토큰 제공)
-
-서버가 바뀌어도 사용자는 자신이 원래 하던 일을 그대로 할 수 있나?
-
-#### oauth2.0
-
-- 로그인
-- 토큰 획득
-- 토큰 및 아이디로 내부 저장
-- 토큰을 사용자 헤더에 갖도록 하기
-
-토큰 확인
-사용자 확인
-요청 동작 실행
+- 웹처리
+	- 뒤로가기 시 스크롤 위치
+		- 상태로 currentPage와 필터를 저장하고 페이지 다시 돌아오면 불러오기
