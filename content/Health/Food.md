@@ -25,6 +25,9 @@ tags    : health
 (If I want bulk up, 2500~2800)
 
 
+#### 음식 및 식기
+https://kindlady.tistory.com/49
+
 #### 생활정보
 고형물의 음식을 먹어야하는 이유
 물로만 된건 위를 트레이닝 시키지 못해서 많이 먹게 해주지는 못하기 때문

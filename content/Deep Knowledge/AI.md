@@ -7,7 +7,7 @@ tags: deep_knowledge
 ---
 ![study_ai](../img/F4fl0tfacAAt-8z.jpeg.jpg)
 
-
+## AI, 머신러닝, 딥러닝 ?
 - AI
 	- 머신러닝
 	- 모델
@@ -21,6 +21,20 @@ tags: deep_knowledge
 	- Vector Store
 	- MCP
 	- Agent
+
+AI > ML > DL
+
+Programming
+- Algorithm + Data => Result
+
+ML
+- Result + Data => Algorithm
+- Result + Data => Model
+  Data => Predictions
+
+Machine Leaning
+- Prepare data -> Build and train -> Evaluate -> Prepare data
+
 
 ## LLM 이후
 
@@ -97,7 +111,26 @@ generative pre-trained transformer
 	- ** Strict Rules! 반드시 이 룰은 지키게 됩니다. **
 - AI는 거인의 어깨에 제대로 올라탈 수 있는 기회다
 - 검색이 아닌 질문
-
+- LLM 기본 세팅 파일들
+	- codex `~/.codex`
+	- claude code `~/.claude`
+	- gemini
+	- 내가 테스트는 전부 docker 로 하라고 한거랑 TDD 한거는 어디에 있지? prompt-archive에는 있는데 이걸 링크 걸었었던가
+- LLM이 쓰는 문서
+	- rules - 시스템 지침
+	- agents.md - 기본 프로젝트 안내서
+	- plan - 이걸 기반으로 작업
+	- hooks - 응답 후 동작 실행 필요 시
+	- agents - 서브 에이전트화
+	- slash commands - 같은 지시 할거 있으면 커맨드화
+	- skills - 외부 기능을 쓰는거, 약간 tools 같은 느낌. claude용 https://github.com/anthropics/skills
+	- https://github.com/diet103/claude-code-infrastructure-showcase
+- pm2 디버깅
+	- dev 폴더에 ecosystem.config.js 만들어서 경로 세팅해놓고
+	- 로그 파일을 같은 경로로 모아서 그걸 읽게 한다
+	-  pm2 logs email --lines 200 로 에이전트가 읽는다
+	- pm2 restart 로 재시작하게 한다
+	- https://rosettalens.com/s/ko/claude-code-is-a-beast-tips-from-6-months-of-hardcore-use
 
 
 #### 프롬프트를 쓰면서 오히려 더 배우게 된다
@@ -229,6 +262,29 @@ TODO 성능평가방법 찾아보기
 
 #### 스포티파이의 머신러닝 기술은 데이터 속 단순 패턴이 아닌 인과관계를 찾는데 주력한다
 ["스포티파이의 머신러닝 기술은 데이터 속 단순 패턴이 아닌 인과관계를 찾는데 주력한다" ](https://it.donga.com/31774/#:~:text=%EC%8A%A4%ED%8F%AC%ED%8B%B0%ED%8C%8C%EC%9D%B4%EC%9D%98%20%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%20%EA%B8%B0%EC%88%A0%EC%9D%80%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%86%8D%20%EB%8B%A8%EC%88%9C%20%ED%8C%A8%ED%84%B4%EC%9D%B4%20%EC%95%84%EB%8B%8C%20%EC%9D%B8%EA%B3%BC%EA%B4%80%EA%B3%84%EB%A5%BC%20%EC%B0%BE%EB%8A%94%EB%8D%B0%20%EC%A3%BC%EB%A0%A5%ED%95%9C%EB%8B%A4)
+
+#### 트랜스포머
+- [트랜스포머](https://www.youtube.com/watch?v=_Z3rXeJahMs)
+	- gpt의 근간
+	- 어떤 문장을 주고 다음에 나올 단어를 예측하는 것이 기본 동작
+	- 번역을 위해 만들어졌으나 예측 기능을 계속 붙이면 문장을 만드는 것이나 이미지를 만드는 것에도 활용 가능했음
+	- transformer = attention + feed forward + perceptron
+	- attention 벡터 차원의 값을 주고 받는 과정
+		- 문맥을 파악하는 것이 될 수 있다. 문맥마다 단어의 의미가 다르게 쓰일 수 있으니까
+	- 최종적으로 모든 단어에 대한 확률 분포가 나옴
+	- 여러 파라미터가 있다 gpt-3 는 1700억개의 파라미터가 있다고 한다.
+	- 5만개의 단어를 입력해놨다
+	- 12288 차원
+	- 단어를 벡터화한다 -> 임베딩
+	- 단어를 그 고차원에 배열하려면 의도가 들어가고 어떤 바이어스가 있을 수 있다. 그게 곧 파라미터
+	- 같은 방향이라면 비슷한 의미일 수 있는 식으로 방향에 의미를 담기 위해서 파라미터가 필요하다
+	- 50000 * 12288 하면 6억개 정도. 1700억 중 6억은 단어와 차원
+	- 마지막 단계는 언임베딩인데 이것도 차원을 단어로 바꾸는거라 6억
+	- t가 0이면 값이 큰걸 강화해줘서 뻔한 결과가 나오고 t가 10이면 작은 값도 강화해줘서 값들이 비슷하게 만들어서 선택에 불확실성을 추가하고 더 새로운 결과가 나온다
+	- attention에서는 단어의 의미를 다른 단어들과 합쳐보면서 문맥에 맞는 방향으로 조금씩 이동시켜주는 것
+- 역전파 (back propagation)
+	- 신경망에서 로직을 돌린 결과와 실제 정답의 차이가 있다면 정답을 기준으로 역 전파 하는 것.
+	- 가중치를 어떤걸 바꾸느냐에 따라 영향을 받는 값이 다른데. 어떤 가중치를 얼만큼 바꿀지 역으로 추적하는 것
 
 ## ML
 

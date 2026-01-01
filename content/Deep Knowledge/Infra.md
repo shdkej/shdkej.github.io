@@ -243,6 +243,77 @@ AWS가 책임지는 것
 - 적절한 권한을 설정하는 것
 - 접근에 대한 분석, 권한 리뷰
 
+## Network
+
+#### CIDR 잘 설계 하는 법
+- TODO
+
+#### Route53
+
+DNS
+
+- Domain Name System
+- 호스트 이름을 IP로 번역해주는 것 (google.com => 172.217.18.36)
+- Domain Registrar - Route53, GoDaddy
+- DNS Records - A(ipv4), AAAA(ipv6), CNAME(다른 호스트네임), NS(DNS 주소)
+- Zone File
+- Name Server
+- Top Level Domain : .com, .us, .in
+- Second Level Domain - amazon.com, google.com, ...
+- Sub Domain - www
+- 웹브라우저 -> 웹서버 -> 로컬 DNS -> .com DNS -> example.com DNS
+  개요
+- 퍼블릭 호스팅 존, 프라이빗 호스팅 존 설정 가능
+- 프라이빗 호스팅 존도 퍼블릭 처럼 같은 가격
+  TTL
+  CNAME vs Alias
+- CNAME은 다른 서브도메인을 매핑 가능
+- Alias는 aws 의 주소를 매핑 가능 (EC2의 DNS name에는 매핑 안됨)
+  라우팅 정책
+- 심플
+- 가중치
+- 지연 시간 기반 (route53에서 미리 측정한 값?)
+
+#### CloudFront
+
+개요
+
+- CDN
+- 엣지에 콘텐츠가 캐시된다
+- aws의 216개의 엣지로케이션 모두를 사용한다
+- DDoS를 막아준다
+- Origins (연결 가능한 리소스)
+  - S3 bucket
+  - Custom Origin (HTTP)
+- 프라이빗 VPC에 접속할 수 없음 (ALB를 통해 우회 가능)
+  캐싱 및 캐싱 정책
+- header
+- query string
+- cookies
+- none, whitelist, include all-except, all
+  캐시 무효화
+- 백엔드가 변경되도 cloudfront는 알 수 없음
+- TTL이 끝나야 백엔드를 다시 치기 때문
+- 그래서 캐시 무효화가 필요함
+- 근데 무효화를 언제 실행할 것인가 -> 백엔드가 배포되면 수동으로?
+  오리진으로서의 ALB
+- 프라이빗 VPC에는 Edge Location이 접근할 수 없고 Edge Location의 보안그룹도 열어줘야 함
+- 그래서 ALB를 이용해서 EC2는 프라이빗으로 두고 ALB를 연결하게 할 수 있다
+  지리적 제한
+- 접속 허용 국가, 제한 국가 설정 가능
+  Signed URL/쿠키
+  고급개념
+- 가격
+  - price class all 모든 리전을 사용하고 가장 퍼포먼스가 좋지만 비싸다
+  - price class 200 200개만 쓰는데 조금 싸다
+  - price class 100 100개만 쓰는데 조금 싸다
+- 멀티 오리진
+- field level encryption
+  Real Time Logs
+- kinesis datastream을 통해 실시간 로깅을 할 수 있음
+- api 요청에 대해 몇%만 로그를 남길지 설정할 수 있음
+
+
 ## Storage
 
 glacier
@@ -253,6 +324,9 @@ https://bluese05.tistory.com/35
 
 sqs에 실패처리용 큐를 하나 만들어서 거기에 담아서 에러를 확인한다.
 메시지큐에서 실패한 것들을 받으면 람다를 실행하게 해서 오류처리 할 수 있다
+
+## 비용 최적화
+
 
 
 ## Hands-on
