@@ -39,6 +39,7 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
     <Layout title={siteTitle}>
       <Seo title="Sam" />
       <br />
+      <div data-nosnippet data-no-auto-ads>
       {posts.map(({ node }) => {
         if (node.frontmatter.title === "") {
           return
@@ -67,6 +68,7 @@ const BlogIndex = ({ data }: PageProps<Data>) => {
           </article>
         )
       })}
+      </div>
     </Layout>
   )
 }
