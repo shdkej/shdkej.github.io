@@ -375,7 +375,7 @@ log 설정
 #### Internal Link
 
 [[Architecture#Goal]]
-[[Project#Project start]]
+[[*MIMO 미니멀 프로젝트#Project start]]
 [[Think#개발의 목표]]
 [[Information#비판 대신 진취적 개선에 에너지를 쏟는다.]]
 [[Think#Safety programming]]
@@ -1081,7 +1081,7 @@ json으로 리턴을 하고, json으로 입력을 받게 하고 싶다.
   - await 대신 then 도 사용 가능
 - async vs isolate
   - isolate를 쓰면 스레드가 별개로 생성되서 동작한다고 한다 (병렬 동작 가능)
-  - [ ] 이게 어떻게 구현되어있는거지?
+  - 이게 어떻게 구현되어있는거지?
     - 설계 자체를 스레드 기반이 아니라 isolate 기반으로 해서 이걸 여러개 만들 수 있게 했다. 대신 스레드처럼 서로 자원 공유하지 않고 독립적으로 구성된다
   - js와 같이 이벤트루프와 이벤트큐가 있다
 - event loop
@@ -1377,3 +1377,39 @@ golang
   - 함수형 언어는 불변성을 이용하는 것이고, 포인터는 포인터대로의 용도가 있다
   - 트레이드 오프지, 어느 하나가 우수한 것이 아니다
   - 포인터를 이용해서도 동시성을 구현해서 잘 이용한다
+
+---
+
+# Kotlin
+#### 프로젝트 세팅
+- intellij 에서 gradle로 빌드 되도록 설정하고
+	- Could not open init generic class cache for initialization script '/private/var/folders/g8/hj_c0h5s1115b2xzx8lp51k40000gn/T/wrapper_init5.gradle' (/Users/sh.noh/.gradle/caches/7.1/scripts/3gbaaj94u7x9bvfwci9yyov49).
+       > BUG! exception in phase 'semantic analysis' in source unit '_BuildScript_'
+	- java 1.8로 변경
+	- gradlew 생김
+- kotlin autocomplete 되도록 해야한다
+	- 위 작업이 되니 autocomplete도 된다
+
+#### 문법
+- 코틀린에서 default 값이 final인 이유
+	- 상속을 잘 쓰기가 어렵다. 그래서 상속을 쓰려면 신경쓰고 써라
+	- 상속에서 사용하는 오버라이딩, 오버라이딩이 가능한 메소드는 상황에 따라 다르게 구현할 수 있음을 자세히 안내해줘야한다.
+	- https://cchcc.github.io/blog/Kotlin-%EB%94%94%ED%8F%B4%ED%8A%B8%EA%B0%80-final%EC%9D%B8-%EC%9D%B4%EC%9C%A0/
+	- 다른 라이브러리 사용을 위해 all open을 해줘야할 상황이 있는데, 이를 위한 플러그인 제공해준다.
+- val (value) 상수, var(variable) 변수
+- when 
+- class를 상속하려면 클래스 앞에 open 을 적어준 것만 된다
+	- 아니면 abstract, interface를 만들어서 쓴다
+	- abstract를 갖다 쓰는건 구현
+	- interface를 갖다 쓰는것도 구현인가..
+	- 상속은 안쓰는게 좋다는 흐름이 있었는데 코틀린에서 상속은 기본적으로 막혀있고 open을 해줘야한다
+	- abstract, interface가 비슷해보이는데
+	- abstract는 한 클래스에 하나만 할당 가능하고, interface는 여러개 할당 가능하긴 한다
+	- [ ] abstract를 쓰는건 구현이 아니라 상속인가.. abstract에서 선언한 것을 반드시 구현해야하는데
+- ?, ?., !!, ?:
+- listOf, mutableListOf, mapOf, setOf
+- data class
+	- toString, equals, copy 등의 함수를 기본으로 만들어줌
+	- val (title, url) = site1 이런식 사용가능
+- sealed class
+- void 대신 Unit

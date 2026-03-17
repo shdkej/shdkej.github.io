@@ -6,7 +6,7 @@ updated : 2025-07-23 10:12:04 +0900
 tags    : human
 ---
 
-## Rule / Prepare / Limit
+## Rule, Prepare, Limit
 
 변증법, 수파리, 피드백, 메뉴얼, 제한
 

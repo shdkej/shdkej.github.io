@@ -81,6 +81,11 @@ Container 구동 원리
 - docker.sock은 호스트의 도커 컨테이너 관리를 장악할 수 있다
 - dockerfile에 locale, time 등 설정 해두는게 좋지 않을까
 
+#### Dockerfile
+- 의존성 설치 등 패키지에서 잘 변하지 않는 건 하나의 명령어로 묶어서 단일 레이어로 처리하는게 좋다
+- 묶을 때는 클린 등 작업파일을 지우는 것도 같이 할 수 있으면 좋다
+- 레이어가 적을수록 이미지의 크기가 작아진다
+
 #### docker compose에서 빌드 단계의 이미지를 쓸 수 있을까
 Dockerfile은 멀티 빌드로 해놓고 배포시에는 마지막 빌드 이미지를 쓰지만
 개발 시에는 빌드한 것으로 쓰고 싶은데
@@ -1032,3 +1037,81 @@ Volume2가 꺼졌다가 켜지면 동기화가 어떻게 되는지?
 - DB 컨테이너 생성 시 볼륨을 시킨다
 
 [[Troubleshooting#kubernetes]]
+
+#### EKS 를 쓰면 겪게 되는 현업 문제
+- 네트워크 복잡성
+
+
+#### 쿠버네티스에서 네임스페이스에 메모리시피유 리퀘스트 리밋을 설정할 수 있다?
+그럼 다른건 어떤걸 할 수 있지?
+- 접근 제어
+- 리소스 할당
+
+#### kubernetes에서 같은 네임스페이스에서 연결하는 방법은?
+서비스로 클러스터 ip는 오픈
+서비스 이름으로 인식은 한다.
+그러면 서버에서 호스트 명을 서비스명과 맞춰줘야 한다.
+
+
+
+#### CKA 공부하면서
+- taint는 방어의 개념. toleration과 매칭되어야 열리는데 toleration을 설정한다고 꼭 거기로 가는 건 아니다. 방어의 개념이고 거기로 붙이는게 하는건 또 다른 게 있음
+	- tolerationSeconds를 지정하면 toleration이 매칭되면 계속 열리는게 아니라 시간을 같이 설정하게 되서 그 시간동안 열림. taint가 지워지면 그냥 거기 있고 taint가 남아 있으면 팅김
+	- not-ready 같은걸 기본적으로 세팅하는데 이건 seconds도 같이 있어서 고장난 서버에 오래 있지 말라고 kubernetes에서 기본 설정하는것이 있음
+- 이걸로 기존에 있는 pod 쫓아내는 역할도 함 NoExecute를 쓰면. 스케줄링으로 이런걸 걸어서 쫓아보내게 할 수도 있음
+- 다른걸로는 NodeSelector(기본), NodeAffinity(확장), PodAffinity, PodAntiAffinity 가 있음
+- drain과 cordon도 헷갈리는 개념
+- readness, liveness 를 하이브리스 서버 정상 신호와 연결할 수 있을까
+- 쿠버네티스 외우면 좋을 것
+	- namespace 단위
+	- cluster 단위
+- kubernetes는 설정파일을 설정용과 접속용 따로 분리해놨다
+- kubelet은 /etc/kubernetes/kubelet.conf 에 전역 접속관리 설정파일이 있고
+- /var/lib/kubelet/config 에 설정관리 파일이 있다. 이게 configmap에 들어감. 근데 이게 끝이 아니라
+- /lib/systemd/system/kubelet.service 에 서비스 관련 설정파일이 또 있다 (그 밑에 확장 설정 파일 또 있음) 이건 service 자체를 띄우기 위한 설정이라 kubelet 자체가 안뜨면 여기서 본다
+- kubernetes와 접속이 안되면 /etc, 안에서 뭔가 에러가 나면 /var/lib/kubelet
+
+
+```bash
+
+containers: 
+- name: node-app 
+  image: your-pm2-image:latest 
+  lifecycle: 
+    preStop: 
+      exec: # 중요: 네트워크 전파를 위해 10초 대기 
+        command: ["sh", "-c", "sleep 10"]
+
+
+while true; do curl -s -o /dev/null -w "%{http_code}\n" http://<SERVICE_IP> sleep 0.1 done
+
+
+kubectl delete pod -l app=pm2-app
+또는
+kubectl rollout restart deployment pm2-app
+
+
+1. while 스크립트를 돌리고 pod을 종료시켜본다. 에러가 뜨는걸 확인한다
+2. preStop을 달고 while 스크립트를 돌리고 pod을 종료시켜본다. 에러가 안나는걸 확인한다
+3. 에러가 난다면 추가작업 필요. 혹은 pm2 kill_timeout을 늘려줘야 할 수도
+```
+
+
+
+CPU 사용량 많은 노드 혹은 파드를 찾기
+```
+k top node --sort-by=cpu
+```
+
+Taint가 없는 Node의 개수를 파일로 저장  
+```
+k get node -o custom-columns=NAME:.metadata.name,TAINTS:.spec.taints --no-header | grep -w "none" | wc -l > file.txt
+```
+
+서비스 실행 후 켜는 명령어
+```
+systemctl status kubelet
+systemctl start kubelet
+systemctl enable kubelet
+journalctl -u kubelet -f
+```

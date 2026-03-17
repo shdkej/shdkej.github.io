@@ -117,9 +117,9 @@ DevOps is the union of people, process, and products to enable continuous delive
 
 
 #### 궁금증
-- [프론트엔드 서비스를 통합 포인트로 설정할 수 있나?](Archive#프론트엔드%20서비스를%20통합%20포인트로%20설정할%20수%20있나?)
-- [프론트와 백엔드의 협업은 어떻게 진행되지?](Archive#프론트와%20백엔드의%20협업은%20어떻게%20진행되지?)
-- [스테이징 단계를 없앨 수 있을까?](Archive#without%20stage%20server)
+- [프론트엔드 서비스를 통합 포인트로 설정할 수 있나?](Archive.md#프론트엔드%20서비스를%20통합%20포인트로%20설정할%20수%20있나?)
+- [프론트와 백엔드의 협업은 어떻게 진행되지?](Archive.md#프론트와%20백엔드의%20협업은%20어떻게%20진행되지?)
+- [스테이징 단계를 없앨 수 있을까?](Archive.md#without%20stage%20server)
 
 - 자주 쓰는 모듈을 이용해 프로젝트 진행 시 쓰게 되면, 쓰면서 개선한 부분이 이전 프로젝트에 적용되야 할 수도 있고 안되야 할 수도 있다 -> 현행 관리
 	- 전체 적용되도록 형태를 잡는다면 이전의 프로젝트에 적용하는 방법은?
@@ -175,6 +175,9 @@ DevOps is the union of people, process, and products to enable continuous delive
 #### Postmortem
 대응 후 회고
 
+#### 종료시점을 내가 통제하면 관리가 편해진다
+- uvicorn에 종료카운트랑
+- karpenter에 expireAfter가 있고, jwtToken 같은 보안쪽에도 만료시간이 정해져있다
 
 #### DevOps vs SRE
 DevOps gonna make fast to deploy
@@ -194,16 +197,6 @@ Quick recovery scenario
   error situation. Which are link, behavior, data, code line, build package,
   (commit source)
 
-#### 서비스 사용자 수용량 확인
-
-서비스가 빠른지 확인 방법 Throughput, Latency
-
-- Throughput 시간당 처리량 TPS, RPS 등
-  - 병목 발생한다
-- Latency 응답 지연 시간
-  - 모든 서비스 지연시간이 영향을 준다
-
-부하발생시키기
 
 #### 성과 측정과 개선
 - DevOps 성과 지표
@@ -245,13 +238,6 @@ Quick recovery scenario
 - Elasticsearch
 - [[Information#무질서한 원숭이(Chaos Monkey)]]
 
-#### 서비스가 커져감에 따라 직접 구현해야하는 기능
-
-- 깃 레포지토리 > gitlab이 자체 서버 구축 가능하다
-- ci 툴
-- 서비스로 제공되는 소프트웨어들
-- 최소한 이중화가 되도록 해야한다
-
 #### reboot report
 
 load average 확인 후 cpu bound인지 memory bound인지 disk i/o문제인지 확인하는 것처럼
@@ -267,6 +253,22 @@ load average 확인 후 cpu bound인지 memory bound인지 disk i/o문제인지 
 #### 오토스케일링
 - cpu나 메모리가 70% 이상이면 1대씩 늘리고 30% 미만이면 1대씩 줄이는 방식
 - 근데 cpu와 메모리가 한번에 100%가 되는 경우가 왕왕 있음
+
+#### 대규모 서버에서 겪는 문제
+- 데이터 : 데이터의 동기화
+- CPU : cpu 병목
+- 네트워크 : 네트워크 병목
+
+load average를 확인하고 sar을 통해 cpu 문제인지 io문제인지 확인한다
+
+#### 대용량 트래픽
+WAS에서 문제가 생길 때 다중화로 해결이 힘든 이유
+- 다른 WAS를 찾아야 한다.
+- 로그인 정보를 전달해줘야 한다. (세션 클러스터링 필요)
+  - 그에 따른 관리 지점 증가
+
+데이터베이스 다중화 힘든 이유
+- 동기화
 
 ---
 
@@ -302,6 +304,23 @@ ci/cd 선택요소
 2. Develop + test
 3. release
 4. monitor + Lean
+
+- cicd
+	- ci 에는 정적 보안 분석이 강화되었다
+		- 컨테이너 보안 체크
+		- 취약점 분석
+		- 라이센스 위반 분석
+	- cd 에는 배포 후 검증이 강화되었다
+		- canary 등으로 배포하는 과정도 이 안에 포함되고
+		- 배포 후 수치 체크해서 문제 생기면 자동 롤백
+		- 스모크 테스트 검증
+- 에이전트에게 깃랩 mr 링크들을 던져주면
+	- 프로젝트별로 나눠서 asana 글 올리고 (양식만 첨부해놓으면)
+	- mr 머지하고
+	- 파이프라인 돌리고
+	- 채팅 보내고 (플로우 api나 메신저로 보낼 수 있을까)
+	- 할 수 있을까
+	- playwright 테스트 시나리오 작성 후 테스트까지
 
 - 개발 전 준비
 	- 시작 시 쓰는 템플릿 (CI용, 프로젝트용)
@@ -805,3 +824,16 @@ usercontent 링크로 바로 받아서 파일로 만들 수 있도록
 
 현업에서 필요한 복잡한 CI/CD 구성을 알고 싶다
 aws에서 복잡한 구조를 지원하는 것을 어필하기 위해 소개하는 문서가 있을 것 같은데
+
+#### 네이버 통합검색 Devops Agent
+- 기존 장애 대응 프로세스
+	- 알람 발생 -> 데이터 확인 -> 정보 조합 및 분석
+- Devops Agent
+	- 장애 상황과 규모를 1분 안에 파악
+	- 시급도를 판단해 알람 분류
+	- 장애 상황의 분석과정 정리하고 활용
+- multi turn 구조
+- tool을 llm이 선택해서 쓰도록
+- dashboard
+- 장애 분석 후 최적의 대응 방안 제시
+- 컨텍스트를 관리해 경험의 축적 희망

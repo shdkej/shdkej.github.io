@@ -8,18 +8,13 @@ tags    : integration
 
 ## 창작자가 있는 분야
 
-- Music -- song-writing, musical, concert
-- Construct
-- Art -- drawing, movie,
-- Directer
-- Author -- essay, novel
+- **Music** - song-writing, musical, concert
+- **Construct**
+- **Art** -- drawing, movie,
+- **Directer**
+- **Author** -- essay, novel
 
-예술
-관찰
-이해의 지평
-지평의 융합
-
-## directer, creater, producer, executive producer, writer,
+## Directer, Creater, Producer, Executive producer, Writer,
 
 제작, 연출
 
@@ -51,6 +46,12 @@ NG 후에 편집점을 위해 박수를 쳐서 편집점을 쉽게 찾게 한다
 
 공부의 왕도가 여기도 있었네
 
+- 개발 편집
+- 에디토리얼
+- 편 집
+- 에디터
+- 편집자
+
 #### Elevator
 
 How to perfectly make elevator?
@@ -76,6 +77,11 @@ Can It bring programming
 
 - 천경자
 
+#### 예술
+- 관찰
+- 이해의 지평
+- 지평의 융합
+
 ## Artist
 
 #### Paul rubens
@@ -95,6 +101,10 @@ Can It bring programming
 - 왜 그리려고 했는지
 - 작품을 보고 어떤 생각을 하시는지
 - 의도한것이 있는지
+
+## 제품 디자인
+- 디터 람스. 어떻게 사용하는지 디자인이 말해줄 수 있어야 한다
+- 밀어야할지 당겨야할지 명확하게 알려주는 문 손잡이
 
 ## computer science와 software engineer의 상관관계?
 

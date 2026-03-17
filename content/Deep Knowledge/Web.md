@@ -28,6 +28,14 @@ tags: deep_knowledge
 
 - PWA(progressive web app) makes it possible.
 
+#### 최신 번들러가 자동으로 해주는 것들
+- minify (uglify) 난독화 및 변수축약화
+- 안쓰는 export 제거, 주석제거
+- 코드 청크 분리 + Lazy loading
+- 파일명에 해시 붙여서 캐시 무효화 자동화
+- asset 처리 (경로 설정) 자동화
+- css 후처리 (sass, postcss)
+
 #### web should support this
 
 - dark mode
@@ -276,3 +284,4 @@ dagger 는 로컬에서 테스트하고 사용할 수 있다?
 - 웹처리
 	- 뒤로가기 시 스크롤 위치
 		- 상태로 currentPage와 필터를 저장하고 페이지 다시 돌아오면 불러오기
+	- 세션스토리지와 로컬스토리지 구분

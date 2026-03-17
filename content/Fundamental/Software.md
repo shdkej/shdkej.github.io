@@ -6,6 +6,18 @@ updated: 2025-07-23 10:07:33 +0900
 tags: fundamental
 ---
 
+- 제품 제작 > 개발자 > 코딩
+	- 한 사람이 편하게 감당할 수 있는 범위는??
+- 코딩 -> 소프트웨어 -> 아키텍처 -> 프로덕트 -> 팀 -> 회사 -> 세계
+	- 코딩을 넘어 프로덕트로
+	- 프로덕트를 넘어 비즈니스로
+	- 개발자
+	- 리더
+- Convenience <-> Control
+- 이상과 현실, 현업과 방법론  
+	- 깊게 파려고 해도 업무에 치인다  
+	- 뭔가를 하려고 하면 많은 오버헤드가 생긴다  
+
 ## 소프트웨어
 
 - 사람 - 소프트웨어 - 사람
@@ -20,7 +32,6 @@ tags: fundamental
 - git
 - Kubernetes
 - Docker
-
 
 #### 소프트웨어는 현대의 도구다
 
@@ -90,6 +101,17 @@ tags: fundamental
 #### 변화를 감지하는 시간 200ms
 지연됐다고 느끼는 시간은 이 시간 이후.
 애플은 의도적으로 버튼 동작 타이밍을 200ms에 맞췄다
+
+#### 앱 안정성
+- 앱은 계속 껐다켜져도 문제가 없어야 하는 상태로 만들자
+- API는 멱등성있게 설계하고 네트워크의 불안정을 고려한다
+	- 에러 핸들링을 먼저 세팅한다
+	- 응답과 결과가 명확하게 되도록 한다
+	- api 테스트 코드를 정의하고 개발한다
+	- 어떤 동작을 하면 어떤 것을 기대하는지 테스트 코드로
+
+#### 날짜 DB 저장은 UTC 통일 저장이 여러모로 좋다. AWS도 시간이 UTC로 통일되어있음
+
 
 ## Agile
 
@@ -550,7 +572,28 @@ query로 필터링하는 것과 stream filter 비교
 
 #### 모놀리스도 정반합에서 합이었던 아키텍처
 - [ ] 어떤 것을 보완하기 위해 모놀리스라는 아키텍처가 달성되었을까
-3 layer 아키텍처를 만들다보니 모놀리스가 된 것인가
+- 3 layer 아키텍처를 만들다보니 모놀리스가 된 것인가
+
+## 개발 API 명세 문서화
+
+`OpenAPI spec`는 RESTful API 설계를 위한 업계 표준 사양을 나타내고
+`Swagger`는 OpenAPI Spec 에 맞게 디자인하고 문서화하고 빌드하기 위한 도구들의 모음
+(open api 로 띄어쓰면 공공 api를 뜻함)
+
+> `OAS(OpenAPI Specification)`는 REST 명세 포맷으로 널리 사용되고 있는 포맷 중 하나이며, 프로그래밍 언어에 종속되지 않습니다. OAI(OpenAPI Initiative)에서 만들어졌고, [OAS(https://openapis.org)](https://openapis.org/)에서 커뮤니티가 주도적으로 만들어가는 명세 포맷입니다.
+
+`OAS(OpenAPI Specification)`는 json 이나 yml 형식으로 기술해야 하며 OAS 파일을 읽어서 디플로이 해주는 도구(Ex: swagger-ui)를 사용하면 아래와 같이 브라우저에서 편리하게 API 문서를 볼 수 있습니다.
+
+`OAS(OpenAPI Specification)`는 예전에는 Swagger spec으로 불렸으며 3.0부터 [OpenAPI 3.0 Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md)라는 이름으로 표준화되었습니다.
+
+Swagger 3.0 접속 주소 : [http://localhost:8080/swagger-ui/](http://localhost:8080/swagger-ui/)  
+Swagger 2.0 접속 주소 : [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+- @Tag(name, description) - 컨트롤러 설명
+- @Operation(summary = "", description = "") : 특정 API의 요약과 설명을 지정합니다.
+- @ApiResponse : API 결과에 따른 코드와 설명을 추가합니다. (with @ApiResponses)
+- @Parameter(name = "loginId", description = "로그인 유저 ID 값", example = "3", required = true)
+- @Length(max = 20, message = "사용자 닉네임은 20글자 이하로 입력해야 합니다.")
 
 
 ## 컴퓨터
@@ -583,3 +626,59 @@ query로 필터링하는 것과 stream filter 비교
 #### 트랜잭션
 - 2가지 이상 정합성이 맞아야 할 때 
 - 실패했을때 롤백이 반드시 필요할 때
+
+#### 캐시
+- 캐싱은 **명확한 룰**로 나눠라. 정적은 CDN, 동적은 원칙적으로 no-store, 캐시해도 안전한 GET만 짧게.
+	- 동적 일단 금지. 단,
+		- 상품, 카테고리 등 안전한 공개 데이터는 짧게 허용
+		- 인증 헤더는 무조건 안되게 (Authorization, Cookie)
+
+#### 업데이트를 안하면 못쓰는 소프트웨어?
+- 이건 어쩔 수 없다
+- 버저닝을 잘하고 EOL을 잘 안내하자
+
+#### 비트 연산의 아름다움
+- 상태 관리는 이걸로 다 되겠는데?
+- 근데 Parameter store 등 다른 방법도 현대적인게 있긴 하다
+
+#### kind of sort
+- most viewed
+- most related
+- 이미지별 정렬
+- 태그별 정렬
+- 각 속성값별 정렬
+- 큐레이션
+- 유의어
+- 시간
+	- most new
+	- created
+	- updated
+- 공간
+- 알파벳순
+- 길이순
+- 정렬
+	- 단순 나열은 데이터로서의 가치만 있다
+	- 정보전달을 위해서는 필터링을 해야 한다
+	- 특히 짦은 시간 안에 전달하려면 더더욱
+
+#### 스토리 없는 단순 나열은 아무리 핵심만 담겨있다고 해도 쓸모가 없다
+
+#### filter
+
+- google search filter
+  - `"<keyword>",<keyword1> | <keyword2>, -<keyword>, <keyword> * <must keyword>`
+  - `<2020>..<2021>`
+- 노션의 데이터베이스 필터
+- 빅데이터 대시보드의 화면 구성
+- cncf 전체 조망도 사이트인데 필터링이 잘 되있다
+  - https://landscape.cncf.io/card-mode?grouping=no&license=open-source&sort=first-commit
+
+#### 리스트를 보여줘야 한다면 편의성을 위해 반드시 필요한 것
+- 전체 개수 알려주기
+- 필터로 검색할 수 있게 하기
+
+#### 대용량 데이터
+대용량 데이터 목록에서는 전체 카운트를 뽑지 않도록 범위를 조절해야한다
+검색조건에 기본적으로 시간범위를 넣는다. 첫 화면에서는 최근의 내용만 표시되게 한다
+큰 범위의 시간을 검색되지 않게 한다. NHN도 30일 이상 조회 안되게 한다
+대용량을 한번에 뽑아야 하는 경우가 있으면 배치로 돌린다. 내부에서도 이터레이터로 분할조회를 한다

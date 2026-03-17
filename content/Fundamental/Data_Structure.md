@@ -106,7 +106,7 @@ insertAfter(int item) {
 
 - Hash by Hash function
 - Collision management is key issue
-- If hash function is good, then search speed is O(1), most quick
+- If hash function is good, then **search** speed is O(1), most quick
 
 #### Graphs
 

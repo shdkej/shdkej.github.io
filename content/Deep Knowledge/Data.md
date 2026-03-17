@@ -19,6 +19,11 @@ tags: deep_knowledge
 - NoSQL, CAP theorem
 - N+1 Problem
 
+#### 디비 설계 시 고려사항
+- 데이터 양
+- 인덱스
+
+
 #### 대용량 작업
 - 람다에서 한번에 많은 요청을 비동기로 하게 될 때 최대요청량을 제한 (p-limit)
 - 대용량의 검색이 필요할 때 무조건 paging 또는 iterator 또는 stream을 써야 메모리 문제가 발생하지 않는다는 것
