@@ -5,8 +5,10 @@ Think.md
 index.md
 INBOX.md
 Resume.md
+
 content/diary/*
 !content/diary/[0-9][0-9][0-9][0-9]-*.md
+
 *.swp
 node_modules
 tags
