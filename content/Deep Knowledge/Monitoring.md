@@ -325,19 +325,19 @@ c4.large 200클라이언트 평균 응답시간 0.026, 처리량 7000
 	- 하나하나 exporter를 넣을 수 있고
 	- 주기 설정 정도 해주면 된다
 - promtail
-- [ ] fluentd
+- fluentd
 	- 위 두개는 로그 전용 수집기
 	- fluentd로 사실상 쓰면 됨
-- [ ] loki
-- [ ] tempo
+- [x] loki
+- tempo
 	- 트레이싱
 - boltdb
 - influxDB
 	- prometheus의 대체제
 	- 실시간성이 필요하면 쓰일 수 있음, PUSH 기반
 - thanos
-- [ ] alert manager
-- [ ] node-exporter 외 여러 exporter
+- [x] alert manager
+- [x] node-exporter 외 여러 exporter
 	- 인프라 및 OS 계층
 	- 컨테이너
 	- 데이터베이스

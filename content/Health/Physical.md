@@ -291,3 +291,17 @@ tags    : health
 - 머리를 울린다 (공명)
 - 성대 접지력을 강화한다
 - 전신을 이완시킨다
+
+
+## 잠
+
+#### sleep tracker
+smart alarm
+sound check
+movement check
+report, export
+
+alarm
+특정시간에 한번만 알려주는 알람
+수면시작을 누르면 일어나는 시간 계산해주는 알람
+아침 알람 시 천천히 일어날 수 있도록 해주는 알람

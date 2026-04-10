@@ -1,5 +1,5 @@
 ## 메인
-- [리더](Teamwork.md)
+- [리더](Teamwork.md) - 일 계획 측정 평가 반영
 	- [기획자](Product.md)
 	- [개발자](Software.md) - [디자인](Design.md)
 	- [마케터](Marketing.md)

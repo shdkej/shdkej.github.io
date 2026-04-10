@@ -332,6 +332,20 @@ For just video that my log
 - https://www.mapbox.com/
 	- 웹용 지도 커스텀하기 좋은 서비스. 줌 및 영상에 쓰기 좋음
 
+#### 영상
+Whisper
+→ 자동 자막
+
+LLM
+→ 컷 포인트 분석
+
+FFmpeg
+→ 컷 편집
+
+Remotion
+→ 영상 합성
+
+
 ## 이미지
 
 #### Drawing
