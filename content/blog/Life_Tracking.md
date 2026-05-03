@@ -35,9 +35,10 @@ https://johngrib.github.io/wiki/book-lyubishev/
 - I want to reduce item that i should have manage something.
 
 #### manage point
+
 - [ ] file, music, source-file
 - [X] photo
-- [ ] note
+- [x] note
 - [X] calendar
 - [X] reminder
 - [X] todo(pomodoro)
@@ -71,8 +72,6 @@ https://johngrib.github.io/wiki/book-lyubishev/
 > archive
 > update
 > list
-
-> make link each file
 
 todo 등록하면 자동 리마인더
 집에 오면 리마인더
