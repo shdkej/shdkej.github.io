@@ -1,6 +1,6 @@
 ---
 title: 데이터베이스와 데이터
-summary:
+summary: 데이터는 양과 시간과 복구가능성
 date: 2021-02-27 20:53:34 +0100
 updated: 2021-12-04 13:05:43 +0900
 tags: deep_knowledge
