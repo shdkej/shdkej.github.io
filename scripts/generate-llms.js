@@ -14,6 +14,19 @@ const SITE_URL = "https://shdkej.com"
 const CONTENT_DIR = path.join(ROOT, "content")
 const OUT = path.join(ROOT, "static", "llms.txt")
 
+// 같은 도메인의 다른 레포가 서빙하는 영역(자동 스캔 불가, 수동 관리).
+// 각 영역이 자체 llms.txt 를 갖고 있으면 그 링크를 함께 둔다.
+const EXTRA_SECTIONS = [
+  {
+    label: "Agent Wiki",
+    note: "에이전트가 원본 노트를 기반으로 유지·정리하는 지식 레이어 (개념/종합/비교/매핑 노트). 별도 레포(shdkej/agent-wiki).",
+    links: [
+      ["Agent Wiki", `${SITE_URL}/agent-wiki/`, "지식 랩 인덱스"],
+      ["Agent Wiki llms.txt", `${SITE_URL}/agent-wiki/llms.txt`, "전체 페이지 목록"],
+    ],
+  },
+]
+
 // 그룹(최상위 폴더) 표시 순서와 사람이 읽기 좋은 라벨
 const GROUP_ORDER = [
   ["Root", "Overview"],
@@ -96,6 +109,20 @@ for (const [key, label] of GROUP_ORDER) {
     seen.add(url)
     const desc = it.summary ? `: ${it.summary}` : ""
     lines.push(`- [${it.title}](${url})${desc}`)
+  }
+  lines.push("")
+}
+
+// 다른 레포가 서빙하는 영역
+for (const sec of EXTRA_SECTIONS) {
+  lines.push(`## ${sec.label}`)
+  lines.push("")
+  if (sec.note) {
+    lines.push(`> ${sec.note}`)
+    lines.push("")
+  }
+  for (const [title, url, desc] of sec.links) {
+    lines.push(`- [${title}](${url})${desc ? `: ${desc}` : ""}`)
   }
   lines.push("")
 }

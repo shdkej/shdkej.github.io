@@ -107,3 +107,10 @@
 - [ERP 서버 개발 스텝 바이 스텝 & 회고](https://shdkej.com/deploy_erp_server_story/): odoo와 docker-compose를 이용한 erp 서버 구축
 - [Life_Tracking](https://shdkej.com/life_tracking/)
 - [Note_Management](https://shdkej.com/note_management/)
+
+## Agent Wiki
+
+> 에이전트가 원본 노트를 기반으로 유지·정리하는 지식 레이어 (개념/종합/비교/매핑 노트). 별도 레포(shdkej/agent-wiki).
+
+- [Agent Wiki](https://shdkej.com/agent-wiki/): 지식 랩 인덱스
+- [Agent Wiki llms.txt](https://shdkej.com/agent-wiki/llms.txt): 전체 페이지 목록
