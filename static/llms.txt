@@ -1,0 +1,109 @@
+# SH's Wiki
+
+> 7년차 DevOps/백엔드 엔지니어 노성호(Noh)의 개인 위키. 인프라, 백엔드, 아키텍처, 모니터링, AI 오케스트레이션을 중심으로 학습과 경험을 미니멀리즘 관점에서 정리한 지식 저장소입니다.
+
+주요 키워드: Kubernetes, AWS(EKS/Lambda), Terraform, GitOps(ArgoCD), Clean Architecture, 모니터링/관측가능성, Node.js, Next.js, LLM 에이전트.
+
+## Overview
+
+- [2026-05](https://shdkej.com/2026-05/)
+- [Portfolio](https://shdkej.com/portfolio/): experience
+
+## Fundamental
+
+- [🚀 아키텍처](https://shdkej.com/architecture/): 변화, 정리, 순환, 측정
+- [컴퓨터 사이언스](https://shdkej.com/computer_architecture/): 🖥️ CPU, Memory, OS, Kernel
+- [코딩](https://shdkej.com/coding/): Coding Convention, Design Principle
+- [Data Structure](https://shdkej.com/data_structure/)
+- [Infra](https://shdkej.com/infra/)
+- [Math](https://shdkej.com/math/): Math, Physics, Electronics
+- [Network](https://shdkej.com/network/): 📡 Protocol(TCP, HTTP), IP, DNS, L/B
+- [Software](https://shdkej.com/software/): Language, Web, Development
+
+## Deep Knowledge
+
+- [데이터베이스와 데이터](https://shdkej.com/data/): 데이터는 양과 시간과 복구가능성
+- [모니터링](https://shdkej.com/monitoring/): 관측가능성과 피드백루프
+- [AI](https://shdkej.com/ai/)
+- [Container](https://shdkej.com/container/)
+- [DevOps](https://shdkej.com/devops/)
+- [Operation](https://shdkej.com/operation/)
+- [Product](https://shdkej.com/product/): 제품, 마케팅, 기획
+- [WEB](https://shdkej.com/web/)
+
+## Integration
+
+- [일, 일 잘하는 법](https://shdkej.com/work/)
+- [Business](https://shdkej.com/business/): 경영, 다른 회사들에 대한 정보, 경험
+- [Creator](https://shdkej.com/creator/)
+- [Design](https://shdkej.com/design/)
+- [Economics](https://shdkej.com/economics/)
+- [Exploration](https://shdkej.com/exploration/)
+- [Marketing](https://shdkej.com/marketing/)
+- [Tool](https://shdkej.com/tool/)
+
+## Communication
+
+- [Blogging](https://shdkej.com/blogging/): 주제선정부터 노하우, 번역 시, 영상 및 이미지를 사용할 때 참고할 사항까지
+- [Communication](https://shdkej.com/talk/)
+- [Document](https://shdkej.com/document/)
+- [Feedback](https://shdkej.com/feedback/): review, communication, software
+- [Foreign_language](https://shdkej.com/foreign_language/)
+- [Logical_Thinking](https://shdkej.com/logical_thinking/)
+- [Open_Source](https://shdkej.com/open_source/)
+- [Teamwork](https://shdkej.com/teamwork/)
+
+## Meta
+
+- [개발 단상](https://shdkej.com/about_development/)
+- [아키텍처 단상](https://shdkej.com/about_architecture/): 확장성, 모듈, 분산
+- [AGENTS](https://shdkej.com/agents/)
+- [Collected Data](https://shdkej.com/collection/): Stack
+- [Developer](https://shdkej.com/developer/)
+- [Fail Experience](https://shdkej.com/fail_experience/): How to prevent failure again
+- [My Space](https://shdkej.com/my_space/): 나의 시스템을 계속 운영한다
+- [Trouble Shooting](https://shdkej.com/troubleshooting/)
+
+## Idea
+
+- [Article](https://shdkej.com/article/)
+- [History](https://shdkej.com/history/)
+- [Information](https://shdkej.com/information/)
+- [Journal](https://shdkej.com/journal/): Let's make the results every day.
+- [Movie](https://shdkej.com/movie/)
+- [Reading](https://shdkej.com/reading/)
+- [Think](https://shdkej.com/think/)
+- [Travel](https://shdkej.com/travel/)
+
+## Human
+
+- [Balance](https://shdkej.com/balance/)
+- [Evolve](https://shdkej.com/evolve/)
+- [Future](https://shdkej.com/future/)
+- [Love](https://shdkej.com/love/)
+- [Principle](https://shdkej.com/principle/)
+- [Readability](https://shdkej.com/readability/): simple, minimal, portable, universal, limit, module, light-weight
+- [Reality](https://shdkej.com/reality/)
+- [Standard](https://shdkej.com/standard/)
+
+## Health
+
+- [Cleaning](https://shdkej.com/cleaning/)
+- [Curiosity](https://shdkej.com/curiosity/)
+- [Decision](https://shdkej.com/decision/)
+- [Food](https://shdkej.com/food/)
+- [Investment](https://shdkej.com/investment/)
+- [Music](https://shdkej.com/music/)
+- [Physical](https://shdkej.com/physical/)
+- [Routine](https://shdkej.com/routine/)
+
+## Blog
+
+- [100k_concurrent_server](https://shdkej.com/100k_concurrent_server/)
+- [피카소와 챗지피티](https://shdkej.com/picasso/): AI 시대의
+- [Decision_Monitor_Size](https://shdkej.com/decision_monitor_size/)
+- [Digital_Content](https://shdkej.com/digital_content/)
+- [EKS 맛보기](https://shdkej.com/eks_with_terraform/): 근데 이제 Terraform을 곁들인
+- [ERP 서버 개발 스텝 바이 스텝 & 회고](https://shdkej.com/deploy_erp_server_story/): odoo와 docker-compose를 이용한 erp 서버 구축
+- [Life_Tracking](https://shdkej.com/life_tracking/)
+- [Note_Management](https://shdkej.com/note_management/)

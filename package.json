@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Sam Noh <shdkej@gmail.com>",
   "scripts": {
+    "llms": "node scripts/generate-llms.js",
+    "prebuild": "node scripts/generate-llms.js",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
