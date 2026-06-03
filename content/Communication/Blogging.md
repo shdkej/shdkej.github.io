@@ -2,7 +2,7 @@
 title: Blogging
 summary: 주제선정부터 노하우, 번역 시, 영상 및 이미지를 사용할 때 참고할 사항까지
 date: 2020-03-17 11:22:19 +0100
-updated: 2025-07-24 19:28:18 +0900
+updated: 2026-05-05 17:02:05
 tags: communication
 ---
 

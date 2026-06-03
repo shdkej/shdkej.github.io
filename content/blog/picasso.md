@@ -2,9 +2,10 @@
 title: 피카소와 챗지피티
 summary: AI 시대의
 date: 2024-01-03 21:32:30 +0900
-updated: 2025-07-03 19:26:41 +0900
+updated: 2025-07-03 19:26:41
 tags:
-parent: [[Blogging]]
+parent:
+  - - Blogging
 ---
 
 ## 도쿄 국립 서양 미술관

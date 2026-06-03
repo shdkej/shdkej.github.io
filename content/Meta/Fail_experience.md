@@ -2,7 +2,7 @@
 title: Fail Experience
 summary: How to prevent failure again
 date: 2020-05-06 14:18:40 +0100
-updated: 2021-12-02 23:16:33 +0900
+updated: 2026-05-21 21:49:25
 tags: meta
 ---
 
@@ -228,7 +228,7 @@ immutable infrastructure
 	- 로컬 -> 유닛 테스트 시나리오 작성 후 생성
 	- 스테이지 환경에서 테스트를 빨리 할 방법은?
 
-- [ ] CKA 자격증 
+- [x] CKA 자격증 ✅ 2026-05-21
 	- kuberntes cheat sheet
 - docker dagger plus
 

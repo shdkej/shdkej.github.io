@@ -1,9 +1,9 @@
 ---
-title   : Logical
-summary :
-date    : 2020-07-24 09:03:52 +0100
-updated : 2025-07-23 09:59:31 +0900
-tags    : communication
+title: Logical
+summary:
+date: 2020-07-24 09:03:52 +0100
+updated: 2026-02-28 14:09:35
+tags: communication
 ---
 
 ## 수학적 사고

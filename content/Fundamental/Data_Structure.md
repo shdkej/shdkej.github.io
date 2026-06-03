@@ -2,7 +2,7 @@
 title: Data Structure
 summary:
 date: 2020-03-25 08:02:32 +0100
-updated: 2021-09-17 00:31:08 +0900
+updated: 2026-01-02 19:16:22
 tags: fundamental
 ---
 

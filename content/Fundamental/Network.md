@@ -2,7 +2,7 @@
 title: Network
 summary: 📡 Protocol(TCP, HTTP), IP, DNS, L/B
 date: 2020-03-16 22:40:07 +0100
-updated: 2021-09-16 20:52:54 +0900
+updated: 2025-07-22 00:01:15
 tags: fundamental
 ---
 

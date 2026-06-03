@@ -1,9 +1,9 @@
 ---
-title   : Decision
-summary : To reduce what need to be cared for.
-date    : 2020-05-06 12:58:37 +0100
-updated : 2025-07-24 19:27:55 +0900
-tags    : health
+title: Decision
+summary: To reduce what need to be cared for.
+date: 2020-05-06 12:58:37 +0100
+updated: 2026-06-01 22:13:48
+tags: health
 ---
 
 ## 선택, 고민
@@ -44,6 +44,13 @@ tags    : health
 
 더 좋은 신박템이 없을까 하고 계속 상점을 뒤진다
 이걸 정보에도 이런식으로 접근하면 좋을텐데
+
+#### 나의 도표에서 봐야할것
+- 시스템 최종업데이트 날짜 보고 오래되면 시스템 업데이트
+- 그 외에는 각 시스템의 지표를 달아놓고 지표만 한 곳에서 본다
+- 인박스
+- 인피니티
+- 아웃풋 관점에서 최종 판단
 
 ## 결정
 

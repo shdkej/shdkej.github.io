@@ -1,9 +1,9 @@
 ---
-title   : Movie
-summary :
-date    : 2020-04-12 15:42:05 +0100
-updated : 2025-07-23 10:15:07 +0900
-tags    : idea
+title: Movie
+summary:
+date: 2020-04-12 15:42:05 +0100
+updated: 2025-12-31 17:19:42
+tags: idea
 ---
 
 | Movie                              | Saw      | How About |

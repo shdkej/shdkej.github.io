@@ -1,10 +1,11 @@
 ---
-title   : Information
-summary : Input by Internet, book, or anything
-date    : 2020-06-11 21:49:05 +0100
-updated : 2025-07-23 10:14:07 +0900
-tags    : idea
+title: Information
+summary: Input by Internet, book, or anything
+date: 2020-06-11 21:49:05 +0100
+updated: 2026-06-01 22:09:59
+tags: idea
 ---
+- 교육 시 진행도 체크 시트 만들어서 링크 하나 공유하면 파악하기 좋더라
 
 ## 2025
 

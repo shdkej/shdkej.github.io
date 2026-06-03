@@ -1,10 +1,11 @@
 ---
-title   : Life Tracking
-summary : 어떻게 살고 있는지 알고 싶다
-date    : 2020-12-20 14:46:34 +0100
-updated : 2021-12-02 22:49:50 +0900
-tags    :
-parent  : [[Blogging]]
+title: Life Tracking
+summary: 어떻게 살고 있는지 알고 싶다
+date: 2020-12-20 14:46:34 +0100
+updated: 2026-05-31 10:14:45
+tags:
+parent:
+  - - Blogging
 ---
 
 ## Life Tracking
@@ -36,30 +37,29 @@ https://johngrib.github.io/wiki/book-lyubishev/
 
 #### manage point
 
-- [ ] file, music, source-file
-- [X] photo
+- [x] photo
 - [x] note
-- [X] calendar
-- [X] reminder
-- [X] todo(pomodoro)
-- [ ] log(internet)
-- [ ] bookmark
-- [ ] coding
-- [ ] 유튜브
-- [ ] 업무노트
-- [ ] gpt 질문 목록
-
-- [ ] movie
-- [ ] book
-- [ ] place, map - google timeline
-- [X] money
+- [x] calendar
+- [x] reminder
+- [x] todo(pomodoro)
+- [x] file, music, source-file
+- [x] log(internet)
+- [x] bookmark
+- [x] coding
+- [x] 유튜브
+- [x] 업무노트
+- [x] gpt 질문 목록
+- [x] 클로드
+- [x] 오픈클로
+- [x] movie
+- [x] book
+- [x] money
+- [x] sleep
 - [ ] health
-- [ ] sleep
 - [ ] food
 - [ ] walk
+- [ ] place, map - google timeline
 
-- [ ] 클로드
-- [ ] 오픈클로
 - computer
 	- mail
 	- docker

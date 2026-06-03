@@ -1,9 +1,9 @@
 ---
-title   : 점진적으로 개선하기
-summary : Evolve
-date    : 2021-02-27 20:53:19 +0100
-updated : 2025-07-23 10:10:48 +0900
-tags    : human
+title: 점진적으로 개선하기
+summary: Evolve
+date: 2021-02-27 20:53:19 +0100
+updated: 2026-03-16 23:27:04
+tags: human
 ---
 
 ## 점진적

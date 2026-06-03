@@ -2,7 +2,7 @@
 title: 코딩
 summary: Coding Convention, Design Principle
 date: 2020-03-16 21:13:05 +0100
-updated: 2025-07-23 10:05:41 +0900
+updated: 2026-03-17 15:37:36
 tags: fundamental
 ---
 

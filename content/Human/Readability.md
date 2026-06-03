@@ -2,7 +2,7 @@
 title: Readability
 summary: simple, minimal, portable, universal, limit, module, light-weight
 date: 2020-11-14 20:31:25 +0100
-updated: 2021-07-13 13:39:35 +0900
+updated: 2025-09-30 01:11:42
 tags: human
 ---
 

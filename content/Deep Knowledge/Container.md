@@ -1,9 +1,9 @@
 ---
-title   : Container
-summary : Docker, Kubernetes
-date    : 2020-12-17 22:01:56 +0100
-updated : 2025-07-23 10:01:55 +0900
-tags    : deep_knowledge
+title: Container
+summary: Docker, Kubernetes
+date: 2020-12-17 22:01:56 +0100
+updated: 2026-05-30 09:23:20
+tags: deep_knowledge
 ---
 
 # Container
@@ -281,6 +281,20 @@ kube-proxy라는 녀석도 같이 동작에 관여하는데 얘는 netfilter에 
 ingress는 그래서 한개의 로드밸런서로 여러 서비스를 유연하게 설정할 수 있게 해준다
 ingress는 ingress-controller가 동작하게 해야하고, 각 클라우드 플랫폼 마다 ingress-controller 구현체가 있다
 
+#### kubernetes toleration, taint
+- taint
+	- 노드에 설정
+	- 팟이 할당 안되도록 하는 설정
+	- 이름을 명시적으로 설정. (ex: system, normal, large)
+	- tolerations와 함께 써서 특정 노드에만 뜨게 하기 위해 사용
+- tolerations
+	- 팟에 설정
+	- key, operator, value, effect 를 taint에 설정된 것과 같게 입력해주면
+	- taint가 설정 되어 있어도 할당 되게 해줌
+	- 만약 해당 taint값이 없으면 생성이 실패되나?
+	- node selector와는 어떤 관계지
+	- node affinity도 있음
+
 #### deploy
 - 배포와 릴리즈를 분리
   쿠버네티스에 apply를 해도 실제 서버에 바로 적용되는게 아니라 서비스 메시에서
@@ -363,6 +377,12 @@ ram 1기가 서버에 ram 0.5를 쓰는 서비스를 6개를 레플리카하면 
 - 도메인별 클러스터에는 최대한 공용 인프라를 안쓰고
 - 중앙 클러스터에서 관리할 수 있도록 한다
 
+
+#### StatefulSet <-> deployment
+- deployment 대신 쓰는건데
+- service를 다른걸 쓴다
+- 파드가 죽다 살아나도 그 파드 그대로 사용된다
+![](Pasted%20image%2020260410105910.png)
 
 #### docker kubernetes istio
 | docker   | kubernetes                        | istio                        |
@@ -833,7 +853,8 @@ eks에서도 kubernetes metrics-server를 통해서 오토스케일링 조절하
 부하 테스트
 `ab -c 200 -n 200 -t 30 http://$(kubectl get ingress/backend-ingress -o jsonpath='{.status.loadBalancer.ingress[*].hostname}')/contents/aws`
 
-- [ ] provider "kubernetes"는 뭐지
+- provider "kubernetes"는 뭐지
+	- kubernetes manifest 를 terraform 으로 관리 할 수 있음
 
 #### 배포 후 롤백 테스트
 지금 서버에 버전 두 개 만들어서 올리고 배포 후, 테스트하고 롤백하는 것 10초 컷

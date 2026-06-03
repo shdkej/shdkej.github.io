@@ -2,7 +2,7 @@
 title: DevOps
 summary:
 date: 2021-12-04 13:02:50 +0900
-updated: 2025-07-23 10:03:03 +0900
+updated: 2026-05-31 12:01:19
 tags: deep_knowledge
 ---
 # DevOps
@@ -117,9 +117,9 @@ DevOps is the union of people, process, and products to enable continuous delive
 
 
 #### 궁금증
-- [프론트엔드 서비스를 통합 포인트로 설정할 수 있나?](Archive.md#프론트엔드%20서비스를%20통합%20포인트로%20설정할%20수%20있나?)
-- [프론트와 백엔드의 협업은 어떻게 진행되지?](Archive.md#프론트와%20백엔드의%20협업은%20어떻게%20진행되지?)
-- [스테이징 단계를 없앨 수 있을까?](Archive.md#without%20stage%20server)
+- [프론트엔드 서비스를 통합 포인트로 설정할 수 있나?](2025-Archive.md#프론트엔드%20서비스를%20통합%20포인트로%20설정할%20수%20있나?)
+- [프론트와 백엔드의 협업은 어떻게 진행되지?](2025-Archive.md#프론트와%20백엔드의%20협업은%20어떻게%20진행되지?)
+- [스테이징 단계를 없앨 수 있을까?](2025-Archive.md#without%20stage%20server)
 
 - 자주 쓰는 모듈을 이용해 프로젝트 진행 시 쓰게 되면, 쓰면서 개선한 부분이 이전 프로젝트에 적용되야 할 수도 있고 안되야 할 수도 있다 -> 현행 관리
 	- 전체 적용되도록 형태를 잡는다면 이전의 프로젝트에 적용하는 방법은?
@@ -379,10 +379,10 @@ Data - Preprocessing - Training - Test
 		- deploy에 dependencies 옵션을 주면 선택된 빌드의 빌드파일이 넘어간다
 		- [https://docs.gitlab.com/ee/ci/yaml/index.html#dependencies](https://docs.gitlab.com/ee/ci/yaml/index.html#dependencies)
 - [x] make workflow that docker build, tag, push
-    - [ ] lint, test, analytic test, synk per language
-    - [ ] stdout에서 markdown으로 출력할 때 줄바꿈 안하고, 컬러도 이상하게 읽힘
+    - lint, test, analytic test, synk per language
+    - stdout에서 markdown으로 출력할 때 줄바꿈 안하고, 컬러도 이상하게 읽힘
     - [x] tag를 생성하고 이를 이용해서 도커에도 적용시켜야 한다
-    - [ ] 동시에 changelog도 만들어야 한다.
+    - 동시에 changelog도 만들어야 한다.
     - [x] github tag와 docker tag 연동시키는 방법 찾기
 - 기타
 	- [github default context](https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context)

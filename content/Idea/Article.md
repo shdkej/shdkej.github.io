@@ -1,9 +1,9 @@
 ---
-title   : Article
-summary : internel explorer
-date    : 2025-07-14 20:52:00 +0100
-updated : 2025-07-23 10:13:41 +0900
-tags    : idea
+title: Article
+summary: internel explorer
+date: 2025-07-14 20:52:00 +0100
+updated: 2026-06-03 19:12:19
+tags: idea
 ---
 
 #### 북마크
@@ -261,9 +261,6 @@ Top mentioned books on stackoverflow.com
 문서화 하는 방법 등이 있는데
 
 포켓에 저장하면 검색할 때 포함 시킬 수 있을까?
-
-- [ ] 막힌 사이트 포켓에서 확인할 수 있는지 확인
-    - 포켓에서 어떤건 링크로 연결되고 어떤건 포켓 안에서 볼 수 있다. 뭐가 다르지
 
 읽은 글 중에는
 아 이런게 있구나 싶은게있고

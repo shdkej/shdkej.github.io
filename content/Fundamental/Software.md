@@ -2,7 +2,7 @@
 title: Software
 summary: Language, Web, Development
 date: 2020-04-06 14:37:26 +0100
-updated: 2025-07-23 10:07:33 +0900
+updated: 2025-12-31 18:10:39
 tags: fundamental
 ---
 

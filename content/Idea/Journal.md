@@ -2,14 +2,14 @@
 title: Journal
 summary: Let's make the results every day.
 date: 2020-04-02 08:55:34 +0100
-updated: 2025-07-23 10:14:23 +0900
+updated: 2026-06-01 22:43:35
 tags: idea
 ---
 
 이 전체 노트는 내가 몸에 새길 수 있는 것과 새겨져 있는 것들을 그림으로 그릴 수 있도록 정리해놓은 것이기 때문에 AI에게 물어보고 대답 받은 지식은 최대한 옮기지 않는다
 
 ## All
-- [[2025]]
+- [[diary/2025]]
 * [[2024]]
 * [2023](2023.md)
 * [2022](2022.md)
@@ -19,6 +19,11 @@ tags: idea
 * [2012](2012.md)
 
 ![graph](../img/graph.png)
+
+#### 연도별로 관리되는 페이지
+- Idea 카테고리
+- [[2025-Archive]]
+- [[Curiosity]]
 
 ## Writing technique
 
@@ -139,6 +144,12 @@ https://crmerry.tistory.com/56?category=1022504
 개발 책 중에 101 레시피 북은 별로 안좋아했는데, 사례의 나열이라 읽는데 기억에 안남고 국부적이라 그랬다. 심리학 책도 너무 많은 사례의 나열이라 머리속에 안남아서 별로 안좋아했다.
 
 ## 노트
+
+#### 노트에 집착하는 이유. 다 가지려는 이유
+- 이전의 실패 경험 및 배운걸 앞으로 잘 써먹기 위해
+- 어떻게 살아왔나 기억하기 위해
+- 나에 대해 잘 알기 위해
+
 #### 내가 노트에 바라는 것
 
 - 전체를 보는 방법을 알고 싶다. 전체를 그림처럼 갖고 있으면 세부는 필요할 때 꺼내 쓸 수 있다
@@ -408,142 +419,6 @@ compose link that related keyword.
 - 한 페이지에 같은 업무이면 같이 모으기 vs 페이지를 나눠서 적기
   한 페이지에 모으면 한 페이지만 보면 되게 된다
 
-## Todo-list
-
-#### todo에는
-- [x] 현재 처리하고 싶은 것
-- [x] 프로젝트성(여러날에 걸쳐 해야하는 것), 
-- [x] 미뤄둔 것이 있다. backlog
-- [x] 그리고 생각은 했는데 딱히 안하고 싶은 리스트도 있음
-- [x] 반복해야하는 것
-- [x] 그리고 내 삶에 체화시키고 싶은 행동방침이 있다. 
-	- 이게 너무 많아지면 다 할 수 없다
-- [x] 지속해야할 것
-- [x] 뭔가를 할 때 생각해야 하는 것
-- [x] 행동 방침은 principle 문서로 분리
-- 탐색형 - 끝나는 결과가 있는게 아니라 계속 탐구가능한 영역
-- 대기중인 것
-- 시스템 개선형
-
-#### Todolist for Each job
-When before making video, see todolist and do first.
-And when coding in pomodoro app, see todolist and do first
-When coding a use golang, do todolist.
-
-todo앱으로 관리할까
-
-- 매일매일 쌓이게 된다
-- 나중에 할 일과 분리가 필요하다
-
-todo <-> note how to flow
-
-#### 투두를 보고싶게 만들어야 한다
-
-노트의 연결도 의도하지 말고 자연스럽게 발생하도록 해야한다
-
-#### to-do-list
-
-auto create todo list when write todo?
-if done write a weekly note, remove that in a todo list
-todo organize main-todo menu automatically
-how to manage bookmark
-make todo.txt parsing and done button
-
-> to-do-list - start but not finished. Does it need a different list?
-> I have done-list. it is managed at week. done-list have category
-> to-do-list has a duration, 1hour, 1day, 1week, 1month, 1year
-> Pomodoro - to-do-list - shell - title-bar - kanban
-
-#### todo
-
-todo를 한 파일에 모을 필요 없이 - [ ] 키워드를 앞에 달아놓고 검색해서 확인하고 추가내용 적고 정리하면 생각나는대로 투두를 만들고 접근할 수 있다
-- 문제점은 투두의 우선순위가 명확하지 않고, 여기저기 섞이고, 너무 많아지는 것.
-- 검색을 보기 편하게 만들어야겠다.
-- `ag '\- \[ \]' 또는 ag '^- \[ \]'`
-- 옵시디언의 tasks를 쓰면 이게 잘 된다
-
-#### todo list 관리가 안된다!
-
-포모도로에서 투두리스트를 따로 관리해볼까
-그러려면 포모도로가 제공해주는 투두리스트의 기능이 따라줘야한다.
-그런 포모도로 타이머가 있을까...
-
-적는 형식도 뭔가 개선이 필요하다
-
-- 진짜 해야할 리스트와
-- 진행하면서 생긴 궁금증
-- 궁금했는데 잘못 안 것
-- 나중에 다시 써먹을 수 있는 문제 해결법
-
-히스토리 라인이 잘 보이면 좋겠다.
-
-#### 오늘 할일이 바탕화면에 리스트업 되있어야 한다
-
-바탕화면에서 표시해줄 수 있으면 좋겠다
-
-- 원노트 빠른노트의 페이지 수
-- 삼성녹음 신규 개수
-- inbox개수
-
-#### 라이프트래킹 목차 뽑기
-- 트래킹 목적
-	- 하루에 뭘 했는지 남기고 한줄정리
-	- 배운점 리마인드
-- 트래킹 플로우
-	- 클로드 리뷰 - 텔레그램 리뷰
-	- gpt 리뷰
-	- 오프라인 기록
-
-#### todo with timer
-인박스에 있던 것을 진행중으로 옮기면 타이머를 돌리게 하기
-완료로 옮기면 타이머 종료
-중지/다시시작 필요
-
-INBOX.md 에 있는 파일에서 단축키 입력하면 작업 시작
-작업을 시작하면 캘린더에 올리기. 시간 현재시간 추가
-캘린더와 텍스트 동시에 생성해서 텍스트파일은 리포트로 만들어야 함
-    - 캘린더를 파싱해서 텍스트파일로 만들면 되지 않을까?
-
-
-#### task management in vim
-command td
-quick add task to calendar
-pomodoro start
-> it can be check start time. but how can track finish time?
-
-task, doing, done
-write task category?
-develop: do something
-personal: write something
-
-use to verb: read something, write something, do something, develop something
-
-
-#### 메시지 100% 수신하기
-이메일
-휴대폰
-메신저
-업무 시에는 메신저를 통일 시킨다
-개인적으로는 이메일을 대표적인 수단으로 설정한다.
-리마인더를 이메일로 보낸다
-
-#### 아침에 메일이 쌓여있으면 얼른 다 읽고 치워버리고 싶다  
-이렇게 현재 집중할 문서가 아니라 남아있는 문서들을 처리할 생각에 현재에 집중하지 못하는 것이 있었다  
-  
-쌓여있는 것을 처리하는것에 신경쓰지말고 지금 보고 있는 것에 집중하려면 어떻게 해야할까  
-  
-눈에 안보이게 치워놓고 리마인드 걸어놓기?  
-눈에 보여도 신경 안쓰기?  
-
-#### rss로 안되는 업데이트 알림 받는 방법 확인
-좋아하는 작가의 신작
-- 알라딘, 리디북스에서 신간 알림 됨
-일반 도서, IT 도서 신간 알림 봇 있음
-내가 쓰는 소프트웨어 릴리즈 소식
-
-난 사진도 많이 안찍고 sns도 많이 안해서 정보가 적고 잘 모여있는 편인데도 한 곳에 모으기가 힘들다
-
-
 ## WIKI
 
 위키형식이 나에게 딱 맞는 방식인 것 같다.
@@ -764,36 +639,32 @@ vimwiki에서 :tag: 를 이용하면 태그가 된다
 - 가이드는 작성을 편하기 위한 포장도로를 까는 것이고 꼭 지킬 필요는 없다
 - 입력은 하나로, 출력은 여러 개
 - 업무를 하면서 노트를 적고, 배운 것들을 적는 것, 생각나는 것을 적는 것 각각 방식이 다르다
-
-- keep finding new function and upgrade
-
-- [ ] i want to set workflow through one click
-- [ ] how to set workflow efficiently
-  - what is workflow?
-- [ ] Is it need divide to-do with develop and daily?
-
-check pomodoro script -> manage pomodoro log
-before pomodoro -> need check what todo
+- [x] i want to set workflow through one click ✅ 2026-05-22
+- [x] how to set workflow efficiently ✅ 2026-05-22
+- [x] what is workflow?
+- [x] Is it need divide to-do with develop and daily? - need
+- check pomodoro script -> manage pomodoro log
+- before pomodoro -> need check what todo
 
 - duration
-  - 자주 다시 볼 글
-  - 미완료된 글
-- category
-  - 간단한 글은 킵노트
-  - 원페이지로 간단하게
+	- 자주 다시 볼 글
+	- 미완료된 글
+- category -> 노션으로 이동
+	- 간단한 글은 킵노트
+	- 원페이지로 간단하게
 - frequency
-  1.  다시 보기할 문서들이 있다 - 다시 볼 문서를 어떻게 정하면 좋을지
-  2.  잠깐 생각이 떠오르거나 궁금한 것들이 있다.
-  3.  오늘 할 일 관리를 어떻게 할지
+	1.  다시 보기할 문서들이 있다 - 다시 볼 문서를 어떻게 정하면 좋을지
+	2.  잠깐 생각이 떠오르거나 궁금한 것들이 있다.
+	3.  오늘 할 일 관리를 어떻게 할지
   - 다시 바로 확인할 내용, 언젠가 확인할 내용, 완료, 진행중,
 
-* structure
-  1. 요약
-  2. 큰 그림부터 작은 그림으로
-  3. 사례
-  4. 반례
-  5. 정리
-  6. 참고
+- 글 구조 잡기
+	1. 요약
+	2. 큰 그림부터 작은 그림으로
+	3. 사례
+	4. 반례
+	5. 정리
+	6. 참고
 
 #### category 1
 
@@ -906,6 +777,21 @@ Meta에 있는 것들을 정리하면서 기술적인 부분을 좀 정리하자
 - gpt로 만든 이미지를 군데군데 삽입한다
 - PARA, MECE
 - 성경 등 고전중에 고전을 인용하면 근본 있어보이고 작품의 깊이가 올라가는데 아닌 경우도 있다
+
+#### 할 일
+- [ ] 아이디어 노트와 출판 노트를 구분한다. 출판 후 피드백을 얻어본다. 화이트리스트로 하나씩 포인트를 정해서 피드백을 만들어본다
+- [ ] 글, 노트, 업무기록을 구조화, 시각화 하고 싶다
+- [ ] 글쓰기 스킬 (다의어 함축어를 명료하게 검토해주기?, 기본 글쓰기 규칙 적용되게)
+- [ ] 다이어리에 쓴걸 캘린더에 넣어서 1년마다 리마인더 할 수 있을까
+- [ ] 노트에서 한 눈에 보이는 주간 목표 캘린더 어떻게 구성하면 좋을까
+- [ ] 제텔카스텐의 메모박스를 온라인에서 구현하려면 어떻게 하면 될까 - 폴더트리는 와닿지 않고 눈에 잘 안띈다
+- [ ] 책이나 영화는 1년 단위로 나눠서 정산할 수 있고 그 외에 노트에서 연간 추적은 뭘 할 수 있을까
+- [ ] 추적과 그래프. 습관 - 습관 추적에 그래프 쓰는 노션 페이지 좋아보였음
+- [x] 캘린더로 계획을 세워서 그걸 지키는게 목표가 아니라 계획한걸 실제로 어떻게 했는지 확인하고 변경하면서 어떻게 진행되어왔는지 확인하는 식으로 쓰면 계획에 쫓기지 않을 수 있겠다 🔺 ✅ 2026-05-31
+- [ ] PARA 로 내 폴더 구조를 매핑 할 수 있을까🔽 
+- [ ] 북마크에 있는 것들을 노트에 녹이기🔽 
+- [ ] 기본기 잘 요약되어있는 블로그 연결 🔽 
+
 
 ## Template
 

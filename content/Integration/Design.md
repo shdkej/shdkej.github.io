@@ -2,7 +2,7 @@
 title: Design
 summary:
 date: 2020-05-18 15:53:37 +0100
-updated: 2025-07-23 10:21:39 +0900
+updated: 2026-02-28 13:45:16
 tags: integration
 ---
 

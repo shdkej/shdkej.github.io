@@ -1,9 +1,9 @@
 ---
-title   : Document
-summary : 어떻게 하면 문서화를 잘 할 수 있을까
-date    : 2020-08-04 20:50:58 +0100
-updated : 2025-07-23 09:59:12 +0900
-tags    : communication
+title: Document
+summary: 어떻게 하면 문서화를 잘 할 수 있을까
+date: 2020-08-04 20:50:58 +0100
+updated: 2026-02-28 13:45:51
+tags: communication
 ---
 
 ## 문서화

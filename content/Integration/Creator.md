@@ -1,9 +1,9 @@
 ---
-title   : 창작자들
-summary : Music, Construct, Artist, Directer, Author
-date    : 2020-09-29 23:59:25 +0100
-updated : 2025-07-23 10:20:13 +0900
-tags    : integration
+title: 창작자들
+summary: Music, Construct, Artist, Directer, Author
+date: 2020-09-29 23:59:25 +0100
+updated: 2026-02-19 11:26:47
+tags: integration
 ---
 
 ## 창작자가 있는 분야

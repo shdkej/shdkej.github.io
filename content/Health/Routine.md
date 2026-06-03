@@ -1,9 +1,9 @@
 ---
-title   : 루틴
-summary :
-date    : 2025-09-14 16:06:38 +0100
-updated : 2025-09-17 23:40:42 +0900
-tags    : health
+title: 루틴
+summary:
+date: 2025-09-14 16:06:38 +0100
+updated: 2026-05-03 21:15:39
+tags: health
 ---
 깨
 

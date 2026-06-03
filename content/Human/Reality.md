@@ -1,9 +1,9 @@
 ---
-title   : 현실 속에서 이상을 키우기
-summary : Reality
-date    : 2021-02-27 20:53:06 +0100
-updated : 2025-07-23 10:12:50 +0900
-tags    : human
+title: 현실 속에서 이상을 키우기
+summary: Reality
+date: 2021-02-27 20:53:06 +0100
+updated: 2025-07-31 22:53:03
+tags: human
 ---
 
 ## 이상과 현실

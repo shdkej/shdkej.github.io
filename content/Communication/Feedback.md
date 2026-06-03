@@ -2,7 +2,7 @@
 title: Feedback
 summary: review, communication, software
 date: 2020-11-15 20:42:56 +0100
-updated: 2021-07-22 18:23:23 +0900
+updated: 2026-05-31 12:01:19
 tags: communication
 ---
 
@@ -37,7 +37,7 @@ report, monitoring, response, communication
 영화현장에서 배두나가 빼어난 프로페셔널한 모습을 보여주니 다른 관계자들도
 프로페셔널한 부분을 끌어내려고 하는 선순환이 일어났다고 한다
 
-[[Archive#review of 6 months of german life]]
+[[2025-Archive#review of 6 months of german life]]
 
 #### 선순환
 

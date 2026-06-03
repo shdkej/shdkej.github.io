@@ -1,9 +1,9 @@
 ---
-title   : Teamwork
-summary : 여러 사람들과 일할 때의 기술과 배움
-date    : 2020-08-08 11:18:22 +0100
-updated : 2025-07-23 10:01:02 +0900
-tags    : communication
+title: Teamwork
+summary: 여러 사람들과 일할 때의 기술과 배움
+date: 2020-08-08 11:18:22 +0100
+updated: 2026-03-17 22:30:47
+tags: communication
 ---
 
 ## 서비스의 구조와 팀의 구조가 닮는다

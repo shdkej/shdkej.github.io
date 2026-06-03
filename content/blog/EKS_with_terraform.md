@@ -2,9 +2,10 @@
 title: EKS 맛보기
 summary: 근데 이제 Terraform을 곁들인
 date: 2021-08-15 14:41:14 +0900
-updated: 2021-08-17 22:18:42 +0900
+updated: 2025-06-26 21:04:10
 tags:
-parent: [[Blogging]]
+parent:
+  - - Blogging
 ---
 
 ## Terraform 을 이용해서 EKS 익히기

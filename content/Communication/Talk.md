@@ -2,7 +2,7 @@
 title: Communication
 summary:
 date: 2020-12-15 15:35:32 +0100
-updated: 2022-08-13 19:05:20 +0900
+updated: 2025-12-30 17:27:17
 tags: communication
 ---
 

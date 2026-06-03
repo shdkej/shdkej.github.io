@@ -1,9 +1,9 @@
 ---
-title   : 밸런스 맞추기
-summary : 중용, 딜레마, 조화, Balance
-date    : 2020-11-11 14:42:47 +0100
-updated : 2025-07-23 10:09:27 +0900
-tags    : human
+title: 밸런스 맞추기
+summary: 중용, 딜레마, 조화, Balance
+date: 2020-11-11 14:42:47 +0100
+updated: 2025-12-30 12:57:13
+tags: human
 ---
 
 ## Balance

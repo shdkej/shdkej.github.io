@@ -1,10 +1,11 @@
 ---
-title   : 노트북 작업환경
-summary : 13 vs 15 vs 17
-date    : 2021-03-03 20:59:13 +0100
-updated : 2025-07-23 09:57:25 +0900
-tags    :
-parent  : [[Blogging]]
+title: 노트북 작업환경
+summary: 13 vs 15 vs 17
+date: 2021-03-03 20:59:13 +0100
+updated: 2025-07-23 09:57:25
+tags:
+parent:
+  - - Blogging
 ---
 ## 요약
 고민에 해답이 아직 없다.

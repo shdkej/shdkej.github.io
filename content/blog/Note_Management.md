@@ -1,10 +1,11 @@
 ---
-title   : 노트를 어떻게 관리해야 할까
-summary :
-date    : 2021-07-22 17:09:54 +0900
-updated : 2024-03-21 09:17:03 +0900
-tags    :
-parent  : [[Blogging]]
+title: 노트를 어떻게 관리해야 할까
+summary:
+date: 2021-07-22 17:09:54 +0900
+updated: 2025-06-26 21:04:10
+tags:
+parent:
+  - - Blogging
 ---
 
 ## 노트를 왜 정리해야 하는가

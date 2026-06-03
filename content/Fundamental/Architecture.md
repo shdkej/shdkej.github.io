@@ -2,7 +2,7 @@
 title: 🚀 아키텍처
 summary: 변화, 정리, 순환, 측정
 date: 2020-05-07 20:51:37 +0100
-updated: 2025-07-23 10:05:21 +0900
+updated: 2026-05-31 12:01:19
 tags: fundamental
 ---
 
@@ -379,7 +379,7 @@ ci 이용 시나 push할 때 ssh permission을 확인하려는 목적인가?
 - 공개키를 서버에 등록해서 클라이언트가 비밀키를 가지고 있는다?
 - authorized_keys에 공개 키를 복사해 넣으면, 접속하는 곳에서 비밀키를 물어본다
 - .pem 파일은 뭐지 = 형태만 다른 private key와 같은 용도
-- [[Archive#내가 오해한 SSH key]]
+- [[2025-Archive#내가 오해한 SSH key]]
 
 GPG - 개인용 메시지를 암호화하려고 할 때 쓴다
 

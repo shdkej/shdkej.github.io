@@ -1,9 +1,9 @@
 ---
-title   : Love
-summary :
-date    : 2025-07-01 20:53:19 +0100
-updated : 2025-07-23 10:11:18 +0900
-tags    : human
+title: Love
+summary:
+date: 2025-07-01 20:53:19 +0100
+updated: 2025-12-30 01:08:18
+tags: human
 ---
 
 ## Love wins all

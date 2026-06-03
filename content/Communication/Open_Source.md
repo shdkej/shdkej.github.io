@@ -1,9 +1,9 @@
 ---
-title   : Open Source
-summary : Open is powerful
-date    : 2020-07-26 10:39:37 +0100
-updated : 2021-07-14 17:59:41 +0900
-tags    : communication
+title: Open Source
+summary: Open is powerful
+date: 2020-07-26 10:39:37 +0100
+updated: 2025-07-22 22:55:26
+tags: communication
 ---
 
 ## 오픈소스 기여하기

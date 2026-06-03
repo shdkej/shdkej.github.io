@@ -1,9 +1,9 @@
 ---
-title   : Economics
-summary : And money management
-date    : 2020-05-06 12:29:12 +0100
-updated : 2025-07-23 10:21:48 +0900
-tags    : integration
+title: Economics
+summary: And money management
+date: 2020-05-06 12:29:12 +0100
+updated: 2026-03-17 22:29:36
+tags: integration
 ---
 
 ## 경기 사이클

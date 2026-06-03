@@ -1,35 +1,63 @@
 ---
-title   : Linux, GIT, ETC
-summary : fundamental tool
-date    : 2020-05-06 19:57:59 +0100
-updated : 2025-08-01 07:14:21 +0900
-tags    : fundamental
+title: Linux, GIT, ETC
+summary: fundamental tool
+date: 2020-05-06 19:57:59 +0100
+updated: 2026-05-31 01:43:44
+tags: fundamental
 ---
 
-#### 사용 툴 정리
-- traefik
-- signoz
-- grafana - prometheus
-- gitlab in local
-- docker 명령어 shortcut 등록
-- brew 나 asdf, npm 등 글로벌로 설치하는 것들을 따로 모아서 파일로 저장하는 스크립트 돌리기
-- 깃헙 액션
+#### 사용 툴 정리 (빈도순)
+- obsidian
+- tailscale
+- claude
+- docker
+- telegram
+- pencil
+- git
 - 깃헙
-- nextjs
-- Pencil
-- Ga4
-- Grafana
-- Jenkins
-- Kubernetes
-- k3s
-	- tool
-		- n8n
-		- tailscale
-	- service
-		- note server - redis
-		- wiki - postgres
-		- searching - elasticsearch
-- argocd
+- 인프라
+	- grafana - prometheus
+	- Kubernetes (k3s)
+	- Jenkins
+	- argocd
+	- ~~traefik~~
+	- ~~signoz~~
+- 기반
+	- nextjs
+	- redis
+	- python
+	- postgres
+	- typescript
+- SaaS
+	- ga4
+	- posthog
+- 개발도구
+	- vim
+	- asdf
+	- hammerspoon
+	- slack
+	- raycast
+	- appcleaner
+	- scroll-reverser
+	- karabiner-elements
+	- maccy
+	- folder hub
+	- stats
+- CLI 도구
+	- brew "fzf"
+	- brew "bat"
+	- brew "jq"
+	- brew "gh"
+	- brew "the_silver_searcher"
+	- brew "ripgrep"
+	- brew "pandoc"
+	- brew "awscli"
+	- brew "aws-vault"
+	- brew "saml2aws"
+	- brew "ffmpeg"
+	- brew "helm"
+	- brew "derailed/k9s/k9s"
+	- brew "minikube"
 
 #### 블로그 소프트웨어 탑 텐
 1. 맥 도구
@@ -1302,6 +1330,15 @@ Host github.com
 
 #### git pull 했을 때 컨플릭트 나서 되돌리고 싶다면
 `git merge --abort`
+
+#### 변경 파일만 검사하는 lint
+- git diff
+	- `git diff $(git merge-base origin/${base} origin/${head})..origin/${head} --name-only --diff-filter=d | grep -E '.(js|jsx|ts|tsx)$'`
+	- git merge-base : base 브랜치와 타겟 브랜치의 공통 조상을 찾는다
+	- -name-only : 파일 이름만 출력한다.
+	- -diff-filter=d : 삭제된 파일은 제외한다
+	- grep -E : 특정 확장자만 필터링
+- github actions에서 fetch 기본값은 최신 커밋 하나만 가져오는 건데 공통조상을 찾기 위해 전체 히스토리를 가져옴
 
 
 # ETC

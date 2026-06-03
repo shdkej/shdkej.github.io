@@ -2,7 +2,7 @@
 title: Math
 summary: Math, Physics, Electronics
 date: 2020-05-07 20:58:03 +0100
-updated: 2025-07-23 10:06:32 +0900
+updated: 2025-07-31 00:05:19
 tags: fundamental
 ---
 

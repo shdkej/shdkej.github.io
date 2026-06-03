@@ -1,9 +1,9 @@
 ---
-title   : 미래
-summary : Plan, Goal, Milestone
-date    : 2021-02-27 20:54:15 +0100
-updated : 2025-07-23 10:12:29 +0900
-tags    : human
+title: 미래
+summary: Plan, Goal, Milestone
+date: 2021-02-27 20:54:15 +0100
+updated: 2025-07-23 10:12:29
+tags: human
 ---
 
 # 목표, 계획, 시간, 다음 세대
