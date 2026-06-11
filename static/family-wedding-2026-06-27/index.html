@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f7eee4" />
+    <meta name="theme-color" content="#f4f2ee" />
     <meta property="og:title" content="노성호 · 김현진 가족식 안내" />
     <meta
       property="og:description"
@@ -12,12 +12,14 @@
     <title>노성호 · 김현진 가족식 안내</title>
     <style>
       :root {
-        --cream: #f7eee4;
-        --paper: #fffdf9;
-        --ink: #4a4742;
-        --soft: #8b8175;
-        --line: #b88d61;
-        --pale-line: rgba(184, 141, 97, 0.28);
+        --wall: #f4f2ee;
+        --paper: #fffefb;
+        --paper-warm: #fbf7f0;
+        --ink: #252321;
+        --muted: #76716a;
+        --hairline: rgba(37, 35, 33, 0.14);
+        --shadow: rgba(52, 47, 42, 0.18);
+        --accent: #a33b31;
       }
 
       * {
@@ -25,7 +27,7 @@
       }
 
       html {
-        background: var(--cream);
+        background: var(--wall);
         scroll-behavior: smooth;
       }
 
@@ -33,105 +35,292 @@
         margin: 0;
         min-height: 100vh;
         color: var(--ink);
-        background: var(--cream);
+        background:
+          radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.95), transparent 34%),
+          linear-gradient(110deg, rgba(210, 207, 200, 0.18), transparent 42%),
+          var(--wall);
         font-family:
-          "Avenir Next", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+          "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
         letter-spacing: 0;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        content: "";
+        pointer-events: none;
+        opacity: 0.5;
+        background-image:
+          linear-gradient(90deg, rgba(255, 255, 255, 0.24) 1px, transparent 1px),
+          linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+        background-size: 7px 7px;
+        mix-blend-mode: multiply;
       }
 
       main {
         width: min(100%, 560px);
         margin: 0 auto;
-        background: var(--cream);
+        background: transparent;
       }
 
       .hero {
         position: relative;
         display: grid;
-        min-height: 100vh;
-        padding: 72px 26px 54px;
+        min-height: 100svh;
+        padding: 54px 22px 44px;
         overflow: hidden;
         place-items: center;
         text-align: center;
       }
 
-      .hero::before,
-      .hero::after {
-        position: absolute;
-        bottom: 16%;
-        width: 190px;
-        height: 260px;
-        content: "";
-        opacity: 0.56;
-        background: url("./assets/branch.svg") center / contain no-repeat;
-        filter: sepia(0.38) saturate(0.86) hue-rotate(348deg);
-      }
-
       .hero::before {
-        left: -54px;
-        transform: rotate(-8deg);
-      }
-
-      .hero::after {
-        right: -54px;
-        transform: scaleX(-1) rotate(-8deg);
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        width: 420px;
+        height: 420px;
+        content: "";
+        background: rgba(255, 255, 255, 0.42);
+        filter: blur(22px);
+        transform: translateX(-50%);
       }
 
       .hero-inner {
         position: relative;
         z-index: 1;
         display: grid;
-        justify-items: center;
+        gap: 36px;
+        width: min(calc(100vw - 28px), 362px);
+      }
+
+      .paper-stack {
+        position: relative;
+        min-height: 414px;
         width: 100%;
       }
 
-      .eyebrow {
-        margin: 0 0 58px;
-        color: var(--line);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 0.88rem;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-      }
-
-      .small-title {
-        margin: 0 0 42px;
-        color: var(--line);
-        font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
-        font-size: 1.08rem;
-        font-weight: 400;
-        letter-spacing: 0.28em;
-      }
-
-      .names {
+      .paper-card {
+        position: absolute;
         display: grid;
-        gap: 16px;
-        margin: 0 0 46px;
-        font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
-        font-size: clamp(2.8rem, 12vw, 4.7rem);
+        background:
+          linear-gradient(115deg, rgba(255, 255, 255, 0.94), rgba(251, 247, 240, 0.78)),
+          var(--paper);
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        box-shadow:
+          0 28px 38px rgba(54, 50, 44, 0.16),
+          0 2px 8px rgba(54, 50, 44, 0.08);
+      }
+
+      .paper-card::before,
+      .paper-section::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        pointer-events: none;
+        opacity: 0.24;
+        background-image:
+          linear-gradient(90deg, rgba(70, 62, 54, 0.045) 1px, transparent 1px),
+          linear-gradient(rgba(70, 62, 54, 0.035) 1px, transparent 1px);
+        background-size: 9px 9px;
+      }
+
+      .cover-card {
+        top: 50px;
+        left: 0;
+        z-index: 2;
+        width: 170px;
+        min-height: 252px;
+        padding: 21px 18px 16px;
+        transform: rotate(-1.2deg);
+      }
+
+      .detail-card {
+        right: 0;
+        bottom: 22px;
+        z-index: 1;
+        width: 166px;
+        min-height: 286px;
+        padding: 22px 16px 15px;
+        transform: rotate(1.4deg);
+      }
+
+      .cover-title {
+        margin: 0;
+        font-family: Didot, "Bodoni 72", "Times New Roman", serif;
+        font-size: 1.74rem;
         font-weight: 400;
-        line-height: 1.05;
+        line-height: 0.86;
+        letter-spacing: 0;
+        text-align: left;
+      }
+
+      .cover-title span {
+        display: block;
+      }
+
+      .cover-names {
+        margin: 5px 0 22px;
+        font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
+        font-size: 0.74rem;
+        letter-spacing: 0.1em;
+        text-align: left;
+      }
+
+      .cover-photo {
+        position: relative;
+        display: grid;
+        height: 78px;
+        margin: 0 4px 26px;
+        overflow: hidden;
+        place-items: center;
+        background:
+          linear-gradient(135deg, rgba(231, 209, 196, 0.72), rgba(246, 238, 228, 0.92)),
+          var(--paper-warm);
+      }
+
+      .cover-photo::before {
+        width: 76px;
+        height: 76px;
+        content: "";
+        opacity: 0.72;
+        background: url("./assets/branch.svg") center / contain no-repeat;
+        filter: grayscale(0.18) sepia(0.34);
+        transform: rotate(26deg);
+      }
+
+      .card-dot {
+        display: block;
+        width: 5px;
+        height: 5px;
+        margin: 0 auto 12px;
+        border-radius: 999px;
+        background: var(--ink);
+      }
+
+      .card-small {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.58rem;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      .detail-mark {
+        display: block;
+        width: 18px;
+        height: 18px;
+        margin: 0 auto 18px;
+        border: 1px solid var(--ink);
+        border-radius: 50%;
+      }
+
+      .detail-mark::after {
+        display: block;
+        width: 6px;
+        height: 6px;
+        margin: 5px auto;
+        content: "";
+        border-radius: 50%;
+        background: var(--ink);
+      }
+
+      .detail-heading {
+        margin: 0 0 18px;
+        font-family: Didot, "Bodoni 72", "Times New Roman", serif;
+        font-size: 0.8rem;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        text-align: center;
+      }
+
+      .mini-message {
+        margin: 0 auto 19px;
+        color: var(--muted);
+        font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
+        font-size: 0.5rem;
+        line-height: 1.8;
+        text-align: center;
         word-break: keep-all;
       }
 
-      .names span:nth-child(2) {
-        color: var(--line);
-        font-size: 1.2rem;
-        line-height: 1;
+      .mini-info {
+        display: grid;
+        gap: 8px;
+        margin: 0 0 16px;
+        padding: 12px 0;
+        border-top: 1px solid var(--hairline);
+        border-bottom: 1px solid var(--hairline);
+        font-size: 0.5rem;
+        line-height: 1.55;
+        text-align: center;
       }
 
-      .date {
-        color: #5a544d;
-        font-size: 0.98rem;
-        line-height: 1.85;
+      .calendar {
+        display: grid;
+        max-width: 106px;
+        margin: 0 auto 15px;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px 6px;
+        color: var(--muted);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 0.44rem;
+      }
+
+      .calendar b {
+        color: var(--ink);
+        font-weight: 400;
+      }
+
+      .calendar .heart {
+        color: var(--accent);
+        font-size: 0.58rem;
+      }
+
+      .detail-code {
+        display: grid;
+        grid-template-columns: 1fr 26px;
+        gap: 8px;
+        align-items: end;
+        color: var(--muted);
+        font-size: 0.5rem;
+        line-height: 1.4;
+        text-align: left;
+      }
+
+      .qr {
+        display: grid;
+        width: 26px;
+        height: 26px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+        padding: 2px;
+        background: var(--ink);
+      }
+
+      .qr span {
+        background: var(--paper);
+      }
+
+      .hero-caption {
+        display: grid;
+        gap: 9px;
+        justify-items: center;
+      }
+
+      .brand {
+        margin: 0;
+        font-family: Didot, "Bodoni 72", "Times New Roman", serif;
+        font-size: 1.03rem;
+        line-height: 0.92;
+      }
+
+      .hero-date {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.6;
         word-break: keep-all;
-      }
-
-      .place {
-        margin-top: 10px;
-        color: var(--soft);
-        font-size: 0.9rem;
-        line-height: 1.7;
       }
 
       .scroll-mark {
@@ -141,7 +330,7 @@
         width: 1px;
         height: 42px;
         overflow: hidden;
-        background: rgba(184, 141, 97, 0.24);
+        background: rgba(37, 35, 33, 0.18);
         transform: translateX(-50%);
       }
 
@@ -150,7 +339,7 @@
         width: 1px;
         height: 14px;
         content: "";
-        background: var(--line);
+        background: var(--ink);
         animation: drift 1.8s ease-in-out infinite;
       }
 
@@ -165,103 +354,106 @@
 
       section {
         position: relative;
-        padding: 76px 28px;
+        padding: 50px 24px;
+      }
+
+      .paper-section {
+        position: relative;
+        width: min(calc(100% - 34px), 430px);
+        margin: 0 auto 28px;
+        padding: 38px 28px;
+        overflow: hidden;
+        background:
+          linear-gradient(115deg, rgba(255, 255, 255, 0.92), rgba(251, 247, 240, 0.8)),
+          var(--paper);
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        box-shadow: 0 22px 42px rgba(54, 50, 44, 0.13);
+      }
+
+      .section-kicker {
+        margin: 0 0 22px;
+        color: var(--muted);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
         text-align: center;
-      }
-
-      section::before {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 42px;
-        height: 1px;
-        content: "";
-        background: var(--pale-line);
-        transform: translateX(-50%);
-      }
-
-      .ornament {
-        display: grid;
-        width: 58px;
-        height: 58px;
-        margin: 0 auto 34px;
-        place-items: center;
-      }
-
-      .ornament svg {
-        width: 58px;
-        height: 58px;
-        stroke: var(--line);
+        text-transform: uppercase;
       }
 
       .message {
-        max-width: 22rem;
         margin: 0 auto;
         font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
-        font-size: 1.06rem;
-        line-height: 2.12;
+        font-size: 1.02rem;
+        line-height: 2.05;
+        text-align: center;
         word-break: keep-all;
       }
 
       .note {
-        max-width: 20rem;
-        margin: 36px auto 0;
-        color: var(--soft);
-        font-size: 0.94rem;
+        margin: 28px auto 0;
+        color: var(--muted);
+        font-size: 0.9rem;
         line-height: 1.9;
+        text-align: center;
         word-break: keep-all;
       }
 
       .details {
         display: grid;
-        max-width: 22rem;
-        margin: 0 auto;
-        gap: 24px;
-        text-align: left;
+        gap: 0;
       }
 
       .detail-row {
         display: grid;
-        gap: 7px;
-        padding-bottom: 22px;
-        border-bottom: 1px solid rgba(184, 141, 97, 0.18);
+        grid-template-columns: 82px 1fr;
+        gap: 18px;
+        padding: 17px 0;
+        border-bottom: 1px solid var(--hairline);
+        text-align: left;
+      }
+
+      .detail-row:first-child {
+        padding-top: 0;
       }
 
       .detail-row:last-child {
+        padding-bottom: 0;
         border-bottom: 0;
       }
 
       .detail-key {
-        color: var(--line);
-        font-size: 0.8rem;
-        font-weight: 800;
-        letter-spacing: 0.14em;
+        color: var(--muted);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
       }
 
       .detail-value {
         margin: 0;
         color: var(--ink);
-        font-size: 1rem;
-        line-height: 1.72;
+        font-size: 0.94rem;
+        line-height: 1.7;
         word-break: keep-all;
       }
 
       .closing {
-        padding-bottom: 88px;
+        padding-top: 24px;
+        padding-bottom: 82px;
+        text-align: center;
       }
 
       .closing p {
         max-width: 20rem;
         margin: 0 auto;
-        color: var(--soft);
+        color: var(--muted);
         line-height: 1.9;
         word-break: keep-all;
       }
 
       .signature {
         margin-top: 30px;
-        color: var(--ink);
-        font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
+        color: var(--muted);
+        font-family: Didot, "Bodoni 72", "Times New Roman", serif;
         font-size: 1.12rem;
       }
 
@@ -289,7 +481,7 @@
       .contact-button:focus-visible,
       .contact-dialog button:focus-visible,
       .contact-dialog a:focus-visible {
-        outline: 2px solid rgba(184, 141, 97, 0.52);
+        outline: 2px solid rgba(37, 35, 33, 0.38);
         outline-offset: 4px;
       }
 
@@ -298,10 +490,11 @@
         width: 42px;
         height: 42px;
         place-items: center;
-        border: 1px solid var(--pale-line);
+        border: 1px solid var(--hairline);
         border-radius: 999px;
-        color: var(--line);
-        background: rgba(255, 253, 249, 0.48);
+        color: var(--ink);
+        background: var(--paper);
+        box-shadow: 0 12px 24px rgba(54, 50, 44, 0.08);
       }
 
       .phone-icon svg {
@@ -313,7 +506,7 @@
       .contact-dialog {
         width: min(calc(100% - 44px), 340px);
         padding: 32px 28px 28px;
-        border: 1px solid rgba(184, 141, 97, 0.24);
+        border: 1px solid rgba(255, 255, 255, 0.88);
         color: var(--ink);
         background: var(--paper);
         box-shadow: 0 22px 70px rgba(74, 71, 66, 0.22);
@@ -326,8 +519,8 @@
 
       .contact-dialog-title {
         margin: 0 0 22px;
-        color: var(--line);
-        font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
+        color: var(--ink);
+        font-family: Didot, "Bodoni 72", "Times New Roman", serif;
         font-size: 1.08rem;
         font-weight: 400;
         letter-spacing: 0.18em;
@@ -343,7 +536,7 @@
         display: grid;
         gap: 5px;
         padding-bottom: 16px;
-        border-bottom: 1px solid rgba(184, 141, 97, 0.16);
+        border-bottom: 1px solid var(--hairline);
       }
 
       .contact-person:last-child {
@@ -357,7 +550,7 @@
       }
 
       .phone-number {
-        color: var(--line);
+        color: var(--ink);
         font-family: Georgia, "Times New Roman", serif;
         font-size: 1.06rem;
         text-decoration: none;
@@ -366,9 +559,9 @@
       .contact-close {
         margin-top: 26px;
         padding: 9px 18px;
-        border: 1px solid rgba(184, 141, 97, 0.26);
+        border: 1px solid var(--hairline);
         border-radius: 999px;
-        color: var(--soft);
+        color: var(--muted);
         cursor: pointer;
         font-family: inherit;
         font-size: 0.86rem;
@@ -377,41 +570,74 @@
 
       @media (max-width: 430px) {
         .hero {
-          padding: 68px 22px 52px;
+          padding: 44px 14px 42px;
         }
 
-        .hero::before,
-        .hero::after {
-          bottom: 16%;
-          width: 150px;
-          height: 220px;
+        .hero-inner {
+          gap: 28px;
+          width: min(calc(100vw - 28px), 362px);
         }
 
-        .hero::before {
-          left: -62px;
+        .paper-stack {
+          min-height: 414px;
         }
 
-        .hero::after {
-          right: -62px;
+        .cover-card {
+          top: 50px;
+          left: 0;
+          width: 170px;
+          min-height: 252px;
+          padding: 21px 18px 16px;
         }
 
-        .eyebrow {
-          margin-bottom: 52px;
+        .detail-card {
+          right: 0;
+          bottom: 22px;
+          width: 166px;
+          min-height: 286px;
+          padding: 22px 16px 15px;
+        }
+
+        .cover-title {
+          font-size: 1.74rem;
+        }
+
+        .cover-names {
+          font-size: 0.74rem;
+        }
+
+        .cover-photo {
+          height: 78px;
+          margin-inline: 4px;
+        }
+
+        .detail-heading {
           font-size: 0.8rem;
         }
 
-        .small-title {
-          margin-bottom: 36px;
+        .mini-message,
+        .mini-info {
+          font-size: 0.5rem;
         }
 
-        .names {
-          gap: 14px;
-          margin-bottom: 42px;
-          font-size: 3.1rem;
+        .calendar {
+          max-width: 106px;
+          gap: 5px 6px;
+          font-size: 0.44rem;
         }
 
         section {
-          padding: 68px 24px;
+          padding: 38px 18px;
+        }
+
+        .paper-section {
+          width: 100%;
+          padding: 34px 24px;
+        }
+
+        .detail-row {
+          grid-template-columns: 74px 1fr;
+          gap: 14px;
         }
       }
     </style>
@@ -420,62 +646,90 @@
     <main>
       <header class="hero" aria-label="6월 27일 가족식 안내장">
         <div class="hero-inner">
-          <p class="eyebrow">Celebrate with us</p>
-          <p class="small-title">가족식</p>
-          <h1 class="names">
-            <span>조용히</span>
-            <span>그리고</span>
-            <span>부드럽게</span>
-          </h1>
-          <div class="date">
-            2026년 6월 27일 토요일 낮 12시
-            <div class="place">가까운 가족들과 함께하는 작은 예식</div>
+          <div class="paper-stack" aria-hidden="true">
+            <div class="paper-card cover-card">
+              <h1 class="cover-title">
+                <span>WEDDING</span>
+                <span>DAY OF</span>
+              </h1>
+              <p class="cover-names">SUNGHO &amp; HYUNJIN</p>
+              <div class="cover-photo"></div>
+              <span class="card-dot"></span>
+              <p class="card-small">2026.06.27 SATURDAY<br />12:00 PM</p>
+            </div>
+            <div class="paper-card detail-card">
+              <span class="detail-mark"></span>
+              <p class="detail-heading">INVITATION</p>
+              <p class="mini-message">
+                가까운 가족들과 조용히 예식을 진행하게 되어 소식 전합니다.
+              </p>
+              <div class="mini-info">
+                <span>노성호 · 김현진</span>
+                <span>2026년 6월 27일 토요일</span>
+                <span>낮 12시</span>
+              </div>
+              <div class="calendar" aria-label="2026년 6월 달력">
+                <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+                <span></span><b>1</b><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+                <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><b class="heart">27</b>
+              </div>
+              <div class="detail-code">
+                <span>Family ceremony<br />details by private notice</span>
+                <span class="qr" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-caption">
+            <p class="brand">Atelier<br />Papier</p>
+            <p class="hero-date">노성호 · 김현진 가족식 안내<br />2026년 6월 27일 토요일 낮 12시</p>
           </div>
         </div>
         <div class="scroll-mark" aria-hidden="true"></div>
       </header>
 
       <section>
-        <div class="ornament" aria-hidden="true">
-          <svg viewBox="0 0 64 64" fill="none">
-            <path d="M19 36c8-18 24-18 30-7" stroke-width="1.5" stroke-linecap="round" />
-            <path d="M24 33c-5-10-2-18 8-22 5 8 3 16-5 22" stroke-width="1.2" stroke-linecap="round" />
-            <path d="M37 31c6-8 14-8 20-1-6 7-14 7-20 1Z" stroke-width="1.2" stroke-linejoin="round" />
-            <path d="M20 42c10 7 24 7 34-1" stroke-width="1.2" stroke-linecap="round" />
-          </svg>
+        <div class="paper-section">
+          <p class="section-kicker">With gratitude</p>
+          <p class="message">
+            늘 보내주신 마음과 응원 덕분에 저희가 새로운 시작을 준비하게
+            되었습니다. 이번 예식은 가족식으로 작게 진행하며, 직접 모시지 못하는
+            분들께도 따뜻한 마음으로 먼저 소식을 전합니다.
+          </p>
+          <p class="note">
+            축하의 마음은 멀리서 전해주셔도 충분히 감사히 받겠습니다.
+            차분히 잘 마치고, 좋은 소식으로 다시 인사드리겠습니다.
+          </p>
         </div>
-        <p class="message">
-          늘 보내주신 마음과 응원 덕분에 저희가 새로운 시작을 준비하게
-          되었습니다. 이번 예식은 가족식으로 작게 진행하며, 직접 모시지 못하는
-          분들께도 따뜻한 마음으로 먼저 소식을 전합니다.
-        </p>
-        <p class="note">
-          축하의 마음은 멀리서 전해주셔도 충분히 감사히 받겠습니다.
-          차분히 잘 마치고, 좋은 소식으로 다시 인사드리겠습니다.
-        </p>
       </section>
 
       <section>
-        <div class="details">
-          <div class="detail-row">
-            <div class="detail-key">COUPLE</div>
-            <p class="detail-value">노성호 · 김현진</p>
-          </div>
-          <div class="detail-row">
-            <div class="detail-key">DATE</div>
-            <p class="detail-value">2026년 6월 27일 토요일</p>
-          </div>
-          <div class="detail-row">
-            <div class="detail-key">TIME</div>
-            <p class="detail-value">낮 12시</p>
-          </div>
-          <div class="detail-row">
-            <div class="detail-key">CEREMONY</div>
-            <p class="detail-value">가까운 가족들과 함께하는 가족식</p>
-          </div>
-          <div class="detail-row">
-            <div class="detail-key">NOTICE</div>
-            <p class="detail-value">장소와 세부 일정은 필요한 분들께 개별로 전하겠습니다.</p>
+        <div class="paper-section">
+          <p class="section-kicker">Details</p>
+          <div class="details">
+            <div class="detail-row">
+              <div class="detail-key">COUPLE</div>
+              <p class="detail-value">노성호 · 김현진</p>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">DATE</div>
+              <p class="detail-value">2026년 6월 27일 토요일</p>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">TIME</div>
+              <p class="detail-value">낮 12시</p>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">CEREMONY</div>
+              <p class="detail-value">가까운 가족들과 함께하는 가족식</p>
+            </div>
+            <div class="detail-row">
+              <div class="detail-key">NOTICE</div>
+              <p class="detail-value">장소와 세부 일정은 필요한 분들께 개별로 전하겠습니다.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -493,7 +747,7 @@
           </button>
         </div>
         <dialog class="contact-dialog" id="contactDialog" aria-labelledby="contactDialogTitle">
-          <p class="contact-dialog-title" id="contactDialogTitle">연락처</p>
+          <p class="contact-dialog-title" id="contactDialogTitle">Contact</p>
           <div class="contact-list">
             <div class="contact-person">
               <span class="contact-name">노성호</span>
@@ -506,7 +760,7 @@
           </div>
           <button class="contact-close" type="button">닫기</button>
         </dialog>
-        <div class="signature">마음을 담아 드림</div>
+        <div class="signature">Atelier Papier</div>
       </section>
     </main>
     <script>
