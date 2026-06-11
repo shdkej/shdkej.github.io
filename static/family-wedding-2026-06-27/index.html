@@ -267,30 +267,30 @@
 
       .contacts {
         display: grid;
-        gap: 14px;
+        justify-items: center;
         max-width: 20rem;
         margin: 36px auto 0;
       }
 
-      .contact-card {
-        border-bottom: 1px solid rgba(184, 141, 97, 0.18);
-      }
-
-      .contact-card summary {
+      .contact-button {
         display: grid;
-        grid-template-columns: 42px 1fr;
+        grid-template-columns: 42px auto;
         gap: 12px;
         align-items: center;
-        padding: 12px 0;
+        padding: 0;
+        border: 0;
         color: var(--ink);
         cursor: pointer;
         font-size: 0.96rem;
-        list-style: none;
-        text-align: left;
+        font-family: inherit;
+        background: transparent;
       }
 
-      .contact-card summary::-webkit-details-marker {
-        display: none;
+      .contact-button:focus-visible,
+      .contact-dialog button:focus-visible,
+      .contact-dialog a:focus-visible {
+        outline: 2px solid rgba(184, 141, 97, 0.52);
+        outline-offset: 4px;
       }
 
       .phone-icon {
@@ -310,13 +310,69 @@
         stroke: currentColor;
       }
 
+      .contact-dialog {
+        width: min(calc(100% - 44px), 340px);
+        padding: 32px 28px 28px;
+        border: 1px solid rgba(184, 141, 97, 0.24);
+        color: var(--ink);
+        background: var(--paper);
+        box-shadow: 0 22px 70px rgba(74, 71, 66, 0.22);
+        text-align: center;
+      }
+
+      .contact-dialog::backdrop {
+        background: rgba(74, 71, 66, 0.28);
+      }
+
+      .contact-dialog-title {
+        margin: 0 0 22px;
+        color: var(--line);
+        font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
+        font-size: 1.08rem;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 16px;
+        margin: 0;
+      }
+
+      .contact-person {
+        display: grid;
+        gap: 5px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(184, 141, 97, 0.16);
+      }
+
+      .contact-person:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .contact-name {
+        color: var(--ink);
+        font-size: 0.94rem;
+      }
+
       .phone-number {
-        display: block;
-        padding: 0 0 16px 54px;
         color: var(--line);
         font-family: Georgia, "Times New Roman", serif;
         font-size: 1.06rem;
         text-decoration: none;
+      }
+
+      .contact-close {
+        margin-top: 26px;
+        padding: 9px 18px;
+        border: 1px solid rgba(184, 141, 97, 0.26);
+        border-radius: 999px;
+        color: var(--soft);
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 0.86rem;
+        background: transparent;
       }
 
       @media (max-width: 430px) {
@@ -423,31 +479,55 @@
       <section class="closing">
         <p>조용한 시작을 따뜻하게 지켜봐 주셔서 감사합니다.</p>
         <div class="contacts" aria-label="연락처">
-          <details class="contact-card">
-            <summary>
-              <span class="phone-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.66 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.22a2 2 0 0 1 2.11-.45c.91.31 1.85.53 2.81.66A2 2 0 0 1 22 16.92Z" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              노성호 연락처
-            </summary>
-            <a class="phone-number" href="tel:01031774206">010-3177-4206</a>
-          </details>
-          <details class="contact-card">
-            <summary>
-              <span class="phone-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.66 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.22a2 2 0 0 1 2.11-.45c.91.31 1.85.53 2.81.66A2 2 0 0 1 22 16.92Z" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-              김현진 연락처
-            </summary>
-            <a class="phone-number" href="tel:01095540314">010-9554-0314</a>
-          </details>
+          <button class="contact-button" type="button" aria-haspopup="dialog" aria-controls="contactDialog">
+            <span class="phone-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.66 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.22a2 2 0 0 1 2.11-.45c.91.31 1.85.53 2.81.66A2 2 0 0 1 22 16.92Z" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+            연락처 보기
+          </button>
         </div>
+        <dialog class="contact-dialog" id="contactDialog" aria-labelledby="contactDialogTitle">
+          <p class="contact-dialog-title" id="contactDialogTitle">연락처</p>
+          <div class="contact-list">
+            <div class="contact-person">
+              <span class="contact-name">노성호</span>
+              <a class="phone-number" href="tel:01031774206">010-3177-4206</a>
+            </div>
+            <div class="contact-person">
+              <span class="contact-name">김현진</span>
+              <a class="phone-number" href="tel:01095540314">010-9554-0314</a>
+            </div>
+          </div>
+          <button class="contact-close" type="button">닫기</button>
+        </dialog>
         <div class="signature">마음을 담아 드림</div>
       </section>
     </main>
+    <script>
+      const contactButton = document.querySelector(".contact-button");
+      const contactDialog = document.querySelector("#contactDialog");
+      const contactClose = document.querySelector(".contact-close");
+
+      contactButton.addEventListener("click", () => {
+        if (typeof contactDialog.showModal === "function") {
+          contactDialog.showModal();
+          return;
+        }
+
+        contactDialog.setAttribute("open", "");
+      });
+
+      contactClose.addEventListener("click", () => {
+        contactDialog.close();
+      });
+
+      contactDialog.addEventListener("click", (event) => {
+        if (event.target === contactDialog) {
+          contactDialog.close();
+        }
+      });
+    </script>
   </body>
 </html>
