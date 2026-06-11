@@ -14,6 +14,8 @@
         --red: #b23a2f;
         --blue: #245f8f;
         --green: #4f6a56;
+        --cream: #fbf7ef;
+        --petal: #ead9d2;
       }
 
       * {
@@ -30,9 +32,9 @@
         min-height: 100vh;
         color: var(--ink);
         background:
-          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-          linear-gradient(#111, #25231f);
-        background-size: 18px 18px, auto;
+          radial-gradient(circle at 8% 8%, rgba(234, 217, 210, 0.22), transparent 18rem),
+          radial-gradient(circle at 92% 18%, rgba(201, 217, 207, 0.18), transparent 20rem),
+          linear-gradient(#141310, #25231f);
         font-family:
           "Avenir Next", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
         letter-spacing: 0;
@@ -78,24 +80,24 @@
 
       .variants {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
         align-items: start;
       }
 
       .variant {
         overflow: hidden;
         min-height: 760px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
         background: var(--paper);
-        box-shadow: 0 26px 70px rgba(0, 0, 0, 0.34);
+        box-shadow: 0 26px 70px rgba(0, 0, 0, 0.3);
       }
 
       .tag {
         display: flex;
         justify-content: space-between;
-        padding: 14px 16px;
+        padding: 16px 18px 10px;
         border-bottom: 1px solid var(--line);
         font-size: 0.72rem;
         font-weight: 900;
@@ -174,6 +176,140 @@
         font-size: 0.9rem;
         line-height: 1.7;
         word-break: keep-all;
+      }
+
+      .v4 {
+        --paper: #fbf7ef;
+        --ink: #24201b;
+        --muted: #756d62;
+        --flow: #c9d9cf;
+        --rose: #c86f61;
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+        min-height: 620px;
+        border-radius: 44px;
+        background:
+          radial-gradient(circle at 90% 8%, rgba(200, 111, 97, 0.14), transparent 16rem),
+          var(--paper);
+      }
+
+      .v4 .tag {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 3;
+        border-bottom: 0;
+        color: rgba(36, 32, 27, 0.62);
+      }
+
+      .v4 .hero {
+        position: relative;
+        display: grid;
+        align-content: center;
+        min-height: 620px;
+        padding: 84px 36px 54px;
+        overflow: hidden;
+        background:
+          radial-gradient(ellipse at 22% 18%, rgba(255, 255, 255, 0.78), transparent 14rem),
+          linear-gradient(148deg, #f9efe7 0%, #eef3ea 55%, #d7e4dc 100%);
+      }
+
+      .v4 .hero::before {
+        position: absolute;
+        top: -110px;
+        right: -110px;
+        width: 340px;
+        height: 340px;
+        content: "";
+        border: 1px solid rgba(36, 32, 27, 0.12);
+        border-radius: 48% 52% 46% 54%;
+        background: rgba(255, 255, 255, 0.24);
+        transform: rotate(18deg);
+      }
+
+      .v4 .hero::after {
+        position: absolute;
+        right: -70px;
+        bottom: -86px;
+        width: 300px;
+        height: 300px;
+        content: "";
+        border-radius: 56% 44% 62% 38%;
+        background: rgba(200, 111, 97, 0.22);
+      }
+
+      .v4 .eyebrow,
+      .v4 .title,
+      .v4 .lead,
+      .v4 .date {
+        position: relative;
+        z-index: 1;
+      }
+
+      .v4 .eyebrow {
+        color: var(--green);
+      }
+
+      .v4 .title {
+        max-width: 7.4ch;
+        font-size: clamp(4.1rem, 10vw, 7.2rem);
+        line-height: 0.94;
+      }
+
+      .v4 .lead {
+        max-width: 20rem;
+      }
+
+      .v4 .date {
+        width: max-content;
+        margin-top: 42px;
+        padding: 18px 24px;
+        color: #fbf7ef;
+        background: #24201b;
+        border-radius: 999px;
+        font-size: 3.2rem;
+        box-shadow: 0 18px 50px rgba(36, 32, 27, 0.18);
+      }
+
+      .v4 .body {
+        display: grid;
+        align-content: center;
+        padding: 92px 36px 54px;
+        background:
+          linear-gradient(90deg, rgba(36, 32, 27, 0.08) 1px, transparent 1px),
+          var(--paper);
+        background-size: 42px 42px;
+      }
+
+      .v4 .message {
+        font-size: 1.08rem;
+      }
+
+      .v4 .details {
+        border-top: 0;
+      }
+
+      .v4 .row {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(36, 32, 27, 0.11);
+      }
+
+      .v4 .closing {
+        position: relative;
+        margin-top: 30px;
+        padding-top: 26px;
+      }
+
+      .v4 .closing::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 148px;
+        height: 1px;
+        content: "";
+        background: linear-gradient(90deg, var(--rose), transparent);
       }
 
       .v1 {
@@ -316,6 +452,19 @@
         .variant {
           min-height: auto;
         }
+
+        .v4 {
+          display: block;
+          grid-column: auto;
+        }
+
+        .v4 .hero {
+          min-height: 520px;
+        }
+
+        .v4 .body {
+          padding-top: 34px;
+        }
       }
 
       @media (max-width: 430px) {
@@ -328,7 +477,7 @@
         }
 
         .variant {
-          border-radius: 6px;
+          border-radius: 26px;
         }
 
         .hero {
@@ -348,6 +497,24 @@
         .v3 .title {
           font-size: 3.75rem;
         }
+
+        .v4 {
+          border-radius: 34px;
+        }
+
+        .v4 .hero {
+          min-height: 520px;
+          padding: 76px 24px 42px;
+        }
+
+        .v4 .title {
+          font-size: 4.65rem;
+        }
+
+        .v4 .date {
+          margin-top: 34px;
+          font-size: 2.75rem;
+        }
       }
     </style>
   </head>
@@ -363,6 +530,31 @@
       </header>
 
       <section class="variants" aria-label="가족식 안내장 디자인 시안">
+        <article class="variant v4">
+          <div class="tag"><span>D</span><span>soft flow</span></div>
+          <div class="hero">
+            <p class="eyebrow">Family ceremony</p>
+            <h2 class="title">조용히, 부드럽게 인사드립니다</h2>
+            <p class="lead">
+              가까운 가족들과 함께하는 작은 예식으로 새 출발을 준비합니다.
+            </p>
+            <div class="date">06.27</div>
+          </div>
+          <div class="body">
+            <p class="message">
+              늘 보내주신 마음과 응원 덕분에 저희가 새로운 시작을 준비하게
+              되었습니다. 이번 예식은 가족식으로 작게 진행하며, 직접 모시지
+              못하는 분들께도 따뜻한 마음으로 먼저 소식을 전합니다.
+            </p>
+            <div class="details">
+              <div class="row"><b class="key">일자</b><span>2026년 6월 27일 토요일</span></div>
+              <div class="row"><b class="key">형식</b><span>가까운 가족들과 함께하는 가족식</span></div>
+              <div class="row"><b class="key">안내</b><span>장소와 세부 일정은 필요한 분들께 개별로 전하겠습니다.</span></div>
+            </div>
+            <p class="closing">축하의 마음은 멀리서 전해주셔도 충분히 감사히 받겠습니다.</p>
+          </div>
+        </article>
+
         <article class="variant v1">
           <div class="tag"><span>A</span><span>quiet type</span></div>
           <div class="hero">
