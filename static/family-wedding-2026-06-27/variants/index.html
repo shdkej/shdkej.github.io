@@ -32,9 +32,9 @@
         min-height: 100vh;
         color: var(--ink);
         background:
-          radial-gradient(circle at 8% 8%, rgba(234, 217, 210, 0.22), transparent 18rem),
-          radial-gradient(circle at 92% 18%, rgba(201, 217, 207, 0.18), transparent 20rem),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
           linear-gradient(#141310, #25231f);
+        background-size: 26px 26px, auto;
         font-family:
           "Avenir Next", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
         letter-spacing: 0;
@@ -182,16 +182,14 @@
         --paper: #fbf7ef;
         --ink: #24201b;
         --muted: #756d62;
-        --flow: #c9d9cf;
-        --rose: #c86f61;
+        --flow: #d9ded2;
+        --rose: #a9574b;
         grid-column: 1 / -1;
         display: grid;
         grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
         min-height: 620px;
         border-radius: 44px;
-        background:
-          radial-gradient(circle at 90% 8%, rgba(200, 111, 97, 0.14), transparent 16rem),
-          var(--paper);
+        background: var(--paper);
       }
 
       .v4 .tag {
@@ -209,35 +207,36 @@
         display: grid;
         align-content: center;
         min-height: 620px;
-        padding: 84px 36px 54px;
+        padding: 92px 40px 56px;
         overflow: hidden;
         background:
-          radial-gradient(ellipse at 22% 18%, rgba(255, 255, 255, 0.78), transparent 14rem),
-          linear-gradient(148deg, #f9efe7 0%, #eef3ea 55%, #d7e4dc 100%);
+          linear-gradient(118deg, rgba(217, 222, 210, 0.72) 0 54%, transparent 54%),
+          #fbf7ef;
       }
 
       .v4 .hero::before {
         position: absolute;
-        top: -110px;
-        right: -110px;
-        width: 340px;
-        height: 340px;
+        top: 72px;
+        right: 34px;
+        width: 46%;
+        height: 58%;
         content: "";
-        border: 1px solid rgba(36, 32, 27, 0.12);
-        border-radius: 48% 52% 46% 54%;
-        background: rgba(255, 255, 255, 0.24);
-        transform: rotate(18deg);
+        border-top: 1px solid rgba(36, 32, 27, 0.18);
+        border-right: 1px solid rgba(36, 32, 27, 0.12);
+        border-radius: 0 100% 0 0;
+        transform: rotate(-8deg);
       }
 
       .v4 .hero::after {
         position: absolute;
-        right: -70px;
-        bottom: -86px;
-        width: 300px;
-        height: 300px;
+        right: 28px;
+        bottom: 34px;
+        width: 190px;
+        height: 190px;
         content: "";
-        border-radius: 56% 44% 62% 38%;
-        background: rgba(200, 111, 97, 0.22);
+        opacity: 0.32;
+        background: url("../assets/branch.svg") center / contain no-repeat;
+        filter: grayscale(1) sepia(0.14);
       }
 
       .v4 .eyebrow,
@@ -253,38 +252,38 @@
       }
 
       .v4 .title {
-        max-width: 7.4ch;
-        font-size: clamp(4.1rem, 10vw, 7.2rem);
-        line-height: 0.94;
+        max-width: 8.6ch;
+        font-size: clamp(3.35rem, 7.2vw, 5.25rem);
+        line-height: 1.02;
       }
 
       .v4 .lead {
-        max-width: 20rem;
+        max-width: 18.5rem;
+        color: #51483f;
       }
 
       .v4 .date {
         width: max-content;
-        margin-top: 42px;
-        padding: 18px 24px;
-        color: #fbf7ef;
-        background: #24201b;
-        border-radius: 999px;
-        font-size: 3.2rem;
-        box-shadow: 0 18px 50px rgba(36, 32, 27, 0.18);
+        margin-top: 44px;
+        padding: 12px 0 10px;
+        color: var(--rose);
+        border-top: 1px solid rgba(36, 32, 27, 0.26);
+        border-bottom: 1px solid rgba(36, 32, 27, 0.18);
+        font-size: 3rem;
       }
 
       .v4 .body {
         display: grid;
         align-content: center;
-        padding: 92px 36px 54px;
+        padding: 92px 40px 54px;
         background:
-          linear-gradient(90deg, rgba(36, 32, 27, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(36, 32, 27, 0.045) 1px, transparent 1px),
           var(--paper);
-        background-size: 42px 42px;
+        background-size: 52px 52px;
       }
 
       .v4 .message {
-        font-size: 1.08rem;
+        font-size: 1.06rem;
       }
 
       .v4 .details {
@@ -294,6 +293,10 @@
       .v4 .row {
         padding: 12px 0;
         border-bottom: 1px solid rgba(36, 32, 27, 0.11);
+      }
+
+      .v4 .key {
+        color: var(--rose);
       }
 
       .v4 .closing {
@@ -309,7 +312,7 @@
         width: 148px;
         height: 1px;
         content: "";
-        background: linear-gradient(90deg, var(--rose), transparent);
+        background: var(--rose);
       }
 
       .v1 {
@@ -508,7 +511,7 @@
         }
 
         .v4 .title {
-          font-size: 4.65rem;
+          font-size: 3.9rem;
         }
 
         .v4 .date {
