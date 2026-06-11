@@ -265,6 +265,60 @@
         font-size: 1.12rem;
       }
 
+      .contacts {
+        display: grid;
+        gap: 14px;
+        max-width: 20rem;
+        margin: 36px auto 0;
+      }
+
+      .contact-card {
+        border-bottom: 1px solid rgba(184, 141, 97, 0.18);
+      }
+
+      .contact-card summary {
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 12px;
+        align-items: center;
+        padding: 12px 0;
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 0.96rem;
+        list-style: none;
+        text-align: left;
+      }
+
+      .contact-card summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .phone-icon {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border: 1px solid var(--pale-line);
+        border-radius: 999px;
+        color: var(--line);
+        background: rgba(255, 253, 249, 0.48);
+      }
+
+      .phone-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+      }
+
+      .phone-number {
+        display: block;
+        padding: 0 0 16px 54px;
+        color: var(--line);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.06rem;
+        text-decoration: none;
+      }
+
       @media (max-width: 430px) {
         .hero {
           padding: 68px 22px 52px;
@@ -318,7 +372,7 @@
             <span>김현진</span>
           </h1>
           <div class="date">
-            2026년 6월 27일 토요일
+            2026년 6월 27일 토요일 낮 12시
             <div class="place">가까운 가족들과 함께하는 작은 예식</div>
           </div>
         </div>
@@ -352,6 +406,10 @@
             <p class="detail-value">2026년 6월 27일 토요일</p>
           </div>
           <div class="detail-row">
+            <div class="detail-key">TIME</div>
+            <p class="detail-value">낮 12시</p>
+          </div>
+          <div class="detail-row">
             <div class="detail-key">CEREMONY</div>
             <p class="detail-value">가까운 가족들과 함께하는 가족식</p>
           </div>
@@ -364,6 +422,30 @@
 
       <section class="closing">
         <p>조용한 시작을 따뜻하게 지켜봐 주셔서 감사합니다.</p>
+        <div class="contacts" aria-label="연락처">
+          <details class="contact-card">
+            <summary>
+              <span class="phone-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.66 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.22a2 2 0 0 1 2.11-.45c.91.31 1.85.53 2.81.66A2 2 0 0 1 22 16.92Z" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              노성호 연락처
+            </summary>
+            <a class="phone-number" href="tel:01031774206">010-3177-4206</a>
+          </details>
+          <details class="contact-card">
+            <summary>
+              <span class="phone-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.9.66 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.22a2 2 0 0 1 2.11-.45c.91.31 1.85.53 2.81.66A2 2 0 0 1 22 16.92Z" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+              김현진 연락처
+            </summary>
+            <a class="phone-number" href="tel:01095540314">010-9554-0314</a>
+          </details>
+        </div>
         <div class="signature">마음을 담아 드림</div>
       </section>
     </main>
