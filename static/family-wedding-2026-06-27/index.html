@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#17191b" />
+    <meta name="theme-color" content="#dfe8dc" />
     <meta property="og:title" content="6월 27일 가족식 안내" />
     <meta
       property="og:description"
@@ -12,16 +12,16 @@
     <title>6월 27일 가족식 안내</title>
     <style>
       :root {
-        --night: #17191b;
-        --night-soft: #24282b;
-        --ivory: #f7f2ea;
-        --porcelain: #eee8df;
-        --ink: #1c1c1d;
-        --mist: #aeb8ad;
-        --rose: #d5aaa7;
-        --silver: #c7c7c1;
-        --line-dark: rgba(247, 242, 234, 0.18);
-        --line-light: rgba(28, 28, 29, 0.12);
+        --garden: #dfe8dc;
+        --paper: #fbfbf3;
+        --ink: #171918;
+        --charcoal: #252724;
+        --sage: #6f846d;
+        --coral: #d95d4f;
+        --cobalt: #2e5d9f;
+        --lemon: #e4d46f;
+        --line: rgba(23, 25, 24, 0.14);
+        --soft-line: rgba(111, 132, 109, 0.24);
       }
 
       * {
@@ -29,18 +29,18 @@
       }
 
       html {
-        background: var(--night);
+        background: var(--garden);
         scroll-behavior: smooth;
       }
 
       body {
         margin: 0;
         min-height: 100vh;
-        color: var(--ivory);
+        color: var(--ink);
         background:
-          radial-gradient(circle at 12% 6%, rgba(213, 170, 167, 0.22), transparent 18rem),
-          radial-gradient(circle at 88% 18%, rgba(174, 184, 173, 0.18), transparent 16rem),
-          linear-gradient(160deg, #111315 0%, var(--night) 42%, #222629 100%);
+          radial-gradient(circle at 16% 12%, rgba(217, 93, 79, 0.2), transparent 15rem),
+          radial-gradient(circle at 90% 10%, rgba(46, 93, 159, 0.16), transparent 14rem),
+          linear-gradient(140deg, #dfe8dc 0%, #f3f5e8 48%, #d3e1d1 100%);
         font-family:
           "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
         letter-spacing: 0;
@@ -53,9 +53,9 @@
         content: "";
         opacity: 0.35;
         background-image:
-          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
-        background-size: 36px 36px;
+          linear-gradient(rgba(23, 25, 24, 0.045) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(23, 25, 24, 0.035) 1px, transparent 1px);
+        background-size: 32px 32px;
       }
 
       body::after {
@@ -64,77 +64,88 @@
         pointer-events: none;
         content: "";
         background:
-          linear-gradient(90deg, rgba(255, 255, 255, 0.05), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.05)),
-          repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 10px);
-        mix-blend-mode: screen;
-        opacity: 0.4;
+          linear-gradient(90deg, rgba(255, 255, 255, 0.32), transparent 20%, transparent 80%, rgba(255, 255, 255, 0.22)),
+          repeating-linear-gradient(120deg, rgba(23, 25, 24, 0.025) 0 1px, transparent 1px 12px);
+        opacity: 0.72;
       }
 
       main {
         width: min(100%, 560px);
         margin: 0 auto;
+        padding: 12px;
       }
 
       .invite {
         position: relative;
         overflow: hidden;
-        min-height: 100vh;
-        background: linear-gradient(180deg, rgba(23, 25, 27, 0.98) 0%, rgba(23, 25, 27, 0.96) 55%, var(--ivory) 55%, var(--ivory) 100%);
-        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.32);
+        min-height: calc(100vh - 24px);
+        border-radius: 6px;
+        background:
+          linear-gradient(90deg, var(--charcoal) 0 18px, transparent 18px),
+          var(--paper);
+        box-shadow: 0 28px 80px rgba(39, 52, 43, 0.2);
       }
 
       .hero {
         position: relative;
         display: grid;
-        min-height: 82vh;
-        padding: 34px 24px 42px;
-        align-items: center;
+        min-height: 80vh;
+        padding: 30px 26px 36px 42px;
+        align-items: stretch;
       }
 
       .hero::before {
         position: absolute;
-        inset: 18px;
+        top: 22px;
+        right: 20px;
+        bottom: 22px;
+        left: 42px;
         content: "";
-        border: 1px solid var(--line-dark);
-        border-radius: 10px;
+        border: 1px solid var(--soft-line);
+        border-radius: 0;
       }
 
       .hero::after {
         position: absolute;
-        right: -104px;
-        bottom: -106px;
-        width: 286px;
-        height: 286px;
+        right: -92px;
+        bottom: -92px;
+        width: 272px;
+        height: 272px;
         content: "";
-        opacity: 0.42;
+        opacity: 0.5;
         background: url("./assets/branch.svg") center / contain no-repeat;
-        filter: grayscale(1) contrast(0.9) brightness(1.16);
-        transform: rotate(-12deg);
+        filter: saturate(1.15) hue-rotate(35deg) contrast(0.92);
+        transform: rotate(-18deg);
       }
 
       .hero-inner {
         position: relative;
         z-index: 1;
+        display: grid;
+        align-content: space-between;
+        min-height: calc(80vh - 66px);
       }
 
       .topline {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 58px;
-        color: var(--silver);
+        margin-bottom: 46px;
+        color: var(--cobalt);
         font-family: Georgia, "Times New Roman", serif;
-        font-size: 0.82rem;
+        font-size: 0.8rem;
+        font-weight: 700;
       }
 
       .mark {
         display: grid;
-        width: 62px;
-        height: 62px;
+        width: 64px;
+        height: 64px;
         place-items: center;
-        border: 1px solid rgba(213, 170, 167, 0.42);
-        border-radius: 50%;
-        color: var(--rose);
+        border: 2px solid var(--ink);
+        border-radius: 0;
+        color: var(--ink);
+        background: var(--lemon);
         font-family: Georgia, "Times New Roman", serif;
         font-size: 0.84rem;
         line-height: 1;
@@ -143,18 +154,18 @@
       h1 {
         max-width: 7ch;
         margin: 0;
-        color: var(--ivory);
+        color: var(--ink);
         font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
-        font-size: 4.35rem;
+        font-size: 4.55rem;
         font-weight: 400;
-        line-height: 0.96;
+        line-height: 0.92;
       }
 
       .title-sub {
         display: block;
-        max-width: 18rem;
-        margin-top: 26px;
-        color: var(--mist);
+        max-width: 17rem;
+        margin-top: 28px;
+        color: #384239;
         font-size: 1.04rem;
         font-weight: 400;
         line-height: 1.75;
@@ -163,23 +174,23 @@
 
       .date-strip {
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: auto 1fr;
         gap: 24px;
         align-items: end;
-        margin-top: 54px;
-        padding-top: 18px;
-        border-top: 1px solid var(--line-dark);
+        margin-top: 48px;
+        padding: 18px 0 0;
+        border-top: 2px solid var(--ink);
       }
 
       .date-large {
-        color: var(--rose);
+        color: var(--coral);
         font-family: Georgia, "Times New Roman", serif;
-        font-size: 3.2rem;
+        font-size: 3.55rem;
         line-height: 0.9;
       }
 
       .date-meta {
-        color: var(--silver);
+        color: var(--sage);
         font-size: 0.92rem;
         line-height: 1.7;
         text-align: right;
@@ -188,13 +199,13 @@
       section {
         position: relative;
         z-index: 1;
-        padding: 42px 26px;
+        padding: 42px 26px 42px 42px;
         color: var(--ink);
-        background: var(--ivory);
+        background: var(--paper);
       }
 
       section + section {
-        border-top: 1px solid var(--line-light);
+        border-top: 1px solid var(--line);
       }
 
       .section-label {
@@ -203,7 +214,7 @@
         gap: 14px;
         align-items: center;
         margin-bottom: 20px;
-        color: #617164;
+        color: var(--cobalt);
         font-family: Georgia, "Times New Roman", serif;
         font-size: 0.86rem;
       }
@@ -211,12 +222,12 @@
       .section-label::after {
         height: 1px;
         content: "";
-        background: var(--line-light);
+        background: var(--line);
       }
 
       .message {
         margin: 0;
-        color: #272727;
+        color: var(--ink);
         font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
         font-size: 1.08rem;
         line-height: 2.05;
@@ -226,8 +237,8 @@
       .note {
         margin: 28px 0 0;
         padding: 20px 0 0;
-        border-top: 1px solid rgba(97, 113, 100, 0.28);
-        color: #565b55;
+        border-top: 2px solid var(--coral);
+        color: #4d584d;
         font-size: 0.96rem;
         line-height: 1.8;
         word-break: keep-all;
@@ -244,7 +255,7 @@
         gap: 18px;
         min-height: 64px;
         padding: 18px 0;
-        border-bottom: 1px solid var(--line-light);
+        border-bottom: 1px solid var(--line);
       }
 
       .detail-row:last-child {
@@ -252,14 +263,14 @@
       }
 
       .detail-key {
-        color: #9e6f74;
+        color: var(--coral);
         font-size: 0.88rem;
         font-weight: 700;
       }
 
       .detail-value {
         margin: 0;
-        color: #252525;
+        color: var(--ink);
         line-height: 1.7;
         word-break: keep-all;
       }
@@ -272,7 +283,7 @@
       .closing p {
         max-width: 18rem;
         margin: 0 auto;
-        color: #525752;
+        color: #4b554d;
         line-height: 1.85;
         word-break: keep-all;
       }
@@ -281,7 +292,7 @@
         display: inline-block;
         margin-top: 26px;
         padding: 10px 0;
-        border-bottom: 1px solid rgba(158, 111, 116, 0.42);
+        border-bottom: 2px solid var(--coral);
         color: var(--ink);
         font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
         font-size: 1.1rem;
@@ -290,33 +301,36 @@
       @media (max-width: 430px) {
         .hero {
           min-height: 80vh;
-          padding: 30px 22px 38px;
+          padding: 28px 22px 36px 38px;
         }
 
         .hero::before {
-          inset: 12px;
+          top: 14px;
+          right: 12px;
+          bottom: 14px;
+          left: 36px;
         }
 
         .hero::after {
-          right: -132px;
-          bottom: -110px;
-          width: 250px;
-          height: 250px;
+          right: -124px;
+          bottom: -100px;
+          width: 240px;
+          height: 240px;
         }
 
         .topline {
-          margin-bottom: 46px;
+          margin-bottom: 38px;
           font-size: 0.78rem;
         }
 
         .mark {
-          width: 56px;
-          height: 56px;
+          width: 54px;
+          height: 54px;
           font-size: 0.78rem;
         }
 
         h1 {
-          font-size: 3.7rem;
+          font-size: 3.78rem;
         }
 
         .title-sub {
@@ -325,15 +339,15 @@
         }
 
         .date-strip {
-          margin-top: 44px;
+          margin-top: 40px;
         }
 
         .date-large {
-          font-size: 2.72rem;
+          font-size: 2.9rem;
         }
 
         section {
-          padding: 36px 22px;
+          padding: 36px 22px 36px 38px;
         }
 
         .detail-row {
