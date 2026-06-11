@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#dfe8dc" />
+    <meta name="theme-color" content="#123f8c" />
     <meta property="og:title" content="6월 27일 가족식 안내" />
     <meta
       property="og:description"
@@ -12,16 +12,16 @@
     <title>6월 27일 가족식 안내</title>
     <style>
       :root {
-        --garden: #dfe8dc;
-        --paper: #fbfbf3;
-        --ink: #171918;
-        --charcoal: #252724;
-        --sage: #6f846d;
-        --coral: #d95d4f;
-        --cobalt: #2e5d9f;
-        --lemon: #e4d46f;
-        --line: rgba(23, 25, 24, 0.14);
-        --soft-line: rgba(111, 132, 109, 0.24);
+        --blue: #123f8c;
+        --blue-deep: #08275c;
+        --mint: #c7e7df;
+        --mist: #edf6f3;
+        --vermilion: #ff5338;
+        --ink: #101820;
+        --slate: #47545f;
+        --white: #fffdf7;
+        --line: rgba(16, 24, 32, 0.16);
+        --blue-line: rgba(199, 231, 223, 0.28);
       }
 
       * {
@@ -29,7 +29,7 @@
       }
 
       html {
-        background: var(--garden);
+        background: var(--blue);
         scroll-behavior: smooth;
       }
 
@@ -38,11 +38,12 @@
         min-height: 100vh;
         color: var(--ink);
         background:
-          radial-gradient(circle at 16% 12%, rgba(217, 93, 79, 0.2), transparent 15rem),
-          radial-gradient(circle at 90% 10%, rgba(46, 93, 159, 0.16), transparent 14rem),
-          linear-gradient(140deg, #dfe8dc 0%, #f3f5e8 48%, #d3e1d1 100%);
+          linear-gradient(122deg, transparent 0 42%, rgba(255, 83, 56, 0.84) 42% 49%, transparent 49%),
+          radial-gradient(circle at 82% 9%, rgba(199, 231, 223, 0.5), transparent 13rem),
+          radial-gradient(circle at 12% 85%, rgba(255, 83, 56, 0.2), transparent 16rem),
+          linear-gradient(160deg, var(--blue) 0%, var(--blue-deep) 100%);
         font-family:
-          "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+          "Avenir Next", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
         letter-spacing: 0;
       }
 
@@ -51,11 +52,11 @@
         inset: 0;
         pointer-events: none;
         content: "";
-        opacity: 0.35;
+        opacity: 0.32;
         background-image:
-          linear-gradient(rgba(23, 25, 24, 0.045) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(23, 25, 24, 0.035) 1px, transparent 1px);
-        background-size: 32px 32px;
+          linear-gradient(rgba(255, 253, 247, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 253, 247, 0.08) 1px, transparent 1px);
+        background-size: 28px 28px;
       }
 
       body::after {
@@ -64,58 +65,61 @@
         pointer-events: none;
         content: "";
         background:
-          linear-gradient(90deg, rgba(255, 255, 255, 0.32), transparent 20%, transparent 80%, rgba(255, 255, 255, 0.22)),
-          repeating-linear-gradient(120deg, rgba(23, 25, 24, 0.025) 0 1px, transparent 1px 12px);
-        opacity: 0.72;
+          repeating-linear-gradient(118deg, rgba(255, 253, 247, 0.055) 0 1px, transparent 1px 14px),
+          linear-gradient(90deg, rgba(255, 253, 247, 0.18), transparent 22%, transparent 78%, rgba(255, 253, 247, 0.14));
+        opacity: 0.86;
       }
 
       main {
         width: min(100%, 560px);
         margin: 0 auto;
-        padding: 12px;
+        padding: 14px;
       }
 
       .invite {
         position: relative;
         overflow: hidden;
         min-height: calc(100vh - 24px);
-        border-radius: 6px;
-        background:
-          linear-gradient(90deg, var(--charcoal) 0 18px, transparent 18px),
-          var(--paper);
-        box-shadow: 0 28px 80px rgba(39, 52, 43, 0.2);
+        border: 1px solid rgba(255, 253, 247, 0.28);
+        border-radius: 4px;
+        background: var(--mist);
+        box-shadow: 0 30px 90px rgba(1, 14, 42, 0.38);
       }
 
       .hero {
         position: relative;
         display: grid;
-        min-height: 80vh;
-        padding: 30px 26px 36px 42px;
+        min-height: 82vh;
+        padding: 28px 24px 34px;
         align-items: stretch;
+        color: var(--white);
+        background:
+          linear-gradient(146deg, rgba(255, 83, 56, 0) 0 62%, rgba(255, 83, 56, 0.92) 62% 70%, rgba(199, 231, 223, 0.95) 70%),
+          linear-gradient(180deg, var(--blue) 0%, var(--blue-deep) 100%);
       }
 
       .hero::before {
         position: absolute;
-        top: 22px;
-        right: 20px;
-        bottom: 22px;
-        left: 42px;
+        top: 20px;
+        right: 18px;
+        bottom: 20px;
+        left: 18px;
         content: "";
-        border: 1px solid var(--soft-line);
-        border-radius: 0;
+        border: 1px solid var(--blue-line);
+        border-radius: 999px 999px 18px 18px;
       }
 
       .hero::after {
         position: absolute;
-        right: -92px;
-        bottom: -92px;
-        width: 272px;
-        height: 272px;
+        right: -80px;
+        bottom: -70px;
+        width: 280px;
+        height: 280px;
         content: "";
-        opacity: 0.5;
+        opacity: 0.22;
         background: url("./assets/branch.svg") center / contain no-repeat;
-        filter: saturate(1.15) hue-rotate(35deg) contrast(0.92);
-        transform: rotate(-18deg);
+        filter: brightness(0) invert(1);
+        transform: rotate(-12deg);
       }
 
       .hero-inner {
@@ -123,85 +127,98 @@
         z-index: 1;
         display: grid;
         align-content: space-between;
-        min-height: calc(80vh - 66px);
+        min-height: calc(82vh - 62px);
       }
 
       .topline {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 18px;
         align-items: center;
-        justify-content: space-between;
-        margin-bottom: 46px;
-        color: var(--cobalt);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 0.8rem;
-        font-weight: 700;
+        margin-bottom: 42px;
+        color: var(--mint);
+        font-family: "Avenir Next", "Apple SD Gothic Neo", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .topline span:first-child {
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(199, 231, 223, 0.52);
       }
 
       .mark {
         display: grid;
-        width: 64px;
-        height: 64px;
+        width: 58px;
+        height: 82px;
         place-items: center;
-        border: 2px solid var(--ink);
-        border-radius: 0;
-        color: var(--ink);
-        background: var(--lemon);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 0.84rem;
-        line-height: 1;
+        border: 1px solid rgba(199, 231, 223, 0.62);
+        color: var(--blue-deep);
+        background: var(--mint);
+        font-family: Didot, "Bodoni 72", Georgia, serif;
+        font-size: 0.88rem;
+        line-height: 0.95;
+        box-shadow: 8px 8px 0 var(--vermilion);
       }
 
       h1 {
-        max-width: 7ch;
+        max-width: 6.5ch;
         margin: 0;
-        color: var(--ink);
+        color: var(--white);
         font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
-        font-size: 4.55rem;
-        font-weight: 400;
-        line-height: 0.92;
+        font-size: 5.15rem;
+        font-weight: 500;
+        line-height: 0.86;
+        text-shadow: 0 18px 50px rgba(0, 8, 28, 0.32);
       }
 
       .title-sub {
         display: block;
-        max-width: 17rem;
-        margin-top: 28px;
-        color: #384239;
-        font-size: 1.04rem;
+        max-width: 18rem;
+        margin-top: 30px;
+        color: rgba(255, 253, 247, 0.86);
+        font-family: "Avenir Next", "Apple SD Gothic Neo", sans-serif;
+        font-size: 1rem;
         font-weight: 400;
-        line-height: 1.75;
+        line-height: 1.85;
         word-break: keep-all;
       }
 
       .date-strip {
         display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 24px;
+        grid-template-columns: 1fr auto;
+        gap: 20px;
         align-items: end;
-        margin-top: 48px;
-        padding: 18px 0 0;
-        border-top: 2px solid var(--ink);
+        margin-top: 46px;
+        padding: 16px 0 0;
+        border-top: 1px solid rgba(255, 253, 247, 0.46);
       }
 
       .date-large {
-        color: var(--coral);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 3.55rem;
-        line-height: 0.9;
+        color: var(--vermilion);
+        font-family: Didot, "Bodoni 72", Georgia, serif;
+        font-size: 4.1rem;
+        line-height: 0.82;
       }
 
       .date-meta {
-        color: var(--sage);
-        font-size: 0.92rem;
-        line-height: 1.7;
+        color: var(--mint);
+        font-size: 0.82rem;
+        font-weight: 800;
+        line-height: 1.65;
         text-align: right;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
       }
 
       section {
         position: relative;
         z-index: 1;
-        padding: 42px 26px 42px 42px;
+        padding: 44px 26px;
         color: var(--ink);
-        background: var(--paper);
+        background: var(--mist);
       }
 
       section + section {
@@ -210,13 +227,25 @@
 
       .section-label {
         display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 14px;
+        grid-template-columns: 34px 1fr;
+        gap: 16px;
         align-items: center;
-        margin-bottom: 20px;
-        color: var(--cobalt);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 0.86rem;
+        margin-bottom: 22px;
+        color: var(--blue);
+        font-family: "Avenir Next", "Apple SD Gothic Neo", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .section-label::before {
+        width: 34px;
+        height: 34px;
+        content: "";
+        background:
+          linear-gradient(135deg, var(--vermilion) 0 45%, transparent 45%),
+          var(--mint);
       }
 
       .section-label::after {
@@ -229,16 +258,17 @@
         margin: 0;
         color: var(--ink);
         font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
-        font-size: 1.08rem;
+        font-size: 1.11rem;
         line-height: 2.05;
         word-break: keep-all;
       }
 
       .note {
-        margin: 28px 0 0;
-        padding: 20px 0 0;
-        border-top: 2px solid var(--coral);
-        color: #4d584d;
+        margin: 30px 0 0;
+        padding: 20px 18px 20px 22px;
+        border-left: 6px solid var(--vermilion);
+        color: #42505a;
+        background: rgba(255, 253, 247, 0.72);
         font-size: 0.96rem;
         line-height: 1.8;
         word-break: keep-all;
@@ -251,7 +281,7 @@
 
       .detail-row {
         display: grid;
-        grid-template-columns: 72px 1fr;
+        grid-template-columns: 68px 1fr;
         gap: 18px;
         min-height: 64px;
         padding: 18px 0;
@@ -263,9 +293,10 @@
       }
 
       .detail-key {
-        color: var(--coral);
-        font-size: 0.88rem;
-        font-weight: 700;
+        color: var(--blue);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.1em;
       }
 
       .detail-value {
@@ -276,14 +307,18 @@
       }
 
       .closing {
-        padding-bottom: 54px;
+        padding-bottom: 56px;
+        color: var(--white);
+        background:
+          linear-gradient(135deg, rgba(199, 231, 223, 0.12), transparent 36%),
+          var(--blue-deep);
         text-align: center;
       }
 
       .closing p {
         max-width: 18rem;
         margin: 0 auto;
-        color: #4b554d;
+        color: rgba(255, 253, 247, 0.84);
         line-height: 1.85;
         word-break: keep-all;
       }
@@ -291,63 +326,69 @@
       .signature {
         display: inline-block;
         margin-top: 26px;
-        padding: 10px 0;
-        border-bottom: 2px solid var(--coral);
-        color: var(--ink);
+        padding: 10px 14px;
+        color: var(--blue-deep);
+        background: var(--mint);
         font-family: "Apple Myungjo", "Nanum Myeongjo", "Noto Serif KR", serif;
         font-size: 1.1rem;
+        box-shadow: 6px 6px 0 var(--vermilion);
       }
 
       @media (max-width: 430px) {
+        main {
+          padding: 10px;
+        }
+
         .hero {
-          min-height: 80vh;
-          padding: 28px 22px 36px 38px;
+          min-height: 82vh;
+          padding: 26px 22px 34px;
         }
 
         .hero::before {
           top: 14px;
           right: 12px;
           bottom: 14px;
-          left: 36px;
+          left: 12px;
         }
 
         .hero::after {
-          right: -124px;
-          bottom: -100px;
-          width: 240px;
-          height: 240px;
+          right: -112px;
+          bottom: -86px;
+          width: 232px;
+          height: 232px;
         }
 
         .topline {
-          margin-bottom: 38px;
-          font-size: 0.78rem;
+          margin-bottom: 36px;
+          font-size: 0.66rem;
         }
 
         .mark {
-          width: 54px;
-          height: 54px;
-          font-size: 0.78rem;
+          width: 50px;
+          height: 72px;
+          font-size: 0.76rem;
+          box-shadow: 6px 6px 0 var(--vermilion);
         }
 
         h1 {
-          font-size: 3.78rem;
+          font-size: 4.18rem;
         }
 
         .title-sub {
-          margin-top: 22px;
+          margin-top: 24px;
           font-size: 0.98rem;
         }
 
         .date-strip {
-          margin-top: 40px;
+          margin-top: 42px;
         }
 
         .date-large {
-          font-size: 2.9rem;
+          font-size: 3.25rem;
         }
 
         section {
-          padding: 36px 22px 36px 38px;
+          padding: 38px 22px;
         }
 
         .detail-row {
