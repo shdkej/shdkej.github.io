@@ -1,0 +1,13 @@
+<svg width="560" height="560" viewBox="0 0 560 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="soft botanical branch illustration">
+  <rect width="560" height="560" rx="280" fill="#F4EEE4"/>
+  <path d="M170 388C241 328 288 260 327 146" stroke="#6B7B5A" stroke-width="8" stroke-linecap="round"/>
+  <path d="M239 312C209 286 178 286 150 311C188 344 218 342 239 312Z" fill="#8D9B72"/>
+  <path d="M282 247C247 232 219 240 201 271C245 293 272 285 282 247Z" fill="#A7A46F"/>
+  <path d="M316 181C289 154 258 151 228 173C262 210 292 211 316 181Z" fill="#7B8A62"/>
+  <path d="M301 240C336 231 361 245 376 279C332 292 306 280 301 240Z" fill="#B18B72"/>
+  <path d="M270 306C305 307 328 326 337 363C291 365 269 346 270 306Z" fill="#C2A276"/>
+  <circle cx="349" cy="139" r="18" fill="#C88672"/>
+  <circle cx="374" cy="173" r="13" fill="#D6B280"/>
+  <circle cx="138" cy="332" r="11" fill="#D6B280"/>
+  <path d="M126 420C210 447 318 455 432 422" stroke="#D5C5AC" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 16"/>
+</svg>

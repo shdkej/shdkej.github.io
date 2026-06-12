@@ -1,0 +1,113 @@
+# SH's Wiki
+
+> 7년차 DevOps/백엔드 엔지니어 노성호(Noh)의 개인 위키. 인프라, 백엔드, 아키텍처, 모니터링, AI 오케스트레이션을 중심으로 학습과 경험을 미니멀리즘 관점에서 정리한 지식 저장소입니다.
+
+주요 키워드: Kubernetes, AWS(EKS/Lambda), Terraform, GitOps(ArgoCD), Clean Architecture, 모니터링/관측가능성, Node.js, Next.js, LLM 에이전트.
+
+## Overview
+
+- [Portfolio](https://shdkej.com/portfolio/): experience
+
+## Fundamental
+
+- [🚀 아키텍처](https://shdkej.com/architecture/): 변화, 정리, 순환, 측정
+- [Data Structure](https://shdkej.com/data_structure/)
+- [Infra](https://shdkej.com/infra/)
+- [Math](https://shdkej.com/math/): Math, Physics, Electronics
+- [Network](https://shdkej.com/network/): 📡 Protocol(TCP, HTTP), IP, DNS, L/B
+- [Software](https://shdkej.com/software/): Language, Web, Development
+- [컴퓨터 사이언스](https://shdkej.com/computer_architecture/): 🖥️ CPU, Memory, OS, Kernel
+- [코딩](https://shdkej.com/coding/): Coding Convention, Design Principle
+
+## Deep Knowledge
+
+- [AI](https://shdkej.com/ai/)
+- [Container](https://shdkej.com/container/): Docker, Kubernetes
+- [DevOps](https://shdkej.com/devops/)
+- [Operation](https://shdkej.com/operation/)
+- [Product](https://shdkej.com/product/): 제품, 마케팅, 기획
+- [WEB](https://shdkej.com/web/)
+- [데이터베이스와 데이터](https://shdkej.com/data/): 데이터는 양과 시간과 복구가능성
+- [모니터링](https://shdkej.com/monitoring/): 관측가능성과 피드백루프
+
+## Integration
+
+- [Business](https://shdkej.com/business/): 경영, 다른 회사들에 대한 정보, 경험
+- [Design](https://shdkej.com/design/)
+- [Economics](https://shdkej.com/economics/): And money management
+- [Linux, GIT, ETC](https://shdkej.com/tool/): fundamental tool
+- [Marketing](https://shdkej.com/marketing/)
+- [연구와 조사](https://shdkej.com/exploration/): 연구, 조사, 탐구, 정보, 연습, 연구, 검색, 전문가
+- [일, 일 잘하는 법](https://shdkej.com/work/)
+- [창작자들](https://shdkej.com/creator/): Music, Construct, Artist, Directer, Author
+
+## Communication
+
+- [Blogging](https://shdkej.com/blogging/): 주제선정부터 노하우, 번역 시, 영상 및 이미지를 사용할 때 참고할 사항까지
+- [Communication](https://shdkej.com/talk/)
+- [Document](https://shdkej.com/document/): 어떻게 하면 문서화를 잘 할 수 있을까
+- [Feedback](https://shdkej.com/feedback/): review, communication, software
+- [Foreign Language](https://shdkej.com/foreign_language/)
+- [Logical](https://shdkej.com/logical_thinking/)
+- [Open Source](https://shdkej.com/open_source/): Open is powerful
+- [Teamwork](https://shdkej.com/teamwork/): 여러 사람들과 일할 때의 기술과 배움
+
+## Meta
+
+- [AGENTS](https://shdkej.com/agents/)
+- [Collected Data](https://shdkej.com/collection/): Stack
+- [Developer](https://shdkej.com/developer/)
+- [Fail Experience](https://shdkej.com/fail_experience/): How to prevent failure again
+- [My Space](https://shdkej.com/my_space/): 나의 시스템을 계속 운영한다
+- [Trouble Shooting](https://shdkej.com/troubleshooting/)
+- [개발 단상](https://shdkej.com/about_development/)
+- [아키텍처 단상](https://shdkej.com/about_architecture/): 확장성, 모듈, 분산
+
+## Idea
+
+- [Article](https://shdkej.com/article/): internel explorer
+- [History](https://shdkej.com/history/): history, behind story, reference
+- [Information](https://shdkej.com/information/): Input by Internet, book, or anything
+- [Journal](https://shdkej.com/journal/): Let's make the results every day.
+- [Movie](https://shdkej.com/movie/)
+- [Reading](https://shdkej.com/reading/): Book, Movie, Article, Post
+- [Travel](https://shdkej.com/travel/)
+
+## Human
+
+- [Love](https://shdkej.com/love/)
+- [Principle](https://shdkej.com/principle/)
+- [Readability](https://shdkej.com/readability/): simple, minimal, portable, universal, limit, module, light-weight
+- [미래](https://shdkej.com/future/): Plan, Goal, Milestone
+- [밸런스 맞추기](https://shdkej.com/balance/): 중용, 딜레마, 조화, Balance
+- [적응하고 깨부수기](https://shdkej.com/standard/): 기존의 것을 익히고, 반대로 생각해보고, 더 나은 것을 만든다
+- [점진적으로 개선하기](https://shdkej.com/evolve/): Evolve
+- [현실 속에서 이상을 키우기](https://shdkej.com/reality/): Reality
+
+## Health
+
+- [Curiosity](https://shdkej.com/curiosity/)
+- [Decision](https://shdkej.com/decision/): To reduce what need to be cared for.
+- [Food](https://shdkej.com/food/)
+- [Investment](https://shdkej.com/investment/)
+- [Music](https://shdkej.com/music/)
+- [건강을 위해 챙길 것들](https://shdkej.com/physical/)
+- [루틴](https://shdkej.com/routine/)
+
+## Blog
+
+- [10만 유저 동시 접속 가능하게 하기](https://shdkej.com/100k_concurrent_server/): Golang, Kubernetes를 이용해 10만 유저 접속 서버 만들기
+- [EKS 맛보기](https://shdkej.com/eks_with_terraform/): 근데 이제 Terraform을 곁들인
+- [ERP 서버 개발 스텝 바이 스텝 & 회고](https://shdkej.com/deploy_erp_server_story/): odoo와 docker-compose를 이용한 erp 서버 구축
+- [Life Tracking](https://shdkej.com/life_tracking/): 어떻게 살고 있는지 알고 싶다
+- [노트를 어떻게 관리해야 할까](https://shdkej.com/note_management/)
+- [노트북 작업환경](https://shdkej.com/decision_monitor_size/): 13 vs 15 vs 17
+- [디지털 컨텐츠 소장은 어떻게 해야 할까](https://shdkej.com/digital_content/): 1000년 후에도 볼 수 있을까
+- [피카소와 챗지피티](https://shdkej.com/picasso/): AI 시대의
+
+## Agent Wiki
+
+> 에이전트가 원본 노트를 기반으로 유지·정리하는 지식 레이어 (개념/종합/비교/매핑 노트). 별도 레포(shdkej/agent-wiki).
+
+- [Agent Wiki](https://shdkej.com/agent-wiki/): 지식 랩 인덱스
+- [Agent Wiki llms.txt](https://shdkej.com/agent-wiki/llms.txt): 전체 페이지 목록
