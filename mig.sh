@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERHOME="/Users/seongho-noh"
+USERHOME="/Users/noseongho"
 IHOME="$USERHOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Main"
 GITHOME="$USERHOME/workspace/shdkej.github.io"
 
@@ -12,7 +12,6 @@ cp -r "$IHOME/5.Human/" "$GITHOME/content/Human/"
 cp -r "$IHOME/6.Health/" "$GITHOME/content/Health/"
 cp -r "$IHOME/7.Idea/" "$GITHOME/content/Idea/"
 cp -r "$IHOME/8.Meta/" "$GITHOME/content/Meta/"
-cp -r "$IHOME/blog/" "$GITHOME/content/blog/"
 
 # YYYY-MM.md: 소스에 있는 것만 복사, 없는 건 삭제
 cp "$IHOME/"[0-9][0-9][0-9][0-9]-*.md "$GITHOME/content/" 2>/dev/null

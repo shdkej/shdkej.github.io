@@ -2,7 +2,7 @@
 title: 데이터베이스와 데이터
 summary: 데이터는 양과 시간과 복구가능성
 date: 2021-02-27 20:53:34 +0100
-updated: 2026-05-03 21:00:28
+updated: 2026-06-23 23:20:43
 tags: deep_knowledge
 ---
 
@@ -106,8 +106,8 @@ json data
 
 - [x] 쿼리에 어떤 것들을 쓸 수 있는지, must, should,
 - [x] 분석기 설정한 인덱스에서 검색했는데 결과가 동일함
-- [ ] 초기화를 elasticsearch에서 할지, api server에서 할지??
-- [ ] update할 때 기존에 것에 추가하는 작업이 안됨
+- [x] 초기화를 elasticsearch에서 할지, api server에서 할지?? ✅ 2026-06-23
+- [x] update할 때 기존에 것에 추가하는 작업이 안됨 ✅ 2026-06-23
 - [x] 전체 검색이 전체를 검색 안한다. 카운트는 정상적으로 세는데 hit는 하다
       마나? default size가 10이었다.
 

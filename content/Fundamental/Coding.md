@@ -2,7 +2,7 @@
 title: 코딩
 summary: Coding Convention, Design Principle
 date: 2020-03-16 21:13:05 +0100
-updated: 2026-03-17 15:37:36
+updated: 2026-06-24 08:44:51
 tags: fundamental
 ---
 
@@ -1405,7 +1405,8 @@ golang
 	- 상속은 안쓰는게 좋다는 흐름이 있었는데 코틀린에서 상속은 기본적으로 막혀있고 open을 해줘야한다
 	- abstract, interface가 비슷해보이는데
 	- abstract는 한 클래스에 하나만 할당 가능하고, interface는 여러개 할당 가능하긴 한다
-	- [ ] abstract를 쓰는건 구현이 아니라 상속인가.. abstract에서 선언한 것을 반드시 구현해야하는데
+	- [x] abstract를 쓰는건 구현이 아니라 상속인가.. abstract에서 선언한 것을 반드시 구현해야하는데 ✅ 2026-06-24
+		- 놀랍게도 둘 다
 - ?, ?., !!, ?:
 - listOf, mutableListOf, mapOf, setOf
 - data class

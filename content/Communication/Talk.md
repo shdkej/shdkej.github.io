@@ -2,7 +2,7 @@
 title: Communication
 summary:
 date: 2020-12-15 15:35:32 +0100
-updated: 2025-12-30 17:27:17
+updated: 2026-06-29 10:23:30
 tags: communication
 ---
 
@@ -226,7 +226,7 @@ https://www.youtube.com/watch?v=iqDZH5-auZQ
 
 차분하게 침착하게 여유롭게
 
-- [ ] 하나의 주제를 가지고 짧게 영상으로 말하기 연습
+- [ ] 하나의 주제를 가지고 짧게 영상으로 말하기 연습 ⏬
 
 멍청해 보이는 걸 두려워 하지 말아야 하는데 잘 안된다
 남의 눈치를 안봐야 하는데 본다 안봐도 된다

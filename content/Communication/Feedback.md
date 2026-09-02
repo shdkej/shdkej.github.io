@@ -2,7 +2,7 @@
 title: Feedback
 summary: review, communication, software
 date: 2020-11-15 20:42:56 +0100
-updated: 2026-05-31 12:01:19
+updated: 2026-07-04 23:00:04
 tags: communication
 ---
 
@@ -183,10 +183,10 @@ feedback이 인터럽션이 될 수 있다.
    - 피드백을 주는 것은 시스템, 사람이지만 받는 것은 사람이다
      - 시스템끼리 피드백을 처리할 수도 있지만 최종 피드백은 사람이다
    - 변경 된 사항을 적절한 시점에 알게 되는 것이 필요하다
-   - [ ] [피드백 유형과 과제지속의 관계에 대한 연구](https://www.ejce.org/download/download_pdf?pid=jce-20-1-143)
-   - [ ] microsoft, google에서 피드백을 받는 도구를 만든게 있다
+   - [x] [피드백 유형과 과제지속의 관계에 대한 연구](https://www.ejce.org/download/download_pdf?pid=jce-20-1-143) ✅ 2026-06-29
+   - [x] microsoft, google에서 피드백을 받는 도구를 만든게 있다 ✅ 2026-07-04
      - https://docs.microsoft.com/ko-kr/windows-insider/developers/tools
-   - [ ] 운동에서의 피드백
+   - [x] 운동에서의 피드백 ✅ 2026-06-29
      - http://kocw.xcache.kinxcdn.com/KOCW/document/2018/seowon/yoonwanyoung201/9.pdf
      - [운동학습](https://blog.naver.com/choiyuwon/220810803366)
 4. 정리한다

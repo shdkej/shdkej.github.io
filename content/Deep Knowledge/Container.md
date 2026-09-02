@@ -2,7 +2,7 @@
 title: Container
 summary: Docker, Kubernetes
 date: 2020-12-17 22:01:56 +0100
-updated: 2026-05-30 09:23:20
+updated: 2026-06-29 09:25:15
 tags: deep_knowledge
 ---
 
@@ -121,12 +121,11 @@ build -> push -> kubernetes apply(set image)
 개발디렉토리는 Dockerfile에도 COPY에 있어야하고, compose에도 볼륨을 한다.
 개발환경에서 쓰는 이미지는 배포 시 쓰는 이미지와 같은 것을 사용한다.
 이미지 빌드는 CD pipeline을 통해서 한다. 이미지 혼동을 막기 위해
-- [ ] 이미지를 기반으로 작업을 하면 이미지가 업데이트 되었는데 이전 버전으로
-      작업하던 사람들은?
-- [ ] 최초 작업 시 이미지가 없어서 compose를 실행 못시키니, 빌드 파이프라인을 먼저 만든다?
+- [x] 이미지를 기반으로 작업을 하면 이미지가 업데이트 되었는데 이전 버전으로 작업하던 사람들은? ✅ 2026-06-29
+- [x] 최초 작업 시 이미지가 없어서 compose를 실행 못시키니, 빌드 파이프라인을 먼저 만든다? ✅ 2026-06-23
 
 내가 원하는게 디렉토리 전체를 덮어쓰는게 아니라 일부만 수정하는 거라서 좀 꼬였다
-- [ ] 일일이 COPY를 해야 하나? compose에서는 어떻게?
+- [x] 일일이 COPY를 해야 하나? compose에서는 어떻게? ✅ 2026-06-23
 
 ```
 Dockerfile
@@ -174,8 +173,8 @@ CD는 ansible 또는 argoCD
 push를 하면 검증을 한다
 1. commit, 2. merge, 3. hotfix
 
-- [ ] 빌드 요청은 어떻게?
-- [ ] 버저닝은 어떻게?
+- [x] 빌드 요청은 어떻게? ✅ 2026-06-23
+- [x] 버저닝은 어떻게? ✅ 2026-06-23
 
 #### docker image
 alpine, stretch, slim, buster

@@ -72,7 +72,7 @@ nvme와 sata의 차이를 찾아보고 둘의 작동방식이 다름을 알았�
 - find exactly problem
 - solve
 
-[[blog/Deploy_ERP_server_story#missed items]]
+[[Deploy_ERP_server_story#missed items]]
 
 ---
 

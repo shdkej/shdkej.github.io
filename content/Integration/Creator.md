@@ -2,7 +2,7 @@
 title: 창작자들
 summary: Music, Construct, Artist, Directer, Author
 date: 2020-09-29 23:59:25 +0100
-updated: 2026-02-19 11:26:47
+updated: 2026-06-23 23:20:57
 tags: integration
 ---
 
@@ -235,7 +235,7 @@ Can It bring programming
 
 ## abstract
 
-- [ ] 추상 미술에 대해 알아보면서 추상화에 대해 힌트를 얻을 수 있을까
+- [x] 추상 미술에 대해 알아보면서 추상화에 대해 힌트를 얻을 수 있을까 ✅ 2026-06-23
 - [과학과 추상미술](https://drive.google.com/file/d/19pachfgZJGI8OJIwpVD9saQ_e-5fprJX/view?usp=sharing)
 - [1913년 초기 추상 정의와 논쟁, 로베르 들로네, 말레비치](https://hri997.tistory.com/m/101)
 
