@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="kr"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><script>
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "446ekw0kl6");
+            </script><script data-ad-client="ca-pub-8002857692825455" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><meta name="naver-site-verification" content="0738293103ffff9ea9eb43b3c9621e5fb353f97b"/><meta name="generator" content="Gatsby 5.14.5"/><meta data-react-helmet="true" name="description" content="운영 장애 대응 인식 보고 롤백 복구 피드백 Postmortem 대응 후 회고 종료시점을 내가 통제하면 관리가 편해진다 uvicorn에 종료카운트랑 karpenter에 expireAfter가 있고, jwtToken 같은 보안쪽에도 만료시간이 정해져있다 DevOps vs SRE…"/><meta data-react-helmet="true" property="og:title" content=""/><meta data-react-helmet="true" property="og:description" content="운영 장애 대응 인식 보고 롤백 복구 피드백 Postmortem 대응 후 회고 종료시점을 내가 통제하면 관리가 편해진다 uvicorn에 종료카운트랑 karpenter에 expireAfter가 있고, jwtToken 같은 보안쪽에도 만료시간이 정해져있다 DevOps vs SRE…"/><meta data-react-helmet="true" property="og:type" content="website"/><style data-href="/styles.6bd0ea82fad2e8f2341a.css" data-identity="gatsby-global-css">@import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css);code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#f8f8f2;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}:root{--main-color:#2a2a2a;--second-color:#e0e0e0;--heading-color:#ff8c00}[data-theme=dark]{--main-color:silver;--second-color:#000;--heading-color:salmon}body{background-color:var(--main-color,var(--second-color));color:var(--second-color);font-family:sans-serif;font-size:19px;margin:1rem auto;max-width:900px;padding:1rem}.blog-post-item{border-left:2px solid #404040;line-height:1.2;margin-bottom:32px;padding-left:16px}.blog-post-item:last-child{margin-bottom:0}@media (max-width:767px){.blog-post-item{border-left:1px solid #404040;margin-bottom:24px;padding-left:12px}}@media (min-width:768px){body{background-color:#2a2a2a;letter-spacing:.01em;line-height:1.7}body,p{color:#e0e0e0}p{margin-bottom:1.2em;text-align:justify}h1,h2,h3,h4,h5,h6{color:#f0f0f0;line-height:1.4;margin-bottom:.8em}h1{border-bottom:2px solid #404040;font-size:2.2em;padding-bottom:.3em}h2{border-bottom:1px solid #404040;font-size:1.8em;padding-bottom:.2em}h3{color:#d0d0d0;font-size:1.4em}a{border-bottom:1px solid transparent;color:#7bb3d1;text-decoration:none;transition:border-bottom-color .2s ease}a:hover{border-bottom-color:#7bb3d1}a:visited{color:#7bb3ce}pre{background:#1e1e1e;border:1px solid #404040;border-radius:6px;margin:1.5em 0;padding:20px}code{background:rgba(255,157,107,.1);border-radius:3px;color:#ff9d6b;padding:2px 6px}blockquote{background:hsla(0,0%,100%,.02);border-left:2px solid #555;color:#b8b8b8;font-style:italic;margin:1.5em 0;padding:1em 1.2em}ol,ul{margin:1.2em 0;padding-left:2em}li{line-height:1.6;margin:.5em 0}figcaption{color:#b0b0b0;font-size:.9em;margin-top:.5em}.content-toc a{color:#7bb3d1;margin:0;padding:0;text-decoration:underline;transition:color .2s ease}.content-toc a:hover{color:#9bc7e0}article header,article section,article small{line-height:1.2}.square,.square-field{line-height:1.3}.square ul{line-height:1.2;margin-top:.5em}.square li{line-height:1.2;margin:.2em 0}}h1{color:var(--heading-color)}h2:before{content:"# "}h2,h3,h4{margin-left:-15px;margin-top:50px}h4:before{content:"## "}p{color:var(--second-color,var(--main-color));margin-bottom:0}ul{margin-top:0;padding-inline-start:20px}ul p{margin:0}li{margin-bottom:5px;margin-top:5px}a{color:#40a0bd;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;vertical-align:top}a:visited{color:#40a0ba}pre{background:#161b22;padding:15px}code{color:salmon;display:block;overflow:auto;word-break:break-all}blockquote{font-style:italic}header h3{margin:2em 0 0}:target:before{content:"";display:block;height:50px;margin-top:-50px}@media (min-width:1200px){.content-toc{display:block;max-height:60vh;overflow-x:hidden;overflow-y:auto;padding:0 20px;position:fixed;right:0;top:300px;width:20%}.toc-header{top:280px}}@media (max-width:1200px){.content-toc{margin-top:50px}}@media (max-width:600px){.square{grid-column:1/4}.square-center{display:none!important}}.square-field{grid-gap:10px;display:grid;font-weight:700;grid-template-areas:". . ." ". center ." ". . .";grid-template-columns:repeat(3,1fr)}.square{border:1px solid #fff;border-radius:5px;overflow:hidden;padding:10px;text-overflow:ellipsis}.square-center{align-items:center;background:linear-gradient(90deg,#6a11cb 0,#2575fc);border-radius:5px;color:#fff;display:flex;grid-area:center;justify-content:center}.rel{display:inline-block;opacity:.8;padding:5px}:not(pre)>code[class*=language-]{background:none;color:salmon;display:inline}figcaption{color:#999;font-size:.8em;text-align:center}:root{--ink:#173137;--muted:#718287;--paper:#f4f8f7;--line:#d8e5e2;--coral:#ed735d;--blue:#5c9eb0;--gold:#d19a4e}*{box-sizing:border-box}body:has(.bench-shell){background:var(--paper);color:var(--ink);font-family:Pretendard,sans-serif;margin:0;max-width:none;padding:0}.bench-shell{margin:0 auto;max-width:1180px;overflow:hidden;padding:28px 48px 40px}.bench-nav{align-items:center;color:var(--muted);display:flex;font-size:11px;justify-content:space-between;letter-spacing:.16em}.bench-nav a:first-child{color:var(--ink);font-size:18px;font-weight:800;letter-spacing:-.08em}.bench-nav a{color:inherit;text-decoration:none}.bench-hero{max-width:820px;padding:100px 0 80px}.eyebrow{color:var(--coral);font-size:11px;font-weight:800;letter-spacing:.17em;margin:0 0 20px}.eyebrow span{color:var(--ink);margin-left:5px}.bench-hero h1{border:0;color:var(--ink);font-size:clamp(48px,8vw,100px);font-weight:800;letter-spacing:-.075em;line-height:.96;margin:0;padding:0}.bench-hero h1 em{color:var(--coral);font-style:normal}.hero-copy{color:#53686c;font-size:18px;line-height:1.65;margin:32px 0 0}.handle-form{margin-top:46px;max-width:680px}.handle-form label{display:block;font-size:12px;font-weight:700;margin-bottom:10px}.input-row{border-bottom:1px solid var(--ink);display:flex;gap:8px;padding-bottom:8px}.input-row input{background:transparent;border:0;color:var(--ink);flex:1 1;font:inherit;font-size:17px;min-width:0;outline:0}.input-row button{background:var(--ink);border:0;border-radius:99px;color:#fff;cursor:pointer;font:inherit;font-size:13px;font-weight:700;padding:13px 18px;white-space:nowrap}.input-row button span{color:#f6bd79;font-size:17px;margin-left:12px}.handle-form small{color:var(--muted);display:block;font-size:11px;margin-top:10px}.trace-section{border-top:1px solid var(--line);padding-top:34px}.section-heading{align-items:end;display:flex;justify-content:space-between}.section-heading .eyebrow{margin-bottom:9px}.section-heading h2{border:0;color:var(--ink);font-size:32px;letter-spacing:-.05em;margin:0;padding:0}.count{color:var(--muted);font-size:12px}.profile-strip{display:flex;gap:10px;margin:28px 0 64px;overflow:auto;padding-bottom:4px}.profile-pill{align-items:center;background:hsla(0,0%,100%,.38);border:1px solid var(--line);border-radius:99px;color:var(--ink);cursor:pointer;display:flex;gap:10px;min-width:max-content;padding:9px 15px 9px 9px;text-align:left}.profile-pill.active{background:#fff;border-color:var(--ink)}.profile-pill small,.profile-pill strong{display:block}.profile-pill strong{font-size:12px}.profile-pill small{color:var(--muted);font-size:10px;margin-top:3px}.avatar{border-radius:50%;color:#fff;display:grid;font-size:14px;font-weight:800;height:34px;place-items:center;width:34px}.avatar.coral,.moment-tag.coral{background:var(--coral)}.avatar.blue,.moment-tag.blue{background:var(--blue)}.avatar.gold,.moment-tag.gold{background:var(--gold)}.timeline{position:relative}.timeline-line{background:var(--line);bottom:0;left:91px;position:absolute;top:14px;width:1px}.moment{display:grid;gap:0 28px;grid-template-columns:64px 90px 1fr;padding:0 0 68px;position:relative}.moment-marker{background:var(--paper);border:1px solid var(--ink);border-radius:50%;display:grid;font-size:10px;height:28px;place-items:center;width:28px;z-index:1}.moment-date{color:var(--ink);font-size:12px;padding-top:7px}.moment-date span{color:var(--coral);display:block;font-size:10px;font-weight:700;margin-top:7px}.moment-content{max-width:680px;padding-top:2px}.moment-topline{align-items:center;display:flex;gap:10px;justify-content:space-between}.moment-topline a{color:var(--muted);font-size:11px;text-decoration:none}.moment-tag{border-radius:99px;color:#fff;font-size:10px;font-weight:700;padding:5px 9px}.moment h3{border:0;color:var(--ink);font-size:24px;letter-spacing:-.045em;margin:18px 0 10px;padding:0}.moment p{color:#546a6d;font-size:15px;line-height:1.75;margin:0;max-width:600px}.byline{color:var(--muted);display:block;font-size:11px;margin-top:18px}.closing-note{border-top:1px solid var(--line);padding:70px 0 80px}.closing-note .eyebrow{margin-bottom:26px}.closing-note p:not(.eyebrow){color:var(--ink);font-size:30px;letter-spacing:-.055em;line-height:1.3;margin:0}.closing-note strong{color:var(--coral)}.closing-note span{color:var(--muted);display:block;font-size:12px;margin-top:20px}.bench-footer{border-top:1px solid var(--line);color:var(--muted);display:flex;font-size:10px;justify-content:space-between;letter-spacing:.12em;padding-top:18px}.bench-footer a{color:var(--ink);text-decoration:none}@media (max-width:700px){.bench-shell{padding:22px 22px 30px}.bench-hero{padding:76px 0 65px}.hero-copy{font-size:16px}.input-row{border:0;display:block}.input-row input{border-bottom:1px solid var(--ink);display:block;padding:10px 0 12px;width:100%}.input-row button{margin-top:12px;width:100%}.section-heading h2{font-size:25px}.timeline-line{left:13px}.moment{gap:0 19px;grid-template-columns:28px 1fr;padding-bottom:52px}.moment-date{grid-column:2;grid-row:1;padding:0 0 11px}.moment-date span{display:inline;margin:0 0 0 9px}.moment-content{grid-column:2}.moment h3{font-size:21px;margin-top:15px}.closing-note p:not(.eyebrow){font-size:25px}.bench-footer{flex-direction:column;gap:16px}}</style><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-GPKPTMNVF5"></script><script>
+    window.GATSBY_GTAG_PLUGIN_GA_TRACKING_ID = (
+      'G-GPKPTMNVF5'
+    );
+    window.GATSBY_GTAG_PLUGIN_ANONYMIZE = false;
+
+    var options = {
+      send_page_view: false
+    };
+    if (false) {
+      options.anonymize_ip = true;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-GPKPTMNVF5', options);
+  </script></head><body class=""><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><header><nav><a href="/">SH</a> | <a href="/tags/">WIKI</a> | <a href="/about/">ABOUT</a></nav></header><br/>---<main><article><header><h1></h1><p></p><small style="width:50%">Created: <!-- -->2026, 04 01<!-- --> &gt;<a href="https://github.com/shdkej/shdkej.github.io/blame/master/content/Deep Knowledge/Operation.md">Updated: <!-- -->2026, 06 09</a></small></header><nav class="content-toc"><strong>Table of Contents</strong><div><ul>
+<li>
+<p><a href="#%EC%9A%B4%EC%98%81">운영</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#%EC%9E%A5%EC%95%A0-%EB%8C%80%EC%9D%91">장애 대응</a></li>
+<li><a href="#postmortem">Postmortem</a></li>
+<li><a href="#%EC%A2%85%EB%A3%8C%EC%8B%9C%EC%A0%90%EC%9D%84-%EB%82%B4%EA%B0%80-%ED%86%B5%EC%A0%9C%ED%95%98%EB%A9%B4-%EA%B4%80%EB%A6%AC%EA%B0%80-%ED%8E%B8%ED%95%B4%EC%A7%84%EB%8B%A4">종료시점을 내가 통제하면 관리가 편해진다</a></li>
+<li><a href="#devops-vs-sre">DevOps vs SRE</a></li>
+<li><a href="#sre">SRE</a></li>
+<li><a href="#%EC%84%B1%EA%B3%BC-%EC%B8%A1%EC%A0%95%EA%B3%BC-%EA%B0%9C%EC%84%A0">성과 측정과 개선</a></li>
+<li><a href="#edge-case">edge case</a></li>
+<li><a href="#%EC%9A%B4%EC%98%81%EA%B9%8C%EC%A7%80%EC%9D%98-%EA%B3%A0%EB%A0%A4">운영까지의 고려</a></li>
+<li><a href="#%ED%94%84%EB%A1%9C%EB%8D%95%EC%85%98%EC%97%90-%ED%95%84%EC%9A%94%ED%95%9C-%EC%86%8D%EC%84%B1">프로덕션에 필요한 속성</a></li>
+<li><a href="#program">Program</a></li>
+<li><a href="#need-extra-component">Need Extra Component</a></li>
+<li><a href="#reboot-report">reboot report</a></li>
+<li><a href="#%EA%B5%AC%EC%84%B1%EB%B3%B4%EB%8B%A4-%EA%B4%80%EC%8A%B5-coc">구성보다 관습, CoC</a></li>
+<li><a href="#%EC%98%A4%ED%86%A0%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%A7%81">오토스케일링</a></li>
+<li><a href="#%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-%EA%B2%AA%EB%8A%94-%EB%AC%B8%EC%A0%9C">대규모 서버에서 겪는 문제</a></li>
+<li><a href="#%EB%8C%80%EC%9A%A9%EB%9F%89-%ED%8A%B8%EB%9E%98%ED%94%BD">대용량 트래픽</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#%EC%9A%B4%EC%98%81%ED%8C%81">운영팁</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="#%EC%95%8C%EB%A6%BC--%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81--%ED%8A%B8%EB%9E%98%ED%82%B9">알림 / 모니터링 / 트래킹</a></li>
+<li><a href="#%EB%B0%B0%ED%8F%AC--%EC%9D%B8%ED%94%84%EB%9D%BC--k8s">배포 / 인프라 / k8s</a></li>
+<li><a href="#%EC%BD%94%EB%93%9C--%EB%B0%B1%EC%97%94%EB%93%9C-%EC%84%A4%EA%B3%84">코드 / 백엔드 설계</a></li>
+<li><a href="#%ED%9A%8C%EC%9B%90--%EC%9D%B8%EC%A6%9D">회원 / 인증</a></li>
+<li><a href="#%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B0%9C%EC%86%A1-kums">메시지 발송 (KUMS)</a></li>
+<li><a href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8--%EC%BF%A0%ED%8F%B0-%EC%9A%B4%EC%98%81">이벤트 / 쿠폰 운영</a></li>
+<li><a href="#%EB%B2%84%ED%8B%B0%EC%BB%AC--%ED%95%98%EC%9D%B4%EB%B8%8C%EB%A6%AC%EC%8A%A4-%EC%9A%B4%EC%98%81">버티컬 / 하이브리스 운영</a></li>
+<li><a href="#%EC%82%AC%EB%82%B4%EB%A7%9D--%EB%B3%B4%EC%95%88">사내망 / 보안</a></li>
+<li><a href="#%EC%9E%90%EB%8F%99%ED%99%94--%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8-%EC%9A%B4%EC%98%81">자동화 / 에이전트 운영</a></li>
+<li><a href="#%EB%A1%9C%EC%BB%AC--%EC%9E%A1%ED%8C%81">로컬 / 잡팁</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></nav><div style="border-top:1px solid;align:center"></div><section><h2 id="운영" style="position:relative;"><a href="#%EC%9A%B4%EC%98%81" aria-label="운영 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>운영</h2>
+<h4 id="장애-대응" style="position:relative;"><a href="#%EC%9E%A5%EC%95%A0-%EB%8C%80%EC%9D%91" aria-label="장애 대응 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>장애 대응</h4>
+<ul>
+<li>인식</li>
+<li>보고</li>
+<li>롤백</li>
+<li>복구</li>
+<li>피드백</li>
+</ul>
+<h4 id="postmortem" style="position:relative;"><a href="#postmortem" aria-label="postmortem permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Postmortem</h4>
+<p>대응 후 회고</p>
+<h4 id="종료시점을-내가-통제하면-관리가-편해진다" style="position:relative;"><a href="#%EC%A2%85%EB%A3%8C%EC%8B%9C%EC%A0%90%EC%9D%84-%EB%82%B4%EA%B0%80-%ED%86%B5%EC%A0%9C%ED%95%98%EB%A9%B4-%EA%B4%80%EB%A6%AC%EA%B0%80-%ED%8E%B8%ED%95%B4%EC%A7%84%EB%8B%A4" aria-label="종료시점을 내가 통제하면 관리가 편해진다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>종료시점을 내가 통제하면 관리가 편해진다</h4>
+<ul>
+<li>uvicorn에 종료카운트랑</li>
+<li>karpenter에 expireAfter가 있고, jwtToken 같은 보안쪽에도 만료시간이 정해져있다</li>
+</ul>
+<h4 id="devops-vs-sre" style="position:relative;"><a href="#devops-vs-sre" aria-label="devops vs sre permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DevOps vs SRE</h4>
+<p>DevOps gonna make fast to deploy
+SRE gonna maintaining production to reliability</p>
+<h4 id="sre" style="position:relative;"><a href="#sre" aria-label="sre permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SRE</h4>
+<p>To upgrade site reliability</p>
+<ol>
+<li>Monitoring
+<ul>
+<li>Monitoring various content</li>
+<li>Make automation</li>
+</ul>
+</li>
+<li>Performance check</li>
+</ol>
+<p>Quick recovery scenario</p>
+<ul>
+<li>Check error 5xx, when error occurred rollback to prev version. And reporting
+error situation. Which are link, behavior, data, code line, build package,
+(commit source)</li>
+</ul>
+<h4 id="성과-측정과-개선" style="position:relative;"><a href="#%EC%84%B1%EA%B3%BC-%EC%B8%A1%EC%A0%95%EA%B3%BC-%EA%B0%9C%EC%84%A0" aria-label="성과 측정과 개선 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>성과 측정과 개선</h4>
+<ul>
+<li>DevOps 성과 지표
+<ul>
+<li>DORA Metrics
+<ul>
+<li>Deployment Frequency</li>
+<li>Lead Time</li>
+<li>MTTR</li>
+<li>Change Failure Rate</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="edge-case" style="position:relative;"><a href="#edge-case" aria-label="edge case permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>edge case</h4>
+<ul>
+<li>로그 폭발</li>
+<li>권한 남용</li>
+<li>시스템 다운</li>
+<li>네트워크 혼잡</li>
+</ul>
+<h4 id="운영까지의-고려" style="position:relative;"><a href="#%EC%9A%B4%EC%98%81%EA%B9%8C%EC%A7%80%EC%9D%98-%EA%B3%A0%EB%A0%A4" aria-label="운영까지의 고려 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>운영까지의 고려</h4>
+<p>되돌릴 수 있는가
+복구할 수 있는가
+관리할 사람을 구할 수 있는가
+버전관리</p>
+<h4 id="프로덕션에-필요한-속성" style="position:relative;"><a href="#%ED%94%84%EB%A1%9C%EB%8D%95%EC%85%98%EC%97%90-%ED%95%84%EC%9A%94%ED%95%9C-%EC%86%8D%EC%84%B1" aria-label="프로덕션에 필요한 속성 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>프로덕션에 필요한 속성</h4>
+<p>보안, 개별 설정을 유연하게 하는 것, 관측성</p>
+<ul>
+<li>되돌릴 수 있는가</li>
+<li>복구할 수 있는가</li>
+<li>수습이 가능한가</li>
+<li>인수인계할 때 무리가 없는가 (사람을 구할 수 있는가)</li>
+<li>안정성</li>
+</ul>
+<h4 id="program" style="position:relative;"><a href="#program" aria-label="program permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Program</h4>
+<ul>
+<li>code with log, test, api</li>
+<li>CI with lint, test, performance, dependency</li>
+<li>CD with deploy</li>
+<li>Monitoring with check node, api, log, performance</li>
+</ul>
+<h4 id="need-extra-component" style="position:relative;"><a href="#need-extra-component" aria-label="need extra component permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Need Extra Component</h4>
+<ul>
+<li>M/L</li>
+<li>Elasticsearch</li>
+<li><a href="/information/#무질서한-원숭이(chaos-monkey)">Information#무질서한 원숭이(Chaos Monkey)</a></li>
+</ul>
+<h4 id="reboot-report" style="position:relative;"><a href="#reboot-report" aria-label="reboot report permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>reboot report</h4>
+<p>load average 확인 후 cpu bound인지 memory bound인지 disk i/o문제인지 확인하는 것처럼
+문제 감지되면 확인된 기록들을 캡처해서 리포트로 보내주고 재부팅하도록 설정
+소프트웨어 로그, 시스템로그도 같이 캡처</p>
+<h4 id="구성보다-관습-coc" style="position:relative;"><a href="#%EA%B5%AC%EC%84%B1%EB%B3%B4%EB%8B%A4-%EA%B4%80%EC%8A%B5-coc" aria-label="구성보다 관습 coc permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>구성보다 관습, CoC</h4>
+<p>설정을 일일이 하기보다 관습적으로 따르게 하고, 설정이 필요할 때만 설정을 하는 방식</p>
+<p>같은 약자로 Code of Conduct(행동 규범)이 있어 헷갈릴 수 있다.</p>
+<h4 id="오토스케일링" style="position:relative;"><a href="#%EC%98%A4%ED%86%A0%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%A7%81" aria-label="오토스케일링 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>오토스케일링</h4>
+<ul>
+<li>cpu나 메모리가 70% 이상이면 1대씩 늘리고 30% 미만이면 1대씩 줄이는 방식</li>
+<li>근데 cpu와 메모리가 한번에 100%가 되는 경우가 왕왕 있음</li>
+</ul>
+<h4 id="대규모-서버에서-겪는-문제" style="position:relative;"><a href="#%EB%8C%80%EA%B7%9C%EB%AA%A8-%EC%84%9C%EB%B2%84%EC%97%90%EC%84%9C-%EA%B2%AA%EB%8A%94-%EB%AC%B8%EC%A0%9C" aria-label="대규모 서버에서 겪는 문제 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>대규모 서버에서 겪는 문제</h4>
+<ul>
+<li>데이터 : 데이터의 동기화</li>
+<li>CPU : cpu 병목</li>
+<li>네트워크 : 네트워크 병목</li>
+</ul>
+<p>load average를 확인하고 sar을 통해 cpu 문제인지 io문제인지 확인한다</p>
+<h4 id="대용량-트래픽" style="position:relative;"><a href="#%EB%8C%80%EC%9A%A9%EB%9F%89-%ED%8A%B8%EB%9E%98%ED%94%BD" aria-label="대용량 트래픽 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>대용량 트래픽</h4>
+<p>WAS에서 문제가 생길 때 다중화로 해결이 힘든 이유</p>
+<ul>
+<li>다른 WAS를 찾아야 한다.</li>
+<li>로그인 정보를 전달해줘야 한다. (세션 클러스터링 필요)
+<ul>
+<li>그에 따른 관리 지점 증가</li>
+</ul>
+</li>
+</ul>
+<p>데이터베이스 다중화 힘든 이유</p>
+<ul>
+<li>동기화</li>
+</ul>
+<hr>
+<ul>
+<li>이커머스 운영 하면서 발생하는 인프라적 이슈
+<ul>
+<li>폰트 처리</li>
+<li>이미지 프록시</li>
+<li>세션 유지</li>
+<li>IP 전달 (네트워크 연결성)</li>
+<li>인프라 개선의 안정성 -> 휴먼에러 줄이는 법, 테스트 후 운영 반영을 자동화 할 방법</li>
+</ul>
+</li>
+</ul>
+<h2 id="운영팁" style="position:relative;"><a href="#%EC%9A%B4%EC%98%81%ED%8C%81" aria-label="운영팁 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>운영팁</h2>
+<p>실무에서 얻은 한 줄짜리 경험칙 모음. (출처: diary/purple 노트 + Asana 운영태스크 2021~2026)</p>
+<h4 id="알림--모니터링--트래킹" style="position:relative;"><a href="#%EC%95%8C%EB%A6%BC--%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81--%ED%8A%B8%EB%9E%98%ED%82%B9" aria-label="알림  모니터링  트래킹 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>알림 / 모니터링 / 트래킹</h4>
+<ul>
+<li>로그를 들어가서 확인해야 하는 케이스 발생 시 → 워크챗 연동 고려</li>
+<li>이메일에서는 css <code class="language-text">position</code> 속성이 안 먹는다</li>
+<li>게시 시작일이 지나서 공개하면 알림을 새로 등록해야 하는 케이스가 있다</li>
+<li>로그는 같은 로직이면 같은 키워드로 남겨서 검색하기 좋게 작성한다</li>
+<li>2주 이상 업데이트되지 않은 Metric은 콘솔에서 안 보인다</li>
+<li>알림 에러는 사후 인지 말고 워크쳇으로 실시간 수신되게 한다</li>
+<li>도메인 변경 시 앱스플라이어/픽셀 템플릿 ID도 함께 수정한다</li>
+<li>믹스패널 view_product / add_to_cart / 주문완료 이벤트 누락은 전송 안정화로 잡는다</li>
+<li>매체 픽셀·SDK 스펙 변경은 카카오/네이버/TW360/앱스플라이어 전부 반영한다</li>
+</ul>
+<h4 id="배포--인프라--k8s" style="position:relative;"><a href="#%EB%B0%B0%ED%8F%AC--%EC%9D%B8%ED%94%84%EB%9D%BC--k8s" aria-label="배포  인프라  k8s permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>배포 / 인프라 / k8s</h4>
+<ul>
+<li>argocd에서 namespace 바꿀 때 ingress가 안 지워지면 새 ingress가 안 뜬다 (자동으로 안 됨)</li>
+<li>ingress 생성 시 LB 이름이 32글자 넘으면 안 된다</li>
+<li>인증서 교체는 시간이 지나면 적용된다 — 캐시가 남아있을 수 있다</li>
+<li>readiness probe는 주기를 짧게, liveness probe는 넉넉하게 해도 괜찮다</li>
+<li>graceful shutdown은 prestop만으로도 일정 수준 효과가 확인된다</li>
+<li>배포 중 배치잡이 돌고 있으면 인스턴스 교체 때 강제 종료될 수 있다 → 실행 중 배치 없는지 확인 후 배포</li>
+<li>배치 종료는 실행 중인 건 유지하고 다음 실행만 막는다</li>
+<li>KOP-WEB은 docker로 빌드하면 메모리 에러가 뜬다</li>
+<li>KOP-API의 rover 라이브러리는 ARM 버전을 지원 안 한다</li>
+<li>node_modules 캐싱은 빨라지지만 캐시 다운/업로드가 오래 걸린다</li>
+<li>와탭(APM)은 모든 인스턴스 말고 리더 인스턴스에만 적용한다</li>
+</ul>
+<h4 id="코드--백엔드-설계" style="position:relative;"><a href="#%EC%BD%94%EB%93%9C--%EB%B0%B1%EC%97%94%EB%93%9C-%EC%84%A4%EA%B3%84" aria-label="코드  백엔드 설계 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>코드 / 백엔드 설계</h4>
+<ul>
+<li>회원가입 같은 핵심 흐름에 외부 사이드이펙트(아사나 태스크 생성 등)를 넣지 않는다 → 제거</li>
+<li>상품 데이터 null 필드 접근 크래시는 가드 처리한다</li>
+<li>미리보기 모드는 운영 캐시에 안 걸리게 캐시 우회 처리한다</li>
+<li>테스트 발송자 조회 같은 값은 하드코딩 말고 서비스 호출로 뺀다</li>
+<li>JPA partial 업데이트 시 디폴트값이 있으면 값을 안 넣으면 그 값으로 변경된다 (주의)</li>
+<li>하이브리스 모델 필드 변경 시 중간에 마이그레이션을 추가하면 절대 안 된다</li>
+<li>hibernate에서 컬럼 ddl을 바꾸려면 실제 DB의 컬럼 타입을 명시해줘야 한다</li>
+<li>Elasticsearch는 term(exact match)과 match(partial match)를 구분해서 써야 한다</li>
+<li>엑셀 대량 다운로드는 백엔드 응답을 일찍 처리하고 파일은 쿼츠가 만든다</li>
+</ul>
+<h4 id="회원--인증" style="position:relative;"><a href="#%ED%9A%8C%EC%9B%90--%EC%9D%B8%EC%A6%9D" aria-label="회원  인증 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>회원 / 인증</h4>
+<ul>
+<li>소셜 로그인은 콜백 흰화면 / 약관 취소 / 계정 이름 덮어쓰기 예외 분기를 반드시 설계한다</li>
+<li>카카오 로그인 시 기존 이름이 닉네임으로 덮이지 않게 계정 매칭한다</li>
+<li>간편가입 중복 이메일이면 막지 말고 사용자 입력을 받아 분기한다</li>
+<li>삼성브라우저 간헐 로그인 풀림은 ID/PW는 정상임을 확인해 원인 격리 후 홀딩한다</li>
+<li>"이용하기 버튼 연속 호출" 류는 중복 클릭/연속 요청 방어가 필요하다</li>
+<li>카카오톡 임베드는 기본형으로 되돌릴 수 없다 (카카오 정책) → 전환은 신중히</li>
+</ul>
+<h4 id="메시지-발송-kums" style="position:relative;"><a href="#%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B0%9C%EC%86%A1-kums" aria-label="메시지 발송 kums permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>메시지 발송 (KUMS)</h4>
+<ul>
+<li>발송 직전에 수신거부 여부를 게이트로 체크한다 (사전 필터링만으론 부족)</li>
+<li>야간 마케팅 발송은 Lambda로 시간대 차단한다 (법적 제한 대응)</li>
+<li>분당 처리량 병목은 Kinesis→Lambda + seq 처리로 개선한다</li>
+<li>메시지 적체로 발송이 안 되면 threshold 조정 + 실패 후속 처리 루프를 둔다</li>
+<li>부서 간 발송은 키를 분리해 충돌을 막는다</li>
+</ul>
+<h4 id="이벤트--쿠폰-운영" style="position:relative;"><a href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8--%EC%BF%A0%ED%8F%B0-%EC%9A%B4%EC%98%81" aria-label="이벤트  쿠폰 운영 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>이벤트 / 쿠폰 운영</h4>
+<ul>
+<li>쿠폰에 상품 1000개 이상 등록하면 리스트에서 쿠폰 라벨이 안 보인다 (hmc는 막혀있고 개발자 수동 등록만 가능)</li>
+<li>쿠폰 지급이 실패해도 레디스 카운트는 올라갈 수 있다</li>
+<li>이벤트 퍼블 코드는 git으로 관리하면 좋다 (퍼블 이슈인지 확인할 때 유리)</li>
+<li>라이브 중인 이벤트 수정 시 코드 저장 + 캡쳐 떠놓고, 게시는 현업에 요청한다</li>
+<li>퍼블 작업은 id만 추가하고 class는 안 건드리는 게 좋다 (클래스가 겹칠 수 있어서)</li>
+<li>쿠폰 참여 카운트는 레디스 값을 바꿔주면서 테스트/QA 할 수 있다</li>
+<li>정확한 비율로 쿠폰을 주려면 랜덤 말고 순차 지급이 필요하다</li>
+<li>스테이지 테스트는 운영과 최대한 똑같이 세팅한다 (쿠폰도 운영거 그대로)</li>
+<li>기획전 수정 시 예약공개여도 시작날짜 기준으로 5분 이내인지 확인해야 한다</li>
+</ul>
+<h4 id="버티컬--하이브리스-운영" style="position:relative;"><a href="#%EB%B2%84%ED%8B%B0%EC%BB%AC--%ED%95%98%EC%9D%B4%EB%B8%8C%EB%A6%AC%EC%8A%A4-%EC%9A%B4%EC%98%81" aria-label="버티컬  하이브리스 운영 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>버티컬 / 하이브리스 운영</h4>
+<ul>
+<li>동영상 썸네일 미생성은 람다 메모리 부족이 원인 → 메모리 증량</li>
+<li>오래된 쇼핑알림 데이터는 삭제 배치로 수명주기를 관리한다</li>
+<li>무형상품(예약)은 취소가능기간 · D-1 알림톡 · 재고카운트까지 세트로 본다</li>
+<li>VIP 등급은 수동 말고 자동 배치 테이블로 관리한다</li>
+<li>멀티 브랜드는 브랜드별 문구·배너·기능 분기를 상시 대응한다</li>
+<li>크리마 리뷰는 반품 후 취소 케이스를 별도 처리해야 한다</li>
+</ul>
+<h4 id="사내망--보안" style="position:relative;"><a href="#%EC%82%AC%EB%82%B4%EB%A7%9D--%EB%B3%B4%EC%95%88" aria-label="사내망  보안 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>사내망 / 보안</h4>
+<ul>
+<li>사내망에선 우회보다 정공법(DNS 신청)이 효율적이고, 외부망에선 우회가 빠르다</li>
+<li>Tailscale(UDP 41641 + DERP)은 사내망에서 차단, ZeroTier(UDP 9993 / TCP 443 폴백)는 통과한다</li>
+<li>권한 에러가 나면 5분 내에 "승인 건인가?" 판단하고 우회보다 승인 요청을 먼저 한다</li>
+<li>yarn/npm certification 에러는 회사 네트워크 변경 때문 → <code class="language-text">npm config set cafile ~/KOLON.crt</code></li>
+<li>X-Forwarded-Host ≠ Host면 404를 반환한다 (호스트 헤더 위변조 방어)</li>
+<li>CSP에 object-src 'self'를 추가하고, 루트에 CSP 헤더가 있는지 확인한다</li>
+<li>엑셀/다운로드는 암호 복잡성 강제 + 마스킹을 적용한다</li>
+<li>미사용 계정은 90일 기준으로 자동 비활성화한다</li>
+</ul>
+<h4 id="자동화--에이전트-운영" style="position:relative;"><a href="#%EC%9E%90%EB%8F%99%ED%99%94--%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8-%EC%9A%B4%EC%98%81" aria-label="자동화  에이전트 운영 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>자동화 / 에이전트 운영</h4>
+<ul>
+<li>기능을 빼는 것이 더 나은 자동화일 수 있다 (안 쓰는 기능 제거도 개선이다)</li>
+<li>도구 선택은 "되는 것 확인 → 확정 → 넘어가기"가 핵심이다</li>
+<li>멀티 유저 분리는 메모리 섹션을 구분해서 저장한다</li>
+<li>frontmatter classification을 강제하면 미분류 파일을 🔴 폴백으로 자동 감지할 수 있다</li>
+<li>가장 많이 반복한 작업이 곧 자동화 1순위다 (반복 임계점 = 자동화 신호)</li>
+</ul>
+<h4 id="로컬--잡팁" style="position:relative;"><a href="#%EB%A1%9C%EC%BB%AC--%EC%9E%A1%ED%8C%81" aria-label="로컬  잡팁 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>로컬 / 잡팁</h4>
+<ul>
+<li>git pull 충돌을 되돌리고 싶으면 <code class="language-text">git merge --abort</code></li>
+<li>asdf에서 npm 글로벌 설치는 그때 설정된 노드 버전으로 실행된다 → 버전 맞추고 설치</li>
+<li>크롬에서 구글 연결 안 될 때 네트워크 게이트웨이 체크를 취소한다</li>
+</ul></section><hr/></article><nav><div style="max-width:90%"><span><a href="/portfolio/">/portfolio/</a>,</span><span><a href="/blogging/">/blogging/</a>,</span><span><a href="/2026-09/">/2026-09/</a>,</span><span><a href="/document/">/document/</a>,</span><span><a href="/logical_thinking/">/logical_thinking/</a>,</span><span><a href="/foreign_language/">/foreign_language/</a>,</span><span><a href="/open_source/">/open_source/</a>,</span><span><a href="/feedback/">/feedback/</a>,</span><span><a href="/talk/">/talk/</a>,</span><span><a href="/teamwork/">/teamwork/</a>,</span><span><a href="/architecture/">/architecture/</a>,</span><span><a href="/computer_architecture/">/computer_architecture/</a>,</span><span><a href="/coding/">/coding/</a>,</span><span><a href="/data_structure/">/data_structure/</a>,</span><span><a href="/infra/">/infra/</a>,</span><span><a href="/network/">/network/</a>,</span><span><a href="/ai/">/ai/</a>,</span><span><a href="/math/">/math/</a>,</span><span><a href="/software/">/software/</a>,</span><span><a href="/container/">/container/</a>,</span><span><a href="/monitoring/">/monitoring/</a>,</span><span><a aria-current="page" class="" href="/operation/">/operation/</a>,</span><span><a href="/product/">/product/</a>,</span><span><a href="/web/">/web/</a>,</span><span><a href="/balance/">/balance/</a>,</span><span><a href="/love/">/love/</a>,</span><span><a href="/principle/">/principle/</a>,</span><span><a href="/evolve/">/evolve/</a>,</span><span><a href="/devops/">/devops/</a>,</span><span><a href="/data/">/data/</a>,</span><span><a href="/readability/">/readability/</a>,</span><span><a href="/reality/">/reality/</a>,</span><span><a href="/curiosity/">/curiosity/</a>,</span><span><a href="/standard/">/standard/</a>,</span><span><a href="/decision/">/decision/</a>,</span><span><a href="/music/">/music/</a>,</span><span><a href="/investment/">/investment/</a>,</span><span><a href="/food/">/food/</a>,</span><span><a href="/history/">/history/</a>,</span><span><a href="/article/">/article/</a>,</span><span><a href="/information/">/information/</a>,</span><span><a href="/movie/">/movie/</a>,</span><span><a href="/business/">/business/</a>,</span><span><a href="/creator/">/creator/</a>,</span><span><a href="/design/">/design/</a>,</span><span><a href="/economics/">/economics/</a>,</span><span><a href="/future/">/future/</a>,</span><span><a href="/marketing/">/marketing/</a>,</span><span><a href="/exploration/">/exploration/</a>,</span><span><a href="/work/">/work/</a>,</span><span><a href="/decision_monitor_size/">/decision_monitor_size/</a>,</span><span><a href="/tool/">/tool/</a>,</span><span><a href="/deploy_erp_server_story/">/deploy_erp_server_story/</a>,</span><span><a href="/100k_concurrent_server/">/100k_concurrent_server/</a>,</span><span><a href="/digital_content/">/digital_content/</a>,</span><span><a href="/physical/">/physical/</a>,</span><span><a href="/journal/">/journal/</a>,</span><span><a href="/travel/">/travel/</a>,</span><span><a href="/routine/">/routine/</a>,</span><span><a href="/my_space/">/my_space/</a>,</span><span><a href="/note_management/">/note_management/</a>,</span><span><a href="/picasso/">/picasso/</a>,</span><span><a href="/agents/">/agents/</a>,</span><span><a href="/life_tracking/">/life_tracking/</a>,</span><span><a href="/branding/">/branding/</a>,</span><span><a href="/eks_with_terraform/">/eks_with_terraform/</a>,</span><span><a href="/about_development/">/about_development/</a>,</span><span><a href="/about_architecture/">/about_architecture/</a>,</span><span><a href="/fail_experience/">/fail_experience/</a>,</span><span><a href="/developer/">/developer/</a>,</span><span><a href="/my_space/">/my_space/</a>,</span><span><a href="/collection/">/collection/</a>,</span><span><a href="/troubleshooting/">/troubleshooting/</a>,</span><span><a href="/reading/">/reading/</a>,</span></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/curiosity/">← </a></li><li><a rel="next" href="/branding/">브랜딩 A-Z<!-- --> →</a></li></ul></nav><div></div></main><footer><small>© 2020, Built with<!-- --> <a href="https://www.gatsbyjs.org">Gatsby</a>, Inspired by<!-- --> <a href="https://johngrib.github.io/">john grib</a> and<!-- --> <a href="https://devroom.io">Ariejan de Vroom</a></small></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/operation/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-8850aa21327eee555f98.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-44056c9a59f48077a54a.js\"],\"component---src-pages-about-js\":[\"/component---src-pages-about-js-a3abf9c0baebe96cb1a0.js\"],\"component---src-pages-bench-tsx\":[\"/component---src-pages-bench-tsx-f36418f0aa4b7be4d517.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-e1aa4f828908e38536f6.js\"],\"component---src-pages-tags-js\":[\"/component---src-pages-tags-js-5063930bf8d9ec4db1b4.js\"],\"component---src-pages-wiki-js\":[\"/component---src-pages-wiki-js-763a185eb4a798f92b79.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-c255a85f86c7252516de.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="bb2a73e0e874c758ac6a";</script><script src="/webpack-runtime-bc9a8e3d53b64f3de0a0.js" async></script><script src="/framework-f70f545f8287a5fac375.js" async></script><script src="/app-8850aa21327eee555f98.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
