@@ -238,9 +238,6 @@ Por아락 저렴함 7.5
 이탈리아 로마 맛집
 - https://salumeriaroscioli.com/en
 
-## Swiss
-
-
 ## Japan
 
 [도쿄 여행 어디로 가야할지 헷갈린다면 - 포텐터진 게시판 - 에펨코리아](https://m.fmkorea.com/best/1267922023korea.com/best/1082486494)

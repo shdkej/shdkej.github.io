@@ -53,6 +53,8 @@ updated: 2026-07-04 23:55:42
 - polar - 결제서비스
 - 온톨로지 rdf owl **Protégé (프로테제)** **WebProtégé**
 - Paddle - 결제서비스, 수수료 5%
+- Dayflow - 화면녹화 맥 오픈소스
+ - 이메일 고객관리 loops
 
 ## 2025
 
